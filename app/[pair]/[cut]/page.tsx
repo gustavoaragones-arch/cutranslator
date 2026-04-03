@@ -1,0 +1,339 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { AdSlot } from "@/components/AdSlot";
+import { AIAnswerBlock } from "@/components/AIAnswerBlock";
+import { PAASection } from "@/components/PAASection";
+import { BreadcrumbBar } from "@/components/BreadcrumbBar";
+import { CutResult } from "@/components/CutResult";
+import { ExploreMore } from "@/components/ExploreMore";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import {
+  canonicalHubPath,
+  generateAIAnswer,
+  titleCaseCanonicalId,
+  whatIsPath,
+} from "@/lib/content";
+import { canonicalEntityTerm } from "@/lib/entities";
+import {
+  getComparisonLinks,
+  getExploreMoreLinks,
+  getTranslationLinksForCanonicals,
+} from "@/lib/linking";
+import { findRegionalMappings } from "@/lib/mappings";
+import { pairSegment, parsePairSegment } from "@/lib/pairRoute";
+import { regionLabel } from "@/lib/regions";
+import {
+  buildTranslationPAAItems,
+  buildTranslationPAAItemsUnmapped,
+  mergeFaqWithPAA,
+  relatedForPAA,
+} from "@/lib/questions";
+import { resolveCut } from "@/lib/resolver";
+import { buildContentGraph, type FaqPair } from "@/lib/structured-data";
+import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
+import type { CanonicalId } from "@/lib/types";
+import { cutSlugToNormalizedKey } from "@/utils/normalize";
+
+export const revalidate = 86400;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  return [
+    { pair: "brazil-to-usa", cut: "picanha" },
+    { pair: "france-to-usa", cut: "entrecote" },
+    { pair: "usa-to-france", cut: "ribeye" },
+    { pair: "argentina-to-usa", cut: "vacio" },
+    { pair: "uk-to-usa", cut: "sirloin" },
+    { pair: "mexico-to-usa", cut: "arrachera" },
+    { pair: "brazil-to-france", cut: "picanha" },
+  ];
+}
+
+type PageProps = { params: Promise<{ pair: string; cut: string }> };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { pair, cut } = await params;
+  const parsed = parsePairSegment(pair);
+  if (!parsed) return { title: "Cut not found | cutranslator" };
+  const key = cutSlugToNormalizedKey(cut);
+  if (findRegionalMappings(parsed.from, key).length === 0) {
+    return { title: "Cut not found | cutranslator" };
+  }
+  const cutDisplay = displayCutNameForSlug(cut, parsed.from);
+  const h1 = seoH1(cutDisplay, parsed.to);
+  return {
+    title: h1,
+    description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} with confidence-ranked beef cut translations.`,
+    openGraph: {
+      title: h1,
+      description: `Canonical beef cut mapping: ${cutDisplay} → ${regionLabel(parsed.to)}.`,
+    },
+  };
+}
+
+export default async function PairCutPage({ params }: PageProps) {
+  const { pair, cut } = await params;
+  const parsed = parsePairSegment(pair);
+  if (!parsed) notFound();
+
+  const key = cutSlugToNormalizedKey(cut);
+  const matches = findRegionalMappings(parsed.from, key);
+  if (matches.length === 0) notFound();
+
+  const cutDisplay = displayCutNameForSlug(cut, parsed.from);
+  const inputName = matches[0].name;
+  const result = resolveCut(inputName, parsed.from, parsed.to);
+
+  const h1 = seoH1(cutDisplay, parsed.to);
+
+  const aiBundle =
+    result.primary != null && result.canonical != null
+      ? generateAIAnswer(cutDisplay, result.canonical, parsed.to, {
+          inputRegion: parsed.from,
+          targetLabels: result.primary.names,
+        })
+      : null;
+
+  const aiPrimary = aiBundle?.primary ?? result.explanation.short;
+  const aiVariants = aiBundle?.variants ?? [];
+
+  const faq: FaqPair[] = [
+    { question: h1, answer: aiPrimary },
+  ];
+  if (result.primary != null && result.canonical != null) {
+    faq.push({
+      question: `What is ${cutDisplay} called in ${regionLabel(parsed.to)}?`,
+      answer: `Look for ${result.primary.names.join(", ")}—mapped to ${titleCaseCanonicalId(result.primary.canonicalId)} (${canonicalEntityTerm(result.primary.canonicalId)}).`,
+    });
+    faq.push({
+      question: `What primal is ${cutDisplay} from?`,
+      answer: `${titleCaseCanonicalId(result.primary.canonicalId)} is on the ${result.canonical.primal} primal (${result.canonical.location}).`,
+    });
+    faq.push({
+      question: `Can ${cutDisplay} mean more than one cut?`,
+      answer:
+        result.alternatives.length > 0
+          ? `This name may also align with ${result.alternatives.map((a) => titleCaseCanonicalId(a.canonicalId)).join(", ")} in this dataset—see alternatives below.`
+          : `Check the confidence note below; low confidence or multi-cut rows are flagged when present.`,
+    });
+  } else {
+    faq.push({
+      question: `Why is there no mapping for ${cutDisplay}?`,
+      answer: result.explanation.detailed,
+    });
+  }
+
+  const paaItems =
+    result.primary != null && result.canonical != null
+      ? buildTranslationPAAItems({
+          inputName,
+          cutDisplay,
+          canonicalId: result.primary.canonicalId,
+          canonical: result.canonical,
+          fromRegion: parsed.from,
+          toRegion: parsed.to,
+          targetLabels: result.primary.names,
+          relatedIds: relatedForPAA(result.primary.canonicalId),
+          cutSlug: cut,
+        })
+      : buildTranslationPAAItemsUnmapped({
+          cutDisplay,
+          fromRegion: parsed.from,
+          toRegion: parsed.to,
+          explanation: result.explanation.detailed,
+        });
+
+  const faqMerged = mergeFaqWithPAA(faq, paaItems);
+
+  const currentPath = `/${pairSegment(parsed.from, parsed.to)}/${cut}`.toLowerCase();
+
+  const graph = buildContentGraph({
+    pagePath: currentPath,
+    headline: h1,
+    description: aiPrimary,
+    faq: faqMerged,
+    qaQuestion: h1,
+    qaAnswer: aiPrimary,
+  });
+
+  const canonIds: CanonicalId[] = [];
+  if (result.primary) canonIds.push(result.primary.canonicalId);
+  for (const a of result.alternatives) {
+    if (!canonIds.includes(a.canonicalId)) canonIds.push(a.canonicalId);
+  }
+
+  const translationLinks = getTranslationLinksForCanonicals(canonIds);
+  const comparisonLinks =
+    result.primary != null
+      ? getComparisonLinks(result.primary.canonicalId, 3)
+      : [];
+
+  const crumbSchema = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: `What is ${cutDisplay}?`, path: whatIsPath(cut) },
+    {
+      name: `${regionLabel(parsed.from)} → ${regionLabel(parsed.to)}`,
+      path: currentPath,
+    },
+  ]);
+
+  const linkedAnswer = aiBundle ? (
+    <>
+      <Link
+        href={whatIsPath(cut)}
+        className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 hover:decoration-amber-700 dark:text-amber-100 dark:decoration-amber-400/70"
+      >
+        {aiBundle.parts.cutDisplay}
+      </Link>
+      {` is the ${aiBundle.parts.sourceRegionLabel} retail name for the `}
+      <Link
+        href={canonicalHubPath(aiBundle.parts.canonicalId)}
+        className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 hover:decoration-amber-700 dark:text-amber-100 dark:decoration-amber-400/70"
+      >
+        {aiBundle.parts.entityTerm}
+      </Link>
+      {` (${aiBundle.parts.primal} primal). In ${aiBundle.parts.targetPlace}, it is most often labeled `}
+      {aiBundle.parts.targetLabels.map((label, i) => (
+        <span key={`${label}-${i}`}>
+          {i > 0 &&
+            (i === aiBundle.parts.targetLabels.length - 1 ? " or " : ", ")}
+          <span className="font-medium text-stone-900 dark:text-stone-50">
+            {label}
+          </span>
+        </span>
+      ))}
+      .
+    </>
+  ) : (
+    aiPrimary
+  );
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbSchema) }}
+      />
+      <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+        <BreadcrumbBar
+          items={[
+            { name: "Home", href: "/" },
+            { name: `${regionLabel(parsed.from)} → ${regionLabel(parsed.to)}` },
+            { name: cutDisplay },
+          ]}
+        />
+        <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">
+          {h1}
+        </h1>
+
+        <div className="mt-6">
+          <AIAnswerBlock variants={aiVariants}>{linkedAnswer}</AIAnswerBlock>
+        </div>
+
+        <AdSlot position="mid_content" />
+
+        <PAASection items={paaItems} />
+
+        <section className="mt-6" aria-label="Explanation">
+          <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+            {result.primary != null
+              ? result.explanation.detailed
+              : result.explanation.short}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+            Learn more in the{" "}
+            <Link
+              href={whatIsPath(cut)}
+              className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+            >
+              glossary: What is {cutDisplay}?
+            </Link>
+            {result.primary && (
+              <>
+                {" "}
+                or the{" "}
+                <Link
+                  href={canonicalHubPath(result.primary.canonicalId)}
+                  className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                >
+                  global hub for {titleCaseCanonicalId(result.primary.canonicalId)}
+                </Link>
+                .
+              </>
+            )}
+          </p>
+        </section>
+
+        <div className="mt-10">
+          <CutResult
+            result={result}
+            sourceRegion={parsed.from}
+            targetRegion={parsed.to}
+            translationCutSlug={cut}
+          />
+        </div>
+
+        <AdSlot position="after_result" />
+
+        {comparisonLinks.length > 0 && (
+          <section className="mt-12 border-t border-stone-200 pt-10 dark:border-stone-700">
+            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+              Compare with similar cuts
+            </h2>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {comparisonLinks.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="inline-block rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-medium text-stone-800 transition hover:border-amber-300 hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-100 dark:hover:border-amber-700 dark:hover:bg-stone-700"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {translationLinks.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+              Other countries &amp; routes
+            </h2>
+            <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+              Same canonical cut, different destination markets (deduped URLs).
+            </p>
+            <ul className="mt-4 max-h-64 space-y-1.5 overflow-y-auto text-sm text-stone-700 dark:text-stone-300">
+              {translationLinks.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <ExploreMore
+          links={getExploreMoreLinks({
+            excludeHref: currentPath,
+            canonicalIds: result.primary
+              ? [result.primary.canonicalId]
+              : undefined,
+          })}
+        />
+
+        <AdSlot position="footer" />
+      </article>
+    </>
+  );
+}
