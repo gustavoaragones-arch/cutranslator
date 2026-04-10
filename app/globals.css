@@ -233,6 +233,15 @@ details.cut-paa[open] summary {
     0 12px 28px rgba(26, 18, 16, 0.1);
 }
 
+/* Cut list: align with form glass + room for longer retail names */
+.cut-select-panel-cuts {
+  max-height: min(20rem, 70vh);
+  padding-block: 0.25rem;
+  background: color-mix(in srgb, var(--bg-glass) 92%, #fff8ef);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .cut-select-option {
   display: flex;
   width: 100%;

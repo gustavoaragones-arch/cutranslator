@@ -1,9 +1,9 @@
 import { relatedByCanonical } from "@/data/clusters";
 import { getCanonicalById } from "@/lib/canonical";
+import { lookupIndex } from "@/lib/indexes";
 import {
   canonicalHitsFromMappings,
   expandMapsTo,
-  findRegionalMappings,
   labelsForCanonical,
   mappingsHaveRegionalConflict,
 } from "@/lib/mappings";
@@ -13,7 +13,7 @@ import type {
   AmbiguityType,
   CanonicalCut,
   CanonicalId,
-  RegionalNameEntry,
+  RegionalName,
   RegionSlug,
   RelatedItem,
   ResolveExplanation,
@@ -43,7 +43,7 @@ function sortTargets(
 }
 
 function buildAmbiguity(args: {
-  matches: RegionalNameEntry[];
+  matches: RegionalName[];
   primary: ResolvedTarget | null;
 }): AmbiguityInfo {
   const { matches, primary } = args;
@@ -142,7 +142,9 @@ export function resolveCut(
   targetRegion: RegionSlug,
 ): ResolveResult {
   const inputNormalized = normalizeForLookup(inputName);
-  const matches = findRegionalMappings(inputRegion, inputNormalized);
+  const key = `${inputRegion}-${inputNormalized}`;
+  const match = lookupIndex.get(key);
+  const matches = match ? [match] : [];
   const hits = canonicalHitsFromMappings(matches);
   const sorted = sortTargets(hits, targetRegion);
   const primary = sorted[0] ?? null;

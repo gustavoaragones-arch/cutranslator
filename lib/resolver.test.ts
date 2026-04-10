@@ -15,7 +15,7 @@ describe("resolveCut (Phase 2)", () => {
       ...r.alternatives.map((a) => a.canonicalId),
     ]);
     expect(ids.has("flank")).toBe(true);
-    expect(ids.has("sirloin_flap")).toBe(true);
+    expect(ids.has("sirloin_cap")).toBe(true);
   });
 
   it("maps UK sirloin → USA as striploin (not US-style sirloin ambiguity)", () => {

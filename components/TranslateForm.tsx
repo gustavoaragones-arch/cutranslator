@@ -7,6 +7,7 @@ import { getCutsByRegion, type DatasetCutOption } from "@/lib/cuts";
 import { pairSegment } from "@/lib/pairRoute";
 import { regionLabel } from "@/lib/regions";
 import { slugifyCut } from "@/utils/normalize";
+import { CutSelect } from "@/components/CutSelect";
 import { RegionSelector } from "@/components/RegionSelector";
 
 export function TranslateForm() {
@@ -58,27 +59,14 @@ export function TranslateForm() {
         />
       </div>
 
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="cut-select"
-          className="text-sm font-medium text-[var(--text-primary)]"
-        >
-          Cut
-        </label>
-        <select
-          id="cut-select"
-          value={selectedCut}
-          onChange={(e) => setSelectedCut(e.target.value)}
-          className="cut-input appearance-none bg-[var(--bg-card)] px-4 py-3 pr-10 shadow-inner"
-        >
-          <option value="">{placeholderLabel}</option>
-          {cuts.map((cut) => (
-            <option key={cut.name.toLowerCase()} value={cut.name}>
-              {cut.name}
-            </option>
-          ))}
-        </select>
-      </div>
+      <CutSelect
+        id="cut-select"
+        label="Cut"
+        placeholder={placeholderLabel}
+        options={cuts}
+        value={selectedCut}
+        onChange={setSelectedCut}
+      />
 
       <button
         type="submit"

@@ -111,7 +111,23 @@ function allRetailNamesForCanonical(id: CanonicalId): string[] {
   return names;
 }
 
-/** Short, stable slug for compare URLs (shortest retail slug, then alphabetical). */
+function canonicalIdsFromRegionalSlugPart(slugPart: string): CanonicalId[] {
+  const key = cutSlugToNormalizedKey(slugPart);
+  const entries = findRegionalEntriesByNormalizedKey(key);
+  const ids = new Set<CanonicalId>();
+  for (const e of entries) {
+    for (const cid of expandMapsTo(e.maps_to)) ids.add(cid);
+  }
+  return [...ids].sort();
+}
+
+/** Slug resolves to exactly this canonical (not multi-mapping or another cut). */
+function slugIdentifiesOnlyCanonical(slugPart: string, id: CanonicalId): boolean {
+  const ids = canonicalIdsFromRegionalSlugPart(slugPart);
+  return ids.length === 1 && ids[0] === id;
+}
+
+/** Short, stable slug for compare URLs (shortest unambiguous retail slug, else canonical id). */
 export function preferredSlugForCanonical(id: CanonicalId): string {
   const names = allRetailNamesForCanonical(id);
   if (names.length === 0) return id.replace(/_/g, "-");
@@ -123,8 +139,11 @@ export function preferredSlugForCanonical(id: CanonicalId): string {
     );
   const idSlug = id.replace(/_/g, "-");
   const idMatch = ranked.find((r) => r.s === idSlug);
-  if (idMatch) return idMatch.s;
-  return ranked[0].s;
+  if (idMatch && slugIdentifiesOnlyCanonical(idMatch.s, id)) return idMatch.s;
+  for (const r of ranked) {
+    if (slugIdentifiesOnlyCanonical(r.s, id)) return r.s;
+  }
+  return idSlug;
 }
 
 function orderedCompareSlug(slugA: string, slugB: string): string {
@@ -172,16 +191,6 @@ function buildCompareSlugIndex(): Map<string, readonly [CanonicalId, CanonicalId
 }
 
 const compareSlugIndex = buildCompareSlugIndex();
-
-function canonicalIdsFromRegionalSlugPart(slugPart: string): CanonicalId[] {
-  const key = cutSlugToNormalizedKey(slugPart);
-  const entries = findRegionalEntriesByNormalizedKey(key);
-  const ids = new Set<CanonicalId>();
-  for (const e of entries) {
-    for (const id of expandMapsTo(e.maps_to)) ids.add(id);
-  }
-  return [...ids].sort();
-}
 
 /** Resolve compare URL slug to two canonical ids (static index + dynamic fallback). */
 export function parseCompareSlugToPair(

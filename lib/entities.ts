@@ -34,6 +34,13 @@ export const REGION_ENTITY: Record<
   chile: { id: "chile", formalName: "Chile", shortName: "Chile" },
   spain: { id: "spain", formalName: "Spain", shortName: "Spain" },
   mexico: { id: "mexico", formalName: "Mexico", shortName: "Mexico" },
+  uruguay: { id: "uruguay", formalName: "Uruguay", shortName: "Uruguay" },
+  paraguay: { id: "paraguay", formalName: "Paraguay", shortName: "Paraguay" },
+  colombia: {
+    id: "colombia",
+    formalName: "Colombia",
+    shortName: "Colombia",
+  },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

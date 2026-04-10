@@ -1,35 +1,28 @@
 import { canonicalLabels, regionalNames } from "@/data/regionalNames";
-import type { CanonicalId, RegionSlug, RegionalNameEntry } from "@/lib/types";
-import { normalizeForLookup } from "@/utils/normalize";
-
-const normalizedIndex: { key: string; mapping: RegionalNameEntry }[] =
-  regionalNames.map((m) => ({
-    key: `${m.region}:${normalizeForLookup(m.name)}`,
-    mapping: m,
-  }));
+import { lookupIndex, regionSlugsInOrder } from "@/lib/indexes";
+import type { CanonicalId, RegionSlug, RegionalName } from "@/lib/types";
 
 export function findRegionalMappings(
   inputRegion: RegionSlug,
   normalizedLookupKey: string,
-): RegionalNameEntry[] {
-  const fullKey = `${inputRegion}:${normalizedLookupKey}`;
-  return normalizedIndex
-    .filter((e) => e.key === fullKey)
-    .map((e) => e.mapping);
+): RegionalName[] {
+  const row = lookupIndex.get(`${inputRegion}-${normalizedLookupKey}`);
+  return row ? [row] : [];
 }
 
-/** All dataset rows whose normalized name matches the URL slug key (any region). */
+/** All dataset rows whose indexed lookup key matches (any region). */
 export function findRegionalEntriesByNormalizedKey(
   normalizedLookupKey: string,
-): RegionalNameEntry[] {
-  return regionalNames.filter(
-    (m) => normalizeForLookup(m.name) === normalizedLookupKey,
-  );
+): RegionalName[] {
+  const out: RegionalName[] = [];
+  for (const slug of regionSlugsInOrder) {
+    const row = lookupIndex.get(`${slug}-${normalizedLookupKey}`);
+    if (row) out.push(row);
+  }
+  return out;
 }
 
-export function expandMapsTo(
-  mapsTo: RegionalNameEntry["maps_to"],
-): CanonicalId[] {
+export function expandMapsTo(mapsTo: RegionalName["maps_to"]): CanonicalId[] {
   if (typeof mapsTo === "string") return [mapsTo];
   return [...mapsTo];
 }
@@ -38,7 +31,7 @@ function canonicalSetSignature(ids: CanonicalId[]): string {
   return [...new Set(ids)].sort().join("|");
 }
 
-export function mappingsHaveRegionalConflict(matches: RegionalNameEntry[]): boolean {
+export function mappingsHaveRegionalConflict(matches: RegionalName[]): boolean {
   if (matches.length < 2) return false;
   const sigs = new Set<string>();
   for (const m of matches) {
@@ -51,7 +44,7 @@ export function mappingsHaveRegionalConflict(matches: RegionalNameEntry[]): bool
  * Flatten regional rows into per-canonical hits with confidence.
  */
 export function canonicalHitsFromMappings(
-  matches: RegionalNameEntry[],
+  matches: RegionalName[],
 ): Map<CanonicalId, { confidence: number; note?: string }> {
   const map = new Map<CanonicalId, { confidence: number; note?: string }>();
   for (const m of matches) {

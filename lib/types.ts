@@ -6,7 +6,10 @@ export type RegionSlug =
   | "uk"
   | "chile"
   | "spain"
-  | "mexico";
+  | "mexico"
+  | "uruguay"
+  | "paraguay"
+  | "colombia";
 
 export type CanonicalId =
   | "ribeye"
@@ -25,21 +28,23 @@ export type CanonicalCut = {
   aliases?: readonly string[];
 };
 
-/** Row-level ambiguity hint from the dataset (optional). */
-export type RegionalMappingRowType = "ambiguous" | "clear";
-
 /**
- * Regional surface name → canonical (dataset shape uses maps_to).
- * Exported from /data/regionalNames.ts as `regionalNames`.
+ * Regional surface name → canonical (import from `/data/regionalNames.ts`).
+ * `type: "ambiguous"` flags row-level retail ambiguity; multi-canonical `maps_to`
+ * is surfaced separately via resolver `ambiguity`.
  */
-export type RegionalNameEntry = {
+export type RegionalName = {
   name: string;
   region: RegionSlug;
-  maps_to: readonly CanonicalId[] | CanonicalId;
+  maps_to: CanonicalId | readonly CanonicalId[];
   confidence: number;
-  type?: RegionalMappingRowType;
+  type?: "ambiguous";
+  synonyms?: readonly string[];
   notes?: string;
 };
+
+/** @deprecated Use `RegionalName`; kept for gradual refactors. */
+export type RegionalNameEntry = RegionalName;
 
 export type AmbiguityType = "region_conflict" | "multi_cut";
 
