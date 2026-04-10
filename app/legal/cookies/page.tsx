@@ -9,24 +9,24 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-    <div className="min-h-full bg-gradient-to-b from-stone-50 to-amber-50/40 dark:from-stone-950 dark:to-stone-900">
+    <div className="cut-bg">
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-400">
+        <p className="cut-content-eyebrow">
           Legal
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
+        <h1 className="cut-content-title font-heading">
           Cookie Notice
         </h1>
-        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+        <p className="mt-2 text-sm text-[var(--text-muted)]">
           {site.entity} · Effective Date: January 1, 2026
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+        <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
           Aligned with the Albor Digital cookie framework, adapted for {site.name}.
         </p>
 
-        <div className="mt-10 space-y-8 text-stone-700 dark:text-stone-300">
+        <div className="mt-10 space-y-8 text-[var(--text-muted)]">
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               1. What Are Cookies
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -38,7 +38,7 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               2. How We Use Cookies
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -51,25 +51,25 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               3. Types of Cookies We Use
             </h2>
-            <div className="mt-3 overflow-x-auto rounded-lg border border-stone-200 dark:border-stone-700">
-              <table className="w-full min-w-[28rem] text-left text-sm">
+            <div className="mt-3 cut-table-wrap rounded-lg">
+              <table className="w-full min-w-[28rem] text-left text-sm text-[var(--text-muted)]">
                 <thead>
-                  <tr className="border-b border-stone-200 bg-stone-100 dark:border-stone-700 dark:bg-stone-900/80">
-                    <th className="px-3 py-2 font-semibold text-stone-900 dark:text-stone-100">
+                  <tr className="border-b border-[var(--border-subtle)] bg-[var(--bg-glass)]">
+                    <th className="px-3 py-2 font-semibold text-[var(--text-primary)]">
                       Type
                     </th>
-                    <th className="px-3 py-2 font-semibold text-stone-900 dark:text-stone-100">
+                    <th className="px-3 py-2 font-semibold text-[var(--text-primary)]">
                       Purpose
                     </th>
-                    <th className="px-3 py-2 font-semibold text-stone-900 dark:text-stone-100">
+                    <th className="px-3 py-2 font-semibold text-[var(--text-primary)]">
                       Duration
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-stone-200 dark:divide-stone-700">
+                <tbody>
                   <tr>
                     <td className="px-3 py-2 align-top">Strictly Necessary</td>
                     <td className="px-3 py-2 align-top">
@@ -106,7 +106,7 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               4. Third-Party Cookies
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -118,7 +118,7 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               5. Your Choices
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -135,7 +135,7 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               6. Do Not Track
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -146,7 +146,7 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               7. Updates to This Notice
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -156,25 +156,25 @@ export default function CookiesPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               8. Contact
             </h2>
             <p className="mt-2 leading-relaxed">
               For questions about our use of cookies:{" "}
-              <a href={`mailto:${site.email}`} className="text-amber-800 dark:text-amber-300">
+              <a href={`mailto:${site.email}`} className="cut-link">
                 {site.email}
               </a>
             </p>
           </section>
         </div>
 
-        <p className="mt-12 text-xs text-stone-500 dark:text-stone-500">
+        <p className="mt-12 text-xs text-[var(--text-muted)]">
           © 2026 {site.entity}. All rights reserved. These documents apply to{" "}
           {site.name} as operated by {site.entity}.
         </p>
 
-        <p className="mt-6 text-sm text-stone-600 dark:text-stone-400">
-          <Link href="/legal/privacy" className="text-amber-800 hover:underline dark:text-amber-300">
+        <p className="mt-6 text-sm text-[var(--text-muted)]">
+          <Link href="/legal/privacy" className="cut-link underline">
             Privacy Policy
           </Link>
         </p>

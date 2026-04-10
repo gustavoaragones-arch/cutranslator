@@ -9,18 +9,18 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-full bg-gradient-to-b from-stone-50 to-amber-50/40 dark:from-stone-950 dark:to-stone-900">
+    <div className="cut-bg">
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-400">
+        <p className="cut-content-eyebrow">
           Legal
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
+        <h1 className="cut-content-title font-heading">
           Terms of Service
         </h1>
-        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+        <p className="mt-2 text-sm text-[var(--text-muted)]">
           {site.entity} · Effective Date: January 1, 2026 · Last Updated: January 1, 2026
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+        <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
           These Terms apply to {site.name} at cuttranslator.com and related digital
           experiences operated by {site.entity}. They are adapted from the Albor Digital
           legal package to describe this product. They are not a substitute for advice
@@ -28,9 +28,9 @@ export default function TermsPage() {
           product evolves.
         </p>
 
-        <div className="mt-10 space-y-8 text-stone-700 dark:text-stone-300">
+        <div className="mt-10 space-y-8 text-[var(--text-muted)]">
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               1. Acceptance of Terms
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -48,7 +48,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               2. Who We Are
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -60,7 +60,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               3. Products and Services
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -76,7 +76,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               4. User Eligibility
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -88,7 +88,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               5. User Accounts
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -104,7 +104,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               6. Acceptable Use
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -120,7 +120,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               7. Intellectual Property
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -138,7 +138,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               8. User-Generated Content
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -151,7 +151,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               9. Subscriptions and Payments
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -169,7 +169,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               10. Third-Party Services
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -181,10 +181,10 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               11. Disclaimer of Warranties
             </h2>
-            <p className="mt-2 font-medium uppercase leading-relaxed text-stone-800 dark:text-stone-200">
+            <p className="mt-2 font-medium uppercase leading-relaxed text-[var(--text-primary)]">
               OUR PRODUCTS ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot;
               WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
               TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
@@ -194,10 +194,10 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               12. Limitation of Liability
             </h2>
-            <p className="mt-2 font-medium uppercase leading-relaxed text-stone-800 dark:text-stone-200">
+            <p className="mt-2 font-medium uppercase leading-relaxed text-[var(--text-primary)]">
               TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, {site.entity.toUpperCase()}{" "}
               AND ITS OWNER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
               CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF
@@ -209,7 +209,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               13. Indemnification
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -221,7 +221,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               14. Governing Law and Disputes
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -239,7 +239,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               15. Changes to These Terms
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -251,28 +251,28 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               16. Contact
             </h2>
             <p className="mt-2 leading-relaxed">
               For questions about these Terms, contact us at:{" "}
-              <a href={`mailto:${site.email}`} className="text-amber-800 dark:text-amber-300">
+              <a href={`mailto:${site.email}`} className="cut-link">
                 {site.email}
               </a>
             </p>
           </section>
         </div>
 
-        <p className="mt-12 text-sm text-stone-600 dark:text-stone-400">
-          <Link href="/legal/privacy" className="text-amber-800 hover:underline dark:text-amber-300">
+        <p className="mt-12 text-sm text-[var(--text-muted)]">
+          <Link href="/legal/privacy" className="cut-link underline">
             Privacy Policy
           </Link>
           {" · "}
-          <Link href="/legal/disclaimer" className="text-amber-800 hover:underline dark:text-amber-300">
+          <Link href="/legal/disclaimer" className="cut-link underline">
             Disclaimer
           </Link>
           {" · "}
-          <Link href="/legal/responsible-ai" className="text-amber-800 hover:underline dark:text-amber-300">
+          <Link href="/legal/responsible-ai" className="cut-link underline">
             Responsible AI Policy
           </Link>
         </p>

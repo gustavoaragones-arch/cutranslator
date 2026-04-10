@@ -12,9 +12,19 @@ import { buildHomePAAItems, mergeFaqWithPAA } from "@/lib/questions";
 import { buildContentGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Beef Cut Translator | cutranslator",
+  title: "Beef Cut Translator | Cutranslator",
   description:
-    "Instantly translate beef cuts between countries using cutranslator's standardized anatomical mapping system.",
+    "Instantly translate beef cuts between countries using Cutranslator's standardized anatomical mapping system.",
+  openGraph: {
+    title: "Beef Cut Translator | Cutranslator",
+    description:
+      "Instantly translate beef cuts between countries using Cutranslator's standardized anatomical mapping system.",
+  },
+  twitter: {
+    title: "Beef Cut Translator | Cutranslator",
+    description:
+      "Instantly translate beef cuts between countries using Cutranslator's standardized anatomical mapping system.",
+  },
 };
 
 const examples = [
@@ -41,9 +51,9 @@ const examples = [
 ] as const;
 
 const homeBaseFaq = [
-  { question: "What does cutranslator do?", answer: homeAIAnswer.primary },
+  { question: "What does Cutranslator do?", answer: homeAIAnswer.primary },
   {
-    question: "Which canonical beef cuts does cutranslator define?",
+    question: "Which canonical beef cuts does Cutranslator define?",
     answer:
       "Sirloin cap, ribeye, striploin, beef tenderloin, sirloin flap, flank steak, and skirt steak—each is a stable entity with regional synonyms.",
   },
@@ -66,32 +76,29 @@ const homeGraph = buildContentGraph({
   headline: "Beef Cut Translator",
   description: homeAIAnswer.primary,
   faq: mergeFaqWithPAA([...homeBaseFaq], homePaaItems),
-  qaQuestion: "What does cutranslator do?",
+  qaQuestion: "What does Cutranslator do?",
   qaAnswer: homeAIAnswer.primary,
 });
 
 export default function Home() {
   return (
-    <div className="min-h-full bg-gradient-to-b from-stone-50 to-amber-50/40 dark:from-stone-950 dark:to-stone-900">
+    <div className="cut-bg">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeGraph) }}
       />
       <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-20 sm:px-6 lg:px-8">
         <header className="text-center sm:text-left">
-          <p className="text-sm font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-400">
-            cutranslator
-          </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-5xl">
+          <h1 className="cut-heading-gradient mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
             Beef Cut Translator
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600 dark:text-stone-400">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
             Instantly translate beef cuts between countries — no guessing, no confusion.
           </p>
         </header>
 
         <TranslateForm />
-        <p className="-mt-7 text-center text-sm text-stone-600 dark:text-stone-400">
+        <p className="-mt-7 text-center text-sm text-[var(--text-muted)]">
           Based on a structured dataset of global beef cuts
         </p>
 
@@ -106,23 +113,20 @@ export default function Home() {
         </div>
 
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
             Try these popular searches
           </h2>
-          <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
+          <p className="mt-1 text-sm text-[var(--text-muted)]">
             Click to see how it translates.
           </p>
           <ul className="mt-4 flex flex-col gap-3">
             {examples.map((ex) => (
               <li key={ex.href}>
-                <Link
-                  href={ex.href}
-                  className="block rounded-2xl border border-stone-200 bg-white px-5 py-4 shadow-sm transition hover:border-amber-300 hover:shadow-md dark:border-stone-700 dark:bg-stone-900/60 dark:hover:border-amber-700"
-                >
-                  <span className="font-semibold text-stone-900 dark:text-stone-100">
+                <Link href={ex.href} className="cut-explore-link rounded-2xl px-5 py-4">
+                  <span className="font-semibold text-[var(--text-primary)]">
                     {ex.label}
                   </span>
-                  <span className="mt-1 block text-sm text-stone-600 dark:text-stone-400">
+                  <span className="mt-1 block text-sm text-[var(--text-muted)]">
                     {ex.sub}
                   </span>
                 </Link>

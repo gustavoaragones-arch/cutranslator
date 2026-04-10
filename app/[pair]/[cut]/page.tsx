@@ -55,10 +55,10 @@ type PageProps = { params: Promise<{ pair: string; cut: string }> };
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { pair, cut } = await params;
   const parsed = parsePairSegment(pair);
-  if (!parsed) return { title: "Cut not found | cutranslator" };
+  if (!parsed) return { title: "Cut not found | Cutranslator" };
   const key = cutSlugToNormalizedKey(cut);
   if (findRegionalMappings(parsed.from, key).length === 0) {
-    return { title: "Cut not found | cutranslator" };
+    return { title: "Cut not found | Cutranslator" };
   }
   const cutDisplay = displayCutNameForSlug(cut, parsed.from);
   const h1 = seoH1(cutDisplay, parsed.to);
@@ -182,14 +182,14 @@ export default async function PairCutPage({ params }: PageProps) {
     <>
       <Link
         href={whatIsPath(cut)}
-        className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 hover:decoration-amber-700 dark:text-amber-100 dark:decoration-amber-400/70"
+        className="cut-entity-link"
       >
         {aiBundle.parts.cutDisplay}
       </Link>
       {` is the ${aiBundle.parts.sourceRegionLabel} retail name for the `}
       <Link
         href={canonicalHubPath(aiBundle.parts.canonicalId)}
-        className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 hover:decoration-amber-700 dark:text-amber-100 dark:decoration-amber-400/70"
+        className="cut-entity-link"
       >
         {aiBundle.parts.entityTerm}
       </Link>
@@ -198,7 +198,7 @@ export default async function PairCutPage({ params }: PageProps) {
         <span key={`${label}-${i}`}>
           {i > 0 &&
             (i === aiBundle.parts.targetLabels.length - 1 ? " or " : ", ")}
-          <span className="font-medium text-stone-900 dark:text-stone-50">
+          <span className="font-medium text-[var(--text-primary)]">
             {label}
           </span>
         </span>
@@ -227,7 +227,7 @@ export default async function PairCutPage({ params }: PageProps) {
             { name: cutDisplay },
           ]}
         />
-        <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">
+        <h1 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
           {h1}
         </h1>
 
@@ -237,19 +237,17 @@ export default async function PairCutPage({ params }: PageProps) {
 
         <AdSlot position="mid_content" />
 
-        <PAASection items={paaItems} />
-
         <section className="mt-6" aria-label="Explanation">
-          <p className="text-base leading-relaxed text-stone-700 dark:text-stone-300">
+          <p className="text-base leading-relaxed text-[var(--text-muted)]">
             {result.primary != null
               ? result.explanation.detailed
               : result.explanation.short}
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
             Learn more in the{" "}
             <Link
               href={whatIsPath(cut)}
-              className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+              className="cut-link font-medium underline"
             >
               glossary: What is {cutDisplay}?
             </Link>
@@ -259,7 +257,7 @@ export default async function PairCutPage({ params }: PageProps) {
                 or the{" "}
                 <Link
                   href={canonicalHubPath(result.primary.canonicalId)}
-                  className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                  className="cut-link font-medium underline"
                 >
                   global hub for {titleCaseCanonicalId(result.primary.canonicalId)}
                 </Link>
@@ -281,8 +279,8 @@ export default async function PairCutPage({ params }: PageProps) {
         <AdSlot position="after_result" />
 
         {comparisonLinks.length > 0 && (
-          <section className="mt-12 border-t border-stone-200 pt-10 dark:border-stone-700">
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <section className="mt-12 border-t border-[var(--border-subtle)] pt-10">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               Compare with similar cuts
             </h2>
             <ul className="mt-4 flex flex-wrap gap-2">
@@ -290,7 +288,7 @@ export default async function PairCutPage({ params }: PageProps) {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="inline-block rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-medium text-stone-800 transition hover:border-amber-300 hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-100 dark:hover:border-amber-700 dark:hover:bg-stone-700"
+                    className="cut-pill-link"
                   >
                     {l.label}
                   </Link>
@@ -302,18 +300,18 @@ export default async function PairCutPage({ params }: PageProps) {
 
         {translationLinks.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               Other countries &amp; routes
             </h2>
-            <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+            <p className="mt-2 text-sm text-[var(--text-muted)]">
               Same canonical cut, different destination markets (deduped URLs).
             </p>
-            <ul className="mt-4 max-h-64 space-y-1.5 overflow-y-auto text-sm text-stone-700 dark:text-stone-300">
+            <ul className="mt-4 max-h-64 space-y-1.5 overflow-y-auto text-sm text-[var(--text-muted)]">
               {translationLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                    className="cut-link underline"
                   >
                     {l.label}
                   </Link>
@@ -322,6 +320,8 @@ export default async function PairCutPage({ params }: PageProps) {
             </ul>
           </section>
         )}
+
+        <PAASection items={paaItems} collapseExtraAfter={3} />
 
         <ExploreMore
           links={getExploreMoreLinks({

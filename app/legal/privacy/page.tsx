@@ -9,25 +9,25 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-full bg-gradient-to-b from-stone-50 to-amber-50/40 dark:from-stone-950 dark:to-stone-900">
+    <div className="cut-bg">
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-400">
+        <p className="cut-content-eyebrow">
           Legal
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
+        <h1 className="cut-content-title font-heading">
           Privacy Policy
         </h1>
-        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+        <p className="mt-2 text-sm text-[var(--text-muted)]">
           {site.entity} · Effective Date: January 1, 2026 · Last Updated: January 1, 2026
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+        <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
           This policy describes {site.name} (cuttranslator.com). It follows the structure
           of the Albor Digital privacy framework adapted for this product.
         </p>
 
-        <div className="mt-10 space-y-8 text-stone-700 dark:text-stone-300">
+        <div className="mt-10 space-y-8 text-[var(--text-muted)]">
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               1. Introduction
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -41,11 +41,11 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               2. Information We Collect
             </h2>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">
+              <strong className="text-[var(--text-primary)]">
                 Information you provide directly:
               </strong>{" "}
               Name, email address, payment information (if any), and any other data you
@@ -53,22 +53,22 @@ export default function PrivacyPage() {
               {site.email}.
             </p>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">Usage data:</strong>{" "}
+              <strong className="text-[var(--text-primary)]">Usage data:</strong>{" "}
               Pages visited, features used, time spent, device type, browser type, IP
               address, and referring URLs.
             </p>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">
+              <strong className="text-[var(--text-primary)]">
                 Cookies and tracking data:
               </strong>{" "}
               See our{" "}
-              <Link href="/legal/cookies" className="text-amber-800 dark:text-amber-300">
+              <Link href="/legal/cookies" className="cut-link">
                 Cookie Notice
               </Link>
               .
             </p>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">
+              <strong className="text-[var(--text-primary)]">
                 AI interaction data:
               </strong>{" "}
               Where applicable, prompts or inputs you provide to AI-powered features within{" "}
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               3. How We Use Your Information
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               4. Legal Basis for Processing (GDPR)
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               5. Sharing of Information
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -120,7 +120,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               6. Data Retention
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               7. Your Rights
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-2 leading-relaxed">
               To exercise any of these rights, contact us at{" "}
-              <a href={`mailto:${site.email}`} className="text-amber-800 dark:text-amber-300">
+              <a href={`mailto:${site.email}`} className="cut-link">
                 {site.email}
               </a>
               . We will respond within 30 days.
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               8. Children&apos;s Privacy
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -163,7 +163,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               9. Data Security
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               10. International Transfers
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -186,7 +186,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               11. Third-Party Links
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -197,7 +197,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               12. Changes to This Policy
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -208,24 +208,24 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               13. Contact
             </h2>
             <p className="mt-2 leading-relaxed">
               For privacy-related questions or requests:{" "}
-              <a href={`mailto:${site.email}`} className="text-amber-800 dark:text-amber-300">
+              <a href={`mailto:${site.email}`} className="cut-link">
                 {site.email}
               </a>
             </p>
           </section>
         </div>
 
-        <p className="mt-12 text-sm text-stone-600 dark:text-stone-400">
-          <Link href="/legal/terms" className="text-amber-800 hover:underline dark:text-amber-300">
+        <p className="mt-12 text-sm text-[var(--text-muted)]">
+          <Link href="/legal/terms" className="cut-link underline">
             Terms of Service
           </Link>
           {" · "}
-          <Link href="/legal/cookies" className="text-amber-800 hover:underline dark:text-amber-300">
+          <Link href="/legal/cookies" className="cut-link underline">
             Cookie Notice
           </Link>
         </p>

@@ -34,10 +34,10 @@ type PageProps = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const pair = parseCompareSlugToPair(slug);
-  if (!pair) return { title: "Comparison not found | cutranslator" };
+  if (!pair) return { title: "Comparison not found | Cutranslator" };
   const a = getCanonicalById(pair.a);
   const b = getCanonicalById(pair.b);
-  if (!a || !b) return { title: "Comparison not found | cutranslator" };
+  if (!a || !b) return { title: "Comparison not found | Cutranslator" };
   const content = generateComparison(a, b);
   return {
     title: content.h1,
@@ -109,25 +109,25 @@ export default async function ComparePage({ params }: PageProps) {
             { name: compareBreadcrumbTitle(slug) },
           ]}
         />
-        <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">
+        <h1 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
           {content.h1}
         </h1>
         <div className="mt-6">
           <AIAnswerBlock variants={content.ai.variants}>
             <>
               <p className="m-0">{content.ai.primary}</p>
-              <p className="mt-2 text-base font-normal text-stone-800 dark:text-stone-200">
+              <p className="mt-2 text-base font-normal text-[var(--text-muted)]">
                 Canonical entities:{" "}
                 <Link
                   href={linksA.hub}
-                  className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 dark:text-amber-100"
+                  className="cut-entity-link"
                 >
                   {titleCaseCanonicalId(cutA.id)}
                 </Link>
                 {" · "}
                 <Link
                   href={linksB.hub}
-                  className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 dark:text-amber-100"
+                  className="cut-entity-link"
                 >
                   {titleCaseCanonicalId(cutB.id)}
                 </Link>
@@ -136,63 +136,19 @@ export default async function ComparePage({ params }: PageProps) {
           </AIAnswerBlock>
         </div>
 
-        <AdSlot position="mid_content" />
-
-        <PAASection items={paaItems} />
-
-        <section className="mt-6" aria-label="Explanation">
-          <p className="text-lg text-stone-700 dark:text-stone-300">
-            {content.quickAnswer[0]}
-          </p>
-          <p className="mt-2 text-base text-stone-600 dark:text-stone-400">
-            {content.quickAnswer[1]}
-          </p>
-        </section>
-
-        <p className="mt-4 text-sm text-stone-600 dark:text-stone-400">
-          Read the full guides:{" "}
-          <Link
-            href={linksA.whatIs}
-            className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
-          >
-            {cutA.id.replace(/_/g, " ")} (what-is)
-          </Link>
-          {" · "}
-          <Link
-            href={linksB.whatIs}
-            className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
-          >
-            {cutB.id.replace(/_/g, " ")} (what-is)
-          </Link>
-          {" · "}
-          <Link
-            href={linksA.hub}
-            className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
-          >
-            {cutA.id.replace(/_/g, " ")} hub
-          </Link>
-          {" · "}
-          <Link
-            href={linksB.hub}
-            className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
-          >
-            {cutB.id.replace(/_/g, " ")} hub
-          </Link>
-        </p>
-
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
             Side-by-side
           </h2>
-          <div className="mt-4 overflow-x-auto rounded-2xl border border-stone-200 dark:border-stone-600">
-            <table className="min-w-full text-left text-sm text-stone-800 dark:text-stone-200">
-              <thead className="bg-stone-100 dark:bg-stone-800">
+          <div className="mt-4 cut-table-wrap rounded-2xl">
+            <table className="min-w-full text-left text-sm text-[var(--text-muted)]">
+              <thead className="bg-[var(--bg-glass)]">
                 <tr>
                   <th className="px-4 py-3 font-semibold"> </th>
                   <th className="px-4 py-3 font-semibold">
                     <Link
                       href={linksA.hub}
-                      className="text-amber-900 underline-offset-2 hover:underline dark:text-amber-200"
+                      className="cut-link underline"
                     >
                       {cutA.id.replace(/_/g, " ")}
                     </Link>
@@ -200,7 +156,7 @@ export default async function ComparePage({ params }: PageProps) {
                   <th className="px-4 py-3 font-semibold">
                     <Link
                       href={linksB.hub}
-                      className="text-amber-900 underline-offset-2 hover:underline dark:text-amber-200"
+                      className="cut-link underline"
                     >
                       {cutB.id.replace(/_/g, " ")}
                     </Link>
@@ -211,9 +167,9 @@ export default async function ComparePage({ params }: PageProps) {
                 {content.sideBySide.map((row) => (
                   <tr
                     key={row.label}
-                    className="border-t border-stone-200 dark:border-stone-700"
+                    className="border-t border-[var(--border-subtle)]"
                   >
-                    <th className="px-4 py-3 font-medium text-stone-600 dark:text-stone-400">
+                    <th className="px-4 py-3 font-medium text-[var(--text-muted)]">
                       {row.label}
                     </th>
                     <td className="px-4 py-3 align-top">{row.a}</td>
@@ -226,10 +182,10 @@ export default async function ComparePage({ params }: PageProps) {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
             Key differences
           </h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-stone-700 dark:text-stone-300">
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-[var(--text-muted)]">
             {content.keyDifferences.map((line) => (
               <li key={line}>{line}</li>
             ))}
@@ -237,13 +193,13 @@ export default async function ComparePage({ params }: PageProps) {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
             When to use each
           </h2>
-          <div className="mt-4 space-y-4 text-stone-700 dark:text-stone-300">
+          <div className="mt-4 space-y-4 text-[var(--text-muted)]">
             {content.whenToUse.map((w) => (
               <div key={w.cut}>
-                <p className="font-semibold text-stone-900 dark:text-stone-100">
+                <p className="font-semibold text-[var(--text-primary)]">
                   {w.cut}
                 </p>
                 <p className="mt-1 leading-relaxed">{w.text}</p>
@@ -251,6 +207,50 @@ export default async function ComparePage({ params }: PageProps) {
             ))}
           </div>
         </section>
+
+        <section className="mt-6" aria-label="Explanation">
+          <p className="text-lg text-[var(--text-muted)]">
+            {content.quickAnswer[0]}
+          </p>
+          <p className="mt-2 text-base text-[var(--text-muted)]">
+            {content.quickAnswer[1]}
+          </p>
+        </section>
+
+        <p className="mt-4 text-sm text-[var(--text-muted)]">
+          Read the full guides:{" "}
+          <Link
+            href={linksA.whatIs}
+            className="cut-link font-medium underline"
+          >
+            {cutA.id.replace(/_/g, " ")} (what-is)
+          </Link>
+          {" · "}
+          <Link
+            href={linksB.whatIs}
+            className="cut-link font-medium underline"
+          >
+            {cutB.id.replace(/_/g, " ")} (what-is)
+          </Link>
+          {" · "}
+          <Link
+            href={linksA.hub}
+            className="cut-link font-medium underline"
+          >
+            {cutA.id.replace(/_/g, " ")} hub
+          </Link>
+          {" · "}
+          <Link
+            href={linksB.hub}
+            className="cut-link font-medium underline"
+          >
+            {cutB.id.replace(/_/g, " ")} hub
+          </Link>
+        </p>
+
+        <AdSlot position="mid_content" />
+
+        <PAASection items={paaItems} collapseExtraAfter={3} />
 
         <ExploreMore
           links={getExploreMoreLinks({

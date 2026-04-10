@@ -328,7 +328,7 @@ export function generateDefinition(args: {
       ? {
           primary: `${displayTitle} is a regional beef-cut name for ${canonicalEntityTerm(primary)}, a muscle on the ${canonical.primal} primal (${canonical.location}).`,
           variants: [
-            `In the cutranslator ontology, ${displayTitle} classifies as ${canonicalEntityTerm(primary)} (${titleCaseCanonicalId(primary)}).`,
+            `In the Cutranslator ontology, ${displayTitle} classifies as ${canonicalEntityTerm(primary)} (${titleCaseCanonicalId(primary)}).`,
             `${displayTitle} refers to ${canonical.primal} primal beef: ${canonicalEntityTerm(primary)}.`,
           ],
         }
@@ -366,7 +366,7 @@ export function generateDefinition(args: {
         .join(" "),
     },
     {
-      question: `In the cutranslator ontology, which canonical cut is ${displayTitle}?`,
+      question: `In the Cutranslator ontology, which canonical cut is ${displayTitle}?`,
       answer:
         primaryCanonicalIds.length === 1
           ? `${titleCaseCanonicalId(primary)} (${canonicalEntityTerm(primary)}).`
@@ -603,7 +603,7 @@ export function listCanonicalIds(): CanonicalId[] {
 /** Home page extractable summary (AEO). */
 export const homeAIAnswer: AIAnswerBundle = {
   primary:
-    "cutranslator maps regional beef names (Brazil picanha, French entrecôte, UK sirloin, Mexico arrachera, and others) to seven canonical cuts—sirloin cap, ribeye, striploin, beef tenderloin, sirloin flap, flank steak, and skirt steak—for consistent cross-country lookup.",
+    "Cutranslator maps regional beef names (Brazil picanha, French entrecôte, UK sirloin, Mexico arrachera, and others) to seven canonical cuts—sirloin cap, ribeye, striploin, beef tenderloin, sirloin flap, flank steak, and skirt steak—for consistent cross-country lookup.",
   variants: [
     "This ontology treats each canonical cut as a stable entity; retail labels point to those entities.",
     "Use translation URLs and hub pages to see how each country names the same muscle.",

@@ -9,26 +9,26 @@ export const metadata: Metadata = {
 
 export default function ResponsibleAIPage() {
   return (
-    <div className="min-h-full bg-gradient-to-b from-stone-50 to-amber-50/40 dark:from-stone-950 dark:to-stone-900">
+    <div className="cut-bg">
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-400">
+        <p className="cut-content-eyebrow">
           Legal
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
+        <h1 className="cut-content-title font-heading">
           Responsible AI Policy
         </h1>
-        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+        <p className="mt-2 text-sm text-[var(--text-muted)]">
           {site.entity} · Last updated: 2026
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+        <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
           This policy describes how {site.entity} applies its Responsible AI framework to{" "}
           {site.name}. The parent policy governs Albor Digital AI-enabled products
           broadly; this page summarizes commitments relevant to this site.
         </p>
 
-        <div className="mt-10 space-y-8 text-stone-700 dark:text-stone-300">
+        <div className="mt-10 space-y-8 text-[var(--text-muted)]">
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Purpose
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -40,7 +40,7 @@ export default function ResponsibleAIPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Scope
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -51,44 +51,44 @@ export default function ResponsibleAIPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Core Responsible AI Principles
             </h2>
             <ul className="mt-3 list-inside list-disc space-y-2 leading-relaxed">
               <li>
-                <strong className="text-stone-900 dark:text-stone-100">
+                <strong className="text-[var(--text-primary)]">
                   Informational use only:
                 </strong>{" "}
                 AI outputs are educational and decision-support in nature, not
                 professional advice.
               </li>
               <li>
-                <strong className="text-stone-900 dark:text-stone-100">
+                <strong className="text-[var(--text-primary)]">
                   Human-in-the-loop:
                 </strong>{" "}
                 Users retain full responsibility for decisions and actions.
               </li>
               <li>
-                <strong className="text-stone-900 dark:text-stone-100">
+                <strong className="text-[var(--text-primary)]">
                   Bounded capability:
                 </strong>{" "}
                 High-risk or legally sensitive scenarios are restricted or redirected.
               </li>
               <li>
-                <strong className="text-stone-900 dark:text-stone-100">
+                <strong className="text-[var(--text-primary)]">
                   Transparency:
                 </strong>{" "}
                 Outputs are presented with clarity and, where applicable, confidence and
                 uncertainty indicators for mappings.
               </li>
               <li>
-                <strong className="text-stone-900 dark:text-stone-100">
+                <strong className="text-[var(--text-primary)]">
                   Data minimization:
                 </strong>{" "}
                 Users are discouraged from submitting sensitive or personal data.
               </li>
               <li>
-                <strong className="text-stone-900 dark:text-stone-100">
+                <strong className="text-[var(--text-primary)]">
                   Continuous monitoring:
                 </strong>{" "}
                 Models, prompts, and guardrails are reviewed and updated as regulations
@@ -98,11 +98,11 @@ export default function ResponsibleAIPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Regulatory alignment (summary)
             </h2>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">
+              <strong className="text-[var(--text-primary)]">
                 OECD AI Principles:
               </strong>{" "}
               {site.entity} aligns with OECD principles by promoting transparency,
@@ -111,7 +111,7 @@ export default function ResponsibleAIPage() {
               judgment.
             </p>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">
+              <strong className="text-[var(--text-primary)]">
                 NIST AI Risk Management Framework (AI RMF):
               </strong>{" "}
               Our approach follows NIST AI RMF concepts including risk identification, risk
@@ -119,7 +119,7 @@ export default function ResponsibleAIPage() {
               review of AI behavior.
             </p>
             <p className="mt-2 leading-relaxed">
-              <strong className="text-stone-900 dark:text-stone-100">
+              <strong className="text-[var(--text-primary)]">
                 EU AI Act — limited risk (lite framing):
               </strong>{" "}
               Products are designed to fall within limited-risk or minimal-risk categories.
@@ -129,7 +129,7 @@ export default function ResponsibleAIPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Risk reduction controls
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -142,24 +142,24 @@ export default function ResponsibleAIPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Contact
             </h2>
             <p className="mt-2 leading-relaxed">
               Questions about AI on {site.name}:{" "}
-              <a href={`mailto:${site.email}`} className="text-amber-800 dark:text-amber-300">
+              <a href={`mailto:${site.email}`} className="cut-link">
                 {site.email}
               </a>
             </p>
           </section>
         </div>
 
-        <p className="mt-12 text-sm text-stone-600 dark:text-stone-400">
-          <Link href="/legal/terms" className="text-amber-800 hover:underline dark:text-amber-300">
+        <p className="mt-12 text-sm text-[var(--text-muted)]">
+          <Link href="/legal/terms" className="cut-link underline">
             Terms of Service
           </Link>
           {" · "}
-          <Link href="/legal/disclaimer" className="text-amber-800 hover:underline dark:text-amber-300">
+          <Link href="/legal/disclaimer" className="cut-link underline">
             Disclaimer
           </Link>
         </p>

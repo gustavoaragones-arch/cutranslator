@@ -9,14 +9,11 @@ type Props = {
 
 export function AIAnswerBlock({ children, variants }: Props) {
   return (
-    <section
-      aria-label="Quick answer"
-      className="rounded-2xl border border-amber-200/90 bg-amber-50/90 px-5 py-4 dark:border-amber-900/50 dark:bg-amber-950/35"
-    >
-      <h2 className="text-xs font-semibold uppercase tracking-wider text-amber-900 dark:text-amber-200">
+    <section aria-label="Quick answer" className="cut-ai-block px-5 py-4">
+      <h2 className="text-xs font-semibold uppercase tracking-wider text-[var(--amber)]">
         Quick Answer
       </h2>
-      <div className="mt-2 text-lg leading-snug text-stone-900 dark:text-stone-100">
+      <div className="mt-2 text-lg leading-snug text-[var(--text-primary)]">
         {children}
       </div>
       {variants != null && variants.length > 0 && (

@@ -1,6 +1,6 @@
 /** Canonical site identity (EEAT): use for copy, metadata, and JSON-LD. */
 export const site = {
-  name: "cutranslator",
+  name: "Cutranslator",
   entity: "Albor Digital LLC",
   email: "contact@cutranslator.com",
   location: "Wyoming, USA",

@@ -24,20 +24,20 @@ export function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="mt-6 space-y-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-stone-700 dark:bg-stone-900/60"
+      className="cut-glass-form mt-6 space-y-4 p-6 shadow-lg shadow-black/20"
     >
-      <p className="text-sm text-stone-600 dark:text-stone-400">
+      <p className="text-sm text-[var(--text-muted)]">
         No server upload yet—submit opens your mail client to{" "}
-        <a
-          href={`mailto:${site.email}`}
-          className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
-        >
+        <a href={`mailto:${site.email}`} className="cut-link font-medium underline">
           {site.email}
         </a>
         .
       </p>
       <div>
-        <label htmlFor="contact-name" className="block text-sm font-medium text-stone-800 dark:text-stone-200">
+        <label
+          htmlFor="contact-name"
+          className="block text-sm font-medium text-[var(--text-primary)]"
+        >
           Name (optional)
         </label>
         <input
@@ -45,11 +45,14 @@ export function ContactForm() {
           name="name"
           type="text"
           autoComplete="name"
-          className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-stone-900 shadow-sm dark:border-stone-600 dark:bg-stone-950 dark:text-stone-100"
+          className="cut-input mt-1 w-full px-3 py-2 shadow-sm"
         />
       </div>
       <div>
-        <label htmlFor="contact-subject" className="block text-sm font-medium text-stone-800 dark:text-stone-200">
+        <label
+          htmlFor="contact-subject"
+          className="block text-sm font-medium text-[var(--text-primary)]"
+        >
           Subject
         </label>
         <input
@@ -57,11 +60,14 @@ export function ContactForm() {
           name="subject"
           type="text"
           defaultValue={`${site.name} inquiry`}
-          className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-stone-900 shadow-sm dark:border-stone-600 dark:bg-stone-950 dark:text-stone-100"
+          className="cut-input mt-1 w-full px-3 py-2 shadow-sm"
         />
       </div>
       <div>
-        <label htmlFor="contact-message" className="block text-sm font-medium text-stone-800 dark:text-stone-200">
+        <label
+          htmlFor="contact-message"
+          className="block text-sm font-medium text-[var(--text-primary)]"
+        >
           Message
         </label>
         <textarea
@@ -69,17 +75,14 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-stone-900 shadow-sm dark:border-stone-600 dark:bg-stone-950 dark:text-stone-100"
+          className="cut-input mt-1 w-full px-3 py-2 shadow-sm"
         />
       </div>
-      <button
-        type="submit"
-        className="rounded-xl bg-amber-700 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-amber-800 dark:bg-amber-600 dark:hover:bg-amber-500"
-      >
+      <button type="submit" className="cut-btn-cta w-full px-4 py-2.5 text-sm sm:w-auto">
         Send via email
       </button>
       {status ? (
-        <p className="text-sm text-stone-600 dark:text-stone-400" role="status">
+        <p className="text-sm text-[var(--text-muted)]" role="status">
           {status}
         </p>
       ) : null}

@@ -5,7 +5,7 @@
 export function EducationalDisclaimer() {
   return (
     <p
-      className="border-t border-stone-200 bg-stone-50/80 px-4 py-3 text-center text-xs leading-relaxed text-stone-600 dark:border-stone-800 dark:bg-stone-950/50 dark:text-stone-500"
+      className="border-t border-[var(--border-subtle)] bg-[var(--bg-card)] px-4 py-3 text-center text-xs leading-relaxed text-[var(--text-muted)]"
       role="note"
     >
       This information is for educational purposes only and may vary by region or

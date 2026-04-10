@@ -1,0 +1,42 @@
+/**
+ * Cutranslator brand tokens — beef-inspired palette.
+ * Use via var(--*) in components and globals; avoid raw Tailwind palette colors.
+ */
+:root {
+  /* Backgrounds */
+  --bg-primary: #f0d98e;
+  --header-bg: #e8c170;
+  --bg-card: rgba(255, 255, 255, 0.5);
+  --bg-glass: rgba(255, 255, 255, 0.65);
+
+  /* Core palette */
+  --wine-dark: #3b0a1e;
+  --wine-deep: #5c1a2a;
+  --burgundy: #7a1f3d;
+  --meat-rare: #9b2335;
+  --meat-main: #b83a2e;
+  --meat-secondary: #c4553a;
+
+  /* Warm accents */
+  --rust: #cc6e3e;
+  --copper: #d48742;
+  --amber: #d9a04a;
+
+  /* Fat / highlight */
+  --fat: #e2b85c;
+  --bone: #e8c170;
+  --highlight: #7a1f3d;
+
+  /* Text (dark on light page) */
+  --text-primary: #1a1210;
+  --text-muted: #5c4a42;
+
+  /* Borders */
+  --border-subtle: rgba(26, 18, 16, 0.12);
+
+  /* Semantic */
+  --danger-border: rgba(155, 35, 53, 0.45);
+  --danger-bg: rgba(155, 35, 53, 0.12);
+  --warning-border: rgba(217, 160, 74, 0.35);
+  --warning-bg: rgba(217, 160, 74, 0.08);
+}

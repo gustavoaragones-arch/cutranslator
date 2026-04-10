@@ -10,21 +10,16 @@ export function confidenceLevel(confidence: number): ConfidenceLevel {
   return "low";
 }
 
-const LEVEL_STYLES: Record<
-  ConfidenceLevel,
-  string
-> = {
-  high:
-    "bg-emerald-100 text-emerald-950 dark:bg-emerald-900/40 dark:text-emerald-100",
-  medium:
-    "bg-amber-100 text-amber-950 dark:bg-amber-900/40 dark:text-amber-100",
-  low: "bg-rose-100 text-rose-950 dark:bg-rose-900/40 dark:text-rose-100",
+const LEVEL_CLASS: Record<ConfidenceLevel, string> = {
+  high: "confidence-high",
+  medium: "confidence-medium",
+  low: "confidence-low",
 };
 
 export function ConfidenceBadge({ confidence, className = "" }: Props) {
   const pct = Math.round(Math.min(1, Math.max(0, confidence)) * 100);
   const level = confidenceLevel(confidence);
-  const tone = LEVEL_STYLES[level];
+  const tone = LEVEL_CLASS[level];
 
   return (
     <span

@@ -279,7 +279,7 @@ function buildItemsFromContext(ctx: TranslationAnswerContext): PAAItem[] {
     item(
       "t-canonical",
       `What is the canonical beef cut for ${inputName}?`,
-      `${inputName} resolves to ${canonTitle} (${entity}) in the cutranslator ontology.`,
+      `${inputName} resolves to ${canonTitle} (${entity}) in the Cutranslator ontology.`,
       [canonicalId],
     ),
   );
@@ -344,7 +344,7 @@ export function buildTranslationPAAItemsUnmapped(args: {
     ),
     item(
       "u-3",
-      `How can I find ${cutDisplay} on cutranslator?`,
+      `How can I find ${cutDisplay} on Cutranslator?`,
       `Try another spelling, a regional synonym, or browse canonical hub pages from the home page.`,
       [],
     ),
@@ -567,7 +567,7 @@ export function buildHomePAAItems(): PAAItem[] {
   return [
     item(
       "h-1",
-      "Which canonical cuts are defined on cutranslator?",
+      "Which canonical cuts are defined on Cutranslator?",
       "Sirloin cap, ribeye, striploin, beef tenderloin, sirloin flap, flank steak, and skirt steak.",
       [
         "sirloin_cap",
@@ -599,7 +599,7 @@ export function buildHomePAAItems(): PAAItem[] {
     ),
     item(
       "h-5",
-      "How do cutranslator URLs encode a translation?",
+      "How do Cutranslator URLs encode a translation?",
       "Each path pairs source country, destination country, and a slugified retail name, then resolves through the canonical layer.",
       [],
     ),

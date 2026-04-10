@@ -9,25 +9,25 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <div className="min-h-full bg-gradient-to-b from-stone-50 to-amber-50/40 dark:from-stone-950 dark:to-stone-900">
+    <div className="cut-bg">
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-400">
+        <p className="cut-content-eyebrow">
           Legal
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
+        <h1 className="cut-content-title font-heading">
           Disclaimer
         </h1>
-        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+        <p className="mt-2 text-sm text-[var(--text-muted)]">
           {site.entity} · Effective Date: January 1, 2026
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+        <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
           Aligned with the Albor Digital disclaimer framework, adapted for {site.name}{" "}
           (beef cut terminology and regional naming).
         </p>
 
-        <div className="mt-10 space-y-8 text-stone-700 dark:text-stone-300">
+        <div className="mt-10 space-y-8 text-[var(--text-muted)]">
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               1. General Disclaimer
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -41,7 +41,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               2. No Professional Advice
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -55,7 +55,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               3. AI-Generated Content
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -69,7 +69,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               4. Data and Terminology
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -82,7 +82,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               5. External Links
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -94,7 +94,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               6. Limitation of Liability
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -107,7 +107,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               7. Jurisdictional Notice
             </h2>
             <p className="mt-2 leading-relaxed">
@@ -119,27 +119,27 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-100">
+            <h2 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
               Contact
             </h2>
             <p className="mt-2 leading-relaxed">
-              <a href={`mailto:${site.email}`} className="text-amber-800 dark:text-amber-300">
+              <a href={`mailto:${site.email}`} className="cut-link">
                 {site.email}
               </a>
             </p>
           </section>
         </div>
 
-        <p className="mt-12 text-sm text-stone-600 dark:text-stone-400">
-          <Link href="/legal/terms" className="text-amber-800 hover:underline dark:text-amber-300">
+        <p className="mt-12 text-sm text-[var(--text-muted)]">
+          <Link href="/legal/terms" className="cut-link underline">
             Terms of Service
           </Link>
           {" · "}
-          <Link href="/legal/privacy" className="text-amber-800 hover:underline dark:text-amber-300">
+          <Link href="/legal/privacy" className="cut-link underline">
             Privacy Policy
           </Link>
           {" · "}
-          <Link href="/legal/responsible-ai" className="text-amber-800 hover:underline dark:text-amber-300">
+          <Link href="/legal/responsible-ai" className="cut-link underline">
             Responsible AI Policy
           </Link>
         </p>

@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entries = findRegionalEntriesByNormalizedKey(key);
   const content = generateDefinition({ cutSlug: cut, entries });
   if (!content) {
-    return { title: "Cut not found | cutranslator" };
+    return { title: "Cut not found | Cutranslator" };
   }
   return {
     title: content.h1,
@@ -105,13 +105,13 @@ export default async function WhatIsPage({ params }: PageProps) {
   const whatIsLinkedAnswer =
     content.primaryCanonicalIds.length === 1 && primary != null && primaryCut ? (
       <>
-        <span className="font-medium text-stone-900 dark:text-stone-50">
+        <span className="font-medium text-[var(--text-primary)]">
           {content.displayTitle}
         </span>
         {` is a regional beef-cut name for the `}
         <Link
           href={canonicalHubPath(primary)}
-          className="font-semibold text-amber-950 underline decoration-amber-600/60 underline-offset-2 hover:decoration-amber-700 dark:text-amber-100 dark:decoration-amber-400/70"
+          className="cut-entity-link"
         >
           {canonicalEntityTerm(primary)}
         </Link>
@@ -139,7 +139,7 @@ export default async function WhatIsPage({ params }: PageProps) {
             { name: content.displayTitle },
           ]}
         />
-        <h1 className="text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50 sm:text-4xl">
+        <h1 className="font-heading text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
           {content.h1}
         </h1>
         <div className="mt-6">
@@ -153,24 +153,24 @@ export default async function WhatIsPage({ params }: PageProps) {
         <PAASection items={paaItems} />
 
         <section className="mt-6" aria-label="Explanation">
-          <p className="text-lg leading-relaxed text-stone-700 dark:text-stone-300">
+          <p className="text-lg leading-relaxed text-[var(--text-muted)]">
             {content.quickAnswer[0]}
           </p>
-          <p className="mt-2 text-base leading-relaxed text-stone-600 dark:text-stone-400">
+          <p className="mt-2 text-base leading-relaxed text-[var(--text-muted)]">
             {content.quickAnswer[1]}
           </p>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-stone-200 bg-stone-50/80 p-6 dark:border-stone-600 dark:bg-stone-900/40">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+        <section className="cut-glass-form mt-10 p-6">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
             Global cut guide
           </h2>
-          <ul className="mt-3 space-y-2 text-stone-800 dark:text-stone-200">
+          <ul className="mt-3 space-y-2 text-[var(--text-muted)]">
             {content.primaryCanonicalIds.map((id) => (
               <li key={id}>
                 <Link
                   href={canonicalHubPath(id)}
-                  className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                  className="cut-link font-medium underline"
                 >
                   {id.replace(/_/g, " ")}
                 </Link>
@@ -180,21 +180,21 @@ export default async function WhatIsPage({ params }: PageProps) {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <h2 className="text-xl font-semibold text-[var(--text-primary)]">
             Where it comes from
           </h2>
-          <p className="mt-3 leading-relaxed text-stone-700 dark:text-stone-300">
+          <p className="mt-3 leading-relaxed text-[var(--text-muted)]">
             {content.originHtml}
           </p>
           {relatedForContext.length > 0 && (
-            <p className="mt-4 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
+            <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
               In menus and butcher shops it is often discussed next to{" "}
               {relatedForContext.map((r, i) => (
                 <span key={r.href}>
                   {i > 0 && (i === relatedForContext.length - 1 ? ", and " : ", ")}
                   <Link
                     href={r.href}
-                    className="font-medium text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                    className="cut-link font-medium underline"
                   >
                     {r.label}
                   </Link>
@@ -206,13 +206,13 @@ export default async function WhatIsPage({ params }: PageProps) {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <h2 className="text-xl font-semibold text-[var(--text-primary)]">
             What it&apos;s called in other countries
           </h2>
-          <ul className="mt-4 space-y-3 text-stone-700 dark:text-stone-300">
+          <ul className="mt-4 space-y-3 text-[var(--text-muted)]">
             {content.namesByCountry.map((row) => (
               <li key={row.region}>
-                <span className="font-medium text-stone-900 dark:text-stone-100">
+                <span className="font-medium text-[var(--text-primary)]">
                   {row.label}
                 </span>
                 : {row.names}
@@ -222,17 +222,17 @@ export default async function WhatIsPage({ params }: PageProps) {
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+          <h2 className="text-xl font-semibold text-[var(--text-primary)]">
             Cooking methods
           </h2>
-          <p className="mt-3 leading-relaxed text-stone-700 dark:text-stone-300">
+          <p className="mt-3 leading-relaxed text-[var(--text-muted)]">
             {content.cookingMethods}
           </p>
         </section>
 
         {translationLinks.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               Translations across countries
             </h2>
             <ul className="mt-4 max-h-56 space-y-1.5 overflow-y-auto text-sm">
@@ -240,7 +240,7 @@ export default async function WhatIsPage({ params }: PageProps) {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-amber-800 underline-offset-2 hover:underline dark:text-amber-300"
+                    className="cut-link underline"
                   >
                     {l.label}
                   </Link>
@@ -248,7 +248,7 @@ export default async function WhatIsPage({ params }: PageProps) {
               ))}
             </ul>
             {translationLinks.length > 40 && (
-              <p className="mt-2 text-xs text-stone-500">
+              <p className="mt-2 text-xs text-[var(--text-muted)]">
                 Showing 40 of {translationLinks.length} routes — more in the sitemap.
               </p>
             )}
@@ -257,7 +257,7 @@ export default async function WhatIsPage({ params }: PageProps) {
 
         {comparisonLinks.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               Popular comparisons
             </h2>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -265,7 +265,7 @@ export default async function WhatIsPage({ params }: PageProps) {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-medium text-stone-800 transition hover:border-amber-300 hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-100 dark:hover:border-amber-700 dark:hover:bg-stone-700"
+                  className="cut-pill-link"
                 >
                   {l.label}
                 </Link>
@@ -276,7 +276,7 @@ export default async function WhatIsPage({ params }: PageProps) {
 
         {content.relatedCuts.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)]">
               Related cuts
             </h2>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -284,7 +284,7 @@ export default async function WhatIsPage({ params }: PageProps) {
                 <Link
                   key={r.id}
                   href={r.path}
-                  className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-medium text-stone-800 transition hover:border-amber-300 hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-100 dark:hover:border-amber-700 dark:hover:bg-stone-700"
+                  className="cut-pill-link"
                 >
                   {r.label}
                 </Link>
@@ -293,8 +293,8 @@ export default async function WhatIsPage({ params }: PageProps) {
           </section>
         )}
 
-        <section className="mt-10 border-t border-stone-200 pt-8 text-sm dark:border-stone-700">
-          <Link href="/" className="text-amber-800 hover:underline dark:text-amber-300">
+        <section className="mt-10 border-t border-[var(--border-subtle)] pt-8 text-sm text-[var(--text-muted)]">
+          <Link href="/" className="cut-link underline">
             Regional translations
           </Link>
           {content.primaryCanonicalIds.length >= 2 && (
@@ -307,7 +307,7 @@ export default async function WhatIsPage({ params }: PageProps) {
                     content.primaryCanonicalIds[1],
                   ),
                 )}
-                className="text-amber-800 hover:underline dark:text-amber-300"
+                className="cut-link underline"
               >
                 Compare mapped cuts
               </Link>
@@ -323,7 +323,7 @@ export default async function WhatIsPage({ params }: PageProps) {
                     content.relatedCuts[0].id,
                   ),
                 )}
-                className="text-amber-800 hover:underline dark:text-amber-300"
+                className="cut-link underline"
               >
                 vs {content.relatedCuts[0].label}
               </Link>

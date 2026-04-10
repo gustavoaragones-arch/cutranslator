@@ -6,20 +6,17 @@ export function BreadcrumbBar({ items }: { items: BreadcrumbNavItem[] }) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="mb-10 text-sm text-stone-500 dark:text-stone-400"
+      className="mb-10 text-sm text-[var(--text-muted)]"
     >
       {items.map((item, i) => (
         <span key={`${item.name}-${i}`}>
-          {i > 0 && <span className="mx-2">/</span>}
+          {i > 0 && <span className="mx-2 text-[var(--text-muted)]">/</span>}
           {item.href ? (
-            <Link
-              href={item.href}
-              className="font-medium text-amber-700 hover:underline"
-            >
+            <Link href={item.href} className="cut-muted-link font-medium underline">
               {item.name}
             </Link>
           ) : (
-            <span className="text-stone-600 dark:text-stone-300">{item.name}</span>
+            <span className="text-[var(--text-primary)]">{item.name}</span>
           )}
         </span>
       ))}

@@ -117,14 +117,11 @@ export function AdSlot({ position, className = "" }: Props) {
     return null;
   }
 
-  const shellClass = `adsense-slot mx-auto w-full max-w-3xl overflow-hidden rounded-xl border border-stone-200/90 bg-stone-50/70 dark:border-stone-700 dark:bg-stone-900/35 ${SLOT_MIN_HEIGHT[position]} my-8 ${className}`;
+  const shellClass = `adsense-slot cut-ad-slot-shell mx-auto w-full max-w-3xl overflow-hidden rounded-xl ${SLOT_MIN_HEIGHT[position]} my-8 ${className}`;
 
   if (!configured) {
     return (
-      <div
-        className={`${shellClass} border-dashed border-stone-300 dark:border-stone-600`}
-        aria-hidden
-      />
+      <div className={`${shellClass} cut-ad-slot-shell--placeholder`} aria-hidden />
     );
   }
 
