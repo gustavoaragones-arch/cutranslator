@@ -5,12 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "pages:build": "opennextjs-cloudflare build",
     "start": "next start",
+    "preview:cf": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "lint": "eslint",
     "test": "vitest run",
     "validate:dataset": "tsx scripts/validateDataset.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.19.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -25,6 +30,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.19.3",
     "typescript": "^5",
-    "vitest": "^4.1.2"
+    "vitest": "^4.1.2",
+    "wrangler": "^4.81.1"
   }
 }
