@@ -176,7 +176,7 @@ export function getFooterCuratedLinks(): {
   translations: InternalLink[];
 } {
   const ids = listCanonicalIds();
-  const cuts = ids.slice(0, 8).map((id) => ({
+  const cuts = ids.slice(0, 12).map((id) => ({
     href: normalizeHref(canonicalHubHref(id)),
     label: formatCanonicalTitle(id),
   }));

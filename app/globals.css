@@ -46,20 +46,22 @@ h4,
 }
 
 .cut-btn-cta {
-  background: linear-gradient(135deg, var(--meat-main), var(--amber));
-  color: var(--text-primary);
+  background: var(--hero-accent);
+  color: #FAF7F2;
   font-weight: 600;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(184, 58, 46, 0.4);
+  box-shadow: 0 6px 20px rgba(220, 107, 47, 0.4);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
+    background 0.2s ease,
     opacity 0.2s ease;
 }
 
 .cut-btn-cta:hover:not(:disabled) {
+  background: var(--accent-primary-hover);
   transform: scale(1.02);
-  box-shadow: 0 8px 28px rgba(184, 58, 46, 0.55);
+  box-shadow: 0 8px 28px rgba(196, 88, 31, 0.55);
 }
 
 .cut-btn-cta:disabled {
@@ -101,12 +103,19 @@ h4,
 
 .cut-site-header {
   background: var(--header-bg);
-  border-bottom: 1px solid var(--border-subtle);
+  color: var(--header-text);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.08);
+}
+
+.cut-hero {
+  background: var(--hero-bg);
+  color: var(--hero-text);
 }
 
 .cut-footer {
-  background: rgba(0, 0, 0, 0.25);
-  border-top: 1px solid var(--border-subtle);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid rgba(250, 247, 242, 0.08);
 }
 
 .cut-ai-block {

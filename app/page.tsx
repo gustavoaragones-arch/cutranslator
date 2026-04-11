@@ -55,7 +55,7 @@ const homeBaseFaq = [
   {
     question: "Which canonical beef cuts does Cutranslator define?",
     answer:
-      "Sirloin cap, ribeye, striploin, beef tenderloin, sirloin flap, flank steak, and skirt steak—each is a stable entity with regional synonyms.",
+      "Cutranslator defines 26 canonical cuts spanning all eight USDA primals, including ribeye, striploin, tenderloin, brisket, short ribs, T-bone, top sirloin, tri-tip, and more — each a stable entity with regional synonyms.",
   },
   {
     question: "How do translation URLs work?",
@@ -87,21 +87,27 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeGraph) }}
       />
-      <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-20 sm:px-6 lg:px-8">
-        <header className="text-center sm:text-left">
-          <h1 className="cut-heading-gradient mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-            Beef Cut Translator
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
-            Instantly translate beef cuts between countries — no guessing, no confusion.
+
+      {/* Hero — dark charcoal */}
+      <section className="cut-hero">
+        <div className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pb-14 pt-16 sm:px-6 lg:px-8">
+          <header className="text-center sm:text-left">
+            <h1 className="cut-heading-gradient mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+              Beef Cut Translator
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--hero-subtitle)]">
+              Instantly translate beef cuts between countries — no guessing, no confusion.
+            </p>
+          </header>
+          <TranslateForm />
+          <p className="-mt-6 text-center text-sm text-[var(--hero-subtitle)]">
+            Based on a structured dataset of global beef cuts
           </p>
-        </header>
+        </div>
+      </section>
 
-        <TranslateForm />
-        <p className="-mt-7 text-center text-sm text-[var(--text-muted)]">
-          Based on a structured dataset of global beef cuts
-        </p>
-
+      {/* Body — warm paper */}
+      <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-12 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <AIAnswerBlock variants={homeAIAnswer.variants}>
             {homeAIAnswer.primary}

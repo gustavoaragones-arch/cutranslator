@@ -612,7 +612,7 @@ export function listCanonicalIds(): CanonicalId[] {
 /** Home page extractable summary (AEO). */
 export const homeAIAnswer: AIAnswerBundle = {
   primary:
-    "Cutranslator maps regional beef names (Brazil picanha, French entrecôte, UK sirloin, Mexico arrachera, and others) to seven canonical cuts—sirloin cap, ribeye, striploin, beef tenderloin, sirloin flap, flank steak, and skirt steak—for consistent cross-country lookup.",
+    "Cutranslator maps regional beef names (Brazil picanha, French entrecôte, UK sirloin, Mexico arrachera, and others) to 26 canonical cuts—spanning all eight USDA primals, from ribeye and tenderloin to brisket, short ribs, and tri-tip—for consistent cross-country lookup.",
   variants: [
     "This ontology treats each canonical cut as a stable entity; retail labels point to those entities.",
     "Use translation URLs and hub pages to see how each country names the same muscle.",

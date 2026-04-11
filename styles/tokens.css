@@ -4,12 +4,33 @@
  */
 :root {
   /* Backgrounds */
-  --bg-primary: #f0d98e;
-  --header-bg: #e8c170;
-  --bg-card: rgba(255, 255, 255, 0.5);
+  --bg-primary: #FAF7F2;         /* Warm off-white, like butcher paper */
+  --bg-secondary: #F3EDE4;       /* Slightly darker warm cream */
+  --bg-card: #FFFFFF;            /* Clean white for cards/results */
   --bg-glass: rgba(255, 255, 255, 0.65);
 
-  /* Core palette */
+  /* Header / Navigation */
+  --header-bg: #1C1917;          /* Near-black warm charcoal (stone-900) */
+  --header-text: #FAF7F2;        /* Warm white on dark header */
+  --header-accent: #DC6B2F;      /* Copper/burnt orange for logo or active states */
+
+  /* Hero section */
+  --hero-bg: #292524;            /* Dark warm charcoal (stone-800) */
+  --hero-text: #FAF7F2;          /* Warm white */
+  --hero-accent: #DC6B2F;        /* Copper accent for CTA button */
+  --hero-subtitle: #A8A29E;      /* Muted warm gray for subtitle text */
+
+  /* Text */
+  --text-primary: #1C1917;       /* Near-black for body text */
+  --text-secondary: #57534E;     /* Warm gray for secondary text */
+  --text-muted: #A8A29E;         /* Light warm gray */
+
+  /* Accents */
+  --accent-primary: #DC6B2F;     /* Copper/burnt orange — the brand color */
+  --accent-primary-hover: #C4581F;
+  --accent-secondary: #92400E;   /* Deep amber for subtle accents */
+
+  /* Core palette (used by badge, result, and semantic components) */
   --wine-dark: #3b0a1e;
   --wine-deep: #5c1a2a;
   --burgundy: #7a1f3d;
@@ -27,16 +48,29 @@
   --bone: #e8c170;
   --highlight: #7a1f3d;
 
-  /* Text (dark on light page) */
-  --text-primary: #1a1210;
-  --text-muted: #5c4a42;
-
   /* Borders */
-  --border-subtle: rgba(26, 18, 16, 0.12);
+  --border-light: #E7E0D6;       /* Warm light border */
+  --border-dark: #D6CFC4;        /* Slightly darker warm border */
+  --border-subtle: rgba(28, 25, 23, 0.12);
+
+  /* Footer */
+  --footer-bg: #1C1917;
+  --footer-text: #A8A29E;
 
   /* Semantic */
   --danger-border: rgba(155, 35, 53, 0.45);
   --danger-bg: rgba(155, 35, 53, 0.12);
   --warning-border: rgba(217, 160, 74, 0.35);
   --warning-bg: rgba(217, 160, 74, 0.08);
+}
+
+.dark {
+  --bg-primary: #1C1917;
+  --bg-secondary: #292524;
+  --bg-card: #292524;
+  --text-primary: #FAF7F2;
+  --text-secondary: #A8A29E;
+  --border-light: #44403C;
+  --border-dark: #57534E;
+  --border-subtle: rgba(250, 247, 242, 0.12);
 }

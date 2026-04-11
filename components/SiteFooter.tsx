@@ -19,7 +19,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         <nav
           aria-label="Site information"
-          className="flex flex-wrap justify-center gap-x-4 gap-y-2 border-b border-[var(--border-subtle)] pb-8 text-sm"
+          className="flex flex-wrap justify-center gap-x-4 gap-y-2 border-b border-[rgba(250,247,242,0.1)] pb-8 text-sm"
         >
           {eeatLinks.map((l) => (
             <Link key={l.href} href={l.href} className="cut-muted-link underline">
