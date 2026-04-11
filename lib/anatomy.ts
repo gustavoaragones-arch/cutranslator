@@ -28,6 +28,27 @@ export const CANONICAL_ID_TO_SVG_BASENAME: Readonly<
   sirloin_flap: "sirloin_flap",
   flank: "flank",
   skirt: "skirt",
+  // Phase 1 additions (SVG paths TBD — visual sprint):
+  brisket: "brisket",
+  hanger: "hanger",
+  short_ribs: "short_ribs",
+  top_sirloin: "top_sirloin",
+  tri_tip: "tri_tip",
+  // Phase 3 additions (SVG paths TBD — visual sprint):
+  inside_round: "inside_round",
+  outside_round: "outside_round",
+  eye_of_round: "eye_of_round",
+  sirloin_tip: "sirloin_tip",
+  oxtail: "oxtail",
+  chuck_roll: "chuck_roll",
+  chuck_blade: "chuck_blade",
+  shoulder_clod: "shoulder_clod",
+  prime_rib: "prime_rib",
+  back_ribs: "back_ribs",
+  t_bone: "t_bone",
+  hind_shank: "hind_shank",
+  fore_shank: "fore_shank",
+  short_plate: "short_plate",
 };
 
 export function datasetPrimalToSvgSlug(datasetPrimal: string): string {

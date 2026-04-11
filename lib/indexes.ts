@@ -1,6 +1,7 @@
+import { regionalCuts } from "@/data/regionalCuts";
 import { regionalNames } from "@/data/regionalNames";
 import { REGIONS } from "@/lib/regions";
-import type { CanonicalId, RegionSlug, RegionalName } from "@/lib/types";
+import type { CanonicalId, RegionSlug, RegionalCut, RegionalName } from "@/lib/types";
 import { normalizeForLookup } from "@/utils/normalize";
 
 function expandMapsTo(mapsTo: RegionalName["maps_to"]): CanonicalId[] {
@@ -46,3 +47,35 @@ function buildCanonicalToRegionsMap(): ReadonlyMap<
 
 /** All region slugs in stable product order (for cross-region scans). */
 export const regionSlugsInOrder: readonly RegionSlug[] = REGIONS.map((r) => r.slug);
+
+/** `${region}-${normalizeForLookup(surface)}` → RegionalCut entity. */
+export const regionalCutIndex = new Map<string, RegionalCut>();
+
+for (const cut of regionalCuts) {
+  const primaryKey = `${cut.region}-${normalizeForLookup(cut.name)}`;
+  regionalCutIndex.set(primaryKey, cut);
+  if (cut.synonyms) {
+    for (const syn of cut.synonyms) {
+      const synKey = `${cut.region}-${normalizeForLookup(syn)}`;
+      if (!regionalCutIndex.has(synKey)) {
+        regionalCutIndex.set(synKey, cut);
+      }
+    }
+  }
+}
+
+/**
+ * Look up a cut by region + normalized name. Checks RegionalCut index first
+ * (richer data), falls back to RegionalName index.
+ */
+export function lookupCut(
+  region: string,
+  normalizedName: string,
+): { type: "regional_cut"; data: RegionalCut } | { type: "regional_name"; data: RegionalName } | null {
+  const key = `${region}-${normalizedName}`;
+  const regionalCut = regionalCutIndex.get(key);
+  if (regionalCut) return { type: "regional_cut", data: regionalCut };
+  const regionalName = lookupIndex.get(key);
+  if (regionalName) return { type: "regional_name", data: regionalName };
+  return null;
+}

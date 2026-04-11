@@ -11,6 +11,32 @@ export const CANONICAL_ENTITY_TERM: Record<CanonicalId, string> = {
   sirloin_flap: "sirloin flap",
   flank: "flank steak",
   skirt: "skirt steak",
+  // Phase 1 additions:
+  brisket: "brisket",
+  hanger: "hanger steak",
+  short_ribs: "short ribs",
+  top_sirloin: "top sirloin",
+  tri_tip: "tri-tip",
+  // Phase 3 — Round:
+  inside_round: "top round (inside round)",
+  outside_round: "bottom round (outside round)",
+  eye_of_round: "eye of round",
+  sirloin_tip: "sirloin tip (knuckle)",
+  oxtail: "oxtail",
+  // Phase 3 — Chuck:
+  chuck_roll: "chuck roll",
+  chuck_blade: "chuck roast (blade)",
+  shoulder_clod: "shoulder clod",
+  // Phase 3 — Rib:
+  prime_rib: "prime rib",
+  back_ribs: "beef back ribs",
+  // Phase 3 — Loin:
+  t_bone: "T-bone steak",
+  // Phase 3 — Shank:
+  hind_shank: "hind shank",
+  fore_shank: "foreshank",
+  // Phase 3 — Plate:
+  short_plate: "short plate",
 };
 
 export function canonicalEntityTerm(id: CanonicalId): string {
@@ -23,6 +49,7 @@ export const REGION_ENTITY: Record<
   { id: RegionSlug; formalName: string; shortName: string }
 > = {
   usa: { id: "usa", formalName: "United States", shortName: "USA" },
+  canada: { id: "canada", formalName: "Canada", shortName: "Canada" },
   brazil: { id: "brazil", formalName: "Brazil", shortName: "Brazil" },
   france: { id: "france", formalName: "France", shortName: "France" },
   argentina: {

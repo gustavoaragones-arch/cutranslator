@@ -14,6 +14,11 @@ import { slugifyCut } from "@/utils/normalize";
 import { CowDiagram } from "@/components/CowDiagram";
 import { CutCard } from "@/components/CutCard";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
+import {
+  MatchTypeBadge,
+  inferMatchType,
+  matchTypeBlurb,
+} from "@/components/MatchTypeBadge";
 
 type Props = {
   result: ResolveResult;
@@ -90,15 +95,25 @@ export function CutResult({
         <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
           Best Match
         </p>
-        <p className="mt-1 text-sm text-[var(--text-muted)]">
-          This is the closest equivalent cut in the selected country.
-        </p>
         <div className="mt-2 flex flex-wrap items-center gap-3">
           <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {p.names[0]}
           </h2>
+          <MatchTypeBadge
+            matchType={inferMatchType(p.match_type, p.confidence)}
+            size="sm"
+          />
           <ConfidenceBadge confidence={p.confidence} />
         </div>
+        <p className="mt-2 text-sm text-[var(--text-muted)]">
+          {matchTypeBlurb({
+            matchType: inferMatchType(p.match_type, p.confidence),
+            inputName: result.inputNormalized,
+            primaryLabel: p.names[0],
+            targetRegionLabel: to,
+            note: p.note,
+          })}
+        </p>
         <p className="mt-3 text-sm text-[var(--text-muted)]">
           <Link href={whatIsPath(translationCutSlug)} className="cut-link font-medium underline">
             What is this cut?

@@ -1,5 +1,6 @@
 export type RegionSlug =
   | "usa"
+  | "canada"
   | "brazil"
   | "france"
   | "argentina"
@@ -18,7 +19,33 @@ export type CanonicalId =
   | "sirloin_cap"
   | "sirloin_flap"
   | "flank"
-  | "skirt";
+  | "skirt"
+  // Phase 1 additions:
+  | "brisket"
+  | "hanger"
+  | "short_ribs"
+  | "top_sirloin"
+  | "tri_tip"
+  // Phase 3 — Round:
+  | "inside_round"
+  | "outside_round"
+  | "eye_of_round"
+  | "sirloin_tip"
+  | "oxtail"
+  // Phase 3 — Chuck:
+  | "chuck_roll"
+  | "chuck_blade"
+  | "shoulder_clod"
+  // Phase 3 — Rib:
+  | "prime_rib"
+  | "back_ribs"
+  // Phase 3 — Loin:
+  | "t_bone"
+  // Phase 3 — Shank:
+  | "hind_shank"
+  | "fore_shank"
+  // Phase 3 — Plate:
+  | "short_plate";
 
 export type CanonicalCut = {
   id: CanonicalId;
@@ -26,6 +53,43 @@ export type CanonicalCut = {
   location: string;
   description: string;
   aliases?: readonly string[];
+};
+
+/**
+ * How closely a regional cut corresponds to a canonical cut.
+ * - exact:       Anatomically identical or near-identical
+ * - close:       Same muscle/region, minor differences in trim or boundaries
+ * - approximate: Similar area, but meaningfully different product
+ * - composite:   Regional cut spans parts of two or more canonical cuts
+ * - cultural:    Name exists but butchering tradition yields a different product
+ * - none:        No meaningful equivalent
+ */
+export type MatchType = "exact" | "close" | "approximate" | "composite" | "cultural" | "none";
+
+/**
+ * A typed connection between a regional cut and a canonical cut.
+ * Carries the match quality and confidence of the equivalence.
+ */
+export type CanonicalEdge = {
+  readonly canonical_id: CanonicalId;
+  readonly match_type: MatchType;
+  readonly confidence: number;
+  readonly note?: string;
+};
+
+/**
+ * A first-class regional cut entity (Tier 3).
+ * These are culturally significant cuts that don't map cleanly to a single canonical cut.
+ * They have their own identity, their own pages, and typed edges to canonical cuts.
+ */
+export type RegionalCut = {
+  readonly id: string;                        // e.g. "vacio_ar", "picanha_br"
+  readonly name: string;                      // Display name: "Vacío"
+  readonly region: RegionSlug;
+  readonly maps_to: readonly CanonicalEdge[]; // Typed connections to canonical cuts
+  readonly synonyms?: readonly string[];
+  readonly notes?: string;
+  readonly description?: string;              // For hub page content
 };
 
 /**
@@ -38,7 +102,8 @@ export type RegionalName = {
   region: RegionSlug;
   maps_to: CanonicalId | readonly CanonicalId[];
   confidence: number;
-  type?: "ambiguous";
+  match_type?: MatchType;   // defaults to "exact" if absent
+  type?: "ambiguous";       // kept for backward compat; prefer match_type going forward
   synonyms?: readonly string[];
   notes?: string;
 };
@@ -59,6 +124,7 @@ export type ResolvedTarget = {
   /** Consumer-facing names in the target region */
   names: string[];
   confidence: number;
+  match_type?: MatchType;
   note?: string;
 };
 

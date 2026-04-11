@@ -1,5 +1,6 @@
 export const regions = [
   { id: "usa" as const, label: "United States" },
+  { id: "canada" as const, label: "Canada" },
   { id: "brazil" as const, label: "Brazil" },
   { id: "france" as const, label: "France" },
   { id: "argentina" as const, label: "Argentina" },

@@ -27,6 +27,7 @@ export type CowDiagramRegionId =
   | "tenderloin"
   | "sirloin"
   | "sirloin_cap"
+  | "sirloin_flap"
   | "round"
   | "flank"
   | "plate"
@@ -89,6 +90,14 @@ export const COW_DIAGRAM_CUTS: readonly CowDiagramCut[] = [
     name: "Sirloin Cap",
     color: "#cc6e3d",
     path: "M617.69,210.27l3.84,27.16,7.72-2.84-3.78-27.62s-3.03,1.27-7.78,3.29Z",
+  },
+  {
+    // TODO: sirloin_flap SVG path is a geometric approximation; needs refinement from Illustrator source.
+    // Anatomically sits below the sirloin body, between the bottom sirloin and the flank (approx x: 600–628, y: 237–252).
+    id: "sirloin_flap",
+    name: "Sirloin Flap",
+    color: "#b87333",
+    path: "M600.4,238.5l27.6-4.2 2.5,10.2-27.2,4.1-2.9-10.1Z",
   },
   {
     id: "round",

@@ -32,8 +32,44 @@ import {
 import { resolveCut } from "@/lib/resolver";
 import { buildContentGraph, type FaqPair } from "@/lib/structured-data";
 import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
-import type { CanonicalId } from "@/lib/types";
+import type { CanonicalId, MatchType } from "@/lib/types";
 import { cutSlugToNormalizedKey } from "@/utils/normalize";
+import { inferMatchType } from "@/components/MatchTypeBadge";
+
+function matchTypeMetaQualifier(matchType: MatchType): string {
+  switch (matchType) {
+    case "exact":
+    case "close":
+      return "with high-confidence beef cut translations";
+    case "approximate":
+      return "with approximate beef cut equivalences";
+    case "composite":
+      return "spanning multiple beef cut equivalences";
+    case "cultural":
+    case "none":
+      return "with cultural beef cut equivalences";
+  }
+}
+
+function matchTypePageNote(
+  matchType: MatchType,
+  inputName: string,
+  primaryLabel: string,
+): string | null {
+  switch (matchType) {
+    case "exact":
+    case "close":
+      return null;
+    case "approximate":
+      return `Note: "${inputName}" is an approximate match for ${primaryLabel} — the cuts are from similar regions but differ in trim or butchering boundaries.`;
+    case "composite":
+      return `Note: "${inputName}" spans multiple canonical cuts — no single exact equivalent exists. ${primaryLabel} is the closest primary match.`;
+    case "cultural":
+      return `Note: "${inputName}" has no direct equivalent in this country. ${primaryLabel} is the closest available match, but the butchering tradition differs.`;
+    case "none":
+      return `Note: No direct equivalent for "${inputName}" was found in the target country.`;
+  }
+}
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -62,9 +98,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
   const cutDisplay = displayCutNameForSlug(cut, parsed.from);
   const h1 = seoH1(cutDisplay, parsed.to);
+  const metaResult = resolveCut(cutDisplay, parsed.from, parsed.to);
+  const effectiveMatchType = inferMatchType(
+    metaResult.primary?.match_type,
+    metaResult.primary?.confidence ?? 0,
+  );
+  const qualifier = matchTypeMetaQualifier(effectiveMatchType);
   return {
     title: h1,
-    description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} with confidence-ranked beef cut translations.`,
+    description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} ${qualifier}.`,
     openGraph: {
       title: h1,
       description: `Canonical beef cut mapping: ${cutDisplay} → ${regionLabel(parsed.to)}.`,
@@ -238,6 +280,22 @@ export default async function PairCutPage({ params }: PageProps) {
         <AdSlot position="mid_content" />
 
         <section className="mt-6" aria-label="Explanation">
+          {result.primary != null && (() => {
+            const effectiveMatchType = inferMatchType(
+              result.primary.match_type,
+              result.primary.confidence,
+            );
+            const pageNote = matchTypePageNote(
+              effectiveMatchType,
+              cutDisplay,
+              result.primary.names[0],
+            );
+            return pageNote ? (
+              <p className="mb-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-glass)] px-4 py-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                {pageNote}
+              </p>
+            ) : null;
+          })()}
           <p className="text-base leading-relaxed text-[var(--text-muted)]">
             {result.primary != null
               ? result.explanation.detailed

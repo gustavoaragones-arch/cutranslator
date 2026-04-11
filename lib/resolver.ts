@@ -1,8 +1,10 @@
 import { relatedByCanonical } from "@/data/clusters";
 import { getCanonicalById } from "@/lib/canonical";
-import { lookupIndex } from "@/lib/indexes";
+import { lookupCut } from "@/lib/indexes";
 import {
+  CanonicalHit,
   canonicalHitsFromMappings,
+  canonicalHitsFromRegionalCut,
   expandMapsTo,
   labelsForCanonical,
   mappingsHaveRegionalConflict,
@@ -26,7 +28,7 @@ const RELATED_LIMIT = 5;
 const LOW_CONF_THRESHOLD = 0.75;
 
 function sortTargets(
-  hits: Map<CanonicalId, { confidence: number; note?: string }>,
+  hits: Map<CanonicalId, CanonicalHit>,
   targetRegion: RegionSlug,
 ): ResolvedTarget[] {
   const rows: ResolvedTarget[] = [];
@@ -35,6 +37,7 @@ function sortTargets(
       canonicalId,
       names: labelsForCanonical(canonicalId, targetRegion),
       confidence: meta.confidence,
+      match_type: meta.match_type,
       note: meta.note,
     });
   }
@@ -142,16 +145,26 @@ export function resolveCut(
   targetRegion: RegionSlug,
 ): ResolveResult {
   const inputNormalized = normalizeForLookup(inputName);
-  const key = `${inputRegion}-${inputNormalized}`;
-  const match = lookupIndex.get(key);
-  const matches = match ? [match] : [];
-  const hits = canonicalHitsFromMappings(matches);
+  const result = lookupCut(inputRegion, inputNormalized);
+
+  let hits: Map<CanonicalId, CanonicalHit>;
+  let matchesForAmbiguity: RegionalName[] = [];
+
+  if (result?.type === "regional_cut") {
+    hits = canonicalHitsFromRegionalCut(result.data);
+  } else if (result?.type === "regional_name") {
+    matchesForAmbiguity = [result.data];
+    hits = canonicalHitsFromMappings([result.data]);
+  } else {
+    hits = new Map();
+  }
+
   const sorted = sortTargets(hits, targetRegion);
   const primary = sorted[0] ?? null;
   const alternatives = sorted.slice(1);
   const canonical = primary ? getCanonicalById(primary.canonicalId) ?? null : null;
 
-  const ambiguity = buildAmbiguity({ matches, primary });
+  const ambiguity = buildAmbiguity({ matches: matchesForAmbiguity, primary });
   const explanation = buildExplanation({
     inputDisplay: inputName.trim() || inputNormalized,
     inputRegion,

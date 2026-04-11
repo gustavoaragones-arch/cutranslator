@@ -1,6 +1,6 @@
 import { canonicalLabels, regionalNames } from "@/data/regionalNames";
 import { lookupIndex, regionSlugsInOrder } from "@/lib/indexes";
-import type { CanonicalId, RegionSlug, RegionalName } from "@/lib/types";
+import type { CanonicalId, MatchType, RegionSlug, RegionalCut, RegionalName } from "@/lib/types";
 
 export function findRegionalMappings(
   inputRegion: RegionSlug,
@@ -40,13 +40,15 @@ export function mappingsHaveRegionalConflict(matches: RegionalName[]): boolean {
   return sigs.size > 1;
 }
 
+export type CanonicalHit = { confidence: number; match_type?: MatchType; note?: string };
+
 /**
  * Flatten regional rows into per-canonical hits with confidence.
  */
 export function canonicalHitsFromMappings(
   matches: RegionalName[],
-): Map<CanonicalId, { confidence: number; note?: string }> {
-  const map = new Map<CanonicalId, { confidence: number; note?: string }>();
+): Map<CanonicalId, CanonicalHit> {
+  const map = new Map<CanonicalId, CanonicalHit>();
   for (const m of matches) {
     const ids = expandMapsTo(m.maps_to);
     const perIdConfidence = ids.length > 1 ? m.confidence * 0.92 : m.confidence;
@@ -54,7 +56,27 @@ export function canonicalHitsFromMappings(
       const prev = map.get(id);
       const nextConf = Math.max(prev?.confidence ?? 0, perIdConfidence);
       const note = m.notes ?? prev?.note;
-      map.set(id, { confidence: nextConf, note });
+      map.set(id, { confidence: nextConf, match_type: m.match_type, note });
+    }
+  }
+  return map;
+}
+
+/**
+ * Flatten a RegionalCut's typed edges into per-canonical hits.
+ */
+export function canonicalHitsFromRegionalCut(
+  cut: RegionalCut,
+): Map<CanonicalId, CanonicalHit> {
+  const map = new Map<CanonicalId, CanonicalHit>();
+  for (const edge of cut.maps_to) {
+    const prev = map.get(edge.canonical_id);
+    if (!prev || edge.confidence > prev.confidence) {
+      map.set(edge.canonical_id, {
+        confidence: edge.confidence,
+        match_type: edge.match_type,
+        note: edge.note,
+      });
     }
   }
   return map;
