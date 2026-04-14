@@ -9,6 +9,7 @@ import {
   representativeInputName,
 } from "@/lib/mappings";
 import { canonicalEntityTerm } from "@/lib/entities";
+import { regionSlugsInOrder } from "@/lib/indexes";
 import { pairSegment } from "@/lib/pairRoute";
 import { regionH1Place, regionLabel } from "@/lib/regions";
 import type {
@@ -101,6 +102,31 @@ export function allWhatIsCutSlugs(): string[] {
     set.add(slugifyCut(m.name));
   }
   return [...set].sort();
+}
+
+/**
+ * All valid [pair]/[cut] route params derived from the regional names dataset.
+ * Each source cut is paired with every other region as the target.
+ * Used by generateStaticParams so all translation pages are pre-rendered at
+ * build time — required for fs-based SVG loading to work in the Cloudflare
+ * Worker environment.
+ */
+export function allPairCutParams(): { pair: string; cut: string }[] {
+  const seen = new Set<string>();
+  const out: { pair: string; cut: string }[] = [];
+  for (const m of regionalNames) {
+    const cut = slugifyCut(m.name);
+    for (const to of regionSlugsInOrder) {
+      if ((to as string) === m.region) continue;
+      const pair = pairSegment(m.region as RegionSlug, to);
+      const key = `${pair}/${cut}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        out.push({ pair, cut });
+      }
+    }
+  }
+  return out;
 }
 
 function allRetailNamesForCanonical(id: CanonicalId): string[] {

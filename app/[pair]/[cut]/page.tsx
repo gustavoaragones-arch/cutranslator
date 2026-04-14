@@ -8,6 +8,7 @@ import { CutResult } from "@/components/CutResult";
 import { ExploreMore } from "@/components/ExploreMore";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import {
+  allPairCutParams,
   generateAIAnswer,
   titleCaseCanonicalId,
   whatIsPath,
@@ -55,16 +56,8 @@ function matchTypeMetaQualifier(matchType: MatchType): string {
 export const revalidate = 86400;
 export const dynamicParams = true;
 
-export async function generateStaticParams() {
-  return [
-    { pair: "brazil-to-usa", cut: "picanha" },
-    { pair: "france-to-usa", cut: "entrecote" },
-    { pair: "usa-to-france", cut: "ribeye" },
-    { pair: "argentina-to-usa", cut: "vacio" },
-    { pair: "uk-to-usa", cut: "sirloin" },
-    { pair: "mexico-to-usa", cut: "arrachera" },
-    { pair: "brazil-to-france", cut: "picanha" },
-  ];
+export function generateStaticParams() {
+  return allPairCutParams();
 }
 
 type PageProps = { params: Promise<{ pair: string; cut: string }> };
