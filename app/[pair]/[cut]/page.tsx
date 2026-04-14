@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AdSlot } from "@/components/AdSlot";
-import { AIAnswerBlock } from "@/components/AIAnswerBlock";
 import { PAASection } from "@/components/PAASection";
 import { BreadcrumbBar } from "@/components/BreadcrumbBar";
 import { CutResult } from "@/components/CutResult";
 import { ExploreMore } from "@/components/ExploreMore";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import {
-  canonicalHubPath,
   generateAIAnswer,
   titleCaseCanonicalId,
   whatIsPath,
@@ -35,6 +33,8 @@ import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
 import type { CanonicalId, MatchType } from "@/lib/types";
 import { cutSlugToNormalizedKey } from "@/utils/normalize";
 import { inferMatchType } from "@/components/MatchTypeBadge";
+import { getDonenessComparison } from "@/lib/doneness";
+import { getButcherPhrase } from "@/lib/butcher";
 
 function matchTypeMetaQualifier(matchType: MatchType): string {
   switch (matchType) {
@@ -51,25 +51,6 @@ function matchTypeMetaQualifier(matchType: MatchType): string {
   }
 }
 
-function matchTypePageNote(
-  matchType: MatchType,
-  inputName: string,
-  primaryLabel: string,
-): string | null {
-  switch (matchType) {
-    case "exact":
-    case "close":
-      return null;
-    case "approximate":
-      return `Note: "${inputName}" is an approximate match for ${primaryLabel} — the cuts are from similar regions but differ in trim or butchering boundaries.`;
-    case "composite":
-      return `Note: "${inputName}" spans multiple canonical cuts — no single exact equivalent exists. ${primaryLabel} is the closest primary match.`;
-    case "cultural":
-      return `Note: "${inputName}" has no direct equivalent in this country. ${primaryLabel} is the closest available match, but the butchering tradition differs.`;
-    case "none":
-      return `Note: No direct equivalent for "${inputName}" was found in the target country.`;
-  }
-}
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -138,7 +119,6 @@ export default async function PairCutPage({ params }: PageProps) {
       : null;
 
   const aiPrimary = aiBundle?.primary ?? result.explanation.short;
-  const aiVariants = aiBundle?.variants ?? [];
 
   const faq: FaqPair[] = [
     { question: h1, answer: aiPrimary },
@@ -164,6 +144,29 @@ export default async function PairCutPage({ params }: PageProps) {
       question: `Why is there no mapping for ${cutDisplay}?`,
       answer: result.explanation.detailed,
     });
+  }
+
+  // Doneness FAQ
+  const donenessRows = getDonenessComparison(parsed.from, parsed.to);
+  const rare = donenessRows.find((l) => l.id === "rare");
+  const medRare = donenessRows.find((l) => l.id === "medium_rare");
+  const wellDone = donenessRows.find((l) => l.id === "well_done");
+  if (medRare && rare && wellDone) {
+    faq.push({
+      question: `How do you order steak doneness in ${regionLabel(parsed.to)}?`,
+      answer: `In ${regionLabel(parsed.to)}, medium rare is called "${medRare.targetLabel}". Rare is "${rare.targetLabel}" and well done is "${wellDone.targetLabel}".`,
+    });
+  }
+
+  // Butcher phrase FAQ
+  if (result.primary) {
+    const butcherEntry = getButcherPhrase(result.primary.canonicalId, parsed.to);
+    if (butcherEntry) {
+      faq.push({
+        question: `What should I ask for at a butcher in ${regionLabel(parsed.to)}?`,
+        answer: `Ask for "${butcherEntry.phrase}" when looking for ${cutDisplay} in ${regionLabel(parsed.to)}.`,
+      });
+    }
   }
 
   const paaItems =
@@ -220,37 +223,6 @@ export default async function PairCutPage({ params }: PageProps) {
     },
   ]);
 
-  const linkedAnswer = aiBundle ? (
-    <>
-      <Link
-        href={whatIsPath(cut)}
-        className="cut-entity-link"
-      >
-        {aiBundle.parts.cutDisplay}
-      </Link>
-      {` is the ${aiBundle.parts.sourceRegionLabel} retail name for the `}
-      <Link
-        href={canonicalHubPath(aiBundle.parts.canonicalId)}
-        className="cut-entity-link"
-      >
-        {aiBundle.parts.entityTerm}
-      </Link>
-      {` (${aiBundle.parts.primal} primal). In ${aiBundle.parts.targetPlace}, it is most often labeled `}
-      {aiBundle.parts.targetLabels.map((label, i) => (
-        <span key={`${label}-${i}`}>
-          {i > 0 &&
-            (i === aiBundle.parts.targetLabels.length - 1 ? " or " : ", ")}
-          <span className="font-medium text-[var(--text-primary)]">
-            {label}
-          </span>
-        </span>
-      ))}
-      .
-    </>
-  ) : (
-    aiPrimary
-  );
-
   return (
     <>
       <script
@@ -273,59 +245,9 @@ export default async function PairCutPage({ params }: PageProps) {
           {h1}
         </h1>
 
-        <div className="mt-6">
-          <AIAnswerBlock variants={aiVariants}>{linkedAnswer}</AIAnswerBlock>
-        </div>
-
         <AdSlot position="mid_content" />
 
-        <section className="mt-6" aria-label="Explanation">
-          {result.primary != null && (() => {
-            const effectiveMatchType = inferMatchType(
-              result.primary.match_type,
-              result.primary.confidence,
-            );
-            const pageNote = matchTypePageNote(
-              effectiveMatchType,
-              cutDisplay,
-              result.primary.names[0],
-            );
-            return pageNote ? (
-              <p className="mb-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-glass)] px-4 py-2 text-sm leading-relaxed text-[var(--text-muted)]">
-                {pageNote}
-              </p>
-            ) : null;
-          })()}
-          <p className="text-base leading-relaxed text-[var(--text-muted)]">
-            {result.primary != null
-              ? result.explanation.detailed
-              : result.explanation.short}
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
-            Learn more in the{" "}
-            <Link
-              href={whatIsPath(cut)}
-              className="cut-link font-medium underline"
-            >
-              glossary: What is {cutDisplay}?
-            </Link>
-            {result.primary && (
-              <>
-                {" "}
-                or the{" "}
-                <Link
-                  href={canonicalHubPath(result.primary.canonicalId)}
-                  className="cut-link font-medium underline"
-                >
-                  global hub for {titleCaseCanonicalId(result.primary.canonicalId)}
-                </Link>
-                .
-              </>
-            )}
-          </p>
-        </section>
-
-        <div className="mt-10">
+        <div className="mt-6">
           <CutResult
             result={result}
             sourceRegion={parsed.from}

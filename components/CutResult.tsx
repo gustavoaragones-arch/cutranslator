@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { CanonicalId, ResolveResult, RegionSlug } from "@/lib/types";
+import type { CanonicalId, MatchType, ResolveResult, RegionSlug } from "@/lib/types";
 import { getCanonicalById } from "@/lib/canonical";
 import {
   canonicalHubPath,
@@ -13,12 +13,9 @@ import { regionLabel } from "@/lib/regions";
 import { slugifyCut } from "@/utils/normalize";
 import { CowDiagramNew } from "@/components/CowDiagramNew";
 import { CutCard } from "@/components/CutCard";
-import { ConfidenceBadge } from "@/components/ConfidenceBadge";
-import {
-  MatchTypeBadge,
-  inferMatchType,
-  matchTypeBlurb,
-} from "@/components/MatchTypeBadge";
+import { ButcherPhrase } from "@/components/ButcherPhrase";
+import { DonenessGuide } from "@/components/DonenessGuide";
+import { MatchTypeBadge, inferMatchType } from "@/components/MatchTypeBadge";
 
 type Props = {
   result: ResolveResult;
@@ -27,6 +24,49 @@ type Props = {
   /** URL segment for this translation (matches `/what-is/[cut]`). */
   translationCutSlug: string;
 };
+
+function answerLine(
+  matchType: MatchType,
+  primaryName: string,
+  to: string,
+): React.ReactNode {
+  switch (matchType) {
+    case "exact":
+      return (
+        <>
+          is <strong>{primaryName}</strong> in {to}
+        </>
+      );
+    case "close":
+      return (
+        <>
+          is very similar to <strong>{primaryName}</strong> in {to}
+        </>
+      );
+    case "approximate":
+      return (
+        <>
+          The closest {to} equivalent is <strong>{primaryName}</strong>
+        </>
+      );
+    case "composite":
+      return (
+        <>
+          spans multiple cuts in {to}. Closest:{" "}
+          <strong>{primaryName}</strong>
+        </>
+      );
+    case "cultural":
+      return (
+        <>
+          has no direct equivalent in {to}. Closest:{" "}
+          <strong>{primaryName}</strong>
+        </>
+      );
+    case "none":
+      return <>has no equivalent in {to}</>;
+  }
+}
 
 function RelatedLink(args: {
   canonicalId: CanonicalId;
@@ -63,13 +103,17 @@ export function CutResult({
         <p className="text-lg font-medium text-[var(--text-primary)]">
           No mapping yet
         </p>
-        <p className="mt-2 text-[var(--text-muted)]">{result.explanation.short}</p>
+        <p className="mt-2 text-[var(--text-muted)]">
+          {result.explanation.short}
+        </p>
         {result.explanation.detailed !== result.explanation.short && (
           <details className="mt-4 text-sm text-[var(--text-muted)]">
             <summary className="cursor-pointer font-medium text-[var(--amber)]">
               More detail
             </summary>
-            <p className="mt-2 leading-relaxed">{result.explanation.detailed}</p>
+            <p className="mt-2 leading-relaxed">
+              {result.explanation.detailed}
+            </p>
           </details>
         )}
       </div>
@@ -78,36 +122,50 @@ export function CutResult({
 
   const p = result.primary;
   const effectiveMatchType = inferMatchType(p.match_type, p.confidence);
+  const showAskFor =
+    effectiveMatchType === "exact" ||
+    effectiveMatchType === "close" ||
+    effectiveMatchType === "approximate";
 
   return (
     <div>
       {result.ambiguity.exists && (
-        <div className="cut-ambiguity-banner mb-4 rounded-2xl px-4 py-3 text-sm leading-relaxed" role="status">
+        <div
+          className="cut-ambiguity-banner mb-4 rounded-2xl px-4 py-3 text-sm leading-relaxed"
+          role="status"
+        >
           {result.ambiguity.message}
         </div>
       )}
 
-      {/* Translation headline */}
-      <div className="translation-headline">
-        <div className="mb-3 flex items-center justify-center gap-2">
-          <MatchTypeBadge matchType={effectiveMatchType} size="sm" />
-          <ConfidenceBadge confidence={p.confidence} />
-        </div>
-        <span className="translation-from">{result.inputNormalized}</span>
-        <span className="translation-arrow">from {from} →</span>
-        <span className="translation-to">{p.names[0]}</span>
-        <span className="translation-countries">in {to}</span>
+      {/* 1. The Answer — single, centered, clear */}
+      <div className="translation-answer">
+        <MatchTypeBadge matchType={effectiveMatchType} size="md" />
+        <h2 className="translation-answer-name">{result.inputNormalized}</h2>
+        <p className="translation-answer-line">
+          {answerLine(effectiveMatchType, p.names[0], to)}
+        </p>
+        {showAskFor && (
+          <p className="translation-answer-ask">
+            Ask for: <strong>{p.names[0]}</strong>
+            {p.names.length > 1 && (
+              <span className="ml-1 text-sm font-normal text-[var(--text-secondary)]">
+                {" "}
+                or {p.names.slice(1).join(", ")}
+              </span>
+            )}
+          </p>
+        )}
       </div>
 
-      {/* Cow diagram — the hero */}
+      {/* 2. Cow diagram — the hero */}
       <div className="cow-diagram-hero">
-        <CowDiagramNew highlights={[{
-          canonicalId: p.canonicalId,
-          matchType: effectiveMatchType,
-        }]} />
+        <CowDiagramNew
+          highlights={[{ canonicalId: p.canonicalId, matchType: effectiveMatchType }]}
+        />
       </div>
 
-      {/* Two-column info cards */}
+      {/* 3. Two-column info cards */}
       <div className="cut-details-grid">
         <div className="cut-detail-card">
           <h3>About this cut</h3>
@@ -123,32 +181,42 @@ export function CutResult({
           )}
         </div>
         <div className="cut-detail-card">
-          <h3>What to ask for in {to}</h3>
+          <h3>In {to}</h3>
           <p className="font-medium text-[var(--text-primary)]">
             {p.names.join(" · ")}
           </p>
-          <p className="mt-2 text-sm text-[var(--text-muted)]">
-            {matchTypeBlurb({
-              matchType: effectiveMatchType,
-              inputName: result.inputNormalized,
-              primaryLabel: p.names[0],
-              targetRegionLabel: to,
-              note: p.note,
-            })}
-          </p>
+          <ButcherPhrase
+            canonicalId={p.canonicalId}
+            targetRegion={targetRegion}
+            targetCountryName={to}
+          />
           <p className="mt-3 text-sm">
-            <Link href={whatIsPath(translationCutSlug)} className="cut-link font-medium underline">
+            <Link
+              href={whatIsPath(translationCutSlug)}
+              className="cut-link font-medium underline"
+            >
               What is this cut?
             </Link>
             <span className="mx-2 text-[var(--border-subtle)]">·</span>
-            <Link href={canonicalHubPath(p.canonicalId)} className="cut-link font-medium underline">
+            <Link
+              href={canonicalHubPath(p.canonicalId)}
+              className="cut-link font-medium underline"
+            >
               Global guide
             </Link>
           </p>
         </div>
       </div>
 
-      {/* Detailed explanation + keep exploring */}
+      {/* 4. Doneness guide */}
+      <DonenessGuide
+        sourceRegion={sourceRegion}
+        targetRegion={targetRegion}
+        sourceCountryName={from}
+        targetCountryName={to}
+      />
+
+      {/* 5. Detailed explanation + keep exploring */}
       <div className="mx-auto max-w-[680px] space-y-4">
         <details className="group">
           <summary className="cursor-pointer text-sm font-semibold text-[var(--amber)] underline-offset-2 hover:underline">
@@ -160,20 +228,33 @@ export function CutResult({
         </details>
 
         <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-glass)] p-4">
-          <h3 className="text-sm font-semibold text-[var(--text-primary)]">Keep exploring</h3>
+          <h3 className="text-sm font-semibold text-[var(--text-primary)]">
+            Keep exploring
+          </h3>
           <div className="mt-3 flex flex-wrap gap-2">
             {result.related[0] && (
               <Link
-                href={comparePath(compareSlugForCanonicalPair(p.canonicalId, result.related[0].canonicalId))}
+                href={comparePath(
+                  compareSlugForCanonicalPair(
+                    p.canonicalId,
+                    result.related[0].canonicalId,
+                  ),
+                )}
                 className="cut-explore-link rounded-xl px-3 py-2 text-sm"
               >
                 Compare with similar cuts
               </Link>
             )}
-            <Link href={canonicalHubPath(p.canonicalId)} className="cut-explore-link rounded-xl px-3 py-2 text-sm">
+            <Link
+              href={canonicalHubPath(p.canonicalId)}
+              className="cut-explore-link rounded-xl px-3 py-2 text-sm"
+            >
               See this cut in other countries
             </Link>
-            <Link href={whatIsPath(translationCutSlug)} className="cut-explore-link rounded-xl px-3 py-2 text-sm">
+            <Link
+              href={whatIsPath(translationCutSlug)}
+              className="cut-explore-link rounded-xl px-3 py-2 text-sm"
+            >
               Learn more about this cut
             </Link>
           </div>
