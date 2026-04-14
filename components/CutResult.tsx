@@ -11,7 +11,7 @@ import { representativeInputName } from "@/lib/mappings";
 import { pairSegment } from "@/lib/pairRoute";
 import { regionLabel } from "@/lib/regions";
 import { slugifyCut } from "@/utils/normalize";
-import { CowDiagram } from "@/components/CowDiagram";
+import { CowDiagramNew } from "@/components/CowDiagramNew";
 import { CutCard } from "@/components/CutCard";
 import { ConfidenceBadge } from "@/components/ConfidenceBadge";
 import {
@@ -77,58 +77,80 @@ export function CutResult({
   }
 
   const p = result.primary;
-
-  /** Translation UX: diagram shows primary match only (alternatives stay in cards below). */
-  const diagramCanonicalIds = [p.canonicalId];
+  const effectiveMatchType = inferMatchType(p.match_type, p.confidence);
 
   return (
-    <div className="space-y-10">
+    <div>
       {result.ambiguity.exists && (
-        <div className="cut-ambiguity-banner rounded-2xl px-4 py-3 text-sm leading-relaxed" role="status">
+        <div className="cut-ambiguity-banner mb-4 rounded-2xl px-4 py-3 text-sm leading-relaxed" role="status">
           {result.ambiguity.message}
         </div>
       )}
 
-      <CowDiagram canonicalIds={diagramCanonicalIds} />
-
-      <section className="cut-result-hero p-8 shadow-lg shadow-black/25">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-          Best Match
-        </p>
-        <div className="mt-2 flex flex-wrap items-center gap-3">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-[var(--text-primary)] sm:text-3xl">
-            {p.names[0]}
-          </h2>
-          <MatchTypeBadge
-            matchType={inferMatchType(p.match_type, p.confidence)}
-            size="sm"
-          />
+      {/* Translation headline */}
+      <div className="translation-headline">
+        <div className="mb-3 flex items-center justify-center gap-2">
+          <MatchTypeBadge matchType={effectiveMatchType} size="sm" />
           <ConfidenceBadge confidence={p.confidence} />
         </div>
-        <p className="mt-2 text-sm text-[var(--text-muted)]">
-          {matchTypeBlurb({
-            matchType: inferMatchType(p.match_type, p.confidence),
-            inputName: result.inputNormalized,
-            primaryLabel: p.names[0],
-            targetRegionLabel: to,
-            note: p.note,
-          })}
-        </p>
-        <p className="mt-3 text-sm text-[var(--text-muted)]">
-          <Link href={whatIsPath(translationCutSlug)} className="cut-link font-medium underline">
-            What is this cut?
-          </Link>
-          <span className="mx-2 text-[var(--border-subtle)]">·</span>
-          <Link href={canonicalHubPath(p.canonicalId)} className="cut-link font-medium underline">
-            Global guide ({p.canonicalId.replace(/_/g, " ")})
-          </Link>
-        </p>
-        {p.names.length > 1 && (
-          <p className="mt-2 text-[var(--text-muted)]">
-            Other {to} names: {p.names.slice(1).join(" · ")}
+        <span className="translation-from">{result.inputNormalized}</span>
+        <span className="translation-arrow">from {from} →</span>
+        <span className="translation-to">{p.names[0]}</span>
+        <span className="translation-countries">in {to}</span>
+      </div>
+
+      {/* Cow diagram — the hero */}
+      <div className="cow-diagram-hero">
+        <CowDiagramNew highlights={[{
+          canonicalId: p.canonicalId,
+          matchType: effectiveMatchType,
+        }]} />
+      </div>
+
+      {/* Two-column info cards */}
+      <div className="cut-details-grid">
+        <div className="cut-detail-card">
+          <h3>About this cut</h3>
+          {result.canonical ? (
+            <>
+              <p>{result.canonical.description}</p>
+              <p className="mt-2 text-sm text-[var(--text-muted)]">
+                {result.canonical.primal} primal · {result.canonical.location}
+              </p>
+            </>
+          ) : (
+            <p>{result.explanation.short}</p>
+          )}
+        </div>
+        <div className="cut-detail-card">
+          <h3>What to ask for in {to}</h3>
+          <p className="font-medium text-[var(--text-primary)]">
+            {p.names.join(" · ")}
           </p>
-        )}
-        <details className="mt-6 group">
+          <p className="mt-2 text-sm text-[var(--text-muted)]">
+            {matchTypeBlurb({
+              matchType: effectiveMatchType,
+              inputName: result.inputNormalized,
+              primaryLabel: p.names[0],
+              targetRegionLabel: to,
+              note: p.note,
+            })}
+          </p>
+          <p className="mt-3 text-sm">
+            <Link href={whatIsPath(translationCutSlug)} className="cut-link font-medium underline">
+              What is this cut?
+            </Link>
+            <span className="mx-2 text-[var(--border-subtle)]">·</span>
+            <Link href={canonicalHubPath(p.canonicalId)} className="cut-link font-medium underline">
+              Global guide
+            </Link>
+          </p>
+        </div>
+      </div>
+
+      {/* Detailed explanation + keep exploring */}
+      <div className="mx-auto max-w-[680px] space-y-4">
+        <details className="group">
           <summary className="cursor-pointer text-sm font-semibold text-[var(--amber)] underline-offset-2 hover:underline">
             Detailed explanation
           </summary>
@@ -137,19 +159,12 @@ export function CutResult({
           </p>
         </details>
 
-        <div className="mt-6 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-glass)] p-4">
-          <h3 className="text-sm font-semibold text-[var(--text-primary)]">
-            Keep exploring
-          </h3>
+        <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-glass)] p-4">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)]">Keep exploring</h3>
           <div className="mt-3 flex flex-wrap gap-2">
             {result.related[0] && (
               <Link
-                href={comparePath(
-                  compareSlugForCanonicalPair(
-                    p.canonicalId,
-                    result.related[0].canonicalId,
-                  ),
-                )}
+                href={comparePath(compareSlugForCanonicalPair(p.canonicalId, result.related[0].canonicalId))}
                 className="cut-explore-link rounded-xl px-3 py-2 text-sm"
               >
                 Compare with similar cuts
@@ -163,27 +178,23 @@ export function CutResult({
             </Link>
           </div>
         </div>
-      </section>
+      </div>
 
       {result.alternatives.length > 0 && (
-        <section>
+        <section className="mt-8">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
             Alternatives ({from} → {to})
           </h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {result.alternatives.map((t) => (
-              <CutCard
-                key={t.canonicalId}
-                target={t}
-                targetRegionLabel={to}
-              />
+              <CutCard key={t.canonicalId} target={t} targetRegionLabel={to} />
             ))}
           </div>
         </section>
       )}
 
       {result.related.length > 0 && (
-        <section>
+        <section className="mt-8">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
             Related cuts
           </h2>

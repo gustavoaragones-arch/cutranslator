@@ -1,4 +1,8 @@
 /**
+ * @deprecated Use lib/svgMappings.ts + components/CowDiagramNew.tsx instead.
+ * This file contains inline SVG paths from the original 13-region diagram.
+ * Kept for backward compatibility during the transition; do not add new cuts here.
+ *
  * Inline cow diagram: cut paths share one coordinate space (Illustrator export).
  * viewBox is larger than the raw artboard crop so we can scale + center the meat map.
  */

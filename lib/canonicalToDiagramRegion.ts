@@ -1,3 +1,7 @@
+/**
+ * @deprecated Use lib/svgMappings.ts instead.
+ * The new system maps CanonicalId directly to SVG file paths via CowDiagramNew.
+ */
 import type { CanonicalId } from "@/lib/types";
 import {
   COW_DIAGRAM_CUTS,
