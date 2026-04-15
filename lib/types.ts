@@ -10,7 +10,12 @@ export type RegionSlug =
   | "mexico"
   | "uruguay"
   | "paraguay"
-  | "colombia";
+  | "colombia"
+  | "germany"
+  | "italy"
+  | "portugal"
+  | "netherlands"
+  | "denmark";
 
 export type CanonicalId =
   | "ribeye"

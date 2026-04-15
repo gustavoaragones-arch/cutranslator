@@ -60,4 +60,29 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   // CHILE
   { canonicalId: "striploin", region: "chile", phrase: "Lomo liso, a punto" },
   { canonicalId: "short_ribs", region: "chile", phrase: "Asado de tira, bien cocido" },
+
+  // GERMANY
+  { canonicalId: "ribeye", region: "germany", phrase: "Ein Entrecôte bitte, medium rosa", notes: "Rosa (pink) is the German equivalent of medium rare" },
+  { canonicalId: "striploin", region: "germany", phrase: "Ein Rumpsteak bitte, rosa gebraten", notes: "German Rumpsteak = US NY Strip, not rump" },
+  { canonicalId: "tenderloin", region: "germany", phrase: "Rinderfilet, medium bitte" },
+  { canonicalId: "sirloin_cap", region: "germany", phrase: "Tafelspitz, bitte", notes: "Tafelspitz is traditionally boiled, not grilled — specify if you want it as steak" },
+
+  // ITALY
+  { canonicalId: "ribeye", region: "italy", phrase: "Una costata, cottura al sangue", notes: "Al sangue = rare; Italian steakhouses default to rare" },
+  { canonicalId: "t_bone", region: "italy", phrase: "Una Fiorentina, al sangue per favore", notes: "Fiorentina is always served very rare — ordering well-done is considered a faux pas" },
+  { canonicalId: "tenderloin", region: "italy", phrase: "Un filetto, cottura media" },
+  { canonicalId: "striploin", region: "italy", phrase: "Un controfiletto, al punto" },
+
+  // PORTUGAL
+  { canonicalId: "sirloin_cap", region: "portugal", phrase: "Picanha, mal passada por favor" },
+  { canonicalId: "tenderloin", region: "portugal", phrase: "Lombinho, mal passado" },
+
+  // NETHERLANDS
+  { canonicalId: "striploin", region: "netherlands", phrase: "Entrecôte, half doorbakken alstublieft", notes: "In Dutch restaurants, entrecôte refers to striploin steaks" },
+  { canonicalId: "tenderloin", region: "netherlands", phrase: "Ossenhaas, rood alstublieft", notes: "Rood (red) = rare" },
+  { canonicalId: "sirloin_cap", region: "netherlands", phrase: "Staartstuk als steak, half doorbakken" },
+
+  // DENMARK
+  { canonicalId: "ribeye", region: "denmark", phrase: "En entrecôte, medium tak", notes: "Danish steakhouses use French terminology for premium cuts" },
+  { canonicalId: "tenderloin", region: "denmark", phrase: "Mørbrad, medium tak" },
 ] as const;

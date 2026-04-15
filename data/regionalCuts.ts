@@ -432,4 +432,144 @@ export const regionalCuts: readonly RegionalCut[] = [
     description: "The British equivalent of prime rib — a bone-in rib roast from the fore (front) section of the rib primal. The premium British roasting joint. When boned and rolled it becomes a 'rolled rib'; when the bone is left in it's the 'standing rib'. The rib-eye steak is cut from this joint.",
   },
 
+  // === GERMANY ===
+
+  {
+    id: "tafelspitz_de",
+    name: "Tafelspitz",
+    region: "germany",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "cultural", confidence: 0.75, note: "Anatomically the same as picanha/sirloin cap, but culturally opposite — boiled, not grilled" },
+    ],
+    synonyms: ["tafelspitz vom rind"],
+    description: "Anatomically identical to Brazilian picanha (sirloin cap), but culturally the opposite. In Germany and Austria, Tafelspitz is the national boiled beef dish — simmered for hours in broth and served with apple-horseradish sauce. The fat cap is essential for flavor, but the cooking method produces a completely different product than a grilled picanha.",
+    notes: "This is a key example of why 'cultural' match_type exists. Same muscle, radically different preparation and expectations.",
+  },
+
+  {
+    id: "schaufelstuck_de",
+    name: "Schaufelstück",
+    region: "germany",
+    maps_to: [
+      { canonical_id: "flat_iron", match_type: "close", confidence: 0.75, note: "Same anatomical area (top blade/infraspinatus), but German preparation typically keeps the connective tissue" },
+    ],
+    synonyms: ["schaufelstueck"],
+    description: "The German flat iron area — the top blade of the shoulder. Unlike the US flat iron steak (where the central connective tissue is removed to make a tender steak), German butchers traditionally leave this tissue in for braising. Modern German craft butchers are starting to offer 'Flat Iron Steak' using the American technique.",
+  },
+
+  {
+    id: "falsches_filet_de",
+    name: "Falsches Filet",
+    region: "germany",
+    maps_to: [
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "The 'fake filet' — looks like tenderloin but is from the chuck, much tougher" },
+    ],
+    description: "Literally 'fake filet' — a chuck tender muscle that resembles the tenderloin in shape but is significantly tougher. In Germany, this is exclusively a braising cut, never served as steak. American diners expecting tenderloin quality will be disappointed. The name itself is a warning.",
+    notes: "The German name is brilliantly descriptive — it literally tells you this is NOT the real thing.",
+  },
+
+  {
+    id: "flanke_de",
+    name: "Flanke",
+    region: "germany",
+    maps_to: [
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.65, note: "Historically considered 'dog meat' in German butchery; now gaining acceptance as a steak cut" },
+    ],
+    synonyms: ["Dünnung"],
+    description: "The German flank — historically one of the least respected cuts in German butchery, traditionally used for sausage trim or soup meat. The modern 'Flank Steak' trend from the US is slowly changing this, and craft butchers now sell it as a premium grilling cut. Old-school German butchers may not recognize 'Flank Steak' as a request — ask for Dünnung or Bavette instead.",
+  },
+
+  // === ITALY ===
+
+  {
+    id: "fiorentina_it",
+    name: "Bistecca alla Fiorentina",
+    region: "italy",
+    maps_to: [
+      { canonical_id: "t_bone", match_type: "close", confidence: 0.85, note: "A thick T-bone or porterhouse from Chianina cattle, grilled over wood" },
+      { canonical_id: "prime_rib", match_type: "approximate", confidence: 0.55, note: "The costata version includes more rib" },
+    ],
+    synonyms: ["fiorentina", "bistecca fiorentina", "costata alla fiorentina"],
+    description: "Tuscany's iconic steak — a massive T-bone (or porterhouse) cut at least 5cm thick, traditionally from Chianina cattle. Grilled over oak or olive wood charcoal, seasoned only with salt and olive oil after cooking, served very rare (al sangue). A pilgrimage dish for steak lovers visiting Florence. The costata version comes from further forward on the rib and may be boneless.",
+    notes: "The most culturally significant beef cut in Italian cuisine. Chianina is the traditional breed, but Maremmana and other breeds are also used.",
+  },
+
+  {
+    id: "pancia_it",
+    name: "Pancia",
+    region: "italy",
+    maps_to: [
+      { canonical_id: "flank", match_type: "approximate", confidence: 0.65, note: "Broad belly term — covers flank, plate, and skirt areas" },
+      { canonical_id: "short_plate", match_type: "approximate", confidence: 0.55, note: "May include plate area" },
+      { canonical_id: "skirt", match_type: "approximate", confidence: 0.50, note: "Skirt is within the pancia zone" },
+    ],
+    description: "The Italian 'belly' — a broad term covering the flank, plate, and skirt area. Unlike the precise USDA primal divisions, Italian pancia is a catch-all for belly cuts. Used for bollito (boiled meat), braciole (rolled and braised), or minced for ragù. The exact USDA equivalent depends on which part of the pancia the butcher separates.",
+  },
+
+  // === PORTUGAL ===
+
+  {
+    id: "vazia_pt",
+    name: "Vazia",
+    region: "portugal",
+    maps_to: [
+      { canonical_id: "flank", match_type: "approximate", confidence: 0.60, note: "Vazia is the least stable label across Portuguese butchers" },
+      { canonical_id: "sirloin_flap", match_type: "approximate", confidence: 0.50, note: "May extend into sirloin area" },
+    ],
+    description: "The most ambiguous cut name in Portuguese butchery. Vazia can refer to the flank, sirloin flap, or a broader belly zone depending on the region and butcher. When ordering, ask the butcher to point to the exact muscle rather than relying on the label alone.",
+    notes: "Low confidence mapping — this is genuinely unstable across Portuguese butchers.",
+  },
+
+  {
+    id: "alcatra_pt",
+    name: "Alcatra",
+    region: "portugal",
+    maps_to: [
+      { canonical_id: "top_sirloin", match_type: "close", confidence: 0.70, note: "Portuguese alcatra covers the rump/sirloin area" },
+      { canonical_id: "sirloin_cap", match_type: "approximate", confidence: 0.55, note: "May include the cap area" },
+    ],
+    synonyms: ["alcatra de vaca"],
+    description: "Portuguese alcatra — similar ambiguity to Brazilian alcatra. Covers the top round/rump/sirloin region broadly. In the Azores, Alcatra refers to a specific clay-pot braised beef dish, adding another layer of meaning beyond the cut itself.",
+    notes: "Regional meaning shifts significantly — mainland Portugal vs Azores use this term differently.",
+  },
+
+  // === NETHERLANDS ===
+
+  {
+    id: "sukadelapje_nl",
+    name: "Sukadelapje",
+    region: "netherlands",
+    maps_to: [
+      { canonical_id: "flat_iron", match_type: "cultural", confidence: 0.65, note: "Same anatomical area as flat iron, but Dutch preparation traditionally braises it with connective tissue intact" },
+    ],
+    synonyms: ["sukade"],
+    description: "The Dutch equivalent of the flat iron area — but treated completely differently. In the Netherlands, sukadelapje is traditionally braised with the internal connective tissue (silver skin) left in, which turns to gelatin during slow cooking. In the US, the flat iron steak is specifically cut to remove that tissue for grilling. Same muscle, opposite culinary philosophy.",
+    notes: "A perfect example of how butchering technique, not just anatomy, defines a cut.",
+  },
+
+  {
+    id: "biefstuk_nl",
+    name: "Biefstuk",
+    region: "netherlands",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.60, note: "Standard Dutch biefstuk comes from the top round — lean and firm" },
+      { canonical_id: "top_sirloin", match_type: "approximate", confidence: 0.50, note: "Higher-quality biefstuk may come from the sirloin" },
+    ],
+    description: "The generic Dutch word for 'steak' — but unlike the US where 'steak' always has a qualifier (ribeye, strip, etc.), standard Dutch biefstuk usually comes from the top round (Bovenbil). To an American, this would feel like a very lean, somewhat tough cut rather than a premium steak. For premium steaks, Dutch menus specify the cut (Entrecôte, Ossenhaas, etc.).",
+    notes: "Flag as low-confidence for US users expecting premium steak quality from the generic term 'biefstuk'.",
+  },
+
+  // === DENMARK ===
+
+  {
+    id: "tyksteg_dk",
+    name: "Tyksteg",
+    region: "denmark",
+    maps_to: [
+      { canonical_id: "top_sirloin", match_type: "close", confidence: 0.75, note: "Tyksteg ('thick roast') maps to the sirloin/rump area" },
+    ],
+    synonyms: ["tykstegsbøf"],
+    description: "Literally 'thick roast' — a Danish cut from the sirloin/rump area. While Americans cut this into individual sirloin steaks, Danes traditionally sell it as a whole roast. For a US-style sirloin steak, ask for Tykstegsbøf (thick roast steak). The cut quality falls between premium steaks and everyday roasting joints.",
+  },
+
 ] as const;

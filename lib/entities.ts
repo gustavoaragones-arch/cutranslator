@@ -79,6 +79,15 @@ export const REGION_ENTITY: Record<
     formalName: "Colombia",
     shortName: "Colombia",
   },
+  germany: { id: "germany", formalName: "Germany", shortName: "Germany" },
+  italy: { id: "italy", formalName: "Italy", shortName: "Italy" },
+  portugal: { id: "portugal", formalName: "Portugal", shortName: "Portugal" },
+  netherlands: {
+    id: "netherlands",
+    formalName: "Netherlands",
+    shortName: "Netherlands",
+  },
+  denmark: { id: "denmark", formalName: "Denmark", shortName: "Denmark" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {
