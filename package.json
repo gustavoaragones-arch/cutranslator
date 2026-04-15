@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npx tsx scripts/buildSvgData.ts",
     "build": "next build",
-    "pages:build": "opennextjs-cloudflare build",
+    "pages:build": "npx tsx scripts/buildSvgData.ts && opennextjs-cloudflare build",
     "start": "next start",
     "preview:cf": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",

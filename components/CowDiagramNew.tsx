@@ -1,5 +1,5 @@
-import { loadSvgInner, sanitizeSvgInner } from "@/lib/svgLoader";
-import { canonicalSvgPaths, cowSilhouettePath } from "@/lib/svgMappings";
+import { sanitizeSvgInner } from "@/lib/svgLoader";
+import { cowSvgInner, canonicalSvgInner } from "@/data/svgContent";
 import { getCanonicalById } from "@/lib/canonical";
 import type { CanonicalId, MatchType } from "@/lib/types";
 import { CowDiagramNewClient, type CutLayer } from "@/components/CowDiagramNewClient";
@@ -29,11 +29,10 @@ export function CowDiagramNew({ highlights, showPrimals = false }: Props) {
   // cut paths are concentrated in a small region (~x:468–728, y:188–302).
   // We crop to that content area so the cow fills its container visibly.
   const viewBox = "464 186 264 128";
-  const cowInner = loadSvgInner(cowSilhouettePath);
+  const cowInner = cowSvgInner || null;
 
   const layers: CutLayer[] = highlights.map((h) => {
-    const svgPath = canonicalSvgPaths[h.canonicalId];
-    const rawInner = loadSvgInner(svgPath);
+    const rawInner = canonicalSvgInner[h.canonicalId] ?? null;
     const svgInner = rawInner
       ? sanitizeSvgInner(rawInner, h.canonicalId)
       : null;
