@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AdSlot } from "@/components/AdSlot";
-import { AIAnswerBlock } from "@/components/AIAnswerBlock";
 import { ExploreMore } from "@/components/ExploreMore";
 import { PAASection } from "@/components/PAASection";
 import { TranslateForm } from "@/components/TranslateForm";
@@ -108,11 +107,9 @@ export default function Home() {
 
       {/* Body — warm paper */}
       <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-12 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <AIAnswerBlock variants={homeAIAnswer.variants}>
-            {homeAIAnswer.primary}
-          </AIAnswerBlock>
-        </div>
+        <p className="home-description">
+          {homeAIAnswer.primary}
+        </p>
 
         <div className="max-w-2xl">
           <PAASection items={homePaaItems.slice(0, 3)} />
