@@ -202,4 +202,79 @@ export const canonicalCuts: readonly CanonicalCut[] = [
     description: "The belly of the cow, below the rib primal. Source of short ribs, skirt steak, and hanger steak. Rich, fatty, and flavorful. Used for braising, fajitas, and in Asian cuisines for hot pot.",
     aliases: ["plate", "navel", "short plate"] as const,
   },
+  // Tier 2 — Chuck:
+  {
+    id: "denver_steak",
+    primal: "chuck",
+    location: "Serratus ventralis muscle, extracted from under the blade bone",
+    description: "A modern butchery innovation — the denver steak was 'discovered' in 2009 by meat scientists at the University of Nebraska. Extracted from the serratus ventralis muscle in the chuck, it's surprisingly tender and well-marbled for a chuck cut. An affordable alternative to ribeye with similar marbling patterns.",
+    aliases: ["denver cut", "zabuton"] as const,
+  },
+  {
+    id: "flat_iron",
+    primal: "chuck",
+    location: "Infraspinatus muscle, top blade of the shoulder clod",
+    description: "The second most tender muscle on the entire animal, after the tenderloin. A flat, rectangular steak extracted from the top blade by splitting it along the central connective tissue. Uniform thickness makes it ideal for grilling. Also known as butler's steak in the UK.",
+    aliases: ["flat iron steak", "top blade steak", "butler's steak"] as const,
+  },
+  {
+    id: "petite_tender",
+    primal: "chuck",
+    location: "Teres major muscle, tucked alongside the shoulder blade",
+    description: "A small, narrow muscle from the shoulder that resembles a miniature tenderloin in shape and tenderness. Only about 250-350g per side, making it one of the lowest-yield cuts on the animal. Extremely tender but relatively unknown outside professional kitchens.",
+    aliases: ["teres major", "shoulder tender", "bistro filet"] as const,
+  },
+  {
+    id: "chuck_eye_steak",
+    primal: "chuck",
+    location: "5th rib, where the chuck meets the rib primal",
+    description: "The 'poor man's ribeye' — cut from the 5th rib, right where the chuck primal ends and the rib primal begins. Contains the same longissimus dorsi muscle as a ribeye but from a less premium section. Similar marbling at a significantly lower price point. Only 2 steaks per animal from this location.",
+    aliases: ["chuck eye roll steak", "Delmonico steak"] as const,
+  },
+  // Tier 2 — Brisket:
+  {
+    id: "brisket_flat",
+    primal: "brisket",
+    location: "Deep pectoral muscle — the lean, flat portion of the brisket",
+    description: "The leaner half of the whole brisket. Uniform rectangular shape makes it ideal for even slicing. The competition BBQ cut — prized for its presentation. Also the traditional cut for corned beef and pastrami. Less forgiving than the point — requires precise temperature control to avoid drying out.",
+    aliases: ["brisket first cut", "flat cut", "brisket flat half"] as const,
+  },
+  {
+    id: "brisket_point",
+    primal: "brisket",
+    location: "Superficial pectoral muscle — the fatty, irregular portion overlapping the flat",
+    description: "The fattier, more marbled half of the whole brisket. Sits on top of the flat with a fat layer (the deckle) between them. More flavorful and forgiving than the flat due to higher fat content. The source of burnt ends — cubed and re-smoked until caramelized. Also called the deckle.",
+    aliases: ["brisket second cut", "point cut", "deckle", "brisket point half"] as const,
+  },
+  // Tier 2 — Sirloin:
+  {
+    id: "flap_steak",
+    primal: "sirloin",
+    location: "Bottom sirloin, obliquus internus abdominis muscle",
+    description: "A thin, coarse-grained steak from the bottom sirloin. The American name for what the French call bavette d'aloyau. Open grain absorbs marinades extremely well. Popular for fajitas, stir-fry, and carne asada. Often confused with skirt steak but from a different location entirely.",
+    aliases: ["sirloin flap meat", "sirloin tip steak"] as const,
+  },
+  // Tier 2 — Round:
+  {
+    id: "top_round_steak",
+    primal: "round",
+    location: "Steak cut from the inside round / top round",
+    description: "A lean, affordable steak cut from the inside round. Often marketed as 'London Broil' in US supermarkets, though London broil is technically a preparation method, not a cut. Best when marinated, grilled to medium-rare, and sliced very thin against the grain. Overcooking makes it tough and dry.",
+    aliases: ["London broil", "top round London broil"] as const,
+  },
+  {
+    id: "bottom_round_roast",
+    primal: "round",
+    location: "Roast from the outside round / bottom round",
+    description: "A lean, economical roast from the outer thigh. The classic American pot roast cut — braised low and slow with vegetables. Also used for deli roast beef when oven-roasted and sliced paper-thin. Tougher than inside round but more affordable.",
+    aliases: ["rump roast", "bottom round rump roast", "round roast"] as const,
+  },
+  // Tier 2 — Plate:
+  {
+    id: "inside_skirt",
+    primal: "plate",
+    location: "Transversus abdominis muscle — the inner diaphragm muscle",
+    description: "The 'other' skirt steak. Thinner, wider, and slightly tougher than the outside skirt (which is the standard 'skirt steak'). Most restaurant fajitas use inside skirt because the outside skirt is exported or sold at premium. Requires high heat, fast cooking, and slicing against the grain.",
+    aliases: ["inside skirt steak", "inner skirt"] as const,
+  },
 ] as const;

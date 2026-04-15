@@ -37,6 +37,17 @@ export const CANONICAL_ENTITY_TERM: Record<CanonicalId, string> = {
   fore_shank: "foreshank",
   // Phase 3 — Plate:
   short_plate: "short plate",
+  // Tier 2 additions:
+  denver_steak: "denver steak",
+  flat_iron: "flat iron steak",
+  petite_tender: "petite tender (teres major)",
+  chuck_eye_steak: "chuck eye steak",
+  brisket_flat: "brisket flat",
+  brisket_point: "brisket point (deckle)",
+  flap_steak: "flap steak (sirloin flap)",
+  top_round_steak: "top round steak",
+  bottom_round_roast: "bottom round roast",
+  inside_skirt: "inside skirt steak",
 };
 
 export function canonicalEntityTerm(id: CanonicalId): string {

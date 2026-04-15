@@ -45,7 +45,13 @@ export type CanonicalId =
   | "hind_shank"
   | "fore_shank"
   // Phase 3 — Plate:
-  | "short_plate";
+  | "short_plate"
+  // Tier 2 additions:
+  | "denver_steak" | "flat_iron" | "petite_tender" | "chuck_eye_steak"
+  | "brisket_flat" | "brisket_point"
+  | "flap_steak"
+  | "top_round_steak" | "bottom_round_roast"
+  | "inside_skirt";
 
 export type CanonicalCut = {
   id: CanonicalId;

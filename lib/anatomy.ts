@@ -49,6 +49,17 @@ export const CANONICAL_ID_TO_SVG_BASENAME: Readonly<
   hind_shank: "hind_shank",
   fore_shank: "fore_shank",
   short_plate: "short_plate",
+  // Tier 2 additions (SVG files TBD — primal fallback used):
+  denver_steak: "denver_steak",
+  flat_iron: "flat_iron",
+  petite_tender: "petite_tender",
+  chuck_eye_steak: "chuck_eye_steak",
+  brisket_flat: "brisket_flat",
+  brisket_point: "brisket_point",
+  flap_steak: "flap_steak",
+  top_round_steak: "top_round_steak",
+  bottom_round_roast: "bottom_round_roast",
+  inside_skirt: "inside_skirt",
 };
 
 export function datasetPrimalToSvgSlug(datasetPrimal: string): string {

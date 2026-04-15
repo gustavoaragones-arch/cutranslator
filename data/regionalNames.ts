@@ -422,6 +422,51 @@ export const regionalNames: readonly RegionalName[] = [
   { name: "short plate", region: "canada", maps_to: "short_plate", confidence: 0.90 },
   { name: "asado", region: "argentina", maps_to: "short_plate", confidence: 0.75, notes: "Argentine 'asado' as a cut refers to the plate/rib section used for whole rib asado — distinct from asado as a cooking method" },
   { name: "asado", region: "uruguay", maps_to: "short_plate", confidence: 0.75 },
+
+  // ----- Tier 2: denver_steak -----
+  { name: "denver steak", region: "usa", maps_to: "denver_steak", confidence: 0.98, synonyms: ["denver cut"] as const },
+  { name: "denver steak", region: "canada", maps_to: "denver_steak", confidence: 0.95 },
+  { name: "zabuton", region: "usa", maps_to: "denver_steak", confidence: 0.85, notes: "Japanese-influenced name used in some US restaurants" },
+  { name: "butler's steak", region: "uk", maps_to: "denver_steak", confidence: 0.75, notes: "Sometimes used in UK for denver-style cuts from the chuck" },
+
+  // ----- Tier 2: flat_iron -----
+  { name: "flat iron", region: "usa", maps_to: "flat_iron", confidence: 0.98, synonyms: ["flat iron steak", "top blade steak"] as const },
+  { name: "flat iron", region: "canada", maps_to: "flat_iron", confidence: 0.95 },
+  { name: "flat iron", region: "uk", maps_to: "flat_iron", confidence: 0.90, synonyms: ["feather steak"] as const, notes: "Increasingly popular in UK steakhouses" },
+  { name: "paleta chica", region: "mexico", maps_to: "flat_iron", confidence: 0.70, notes: "Approximate — Mexican butchers may not separate this from the paleta" },
+
+  // ----- Tier 2: petite_tender -----
+  { name: "petite tender", region: "usa", maps_to: "petite_tender", confidence: 0.98, synonyms: ["teres major", "shoulder tender", "bistro filet"] as const },
+  { name: "petite tender", region: "canada", maps_to: "petite_tender", confidence: 0.95 },
+
+  // ----- Tier 2: chuck_eye_steak -----
+  { name: "chuck eye steak", region: "usa", maps_to: "chuck_eye_steak", confidence: 0.98, synonyms: ["chuck eye roll steak", "Delmonico steak"] as const },
+  { name: "chuck eye steak", region: "canada", maps_to: "chuck_eye_steak", confidence: 0.95 },
+
+  // ----- Tier 2: brisket_flat -----
+  { name: "brisket flat", region: "usa", maps_to: "brisket_flat", confidence: 0.98, synonyms: ["flat cut", "first cut brisket"] as const },
+  { name: "brisket flat", region: "canada", maps_to: "brisket_flat", confidence: 0.95 },
+  { name: "brisket flat", region: "uk", maps_to: "brisket_flat", confidence: 0.85, notes: "UK butchers may sell brisket without separating flat from point" },
+
+  // ----- Tier 2: brisket_point -----
+  { name: "brisket point", region: "usa", maps_to: "brisket_point", confidence: 0.98, synonyms: ["point cut", "deckle", "second cut brisket"] as const },
+  { name: "brisket point", region: "canada", maps_to: "brisket_point", confidence: 0.95 },
+
+  // ----- Tier 2: flap_steak -----
+  { name: "flap steak", region: "usa", maps_to: "flap_steak", confidence: 0.98, synonyms: ["flap meat", "sirloin flap meat"] as const },
+  { name: "flap steak", region: "canada", maps_to: "flap_steak", confidence: 0.90 },
+
+  // ----- Tier 2: top_round_steak -----
+  { name: "top round steak", region: "usa", maps_to: "top_round_steak", confidence: 0.98, notes: "London broil is a preparation method, but US supermarkets label this cut as London Broil" },
+  { name: "top round steak", region: "canada", maps_to: "top_round_steak", confidence: 0.95 },
+
+  // ----- Tier 2: bottom_round_roast -----
+  { name: "bottom round roast", region: "usa", maps_to: "bottom_round_roast", confidence: 0.98, synonyms: ["round roast"] as const },
+  { name: "bottom round roast", region: "canada", maps_to: "bottom_round_roast", confidence: 0.95 },
+
+  // ----- Tier 2: inside_skirt -----
+  { name: "inside skirt", region: "usa", maps_to: "inside_skirt", confidence: 0.98, synonyms: ["inside skirt steak", "inner skirt"] as const },
+  { name: "inside skirt", region: "canada", maps_to: "inside_skirt", confidence: 0.90 },
 ];
 
 /** Preferred consumer labels per canonical in each region (output layer). */
@@ -716,5 +761,50 @@ export const canonicalLabels: Record<
     argentina: ["Asado (cut)"],
     brazil: ["Ponta de agulha"],
     uruguay: ["Asado (cut)"],
+  },
+  // Tier 2 additions:
+  denver_steak: {
+    usa: ["Denver steak", "Denver cut"],
+    canada: ["Denver steak"],
+    uk: ["Butler's steak"],
+  },
+  flat_iron: {
+    usa: ["Flat iron steak", "Top blade steak"],
+    canada: ["Flat iron"],
+    uk: ["Flat iron steak", "Feather steak"],
+    mexico: ["Paleta chica"],
+  },
+  petite_tender: {
+    usa: ["Petite tender", "Teres major"],
+    canada: ["Petite tender"],
+  },
+  chuck_eye_steak: {
+    usa: ["Chuck eye steak", "Delmonico steak"],
+    canada: ["Chuck eye steak"],
+  },
+  brisket_flat: {
+    usa: ["Brisket flat", "First cut brisket"],
+    canada: ["Brisket flat"],
+    uk: ["Brisket flat"],
+  },
+  brisket_point: {
+    usa: ["Brisket point", "Deckle"],
+    canada: ["Brisket point"],
+  },
+  flap_steak: {
+    usa: ["Flap steak", "Sirloin flap meat"],
+    canada: ["Flap steak"],
+  },
+  top_round_steak: {
+    usa: ["Top round steak", "London broil"],
+    canada: ["Top round steak"],
+  },
+  bottom_round_roast: {
+    usa: ["Bottom round roast", "Rump roast"],
+    canada: ["Bottom round roast"],
+  },
+  inside_skirt: {
+    usa: ["Inside skirt steak"],
+    canada: ["Inside skirt"],
   },
 };

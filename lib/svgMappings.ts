@@ -33,6 +33,17 @@ export const canonicalSvgPaths: Record<CanonicalId, string> = {
   hind_shank: "/svg/canonical/hind_shank.svg",
   fore_shank: "/svg/canonical/fore_shank.svg",
   short_plate: "/svg/canonical/short_plate.svg",
+  // Tier 2 additions (SVG files TBD — primal fallback used):
+  denver_steak: "/svg/canonical/denver_steak.svg",
+  flat_iron: "/svg/canonical/flat_iron.svg",
+  petite_tender: "/svg/canonical/petite_tender.svg",
+  chuck_eye_steak: "/svg/canonical/chuck_eye_steak.svg",
+  brisket_flat: "/svg/canonical/brisket_flat.svg",
+  brisket_point: "/svg/canonical/brisket_point.svg",
+  flap_steak: "/svg/canonical/flap_steak.svg",
+  top_round_steak: "/svg/canonical/top_round_steak.svg",
+  bottom_round_roast: "/svg/canonical/bottom_round_roast.svg",
+  inside_skirt: "/svg/canonical/inside_skirt.svg",
 };
 
 export const cowSilhouettePath = "/svg/cow.svg";
