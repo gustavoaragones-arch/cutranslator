@@ -31,6 +31,7 @@ import {
 import { resolveCut } from "@/lib/resolver";
 import { buildContentGraph, type FaqPair } from "@/lib/structured-data";
 import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 import type { CanonicalId, MatchType } from "@/lib/types";
 import { cutSlugToNormalizedKey } from "@/utils/normalize";
 import { inferMatchType } from "@/components/MatchTypeBadge";
@@ -78,12 +79,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     metaResult.primary?.confidence ?? 0,
   );
   const qualifier = matchTypeMetaQualifier(effectiveMatchType);
+  const base = getSiteUrl().replace(/\/$/, "");
+  const canonicalUrl = `${base}/${pair}/${cut}`;
   return {
     title: h1,
     description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} ${qualifier}.`,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: h1,
       description: `Canonical beef cut mapping: ${cutDisplay} → ${regionLabel(parsed.to)}.`,
+      url: canonicalUrl,
+      siteName: "Cutranslator",
     },
   };
 }

@@ -29,6 +29,7 @@ import {
   relatedForPAA,
 } from "@/lib/questions";
 import { buildContentGraph } from "@/lib/structured-data";
+import { getSiteUrl } from "@/lib/site";
 import { cutSlugToNormalizedKey } from "@/utils/normalize";
 
 export const revalidate = 86400;
@@ -48,12 +49,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!content) {
     return { title: "Cut not found | Cutranslator" };
   }
+  const base = getSiteUrl().replace(/\/$/, "");
+  const canonicalUrl = `${base}/what-is/${cut}`;
   return {
     title: content.h1,
     description: content.featuredSnippet,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: content.h1,
       description: content.featuredSnippet,
+      url: canonicalUrl,
+      siteName: "Cutranslator",
     },
   };
 }

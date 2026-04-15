@@ -20,6 +20,7 @@ import {
 import { getExploreMoreLinks } from "@/lib/linking";
 import { buildComparePAAItems, mergeFaqWithPAA } from "@/lib/questions";
 import { buildContentGraph } from "@/lib/structured-data";
+import { getSiteUrl } from "@/lib/site";
 import type { CanonicalId } from "@/lib/types";
 
 export const revalidate = 86400;
@@ -39,12 +40,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const b = getCanonicalById(pair.b);
   if (!a || !b) return { title: "Comparison not found | Cutranslator" };
   const content = generateComparison(a, b);
+  const base = getSiteUrl().replace(/\/$/, "");
+  const canonicalUrl = `${base}/compare/${slug}`;
   return {
     title: content.h1,
     description: content.featuredSnippet,
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: content.h1,
       description: content.featuredSnippet,
+      url: canonicalUrl,
+      siteName: "Cutranslator",
     },
   };
 }

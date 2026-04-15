@@ -28,6 +28,7 @@ import {
   getTranslationLinks,
   getWhatIsLinksForCanonical,
 } from "@/lib/linking";
+import { getSiteUrl } from "@/lib/site";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -48,10 +49,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const content = generateCanonicalPage(raw);
   if (!content) return { title: "Cut not found | Cutranslator" };
   const desc = `${content.description} Names by country, common confusions, and translator deep-links.`;
+  const base = getSiteUrl().replace(/\/$/, "");
+  const canonicalUrl = `${base}/cuts/${raw}`;
   return {
     title: content.h1,
     description: desc,
-    openGraph: { title: content.h1, description: desc },
+    alternates: { canonical: canonicalUrl },
+    openGraph: { title: content.h1, description: desc, url: canonicalUrl, siteName: "Cutranslator" },
   };
 }
 

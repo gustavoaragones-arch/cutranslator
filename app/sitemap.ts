@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}/cuts/${id}`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 1,
+      priority: 0.9,
     });
   }
 
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}/what-is/${cut}`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.8,
     });
   }
 
@@ -62,8 +62,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     push({
       url: `${base}${path}`,
       lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   }
 
@@ -71,8 +71,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     push({
       url: `${base}/compare/${slug}`,
       lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.7,
+      changeFrequency: "monthly",
+      priority: 0.6,
     });
   }
 
