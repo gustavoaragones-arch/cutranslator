@@ -85,4 +85,24 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   // DENMARK
   { canonicalId: "ribeye", region: "denmark", phrase: "En entrecôte, medium tak", notes: "Danish steakhouses use French terminology for premium cuts" },
   { canonicalId: "tenderloin", region: "denmark", phrase: "Mørbrad, medium tak" },
+
+  // NORWAY
+  { canonicalId: "ribeye", region: "norway", phrase: "Jeg vil ha en entrecôte, medium stekt", notes: "Very natural Norwegian phrasing" },
+  { canonicalId: "striploin", region: "norway", phrase: "Kan jeg få ytrefilet i skiver?", notes: "Typical butcher phrasing — asking for slices" },
+  { canonicalId: "tenderloin", region: "norway", phrase: "Har du indrefilet av storfe?", notes: "'Do you have beef tenderloin?'" },
+  { canonicalId: "flank", region: "norway", phrase: "Har dere flankstek?", notes: "English loanword commonly used" },
+
+  // SWEDEN
+  { canonicalId: "ribeye", region: "sweden", phrase: "Jag vill ha en entrecôte, medium", notes: "Very natural Swedish" },
+  { canonicalId: "striploin", region: "sweden", phrase: "Kan jag få ryggbiff i skivor?", notes: "Common butcher phrasing" },
+  { canonicalId: "tenderloin", region: "sweden", phrase: "Har ni oxfilé?", notes: "Standard" },
+  { canonicalId: "sirloin_cap", region: "sweden", phrase: "Har ni picanha eller rostbiff med fettkappa?", notes: "Important: traditional Swedish butchery removes fat cap; specify you want it kept" },
+  { canonicalId: "flank", region: "sweden", phrase: "Har ni flankstek?", notes: "English term commonly used" },
+
+  // FINLAND
+  { canonicalId: "ribeye", region: "finland", phrase: "Haluaisin entrecôten, medium", notes: "Restaurant phrasing" },
+  { canonicalId: "striploin", region: "finland", phrase: "Onko teillä ulkofileetä?", notes: "'Do you have outside fillet?'" },
+  { canonicalId: "tenderloin", region: "finland", phrase: "Haluaisin sisäfileetä", notes: "Standard" },
+  { canonicalId: "flank", region: "finland", phrase: "Onko teillä flank steakia tai kylkeä?", notes: "Hybrid phrasing — English + Finnish" },
+  { canonicalId: "top_sirloin", region: "finland", phrase: "Haluaisin paahtopaistin", notes: "Extremely natural — asking for a roast, not a steak" },
 ] as const;

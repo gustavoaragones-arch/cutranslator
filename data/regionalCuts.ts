@@ -559,6 +559,111 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Flag as low-confidence for US users expecting premium steak quality from the generic term 'biefstuk'.",
   },
 
+  // === NORWAY ===
+
+  {
+    id: "hoyrygg_no",
+    name: "Høyrygg",
+    region: "norway",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "composite", confidence: 0.70, note: "Includes chuck roll area" },
+      { canonical_id: "chuck_blade", match_type: "composite", confidence: 0.65, note: "Includes blade portions" },
+      { canonical_id: "chuck_eye_steak", match_type: "composite", confidence: 0.55, note: "Chuck eye is within høyrygg but never isolated" },
+    ],
+    synonyms: ["høgrygg"],
+    description: "The core Norwegian beef cut — a large, undivided chuck section that includes what Americans would separate into chuck roll, blade, chuck eye, and parts of the neck. One of the most important Norwegian beef cuts, used primarily for slow-cooked stews and soups. Norwegian butchers do not fragment this into steaks the way US butchers do.",
+    notes: "This is a defining example of how Nordic butchery groups where US butchery fragments. Denver steak and flat iron are anatomically within høyrygg but are not isolated as separate cuts in Norway.",
+  },
+
+  {
+    id: "bankekjott_no",
+    name: "Bankekjøtt",
+    region: "norway",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.65, note: "Usually from the top round, but defined by preparation method" },
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.55, note: "May also come from bottom round" },
+    ],
+    synonyms: ["bankekjøt"],
+    description: "Literally 'pounded meat' — thin slices of beef from the round that are tenderized by pounding and then braised slowly. Similar in concept to Swiss steak. Defined by the preparation method rather than a specific anatomical location. A traditional Norwegian comfort food.",
+    notes: "A preparation-defined cut rather than an anatomical one — this is characteristic of Nordic butchery traditions.",
+  },
+
+  // === SWEDEN ===
+
+  {
+    id: "rostbiff_se",
+    name: "Rostbiff",
+    region: "sweden",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.70, note: "Usually cut from innanlår (top round)" },
+      { canonical_id: "top_sirloin", match_type: "approximate", confidence: 0.55, note: "May also come from the sirloin area" },
+    ],
+    description: "In Sweden, Rostbiff is both a cut name AND a preparation. Unlike in the US where 'roast beef' is a cooking method, Swedish Rostbiff is a specific retail product — a boneless roast from the round or sirloin, oven-roasted and served cold in thin slices. The dual identity (cut + dish) makes it a classic Tier 3 entity.",
+    notes: "Dual identity: anatomical cut AND culinary preparation. This pattern is common in Nordic butchery.",
+  },
+
+  {
+    id: "hogrev_se",
+    name: "Högrev",
+    region: "sweden",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "composite", confidence: 0.70, note: "Core of the högrev" },
+      { canonical_id: "chuck_blade", match_type: "composite", confidence: 0.65, note: "Blade area included" },
+      { canonical_id: "chuck_eye_steak", match_type: "composite", confidence: 0.50, note: "Chuck eye within but not isolated" },
+    ],
+    synonyms: ["högrygg"],
+    description: "Sweden's primary chuck cut — a large shoulder section encompassing what Americans would call chuck roll, blade, and chuck eye. Traditionally the 'king of stews' but increasingly used for premium 'Högrevsburgare' (chuck burgers). The Swedish equivalent of Norwegian høyrygg. Modern Swedish butchers are beginning to extract US-style steaks (flat iron, denver) from within the högrev.",
+  },
+
+  {
+    id: "fransyska_se",
+    name: "Fransyska",
+    region: "sweden",
+    maps_to: [
+      { canonical_id: "sirloin_tip", match_type: "close", confidence: 0.80, note: "Anatomically the knuckle/sirloin tip" },
+    ],
+    description: "One of Sweden's most important everyday beef cuts — anatomically the sirloin tip (knuckle), but culturally far more significant than its US equivalent. In the US, knuckle is often ground or sold as budget 'sirloin tip steaks.' In Sweden, Fransyska is a premium roasting joint used for the traditional 'Slottstek' (castle roast) — one of Sweden's most iconic beef dishes. Same muscle, completely different status.",
+    notes: "A perfect example of cultural value divergence: low status in the US, high status in Sweden.",
+  },
+
+  // === FINLAND ===
+
+  {
+    id: "paahtopaisti_fi",
+    name: "Paahtopaisti",
+    region: "finland",
+    maps_to: [
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.65, note: "Often from the top sirloin area, but defined by cooking function" },
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.60, note: "May also come from inside round" },
+    ],
+    description: "Literally 'roasting roast' — Finland's core roast beef cut, defined by its intended cooking use rather than a specific muscle. Sold as a whole 1-2kg piece for oven roasting. A Finn may not know 'top sirloin steak' but absolutely knows paahtopaisti. This is the defining example of Finland's function-first butchery system — cuts are named for what you do with them, not what muscle they are.",
+    notes: "Function-defined cut — characteristic of Finnish butchery philosophy. The name tells you the cooking method, not the anatomy.",
+  },
+
+  {
+    id: "etuselka_fi",
+    name: "Etuselkä",
+    region: "finland",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "composite", confidence: 0.65, note: "Front-back shoulder area" },
+      { canonical_id: "chuck_blade", match_type: "composite", confidence: 0.60, note: "Includes blade portions" },
+    ],
+    description: "Literally 'front back' — Finland's primary chuck/shoulder cut. The quintessential meat for Karjalanpaisti (Karelian stew), one of Finland's most iconic traditional dishes. Almost never sold as steaks. In Finland, if you want beef for a stew, you ask for etuselkä. The Karelian stew tradition is so strong that it shapes which cuts are popular — and etuselkä is at the center.",
+    notes: "The cultural importance of Karjalanpaisti (Karelian stew) drives demand for this cut and reduces incentive to isolate individual steak cuts from the chuck.",
+  },
+
+  {
+    id: "pihvi_fi",
+    name: "Pihvi",
+    region: "finland",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.55, note: "Generic pihvi usually comes from the round" },
+      { canonical_id: "top_sirloin", match_type: "approximate", confidence: 0.45, note: "Higher-quality pihvi from sirloin" },
+    ],
+    description: "The generic Finnish word for 'steak' — but unlike English where steak always has a qualifier (ribeye, strip, etc.), plain 'naudan pihvi' (beef steak) usually means a lean cut from the round. Similar to the Dutch 'biefstuk' ambiguity. For premium steaks, Finns specify the cut (entrecôte, sisäfilee, ulkofilee). Ordering just 'pihvi' at a restaurant will get you something very different from what an American expects from 'steak.'",
+    notes: "Generic term — flag for US users who expect premium steak quality from the unqualified word 'pihvi'.",
+  },
+
   // === DENMARK ===
 
   {

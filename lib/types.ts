@@ -15,7 +15,10 @@ export type RegionSlug =
   | "italy"
   | "portugal"
   | "netherlands"
-  | "denmark";
+  | "denmark"
+  | "norway"
+  | "sweden"
+  | "finland";
 
 export type CanonicalId =
   | "ribeye"

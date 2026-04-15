@@ -26,6 +26,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       portugal: "Mal passado",
       netherlands: "Rood",
       denmark: "Rød",
+      norway: "Rå",
+      sweden: "Blodig",
+      finland: "Raaka",
     },
   },
   {
@@ -48,6 +51,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       portugal: "Mal passado/ao ponto",
       netherlands: "Half doorbakken",
       denmark: "Medium",
+      norway: "Medium rå",
+      sweden: "Medium rare",
+      finland: "Medium rare",
     },
   },
   {
@@ -70,6 +76,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       portugal: "Ao ponto",
       netherlands: "Doorbakken",
       denmark: "Medium tilberedt",
+      norway: "Medium",
+      sweden: "Medium",
+      finland: "Medium",
     },
   },
   {
@@ -92,12 +101,18 @@ export const donenessLevels: readonly DonenessLevel[] = [
       portugal: "Bem passado",
       netherlands: "Goed doorbakken",
       denmark: "Gennemstegt",
+      norway: "Godt stekt",
+      sweden: "Välstekt",
+      finland: "Kypsä",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
       argentina: "Argentine asado is often cooked more thoroughly than US or French preferences. Well done is not unusual.",
       germany: "German steaks are traditionally cooked more than French or American preferences. Medium (Rosa) is the most common order.",
       italy: "Italian bistecca alla Fiorentina is traditionally served very rare (al sangue). Requesting ben cotto for a Fiorentina may offend the chef.",
+      norway: "Norwegian steaks are traditionally cooked medium to well-done. Rare is uncommon.",
+      sweden: "Medium is the cultural default. Rare (blodig, literally 'bloody') is accepted but less common than in France.",
+      finland: "Medium to well-done is the cultural default. Rare is not traditional in Finnish cuisine.",
     },
   },
 ] as const;
