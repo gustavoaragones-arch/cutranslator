@@ -1,4 +1,5 @@
 import { relatedByCanonical } from "@/data/clusters";
+import { regionalCuts } from "@/data/regionalCuts";
 import { regionalNames } from "@/data/regionalNames";
 import { regions } from "@/data/regions";
 import { getCanonicalById, listCanonicalCuts } from "@/lib/canonical";
@@ -123,6 +124,21 @@ export function allPairCutParams(): { pair: string; cut: string }[] {
       if (!seen.has(key)) {
         seen.add(key);
         out.push({ pair, cut });
+      }
+    }
+  }
+  for (const m of regionalCuts) {
+    const surfaces = [m.name, ...(m.synonyms ?? [])];
+    for (const surface of surfaces) {
+      const cut = slugifyCut(surface);
+      for (const to of regionSlugsInOrder) {
+        if (to === m.region) continue;
+        const pair = pairSegment(m.region, to);
+        const key = `${pair}/${cut}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          out.push({ pair, cut });
+        }
       }
     }
   }

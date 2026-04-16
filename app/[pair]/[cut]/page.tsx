@@ -19,7 +19,7 @@ import {
   getExploreMoreLinks,
   getTranslationLinksForCanonicals,
 } from "@/lib/linking";
-import { findRegionalMappings } from "@/lib/mappings";
+import { lookupCut } from "@/lib/indexes";
 import { pairSegment, parsePairSegment } from "@/lib/pairRoute";
 import { regionLabel } from "@/lib/regions";
 import {
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const parsed = parsePairSegment(pair);
   if (!parsed) return { title: "Cut not found | Cutranslator" };
   const key = cutSlugToNormalizedKey(cut);
-  if (findRegionalMappings(parsed.from, key).length === 0) {
+  if (!lookupCut(parsed.from, key)) {
     return { title: "Cut not found | Cutranslator" };
   }
   const cutDisplay = displayCutNameForSlug(cut, parsed.from);
@@ -100,11 +100,11 @@ export default async function PairCutPage({ params }: PageProps) {
   if (!parsed) notFound();
 
   const key = cutSlugToNormalizedKey(cut);
-  const matches = findRegionalMappings(parsed.from, key);
-  if (matches.length === 0) notFound();
+  const hit = lookupCut(parsed.from, key);
+  if (!hit) notFound();
 
   const cutDisplay = displayCutNameForSlug(cut, parsed.from);
-  const inputName = matches[0].name;
+  const inputName = hit.data.name;
   const result = resolveCut(inputName, parsed.from, parsed.to);
 
   const h1 = seoH1(cutDisplay, parsed.to);
