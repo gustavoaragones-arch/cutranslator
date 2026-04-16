@@ -105,4 +105,31 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "finland", phrase: "Haluaisin sisäfileetä", notes: "Standard" },
   { canonicalId: "flank", region: "finland", phrase: "Onko teillä flank steakia tai kylkeä?", notes: "Hybrid phrasing — English + Finnish" },
   { canonicalId: "top_sirloin", region: "finland", phrase: "Haluaisin paahtopaistin", notes: "Extremely natural — asking for a roast, not a steak" },
+
+  // RUSSIA
+  { canonicalId: "ribeye", region: "russia", phrase: "Дайте рибай стейк, средней прожарки", notes: "Modern Russian uses 'ribay' transliteration; 'средней прожарки' = medium" },
+  { canonicalId: "tenderloin", region: "russia", phrase: "У вас есть вырезка?", notes: "'Do you have tenderloin?' — standard request" },
+  { canonicalId: "striploin", region: "russia", phrase: "Дайте стейк из тонкого края", notes: "'Steak from the thin edge' — Russian striploin" },
+  { canonicalId: "brisket", region: "russia", phrase: "Мне нужна грудинка для тушения", notes: "'Brisket for braising' — common phrasing" },
+  { canonicalId: "hind_shank", region: "russia", phrase: "Дайте голяшку для супа", notes: "Shank is explicitly requested for soup" },
+
+  // UKRAINE
+  { canonicalId: "ribeye", region: "ukraine", phrase: "Дайте рібай стейк, medium rare", notes: "Ukrainian restaurants commonly mix English doneness terms" },
+  { canonicalId: "tenderloin", region: "ukraine", phrase: "Чи є у вас вирізка?", notes: "'Do you have tenderloin?' in Ukrainian" },
+  { canonicalId: "striploin", region: "ukraine", phrase: "Дайте стейк із тонкого краю" },
+  { canonicalId: "brisket", region: "ukraine", phrase: "Мені потрібна грудинка для тушкування" },
+  { canonicalId: "hind_shank", region: "ukraine", phrase: "Дайте гомілку для супу", notes: "Using Ukrainian гомілка rather than Russian голяшка" },
+
+  // BELGIUM
+  { canonicalId: "ribeye", region: "belgium", phrase: "Un entrecôte, saignant s'il vous plaît", notes: "Belgian-French phrasing mirrors France" },
+  { canonicalId: "tenderloin", region: "belgium", phrase: "Un filet de bœuf, à point", notes: "Same as French" },
+  { canonicalId: "sirloin_cap", region: "belgium", phrase: "De la poire de bœuf, saignant", notes: "Poire = sirloin cap in Belgian butchery" },
+  { canonicalId: "chuck_roll", region: "belgium", phrase: "De la viande à carbonade, environ un kilo", notes: "Request for Belgian national dish" },
+
+  // POLAND
+  { canonicalId: "ribeye", region: "poland", phrase: "Poproszę antrykot, średnio wysmażony", notes: "Polish 'antrykot' = ribeye; średnio wysmażony = medium" },
+  { canonicalId: "tenderloin", region: "poland", phrase: "Czy mają państwo polędwicę wołową?", notes: "Formal Polish: 'Do you have beef tenderloin?'" },
+  { canonicalId: "striploin", region: "poland", phrase: "Poproszę rostbef", notes: "Careful: Polish rostbef = striploin, NOT US-style roast beef preparation" },
+  { canonicalId: "short_ribs", region: "poland", phrase: "Poproszę szponder w długich kawałkach", notes: "'Szponder in long pieces' — clarifies you want BBQ-style, not soup-cut" },
+  { canonicalId: "inside_round", region: "poland", phrase: "Poproszę zrazową górną na zrazy", notes: "Explicit cultural reference: top round for Polish beef rolls" },
 ] as const;

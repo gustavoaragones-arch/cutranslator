@@ -29,6 +29,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       norway: "Rå",
       sweden: "Blodig",
       finland: "Raaka",
+      russia: "С кровью",
+      ukraine: "З кров'ю",
+      belgium: "Saignant",
+      poland: "Krwisty",
     },
   },
   {
@@ -54,6 +58,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       norway: "Medium rå",
       sweden: "Medium rare",
       finland: "Medium rare",
+      russia: "Medium rare",
+      ukraine: "Medium rare",
+      belgium: "À point",
+      poland: "Średnio krwisty",
     },
   },
   {
@@ -79,6 +87,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       norway: "Medium",
       sweden: "Medium",
       finland: "Medium",
+      russia: "Medium",
+      ukraine: "Medium",
+      belgium: "À point cuit",
+      poland: "Średnio wysmażony",
     },
   },
   {
@@ -104,6 +116,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       norway: "Godt stekt",
       sweden: "Välstekt",
       finland: "Kypsä",
+      russia: "Хорошо прожаренный",
+      ukraine: "Добре просмажений",
+      belgium: "Bien cuit",
+      poland: "Dobrze wysmażony",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -113,6 +129,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       norway: "Norwegian steaks are traditionally cooked medium to well-done. Rare is uncommon.",
       sweden: "Medium is the cultural default. Rare (blodig, literally 'bloody') is accepted but less common than in France.",
       finland: "Medium to well-done is the cultural default. Rare is not traditional in Finnish cuisine.",
+      russia: "Russian steaks are traditionally cooked medium to well-done. Rare (с кровью, 'with blood') is historically uncommon.",
+      ukraine: "Ukrainian restaurants increasingly use English doneness terms (medium, medium rare). Traditional home cooking defaults to well-done.",
+      poland: "Polish cuisine traditionally favors well-done. Medium rare is a modern restaurant preference.",
     },
   },
 ] as const;

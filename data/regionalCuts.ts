@@ -677,4 +677,136 @@ export const regionalCuts: readonly RegionalCut[] = [
     description: "Literally 'thick roast' — a Danish cut from the sirloin/rump area. While Americans cut this into individual sirloin steaks, Danes traditionally sell it as a whole roast. For a US-style sirloin steak, ask for Tykstegsbøf (thick roast steak). The cut quality falls between premium steaks and everyday roasting joints.",
   },
 
+
+  // === RUSSIA ===
+  {
+    id: "kategoriya_1_ru",
+    name: "Мясо 1 категории",
+    region: "russia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.70, note: "Category 1 includes tenderloin as the premium cut" },
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.65, note: "Also includes the loin region" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.60, note: "Rib region falls within Category 1" },
+    ],
+    synonyms: ["mjaso pervoj kategorii", "первая категория"],
+    description: "Category 1 meat in the GOST classification system — the premium cuts including tenderloin, loin, and rib sections. Unlike US USDA grading (Prime/Choice/Select) which grades the whole carcass, Russian GOST categories classify by anatomical location. A Russian shopper looking for premium beef asks for 'first category' meat rather than a specific cut name.",
+    notes: "GOST category system is a fundamentally different organizing principle from USDA — by location, not by marbling/grade.",
+  },
+
+  {
+    id: "bef_stroganov_cut_ru",
+    name: "Мясо для бефстроганов",
+    region: "russia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "close", confidence: 0.80, note: "Traditional choice for authentic beef stroganoff" },
+      { canonical_id: "striploin", match_type: "approximate", confidence: 0.65, note: "Also acceptable — thinly sliced" },
+    ],
+    synonyms: ["stroganoff beef", "бефстроганов мясо"],
+    description: "In Russia, butchers and recipes refer to a specific cut preparation for Beef Stroganoff — traditionally tenderloin (вырезка) cut into thin strips across the grain. The cut choice is so culturally tied to the dish that butchers will often pre-slice it when you ask for 'мясо для бефстроганов'. A format-driven cut category, not a specific muscle.",
+    notes: "Format-driven: the cut is defined by slicing method, not anatomy.",
+  },
+
+  {
+    id: "kholodets_cut_ru",
+    name: "Мясо для холодца",
+    region: "russia",
+    maps_to: [
+      { canonical_id: "fore_shank", match_type: "close", confidence: 0.85, note: "Front shank is the classic choice for maximum gelatin" },
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.80, note: "Hind shank also used" },
+    ],
+    synonyms: ["студень", "holodets", "studen"],
+    description: "The cut selection for Kholodets (beef aspic) — a traditional Russian dish requiring maximum gelatin extraction. Butchers recognize 'мясо для холодца' as a specific request for shanks with bones, joints, and connective tissue. The US shank sold as osso buco is not interchangeable — kholodets requires specific pieces with higher collagen content.",
+    notes: "The cultural dish drives which specific cut is selected — a common pattern in Russian butchery.",
+  },
+
+  // === UKRAINE ===
+  {
+    id: "borscht_cut_ua",
+    name: "М'ясо для борщу",
+    region: "ukraine",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "close", confidence: 0.75, note: "Traditional choice for rich borscht" },
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.75, note: "Bone-in shank for depth" },
+      { canonical_id: "short_ribs", match_type: "approximate", confidence: 0.60, note: "Also used for flavor and collagen" },
+    ],
+    synonyms: ["борщове м'ясо", "myaso dlya borshchu"],
+    description: "Ukrainian borscht is not just a dish but a defining cultural institution — and the cut of beef used is critical. Traditional Ukrainian butchers recognize 'м'ясо для борщу' (meat for borscht) as a specific request: bone-in, brisket or shank with good fat and collagen content. The cut selection is functional (for stock depth) rather than anatomical. UNESCO recognized Ukrainian borscht as intangible cultural heritage in 2022.",
+    notes: "Culturally significant — borscht is a defining element of Ukrainian cuisine.",
+  },
+
+  {
+    id: "kholodets_cut_ua",
+    name: "М'ясо для холодцю",
+    region: "ukraine",
+    maps_to: [
+      { canonical_id: "fore_shank", match_type: "close", confidence: 0.85 },
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.80 },
+    ],
+    synonyms: ["холодець", "studynets", "студенець"],
+    description: "The Ukrainian version of aspic — kholodets (холодець) or studynets (студенець). Same functional cut category as the Russian version, but Ukrainian butchery is increasingly using Ukrainian-language terminology (холодець/студенець) rather than Russian-origin terms. The cut preference is identical: shanks with maximum bone, joint, and collagen.",
+    notes: "Post-2022 Ukrainian butchery is actively shifting to Ukrainian-language terminology — important to capture the distinction from Russian usage.",
+  },
+
+  // === BELGIUM ===
+  {
+    id: "plat_de_cotes_be",
+    name: "Plat de côtes",
+    region: "belgium",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "approximate", confidence: 0.65, note: "Plate/rib side cut" },
+      { canonical_id: "flank", match_type: "approximate", confidence: 0.55, note: "Can also refer to flank area depending on butcher" },
+    ],
+    description: "A Belgian butchery term with significant regional variation — 'plat de côtes' can refer to the short rib plate area OR the flank, depending on the specific butcher and region within Belgium. Used primarily for slow-braised dishes like carbonade flamande (Belgian beef stew). Flag this as requiring butcher clarification.",
+    notes: "Regional ambiguity within Belgium — one of the more unstable cut names in Belgian butchery.",
+  },
+
+  {
+    id: "carbonade_cut_be",
+    name: "Viande à carbonade",
+    region: "belgium",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.75, note: "Traditional choice for carbonade flamande" },
+      { canonical_id: "shoulder_clod", match_type: "approximate", confidence: 0.65, note: "Also acceptable" },
+    ],
+    synonyms: ["vlees voor carbonade", "carbonade beef"],
+    description: "The cut used for Belgium's national dish, carbonade flamande (Flemish beef and beer stew). Belgian butchers recognize this as a specific request — chunks of chuck or shoulder, well-marbled, suitable for 2-3 hours of braising in Belgian brown ale. Like many cultural cuts, the selection is defined by the dish, not by precise anatomy.",
+    notes: "Belgium's national beef dish drives demand for this specific cut category.",
+  },
+
+  // === POLAND ===
+  {
+    id: "zrazowa_pl",
+    name: "Zrazowa",
+    region: "poland",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "close", confidence: 0.80, note: "Zrazowa górna — top round for premium zrazy" },
+      { canonical_id: "outside_round", match_type: "close", confidence: 0.75, note: "Zrazowa dolna — bottom round for stewing" },
+    ],
+    synonyms: ["zrazy beef", "mięso na zrazy"],
+    description: "A foundational Polish beef category — lean round cuts specifically prepared for Zrazy zawijane (stuffed beef rolls), one of Poland's most iconic traditional dishes. Polish butchers carefully separate Zrazowa górna (top, more tender) and Zrazowa dolna (bottom, tougher). While US round cuts are often seen as cheap burger meat, Polish round cuts are prized for this culinary tradition and carefully trimmed.",
+    notes: "The Zrazy tradition elevates the status of round cuts in Polish butchery — a clear example of cultural value divergence.",
+  },
+
+  {
+    id: "szponder_pl",
+    name: "Szponder",
+    region: "poland",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.70, note: "Anatomically equivalent to US short ribs, but culturally treated as soup meat" },
+    ],
+    description: "Polish short ribs — but culturally worlds apart from the American BBQ tradition. In Poland, szponder is historically 'soup meat' for rosół (Polish beef broth), sold cut into small chunks rather than as long meaty slabs. An American asking for 'short ribs' at a traditional Polish butcher will likely receive szponder prepared for soup rather than BBQ. Modern Polish BBQ enthusiasts are starting to request szponder 'w długich kawałkach' (in long pieces).",
+    notes: "Same anatomical cut, completely different cultural expectations — similar to German Tafelspitz.",
+  },
+
+  {
+    id: "ligawa_pl",
+    name: "Ligawa",
+    region: "poland",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.85, note: "Anatomically the eye of round; often called 'false tenderloin' in Polish" },
+    ],
+    description: "Polish eye of round — often called 'fałszywa polędwica' (false tenderloin) because of its resemblance in shape to tenderloin. Ligawa is lean, clean, and cylindrical but requires slow cooking to avoid toughness. Used for traditional Polish roast beef dishes, thin-sliced cold cuts, and rolled roasts. The 'false tenderloin' nickname is a warning: looks premium, cooks nothing like one.",
+    notes: "Like German 'Falsches Filet' — the name itself warns that this is not the real tenderloin.",
+  },
+
 ] as const;
