@@ -33,6 +33,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       ukraine: "З кров'ю",
       belgium: "Saignant",
       poland: "Krwisty",
+      czechia: "Krvavý",
+      austria: "Blutig",
+      slovakia: "Krvavý",
+      hungary: "Véresen",
     },
   },
   {
@@ -62,6 +66,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       ukraine: "Medium rare",
       belgium: "À point",
       poland: "Średnio krwisty",
+      czechia: "Středně krvavý",
+      austria: "Rosa",
+      slovakia: "Stredne krvavý",
+      hungary: "Félig nyers",
     },
   },
   {
@@ -91,6 +99,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       ukraine: "Medium",
       belgium: "À point cuit",
       poland: "Średnio wysmażony",
+      czechia: "Středně propečený",
+      austria: "Halbdurch",
+      slovakia: "Stredne prepečený",
+      hungary: "Közepesen átsütve",
     },
   },
   {
@@ -120,6 +132,10 @@ export const donenessLevels: readonly DonenessLevel[] = [
       ukraine: "Добре просмажений",
       belgium: "Bien cuit",
       poland: "Dobrze wysmażony",
+      czechia: "Propečený",
+      austria: "Durch",
+      slovakia: "Prepečený",
+      hungary: "Jól átsütve",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -132,6 +148,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       russia: "Russian steaks are traditionally cooked medium to well-done. Rare (с кровью, 'with blood') is historically uncommon.",
       ukraine: "Ukrainian restaurants increasingly use English doneness terms (medium, medium rare). Traditional home cooking defaults to well-done.",
       poland: "Polish cuisine traditionally favors well-done. Medium rare is a modern restaurant preference.",
+      czechia: "Czech steak culture is growing in Prague. Středně krvavý (medium rare) is the standard for Czech steak lovers.",
+      austria: "Austrian steakhouses use Rosa (medium rare) as the standard for Beiried. Traditional home cooking defaults to Halbdurch (medium).",
+      hungary: "Traditional Hungarian cooking favors well-done. Medium rare (félig nyers, literally 'half raw') is a modern restaurant preference.",
     },
   },
 ] as const;

@@ -132,4 +132,29 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "striploin", region: "poland", phrase: "Poproszę rostbef", notes: "Careful: Polish rostbef = striploin, NOT US-style roast beef preparation" },
   { canonicalId: "short_ribs", region: "poland", phrase: "Poproszę szponder w długich kawałkach", notes: "'Szponder in long pieces' — clarifies you want BBQ-style, not soup-cut" },
   { canonicalId: "inside_round", region: "poland", phrase: "Poproszę zrazową górną na zrazy", notes: "Explicit cultural reference: top round for Polish beef rolls" },
+
+  // CZECH REPUBLIC
+  { canonicalId: "ribeye", region: "czechia", phrase: "Prosil bych vysoký roštěnec, středně krvavý", notes: "'High roast, medium bloody' — Czech steak phrasing" },
+  { canonicalId: "tenderloin", region: "czechia", phrase: "Prosil bych svíčkovou na steaky", notes: "Specifying 'for steaks' — otherwise may assume for the cream sauce dish" },
+  { canonicalId: "striploin", region: "czechia", phrase: "Nízký roštěnec, nakrájet na steaky", notes: "'Low roast, cut into steaks'" },
+  { canonicalId: "hind_shank", region: "czechia", phrase: "Kližku na guláš, prosím", notes: "'Shank for goulash please'" },
+  { canonicalId: "sirloin_cap", region: "czechia", phrase: "Květovou špičku s tukovým krytím", notes: "'Flower tip with fat cap' — essential if you want picanha-style" },
+
+  // AUSTRIA
+  { canonicalId: "ribeye", region: "austria", phrase: "Ich hätte gerne einen Rostbraten, rosa bitte", notes: "'I'd like a rostbraten, pink please'" },
+  { canonicalId: "striploin", region: "austria", phrase: "Beiried, bitte, als Steaks geschnitten", notes: "'Beiried, cut as steaks please'" },
+  { canonicalId: "tenderloin", region: "austria", phrase: "Haben Sie Lungenbraten?", notes: "'Do you have tenderloin?'" },
+  { canonicalId: "sirloin_cap", region: "austria", phrase: "Tafelspitz, bitte — mit Fettdeckel", notes: "Specify fat cap if you want to grill it rather than boil it" },
+  { canonicalId: "hind_shank", region: "austria", phrase: "Wadschinken zum Siedefleisch", notes: "'Shank for boiled beef' — classic Austrian request" },
+
+  // SLOVAKIA
+  { canonicalId: "ribeye", region: "slovakia", phrase: "Prosím si vysoký roštenec, stredne krvavý", notes: "Mirrors Czech phrasing with Slovak pronunciation" },
+  { canonicalId: "tenderloin", region: "slovakia", phrase: "Máte sviečkovicu?", notes: "'Do you have tenderloin?'" },
+  { canonicalId: "hind_shank", region: "slovakia", phrase: "Glejovku na guláš, prosím", notes: "'Shank for goulash'" },
+
+  // HUNGARY
+  { canonicalId: "ribeye", region: "hungary", phrase: "Kérek egy rostélyost, közepesen átsütve", notes: "'I'd like a ribeye, medium'" },
+  { canonicalId: "tenderloin", region: "hungary", phrase: "Kérek bélszínt", notes: "'I'd like tenderloin'" },
+  { canonicalId: "striploin", region: "hungary", phrase: "Hátszín szelet, kérem", notes: "'Striploin slice, please'" },
+  { canonicalId: "hind_shank", region: "hungary", phrase: "Lábszárt kérek pörközthöz", notes: "'Shank for pörkölt' — specifying the dish communicates the exact cut needed" },
 ] as const;

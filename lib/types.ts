@@ -22,7 +22,11 @@ export type RegionSlug =
   | "russia"
   | "ukraine"
   | "belgium"
-  | "poland";
+  | "poland"
+  | "czechia"
+  | "austria"
+  | "slovakia"
+  | "hungary";
 
 export type CanonicalId =
   | "ribeye"

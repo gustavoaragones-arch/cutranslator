@@ -23,6 +23,10 @@ export const regions = [
   { id: "ukraine" as const, label: "Ukraine" },
   { id: "belgium" as const, label: "Belgium" },
   { id: "poland" as const, label: "Poland" },
+  { id: "czechia" as const, label: "Czech Republic" },
+  { id: "austria" as const, label: "Austria" },
+  { id: "slovakia" as const, label: "Slovakia" },
+  { id: "hungary" as const, label: "Hungary" },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

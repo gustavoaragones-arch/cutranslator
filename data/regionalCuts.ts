@@ -809,4 +809,128 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Like German 'Falsches Filet' — the name itself warns that this is not the real tenderloin.",
   },
 
+  // === CZECH REPUBLIC ===
+  {
+    id: "svickova_dish_cz",
+    name: "Svíčková na smetaně",
+    region: "czechia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.70, note: "Named after tenderloin, but the dish usually uses different cuts" },
+      { canonical_id: "inside_round", match_type: "close", confidence: 0.75, note: "Vrchní šál (top round) is most commonly used for the actual dish" },
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "Falešná svíčková (chuck tender) also widely used" },
+    ],
+    description: "Czech Republic's national dish — but with a naming paradox. 'Svíčková' means tenderloin, yet most Czechs use cheaper cuts like Vrchní šál (top round) or Falešná svíčková (chuck tender) because they braise better in the cream sauce. True tenderloin is too lean and expensive for this dish. The name refers to the original luxury version, while the everyday version uses different muscles entirely.",
+    notes: "A naming paradox: the dish is named after a cut it rarely uses. Critical for user understanding.",
+  },
+
+  {
+    id: "veverka_cz",
+    name: "Veverka",
+    region: "czechia",
+    maps_to: [
+      { canonical_id: "hanger", match_type: "exact", confidence: 0.90, note: "Anatomically identical to hanger steak" },
+    ],
+    description: "Literally 'the squirrel' — the Czech name for hanger steak. A traditional butcher's cut that was kept by the butcher for personal use because of its intense flavor. Only one per animal. The whimsical name is shared across Central European butchery (Slovak and Slovenian both use similar animal-inspired names for this cut). Increasingly sought after by Czech steak enthusiasts.",
+    notes: "Central European 'butcher's secret' cut — shared naming tradition across Czech/Slovak/Slovenian butchery.",
+  },
+
+  {
+    id: "zebra_soup_cz",
+    name: "Žebra na polévku",
+    region: "czechia",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.65, note: "Anatomically short ribs, but culturally soup bones — trimmed thin, not meaty" },
+    ],
+    description: "Czech 'soup ribs' — anatomically equivalent to US short ribs, but culturally a completely different product. Czech butchers trim žebra very thin and sell them specifically for soup broth. An American expecting thick, meaty BBQ-style short ribs will find Czech žebra disappointingly bony. For BBQ-style ribs, ask for 'masitá žebra' (meaty ribs) or 'vysoký bok' (high side).",
+  },
+
+  // === AUSTRIA ===
+  {
+    id: "tafelspitz_at",
+    name: "Tafelspitz",
+    region: "austria",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "cultural", confidence: 0.80, note: "Anatomically the sirloin cap (picanha) — but boiled, not grilled" },
+    ],
+    description: "Austria's national dish — and the defining example of cultural cut divergence in the entire Cutranslator ontology. Anatomically identical to Brazilian picanha (sirloin cap), but the preparation is the polar opposite: Tafelspitz is simmered slowly in broth for hours and served with apple-horseradish sauce. The fat cap is essential for flavor during boiling. If you want to grill it, ask the butcher NOT to trim the fat cap — they typically trim it lean for the traditional boiled preparation.",
+    notes: "The Tafelspitz-Picanha connection is arguably the most valuable 'same cut, different world' insight in the database.",
+  },
+
+  {
+    id: "gulasch_cut_at",
+    name: "Gulaschfleisch",
+    region: "austria",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.85, note: "Wadschinken is the ONLY acceptable cut for authentic Wiener Saftgulasch" },
+    ],
+    description: "In Austria, authentic Gulasch has a strict rule: Wadschinken (shank) is the only acceptable meat. Using chuck is considered a culinary error because the collagen from the shank creates the sauce's characteristic thickness. Austrian butchers sell 'Gulaschfleisch' specifically pre-cut from the shank. This is not 'stew meat' in the American sense — it's a precise cut for a precise dish.",
+    notes: "The Gulasch rule extends to Czech and Hungarian cuisine — shank is king for Central European stews.",
+  },
+
+  {
+    id: "wiener_schnitzel_cut_at",
+    name: "Schnitzelfleisch",
+    region: "austria",
+    maps_to: [
+      { canonical_id: "sirloin_tip", match_type: "close", confidence: 0.80, note: "Nuss/Kugel is the prime Schnitzel cut" },
+      { canonical_id: "inside_round", match_type: "close", confidence: 0.75, note: "Schale also used for Schnitzel" },
+    ],
+    description: "The cut for Wiener Schnitzel (when made with beef instead of veal). Austrian butchers recognize 'Schnitzelfleisch' as a request for thin, lean slices from the Nuss (knuckle/sirloin tip) or Schale (inside round). These are pounded thin, breaded, and fried. The US equivalent would be top round or sirloin tip steaks, but Austrian preparation demands much thinner slicing.",
+  },
+
+  // === SLOVAKIA ===
+  {
+    id: "falosna_svieckovica_sk",
+    name: "Falošná sviečkovica",
+    region: "slovakia",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.75, note: "Often the eye of round" },
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "Can also be chuck tender" },
+    ],
+    description: "The Slovak 'false tenderloin' — a cut that looks exactly like tenderloin but is actually the eye of round or chuck tender. If grilled like a steak, it will be extremely tough. Slovak butchers sell it clearly labeled as 'falošná' (false) as a warning, but tourists often miss the distinction. A budget-friendly braising cut, NOT a steak substitute.",
+    notes: "The 'false tenderloin' concept is shared across Czech, Slovak, Hungarian, and Slovenian butchery — each country has its own name for the same trap.",
+  },
+
+  {
+    id: "gulash_cut_sk",
+    name: "Mäso na guláš",
+    region: "slovakia",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.85, note: "Glejovka (shank) is required for authentic kotlíkový guláš" },
+    ],
+    description: "Slovak goulash meat — specifically from the Glejovka (shank). The same Central European rule applies: shank is mandatory for authentic goulash because its collagen creates the thick, sticky sauce. In Slovakia, Kotlíkový guláš (kettle goulash) cooked over an open fire is a deeply ingrained cultural tradition, and the cut choice is non-negotiable.",
+  },
+
+  // === HUNGARY ===
+  {
+    id: "hegyesfarto_hu",
+    name: "Hegyesfartő",
+    region: "hungary",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.80, note: "The Hungarian picanha — 'pointed rump'" },
+    ],
+    description: "Literally 'pointed rump' — Hungary's sirloin cap. Like Austrian Tafelspitz and Brazilian picanha, this is anatomically the same muscle but traditionally prepared very differently. Hungarian butchery values it as a premium roasting cut, typically oven-roasted as a whole joint rather than grilled as steaks or skewered as in Brazilian churrasco.",
+  },
+
+  {
+    id: "porkolt_cut_hu",
+    name: "Pörkölt hús",
+    region: "hungary",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.90, note: "Lábszár is the only acceptable cut for authentic Pörkölt" },
+    ],
+    description: "The cut for Hungary's iconic Pörkölt (paprika stew — NOT goulash, which is a soup in Hungary). Lábszár (shank) is the required cut. The high collagen content creates the dish's characteristic thick, paprika-red sauce. Using lean round or chuck is considered a fundamental error. Hungarian butchers sell pre-cut 'pörkölt hús' specifically from the shank.",
+    notes: "Important distinction: in Hungary, Gulyás is a SOUP. Pörkölt is the STEW. Most of the world confuses them.",
+  },
+
+  {
+    id: "feherpecsenye_hu",
+    name: "Fehérpecsenye",
+    region: "hungary",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "The Hungarian 'white roast' — looks like tenderloin but is tough" },
+    ],
+    description: "Literally 'white roast' — the Hungarian version of the 'false tenderloin' that appears across Central Europe. A very lean eye of round that resembles tenderloin in shape but requires completely different cooking. Used for traditional Hungarian thin steaks (szelet) that are pounded, breaded, and fried — never grilled rare like an actual tenderloin steak.",
+  },
+
 ] as const;
