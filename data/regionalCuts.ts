@@ -933,4 +933,179 @@ export const regionalCuts: readonly RegionalCut[] = [
     description: "Literally 'white roast' — the Hungarian version of the 'false tenderloin' that appears across Central Europe. A very lean eye of round that resembles tenderloin in shape but requires completely different cooking. Used for traditional Hungarian thin steaks (szelet) that are pounded, breaded, and fried — never grilled rare like an actual tenderloin steak.",
   },
 
+  // ----- CROATIA -----
+  {
+    id: "pasticada_cut_hr",
+    name: "Meso za pašticadu",
+    region: "croatia",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "close", confidence: 0.80, note: "Frikando (top round) is the traditional choice" },
+      { canonical_id: "sirloin_tip", match_type: "close", confidence: 0.70, note: "Orah (knuckle) also used" },
+    ],
+    description: "The cut for Pašticada — Dalmatia's most famous beef dish, a slow-braised pot roast in a sweet-and-sour wine sauce. Unlike American pot roast (typically chuck), Pašticada requires lean cuts from the round: Frikando (top round) or Orah (knuckle). Croatian tradition considers chuck too fatty for proper Pašticada — the opposite of American logic.",
+    notes: "Using chuck for Pašticada is considered a mistake in Dalmatian cooking — cultural value inversion vs US pot roast.",
+  },
+
+  {
+    id: "cevapi_blend_hr",
+    name: "Meso za ćevape",
+    region: "croatia",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.75, note: "Vrat (neck) is the primary beef cut" },
+      { canonical_id: "chuck_blade", match_type: "approximate", confidence: 0.65, note: "Shoulder also used in the blend" },
+    ],
+    synonyms: ["mljeveno za ćevape"],
+    description: "The meat blend for Croatian Ćevapi — skinless grilled minced meat fingers. In Croatia (unlike Bosnia), the blend is typically beef + pork (miješano). The beef portion comes from Vrat (neck/chuck) for its fat content. Important: in Croatia, ground meat in shops is often 50/50 beef-pork by default. For 100% beef, specify '100% govedina'.",
+    notes: "Croatian ćevapi = beef+pork blend. Bosnian ćevapi = 100% beef. This distinction matters.",
+  },
+
+  {
+    id: "americki_rez_hr",
+    name: "Američki rez rebra",
+    region: "croatia",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.70, note: "Same cut as US short ribs, but you must ask for 'American cut' to get thick pieces" },
+    ],
+    description: "Croatian short ribs are traditionally trimmed very thin and sold for soup broth. To get the thick, meaty BBQ-style short ribs that Americans expect, you must specifically request 'američki rez' (American cut). Without this specification, you'll receive thin bony strips intended for boiling. Modern Croatian BBQ culture is growing, so butchers increasingly understand the request.",
+  },
+
+  // ----- SLOVENIA -----
+  {
+    id: "veverica_si",
+    name: "Veverica",
+    region: "slovenia",
+    maps_to: [
+      { canonical_id: "hanger", match_type: "exact", confidence: 0.90, note: "Anatomically identical to hanger steak" },
+    ],
+    description: "Literally 'the squirrel' — the Slovenian hanger steak. Part of the Central European tradition where the hanger steak receives animal-inspired names (Czech: veverka, also 'squirrel'). Only one per animal, traditionally kept by the butcher for personal consumption due to its intense beefy flavor. Increasingly available in Slovenian steakhouses and specialty butchers.",
+    notes: "Same 'squirrel' naming convention as Czech veverka — a shared Central European butcher's tradition.",
+  },
+
+  {
+    id: "golaz_cut_si",
+    name: "Meso za golaž",
+    region: "slovenia",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.85, note: "Boge/Goleno (shank) is required for authentic Slovenian golaž" },
+    ],
+    description: "Slovenian goulash meat — from the Boge (shank). The same Central European rule applies across Slovenia, Austria, Czech Republic, Slovakia, and Hungary: shank is mandatory because its collagen creates the sauce's thickness. Using lean round or chuck is a fundamental cooking error in this tradition. Slovenian butchers sell pre-cut golaž meat specifically from the shank.",
+  },
+
+  // ----- BOSNIA -----
+  {
+    id: "cevapi_cut_ba",
+    name: "Meso za ćevape",
+    region: "bosnia",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.80, note: "Vrat (neck) is the primary cut — must be double-ground" },
+      { canonical_id: "chuck_blade", match_type: "close", confidence: 0.70, note: "Lopatka (shoulder) added for fat balance" },
+    ],
+    synonyms: ["mljeveno za ćevape", "ćevapi meso"],
+    description: "The sacred meat for Bosnian Ćevapi — the heart of Balkan food culture. In Bosnia (unlike Croatia), Ćevapi are ALWAYS 100% beef (no pork), reflecting the country's Muslim majority. The meat must come from Vrat (neck) and Lopatka (shoulder), ground twice (dva puta mljeveno) for the right texture. The fat ratio and grind texture are considered as important as the spicing. If an American wants to replicate authentic Bosnian Ćevapi at home, they should ask their butcher to grind chuck neck twice.",
+    notes: "100% beef in Bosnia — this is the fundamental difference from Croatian ćevapi (beef+pork blend).",
+  },
+
+  {
+    id: "bosanski_lonac_cut_ba",
+    name: "Meso za bosanski lonac",
+    region: "bosnia",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "close", confidence: 0.75, note: "Grudi (brisket) for fat and depth" },
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.70, note: "Vrat (neck) with bones for stock" },
+    ],
+    description: "The meat selection for Bosanski Lonac (Bosnian Pot) — the national slow-cooked stew. Requires a mix of fatty, bone-in cuts: Grudi (brisket) and Vrat (neck) with bones included. Using lean 'stew meat' (as Americans might) is considered wrong — the bones and fat give the broth its signature depth. Cooked in clay pots for 4+ hours with layered vegetables.",
+  },
+
+  // ----- MONTENEGRO -----
+  // ----- ROMANIA -----
+  {
+    id: "mici_cut_ro",
+    name: "Carne pentru mici",
+    region: "romania",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.75, note: "Ceafă (neck) provides the fat content needed" },
+      { canonical_id: "chuck_blade", match_type: "approximate", confidence: 0.65, note: "Shoulder also used in the blend" },
+    ],
+    synonyms: ["mici", "mititei", "carne de mici"],
+    description: "The meat for Romania's most famous grilled dish — Mici (or Mititei), skinless grilled meat rolls. Traditional Mici are a blend of beef and lamb (sometimes pork), with the beef portion from the Ceafă (neck) for its fat content. Heavily spiced with garlic, cumin, and baking soda (which gives the characteristic puffiness). An American making Mici at home should use chuck with higher fat content and specify 100% beef (100% vită) if they don't want pork mixed in.",
+    notes: "Like Bosnian ćevapi but with different spicing. Mici use baking soda; ćevapi do not.",
+  },
+
+  {
+    id: "ciorba_cut_ro",
+    name: "Carne pentru ciorbă",
+    region: "romania",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.85, note: "Rasol (shank) is the primary choice for depth and gelatin" },
+      { canonical_id: "brisket", match_type: "close", confidence: 0.75, note: "Piept (brisket) also used for fat content" },
+    ],
+    description: "The cut for Ciorbă de văcuță (Romanian beef sour soup) — one of Romania's most beloved dishes. Requires bone-in cuts with high collagen: Rasol (shank) or Piept (brisket). The bone and connective tissue are essential for the broth's depth. Americans using lean 'stew meat' from the round will not achieve the authentic texture. Note: 'Rasol' is both the cut name AND a dish name (boiled beef with vegetables).",
+    notes: "Rasol = both the shank cut and the boiled beef dish. Dual identity, similar to Swedish Rostbiff.",
+  },
+
+  // ----- BULGARIA -----
+  {
+    id: "kyufte_cut_bg",
+    name: "Месо за кюфте",
+    region: "bulgaria",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.75, note: "Врат (neck) is the primary beef portion" },
+    ],
+    synonyms: ["kyufte meso", "кюфте месо", "kebapche meso"],
+    description: "The ground meat for Bulgaria's iconic Kyufte (flat patties) and Kebapche (elongated rolls) — the Bulgarian equivalents of ćevapi and pljeskavica. Most ground meat sold in Bulgaria is a blend (typically 60% pork / 40% beef). For 100% beef, look for labels stating '100% говеждо' (govezhdo) or 'юнешко' (yuneshko). The beef portion comes from Врат (neck) for its fat-to-lean ratio.",
+    notes: "Default Bulgarian ground meat = pork-beef blend. Must specify 100% beef explicitly.",
+  },
+
+  {
+    id: "dzholan_bg",
+    name: "Джолан",
+    region: "bulgaria",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Anatomically identical to US shank, but culturally elevated" },
+    ],
+    synonyms: ["dzholan"],
+    description: "Bulgarian shank — anatomically the same as US shank, but culturally a centerpiece cut rather than a budget afterthought. In Bulgaria, Джолан is often roasted whole with herbs as a primary oven-baked meal, or slow-cooked for rich collagen-heavy soups. In the US, shank is typically hidden away or sold only as osso buco. This cultural status difference means Bulgarian butchers treat shank with more care and trim it differently.",
+    notes: "Cultural elevation: budget cut in the US, centerpiece cut in Bulgaria.",
+  },
+
+  // ----- ALBANIA -----
+  {
+    id: "qofte_cut_al",
+    name: "Mish për qofte",
+    region: "albania",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.75, note: "Qafë (neck) is the primary cut" },
+      { canonical_id: "chuck_blade", match_type: "approximate", confidence: 0.65, note: "Shpatull (shoulder) also used" },
+    ],
+    synonyms: ["mish i grirë për qofte"],
+    description: "The ground meat for Albanian Qofte — the national soul food. Albanian butchers grind Qafë (neck) or Shpatull (shoulder) fresh, twice (mish i grirë i freskët), to get the right texture. Unlike pre-packaged American ground beef, Albanian qofte meat is always ground to order at the butcher shop. The fat content and freshness are considered critical — using pre-packaged ground beef is seen as a significant quality compromise.",
+    notes: "Ground-to-order tradition — freshness is non-negotiable in Albanian butchery.",
+  },
+
+  // ----- NORTH MACEDONIA -----
+  {
+    id: "gjuvech_cut_mk",
+    name: "Месо за ѓувеч",
+    region: "north_macedonia",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "close", confidence: 0.75, note: "Гради (brisket) provides fat and depth" },
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.70, note: "Врат (neck) for collagen-rich stewing" },
+    ],
+    synonyms: ["gjuvech meso", "ѓувеч месо"],
+    description: "The cut for North Macedonia's Ѓувеч (Gjuveč) — a baked meat and vegetable stew popular across the Balkans. Requires fatty, bone-in cuts: Гради (brisket) or Врат (neck). Using lean US-style 'stew meat' fails because Gjuveč needs fat to meld with the roasted vegetables during the long baking process. Cooked in clay pots in a traditional oven.",
+  },
+
+  {
+    id: "sac_cut_me",
+    name: "Meso ispod sača",
+    region: "montenegro",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "close", confidence: 0.70, note: "Vrat (neck) provides the fat needed" },
+      { canonical_id: "short_ribs", match_type: "close", confidence: 0.70, note: "Rebra (ribs) for bone and flavor" },
+    ],
+    synonyms: ["sač meso", "ispod sača"],
+    description: "The cut selection for Montenegro's signature cooking method — Ispod sača (under the bell), where meat cooks under a metal dome covered in hot coals. This requires fatty, bone-in cuts: Vrat (neck) or Rebra (ribs). Lean 'US-style' steaks will dry out under the sač. The slow, indirect heat transforms tough, collagen-rich cuts into fall-apart tender meat. This is Montenegro's equivalent of American low-and-slow BBQ, but with a medieval cooking apparatus.",
+    notes: "Sač cooking requires fatty, bone-in cuts — the opposite of premium steakhouse cuts.",
+  },
+
 ] as const;

@@ -26,7 +26,15 @@ export type RegionSlug =
   | "czechia"
   | "austria"
   | "slovakia"
-  | "hungary";
+  | "hungary"
+  | "croatia"
+  | "slovenia"
+  | "bosnia"
+  | "montenegro"
+  | "romania"
+  | "bulgaria"
+  | "albania"
+  | "north_macedonia";
 
 export type CanonicalId =
   | "ribeye"

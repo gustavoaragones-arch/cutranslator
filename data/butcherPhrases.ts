@@ -157,4 +157,49 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "hungary", phrase: "Kérek bélszínt", notes: "'I'd like tenderloin'" },
   { canonicalId: "striploin", region: "hungary", phrase: "Hátszín szelet, kérem", notes: "'Striploin slice, please'" },
   { canonicalId: "hind_shank", region: "hungary", phrase: "Lábszárt kérek pörközthöz", notes: "'Shank for pörkölt' — specifying the dish communicates the exact cut needed" },
+
+  // CROATIA
+  { canonicalId: "tenderloin", region: "croatia", phrase: "Želio bih biftek, srednje pečen", notes: "In Croatia, biftek = tenderloin specifically" },
+  { canonicalId: "striploin", region: "croatia", phrase: "Ramstek za roštilj, molim", notes: "'Striploin for the grill, please'" },
+  { canonicalId: "ribeye", region: "croatia", phrase: "Pržol, na kosti ako imate", notes: "'Ribeye, bone-in if you have it'" },
+  { canonicalId: "inside_round", region: "croatia", phrase: "Frikando za pašticadu", notes: "Specifying the dish communicates the exact cut and prep needed" },
+  { canonicalId: "short_ribs", region: "croatia", phrase: "Rebra u američkom rezu, za roštilj", notes: "'Ribs in American cut, for grilling' — essential to avoid thin soup ribs" },
+
+  // SLOVENIA
+  { canonicalId: "tenderloin", region: "slovenia", phrase: "Prosil bi pljučno pečenko", notes: "'I'd like lung roast (tenderloin)'" },
+  { canonicalId: "striploin", region: "slovenia", phrase: "Nizek hrbet za steake, prosim", notes: "'Low back for steaks, please'" },
+  { canonicalId: "hind_shank", region: "slovenia", phrase: "Boge za golaž, prosim", notes: "'Shank for goulash'" },
+  { canonicalId: "hanger", region: "slovenia", phrase: "Imate veverico?", notes: "'Do you have squirrel (hanger steak)?' — butcher will understand" },
+
+  // BOSNIA
+  { canonicalId: "tenderloin", region: "bosnia", phrase: "Molim vas biftek, srednje pečen", notes: "Standard tender cut request" },
+  { canonicalId: "chuck_roll", region: "bosnia", phrase: "Vrat, dva puta mljeveno, za ćevape", notes: "'Neck, double ground, for ćevapi' — the authentic specification" },
+  { canonicalId: "brisket", region: "bosnia", phrase: "Grudi s kosti za bosanski lonac", notes: "'Brisket with bone for Bosnian pot'" },
+
+  // MONTENEGRO
+  { canonicalId: "tenderloin", region: "montenegro", phrase: "Molim Vas biftek, debela šnita", notes: "'Tenderloin, thick slice' — for Njegoški odrezak" },
+  { canonicalId: "chuck_roll", region: "montenegro", phrase: "Vrat s kosti, za ispod sača", notes: "'Neck with bone, for under the sač'" },
+  { canonicalId: "striploin", region: "montenegro", phrase: "Ramstek za roštilj", notes: "'Striploin for the grill'" },
+
+  // ROMANIA
+  { canonicalId: "tenderloin", region: "romania", phrase: "Aș dori mușchiuleț de vită, mediu", notes: "'I'd like beef tenderloin, medium'" },
+  { canonicalId: "ribeye", region: "romania", phrase: "Antricot la grătar, mediu spre rar", notes: "'Ribeye for grilling, medium rare'" },
+  { canonicalId: "striploin", region: "romania", phrase: "Vrabioară, tăiată în felii pentru steak", notes: "'Striploin, sliced for steak'" },
+  { canonicalId: "hind_shank", region: "romania", phrase: "Rasol cu os, pentru ciorbă", notes: "'Shank with bone, for sour soup' — the dish defines the cut" },
+
+  // BULGARIA
+  { canonicalId: "tenderloin", region: "bulgaria", phrase: "Може ли бонфиле, средно изпечено", notes: "'May I have tenderloin, medium'" },
+  { canonicalId: "ribeye", region: "bulgaria", phrase: "Антрикот за скара, алангле", notes: "'Ribeye for grill, rare' — using the French-origin Bulgarian term" },
+  { canonicalId: "hind_shank", region: "bulgaria", phrase: "Джолан за печене, цял", notes: "'Shank for roasting, whole' — Bulgarian shank is a centerpiece roast" },
+  { canonicalId: "striploin", region: "bulgaria", phrase: "Контрафиле, средно изпечено", notes: "'Striploin, medium'" },
+
+  // ALBANIA
+  { canonicalId: "tenderloin", region: "albania", phrase: "Do të doja fileto, mesatar", notes: "'I'd like tenderloin, medium'" },
+  { canonicalId: "ribeye", region: "albania", phrase: "Antrikotë për skarë", notes: "'Ribeye for grill'" },
+  { canonicalId: "chuck_roll", region: "albania", phrase: "Qafë, dy herë e grirë, për qofte", notes: "'Neck, ground twice, for qofte' — the authentic specification" },
+
+  // NORTH MACEDONIA
+  { canonicalId: "tenderloin", region: "north_macedonia", phrase: "Ве молам бифтек, средно печено", notes: "'Please, biftek, medium'" },
+  { canonicalId: "ribeye", region: "north_macedonia", phrase: "Антрикот за скара", notes: "'Ribeye for grill'" },
+  { canonicalId: "chuck_roll", region: "north_macedonia", phrase: "Врат, двапати мелено, за ќебапи", notes: "'Neck, double ground, for kebapi'" },
 ] as const;

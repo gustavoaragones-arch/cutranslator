@@ -27,6 +27,14 @@ export const regions = [
   { id: "austria" as const, label: "Austria" },
   { id: "slovakia" as const, label: "Slovakia" },
   { id: "hungary" as const, label: "Hungary" },
+  { id: "croatia" as const, label: "Croatia" },
+  { id: "slovenia" as const, label: "Slovenia" },
+  { id: "bosnia" as const, label: "Bosnia & Herzegovina" },
+  { id: "montenegro" as const, label: "Montenegro" },
+  { id: "romania" as const, label: "Romania" },
+  { id: "bulgaria" as const, label: "Bulgaria" },
+  { id: "albania" as const, label: "Albania" },
+  { id: "north_macedonia" as const, label: "North Macedonia" },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

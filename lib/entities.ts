@@ -99,6 +99,14 @@ export const REGION_ENTITY: Record<
   austria: { id: "austria", formalName: "Austria", shortName: "Austria" },
   slovakia: { id: "slovakia", formalName: "Slovakia", shortName: "Slovakia" },
   hungary: { id: "hungary", formalName: "Hungary", shortName: "Hungary" },
+  croatia: { id: "croatia", formalName: "Croatia", shortName: "Croatia" },
+  slovenia: { id: "slovenia", formalName: "Slovenia", shortName: "Slovenia" },
+  bosnia: { id: "bosnia", formalName: "Bosnia & Herzegovina", shortName: "Bosnia" },
+  montenegro: { id: "montenegro", formalName: "Montenegro", shortName: "Montenegro" },
+  romania: { id: "romania", formalName: "Romania", shortName: "Romania" },
+  bulgaria: { id: "bulgaria", formalName: "Bulgaria", shortName: "Bulgaria" },
+  albania: { id: "albania", formalName: "Albania", shortName: "Albania" },
+  north_macedonia: { id: "north_macedonia", formalName: "North Macedonia", shortName: "N. Macedonia" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {
