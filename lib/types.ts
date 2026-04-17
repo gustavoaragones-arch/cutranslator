@@ -34,7 +34,10 @@ export type RegionSlug =
   | "romania"
   | "bulgaria"
   | "albania"
-  | "north_macedonia";
+  | "north_macedonia"
+  | "turkey"
+  | "greece"
+  | "israel";
 
 export type CanonicalId =
   | "ribeye"

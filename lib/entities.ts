@@ -107,6 +107,9 @@ export const REGION_ENTITY: Record<
   bulgaria: { id: "bulgaria", formalName: "Bulgaria", shortName: "Bulgaria" },
   albania: { id: "albania", formalName: "Albania", shortName: "Albania" },
   north_macedonia: { id: "north_macedonia", formalName: "North Macedonia", shortName: "N. Macedonia" },
+  turkey: { id: "turkey", formalName: "Turkey", shortName: "Turkey" },
+  greece: { id: "greece", formalName: "Greece", shortName: "Greece" },
+  israel: { id: "israel", formalName: "Israel", shortName: "Israel" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

@@ -45,6 +45,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       bulgaria: "Алангле",
       albania: "I gjallë",
       north_macedonia: "Крваво",
+      turkey: "Az pişmiş",
+      greece: "Ανίσπαστο",
+      israel: "רייר",
     },
   },
   {
@@ -86,6 +89,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       bulgaria: "Средно алангле",
       albania: "Mesatar i rrallë",
       north_macedonia: "Слабо печено",
+      turkey: "Az orta",
+      greece: "Μισοψημένο",
+      israel: "מדיום רייר",
     },
   },
   {
@@ -127,6 +133,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       bulgaria: "Средно изпечено",
       albania: "Mesatar",
       north_macedonia: "Средно печено",
+      turkey: "Orta pişmiş",
+      greece: "Μέτριο",
+      israel: "מדיום",
     },
   },
   {
@@ -168,6 +177,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       bulgaria: "Добре изпечено",
       albania: "I pjekur mirë",
       north_macedonia: "Добро печено",
+      turkey: "Çok pişmiş",
+      greece: "Καλοψημένο",
+      israel: "וול דאן",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -190,6 +202,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       bulgaria: "Bulgarian 'Алангле' (Alangle) for rare is borrowed from French 'à l'anglaise' — a fascinating linguistic trace of French culinary influence in the Balkans.",
       albania: "Albanian cuisine strongly favors well-done, especially for grilled meats. Rare steak is uncommon outside Tirana's modern restaurants.",
       north_macedonia: "Traditional Macedonian taste is firmly well-done (добро печено). Medium-rare is only found in modern Skopje steakhouses.",
+      turkey: "Turkish cuisine traditionally serves grilled meats well-done. Az pişmiş (rare) is uncommon outside modern Istanbul steakhouses.",
+      greece: "Traditional Greek tavernas serve meat well-done (καλοψημένο) unless specified. Rare is 'ble' (blue) in some restaurants — borrowed from French.",
+      israel: "Israeli steakhouses use English transliterations (רייר = 'rare', מדיום = 'medium', וול דאן = 'well done'). Hebrew terms are essentially phonetic borrowings from English.",
     },
   },
 ] as const;

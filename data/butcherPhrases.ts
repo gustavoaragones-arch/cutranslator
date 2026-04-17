@@ -202,4 +202,25 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "north_macedonia", phrase: "Ве молам бифтек, средно печено", notes: "'Please, biftek, medium'" },
   { canonicalId: "ribeye", region: "north_macedonia", phrase: "Антрикот за скара", notes: "'Ribeye for grill'" },
   { canonicalId: "chuck_roll", region: "north_macedonia", phrase: "Врат, двапати мелено, за ќебапи", notes: "'Neck, double ground, for kebapi'" },
+
+  // TURKEY
+  { canonicalId: "ribeye", region: "turkey", phrase: "Antrikot istiyorum, orta pişmiş", notes: "'I want ribeye, medium'" },
+  { canonicalId: "tenderloin", region: "turkey", phrase: "Bonfile var mı?", notes: "'Do you have tenderloin?'" },
+  { canonicalId: "striploin", region: "turkey", phrase: "Kontrafile, biftek olarak", notes: "'Striploin, as steak'" },
+  { canonicalId: "brisket", region: "turkey", phrase: "Döş istiyorum, bütün — kıyma yapmayın", notes: "'I want brisket, whole — don't grind it.' Essential — otherwise they may grind it for kebabs." },
+  { canonicalId: "hind_shank", region: "turkey", phrase: "İncik, haşlama için", notes: "'Shank, for haşlama (stew)'" },
+
+  // GREECE
+  { canonicalId: "ribeye", region: "greece", phrase: "Θα ήθελα σπαλομπριζόλα, μισοψημένη", notes: "'I'd like a rib steak, medium' — specify σπαλομπριζόλα, NOT generic μπριζόλα" },
+  { canonicalId: "tenderloin", region: "greece", phrase: "Έχετε φιλέτο;", notes: "'Do you have tenderloin?'" },
+  { canonicalId: "striploin", region: "greece", phrase: "Κόντρα φιλέτο, για σχάρα", notes: "'Counter-filet, for the grill'" },
+  { canonicalId: "hind_shank", region: "greece", phrase: "Ποντίκι, για σούπα", notes: "'Mouse (shank), for soup'" },
+  { canonicalId: "chuck_roll", region: "greece", phrase: "Ελιά, για φούρνο με πατάτες", notes: "'Olive (chuck), for oven with potatoes' — specifying the classic Greek preparation" },
+
+  // ISRAEL
+  { canonicalId: "ribeye", region: "israel", phrase: "אני רוצה אנטריקוט, מדיום", notes: "'I want antricot (Number 1), medium' — Hebrew transliteration of English doneness" },
+  { canonicalId: "tenderloin", region: "israel", phrase: "יש פילה בקר?", notes: "'Do you have beef filet (Number 3)?'" },
+  { canonicalId: "striploin", region: "israel", phrase: "סינטה לגריל", notes: "'Sinta (Number 2) for grill'" },
+  { canonicalId: "short_ribs", region: "israel", phrase: "אסאדו לבישול ארוך", notes: "'Asado (Number 9) for slow cooking' — remember: asado = the cut, not the method" },
+  { canonicalId: "fore_shank", region: "israel", phrase: "שריר לחמין", notes: "'Shrir (shank, Number 18) for Hamin/Cholent'" },
 ] as const;

@@ -1017,6 +1017,108 @@ export const regionalCuts: readonly RegionalCut[] = [
   },
 
   // ----- MONTENEGRO -----
+  // ----- TURKEY -----
+  {
+    id: "dos_tr",
+    name: "Döş",
+    region: "turkey",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.70, note: "Anatomically brisket/plate area, but culturally ground for kebabs" },
+      { canonical_id: "short_plate", match_type: "approximate", confidence: 0.60, note: "Overlaps with plate area" },
+    ],
+    description: "The 'King of Minced Meat' in Turkish butchery — anatomically the brisket/plate area but with a completely different cultural destiny. While Americans smoke whole briskets for BBQ, Turkish butchers typically grind Döş for premium kebabs and köfte because of its ideal fat-to-lean ratio. An American looking for whole brisket to smoke may find it's already been ground before they can buy it. Döş kıyma (ground brisket) is considered the highest quality ground beef in Turkey.",
+    notes: "Same anatomy, opposite fate: US = whole for smoking, Turkey = ground for kebabs. A defining cultural divergence.",
+  },
+
+  {
+    id: "kusbasi_tr",
+    name: "Kuşbaşı",
+    region: "turkey",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.60, note: "Default kuşbaşı comes from chuck" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.55, note: "Premium kuşbaşı specifies Antrikot" },
+    ],
+    synonyms: ["kusbasi", "kuş başı"],
+    description: "Literally 'bird's head size' — Turkish stew meat cubed to a specific, standardized size. Unlike American 'stew meat' (random scraps from various primals), Turkish Kuşbaşı is a precise product. Quality varies by source: generic kuşbaşı comes from chuck, but premium versions specify the primal (Antrikot Kuşbaşı = ribeye cubes, Bonfile Kuşbaşı = tenderloin cubes). Always ask which cut your kuşbaşı comes from.",
+    notes: "Standardized cube cut — Turkish butchery specifies origin primal for quality grading, unlike US 'stew meat'.",
+  },
+
+  {
+    id: "nu_tr",
+    name: "Nu",
+    region: "turkey",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "cultural", confidence: 0.80, note: "Anatomically eye of round — budget in US, premium deli cut in Turkey" },
+    ],
+    description: "The Turkish eye of round — anatomically identical to the US eye of round, but with reversed cultural status. In the US, this is a budget cut for jerky or slow-roasting. In Turkey, Nu is highly valued as an extremely lean, 'clean' meat for Rozbif (deli-style cold cuts) — thinly sliced and served as a premium appetizer. Same muscle, completely different price point and cultural status.",
+    notes: "Cultural status inversion: budget cut in US, premium deli cut in Turkey.",
+  },
+
+  // ----- GREECE -----
+  {
+    id: "brizola_gr",
+    name: "Μπριζόλα",
+    region: "greece",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "approximate", confidence: 0.65, note: "Could be a rib steak (σπαλομπριζόλα)" },
+      { canonical_id: "striploin", match_type: "approximate", confidence: 0.60, note: "Could be a strip/T-bone (κόντρα μπριζόλα)" },
+      { canonical_id: "t_bone", match_type: "approximate", confidence: 0.55, note: "Could be a T-bone" },
+    ],
+    synonyms: ["brizola", "mprizola"],
+    description: "The most ambiguous steak term in Greek butchery — μπριζόλα (brizola) is a GENERIC term for any bone-in steak. It could be a rib steak (σπαλομπριζόλα), a T-bone/strip (κόντρα μπριζόλα), or even a bone-in sirloin. If you order 'brizola' at a Greek taverna, you won't know which cut you're getting unless you specify. For ribeye specifically, ask for σπαλομπριζόλα. For strip, ask for κόντρα μπριζόλα.",
+    notes: "Generic term — similar to Dutch biefstuk and Finnish pihvi. Must specify sub-type to know what you're getting.",
+  },
+
+  {
+    id: "pontiki_gr",
+    name: "Ποντίκι",
+    region: "greece",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Anatomically shank — but culturally elevated" },
+    ],
+    synonyms: ["pontiki"],
+    description: "Literally 'the mouse' — named for the shank's tapered shape. In Greek culture, Ποντίκι has a much higher status than American shank. It is considered one of the healthiest, most nutritious parts of the animal — traditionally given to children and the elderly for its gelatinous, mineral-rich properties. In the US, shank is often overlooked or sold only as osso buco. In Greece, it commands respect and a higher relative price.",
+    notes: "Cultural elevation: niche/budget in US, health food for families in Greece.",
+  },
+
+  // ----- ISRAEL -----
+  {
+    id: "asado_il",
+    name: "אסאדו",
+    region: "israel",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "close", confidence: 0.85, note: "Number 9 — short ribs, bone-in" },
+    ],
+    synonyms: ["asado"],
+    description: "In Israel, 'Asado' is a CUT NAME (Number 9 = short ribs), NOT a cooking method. This is the opposite of South America, where 'asado' means BBQ/grilling. An Israeli menu listing 'asado' means you're getting slow-cooked or grilled short ribs. This cross-linguistic trap is one of the most confusing beef term collisions in the global ontology — same word, completely different meaning depending on the country.",
+    notes: "Same word, different meaning: Israel = a cut (short ribs), South America = a cooking method (BBQ). Critical disambiguation.",
+  },
+
+  {
+    id: "cholent_cut_il",
+    name: "בשר לחמין",
+    region: "israel",
+    maps_to: [
+      { canonical_id: "fore_shank", match_type: "close", confidence: 0.80, note: "Number 18 — shank with bone for Shabbat Cholent/Hamin" },
+      { canonical_id: "brisket", match_type: "close", confidence: 0.75, note: "Brisket also used" },
+    ],
+    synonyms: ["basar l'chamin", "cholent meat", "hamin meat"],
+    description: "The cut for Hamin/Cholent — the traditional Jewish Sabbath slow-cooked stew that cooks from Friday afternoon through Saturday lunch (12+ hours). Requires bone-in cuts with maximum collagen: Shrir (shank, Number 18) or Chaze (brisket). The extreme cooking time means only the most collagen-rich cuts survive without drying out. Israeli butchers recognize 'בשר לחמין' as a specific cut request, not just generic stew meat.",
+    notes: "12+ hour cooking demands extreme collagen content. Unique to Jewish culinary tradition.",
+  },
+
+  {
+    id: "file_medumah_il",
+    name: "פילה מדומה",
+    region: "israel",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "Number 6 — the Israeli 'false filet'" },
+    ],
+    synonyms: ["file medumah", "false filet"],
+    description: "Literally 'imaginary filet' or 'false filet' — Number 6 in the Israeli system. Looks identical to tenderloin (Number 3) but is actually the eye of round from the leg. Much cheaper than true filet, but if grilled like a steak it will be extremely tough. Israeli butchers sell it clearly labeled, but tourists and new immigrants often buy it thinking they're getting a bargain tenderloin. FOR BRAISING ONLY.",
+    notes: "Part of the global 'false tenderloin' family — Czech falešná svíčková, German falsches Filet, Hungarian fehérpecsenye, and now Israeli פילה מדומה. Every country has this trap.",
+  },
+
   // ----- ROMANIA -----
   {
     id: "mici_cut_ro",
