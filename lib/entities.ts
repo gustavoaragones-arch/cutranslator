@@ -112,6 +112,14 @@ export const REGION_ENTITY: Record<
   israel: { id: "israel", formalName: "Israel", shortName: "Israel" },
   ireland: { id: "ireland", formalName: "Ireland", shortName: "Ireland" },
   switzerland: { id: "switzerland", formalName: "Switzerland", shortName: "Switzerland" },
+  egypt: { id: "egypt", formalName: "Egypt", shortName: "Egypt" },
+  iran: { id: "iran", formalName: "Iran", shortName: "Iran" },
+  morocco: { id: "morocco", formalName: "Morocco", shortName: "Morocco" },
+  uzbekistan: { id: "uzbekistan", formalName: "Uzbekistan", shortName: "Uzbekistan" },
+  kazakhstan: { id: "kazakhstan", formalName: "Kazakhstan", shortName: "Kazakhstan" },
+  saudi_arabia: { id: "saudi_arabia", formalName: "Saudi Arabia", shortName: "Saudi Arabia" },
+  qatar: { id: "qatar", formalName: "Qatar", shortName: "Qatar" },
+  uae: { id: "uae", formalName: "United Arab Emirates", shortName: "UAE" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

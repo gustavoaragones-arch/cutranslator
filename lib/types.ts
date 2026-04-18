@@ -39,7 +39,15 @@ export type RegionSlug =
   | "greece"
   | "israel"
   | "ireland"
-  | "switzerland";
+  | "switzerland"
+  | "egypt"
+  | "iran"
+  | "morocco"
+  | "uzbekistan"
+  | "kazakhstan"
+  | "saudi_arabia"
+  | "qatar"
+  | "uae";
 
 export type CanonicalId =
   | "ribeye"

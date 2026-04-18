@@ -40,6 +40,14 @@ export const regions = [
   { id: "israel" as const, label: "Israel" },
   { id: "ireland" as const, label: "Ireland" },
   { id: "switzerland" as const, label: "Switzerland" },
+  { id: "egypt" as const, label: "Egypt" },
+  { id: "iran" as const, label: "Iran" },
+  { id: "morocco" as const, label: "Morocco" },
+  { id: "uzbekistan" as const, label: "Uzbekistan" },
+  { id: "kazakhstan" as const, label: "Kazakhstan" },
+  { id: "saudi_arabia" as const, label: "Saudi Arabia" },
+  { id: "qatar" as const, label: "Qatar" },
+  { id: "uae" as const, label: "UAE" },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

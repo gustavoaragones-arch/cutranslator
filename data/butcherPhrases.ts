@@ -237,4 +237,54 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "switzerland", phrase: "Es Filet, bitte, am Stück", notes: "'A fillet, please, in one piece'" },
   { canonicalId: "brisket", region: "switzerland", phrase: "Federstück am Stück, mit Fettdeckel bitte", notes: "'Brisket whole, with fat cap please' — essential if you want to smoke it American-style" },
   { canonicalId: "sirloin_cap", region: "switzerland", phrase: "Tafelspitz — für den Grill, nicht zum Sieden", notes: "'Tafelspitz — for grilling, not for boiling' — specifying modern use vs traditional" },
+
+  // EGYPT
+  { canonicalId: "hind_shank", region: "egypt", phrase: "عاوز موزة طازة، بالعضم", notes: "'I want fresh Moza, with the bone' — the prestige request" },
+  { canonicalId: "striploin", region: "egypt", phrase: "عاوز إيرق روستو مقطع ستيك", notes: "'I want Erq Rosto cut as steak' — clarifies you want thick, not thin" },
+  { canonicalId: "chuck_roll", region: "egypt", phrase: "سن مكعبات لكباب حلة", notes: "'Sinn (neck) cubed for Kabab Halla' — dish-driven request" },
+  { canonicalId: "ribeye", region: "egypt", phrase: "انتركوت سميك من فضلك", notes: "'Thick entrecote please' — specifies steakhouse thickness" },
+  { canonicalId: "inside_round", region: "egypt", phrase: "بفتيك رفيع مضروب", notes: "'Thin pounded Bofteek' — the traditional pan-frying format" },
+
+  // IRAN
+  { canonicalId: "short_plate", region: "iran", phrase: "گوشت قلوه‌گاه برای کباب کوبیده", notes: "'Gholveh-gah meat for Kebab Koobideh' — the correct fatty cut" },
+  { canonicalId: "tenderloin", region: "iran", phrase: "فیله تمیز برای کباب برگ", notes: "'Clean Fileh for Kebab Barg' — specifies silver-skin removal" },
+  { canonicalId: "hind_shank", region: "iran", phrase: "ماهیچه کامل، پاک کرده", notes: "'Whole Mahicheh, trimmed clean' — the luxury-cut request" },
+  { canonicalId: "striploin", region: "iran", phrase: "راسته برای استیک", notes: "'Rasteh for steak' — clarifies modern steakhouse use" },
+  { canonicalId: "ribeye", region: "iran", phrase: "انترکوت ضخیم لطفاً", notes: "'Thick antrecote please' — modern Tehran steakhouse phrasing" },
+
+  // MOROCCO
+  { canonicalId: "hind_shank", region: "morocco", phrase: "الملج للطاجين، بالعضم", notes: "'Mellaj for tajine, with the bone' — the mandatory configuration" },
+  { canonicalId: "chuck_blade", region: "morocco", phrase: "الكتف مفروم بلا بهارات", notes: "'Shoulder ground WITHOUT spices' — critical to avoid default Kefta spice blend" },
+  { canonicalId: "inside_round", region: "morocco", phrase: "بفتيك رفيع للقلي", notes: "'Thin Bofteek for frying' — traditional format" },
+  { canonicalId: "ribeye", region: "morocco", phrase: "أنتريكوط سميك للشواء", notes: "'Thick entrecôte for grilling' — clarifies BBQ intent" },
+
+  // UZBEKISTAN
+  { canonicalId: "brisket", region: "uzbekistan", phrase: "Palovbop To'sh, yog' bilan", notes: "'Brisket for Plov, with the fat' — fat retention is mandatory" },
+  { canonicalId: "ribeye", region: "uzbekistan", phrase: "Antrekotni qalinroq qilib kesing", notes: "'Cut the Antrekot thick' — essential for US-style ribeye" },
+  { canonicalId: "tenderloin", region: "uzbekistan", phrase: "Latta go'sht, steyk uchun", notes: "'Cloth-meat (tenderloin) for steak'" },
+  { canonicalId: "chuck_blade", region: "uzbekistan", phrase: "Kurak, Shurpa uchun", notes: "'Shoulder for Shorpa (soup)'" },
+
+  // KAZAKHSTAN
+  { canonicalId: "hind_shank", region: "kazakhstan", phrase: "Zhilikti ūzynyraq qaldyrșy", notes: "'Leave the Zhilik bone longer' — respects the guest-honor tradition" },
+  { canonicalId: "chuck_blade", region: "kazakhstan", phrase: "Zhauyryn, besbarmaqqa", notes: "'Shoulder blade, for Besbarmak' — the classic request" },
+  { canonicalId: "brisket", region: "kazakhstan", phrase: "Tös, sorpağa", notes: "'Brisket, for soup' — fat kept on" },
+  { canonicalId: "ribeye", region: "kazakhstan", phrase: "Antrekotti qalyń kesiǵiz", notes: "'Cut the Antrekot thick' — for modern steakhouse-style" },
+
+  // SAUDI ARABIA
+  { canonicalId: "hind_shank", region: "saudi_arabia", phrase: "أريد موزة للكبسة، لو سمحت", notes: "'I want Moza for Kabsa, please' — the definitive Saudi request" },
+  { canonicalId: "ribeye", region: "saudi_arabia", phrase: "ريب آي سميك، ستيك", notes: "'Thick ribeye, steak' — modern mall steakhouse phrasing" },
+  { canonicalId: "brisket", region: "saudi_arabia", phrase: "صدر للشوي البطيء، مع الدهن", notes: "'Brisket for slow smoking, with the fat' — essential for US-BBQ-style" },
+  { canonicalId: "chuck_roll", region: "saudi_arabia", phrase: "مفروم كندوز مع دوش", notes: "'Ground Kandouz with Dosh (brisket fat)' — for US-style burger fat ratio" },
+
+  // QATAR
+  { canonicalId: "hind_shank", region: "qatar", phrase: "موزة للمكبوس", notes: "'Moza for Machboos' — dish-driven standard" },
+  { canonicalId: "chuck_roll", region: "qatar", phrase: "مفروم خشن مع دوش", notes: "'Coarse ground with Dosh (brisket)' — for US-style burgers" },
+  { canonicalId: "short_ribs", region: "qatar", phrase: "أضلاع قصيرة للشوي البطيء", notes: "'Short ribs for slow smoking' — Doha smokehouse scene" },
+  { canonicalId: "ribeye", region: "qatar", phrase: "Ribeye, Australian or US Prime?", notes: "English-led — Doha butchers confirm origin explicitly due to the pricing gap" },
+
+  // UAE
+  { canonicalId: "striploin", region: "uae", phrase: "Is this Sirloin the Striploin or the Rump?", notes: "The essential disambiguation question — always ask to avoid the UAE Sirloin Trap" },
+  { canonicalId: "ribeye", region: "uae", phrase: "Scotch fillet, grain-fed, well marbled", notes: "AUS terminology — most accurate request in Spinneys/Waitrose" },
+  { canonicalId: "brisket", region: "uae", phrase: "Whole packer brisket, fat cap on", notes: "US BBQ specialty phrasing — widely understood in Dubai smokehouses" },
+  { canonicalId: "top_sirloin", region: "uae", phrase: "Rump steak, not Sirloin", notes: "Explicit disambiguation — avoids getting striploin by accident" },
 ] as const;

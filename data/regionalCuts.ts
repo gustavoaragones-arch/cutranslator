@@ -1262,4 +1262,278 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Swiss retail format: thin slices for pan-frying, not thick steaks. Format-driven cut.",
   },
 
+  // === EGYPT ===
+
+  {
+    id: "moza_eg",
+    name: "Moza (Egyptian Prestige Shank)",
+    region: "egypt",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.90, note: "Anatomically the hind shank" },
+    ],
+    synonyms: ["موزة"],
+    description: "Literally 'banana' in Arabic — the Egyptian name for shank, but culturally the polar opposite of the American view. In the US, shank is a cheap, overlooked 'stew meat' cut. In Egypt, Moza is prestigious: being served a whole Moza at a meal is a sign of respect from the host. It is prized for its 'Gelateen' (gelatin), which makes the meat butter-soft after long cooking. The Moza is a cornerstone of Egyptian cuisine and shares this elevated status across Saudi Arabia, Qatar, and the UAE — an Arab-wide inversion of American shank valuation.",
+    notes: "The Moza/shank prestige inversion is one of the strongest Arab-wide patterns in the database. Shared across Egypt, Saudi Arabia, Qatar, and UAE.",
+  },
+
+  {
+    id: "bofteek_eg",
+    name: "Bofteek",
+    region: "egypt",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.70, note: "Anatomically top round, but preparation is fundamentally different from US steak" },
+    ],
+    synonyms: ["بفتيك"],
+    description: "The Egyptian 'false cognate' of the English word 'beefsteak' — but the cut is completely different in practice. Bofteek refers to top round specifically sliced extremely thin and pounded, intended for breading and pan-frying (similar to an Italian scaloppine or German Schnitzel). An American asking an Egyptian butcher for 'Bofteek' expecting a thick grilling steak will receive a paper-thin sheet of meat meant to be fried. If you want a US-style steak, ask for Erq Rosto (striploin) or Entrecote (ribeye) instead, and specify thickness.",
+    notes: "Same word as 'beefsteak,' completely different product. Shared convention across Egypt, Morocco, Saudi Arabia, and Qatar — pattern of pounded-thin round cuts across Arab butchery.",
+  },
+
+  {
+    id: "kabab_halla_cut_eg",
+    name: "Laham Kabab Halla",
+    region: "egypt",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.80, note: "Sinn (neck/chuck) is required — intramuscular fat is mandatory for the dish's thick gravy" },
+    ],
+    synonyms: ["لحم كباب حلة"],
+    description: "Dish-driven cut for Egypt's iconic Kabab Halla (caramelized onion beef stew). The recipe requires Sinn (neck/chuck) specifically because the intramuscular fat creates the thick, rich gravy. US 'stew meat' — typically trimmed lean from the round — will produce a dry, unsuccessful Kabab Halla. Egyptian butchers recognize 'Laham Kabab Halla' as a specific request for cubed chuck with fat retained.",
+    notes: "Pattern example of Arab dish-driven cut naming — compare Moroccan Kefta, Uzbek Palovbop go'sht, Qatari Machboos meat.",
+  },
+
+  // === IRAN ===
+
+  {
+    id: "kebab_koobideh_cut_ir",
+    name: "Gosht-e Kebab Koobideh",
+    region: "iran",
+    maps_to: [
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.85, note: "Gholveh-gah (flank/plate) is the only correct cut — US 'ground round' will fail" },
+    ],
+    synonyms: ["گوشت کباب کوبیده"],
+    description: "The defining dish-driven cut of Iranian butchery. Kebab Koobideh (pounded kebab) is Iran's most iconic beef dish, and it requires ground Gholveh-gah (flank/plate) specifically. The cut's distinctive fat structure is what allows the meat to 'stick' to the wide metal skewer over hot coals — a property no other cut replicates. Americans buying 'premium' lean ground beef for koobideh will have the meat fall off the skewer mid-cooking. Iranian butchers categorize ground meat by origin cut, not by lean-to-fat percentage like US butchers do.",
+    notes: "A landmark example of 'cut is dictated by cooking method, not by muscle prestige' — the fattier 'cheap' cut is the correct choice.",
+  },
+
+  {
+    id: "kebab_barg_cut_ir",
+    name: "Gosht-e Kebab Barg",
+    region: "iran",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "close", confidence: 0.90, note: "Fileh is traditional" },
+      { canonical_id: "striploin", match_type: "close", confidence: 0.75, note: "Best-quality rasteh also acceptable" },
+    ],
+    synonyms: ["گوشت کباب برگ"],
+    description: "The opposite of Koobideh in every way. Kebab Barg ('leaf kebab') requires meat to be beaten paper-thin without breaking — achievable only with Fileh (tenderloin) or the choicest portion of Rasteh (striploin). Any tougher cut will tear apart when pounded. When an American asks an Iranian butcher for 'steak meat,' they may receive a cut that works for Western grilling but is completely unsuited for Kebab Barg. Iranian butchers pre-cut and clean 'Barg-ready' Fileh.",
+    notes: "The Koobideh/Barg dyad defines Iranian kebab butchery — two dishes, two opposite cuts, both dish-driven.",
+  },
+
+  {
+    id: "mahicheh_ir",
+    name: "Mahicheh (Iranian Luxury Shank)",
+    region: "iran",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.95, note: "Anatomically the hind shank — but culturally luxury-grade" },
+    ],
+    synonyms: ["ماهیچه"],
+    description: "Iran's version of the shank-as-luxury pattern seen across the Arab world (Moza in Egypt/Gulf, Mellaj in Morocco). Mahicheh is served whole at weddings and special occasions — a display of generosity and wealth. Iranian butchers trim it far more cleanly than US butchers, removing all silver skin to reveal the 'muscle ball.' The saffron-infused shank stew (Khoresht-e Mahicheh) is a centerpiece of Persian hospitality. Compared to US osso buco preparation, Iranian Mahicheh is treated with significantly more culinary reverence.",
+    notes: "Part of the Arab/Persian shank-prestige pattern — same anatomical muscle, inverted cultural valuation vs US.",
+  },
+
+  // === MOROCCO ===
+
+  {
+    id: "mellaj_ma",
+    name: "Al-Mellaj (Tajine Shank)",
+    region: "morocco",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.90, note: "Mandatory for authentic tajine" },
+    ],
+    synonyms: ["الملج"],
+    description: "The king of the Moroccan Tajine. Mellaj (shank) is non-negotiable for an authentic Marqa (tajine sauce) — the collagen creates the characteristic thick, syrupy texture. Using lean US 'stew meat' from the round will result in a dry tajine with thin, watery sauce. Mellaj is always bone-in (the bone is 'the salt of the meat' in Moroccan tradition). The cultural rule is absolute: an experienced Moroccan cook will reject any substitute. Continues the Arab-world shank prestige pattern alongside Egyptian Moza and Iranian Mahicheh.",
+    notes: "The anti-lean-substitution principle is the strongest pattern across Morocco, Egypt, Iran, Saudi, Qatar, UAE: collagen-rich shank is mandatory for traditional slow-cooked dishes; leaner cuts fail.",
+  },
+
+  {
+    id: "tajine_cut_ma",
+    name: "Mish al-Tajine",
+    region: "morocco",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.80, note: "Mellaj is the traditional base" },
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.75, note: "Al-Ketf (shoulder) for everyday tajines" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.65, note: "Al-Adla' often included" },
+    ],
+    synonyms: ["لحم الطاجين"],
+    description: "Dish-driven request for tajine meat. A Moroccan butcher asked for 'tajine meat' will automatically chop the carcass into small, bone-in chunks from the shank (Mellaj), shoulder (Al-Ketf), or ribs (Al-Adla') — whatever is available. This is the Moroccan default format: pre-chopped, bone-in, collagen-rich. If a user wants a US-style pot roast instead, they must explicitly specify 'Bla'dm' (without bone) AND that they want a whole piece, not chopped chunks — otherwise the butcher will chop it automatically.",
+    notes: "The 'auto-chop' default is a travel-survival insight: foreigners ordering without specification will always receive pre-chopped bone-in chunks.",
+  },
+
+  {
+    id: "kefta_ma",
+    name: "Kefta",
+    region: "morocco",
+    maps_to: [
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.70, note: "Al-Ketf (shoulder) is the base meat" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.65, note: "Can also use Al-Ankra (neck)" },
+    ],
+    synonyms: ["كفتة"],
+    description: "Moroccan ground beef — but never plain. Kefta is a specific preparation: shoulder beef mixed with kidney fat (S'hama) and pre-seasoned with cumin, paprika, coriander, and parsley at the butcher counter. An American asking for 'ground beef' for a burger will receive Kefta by default — already spiced for Moroccan tagines and brochettes. To get plain US-style ground beef, specifically ask the butcher to grind Al-Ketf (shoulder) WITHOUT adding any local spices. Part of the North African pattern where 'minced meat' is always a cultural preparation, not a raw product.",
+    notes: "Compare: Turkish Kuşbaşı, Lebanese/Syrian Kibbeh meat, Iranian Koobideh — all 'ground meat' in name, but each with mandatory preparation standards specific to the cuisine.",
+  },
+
+  // === UZBEKISTAN ===
+
+  {
+    id: "plov_meat_uz",
+    name: "Palovbop go'sht",
+    region: "uzbekistan",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.85, note: "To'sh (brisket) is the traditional base — fat is mandatory for Plov" },
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.75, note: "Kurak (shoulder) with fat also used" },
+    ],
+    synonyms: ["паловбоп гўшт", "plov meat"],
+    description: "Uzbekistan's defining dish-driven cut — literally 'meat for Plov.' A Qassob (butcher) in a traditional bozor (market) who is asked for Palovbop go'sht will assemble a mix of meat, bone, and fat from To'sh (brisket) and Kurak (shoulder), with the fat deliberately kept on. This violates every US convention: American 'stew meat' is trimmed lean, but Uzbek Plov requires the fat to render into the rice during high-heat cauldron cooking. Using lean beef produces a dry, flavorless Plov. Modern Tashkent supermarkets may sell a pre-cut 'Plov set,' but the traditional bozor version is richer and more authentic.",
+    notes: "The Plov cut is the Central Asian counterpart to Arab Machboos/Kabsa meat, Moroccan tajine meat, and Iranian Koobideh meat — all 'rice dish' or 'stew' meats defined by their role, not by muscle.",
+  },
+
+  {
+    id: "antrekot_uz",
+    name: "Antrekot (Uzbek Thin Cut)",
+    region: "uzbekistan",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.70, note: "Anatomically the rib area, but always thin-cut and bone-in" },
+    ],
+    synonyms: ["антрекот"],
+    description: "A Russian-derived term that creates expectations mismatch. In the US, Ribeye is a thick boneless or bone-in steak cut for high-heat grilling. In Uzbekistan, Antrekot typically refers to a THIN, bone-in rib chop — closer to a Korean-style LA galbi than an American steakhouse ribeye. If a user wants a thick US-style ribeye, they must ask the butcher to 'qalinroq qilib kesing' ('cut it thick'). This thin-cut default is a shared Central Asian/ex-Soviet convention that also affects Kazakhstan, Russia, and Ukraine.",
+    notes: "Part of the ex-Soviet 'Antrekot = thin bone-in' pattern spanning Uzbekistan, Kazakhstan, Russia, Ukraine.",
+  },
+
+  // === KAZAKHSTAN ===
+
+  {
+    id: "zhilik_kz",
+    name: "Zhilik (Kazakh Honor Marrow)",
+    region: "kazakhstan",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Specifically shank with long marrow bone — format matters" },
+    ],
+    synonyms: ["жілік", "zhylyk"],
+    description: "A cut with deep cultural ceremony attached. In traditional Kazakh hospitality, specific marrow bones (Zhilik) are served to guests based on their status, age, and relationship to the host — older and more honored guests receive specific bones. A Kazakh butcher at a bazaar (like Almaty's Green Bazaar) will often leave the bone deliberately long when cutting shank, to respect this tradition. Americans buying 'shank' in Kazakhstan should expect longer bones and more ceremonial cutting than a US supermarket shank. Connects nomadic tradition with the Soviet GOST system.",
+    notes: "The only 'ceremonial cut' in the ontology where the cut format (bone length) itself carries cultural meaning — serves as reference for future guest-honor cut entries.",
+  },
+
+  {
+    id: "besbarmak_cut_kz",
+    name: "Besbarmaqqa arnalgan et",
+    region: "kazakhstan",
+    maps_to: [
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.80, note: "Zhauyryn (shoulder blade) with bone" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.75, note: "Tos (brisket) often included" },
+    ],
+    synonyms: ["бесбармаққа арналған ет"],
+    description: "Dish-driven cut for Kazakhstan's national dish Besbarmak ('five fingers' — eaten by hand). While Besbarmak is traditionally made with horse and lamb, beef is common. When a user asks for 'Besbarmak meat' at a Kazakh butcher, they receive large, flat pieces of bone-in meat from the Zhauyryn (shoulder blade) or Tos (brisket), intended for 2-3 hours of boiling. This is not 'stew meat' in the US sense — it's a specific boiling cut with bones left in. The cooked meat is served over wide noodles (Kespe) with broth (Sorpa).",
+    notes: "Sister to Uzbek Plov meat and Kyrgyz Beshbarmak meat — the Central Asian nomadic-era tradition of 'large-format boiling meat with bone,' preserved across the post-Soviet Turkic belt.",
+  },
+
+  // === SAUDI ARABIA ===
+
+  {
+    id: "kabsa_cut_sa",
+    name: "Laham Al-Kabsa",
+    region: "saudi_arabia",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.90, note: "Moza (shank) is the defining cut" },
+    ],
+    synonyms: ["لحم الكبسة"],
+    description: "Dish-driven cut for Saudi Arabia's national dish Kabsa. Moza (shank) is explicitly the 'best meat for rice' in Saudi butchery — the collagen breaks down during the long Kabsa cooking process to perfume the Basmati rice. When a user asks a Saudi butcher for 'the best meat for rice,' they will almost always receive Moza. Using leaner cuts (round, sirloin) results in tough, dry meat and under-flavored rice. The principle extends across Gulf 'mandi rice' dishes — Machboos (Qatar), Mandi (Yemen/Saudi), Majboos (Bahrain) all use Moza by default.",
+    notes: "The Gulf rice-dish meat axis: Kabsa/Machboos/Mandi/Majboos — all share the Moza-as-default convention.",
+  },
+
+  {
+    id: "hashi_vs_baqar_sa",
+    name: "Hashi vs. Baqar (Camel vs. Beef)",
+    region: "saudi_arabia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.30, note: "Cross-species cut — Hashi is camel, not beef" },
+    ],
+    synonyms: ["حاشي مقابل بقر"],
+    description: "A uniquely Gulf/Saudi confusion point that doesn't exist elsewhere. In local Saudi shops, Hashi (young camel) and Baqar (beef) are frequently sold side-by-side in similar-looking cuts, and the meats visually resemble each other. Hashi has a slightly sweeter, gamier flavor and different fat behavior. Expats accidentally buying Hashi thinking it's beef (or vice versa) is a common issue. Users should verify the sign: حاشي (Hashi) for camel vs بقر (Baqar) for beef. Critical for expats cooking Western recipes — camel does NOT substitute well for beef in US-style preparations.",
+    notes: "Not a cut, but a species-identification entity. Only appears in Saudi Arabia and some Gulf states — a regional disambiguation entity, similar in spirit to the Israeli 'asado collision' entry.",
+  },
+
+  // === QATAR ===
+
+  {
+    id: "machboos_cut_qa",
+    name: "Laham Al-Machboos",
+    region: "qatar",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.90, note: "Moza is the defining cut" },
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.75, note: "Ketf (shoulder) acceptable alternative" },
+    ],
+    synonyms: ["لحم المكبوس"],
+    description: "Dish-driven cut for Qatar's national dish Machboos. Like Saudi Kabsa, the cut must be collagen-rich to withstand the long rice-cooking time and to release gelatin that perfumes the rice. Moza (shank) or Ketf (shoulder) are the two correct cuts. US 'stew meat' from the round is too lean and will become tough and stringy. The Moza-for-rice principle is Gulf-wide: Kabsa, Machboos, Mandi, and Majboos all share this convention, setting the Arabian Peninsula apart from the rest of the Arab world.",
+    notes: "Part of the Gulf rice-dish meat axis — shared cut rules across Saudi/Qatar/Bahrain/UAE/Oman.",
+  },
+
+  {
+    id: "origin_pricing_gap_qa",
+    name: "Origin Pricing Gap",
+    region: "qatar",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.40, note: "Not a cut but a grade/origin classification that applies to all premium cuts" },
+    ],
+    synonyms: ["فجوة تسعير المصدر"],
+    description: "A uniquely Gulf phenomenon affecting Qatar (and UAE, Saudi Arabia). In Qatari retailers, the same anatomical cut can have a 3-5x price range depending on origin: Indian/Pakistani beef is the cheapest (lean, grass-fed, tough — intended for curries and pressure-cooking), Brazilian is mid-range (lean, grass-fed), Australian is upper-mid (grass or grain-fed, marbled), and US Prime is premium (heavily marbled, grain-fed). Expats often see 'Pakistani ribeye' at half the price of 'Australian ribeye' and buy it for BBQ — then find the meat is too tough for grilling because it was bred for slow-cooking. The tool should warn users: origin-shop by intended cooking method, not by price.",
+    notes: "The Gulf origin-price axis has no equivalent elsewhere in the ontology. Applies across UAE, Saudi, Qatar, Bahrain, Kuwait.",
+  },
+
+  {
+    id: "mafroum_blend_qa",
+    name: "Mafroum Qatari (Grind Specification)",
+    region: "qatar",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.70, note: "Default grind varies by intended use" },
+    ],
+    synonyms: ["مفروم"],
+    description: "Qatari ground beef classification. When a user asks for 'Mafroum' without specification, the butcher's default depends on context — usually a fine grind for Kibbeh or Sambousek (filled pastries), which is far too fine for a US-style burger and typically too lean. For burgers, users must explicitly ask for a coarse grind with high fat — the standard request is to have the butcher grind Dosh (brisket) specifically to achieve the 80/20 fat ratio Americans expect. The 'Fine vs Coarse' distinction is universal in Gulf butchery.",
+    notes: "Compare Saudi Mafroum Kandouz, Egyptian Lahma mafrouma, UAE Mafroum — same pattern across Arab ground beef culture.",
+  },
+
+  // === UAE ===
+
+  {
+    id: "sirloin_trap_uae",
+    name: "The UAE Sirloin Trap",
+    region: "uae",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.75, note: "UK-style 'Sirloin' = US Striploin" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.70, note: "US-style 'Sirloin' = US Top Sirloin" },
+    ],
+    synonyms: ["سيرلوين"],
+    description: "The defining UAE naming confusion. In the UAE, the word 'Sirloin' refers to completely different cuts depending on the retailer's country-of-origin convention. In British-style shops (Waitrose, Spinneys with UK labels), 'Sirloin' = US Striploin (NY Strip). In US-style steakhouses or US-labeled butchers, 'Sirloin' = US Top Sirloin (Rump). The two cuts are anatomically distinct and have significantly different prices. Rule of thumb: in any given retailer, the more expensive 'Sirloin' is the Striploin. This trap exists nowhere else in the ontology with the same intensity because the UAE uniquely operates under both AUS/UK and US conventions simultaneously, side-by-side.",
+    notes: "The killer feature of UAE butchery — every expat gets caught by this once. Critical for SEO ranking on 'best sirloin Dubai.'",
+  },
+
+  {
+    id: "asado_uae",
+    name: "Asado (UAE — Smokehouse Context)",
+    region: "uae",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "close", confidence: 0.80, note: "Same as US short ribs — NOT Argentine asado" },
+    ],
+    description: "The third use of the word 'Asado' in the Cutranslator ontology, and a significant cross-cultural trap. In Argentina/Uruguay, 'asado' refers to a whole rib plate or to the grilling method itself. In Israel, 'asado' collides with brisket-based preparations. In the UAE — driven by the large Latin American expat population and the booming Dubai/Abu Dhabi smokehouse scene — 'Asado' refers specifically to US-style short ribs, used for low-and-slow American BBQ. A South American expat in Dubai ordering 'asado' will get US short ribs, not a full Argentine-style parrilla rib plate.",
+    notes: "The UAE completes the asado triangle: Argentina (method/full plate) → Israel (brisket collision) → UAE (US short ribs). Three different meanings, one word.",
+  },
+
+  {
+    id: "halal_bacon_uae",
+    name: "Halal Bacon (Beef Navel)",
+    region: "uae",
+    maps_to: [
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.70, note: "Beef navel from the plate — mimics pork belly texture" },
+    ],
+    description: "A uniquely UAE (and Gulf-wide) product category. Because pork is haram, UAE retailers manufacture 'Halal Bacon' and 'Beef Pepperoni' from beef navel (the plate/maculae region) cured and smoked to mimic pork belly. Same anatomy as the cut used for pastrami in Jewish butchery, but cured with beef-specific smoke profiles. Expats expecting actual pork bacon will find this product's texture convincing but flavor distinctly different — it's a reasonable substitute, not an identical match. Sold at Spinneys, Waitrose, and Carrefour. A good example of how religious dietary law drives cut innovation.",
+    notes: "Analog to Israel's pastrami-from-navel tradition and Turkey's pastırma — the 'cured beef navel' axis spans Jewish, Muslim, and Ottoman food cultures.",
+  },
+
 ] as const;
