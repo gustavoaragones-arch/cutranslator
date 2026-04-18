@@ -1880,4 +1880,127 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "The architectural anchor of the False Tenderloin axis — Belarus's entry is the Slavic root from which the regional pattern spreads. Cross-references: all other 12 False Tenderloin entries across Czech/Slovak/German/Hungarian/Slovenian/Croatian/Bosnian/Montenegrin/Macedonian/Romanian/Israeli/Lithuanian/Latvian/Estonian.",
   },
 
+  // PERU
+  {
+    id: "picanya_pe",
+    name: "Picanya (Peruvian Etymological Root)",
+    region: "peru",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.90, note: "The Peruvian picanha — etymological ancestor of the pan-Latin term" },
+    ],
+    synonyms: ["punta de picanya"],
+    description: "Peru's entry in the pan-Latin Picanha Axis — and arguably its etymological origin. The word 'Picanya' has Quechua-adjacent roots predating the modern Brazilian popularization of 'Picanha.' Peruvian butchers and grillers have used this term for generations at parrilladas in Lima and across the Andean highlands. Anatomically identical to Brazilian Picanha, Uruguayan Picaña, Bolivian Picaña, and the 7 Central American 'Punta de X' variants. The Peruvian preparation emphasizes thin slicing across the grain after whole-cap grilling, similar to the Brazilian rodízio tradition. This single-muscle-across-13-countries pattern is the richest cross-country entity in the Cutranslator ontology.",
+    notes: "Anchor entry for the pan-Latin Picanha Axis (13 countries). Etymologically the root term predating Brazilian 'Picanha' popularization.",
+  },
+
+  {
+    id: "lomo_saltado_cut_pe",
+    name: "Carne para Lomo Saltado",
+    region: "peru",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.90, note: "Lomo Fino is the required premium cut" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.70, note: "Corazón de Cuadril (heart of rump) is the affordable alternative" },
+    ],
+    description: "Dish-driven cut for Lomo Saltado — Peru's most iconic beef dish and a cornerstone of Chifa (Chinese-Peruvian) fusion cuisine. The dish requires meat that remains tender after a 60-second sear at wok-level heat. Lomo Fino (tenderloin) is the 'correct' cut for authentic preparations — most Peruvian recipes insist on it. For budget-conscious home cooks, the Corazón de Cuadril ('heart of the rump') is the acknowledged substitute, using the tender core of the top sirloin. Using standard US-style stew meat or cheaper chuck cuts will produce tough, chewy results that fail the dish's defining texture. The Peruvian butcher convention of pre-slicing 'carne para saltado' into the exact wok-ready strip format is unique to this cuisine — ask for 'picado en tiras para saltado.'",
+    notes: "One of the few dish-driven cuts where 'too tough' is a guaranteed failure mode — the high-heat sear doesn't give collagen time to break down.",
+  },
+
+  {
+    id: "asado_peruvian_dish_pe",
+    name: "Asado Peruano (Pot Roast Dish)",
+    region: "peru",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "cultural", confidence: 0.80, note: "Peceto (eye of round) is primary" },
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.70, note: "Paleta (shoulder) is secondary" },
+    ],
+    description: "One of the most consequential semantic traps in Latin American beef vocabulary. In Peru, 'Asado' does NOT mean BBQ — it means a POT ROAST DISH, slowly braised for hours in red wine, onions, and spices. An American expat in Lima who asks for 'meat for Asado' expecting BBQ will receive Peceto (eye of round) or Paleta (shoulder) — completely wrong cuts for grilling. To get meat for actual BBQ/grilling, the Peruvian request is 'carne para parrilla.' This makes Peru the 4th documented meaning of the word 'Asado' in the Cutranslator ontology (after Argentina/Uruguay's BBQ method, Israel's brisket preparation, and UAE's US-style short ribs). The Ecuadorian variant adds a 5th layer. One word, five meanings across five countries — the clearest example of single-word divergence in the database.",
+    notes: "Fourth documented meaning of 'Asado' — the word now spans BBQ method (AR/UY), brisket dish (IL), short ribs (UAE), pot roast (PE/EC). Cross-reference all five.",
+  },
+
+  // BOLIVIA
+  {
+    id: "silpancho_cut_bo",
+    name: "Carne para Silpancho",
+    region: "bolivia",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.85, note: "Pulpa Negra is the traditional cut" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.70, note: "Cadera also used" },
+    ],
+    description: "Dish-driven cut for Silpancho — Cochabamba's iconic tortilla-thin breaded steak dish, served over rice with a fried egg on top. The meat must be pounded until it's as thin as a flour tortilla — often 15-20 cm in diameter from a single piece. Bolivian butchers recognize 'carne para Silpancho' as a specific request for Pulpa Negra (inside round) pounded aggressively thin. Using a US-style thick steak for this dish is impossible — the pounding process depends on starting with a relatively thin cut. This extends the pan-Latin-American 'Bistec as preparation, not cut' pattern to its extreme: not just thin-sliced, but literally pounded to tortilla thickness. The Silpancho tradition is unique to Bolivia — not found in neighboring Peru or Argentina despite shared vocabulary.",
+    notes: "Extends the 'Bistec as preparation' Latin American pattern to its most extreme form (tortilla-thin). Compare with Egyptian/Moroccan Bofteek and Central American Bistec conventions.",
+  },
+
+  {
+    id: "pique_macho_cut_bo",
+    name: "Carne para Piqué Macho",
+    region: "bolivia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.85, note: "Lomo Fino in high-end restaurants" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.75, note: "Cadera in traditional home cooking" },
+    ],
+    description: "Dish-driven cut for Piqué Macho — Cochabamba's cultural rival to Silpancho: bite-sized flash-fried beef cubes served with sausages, onions, peppers, and French fries. The dish is a flash-fry application like Peruvian Lomo Saltado, requiring premium tenderness that holds up to 60-90 seconds of wok-level heat. High-end Bolivian restaurants use Lomo Fino (tenderloin); traditional home kitchens use Cadera (top sirloin). The critical constraint is identical to Lomo Saltado: US 'stew meat' or cheaper braising cuts will produce tough, chewy Piqué — the dish's flash-fry method doesn't give collagen time to render. Bolivian butchers pre-cut 'carne picada para Piqué' in 2-3cm cubes specifically for this dish.",
+    notes: "Bolivian parallel to Peruvian Lomo Saltado — both flash-fry dishes sharing the same cut-tenderness requirement. Part of the Andean 'high-heat quick-cook' cuisine pattern.",
+  },
+
+  {
+    id: "picana_bo",
+    name: "Picaña Cruceña",
+    region: "bolivia",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.95, note: "The Bolivian picanha — with thick fat cap mandatory" },
+    ],
+    description: "Bolivia's entry in the pan-Latin Picanha Axis — specifically anchored in Santa Cruz's Camba (lowland) Churrasco culture, which mirrors the Argentine parrilla tradition more than the Andean Colla (highland) style. Picaña is almost always grilled whole with a thick fat cap intact, sliced tableside across the grain. Santa Cruz butchers refuse to trim the fat cap for traditional preparation. The Bolivian pronunciation 'Picaña' (with ñ) is intermediate between the Peruvian 'Picanya' (Quechua-adjacent root) and the Brazilian 'Picanha' (the global popularized form) — marking Bolivia as the geographic and linguistic midpoint of the Picanha Axis in South America.",
+    notes: "Bolivia sits at the center of the Picanha Axis geographically and linguistically. Cross-reference with Peruvian Picanya, Brazilian Picanha, and the 10 other members of the 13-country axis.",
+  },
+
+  // ECUADOR
+  {
+    id: "asado_lomo_vs_tira_ec",
+    name: "Asado Ambiguity (Lomo de Asado vs Asado de Tira)",
+    region: "ecuador",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.85, note: "'Lomo de Asado' = Striploin" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.85, note: "'Asado de Tira' = Short ribs, crosscut" },
+    ],
+    synonyms: ["lomo de asado", "asado de tira"],
+    description: "The richest single-word intra-country disambiguation in the entire Cutranslator ontology. Ecuador is the only country where the word 'Asado' refers to two completely different anatomical cuts depending on the modifying phrase — and both products are routinely sold side-by-side in the same butcher case. 'Lomo de Asado' = the STRIPLOIN (NY Strip equivalent, a lean cylindrical loin steak). 'Asado de Tira' = SHORT RIBS, cut crosswise Flanken-style (same anatomical cut as Argentine tira de asado). An expat asking for 'Asado' without qualification will prompt the butcher to ask 'lomo o tira?' — the question itself is a cultural disambiguation ritual. This extends the pan-Latin 'Asado' semantic field to 5 documented meanings globally: Argentine BBQ method, Israeli brisket dish, UAE short ribs, Peruvian pot roast, and the Ecuadorian dual-cut sold.",
+    notes: "The only intra-country word-same-cut-different case in the database. Same word, same country, two completely different products based solely on the modifier.",
+  },
+
+  {
+    id: "seco_de_res_cut_ec",
+    name: "Carne para Seco de Res",
+    region: "ecuador",
+    maps_to: [
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.85, note: "Paleta (shoulder) is primary" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.70, note: "Pecho (brisket) secondary" },
+    ],
+    description: "Dish-driven cut for Seco de Res — Ecuador's national beef stew (also prepared as Seco de Chivo with goat). 'Seco' literally means 'dry,' referring to the reduced-sauce finish rather than a dry cooking method. The dish requires cuts that withstand 2+ hours of slow braising: Paleta (shoulder, chuck blade) or Pecho (brisket) are correct. Using Cadera (top sirloin) — a common expat mistake — will produce tough, stringy meat because the lean muscle overcooks before the tough connective tissue breaks down. Ecuadorian butchers recognize 'carne para seco' as a specific request for shoulder or brisket, often pre-cut into 2-3cm cubes. Contrasts strongly with the flash-fry Peruvian Lomo Saltado tradition: same geographic belt, opposite cooking requirements.",
+    notes: "Part of the 'collagen-rich for long braise' pattern that spans Moroccan tajine, Uzbek Plov, Saudi Kabsa, and Central American Olla de Carne.",
+  },
+
+  {
+    id: "mano_de_piedra_ec",
+    name: "Mano de Piedra (Ecuadorian — Eye of Round)",
+    region: "ecuador",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "Matches the Salvadoran mapping" },
+    ],
+    synonyms: ["salón"],
+    description: "Ecuador extends the three-country 'Mano de Piedra' pattern — but which cut it refers to is a cross-border coin flip. Ecuador's 'Mano de Piedra' maps to eye of round (matching El Salvador). Nicaragua and Honduras use 'Mano de Piedra' for bottom round. This creates a documented cross-border trap: an expat familiar with Nicaraguan Mano de Piedra will buy the wrong cut in Ecuador (and vice versa). The Ecuadorian version is used for long braises only — the eye of round's extreme leanness means quick cooking produces inedible results. The name itself (literally 'hand of stone') emphasizes this toughness. Also called Salón in Ecuadorian butchery, paralleling the Nicaraguan and Honduran Salón (which maps to eye of round in those countries too, creating an internal consistency).",
+    notes: "Mano de Piedra now mapped across 4 countries: El Salvador (eye of round), Ecuador (eye of round), Nicaragua (bottom round), Honduras (bottom round). 50/50 canonical split.",
+  },
+
+  {
+    id: "picanha_ec",
+    name: "Picanha / Punta de Cadera (Ecuadorian Coastal)",
+    region: "ecuador",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.90, note: "The Ecuadorian picanha" },
+    ],
+    synonyms: ["punta de cadera"],
+    description: "Ecuador's entry in the pan-Latin Picanha Axis. Uniquely, Ecuador uses BOTH the Brazilian-style 'Picanha' (increasingly common in Guayaquil coastal steakhouses, reflecting Brazilian culinary influence via Amazon region trade) AND the local 'Punta de Cadera' (literally 'hip point,' following the Central American 'Punta de X' convention). This dual-naming makes Ecuador the architectural bridge between the Brazilian and Central American naming streams of the Picanha Axis. Costa/Sierra split: the coast uses 'Picanha'; the highlands still use 'Punta de Cadera' or simple 'Cadera.'",
+    notes: "The bridging entry of the Picanha Axis — Ecuador connects the Brazilian 'Picanha' branch with the Central American 'Punta de X' branch using both terms simultaneously.",
+  },
+
 ] as const;

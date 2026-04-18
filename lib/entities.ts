@@ -131,6 +131,9 @@ export const REGION_ENTITY: Record<
   latvia: { id: "latvia", formalName: "Latvia", shortName: "Latvia" },
   estonia: { id: "estonia", formalName: "Estonia", shortName: "Estonia" },
   belarus: { id: "belarus", formalName: "Belarus", shortName: "Belarus" },
+  peru: { id: "peru", formalName: "Peru", shortName: "Peru" },
+  bolivia: { id: "bolivia", formalName: "Bolivia", shortName: "Bolivia" },
+  ecuador: { id: "ecuador", formalName: "Ecuador", shortName: "Ecuador" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

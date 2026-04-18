@@ -58,7 +58,10 @@ export type RegionSlug =
   | "lithuania"
   | "latvia"
   | "estonia"
-  | "belarus";
+  | "belarus"
+  | "peru"
+  | "bolivia"
+  | "ecuador";
 
 export type CanonicalId =
   | "ribeye"

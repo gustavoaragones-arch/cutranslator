@@ -1221,6 +1221,52 @@ export const regionalNames: readonly RegionalName[] = [
   { name: "shyyka", region: "belarus", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["шыйка"] as const, notes: "Literally 'little neck' — primarily used for goulash or mincing. Recommended for 100% beef burger grinding." },
   { name: "rebry", region: "belarus", maps_to: "short_ribs", confidence: 0.75, synonyms: ["рэбры"] as const, notes: "Ribs — traditionally used bone-in for Machanka to ensure sauce has enough fat and flavor" },
   { name: "lapatka", region: "belarus", maps_to: "chuck_blade", confidence: 0.75, synonyms: ["лапатка"] as const, notes: "Shoulder blade — for stews and braising" },
+
+  // PERU
+  { name: "lomo fino", region: "peru", maps_to: "tenderloin", confidence: 0.95, notes: "The 'Gold Standard' — essential for authentic Lomo Saltado. Shared term with Bolivia, Ecuador, and Colombia — pan-Andean tenderloin naming." },
+  { name: "bife angosto", region: "peru", maps_to: "striploin", confidence: 0.90, notes: "'Narrow steak' — the Peruvian NY Strip, often sold with the fat cap intact" },
+  { name: "bife ancho", region: "peru", maps_to: "ribeye", confidence: 0.90, notes: "'Wide steak' — standard Peruvian ribeye. Highly prized for parrilla." },
+  { name: "pecho", region: "peru", maps_to: "brisket", confidence: 0.85, notes: "Used for slow-cooking and the base for traditional soups like Sancochado" },
+  { name: "ossobuco", region: "peru", maps_to: "hind_shank", confidence: 0.90, synonyms: ["jarrete"] as const, notes: "Usually sold cross-cut with bone and marrow — standard term in both markets and modern supermarkets" },
+  { name: "rabo", region: "peru", maps_to: "oxtail", confidence: 0.95, notes: "Widely available for rich gelatinous stews" },
+  { name: "cadera", region: "peru", maps_to: "top_sirloin", confidence: 0.90, notes: "The 'hip' — a very common, high-quality steak for home cooking. Pan-Andean term shared with Ecuador." },
+  { name: "tapa", region: "peru", maps_to: "inside_round", confidence: 0.80, notes: "'Top' — large lean muscle used for Bistec or breaded cutlets" },
+  { name: "peceto", region: "peru", maps_to: "eye_of_round", confidence: 0.85, notes: "The standard cylindrical roast — often used for Peruvian 'Asado' (POT ROAST, not BBQ)" },
+  { name: "malaya", region: "peru", maps_to: "flank", confidence: 0.70, synonyms: ["malaya peruana"] as const, notes: "Refers to the thin flank/round area used for braising — a Peruvian boundary cut between flank and bottom round" },
+  { name: "picanya", region: "peru", maps_to: "sirloin_cap", confidence: 0.90, synonyms: ["punta de picanya"] as const, notes: "The king of the Peruvian grill. Etymological root of the pan-Latin Picanha Axis — Peruvian 'Picanya' predates the Brazilian 'Picanha' popularization." },
+  { name: "entraña", region: "peru", maps_to: "skirt", confidence: 0.90, notes: "Highly popular but expensive — usually the 'Fina' (thin/inside) variety" },
+  { name: "corazón de cuadril", region: "peru", maps_to: "top_sirloin", confidence: 0.75, notes: "'Heart of the rump' — a premium-within-a-cut, a tender core of the top sirloin used as an affordable Lomo Saltado substitute when Lomo Fino is out of budget" },
+
+  // BOLIVIA
+  { name: "lomo fino", region: "bolivia", maps_to: "tenderloin", confidence: 0.95, notes: "The pan-Andean tenderloin standard — used for Piqué Macho and high-end dishes" },
+  { name: "bife de chorizo", region: "bolivia", maps_to: "striploin", confidence: 0.90, synonyms: ["chorizo"] as const, notes: "CRITICAL: NOT the sausage. This is the Bolivian NY Strip — identical term/meaning to Argentina. Essential for high-end BBQs." },
+  { name: "ojo de bife", region: "bolivia", maps_to: "ribeye", confidence: 0.85, synonyms: ["lomo alto"] as const, notes: "'Eye of beef' — modern steakhouse term. Traditional markets still use 'Lomo Alto' (high loin)." },
+  { name: "pecho", region: "bolivia", maps_to: "brisket", confidence: 0.85, notes: "The base for Sopa de Maní (peanut soup), one of Bolivia's national dishes" },
+  { name: "ossobuco bo", region: "bolivia", maps_to: "hind_shank", confidence: 0.90, synonyms: ["ossobuco", "jarrete"] as const, notes: "High demand for bone-in stews like Chairo (highland beef-barley soup)" },
+  { name: "cola", region: "bolivia", maps_to: "oxtail", confidence: 0.95, notes: "'Tail' — for rich traditional Andean stews" },
+  { name: "cuadril", region: "bolivia", maps_to: "top_sirloin", confidence: 0.90, notes: "A high-quality lean steak. The 'Corazón de Cuadril' (heart of the rump) is a premium sub-section mirroring the Peruvian pattern." },
+  { name: "pulpa negra", region: "bolivia", maps_to: "inside_round", confidence: 0.85, notes: "Large lean muscle — standard for Bistec or breaded Silpancho" },
+  { name: "peceto bo", region: "bolivia", maps_to: "eye_of_round", confidence: 0.85, synonyms: ["peceto", "redondo"] as const, notes: "Used for pot roasts or 'Asado' (the braised dish, NOT the Argentine BBQ)" },
+  { name: "picaña", region: "bolivia", maps_to: "sirloin_cap", confidence: 0.95, notes: "Huge in Santa Cruz Camba culture — almost always grilled whole with thick fat cap intact. Bolivia's entry in the pan-Latin Picanha Axis." },
+  { name: "entraña bo", region: "bolivia", maps_to: "skirt", confidence: 0.90, synonyms: ["entraña"] as const, notes: "Considered a delicacy — premium-priced in Parrilladas" },
+  { name: "matambre", region: "bolivia", maps_to: "flank", confidence: 0.75, synonyms: ["falda"] as const, notes: "Matambre is the thin layer (literally 'hunger killer' — thin enough to grill fast); Falda is the thicker belly cut. Shared term with Argentina/Uruguay." },
+  { name: "costilla bo", region: "bolivia", maps_to: "short_ribs", confidence: 0.80, synonyms: ["costillar"] as const, notes: "Usually cut crosswise (Flanken style) for the grill. Ask for 'costillar completo' to avoid cross-cutting for American-style smoked ribs." },
+
+  // ECUADOR
+  { name: "lomo fino", region: "ecuador", maps_to: "tenderloin", confidence: 0.95, notes: "The pan-Andean tenderloin standard — used for high-end steaks" },
+  { name: "lomo de asado", region: "ecuador", maps_to: "striploin", confidence: 0.85, synonyms: ["bife angosto"] as const, notes: "CRITICAL: 'Lomo de Asado' refers to STRIPLOIN in Ecuador — NOT the short ribs. Compare with 'Asado de Tira' (short ribs, crosscut). Same root word, two different cuts." },
+  { name: "bife ancho", region: "ecuador", maps_to: "ribeye", confidence: 0.85, synonyms: ["ojo de bife"] as const, notes: "Modern butcher shops increasingly use 'Ojo de Bife' — Argentine influence" },
+  { name: "pecho", region: "ecuador", maps_to: "brisket", confidence: 0.85, synonyms: ["suadero"] as const, notes: "Primarily used for slow-cooking and rich broths. Suadero also used, borrowed from Mexican terminology." },
+  { name: "ossobuco ec", region: "ecuador", maps_to: "hind_shank", confidence: 0.90, synonyms: ["ossobuco", "jarrete"] as const, notes: "Essential for Caldo de Res — usually sold bone-in" },
+  { name: "rabo ec", region: "ecuador", maps_to: "oxtail", confidence: 0.95, synonyms: ["rabo"] as const, notes: "Staple for rich gelatinous Andean soups" },
+  { name: "cadera", region: "ecuador", maps_to: "top_sirloin", confidence: 0.90, notes: "A popular lean steak for home cooking — shared term with Peru" },
+  { name: "tapa ec", region: "ecuador", maps_to: "inside_round", confidence: 0.80, synonyms: ["tapa", "pulpa negra"] as const, notes: "Large lean muscle for Bistec or breaded cutlets" },
+  { name: "salón", region: "ecuador", maps_to: "eye_of_round", confidence: 0.80, synonyms: ["mano de piedra"] as const, notes: "CRITICAL: 'Mano de Piedra' in Ecuador = eye of round (matches El Salvador, differs from Nicaragua/Honduras where it's bottom round). 'Salón' is the other Ecuadorian term." },
+  { name: "picanha", region: "ecuador", maps_to: "sirloin_cap", confidence: 0.90, synonyms: ["punta de cadera"] as const, notes: "Increasingly popular on the coast (Guayaquil) for grilling. Ecuador uses both Brazilian-style 'Picanha' and local 'Punta de Cadera'." },
+  { name: "entraña ec", region: "ecuador", maps_to: "skirt", confidence: 0.85, synonyms: ["entraña"] as const, notes: "Highly prized but expensive — often imported for steakhouses" },
+  { name: "falda ec", region: "ecuador", maps_to: "flank", confidence: 0.80, synonyms: ["falda", "sobrebarriga"] as const, notes: "Classic choice for shredded meat dishes. 'Sobrebarriga' (literally 'over the belly') also used — shared with Colombia." },
+  { name: "asado de tira", region: "ecuador", maps_to: "short_ribs", confidence: 0.90, notes: "CRITICAL: Cross-cut short ribs (Flanken style) — COMPLETELY DIFFERENT from 'Lomo de Asado' (striploin). Same country, same root word, two very different cuts. The richest intra-country disambiguation in the database." },
+  { name: "paleta", region: "ecuador", maps_to: "chuck_blade", confidence: 0.80, notes: "Shoulder — the correct cut for Seco de Res (traditional 2-hour stew)" },
 ];
 
 /** Preferred consumer labels per canonical in each region (output layer). */

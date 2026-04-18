@@ -361,4 +361,24 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "hind_shank", region: "belarus", phrase: "Галёнка для халадца, з касцяй", notes: "'Shank for Kholodets, with bone' — the traditional aspic request" },
   { canonicalId: "chuck_roll", region: "belarus", phrase: "Шыйка молатая, 100% ялавічына", notes: "'Neck ground, 100% beef' — overrides default pork-beef mix" },
   { canonicalId: "eye_of_round", region: "belarus", phrase: "Фальшывая выразка — толькі для тушэння", notes: "'False tenderloin — only for braising' — the pan-European warning in Belarusian" },
+
+  // PERU
+  { canonicalId: "tenderloin", region: "peru", phrase: "Lomo Fino para Saltado, picado en tiras", notes: "'Tenderloin for Lomo Saltado, cut in strips' — the specific wok-ready format request" },
+  { canonicalId: "sirloin_cap", region: "peru", phrase: "Una picanya entera, con la capa de grasa", notes: "'A whole picanya with the fat cap' — overrides any trimming" },
+  { canonicalId: "ribeye", region: "peru", phrase: "Bife Ancho para parrilla, término medio", notes: "'Ribeye for grill, medium-rare' — the standard Peruvian parrilla order" },
+  { canonicalId: "eye_of_round", region: "peru", phrase: "Peceto para asado a la olla", notes: "'Eye of round for pot-roast Asado' — disambiguates from BBQ" },
+  { canonicalId: "brisket", region: "peru", phrase: "Pecho para sancochado, con gordito", notes: "'Brisket for Sancochado, with fat' — the traditional Sunday soup request" },
+
+  // BOLIVIA
+  { canonicalId: "sirloin_cap", region: "bolivia", phrase: "Picaña entera, con la grasa, para el churrasco", notes: "'Whole picaña with fat, for churrasco' — Santa Cruz style" },
+  { canonicalId: "inside_round", region: "bolivia", phrase: "Pulpa negra para Silpancho, bien aplastada", notes: "'Inside round for Silpancho, well-pounded' — the tortilla-thin format request" },
+  { canonicalId: "tenderloin", region: "bolivia", phrase: "Lomo Fino en cubitos, para Piqué", notes: "'Tenderloin in small cubes for Piqué (Macho)'" },
+  { canonicalId: "hind_shank", region: "bolivia", phrase: "Ossobuco para Chairo, con el hueso", notes: "'Ossobuco for Chairo soup, with bone'" },
+
+  // ECUADOR
+  { canonicalId: "striploin", region: "ecuador", phrase: "Lomo de Asado, cortado grueso", notes: "'Striploin (NOT ribs!), cut thick' — the disambiguation is implicit in the phrasing" },
+  { canonicalId: "short_ribs", region: "ecuador", phrase: "Asado de Tira para la parrilla", notes: "'Short ribs for the grill' — explicitly NOT 'Lomo de Asado'" },
+  { canonicalId: "chuck_blade", region: "ecuador", phrase: "Paleta para Seco, picada", notes: "'Shoulder for Seco, cut in cubes' — the 2-hour braise request" },
+  { canonicalId: "sirloin_cap", region: "ecuador", phrase: "Picanha con la capa de grasa entera", notes: "'Picanha with the whole fat cap' — coastal Guayaquil phrasing" },
+  { canonicalId: "eye_of_round", region: "ecuador", phrase: "Mano de piedra, solo para estofado", notes: "'Eye of round, only for braising' — confirms to butcher you know the trap" },
 ] as const;

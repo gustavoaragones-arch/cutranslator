@@ -69,6 +69,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       latvia: "Ar asinīm",
       estonia: "Verine",
       belarus: "Z kryvyoy",
+      peru: "Término Inglés",
+      bolivia: "Vuelta y vuelta",
+      ecuador: "Término Inglés",
     },
   },
   {
@@ -134,6 +137,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       latvia: "Vidēji asiņains",
       estonia: "Poolverine",
       belarus: "Medium rare",
+      peru: "Término medio",
+      bolivia: "Término medio",
+      ecuador: "Término medio",
     },
   },
   {
@@ -199,6 +205,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       latvia: "Vidēji izcepts",
       estonia: "Poolküps",
       belarus: "Syarednyay prazharki",
+      peru: "Tres cuartos",
+      bolivia: "Tres cuartos",
+      ecuador: "Tres cuartos",
     },
   },
   {
@@ -264,6 +273,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       latvia: "Pilnībā izcepts",
       estonia: "Läbiküpsenud",
       belarus: "Dobra prazhanae",
+      peru: "Bien cocido",
+      bolivia: "Bien cocido",
+      ecuador: "Bien cocida",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -310,6 +322,9 @@ export const donenessLevels: readonly DonenessLevel[] = [
       latvia: "Latvian home cooking leans well-done. Riga steakhouses use international English terms for rare/medium; the Latvian 'Ar asinīm' (with blood) is traditional but culturally understood as old-school.",
       estonia: "Estonian cooking traditionally defaults to Läbiküpsenud (cooked through). Modern Tallinn craft restaurants use English doneness terms; the traditional 'Verine' (bloody) for rare is rarely used outside home cooking contexts.",
       belarus: "Traditional Belarusian cuisine defaults to Dobra prazhanae (well done), especially for Machanka and boiled beef dishes. Modern Minsk steakhouses use English terms. The GOST-era term 'Сярэдняй пражарки' (medium-roasted) is preserved in older butcher and restaurant signage.",
+      peru: "Peru has one of the highest steak doneness standards in South America due to its world-class parrilla culture. Término Medio is the standard for Bife Ancho; anything well-done would be considered a waste of a premium cut.",
+      bolivia: "Bolivia splits regionally: the Camba lowlands (Santa Cruz) mirror Argentine Término Medio standards; the Colla highlands (La Paz, Potosí) prefer Well Done for tradition and food-safety reasons at altitude.",
+      ecuador: "Ecuador also splits regionally: the coastal Guayaquil steak culture is closer to international standards (Término Medio); the Sierra (Quito) tradition leans Well Done for home cooking, especially for Bistec Encebollado.",
     },
   },
 ] as const;
