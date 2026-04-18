@@ -47,7 +47,18 @@ export type RegionSlug =
   | "kazakhstan"
   | "saudi_arabia"
   | "qatar"
-  | "uae";
+  | "uae"
+  | "panama"
+  | "costa_rica"
+  | "nicaragua"
+  | "honduras"
+  | "el_salvador"
+  | "guatemala"
+  | "venezuela"
+  | "lithuania"
+  | "latvia"
+  | "estonia"
+  | "belarus";
 
 export type CanonicalId =
   | "ribeye"

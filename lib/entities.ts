@@ -120,6 +120,17 @@ export const REGION_ENTITY: Record<
   saudi_arabia: { id: "saudi_arabia", formalName: "Saudi Arabia", shortName: "Saudi Arabia" },
   qatar: { id: "qatar", formalName: "Qatar", shortName: "Qatar" },
   uae: { id: "uae", formalName: "United Arab Emirates", shortName: "UAE" },
+  panama: { id: "panama", formalName: "Panama", shortName: "Panama" },
+  costa_rica: { id: "costa_rica", formalName: "Costa Rica", shortName: "Costa Rica" },
+  nicaragua: { id: "nicaragua", formalName: "Nicaragua", shortName: "Nicaragua" },
+  honduras: { id: "honduras", formalName: "Honduras", shortName: "Honduras" },
+  el_salvador: { id: "el_salvador", formalName: "El Salvador", shortName: "El Salvador" },
+  guatemala: { id: "guatemala", formalName: "Guatemala", shortName: "Guatemala" },
+  venezuela: { id: "venezuela", formalName: "Venezuela", shortName: "Venezuela" },
+  lithuania: { id: "lithuania", formalName: "Lithuania", shortName: "Lithuania" },
+  latvia: { id: "latvia", formalName: "Latvia", shortName: "Latvia" },
+  estonia: { id: "estonia", formalName: "Estonia", shortName: "Estonia" },
+  belarus: { id: "belarus", formalName: "Belarus", shortName: "Belarus" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

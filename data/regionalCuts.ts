@@ -1536,4 +1536,348 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Analog to Israel's pastrami-from-navel tradition and Turkey's pastırma — the 'cured beef navel' axis spans Jewish, Muslim, and Ottoman food cultures.",
   },
 
+  // === PANAMA ===
+
+  {
+    id: "entrana_pa",
+    name: "Entraña (Panamanian Luxury Skirt)",
+    region: "panama",
+    maps_to: [
+      { canonical_id: "skirt", match_type: "exact", confidence: 0.90, note: "Anatomically the skirt — but a luxury import item, not a butcher's cut" },
+    ],
+    description: "The sharpest valuation inversion in Panamanian butchery. In the US, skirt steak was historically a cheap 'butcher's cut' before fajita culture elevated it. In Panama, Entraña is a luxury item — often imported from the US as Certified Angus Beef, and frequently priced higher per pound than Filete (tenderloin). This inversion is driven by the Panama Canal expat community's demand for US-style steaks combined with the domestic grass-fed cattle industry's inability to produce the marbled skirts found in US grain-fed systems. Expat-facing butchers in Panama City stock imported Entraña as their premium cut.",
+    notes: "The skirt-as-luxury pattern also appears in Costa Rica due to similar US expat economics. Not seen in the other Central American countries where skirt remains mid-tier.",
+  },
+
+  {
+    id: "muchacho_pa",
+    name: "Muchacho (Panama)",
+    region: "panama",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.85, note: "Anatomically the eye of round" },
+    ],
+    synonyms: ["boliche"],
+    description: "Literally 'boy' — the Panamanian name for eye of round, and the defining source of expat confusion. Americans and Canadians in Panama routinely fail to recognize Muchacho as the same cut they buy as 'eye of round' back home. Part of a pan-regional pattern: Muchacho in Panama/Colombia/Venezuela (as Muchacho redondo), Bolován in Costa Rica, Bolovique in Guatemala, Salón in Nicaragua/Honduras, Mano de Piedra (eye of round) in El Salvador — five different names for the same cylindrical lean roast across 7 countries. The most fragmented naming of any single canonical cut in the database.",
+    notes: "The 'cylindrical lean roast' is the most fragmented cut across Central America — 5 different names for the same muscle. Possible future super-entity.",
+  },
+
+  // === COSTA RICA ===
+
+  {
+    id: "cecina_cr",
+    name: "Cecina (Costa Rican)",
+    region: "costa_rica",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.75, note: "Costa Rican Cecina = brisket for shredding, not dried meat" },
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.65, note: "Sometimes also refers to the flank area" },
+    ],
+    description: "The defining cross-cultural trap of Costa Rican butchery. The word 'Cecina' means something completely different in Costa Rica than almost anywhere else in the Spanish-speaking world. In Mexico, Spain, and most of South America, Cecina is salted, dried, cured beef — a preserved product. In Costa Rica, Cecina is a fresh cut, specifically the brisket or flank used for making Carne Mechada (shredded beef). An American expat in San José asking for 'Cecina' expecting Mexican-style dried meat will receive fresh whole brisket. Conversely, if they want to smoke a Texas-style brisket, they should ask for 'Cecina' whole with the fat cap intact. This is the most dangerous single-word mismatch in the Central American vocabulary.",
+    notes: "The Cecina axis: Mexico (dried cured) → Spain (dried cured, PDO Cecina de León) → South America (dried cured) → Costa Rica/Nicaragua/Honduras/El Salvador (fresh brisket or skirt, meaning inverted). The clearest example of same-word-different-meaning in Latin American butchery.",
+  },
+
+  {
+    id: "olla_de_carne_cut_cr",
+    name: "Carne para Olla de Carne",
+    region: "costa_rica",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Jarret (shank) is the primary cut" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.70, note: "Costilla often included" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.65, note: "Posta de Cuello (neck) sometimes added" },
+    ],
+    description: "Dish-driven cut for Olla de Carne, Costa Rica's national beef stew (meat in a pot with tubers, plantains, and corn). An authentic Olla de Carne requires collagen-rich cuts with bone and marrow — Jarret (shank) is the required base, often combined with Costilla (ribs) or Posta de Cuello (neck). Using US 'lean stew meat' from the round is considered a culinary error: the bone marrow and connective tissue are what give the broth its signature body. Costa Rican Carnicerías sell pre-assembled 'Olla de Carne mix' combining all required cuts.",
+    notes: "Shares the 'collagen-rich mandatory' principle with Moroccan tajine meat, Uzbek Palovbop, and Saudi Kabsa — continents apart, same cooking logic.",
+  },
+
+  {
+    id: "punta_de_solomo_cr",
+    name: "Punta de Solomo",
+    region: "costa_rica",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.90, note: "The Costa Rican picanha" },
+    ],
+    description: "Costa Rica's entry in the Central American 'Punta de X' picanha axis. Across Central America, the sirloin cap has 7 different local names (Punta de Solomo CR, Punta de Lomo NI/HN/SV, Punta de Puyaso GT, Punta trasera VE) — all referring to the same muscle that Brazilians call picanha. In Costa Rica specifically, Punta de Solomo is the flagship grilling cut, almost always cooked whole over charcoal with the fat cap intact. An American butcher may not recognize the name but will recognize the anatomy immediately.",
+    notes: "Anchor entry for the Central American Picanha Axis. Cross-referenced from all 6 other Central American Punta entries.",
+  },
+
+  // === NICARAGUA ===
+
+  {
+    id: "indio_viejo_cut_ni",
+    name: "Carne para Indio Viejo",
+    region: "nicaragua",
+    maps_to: [
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.80, note: "Mano de Piedra (bottom round) is traditional" },
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.75, note: "Falda also used" },
+    ],
+    description: "Dish-driven cut for Indio Viejo, Nicaragua's iconic pre-Columbian corn-thickened beef stew. The dish requires meat that shreds easily after long boiling — Mano de Piedra (bottom round) or Falda (flank) are traditional. The critical constraint: using a tender US cut like sirloin will result in meat that disintegrates too quickly and loses the stringy shredded texture that defines the dish. The cornmeal thickener requires the meat to hold its fibrous structure through the cooking process. One of the few cuts in the ontology where 'too tender' is a failure mode.",
+    notes: "Pre-Columbian origin — Indio Viejo predates Spanish colonization, making this one of the oldest continuously-prepared beef dishes in the Americas.",
+  },
+
+  {
+    id: "vaho_cut_ni",
+    name: "Cecina para Vaho",
+    region: "nicaragua",
+    maps_to: [
+      { canonical_id: "skirt", match_type: "cultural", confidence: 0.75, note: "Skirt is the traditional base" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.65, note: "Pecho also used" },
+    ],
+    description: "Nicaragua's unique middle-ground Cecina tradition. Vaho is a steamed dish of beef and plantains wrapped in banana leaves. Unlike Mexican Cecina (fully dried and cured) or Costa Rican Cecina (fresh brisket), Nicaraguan Cecina for Vaho is partially salted and briefly sun-dried — a curing halfway point. This brief curing is what gives Vaho its distinct flavor and cannot be replicated with fresh supermarket beef. A Nicaraguan butcher selling 'Cecina para Vaho' is selling this specifically half-cured skirt or brisket, NOT fresh meat.",
+    notes: "Completes the Cecina spectrum: fully dried (Mexico/Spain/Argentina) → briefly cured (Nicaragua) → fresh brisket (Costa Rica/Honduras/El Salvador). Three different curing states under one word.",
+  },
+
+  // === HONDURAS ===
+
+  {
+    id: "posta_system_hn",
+    name: "Sistema Posta (Honduran Catch-all)",
+    region: "honduras",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Posta Negra = inside round" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.70, note: "Posta de Pupa = top sirloin" },
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.65, note: "Other Postas from bottom round" },
+    ],
+    description: "The Honduran 'Posta' system is the most elastic vocabulary in Central America. While all Central American countries use 'Posta' as a descriptor, Honduras extends it further — 'Posta' functions as a catch-all for any lean, boneless muscle from the leg or hindquarter, with the specific cut depending on the modifier (Posta Negra, Posta Blanca, Posta de Pupa, Posta de Pierna). This creates real quality inconsistency — two pieces labeled 'Posta' at different Honduran butchers may be anatomically different muscles. Expats buying 'Posta' blind can end up with significantly different products. The fix: always specify the modifier, and in supermarkets like La Colonia or Paiz, look at the USDA-style cut labels when available.",
+    notes: "A systemic quirk rather than a specific cut — documents the 'vocabulary elasticity' that differentiates Honduras from more standardized Central American butchery systems.",
+  },
+
+  {
+    id: "baleada_cecina_hn",
+    name: "Cecina para Baleadas",
+    region: "honduras",
+    maps_to: [
+      { canonical_id: "skirt", match_type: "cultural", confidence: 0.75, note: "Thin-cut skirt traditional" },
+    ],
+    description: "Honduras's Cecina tradition is specifically tied to the Baleada — the country's most iconic street food (wheat flour tortilla filled with beans, cheese, cream, and optional meat). For 'Baleadas con todo' (fully loaded), the meat is Cecina: thin, flavorful skirt meat that has been seasoned and quickly grilled. Unlike Mexican or Spanish Cecina, Honduran Cecina for Baleadas is NOT dried — it is a specific texture/preparation of fresh skirt. This places Honduras in the 'fresh Cecina' cluster with Costa Rica, Nicaragua, and El Salvador.",
+    notes: "The Baleada is arguably Honduras's most recognized culinary export — this entry ties the national dish directly to a beef cut.",
+  },
+
+  // === EL SALVADOR ===
+
+  {
+    id: "mano_de_piedra_sv",
+    name: "Mano de Piedra (Salvadoran)",
+    region: "el_salvador",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "In El Salvador, Mano de Piedra = eye of round" },
+    ],
+    description: "A classic same-name-different-cut trap within Central America. In Nicaragua and Honduras, 'Mano de Piedra' (literally 'stone hand') refers to the bottom round. In El Salvador, the same phrase refers to the eye of round. The Salvadoran version is used specifically for the dish 'Mano de Piedra entomatada' — boiled eye of round sliced and served in tomato sauce. The cut is 'boil-only': attempting to grill it as a steak will produce tough, dry meat. A user buying Mano de Piedra in San Salvador expecting the Nicaraguan cut will receive a different anatomical muscle. This is the most important intra-Central-American naming divergence in the batch.",
+    notes: "El Salvador vs Nicaragua/Honduras: Mano de Piedra = eye_of_round (SV) vs outside_round (NI/HN). Documented cross-border ambiguity.",
+  },
+
+  {
+    id: "sopa_de_res_cut_sv",
+    name: "Carne para Sopa de Res",
+    region: "el_salvador",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Chamberete (shank) is required" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.70, note: "Costilla often included" },
+    ],
+    description: "Dish-driven cut for Sopa de Res, El Salvador's national Sunday soup. Requires Chamberete (shank) — bone-in, with marrow intact — as the primary meat, often supplemented with Costilla (ribs). The 'gordito' (fat) and bone marrow are mandatory for the broth body. Using US 'chuck roast' is considered incorrect as it lacks the bone-broth character that defines the dish. Salvadoran butchers at Super Selectos sell pre-cut 'Sopa de Res mix' with shank, ribs, and marrow bones together. The shank-for-soup principle extends across all of Central America (Costa Rica Olla de Carne, Honduras Sopa de Res, Nicaragua Sopa de Res), making this one of the most consistent regional patterns.",
+    notes: "The Central American Sunday-soup axis: Sopa de Res (SV/HN/GT/NI), Olla de Carne (CR), Sancocho de Res (PA) — all collagen-rich bone-in shank preparations.",
+  },
+
+  // === GUATEMALA ===
+
+  {
+    id: "puyaso_gt",
+    name: "Punta de Puyaso (Guatemalan Flagship)",
+    region: "guatemala",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.95, note: "Anatomically the sirloin cap — the Guatemalan picanha" },
+    ],
+    synonyms: ["puyaso"],
+    description: "Arguably the most famous beef cut name in all of Central America — Guatemala's flagship grilling steak and the definitive example of the 'Punta de X' axis across 7 countries. Puyaso is the star of Churrasco Chapín (Guatemalan barbecue). The cut must have its thick fat cap intact — a Guatemalan butcher will refuse to trim it for traditional preparation. The name 'Puyaso' has no clear etymology in Spanish but is instantly recognized throughout Guatemala. If an expat or tourist asks 'what's the one Guatemalan meat I must try?', every Guatemalan will answer Puyaso. Anatomically identical to Brazilian picanha, Venezuelan Punta trasera, Nicaraguan/Honduran/Salvadoran Punta de Lomo, and Costa Rican Punta de Solomo — but culturally the most celebrated of the seven names.",
+    notes: "Arguably the strongest single-word brand in Central American beef culture. Primary anchor for the 'Punta Picanha Axis' cross-country entity.",
+  },
+
+  {
+    id: "viuda_gt",
+    name: "Viuda",
+    region: "guatemala",
+    maps_to: [
+      { canonical_id: "top_sirloin", match_type: "close", confidence: 0.85, note: "A top sirloin variant" },
+    ],
+    description: "Literally 'the widow' — a uniquely Guatemalan name with no parallel in other Spanish-speaking butcheries. Anatomically a top sirloin or rump steak, the Viuda earned its name because it is a 'lonely' lean cut — without surrounding fat, without bone, without the companion muscles that normally dress up a sirloin section. It's a practical everyday grilling steak: affordable, widely available at Paiz and La Torre, and flavorful despite its leanness. The evocative name ('widow') places it alongside other Central American descriptive-name cuts like Camote ('sweet potato'), Puyaso, Bolovique, and Muchacho.",
+    notes: "Part of the Central American tradition of shape-and-story cut names — compare Panamanian Lagarto (lizard), Guatemalan Camote (sweet potato), Panamanian Muchacho (boy).",
+  },
+
+  {
+    id: "hilachas_gt",
+    name: "Carne para Hilachas",
+    region: "guatemala",
+    maps_to: [
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.85, note: "Falda is the traditional cut" },
+      { canonical_id: "eye_of_round", match_type: "cultural", confidence: 0.70, note: "Bolovique sometimes substituted" },
+    ],
+    description: "Dish-driven cut for Hilachas, Guatemala's iconic shredded-beef stew with tomato and vegetables. The name 'Hilachas' literally means 'threads' or 'rags' — the meat must be boiled until it can be pulled into thin threads. Falda (flank) is the traditional and correct cut; Bolovique (eye of round) is a secondary option. Using tenderloin for this dish is considered a cultural waste — the fibrous structure of flank is required for the characteristic shredded texture. Guatemalan butchers recognize 'Carne para Hilachas' as a specific flank request, often pre-cut into boiling strips.",
+    notes: "The Central American shredded-meat axis: Hilachas (GT), Carne Mechada/Pabellón (VE), Carne Deshilachada (SV), Carne Desmechada (HN/NI), all using flank — shared pre-Columbian-to-colonial cooking lineage.",
+  },
+
+  // === VENEZUELA ===
+
+  {
+    id: "muchacho_redondo_ve",
+    name: "Muchacho Redondo (Asado Negro)",
+    region: "venezuela",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.90, note: "The cylindrical eye of round — required for Asado Negro" },
+    ],
+    description: "The required cut for Asado Negro — Venezuela's iconic 'black roast,' one of the country's most celebrated home-cooking dishes. Muchacho Redondo (literally 'round boy') is the cylindrical eye of round. The name's diminutive 'boy' refers to the muscle's compact, tube-like shape. Must be distinguished from Muchacho Cuadrado ('square boy' = bottom round). Asado Negro requires the Redondo specifically — its tight grain holds together during the long slow braise in caramelized sugar and wine. Using the Cuadrado will produce a stringier, less cohesive final dish. This distinction is the #1 expat confusion in Venezuelan butchery.",
+    notes: "The Muchacho Redondo vs Cuadrado distinction is the single most important Venezuelan butchery insight for expats. Essential SEO content for 'asado negro recipe' searches.",
+  },
+
+  {
+    id: "punta_trasera_ve",
+    name: "Punta Trasera (Venezuelan Picanha)",
+    region: "venezuela",
+    maps_to: [
+      { canonical_id: "sirloin_cap", match_type: "close", confidence: 0.95, note: "The Venezuelan picanha" },
+    ],
+    description: "Venezuela's entry in the pan-Latin Picanha Axis. Punta Trasera ('rear point') is a cultural icon in Venezuelan steakhouses (parrillas) — almost always grilled whole over charcoal, sliced at the table against the grain. If you ask any Venezuelan expat 'what's the one thing I should order at a Venezuelan parrilla?' the answer is Punta Trasera, not Lomito (tenderloin). The name differs from the other 6 Central American picanha terms — most use 'Punta de X' (point of something), while Venezuela uses 'Punta trasera' (rear point, referring to the anatomical location). Same muscle, slightly different naming logic.",
+    notes: "Connects the Picanha Axis: Brazil (picanha), Uruguay/Argentina (picaña/tapa de cuadril), Costa Rica (punta de solomo), Nicaragua/Honduras/El Salvador (punta de lomo), Guatemala (punta de puyaso), Venezuela (punta trasera). Eight names, one muscle.",
+  },
+
+  {
+    id: "pabellon_criollo_cut_ve",
+    name: "Carne para Pabellón Criollo",
+    region: "venezuela",
+    maps_to: [
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.85, note: "Falda is traditional — required for stringy shred" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.65, note: "Pecho occasionally substituted" },
+    ],
+    description: "Dish-driven cut for Pabellón Criollo — Venezuela's national dish (shredded beef with black beans, rice, and plantain). Falda (flank) is the traditional and correct cut for Carne Mechada (the shredded beef component). The authentic preparation requires the long, stringy texture that only flank's grain produces — substituting brisket will produce chunky rather than stringy meat, breaking the dish's defining texture. Venezuelan butchers recognize 'carne para mechar' or 'carne para pabellón' as a specific flank request. Contrasts with the chunky-shred US pulled-beef tradition.",
+    notes: "Completes the Central American shredded-beef axis with Guatemalan Hilachas, Salvadoran Deshilachada, and Nicaraguan/Honduran Desmechada — all flank-based, all pre-Columbian in origin.",
+  },
+
+  // === LITHUANIA ===
+
+  {
+    id: "netikroji_ispjova_lt",
+    name: "Netikroji išpjova",
+    region: "lithuania",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "Primary — Lithuanian false tenderloin typically sold as eye of round" },
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "Sometimes chuck tender (teres major) — same visual trap" },
+    ],
+    description: "Literally 'False Tenderloin' — Lithuania's entry in the pan-European False Tenderloin axis spanning 13 countries. A cut from the shoulder or leg that is long, cylindrical, and lean — looking visually identical to a real Išpjova (tenderloin) on the butcher counter. Lithuanian supermarkets stock it prominently because of its aesthetic appeal, but if grilled like a real tenderloin, it will be extremely tough. Must be braised or slow-cooked. Lithuanian butchers typically label it clearly as 'netikroji' (false), but tourists and expats miss the distinction. Part of the remarkable cross-European pattern where Czech, Slovak, Hungarian, Slovenian, Romanian, Croatian, Bosnian, Montenegrin, Macedonian, Latvian, Estonian, Belarusian, and Israeli butcheries all use a 'false tenderloin' label for the same anatomical trap.",
+    notes: "Part of the pan-European False Tenderloin axis — 13-country pattern completed with this batch.",
+  },
+
+  {
+    id: "saltiena_cut_lt",
+    name: "Mėsa šaltienai",
+    region: "lithuania",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Karkas (shank) is mandatory for gelatin" },
+      { canonical_id: "fore_shank", match_type: "cultural", confidence: 0.75, note: "Often includes feet and fore shank for extra gelatin" },
+    ],
+    description: "Dish-driven cut for Lithuanian Šaltiena — the traditional cold meat aspic served especially during holidays. Requires Karkas (hind shank) at minimum, often supplemented with feet and fore shank for maximum natural gelatin release. The broth must set naturally into aspic without added gelatin — only the collagen from bone-in shank can achieve this. US 'stew meat' from the round will never produce a traditional Šaltiena. Part of the Northern European aspic axis: Estonian Sült, Latvian Galerts, Belarusian Халадзец, Russian Холодец, Ukrainian Холодець — all require shank, all pre-modern dishes documenting centuries of regional continuity.",
+    notes: "Completes the Baltic side of the Northern European aspic axis (6 countries total).",
+  },
+
+  // === LATVIA ===
+
+  {
+    id: "viltotais_filejs_lv",
+    name: "Viltotais filejs",
+    region: "latvia",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "Primary — Latvian false tenderloin, typically eye of round" },
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "Also sometimes chuck tender" },
+    ],
+    description: "Latvia's 'Fake Fillet' — part of the pan-European False Tenderloin axis. Sold prominently at Rīgas Centrāltirgus and in Latvian supermarkets because of its aesthetic similarity to the premium Iekšfileja (true tenderloin). An American expat who mistakes Viltotais filejs for tenderloin and tries to grill it will produce extremely tough steaks — the cut lacks the fat and tenderness needed for quick high-heat cooking. The Latvian butcher label 'viltotais' ('fake' or 'counterfeit') is a direct consumer warning, paralleled by German Falsches Filet, Czech falešná svíčková, Lithuanian Netikroji išpjova, Estonian Valesisefilee, and Belarusian Фальшывая выразка.",
+    notes: "Latvia's False Tenderloin entry bridges the Central European (Czech/Slovak/Hungarian) and Baltic variants.",
+  },
+
+  {
+    id: "galerts_cut_lv",
+    name: "Gaļa galertam",
+    region: "latvia",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Stilbs (shank) is mandatory" },
+      { canonical_id: "fore_shank", match_type: "cultural", confidence: 0.75, note: "Feet and fore shank often included for gelatin" },
+    ],
+    description: "Dish-driven cut for Latvian Galerts — the traditional beef aspic served during Christmas, Easter, and family gatherings. A Latvian butcher at the Rīgas Centrāltirgus will recommend bone-in Stilbs (shank), often combined with feet, to ensure the broth sets into aspic without commercial gelatin. Using boneless US stew meat produces a soft broth that will never set. Part of the Northern European aspic axis that ties together Latvia, Lithuania, Estonia, Belarus, Russia, and Ukraine — six countries, one cultural pattern, one mandatory cut.",
+    notes: "The Northern European aspic axis connects 6 countries through a single cut requirement — rare architectural clarity.",
+  },
+
+  // === ESTONIA ===
+
+  {
+    id: "valesisefilee_ee",
+    name: "Valesisefilee",
+    region: "estonia",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "Primary — Estonian false tenderloin" },
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "Sometimes chuck tender" },
+    ],
+    description: "Literally 'false inside fillet' — Estonia's entry in the pan-European False Tenderloin axis. The construction 'vale-' (false) + 'sisefilee' (inside fillet) directly mirrors the real Sisefilee (true tenderloin), making the label itself a warning. Modern Tallinn craft butcheries handle this transparently, but older Estonian retail sometimes presents Valesisefilee without clear labeling. Americans and expats looking for tenderloin must verify the prefix. Comes from the shoulder or leg, requires braising or slow-cooking — attempting to grill it produces tough, dry steaks.",
+    notes: "Completes the Baltic side of the False Tenderloin axis alongside Lithuanian Netikroji išpjova and Latvian Viltotais filejs.",
+  },
+
+  {
+    id: "sult_cut_ee",
+    name: "Sülditükid",
+    region: "estonia",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Koot (shank) is mandatory for gelatin" },
+      { canonical_id: "fore_shank", match_type: "cultural", confidence: 0.75, note: "Front shank or feet often included" },
+    ],
+    description: "Dish-driven cut for Estonian Sült — a cornerstone of traditional Estonian cuisine, particularly during Christmas. Requires Koot (shank) as the primary cut, with feet or fore shank often added for extra gelatin. Without the natural collagen from bone-in shank, the aspic won't set. Modern Estonian butchers sell pre-assembled 'Sülditükid' (Sült pieces) specifically for this dish, typically including shank, feet, and skin. An American cook trying to make Sült with boneless 'stew meat' will produce a soup that never firms up.",
+    notes: "The Estonian Sült tradition is part of the broader Finno-Ugric and Northern European aspic culture — parallels exist in Finnish cuisine (which is already in the DB).",
+  },
+
+  // === BELARUS ===
+
+  {
+    id: "edge_logic_by",
+    name: "The Edge System (Край)",
+    region: "belarus",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "close", confidence: 0.85, note: "Тоўсты край (Thick Edge) = Ribeye" },
+      { canonical_id: "striploin", match_type: "close", confidence: 0.85, note: "Тонкі край (Thin Edge) = Striploin" },
+    ],
+    synonyms: ["тоўсты край", "тонкі край", "край"],
+    description: "A naming system found only in the East Slavic butchery belt (Belarus, Russia, Ukraine) that replaces the Western 'Ribeye / Striploin' distinction with a single axis: 'Thick Edge' vs 'Thin Edge.' The logic is purely anatomical — as the backbone runs from front to back, the loin muscle (longissimus dorsi) gradually thins out. The 'thick' (fatter, more marbled) front portion is Ribeye; the 'thin' (leaner, more uniform) back portion is Striploin. This elegant anatomical framing is mostly absent from Western European butchery, which names the two cuts by their location rather than their shape. For expats in Minsk, the system is a blocker: asking for 'loin' in a traditional Belarusian shop will produce the question 'thick or thin edge?' Your tool should flag Thin Edge = US NY Strip as the primary clarification. The Edge system also appears in Russian (толстый край / тонкий край) and Ukrainian butchery, making it a pan-East-Slavic pattern.",
+    notes: "The East Slavic Edge system is one of the few truly distinctive anatomical naming conventions in the database. Cross-reference with Russian and Ukrainian entries (which use the same logic under Russian-language labels).",
+  },
+
+  {
+    id: "gost_grading_by",
+    name: "GOST Grading (Belarusian Soviet Standard)",
+    region: "belarus",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.40, note: "GOST Grade 1 = premium cuts incl. tenderloin" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.40, note: "GOST Grade 1 includes loin/rib cuts" },
+    ],
+    description: "Belarus retains the Soviet GOST (Государственный стандарт / State Standard) system alongside modern Western retail, creating a two-tier meat economy. GOST grades beef into three categories: Сорт 1 (Grade 1, most tender — loin, tenderloin, rib), Сорт 2 (Grade 2, mid-tier — rump, sirloin, some round cuts), and Сорт 3 (Grade 3, least tender — shank, neck, chest). Traditional Belarusian butchers and state-run shops still use GOST grading prominently on price tags, while modern Minsk retailers layer USDA-style cut names on top. For an American shopper, the GOST system is less useful than anatomical naming — a 'Сорт 1' label doesn't indicate WHICH premium cut, just that it's premium. The parallel system exists in Russia, Ukraine, and Kazakhstan (already in the DB), but Belarus preserves GOST most visibly of all four countries. Your tool should recommend users ignore the Сорт number and ask for the specific anatomical name (Выразка, Тоўсты край, etc.).",
+    notes: "Soviet GOST grading: a structural classifier, not a cut. Only relevant in Belarus, Russia, Ukraine, and Kazakhstan — the four post-Soviet countries that preserved the system.",
+  },
+
+  {
+    id: "kholodets_cut_by",
+    name: "Мяса для халадца",
+    region: "belarus",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Halyonka (shank) is the primary gelatin source" },
+      { canonical_id: "fore_shank", match_type: "cultural", confidence: 0.75, note: "Feet and fore shank commonly added" },
+    ],
+    synonyms: ["мяса для халадца", "kholodets meat"],
+    description: "Dish-driven cut for Belarusian Халадзец (Kholodets) — the East Slavic cold meat aspic that parallels the Baltic Šaltiena/Galerts/Sült tradition but with distinctive Belarusian seasoning (bay leaf, horseradish, mustard served alongside). Halyonka (hind shank) is the mandatory base, typically combined with feet for maximum collagen. Belarusian Kholodets differs from its Russian and Ukrainian counterparts in being typically less garlicky and more prominently herbed. The cut requirement is absolute: without the natural gelatin from bone-in shank, the aspic will never set. Belarusian butchers at a Крама (shop) or Рынак (market) sell pre-assembled 'Kholodets sets' combining shank, feet, and sometimes ears or skin for extra gelatin.",
+    notes: "Completes the East Slavic + Baltic aspic axis: Estonian Sült, Latvian Galerts, Lithuanian Šaltiena, Belarusian Халадзец, Russian Холодец, Ukrainian Холодець — 6 countries unified around a single cut requirement.",
+  },
+
+  {
+    id: "falshyvaya_vyrazka_by",
+    name: "Фальшывая выразка",
+    region: "belarus",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.80, note: "Primary — same cut/logic as 12 other European countries" },
+      { canonical_id: "petite_tender", match_type: "close", confidence: 0.70, note: "Sometimes chuck tender" },
+    ],
+    synonyms: ["фальшывая выразка", "falshyvaya vyrazka"],
+    description: "Belarus completes the 13-country pan-European False Tenderloin axis. The Belarusian name Фальшывая выразка follows the same construction as every other variant: a word meaning 'false' or 'fake' + the local name for tenderloin (Выразка, shared with Russian вырезка). Part of the single most remarkable linguistic pattern in the Cutranslator ontology — every Central/Eastern/Baltic European country has independently developed the same consumer warning for the same anatomical trap, across completely unrelated language families (Germanic: Falsches Filet; Slavic: falešná svíčková, falošná sviečkovica, lažni file, lažni biftek, фальшывая выразка; Finno-Ugric: fehérpecsenye, Valesisefilee; Baltic: Netikroji išpjova, Viltotais filejs; Romance: falsul mușchi; Semitic: פילה מדומה). Thirteen countries, six language families, one identical cultural warning about the same muscle.",
+    notes: "The architectural anchor of the False Tenderloin axis — Belarus's entry is the Slavic root from which the regional pattern spreads. Cross-references: all other 12 False Tenderloin entries across Czech/Slovak/German/Hungarian/Slovenian/Croatian/Bosnian/Montenegrin/Macedonian/Romanian/Israeli/Lithuanian/Latvian/Estonian.",
+  },
+
 ] as const;

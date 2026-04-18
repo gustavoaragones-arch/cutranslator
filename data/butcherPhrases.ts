@@ -287,4 +287,78 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "ribeye", region: "uae", phrase: "Scotch fillet, grain-fed, well marbled", notes: "AUS terminology — most accurate request in Spinneys/Waitrose" },
   { canonicalId: "brisket", region: "uae", phrase: "Whole packer brisket, fat cap on", notes: "US BBQ specialty phrasing — widely understood in Dubai smokehouses" },
   { canonicalId: "top_sirloin", region: "uae", phrase: "Rump steak, not Sirloin", notes: "Explicit disambiguation — avoids getting striploin by accident" },
+
+  // PANAMA
+  { canonicalId: "skirt", region: "panama", phrase: "Me da la entraña, término medio", notes: "'I'll take the entraña, medium-rare' — the quintessential Panamanian steakhouse order" },
+  { canonicalId: "eye_of_round", region: "panama", phrase: "Un muchacho para hornear, por favor", notes: "'An eye of round (muchacho) for roasting' — expat-critical phrasing" },
+  { canonicalId: "striploin", region: "panama", phrase: "New York cortado grueso, en un solo trozo", notes: "'New York cut thick, in one piece' — specifies US-style thick steak" },
+  { canonicalId: "inside_round", region: "panama", phrase: "Pulpa negra para bistec picado", notes: "'Top round for diced steak' — the everyday Panamanian request" },
+  { canonicalId: "hind_shank", region: "panama", phrase: "Jarret para sancocho, con hueso", notes: "'Shank for sancocho, with bone' — dish-driven soup request" },
+
+  // COSTA RICA
+  { canonicalId: "sirloin_cap", region: "costa_rica", phrase: "Punta de solomo entera, con la capa de grasa", notes: "'Whole sirloin cap with the fat cap intact' — the picanha-style request" },
+  { canonicalId: "brisket", region: "costa_rica", phrase: "Cecina entera para ahumar, con gordito", notes: "'Whole cecina (brisket) for smoking, with the fat' — for US-style BBQ" },
+  { canonicalId: "inside_round", region: "costa_rica", phrase: "Posta negra cortada gruesa para la parrilla", notes: "'Top round cut thick for the grill' — overrides the default thin Bistec slicing" },
+  { canonicalId: "hind_shank", region: "costa_rica", phrase: "Ossobuco para olla de carne", notes: "'Ossobuco for olla de carne' — dish-driven Sunday soup request" },
+
+  // NICARAGUA
+  { canonicalId: "sirloin_cap", region: "nicaragua", phrase: "Me regala la punta de lomo, término medio", notes: "'Give me the sirloin cap, medium-rare' — the Nicaraguan parrilla classic" },
+  { canonicalId: "striploin", region: "nicaragua", phrase: "Lomo de centro de dos dedos de grueso", notes: "'Center loin two fingers thick' — Nicaraguan thickness measure" },
+  { canonicalId: "outside_round", region: "nicaragua", phrase: "Mano de piedra para indio viejo", notes: "'Bottom round for Indio Viejo' — dish-driven request" },
+  { canonicalId: "eye_of_round", region: "nicaragua", phrase: "Salón en salsa, entero", notes: "'Whole eye of round for Salón en salsa'" },
+
+  // HONDURAS
+  { canonicalId: "sirloin_cap", region: "honduras", phrase: "Punta de lomo para el anafre", notes: "'Sirloin cap for the anafre (grill)'" },
+  { canonicalId: "skirt", region: "honduras", phrase: "Cecina fina para baleadas", notes: "'Thin skirt for baleadas' — dish-driven street food request" },
+  { canonicalId: "hind_shank", region: "honduras", phrase: "Jarret para sopa de res, con tuétano", notes: "'Shank for beef soup, with marrow'" },
+  { canonicalId: "top_sirloin", region: "honduras", phrase: "Posta de pupa cortada para bistec", notes: "'Top sirloin cut for Bistec' — the everyday Honduran request" },
+
+  // EL SALVADOR
+  { canonicalId: "sirloin_cap", region: "el_salvador", phrase: "Punta de lomo, término medio", notes: "The Salvadoran parrilla standard" },
+  { canonicalId: "eye_of_round", region: "el_salvador", phrase: "Mano de piedra para entomatar", notes: "'Eye of round for tomato sauce' — traditional dish-driven request (CAREFUL: different cut than Nicaraguan Mano de Piedra)" },
+  { canonicalId: "hind_shank", region: "el_salvador", phrase: "Chamberete para sopa de res, con hueso", notes: "'Shank for beef soup, with bone' — the Sunday classic" },
+  { canonicalId: "striploin", region: "el_salvador", phrase: "Lomo de aguja cortado grueso", notes: "'Needle loin cut thick' — overrides default thin slicing" },
+
+  // GUATEMALA
+  { canonicalId: "sirloin_cap", region: "guatemala", phrase: "Puyaso con la capa de grasa entera", notes: "'Puyaso with the whole fat cap' — critical for authentic Churrasco Chapín" },
+  { canonicalId: "top_sirloin", region: "guatemala", phrase: "Una viuda para la parrilla", notes: "'A Widow for the grill' — the everyday Guatemalan grilling request" },
+  { canonicalId: "flank", region: "guatemala", phrase: "Falda para hilachas", notes: "'Flank for Hilachas' — dish-driven shredded beef request" },
+  { canonicalId: "eye_of_round", region: "guatemala", phrase: "Bolovique entero para salsa", notes: "'Whole eye of round for sauce'" },
+  { canonicalId: "hind_shank", region: "guatemala", phrase: "Camote con hueso, para sopa", notes: "'Camote (shank) with bone, for soup'" },
+
+  // VENEZUELA
+  { canonicalId: "sirloin_cap", region: "venezuela", phrase: "Una punta trasera entera para la parrilla", notes: "'A whole rear point for the grill' — the definitive Venezuelan steakhouse order" },
+  { canonicalId: "eye_of_round", region: "venezuela", phrase: "Muchacho redondo para asado negro", notes: "'Round boy for black roast' — CRITICAL: specify redondo, not cuadrado" },
+  { canonicalId: "flank", region: "venezuela", phrase: "Falda para carne mechada, para pabellón", notes: "'Flank for shredded beef, for Pabellón' — dish-driven national dish request" },
+  { canonicalId: "striploin", region: "venezuela", phrase: "Solomo de cuerito cortado grueso", notes: "'Striploin with fat cap, cut thick'" },
+  { canonicalId: "tenderloin", region: "venezuela", phrase: "Lomito, término medio", notes: "'Tenderloin, medium-rare' — the premium standard" },
+
+  // LITHUANIA
+  { canonicalId: "tenderloin", region: "lithuania", phrase: "Aš norėčiau išpjovos, vidutiniškai iškeptos", notes: "'I would like tenderloin, medium' — Vilnius steakhouse standard phrasing" },
+  { canonicalId: "striploin", region: "lithuania", phrase: "Nugarinės steikui, storai supjaustytos", notes: "'Striploin for steak, sliced thick' — overrides the default thin slicing" },
+  { canonicalId: "hind_shank", region: "lithuania", phrase: "Karkas šaltienai, su kaulu", notes: "'Shank for Šaltiena, with bone' — the traditional aspic request" },
+  { canonicalId: "chuck_roll", region: "lithuania", phrase: "Sprandinė sumaltos mėsos, 100% jautiena", notes: "'Neck for ground meat, 100% beef' — avoids default beef+pork mix" },
+  { canonicalId: "eye_of_round", region: "lithuania", phrase: "Netikroji išpjova troškinimui, ne grilio steikui", notes: "'False tenderloin for braising, NOT for grilling' — critical clarification to avoid tough grilled eye-of-round" },
+
+  // LATVIA
+  { canonicalId: "tenderloin", region: "latvia", phrase: "Es vēlētos iekšfileju, vidēji izceptu", notes: "'I'd like tenderloin, medium' — Rīga steakhouse phrasing" },
+  { canonicalId: "striploin", region: "latvia", phrase: "Muguras fileju, biezi sagrieztu", notes: "'Back fillet, sliced thick' — for US-style NY Strip" },
+  { canonicalId: "hind_shank", region: "latvia", phrase: "Stilbu galertam, ar kaulu", notes: "'Shank for Galerts, with bone' — the aspic standard" },
+  { canonicalId: "chuck_roll", region: "latvia", phrase: "Liellopa malto gaļu, 100% liellopa", notes: "'Ground beef, 100% beef' — to avoid the default pork-beef mix" },
+  { canonicalId: "eye_of_round", region: "latvia", phrase: "Viltotais filejs — tikai sautēšanai", notes: "'False fillet — for braising only' — confirms to butcher you know the trap" },
+
+  // ESTONIA
+  { canonicalId: "tenderloin", region: "estonia", phrase: "Ma sooviksin sisefileed, pooleldi küpsena", notes: "'I would like tenderloin, medium' — Tallinn steakhouse phrasing" },
+  { canonicalId: "striploin", region: "estonia", phrase: "Välisfilee, paksult lõigatud", notes: "'Outside fillet, thickly cut' — for US-style steak thickness" },
+  { canonicalId: "hind_shank", region: "estonia", phrase: "Koot süldi jaoks, kondiga", notes: "'Shank for Sült, with bone' — the traditional aspic request" },
+  { canonicalId: "chuck_roll", region: "estonia", phrase: "Veisehakkliha 100% veis, ei mingit sealiha", notes: "'Beef ground meat 100% beef, no pork' — critical to override default beef+pork mix" },
+  { canonicalId: "eye_of_round", region: "estonia", phrase: "Valesisefilee hautamiseks, mitte grillimiseks", notes: "'False tenderloin for braising, not for grilling' — avoids tough grilled eye-of-round" },
+
+  // BELARUS
+  { canonicalId: "ribeye", region: "belarus", phrase: "Тоўсты край, стейк, сярэдняй пражарки", notes: "'Thick edge, steak, medium-rare' — uses the distinctive Belarusian 'edge' logic" },
+  { canonicalId: "striploin", region: "belarus", phrase: "Тонкі край, на стейк", notes: "'Thin edge, for steak' — the NY Strip request using Edge nomenclature" },
+  { canonicalId: "tenderloin", region: "belarus", phrase: "Выразку, цалкам чыстую", notes: "'Tenderloin, completely clean' — specifying full silver-skin removal" },
+  { canonicalId: "hind_shank", region: "belarus", phrase: "Галёнка для халадца, з касцяй", notes: "'Shank for Kholodets, with bone' — the traditional aspic request" },
+  { canonicalId: "chuck_roll", region: "belarus", phrase: "Шыйка молатая, 100% ялавічына", notes: "'Neck ground, 100% beef' — overrides default pork-beef mix" },
+  { canonicalId: "eye_of_round", region: "belarus", phrase: "Фальшывая выразка — толькі для тушэння", notes: "'False tenderloin — only for braising' — the pan-European warning in Belarusian" },
 ] as const;

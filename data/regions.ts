@@ -48,6 +48,17 @@ export const regions = [
   { id: "saudi_arabia" as const, label: "Saudi Arabia" },
   { id: "qatar" as const, label: "Qatar" },
   { id: "uae" as const, label: "UAE" },
+  { id: "panama" as const, label: "Panama" },
+  { id: "costa_rica" as const, label: "Costa Rica" },
+  { id: "nicaragua" as const, label: "Nicaragua" },
+  { id: "honduras" as const, label: "Honduras" },
+  { id: "el_salvador" as const, label: "El Salvador" },
+  { id: "guatemala" as const, label: "Guatemala" },
+  { id: "venezuela" as const, label: "Venezuela" },
+  { id: "lithuania" as const, label: "Lithuania" },
+  { id: "latvia" as const, label: "Latvia" },
+  { id: "estonia" as const, label: "Estonia" },
+  { id: "belarus" as const, label: "Belarus" },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];
