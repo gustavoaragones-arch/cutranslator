@@ -1,5 +1,6 @@
-import { sanitizeSvgInner } from "@/lib/svgLoader";
-import { cowSvgInner, canonicalSvgInner } from "@/data/svgContent";
+"use client";
+
+import { useEffect, useState } from "react";
 import { getCanonicalById } from "@/lib/canonical";
 import type { CanonicalId, MatchType } from "@/lib/types";
 import { CowDiagramNewClient, type CutLayer } from "@/components/CowDiagramNewClient";
@@ -15,38 +16,62 @@ type Props = {
   className?: string;
 };
 
-/**
- * Server component: loads SVG files at build time (SSG) using fs.readFileSync,
- * then passes pre-loaded content strings to the client component for rendering.
- *
- * Architecture: CowDiagramNew (server) → CowDiagramNewClient (client)
- * This avoids client-side fetches and bakes SVG content into the HTML at build time.
- */
+function sanitizeSvgInner(content: string, prefix: string): string {
+  let cleaned = content;
+  cleaned = cleaned.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, "");
+  cleaned = cleaned.replace(/<\?xml[^>]*\?>/gi, "");
+  cleaned = cleaned.replace(/\bid="([^"]*)"/g, `id="${prefix}-$1"`);
+  cleaned = cleaned.replace(/url\(#([^)]*)\)/g, `url(#${prefix}-$1)`);
+  return cleaned;
+}
+
+function stripSvgWrapper(raw: string): string {
+  return raw
+    .replace(/<\?xml[^>]*\?>\s*/gi, "")
+    .replace(/<svg[^>]*>/, "")
+    .replace(/<\/svg>\s*$/, "")
+    .trim();
+}
+
 export function CowDiagramNew({ highlights, showPrimals = false }: Props) {
   if (highlights.length === 0) return null;
 
-  // All SVGs share canvas "0 0 711.89 622.56" but the cow illustration and all
-  // cut paths are concentrated in a small region (~x:468–728, y:188–302).
-  // We crop to that content area so the cow fills its container visibly.
   const viewBox = "464 186 264 128";
-  const cowInner = cowSvgInner || null;
+  const [cowInner, setCowInner] = useState<string | null>(null);
+  const [layers, setLayers] = useState<CutLayer[]>(() =>
+    highlights.map((h) => {
+      const canonical = getCanonicalById(h.canonicalId);
+      const displayName = canonical
+        ? canonical.id.replace(/_/g, " ")
+        : h.canonicalId.replace(/_/g, " ");
+      return { canonicalId: h.canonicalId, matchType: h.matchType, svgInner: null, displayName };
+    })
+  );
 
-  const layers: CutLayer[] = highlights.map((h) => {
-    const rawInner = canonicalSvgInner[h.canonicalId] ?? null;
-    const svgInner = rawInner
-      ? sanitizeSvgInner(rawInner, h.canonicalId)
-      : null;
-    const canonical = getCanonicalById(h.canonicalId);
-    const displayName = canonical
-      ? canonical.id.replace(/_/g, " ")
-      : h.canonicalId.replace(/_/g, " ");
-    return {
-      canonicalId: h.canonicalId,
-      matchType: h.matchType,
-      svgInner,
-      displayName,
-    };
-  });
+  const highlightKey = highlights.map((h) => `${h.canonicalId}:${h.matchType}`).join(",");
+
+  useEffect(() => {
+    fetch("/svg/cow.svg")
+      .then((r) => r.text())
+      .then((raw) => setCowInner(stripSvgWrapper(raw)))
+      .catch(() => {});
+
+    highlights.forEach((h) => {
+      fetch(`/svg/canonical/${h.canonicalId}.svg`)
+        .then((r) => (r.ok ? r.text() : null))
+        .then((raw) => {
+          if (!raw) return;
+          const inner = sanitizeSvgInner(stripSvgWrapper(raw), h.canonicalId);
+          setLayers((prev) =>
+            prev.map((l) =>
+              l.canonicalId === h.canonicalId ? { ...l, svgInner: inner } : l
+            )
+          );
+        })
+        .catch(() => {});
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [highlightKey]);
 
   return (
     <CowDiagramNewClient

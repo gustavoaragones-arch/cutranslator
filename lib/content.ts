@@ -105,26 +105,45 @@ export function allWhatIsCutSlugs(): string[] {
   return [...set].sort();
 }
 
+const PRIORITY_CUTS = new Set([
+  "picanha", "ribeye", "entrecote", "arrachera", "vacio", "sirloin",
+  "tenderloin", "striploin", "flank", "brisket", "chuck", "rump",
+  "skirt", "hanger", "flat-iron", "tri-tip",
+]);
+
+const PRIORITY_REGIONS = new Set([
+  "usa", "brazil", "france", "argentina", "uk", "mexico",
+  "spain", "portugal", "germany", "italy", "australia",
+]);
+
+const STATIC_PARAMS_LIMIT = 1000;
+
 /**
- * All valid [pair]/[cut] route params derived from the regional names dataset.
- * Each source cut is paired with every other region as the target.
- * Used by generateStaticParams so all translation pages are pre-rendered at
- * build time — required for fs-based SVG loading to work in the Cloudflare
- * Worker environment.
+ * Top [pair]/[cut] route params for static pre-rendering.
+ * Priority routes (high-traffic regions × popular cuts) are pre-rendered;
+ * the rest render on-demand via ISR (dynamicParams = true).
  */
 export function allPairCutParams(): { pair: string; cut: string }[] {
   const seen = new Set<string>();
-  const out: { pair: string; cut: string }[] = [];
+  const out: { pair: string; cut: string; score: number }[] = [];
+
+  function addEntry(region: string, cut: string, to: RegionSlug) {
+    const pair = pairSegment(region as RegionSlug, to);
+    const key = `${pair}/${cut}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    const score =
+      (PRIORITY_CUTS.has(cut) ? 10 : 0) +
+      (PRIORITY_REGIONS.has(region) ? 5 : 0) +
+      (PRIORITY_REGIONS.has(to) ? 5 : 0);
+    out.push({ pair, cut, score });
+  }
+
   for (const m of regionalNames) {
     const cut = slugifyCut(m.name);
     for (const to of regionSlugsInOrder) {
       if ((to as string) === m.region) continue;
-      const pair = pairSegment(m.region as RegionSlug, to);
-      const key = `${pair}/${cut}`;
-      if (!seen.has(key)) {
-        seen.add(key);
-        out.push({ pair, cut });
-      }
+      addEntry(m.region, cut, to);
     }
   }
   for (const m of regionalCuts) {
@@ -133,16 +152,13 @@ export function allPairCutParams(): { pair: string; cut: string }[] {
       const cut = slugifyCut(surface);
       for (const to of regionSlugsInOrder) {
         if (to === m.region) continue;
-        const pair = pairSegment(m.region, to);
-        const key = `${pair}/${cut}`;
-        if (!seen.has(key)) {
-          seen.add(key);
-          out.push({ pair, cut });
-        }
+        addEntry(m.region, cut, to);
       }
     }
   }
-  return out;
+
+  out.sort((a, b) => b.score - a.score);
+  return out.slice(0, STATIC_PARAMS_LIMIT).map(({ pair, cut }) => ({ pair, cut }));
 }
 
 function allRetailNamesForCanonical(id: CanonicalId): string[] {
