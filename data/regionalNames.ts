@@ -907,6 +907,40 @@ export const regionalNames: readonly RegionalName[] = [
   { name: "צלעות", region: "israel", maps_to: "back_ribs", confidence: 0.75, synonyms: ["tzlaot", "ריפען", "rifen"] as const, notes: "Ribs — for slow cooking" },
   { name: "פיקניה", region: "israel", maps_to: "sirloin_cap", confidence: 0.75, synonyms: ["picanha", "ירית", "yerit"] as const, notes: "Number 15. Increasingly popular in Israeli 'boutique' butcher shops." },
   { name: "ויסברטן", region: "israel", maps_to: "inside_round", confidence: 0.75, synonyms: ["wysbraten"] as const, notes: "Number 13. From the leg — for schnitzel or lean roasts." },
+
+  // ----- Ireland -----
+  { name: "fillet", region: "ireland", maps_to: "tenderloin", confidence: 0.95, notes: "Universal premium term — same as UK" },
+  { name: "sirloin", region: "ireland", maps_to: "striploin", confidence: 0.90, notes: "CRITICAL: Irish 'sirloin' = US striploin/NY strip. NOT the US sirloin. Same UK naming convention." },
+  { name: "rib steak", region: "ireland", maps_to: "ribeye", confidence: 0.90, synonyms: ["ribeye"] as const, notes: "'Rib steak' = bone-in; 'ribeye' = boneless. Both increasingly common." },
+  { name: "brisket", region: "ireland", maps_to: "brisket", confidence: 0.85, notes: "Traditionally sold rolled and tied for corned beef. NOT the same as US BBQ brisket preparation." },
+  { name: "shin", region: "ireland", maps_to: "hind_shank", confidence: 0.90, notes: "Standard Irish term for lower leg — essential for stews" },
+  { name: "oxtail", region: "ireland", maps_to: "oxtail", confidence: 0.95 },
+  { name: "rump steak", region: "ireland", maps_to: "top_sirloin", confidence: 0.80, notes: "What Americans call 'sirloin,' the Irish call 'rump.' The terminology is swapped vs US." },
+  { name: "topside", region: "ireland", maps_to: "inside_round", confidence: 0.85, notes: "The standard lean roasting joint" },
+  { name: "silverside", region: "ireland", maps_to: "outside_round", confidence: 0.85, notes: "Named for the silver connective tissue — used for roasting or salting" },
+  { name: "salmon cut", region: "ireland", maps_to: "eye_of_round", confidence: 0.80, notes: "Named because the muscle shape resembles a salmon — unique Irish term" },
+  { name: "knuckle", region: "ireland", maps_to: "sirloin_tip", confidence: 0.80 },
+  { name: "braising steak", region: "ireland", maps_to: "chuck_blade", confidence: 0.75, synonyms: ["stewing beef", "diced beef"] as const, notes: "Irish butchers take pride in stewing beef — higher connective tissue than US supermarket stew meat" },
+  { name: "goose skirt", region: "ireland", maps_to: "skirt", confidence: 0.80, notes: "Traditional butcher's cut — used for pasties or frying" },
+  { name: "fore rib", region: "ireland", maps_to: "prime_rib", confidence: 0.85, notes: "Bone-in rib roast — same as UK fore rib" },
+
+  // ----- Switzerland -----
+  { name: "filet", region: "switzerland", maps_to: "tenderloin", confidence: 0.95, notes: "Always sold boneless — the premium standard" },
+  { name: "entrecôte", region: "switzerland", maps_to: "striploin", confidence: 0.90, notes: "CRITICAL: In Switzerland, Entrecôte = STRIPLOIN (NY Strip). This is DIFFERENT from France where Entrecôte = Ribeye. The #1 expat confusion in Swiss butchery." },
+  { name: "hohrücken", region: "switzerland", maps_to: "ribeye", confidence: 0.85, synonyms: ["hohrücken-steak"] as const, notes: "Literally 'high back' — this is the actual ribeye in Switzerland. If you want a fatty ribeye, do NOT order entrecôte." },
+  { name: "federstück", region: "switzerland", maps_to: "brisket", confidence: 0.80, notes: "Traditionally for Siedfleisch (boiled beef). If you want to smoke it American-style, ask for it 'am Stück' (whole) with fat cap." },
+  { name: "haxe", region: "switzerland", maps_to: "hind_shank", confidence: 0.90, notes: "For osso buco or traditional stews" },
+  { name: "ochsenschwanz", region: "switzerland", maps_to: "oxtail", confidence: 0.95 },
+  { name: "hüfte", region: "switzerland", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["hüftsteak"] as const, notes: "The 'hip' — prime steak cut, very lean" },
+  { name: "eckstück", region: "switzerland", maps_to: "inside_round", confidence: 0.80, notes: "The 'corner piece' — for premium roasts or Plätzli (thin slices for pan-frying)" },
+  { name: "unterspalte", region: "switzerland", maps_to: "outside_round", confidence: 0.80, notes: "For braising or Saftplätzli (stewed thin steaks)" },
+  { name: "runder weißes", region: "switzerland", maps_to: "eye_of_round", confidence: 0.75, notes: "Literally 'round white' — lean cylindrical roasting muscle" },
+  { name: "tafelspitz", region: "switzerland", maps_to: "sirloin_cap", confidence: 0.80, notes: "Austrian-influenced — traditionally boiled, but modern Swiss BBQ uses it as picanha" },
+  { name: "hals", region: "switzerland", maps_to: "chuck_roll", confidence: 0.75, synonyms: ["schulter"] as const, notes: "Neck/shoulder — for ground meat or goulash" },
+  { name: "schulterblatt", region: "switzerland", maps_to: "chuck_blade", confidence: 0.75 },
+  { name: "huft", region: "switzerland", maps_to: "tri_tip", confidence: 0.70, notes: "Part of the hip area — gaining popularity in Swiss BBQ circles" },
+  { name: "hohe rippe", region: "switzerland", maps_to: "prime_rib", confidence: 0.80, notes: "Bone-in rib roast" },
+  { name: "flanksteak", region: "switzerland", maps_to: "flank", confidence: 0.80, notes: "Modern import term — increasingly popular in Swiss steakhouses" },
 ];
 
 /** Preferred consumer labels per canonical in each region (output layer). */

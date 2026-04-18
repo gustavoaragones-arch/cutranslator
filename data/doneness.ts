@@ -48,6 +48,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       turkey: "Az pişmiş",
       greece: "Ανίσπαστο",
       israel: "רייר",
+      ireland: "Rare",
+      switzerland: "Bleu",
     },
   },
   {
@@ -92,6 +94,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       turkey: "Az orta",
       greece: "Μισοψημένο",
       israel: "מדיום רייר",
+      ireland: "Medium rare",
+      switzerland: "Saignant",
     },
   },
   {
@@ -136,6 +140,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       turkey: "Orta pişmiş",
       greece: "Μέτριο",
       israel: "מדיום",
+      ireland: "Medium",
+      switzerland: "À point",
     },
   },
   {
@@ -180,6 +186,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       turkey: "Çok pişmiş",
       greece: "Καλοψημένο",
       israel: "וול דאן",
+      ireland: "Well done",
+      switzerland: "Bien cuit",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -205,6 +213,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       turkey: "Turkish cuisine traditionally serves grilled meats well-done. Az pişmiş (rare) is uncommon outside modern Istanbul steakhouses.",
       greece: "Traditional Greek tavernas serve meat well-done (καλοψημένο) unless specified. Rare is 'ble' (blue) in some restaurants — borrowed from French.",
       israel: "Israeli steakhouses use English transliterations (רייר = 'rare', מדיום = 'medium', וול דאן = 'well done'). Hebrew terms are essentially phonetic borrowings from English.",
+      ireland: "Irish steak culture has shifted toward medium-rare in recent decades. Traditional Sunday roast culture still leans well-done.",
+      switzerland: "Swiss steakhouses use French doneness terms even in German-speaking regions. 'Saignant' (medium rare) is standard across all cantons.",
     },
   },
 ] as const;

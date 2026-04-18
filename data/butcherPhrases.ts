@@ -223,4 +223,18 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "striploin", region: "israel", phrase: "סינטה לגריל", notes: "'Sinta (Number 2) for grill'" },
   { canonicalId: "short_ribs", region: "israel", phrase: "אסאדו לבישול ארוך", notes: "'Asado (Number 9) for slow cooking' — remember: asado = the cut, not the method" },
   { canonicalId: "fore_shank", region: "israel", phrase: "שריר לחמין", notes: "'Shrir (shank, Number 18) for Hamin/Cholent'" },
+
+  // IRELAND
+  { canonicalId: "striploin", region: "ireland", phrase: "A sirloin steak, medium rare please", notes: "Remember: Irish 'sirloin' = US striploin/NY strip" },
+  { canonicalId: "tenderloin", region: "ireland", phrase: "Have you a nice fillet steak?", notes: "Natural Irish phrasing" },
+  { canonicalId: "ribeye", region: "ireland", phrase: "A rib steak, on the bone if you have it", notes: "'Rib steak' = bone-in; 'ribeye' = boneless in Ireland" },
+  { canonicalId: "hind_shank", region: "ireland", phrase: "Some shin for a stew, please", notes: "Shin = shank in Irish/UK butchery" },
+  { canonicalId: "brisket", region: "ireland", phrase: "A piece of brisket for corning", notes: "Specify brisket if you want US-style — otherwise you'll get silverside" },
+
+  // SWITZERLAND
+  { canonicalId: "striploin", region: "switzerland", phrase: "Ich hät gärn es Entrecôte, saignant", notes: "'I'd like an entrecôte (striploin), medium rare' — using French doneness even in German" },
+  { canonicalId: "ribeye", region: "switzerland", phrase: "Haben Sie Hohrücken-Steak?", notes: "'Do you have ribeye?' — must use Hohrücken, NOT entrecôte" },
+  { canonicalId: "tenderloin", region: "switzerland", phrase: "Es Filet, bitte, am Stück", notes: "'A fillet, please, in one piece'" },
+  { canonicalId: "brisket", region: "switzerland", phrase: "Federstück am Stück, mit Fettdeckel bitte", notes: "'Brisket whole, with fat cap please' — essential if you want to smoke it American-style" },
+  { canonicalId: "sirloin_cap", region: "switzerland", phrase: "Tafelspitz — für den Grill, nicht zum Sieden", notes: "'Tafelspitz — for grilling, not for boiling' — specifying modern use vs traditional" },
 ] as const;

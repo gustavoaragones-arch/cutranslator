@@ -1210,4 +1210,56 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Sač cooking requires fatty, bone-in cuts — the opposite of premium steakhouse cuts.",
   },
 
+  // ----- Ireland -----
+
+  {
+    id: "corned_beef_cut_ie",
+    name: "Spiced Beef / Corned Beef",
+    region: "ireland",
+    maps_to: [
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.75, note: "Irish corned/spiced beef traditionally uses silverside (bottom round)" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.70, note: "American corned beef uses brisket — different cut, same name" },
+    ],
+    synonyms: ["spiced beef", "corned beef"],
+    description: "The most famous Irish beef export — but with a critical transatlantic difference. American corned beef uses brisket. Irish 'Spiced Beef' (the Christmas tradition) or salted beef typically uses Silverside (bottom round). If an American wants to make US-style corned beef in Ireland, they must specifically ask for brisket and cure it themselves. If they buy 'corned beef' from an Irish butcher, they'll get silverside.",
+    notes: "Same name, different cut: US corned beef = brisket, Irish corned beef = silverside. Critical for expats.",
+  },
+
+  {
+    id: "salmon_cut_ie",
+    name: "Salmon Cut",
+    region: "ireland",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "close", confidence: 0.85, note: "Anatomically the eye of round" },
+    ],
+    description: "A uniquely Irish term for the eye of round — named because the cross-section of the muscle resembles a salmon fillet in shape. No other English-speaking country uses this name. The salmon cut is lean and cylindrical, used for oven roasting and slicing thin. Part of Ireland's tradition of giving cuts evocative, descriptive names based on appearance rather than anatomy.",
+    notes: "Unique Irish naming — not used in the UK, US, or any other English-speaking country.",
+  },
+
+  // ----- Switzerland -----
+
+  {
+    id: "entrecote_ch",
+    name: "Entrecôte (Swiss)",
+    region: "switzerland",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "close", confidence: 0.85, note: "In Switzerland, entrecôte = striploin/NY strip" },
+    ],
+    description: "The biggest naming trap in Swiss butchery — and different from neighboring France. In France, Entrecôte = Ribeye. In Switzerland, Entrecôte = Striploin (NY Strip). An expat moving from Paris to Zurich who orders 'entrecôte' will get a completely different cut. To get an actual ribeye in Switzerland, ask for Hohrücken-Steak. This divergence exists because Swiss-German butchery mapped the French term to a different primal than French butchery did.",
+    notes: "France Entrecôte = Ribeye. Switzerland Entrecôte = Striploin. Same word, different cut, neighboring countries. Maximum confusion potential.",
+  },
+
+  {
+    id: "platzli_ch",
+    name: "Plätzli",
+    region: "switzerland",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Usually from Eckstück (top round)" },
+      { canonical_id: "top_round_steak", match_type: "close", confidence: 0.70, note: "Thin-sliced round steaks" },
+    ],
+    synonyms: ["platzli", "saftplätzli"],
+    description: "Swiss thin-sliced steaks — 1cm thick cuts from the Eckstück (top round) meant for quick pan-frying. Ubiquitous in Swiss supermarkets (Coop, Migros). Not the same as a US 'steak' — much thinner. Saftplätzli ('juicy little slices') are the braised version, cooked in sauce. If an American wants a thick US-style steak, they must look for items specifically labeled 'Steak' or 'Hüftsteak' — Plätzli will always be thin.",
+    notes: "Swiss retail format: thin slices for pan-frying, not thick steaks. Format-driven cut.",
+  },
+
 ] as const;
