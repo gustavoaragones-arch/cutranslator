@@ -53,6 +53,17 @@
   --border-dark: #D6CFC4;        /* Slightly darker warm border */
   --border-subtle: rgba(28, 25, 23, 0.12);
 
+  /* Light editorial palette — header + hero */
+  --bg-cream:              #F7F1E8;   /* warm bone, butcher-paper feel */
+  --bg-cream-deep:         #EFE6D6;   /* slightly deeper cream */
+  --fg-ink:                #1A1410;   /* warm near-black — primary text on cream */
+  --fg-ink-muted:          #5C5048;   /* warm gray — secondary text on cream */
+
+  /* Butcher red — headline + editorial accent */
+  --accent-butcher:        #A63226;
+  --accent-butcher-hover:  #8C2820;
+  --accent-butcher-tint:   #C44D40;
+
   /* Footer */
   --footer-bg: #1C1917;
   --footer-text: #A8A29E;

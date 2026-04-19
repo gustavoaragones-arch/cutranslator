@@ -9,6 +9,9 @@ import { getExploreMoreLinks } from "@/lib/linking";
 import { pairSegment } from "@/lib/pairRoute";
 import { buildHomePAAItems, mergeFaqWithPAA } from "@/lib/questions";
 import { buildContentGraph } from "@/lib/structured-data";
+import { POPULAR_TRANSLATIONS } from "@/data/popularTranslations";
+import { REGIONS } from "@/lib/regions";
+import { CowSilhouetteDivider } from "@/components/LogoSvg";
 
 export const metadata: Metadata = {
   title: "Beef Cut Translator | Cutranslator",
@@ -87,26 +90,58 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeGraph) }}
       />
 
-      {/* Hero — dark charcoal */}
-      <section className="cut-hero">
-        <div className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pb-14 pt-16 sm:px-6 lg:px-8">
-          <header className="text-center sm:text-left">
-            <h1 className="cut-heading-gradient mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
-              Beef Cut Translator
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--hero-subtitle)]">
+      {/* Hero — light cream editorial */}
+      <section className="cut-hero-light">
+        <div className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pb-16 pt-12 sm:px-6 lg:px-8">
+          <header className="text-center">
+            <h1 className="cut-heading-display">Beef Cut Translator</h1>
+            <p className="cut-hero-subtitle">
               Instantly translate beef cuts between countries — no guessing, no confusion.
             </p>
           </header>
+          <section aria-label="Popular translations" className="popular-translations">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-[var(--fg-ink-muted)]">
+              Popular translations
+            </h2>
+            <div className="popular-translations-grid">
+              {POPULAR_TRANSLATIONS.map((pt) => {
+                const fromRegion = REGIONS.find((r) => r.slug === pt.from);
+                const toRegion = REGIONS.find((r) => r.slug === pt.to);
+                return (
+                  <Link
+                    key={`${pt.from}-${pt.to}-${pt.cutSlug}`}
+                    href={`/${pairSegment(pt.from, pt.to)}/${pt.cutSlug}`}
+                    className="pop-trans-card"
+                  >
+                    <div className="pop-trans-flags">
+                      <span aria-hidden>{fromRegion?.flag ?? ""}</span>
+                      <span className="pop-trans-arrow" aria-hidden>→</span>
+                      <span aria-hidden>{toRegion?.flag ?? ""}</span>
+                    </div>
+                    <span className="pop-trans-name">{pt.cutLabel}</span>
+                    <span className="pop-trans-tagline">{pt.tagline}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
           <TranslateForm />
-          <p className="-mt-6 text-center text-sm text-[var(--hero-subtitle)]">
+          <p className="-mt-6 text-center text-sm text-[var(--fg-ink-muted)]">
             Based on a structured dataset of global beef cuts
           </p>
+        </div>
+
+        {/* Light-to-body transition: cow silhouette straddles the boundary */}
+        <div className="hero-transition-band">
+          <div className="hero-transition-line" />
+          <div className="hero-transition-cow" aria-hidden>
+            <CowSilhouetteDivider className="w-16 h-16 md:w-20 md:h-20 text-[var(--accent-butcher)] opacity-90" />
+          </div>
         </div>
       </section>
 
       {/* Body — warm paper */}
-      <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 py-12 sm:px-6 lg:px-8">
+      <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 pt-16 pb-12 sm:px-6 lg:px-8">
         <p className="home-description">
           {homeAIAnswer.primary}
         </p>

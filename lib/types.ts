@@ -1,3 +1,27 @@
+export type RegionGroup =
+  | "americas_north"
+  | "americas_central"
+  | "americas_south"
+  | "europe_western"
+  | "europe_nordic"
+  | "europe_central"
+  | "europe_balkans"
+  | "europe_eastern_baltic"
+  | "mena"
+  | "central_asia"
+  | "asia_pacific"
+  | "south_asia"
+  | "southeast_asia"
+  | "africa"
+  | "oceania";
+
+export type RegionGroupMeta = {
+  readonly id: RegionGroup;
+  readonly label: string;
+  readonly icon: string;
+  readonly sortOrder: number;
+};
+
 export type RegionSlug =
   | "usa"
   | "canada"

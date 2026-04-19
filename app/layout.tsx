@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { DM_Sans, Playfair_Display, Protest_Strike } from "next/font/google";
 import { AITransparencyBlock } from "@/components/AITransparencyBlock";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -7,6 +7,13 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { buildSiteIdentityGraph } from "@/lib/structured-data";
 import { getSiteUrl, site } from "@/lib/site";
 import "./globals.css";
+
+const protestStrike = Protest_Strike({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+  display: "swap",
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -56,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${protestStrike.variable} ${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <script

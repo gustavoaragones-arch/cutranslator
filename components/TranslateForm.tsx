@@ -8,7 +8,7 @@ import { pairSegment } from "@/lib/pairRoute";
 import { regionLabel } from "@/lib/regions";
 import { slugifyCut } from "@/utils/normalize";
 import { CutSelect } from "@/components/CutSelect";
-import { RegionSelector } from "@/components/RegionSelector";
+import { CountrySelector } from "@/components/CountrySelector";
 
 export function TranslateForm() {
   const router = useRouter();
@@ -42,16 +42,16 @@ export function TranslateForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="cut-glass-form mx-auto flex w-full max-w-xl flex-col gap-6 p-8 shadow-lg shadow-black/20"
+      className="cut-glass-form mx-auto flex w-full max-w-xl flex-col gap-6 p-6 sm:p-8"
     >
       <div className="grid gap-6 sm:grid-cols-2">
-        <RegionSelector
+        <CountrySelector
           id="from-region"
           label="From country"
           value={from}
           onChange={setFrom}
         />
-        <RegionSelector
+        <CountrySelector
           id="to-region"
           label="To country"
           value={to}
@@ -75,7 +75,7 @@ export function TranslateForm() {
       >
         Find Equivalent Cut
       </button>
-      <p className="text-center text-xs text-[var(--text-muted)]">
+      <p className="text-center text-sm text-[var(--fg-ink-muted)]">
         Works across US, Brazil, France, Argentina, UK, Mexico and more
       </p>
     </form>
