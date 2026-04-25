@@ -87,8 +87,6 @@ export default async function CanonicalHubPage({ params }: PageProps) {
     headline: content.h1,
     description: content.ai.primary,
     faq: faqMerged,
-    qaQuestion: `What is ${titleCaseCanonicalId(id)}?`,
-    qaAnswer: content.ai.primary,
   });
 
   const translationLinks = getTranslationLinks(raw);

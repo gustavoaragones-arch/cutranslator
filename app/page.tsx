@@ -78,8 +78,6 @@ const homeGraph = buildContentGraph({
   headline: "Beef Cut Translator",
   description: homeAIAnswer.primary,
   faq: mergeFaqWithPAA([...homeBaseFaq], homePaaItems),
-  qaQuestion: "What does Cutranslator do?",
-  qaAnswer: homeAIAnswer.primary,
 });
 
 export default function Home() {

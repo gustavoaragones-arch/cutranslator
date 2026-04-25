@@ -197,8 +197,6 @@ export default async function PairCutPage({ params }: PageProps) {
     headline: h1,
     description: aiPrimary,
     faq: faqMerged,
-    qaQuestion: h1,
-    qaAnswer: aiPrimary,
   });
 
   const canonIds: CanonicalId[] = [];

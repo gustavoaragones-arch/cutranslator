@@ -87,7 +87,15 @@ export function labelsForCanonical(
   region: RegionSlug,
 ): string[] {
   const list = canonicalLabels[canonicalId]?.[region];
-  return list ? [...list] : [canonicalId.replace(/_/g, " ")];
+  if (list) return [...list];
+  const fromData = regionalNames
+    .filter(
+      (rn) =>
+        rn.region === region && expandMapsTo(rn.maps_to).includes(canonicalId),
+    )
+    .map((rn) => rn.name);
+  if (fromData.length > 0) return fromData;
+  return [canonicalId.replace(/_/g, " ")];
 }
 
 export function representativeInputName(

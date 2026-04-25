@@ -39,7 +39,7 @@ export function buildSiteIdentityGraph() {
 }
 
 /**
- * Article + QAPage + FAQPage in one @graph (breadcrumbs stay separate).
+ * Article + FAQPage in one @graph (breadcrumbs stay separate).
  * Publisher/author reference the layout-injected Organization (`#organization`).
  */
 export function buildContentGraph(args: {
@@ -47,8 +47,6 @@ export function buildContentGraph(args: {
   headline: string;
   description: string;
   faq: FaqPair[];
-  qaQuestion: string;
-  qaAnswer: string;
 }) {
   const base = getSiteUrl().replace(/\/$/, "");
   const path = args.pagePath.startsWith("/") ? args.pagePath : `/${args.pagePath}`;
@@ -71,18 +69,6 @@ export function buildContentGraph(args: {
           "@id": fullUrl,
           url: fullUrl,
           name: args.headline,
-        },
-      },
-      {
-        "@type": "QAPage",
-        "@id": `${fullUrl}#qa`,
-        mainEntity: {
-          "@type": "Question",
-          name: args.qaQuestion,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: args.qaAnswer,
-          },
         },
       },
       {

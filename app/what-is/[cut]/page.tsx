@@ -91,8 +91,6 @@ export default async function WhatIsPage({ params }: PageProps) {
     headline: content.h1,
     description: content.ai.primary,
     faq: faqMerged,
-    qaQuestion: content.h1,
-    qaAnswer: content.ai.primary,
   });
 
   const translationLinks = getTranslationLinksForCanonicals(
