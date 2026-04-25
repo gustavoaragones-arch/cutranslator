@@ -134,6 +134,16 @@ export const REGION_ENTITY: Record<
   peru: { id: "peru", formalName: "Peru", shortName: "Peru" },
   bolivia: { id: "bolivia", formalName: "Bolivia", shortName: "Bolivia" },
   ecuador: { id: "ecuador", formalName: "Ecuador", shortName: "Ecuador" },
+  japan: { id: "japan", formalName: "Japan", shortName: "Japan" },
+  south_korea: { id: "south_korea", formalName: "South Korea", shortName: "Korea" },
+  taiwan: { id: "taiwan", formalName: "Taiwan", shortName: "Taiwan" },
+  china: { id: "china", formalName: "China", shortName: "China" },
+  thailand: { id: "thailand", formalName: "Thailand", shortName: "Thailand" },
+  vietnam: { id: "vietnam", formalName: "Vietnam", shortName: "Vietnam" },
+  philippines: { id: "philippines", formalName: "Philippines", shortName: "Philippines" },
+  indonesia: { id: "indonesia", formalName: "Indonesia", shortName: "Indonesia" },
+  malaysia: { id: "malaysia", formalName: "Malaysia", shortName: "Malaysia" },
+  singapore: { id: "singapore", formalName: "Singapore", shortName: "Singapore" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

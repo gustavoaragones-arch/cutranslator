@@ -381,4 +381,60 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "chuck_blade", region: "ecuador", phrase: "Paleta para Seco, picada", notes: "'Shoulder for Seco, cut in cubes' — the 2-hour braise request" },
   { canonicalId: "sirloin_cap", region: "ecuador", phrase: "Picanha con la capa de grasa entera", notes: "'Picanha with the whole fat cap' — coastal Guayaquil phrasing" },
   { canonicalId: "eye_of_round", region: "ecuador", phrase: "Mano de piedra, solo para estofado", notes: "'Eye of round, only for braising' — confirms to butcher you know the trap" },
+
+  // THAILAND
+  { canonicalId: "brisket_point", region: "thailand", phrase: "Ao suea rong hai, hun bang-bang, tum yang krap", notes: "'I want Crying Tiger, sliced thin, for grilling' — explicit dish-driven cut request" },
+  { canonicalId: "hind_shank", region: "thailand", phrase: "Ao nong, tum kaeng krap", notes: "'I want shank, for curry/soup' — dish-driven functional request" },
+  { canonicalId: "ribeye", region: "thailand", phrase: "Ao nuea tad na, ruea pai nung khen-ti krap", notes: "'I want thick-cut beef, about 1 inch thick please' — overrides default paper-thin slicing" },
+
+  // VIETNAM
+  { canonicalId: "brisket_point", region: "vietnam", phrase: "Cho tôi gầu, để nấu phở", notes: "'Give me Gầu (fatty brisket point), for making Phở' — the premium topping request" },
+  { canonicalId: "brisket_flat", region: "vietnam", phrase: "Cho tôi nạm, cắt mỏng", notes: "'Give me Nạm (lean brisket flat), sliced thin'" },
+  { canonicalId: "hind_shank", region: "vietnam", phrase: "Bắp hoa, dành để ăn lạnh", notes: "'Flower shank, for cold serving (drinking snack)' — premium request" },
+  { canonicalId: "tenderloin", region: "vietnam", phrase: "Thăn nội, cắt hạt lựu, cho Bò Lúc Lắc", notes: "'Tenderloin, diced, for Shaking Beef' — dish-driven cut request" },
+
+  // PHILIPPINES
+  { canonicalId: "hind_shank", region: "philippines", phrase: "Pabili po ng Bulalo, may utak sa buto", notes: "'I'd like Bulalo, with bone marrow' — the bone+marrow requirement explicit" },
+  { canonicalId: "flank", region: "philippines", phrase: "Pabili po ng Kamto, pang-Caldereta", notes: "'I'd like Kamto, for Caldereta' — dish-driven braising cut" },
+  { canonicalId: "tenderloin", region: "philippines", phrase: "Solomillo, hiwain ng medyo makapal", notes: "'Tenderloin, sliced moderately thick'" },
+
+  // INDONESIA
+  { canonicalId: "brisket_point", region: "indonesia", phrase: "Saya mau sandung lamur, untuk rawon", notes: "'I want fatty brisket, for Rawon' — dish-driven fatty-cut request" },
+  { canonicalId: "hind_shank", region: "indonesia", phrase: "Sengkel, untuk rendang, jangan sampai hancur", notes: "'Shank, for Rendang, must hold shape (4-hour cook)'" },
+  { canonicalId: "outside_round", region: "indonesia", phrase: "Gandik, daging empuk untuk bakso", notes: "'Gandik (bottom round), lean meat for Bakso' — the beef ball request" },
+
+  // MALAYSIA
+  { canonicalId: "striploin", region: "malaysia", phrase: "Saya nak daging sirloin — ini striploin kan?", notes: "'I want Sirloin — this is striploin right?' — the expat disambiguation ritual" },
+  { canonicalId: "top_sirloin", region: "malaysia", phrase: "Daging rump, bukan sirloin", notes: "'Rump, not Sirloin' — explicit avoidance of the Commonwealth trap" },
+  { canonicalId: "brisket", region: "malaysia", phrase: "Daging tetel, untuk asam pedas", notes: "'Fatty trimmings (tetel), for Asam Pedas' — dish-driven fat-positive request" },
+
+  // SINGAPORE
+  { canonicalId: "striploin", region: "singapore", phrase: "Is this Sirloin the Striploin or the Rump?", notes: "The Singaporean disambiguation ritual — always ask which naming system is in use" },
+  { canonicalId: "ribeye", region: "singapore", phrase: "Scotch Fillet — grain-fed Australian please", notes: "Using Australian terminology explicitly — most accurate at Cold Storage/FairPrice" },
+  { canonicalId: "top_sirloin", region: "singapore", phrase: "Rump steak, NOT the Sirloin label", notes: "Explicit disambiguation to avoid getting striploin" },
+  { canonicalId: "inside_round", region: "singapore", phrase: "Topside, lean, for beef balls — grind it twice please", notes: "'Topside for beef balls, ground twice' — the Bakso Problem in Commonwealth vocabulary" },
+
+  // JAPAN
+  { canonicalId: "ribeye", region: "japan", phrase: "Riburōsu o atsugiri de onegaishimasu", notes: "'Ribeye, cut thick please' — the override for default paper-thin slicing" },
+  { canonicalId: "striploin", region: "japan", phrase: "Sāroin sutēki, 200 guramu", notes: "'Striploin steak, 200 grams' — standard Japanese steakhouse format" },
+  { canonicalId: "sirloin_cap", region: "japan", phrase: "Ichibo o yakiniku-yō ni", notes: "'Ichibo for Yakiniku' — the picanha request in Japanese grill format" },
+  { canonicalId: "skirt", region: "japan", phrase: "Harami to sagari, ryōhō onegaishimasu", notes: "'Harami and Sagari, both please' — the two Yakiniku diaphragm cuts side-by-side" },
+  { canonicalId: "flat_iron", region: "japan", phrase: "Misuji ga arimasu ka?", notes: "'Do you have Misuji?' — asking for the rare top blade cut" },
+
+  // SOUTH KOREA
+  { canonicalId: "short_ribs", region: "south_korea", phrase: "Galbi gu-i-yong juseyo", notes: "'Galbi for grilling, please' — explicit functional labeling" },
+  { canonicalId: "brisket_point", region: "south_korea", phrase: "Chadolbagi yalbge sseoreo juseyo", notes: "'Chadolbagi sliced thin please' — frozen shave preparation" },
+  { canonicalId: "ribeye", region: "south_korea", phrase: "Kkot-deungsim isseoyo?", notes: "'Do you have Flower Ribeye?' — request for the premium center cut" },
+  { canonicalId: "hind_shank", region: "south_korea", phrase: "Satae, guk-gori-ro", notes: "'Satae, for soup' — functional-label-driven shank request" },
+
+  // TAIWAN
+  { canonicalId: "striploin", region: "taiwan", phrase: "Wǒ yào niǔ yuē kè, bú yào shā lǎng", notes: "'I want New Yorker (Striploin), NOT Shā lǎng' — the explicit disambiguation that avoids the phonetic trap" },
+  { canonicalId: "brisket", region: "taiwan", phrase: "Niú nǎn, dùn niúròu miàn yòng de", notes: "'Niú nǎn, for Beef Noodle Soup' — dish-driven umbrella request" },
+  { canonicalId: "hind_shank", region: "taiwan", phrase: "Niú jiàn, lǔ wèi yòng de", notes: "'Shank, for cold braised appetizer' — premium Taiwanese use" },
+
+  // CHINA
+  { canonicalId: "striploin", region: "china", phrase: "Xī lěng niú pái, qiè hòu yī diǎn", notes: "'Striploin steak, cut a bit thicker' — override default thin slicing" },
+  { canonicalId: "brisket_flat", region: "china", phrase: "Wǒ yào qián xiōng ròu, bú yào niú nǎn", notes: "'I want front chest (specific brisket), NOT Niú nǎn (umbrella)' — the key disambiguation" },
+  { canonicalId: "chuck_roll", region: "china", phrase: "Bó rén yǒu mǎ? Chāo shàn shì huǒ guō yòng de", notes: "'Do you have Bó rén? For Chaoshan hot pot' — the premium neck cap request" },
+  { canonicalId: "ribeye", region: "china", phrase: "Yǎn ròu qī fēn shú, xiè xie", notes: "'Ribeye medium (7/10 cooked), thanks' — uses the fraction doneness system" },
 ] as const;

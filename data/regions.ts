@@ -83,6 +83,20 @@ export const regions = [
   // Central Asia
   { id: "kazakhstan" as const, label: "Kazakhstan", flag: "🇰🇿", group: "central_asia" as RegionGroup },
   { id: "uzbekistan" as const, label: "Uzbekistan", flag: "🇺🇿", group: "central_asia" as RegionGroup },
+
+  // Asia-Pacific
+  { id: "china" as const, label: "China", flag: "🇨🇳", group: "asia_pacific" as RegionGroup, aliases: ["prc", "mainland china"] as readonly string[] },
+  { id: "japan" as const, label: "Japan", flag: "🇯🇵", group: "asia_pacific" as RegionGroup },
+  { id: "south_korea" as const, label: "South Korea", flag: "🇰🇷", group: "asia_pacific" as RegionGroup, aliases: ["korea", "republic of korea", "rok"] as readonly string[] },
+  { id: "taiwan" as const, label: "Taiwan", flag: "🇹🇼", group: "asia_pacific" as RegionGroup, aliases: ["roc", "chinese taipei"] as readonly string[] },
+
+  // Southeast Asia
+  { id: "indonesia" as const, label: "Indonesia", flag: "🇮🇩", group: "southeast_asia" as RegionGroup, aliases: ["bahasa", "indo"] as readonly string[] },
+  { id: "malaysia" as const, label: "Malaysia", flag: "🇲🇾", group: "southeast_asia" as RegionGroup, aliases: ["malaya"] as readonly string[] },
+  { id: "philippines" as const, label: "Philippines", flag: "🇵🇭", group: "southeast_asia" as RegionGroup, aliases: ["filipino", "pinoy"] as readonly string[] },
+  { id: "singapore" as const, label: "Singapore", flag: "🇸🇬", group: "southeast_asia" as RegionGroup, aliases: ["sg", "singapura"] as readonly string[] },
+  { id: "thailand" as const, label: "Thailand", flag: "🇹🇭", group: "southeast_asia" as RegionGroup, aliases: ["siam", "thai"] as readonly string[] },
+  { id: "vietnam" as const, label: "Vietnam", flag: "🇻🇳", group: "southeast_asia" as RegionGroup, aliases: ["viet nam", "vn"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

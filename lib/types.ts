@@ -85,7 +85,17 @@ export type RegionSlug =
   | "belarus"
   | "peru"
   | "bolivia"
-  | "ecuador";
+  | "ecuador"
+  | "japan"
+  | "south_korea"
+  | "taiwan"
+  | "china"
+  | "thailand"
+  | "vietnam"
+  | "philippines"
+  | "indonesia"
+  | "malaysia"
+  | "singapore";
 
 export type CanonicalId =
   | "ribeye"

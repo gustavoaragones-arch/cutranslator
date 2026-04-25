@@ -2003,4 +2003,458 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "The bridging entry of the Picanha Axis — Ecuador connects the Brazilian 'Picanha' branch with the Central American 'Punta de X' branch using both terms simultaneously.",
   },
 
+  // === THAILAND ===
+
+  {
+    id: "suea_rong_hai_th",
+    name: "Suea Rong Hai (Crying Tiger)",
+    region: "thailand",
+    maps_to: [
+      { canonical_id: "brisket_point", match_type: "cultural", confidence: 0.70, note: "Specifically the fatty plate/deckle area" },
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.65, note: "Also plate/navel area" },
+    ],
+    synonyms: ["เสือร้องไห้"],
+    description: "One of Thailand's most iconic grilled beef dishes — named for the Thai idiom 'the meat so good it makes a tiger cry.' Critically, Suea Rong Hai refers to a SPECIFIC cut: the thin, fatty layer of the brisket/plate (what Western butchery calls the 'deckle' or navel end). This is NOT US-style whole brisket; it's a thinly-sliced, marinated, grilled preparation. A Thai butcher asked for 'Suea Rong Hai' will provide the specific thin fatty layer — if the thickness is wrong, the dish can't be executed. An American expat buying a thick 'Point Cut' brisket expecting to make Suea Rong Hai will find the cut physically too thick to grill in the traditional 2-3 minute method. The correct approach: specify 'thin slab from the fatty brisket edge' or use the Thai term directly with a butcher familiar with regional Isaan cuisine.",
+    notes: "A cut-as-dish entry — the name only makes sense in the context of the grilling preparation. Similar in spirit to Korean Chadolbagi (cut defined by preparation method).",
+  },
+
+  {
+    id: "nuea_pueay_th",
+    name: "Nuea Pueay (The Tender Braise Functional Label)",
+    region: "thailand",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.75, note: "Nong (shank) primary" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.65, note: "See-krong (ribs) secondary" },
+    ],
+    synonyms: ["เนื้อเปื่อย"],
+    description: "A dish-driven functional label (not a specific muscle) that defines Thai beef noodle soup culture. 'Nuea Pueay' literally means 'tender braised beef' — and the cuts that qualify MUST have high connective tissue content to produce the 'melt-in-your-mouth' texture. Thai butchers at a wet market (Talad) will typically provide Nong (shank) or See-krong (ribs) when asked for 'Nuea Pueay.' Critically, lean US 'stew meat' from the round fails this preparation — without connective tissue to break down, the meat stays dry and fibrous in the broth. The Thai convention of functional labeling (similar to Korean Gu-i-yong / Guk-gori) treats the cooking intent as a first-class filter at the retail level, an architectural pattern absent from US butchery.",
+    notes: "Functional label, not muscle. Cross-reference Korean Gu-i-yong / Guk-gori (similar structural principle in different cuisine).",
+  },
+
+  {
+    id: "thin_slice_convention_th",
+    name: "The Thai Paper-Thin Slicing Convention",
+    region: "thailand",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.40, note: "Applied across multiple cuts, not specific" },
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.40, note: "Same convention" },
+    ],
+    synonyms: ["เนื้อหั่นบาง", "หั่นบางๆ"],
+    description: "Thai beef retail operates on the same paper-thin slicing default as Japan, Korea, and the broader East/Southeast Asian region. The cultural reason is specific: traditional Thai-Brahman cattle produce leaner, tougher meat than USDA grain-fed beef — paper-thin slicing enables the quick-cook stir-fry, shabu-shabu, and hot-soup preparations that Thai cuisine specializes in. An American expat asking for 'a steak' in Bangkok will receive 2-3mm slices by default unless they explicitly use the term 'Nuea Tad Na' (เนื้อตัดหนา, thick-cut beef) or specify thickness in centimeters. The inverse convention of US butchery (steak-thickness default) is culturally embedded in Thailand. Part of the pan-Asian paper-thin slicing axis: Japan (Usugiri), Korea (frozen-shaved Chadolbagi), China (hot pot slices), Vietnam (Thái mỏng), Malaysia/Singapore ('Shabu-shabu style'), and Thailand.",
+    notes: "Cross-reference pan-Asian paper-thin slicing axis (10 countries after this batch).",
+  },
+
+  // === VIETNAM ===
+
+  {
+    id: "gau_vn",
+    name: "Gầu (The Crunchy Brisket Fat)",
+    region: "vietnam",
+    maps_to: [
+      { canonical_id: "brisket_point", match_type: "close", confidence: 0.90, note: "Specifically the fatty brisket point" },
+    ],
+    synonyms: ["gầu"],
+    description: "The defining premium topping of Vietnamese Phở — and a genuine cultural inversion of American brisket preparation. Gầu is specifically the FATTY point of the brisket (not the flat), and critically, it contains a specific type of fat that DOESN'T melt during the 8-12 hour Phở broth simmer. This fat remains firm and 'crunchy' (Vietnamese: giòn) even after hours of boiling — the opposite of American expectations. In US brisket preparation, this fat would be trimmed and discarded. In Vietnam, Gầu is a delicacy commanding premium prices at specialized Phở houses. Vietnamese butchers trim Gầu with careful attention to preserving this specific fat layer. An American expat ordering 'brisket' at a Vietnamese Phở shop may receive Nạm (lean brisket flat) by default; to get Gầu, the specific term must be used. The lean-vs-fatty brisket split (Nạm vs Gầu) is one of the most culturally specific butchery distinctions in the database.",
+    notes: "The Nạm/Gầu split: cross-reference Korean Yangji/Chadolbagi brisket split (same structural principle — one primal, two cuts with divergent uses).",
+  },
+
+  {
+    id: "bap_hoa_premium_vn",
+    name: "Bắp Hoa (Flower Shank Premium Inversion)",
+    region: "vietnam",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.85, note: "Specifically the marbled portion of the shank with visible tendon" },
+    ],
+    synonyms: ["bắp hoa"],
+    description: "Another cultural inversion from US butchery conventions. In American retail, shank is perceived as 'cheap soup meat' — a value cut. In Vietnam, Bắp Hoa (literally 'flower shank') is a PREMIUM delicacy. The name refers to the flower-like pattern created by the intersection of meat, fat, and transparent tendon when the shank is sliced cross-section. It's served sliced cold as a drinking snack (Mồi), alongside rice wine and beer. Bắp Hoa is significantly more expensive than regular stew meat at Hanoi and Saigon wet markets — the price inversion is cultural, not anatomical. Part of a broader pattern: East Asian and Southeast Asian butchery often elevates 'tough, flavorful, tendon-rich' cuts above 'lean, tender' ones, the opposite of USDA grading logic. Cross-references: Chinese Niú jiàn (shank for cold appetizer Lǔ wèi), Iranian Mahicheh (shank as wedding centerpiece), Egyptian/Saudi/UAE/Qatari Moza (shank as prestige cut for Kabsa/Mandi/Machboos rice dishes).",
+    notes: "Part of the pan-Asian-and-Middle-Eastern 'shank-as-prestige' inversion. This now spans 7+ countries (VN + CN + IR + EG + SA + UAE + QA).",
+  },
+
+  {
+    id: "pho_toppings_vn",
+    name: "The Phở Topping System",
+    region: "vietnam",
+    maps_to: [
+      { canonical_id: "eye_of_round", match_type: "cultural", confidence: 0.70, note: "Tái topping — raw, cooked by broth" },
+      { canonical_id: "brisket_flat", match_type: "cultural", confidence: 0.70, note: "Nạm topping — pre-cooked flat" },
+      { canonical_id: "brisket_point", match_type: "cultural", confidence: 0.70, note: "Gầu topping — pre-cooked fatty point" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.70, note: "Bắp topping — pre-cooked shank" },
+    ],
+    synonyms: ["tái", "nạm", "gầu", "gân", "sách", "bắp"],
+    description: "Vietnamese Phở operates on a cut-selection ritual unique to the region. Each topping type is both a specific cut AND a specific cooking state, listed explicitly on the menu: Tái (rare eye of round cooked by broth), Nạm (pre-cooked lean brisket), Gầu (pre-cooked fatty brisket), Bắp / Bắp hoa (pre-cooked shank / flower shank), Gân (pre-cooked tendon, offal), Sách (pre-cooked book tripe, offal), Đặc biệt ('special' — all toppings combined). A user ordering 'Phở bò' must specify toppings, often as a compound code: 'Tái Nạm Gầu Gân' is a common combination. Tendon (Gân) and tripe (Sách) are essential cultural components but fall outside the beef-cut canonical ontology — they're connective tissue and offal. This entity documents the topping vocabulary as cultural context rather than forcing them into incorrect canonical mappings. An American expat at a Phở shop can navigate by ordering 'Phở tái' (rare only) or 'Phở đặc biệt' (everything).",
+    notes: "Documents the ontology gap for Vietnamese Gân (tendon) and Sách (tripe) — offal outside current canonical coverage. Flag as future ontology expansion candidate.",
+  },
+
+  {
+    id: "bo_ne_cut_vn",
+    name: "Bò Né (The Sizzling Steak Dish)",
+    region: "vietnam",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.60, note: "Often cheaper striploin" },
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.55, note: "Or tenderized round" },
+    ],
+    synonyms: ["bò né"],
+    description: "A dish-driven cut where the US expectation of 'better meat = better dish' actively fails. Bò Né is Vietnam's iconic sizzling skillet beef with egg — traditionally served for breakfast. The critical cultural nuance: authentic Bò Né uses thinner, leaner cuts that are mechanically tenderized or marinated in green papaya juice. Using a thick USDA Prime Ribeye produces a dish that's too greasy for the traditional lime-and-pepper dipping sauce. The lean-plus-tenderized approach is culturally correct; the premium-marbled Western approach is culturally wrong. This makes Bò Né another example of the East/Southeast-Asian pattern where cooking method dictates cut selection, not the other way around. Companion example: Bò Lúc Lắc (shaking beef) requires actual tenderloin because the flash-wok format needs pre-existing tenderness.",
+    notes: "Another case where 'premium US cut' produces culturally-wrong results. Cross-reference Peruvian Lomo Saltado (opposite conclusion — requires premium tenderloin).",
+  },
+
+  // === PHILIPPINES ===
+
+  {
+    id: "bulalo_cut_ph",
+    name: "Bulalo (Bone-In Shank Requirement)",
+    region: "philippines",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.90, note: "Specifically bone-in with marrow" },
+    ],
+    synonyms: ["bulalo"],
+    description: "One of the most culturally specific cut requirements in the Southeast Asian ontology. Bulalo refers to the BONE-IN leg shank SPECIFICALLY INCLUDING the marrow — not just the meat. An American butcher selling 'boneless shank' is technically selling the same muscle, but it CANNOT produce authentic Bulalo because the bone and marrow ARE the product. The Filipino soup depends on the marrow dissolving into the broth during the 2-3 hour simmer, producing a rich bone-broth unique to the dish. A Filipino butcher asked for 'Bulalo' will automatically provide cross-cut bone-in shank pieces with the marrow intact — there's no ambiguity. The parallel in other cuisines: Chinese Chaoshan 'drinking bone,' Vietnamese Bắp (shank) for Bún Bò Huế, Italian Osso Buco all share the bone-in requirement but Bulalo is the most explicit — the term specifically means 'bone+marrow+meat.' An expat attempting the dish with US boneless shank will produce a thin broth that local Filipinos would not recognize as Bulalo.",
+    notes: "The cleanest 'bone is the product' requirement in the database. Cross-reference Osso Buco (Italy, existing), Chinese Chaoshan soup bones, Vietnamese Bắp.",
+  },
+
+  {
+    id: "kamto_ph",
+    name: "Kamto (Philippine Flank's Braising Identity)",
+    region: "philippines",
+    maps_to: [
+      { canonical_id: "flank", match_type: "close", confidence: 0.85, note: "Anatomically the flank — but used culturally for braising, not grilling" },
+    ],
+    synonyms: ["kamto"],
+    description: "An inversion of US flank steak conventions. In America, flank is almost exclusively grilled (London Broil) — sliced thin against the grain after high-heat cooking. In the Philippines, Kamto is almost always BRAISED, used as the base for Beef Caldereta (Filipino tomato-based stew). The Filipino Kamto contains more connective tissue layers than American-source flank, accumulated from locally-raised cattle — this connective tissue becomes tender and sticky during the long braise, producing Caldereta's characteristic richness. Using a very lean US 'London Broil' for a Filipino Caldereta will produce a dry, fibrous dish because the connective tissue needed for braising isn't present. The cultural takeaway: 'flank' as a cut is identical; 'flank preparation' diverges completely between American grilling and Filipino braising traditions.",
+    notes: "Documents the cut-vs-preparation divergence. Similar to Korean Chadolbagi (preparation-specific shaved brisket) and Thai Suea Rong Hai (preparation-specific thin grilled brisket).",
+  },
+
+  {
+    id: "kenchi_hierarchy_ph",
+    name: "The Kenchi Naming Hierarchy",
+    region: "philippines",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "close", confidence: 0.85, note: "Kenchi = the modern/common term" },
+    ],
+    synonyms: ["kenchi", "binti"],
+    description: "Philippine butchery operates on a mixed Spanish-colonial and indigenous Tagalog naming system, with 'Kenchi' (Tagalog) and 'Binti' (literally 'leg' in Tagalog) coexisting as names for shank. 'Kenchi' is the most common modern term at SM Supermarket, Robinsons, and Landmark retail. 'Binti' is more common at traditional Palengke wet markets. Bulalo (the dish/cut requirement) overrides both when requesting bone-in specifically. An expat navigating Philippine butchery needs to recognize all three terms refer to the same anatomical cut (hind_shank) with slightly different cultural registers: Kenchi = retail, Binti = traditional, Bulalo = dish-specific. This tri-naming for one cut is a Philippine-specific pattern — most other countries in the database use one or two terms for shank.",
+    notes: "Three names for one cut with different cultural registers. Documents the bilingual Spanish-colonial + Tagalog butchery system.",
+  },
+
+  // === INDONESIA ===
+
+  {
+    id: "bakso_problem_id",
+    name: "The Bakso Problem (Pan-SE-Asian Beef Ball Logic)",
+    region: "indonesia",
+    maps_to: [
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.80, note: "Gandik (bottom round) is primary" },
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Penutup (top round) secondary" },
+    ],
+    synonyms: ["bakso", "bebola", "beef ball"],
+    description: "The defining cross-country butchery pattern of Southeast Asia — and a complete inversion of US ground beef conventions. Indonesian Bakso, Malaysian Bebola, Singaporean Beef Ball, and Vietnamese Bò viên all share the same requirement: the meat must be VERY LEAN with high protein binding properties. Indonesian butchers specifically use Gandik (bottom round) or Penutup (top round) for Bakso production. In the US, 80/20 ground beef (80% lean, 20% fat) is the standard for burgers because the fat produces juiciness — but this exact ratio will make Bakso FAIL. The high fat content prevents protein binding, causing the balls to fall apart during cooking and lose their characteristic 'springy' (kenyal) texture. The USDA 'ideal' becomes the Southeast Asian 'wrong.' This inverse pattern is one of the cleanest examples in the database of culture-specific cut logic that directly contradicts Western defaults. An American tourist buying 'ground beef' to make Bakso will produce a dish locals recognize as failed — the texture signals it immediately.",
+    notes: "The Bakso logic spans Indonesia, Malaysia, Singapore, and Vietnam (Bò viên). Architecturally this is a 4-country pattern worth anchoring here in Indonesia (the cultural origin).",
+  },
+
+  {
+    id: "sandung_lamur_id",
+    name: "Sandung Lamur (Fatty Brisket Soup Requirement)",
+    region: "indonesia",
+    maps_to: [
+      { canonical_id: "brisket_point", match_type: "close", confidence: 0.90, note: "Specifically the fatty point" },
+    ],
+    synonyms: ["sandung lamur"],
+    description: "Indonesia's fatty-brisket tradition — the essential cut for Rawon (black soup) and Sup Iga. Sandung Lamur is specifically the FATTY brisket point (deckle area), not the lean flat. The fat content is what makes the broth rich and gives the soup its characteristic 'umami' mouthfeel. American-trimmed 'flat cut' brisket produces an Indonesian soup that local diners would recognize as lacking depth. An expat shopping at Jakarta wet market (Pasar Tradisional) asking for 'brisket' may receive either variant — specifying Sandung Lamur specifically produces the fatty cut. Pairs with the Vietnamese Gầu/Nạm split (same structural principle — brisket lean/fat split across cultures with different preferences) and the Korean Chadolbagi/Yangji split.",
+    notes: "Part of the brisket-lean-vs-fatty axis: Vietnamese Nạm/Gầu, Korean Yangji/Chadolbagi, Indonesian Sandung Lamur preference, Singaporean 'Point End' Aus labeling.",
+  },
+
+  {
+    id: "rendang_cut_id",
+    name: "Carne para Rendang (The 4-Hour Logic)",
+    region: "indonesia",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.80, note: "Sengkel primary" },
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.75, note: "Paha belakang (rear leg) secondary" },
+    ],
+    synonyms: ["daging rendang"],
+    description: "Dish-driven cut for Rendang, one of Indonesia's most iconic dishes. Rendang requires meat that can WITHSTAND a 4-hour cook without disintegrating — the coconut milk reduces slowly until almost dry, and the meat must retain its shape through the entire process. Chuck-type cuts will fall apart (too much connective tissue to break down); premium tenderloin is a waste (the long cook destroys the tenderness premium). The correct cuts are Sengkel (shank, which retains shape) or Paha belakang (rear leg round, which takes on coconut milk flavor without disintegrating). An American attempting Rendang with US 'stew meat' (typically trimmed chuck) will find the meat falling apart by hour 2 — a cultural failure mode. This is the Southeast Asian counterpart to Moroccan Tajine meat, Saudi Kabsa Moza, and Uzbek Plov meat: all require specific cuts that survive multi-hour cooking.",
+    notes: "The long-braise axis: Rendang (ID), Tajine (MA), Kabsa (SA), Plov (UZ), Pabellón (VE), Pho (VN) — all require collagen-rich cuts with specific durability characteristics.",
+  },
+
+  {
+    id: "fresh_meat_axis_id",
+    name: "The Fresh-vs-Import Meat Axis",
+    region: "indonesia",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.40, note: "Varies by retailer — cultural designation, not anatomical" },
+    ],
+    synonyms: ["daging segar", "daging lokal"],
+    description: "A pan-Southeast-Asian cultural marker that distinguishes 'Daging Segar' (fresh-slaughter beef from wet markets) from 'Daging Impor' (chilled/frozen imported from Australia, New Zealand, Brazil, or India). Fresh-slaughter Indonesian beef comes from local Zebu-cross cattle — typically leaner, tougher, and more flavorful than imported grain-fed beef. The two beef types produce different culinary results: Daging Segar is ideal for slow-cooked dishes (Rendang, Soto) where toughness breaks down; Daging Impor is preferred for quick-cook grilling (Sate, Bistik). Indonesian Muslim butchery operations at Pasar Tradisional operate on same-day slaughter cycles — meat sold within hours of slaughter, never refrigerated. This extends the pan-Southeast-Asian fresh-meat tradition: Malaysia (Daging Segar), Thailand (wet market Talad freshness), Vietnam (Chợ morning market), Taiwan (Warm Beef — Wēn tǐ niú), Philippines (Palengke freshness culture). An American expat conditioned to USDA chilled aging will find the fresh-meat texture and flavor markedly different — the tool should validate the practice as culturally authentic rather than flag it as a concern.",
+    notes: "The Fresh Meat axis now spans 6+ countries across Southeast and East Asia. Cross-reference Taiwan Wēn tǐ niú (Batch 10), Malaysia Daging Segar (this batch).",
+  },
+
+  // === MALAYSIA ===
+
+  {
+    id: "commonwealth_sirloin_trap_my",
+    name: "The Commonwealth Sirloin Trap (Malaysia)",
+    region: "malaysia",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.90, note: "Malaysian 'Sirloin' = US Striploin" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.85, note: "What Americans call 'Sirloin' (top sirloin), Malaysians call 'Rump'" },
+    ],
+    synonyms: ["sirloin", "rump"],
+    description: "Malaysia's entry in the Commonwealth-Inheritance Sirloin trap — architecturally distinct from the East Asian Phonetic Sirloin trap. This is NOT a phonetic drift like Japanese Sāroin or Chinese Xī lěng; it's a British butchery inheritance where 'Sirloin' genuinely refers to the Striploin in the naming system. The Commonwealth convention: 'Sirloin' = US Striploin (NY Strip), 'Rump' = US Top Sirloin. The Malaysian variant follows this exactly due to British colonial history. A US expat in Kuala Lumpur ordering 'Sirloin' at a steakhouse or supermarket (Jaya Grocer, Village Grocer) will receive a premium, fatty NY Strip at a significantly higher price than the leaner US Top Sirloin they expected. To get the US Top Sirloin equivalent, the correct Malaysian request is 'Rump.' This trap spans the Commonwealth axis: UK (existing), Ireland (existing), UAE (existing, Waitrose context), Malaysia (NEW), Singapore (NEW). Unlike the East Asian phonetic trap where the word was borrowed semantically, the Commonwealth version is linguistically continuous with British retail.",
+    notes: "Commonwealth Sirloin trap: UK, Ireland, UAE, Malaysia, Singapore (future Australia). Distinct architecture from East Asian Phonetic trap (Japan, Korea, China, Taiwan).",
+  },
+
+  {
+    id: "daging_tetel_my",
+    name: "Daging Tetel (Fatty Trimmings Culinary Role)",
+    region: "malaysia",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "approximate", confidence: 0.65, note: "Umbrella for brisket/plate/trimming fat" },
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.60, note: "Also plate/navel trimmings" },
+    ],
+    synonyms: ["tetel"],
+    description: "Malaysia's 'Daging Tetel' is an umbrella term for fatty trimmings — specifically the brisket, plate, and associated fat/tendon (urat) trimmings that Western butchery typically cleans and discards. For traditional dishes like Asam Pedas Daging (sour-spicy beef) and Sup Utara (Northern Malaysian soup), Daging Tetel is essential: the mix of meat, fat, and connective tissue produces the 'oily richness' (lemak) that defines authentic Malaysian street food. Using clean, lean US brisket for these dishes produces a result local diners recognize as wrong — the essential mouthfeel is missing. Malaysian butchers at Pasar Chow Kit sell Daging Tetel as its own category, pre-assembled from multiple primal trimmings. The cultural convention treats 'meat quality' as inverse to US standards: more fat, more tendon, more connective tissue = better Tetel.",
+    notes: "Parallels Chinese Niú nǎn (umbrella fatty-chest term), Vietnamese Gầu (fatty brisket premium), Indonesian Sandung Lamur — pan-SE-Asian pattern of fat-positive butchery inverted from USDA.",
+  },
+
+  // === SINGAPORE ===
+
+  {
+    id: "commonwealth_sirloin_trap_sg",
+    name: "The Commonwealth Sirloin Trap (Singapore's Peak Density)",
+    region: "singapore",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.90, note: "Singapore 'Sirloin' = US Striploin" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.85, note: "Singapore 'Rump' = US Top Sirloin" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.85, note: "Australian 'Scotch Fillet' = US Ribeye, widely used in Singapore" },
+    ],
+    synonyms: ["sirloin", "rump", "scotch fillet"],
+    description: "Singapore is where the Commonwealth Sirloin trap reaches its maximum density — not because Singaporean usage is unusual, but because Singapore operates BOTH the British/Australian retail system AND the American USDA retail system SIMULTANEOUSLY in the same grocery stores (Cold Storage, NTUC FairPrice). A single meat case may label the same physical Striploin as 'Sirloin' (British), 'Striploin' (USDA), AND 'Porterhouse' (if cut with the tenderloin attached — Australian). An American expat shopping at FairPrice can see three different labels for one cut and no indication of which refers to the familiar US meaning. The key disambiguations: 'Sirloin' = Striploin (not US Top Sirloin), 'Rump' = US Top Sirloin (not US Rump Roast), 'Scotch Fillet' = Ribeye (Australian import labeling). This makes Singapore a pedagogical case study in the Commonwealth trap. To avoid confusion: if you want what Americans call 'Sirloin,' always say 'Rump Steak' explicitly in Singapore.",
+    notes: "Peak density of Commonwealth Sirloin trap. Singapore is the architectural 'intersection' of the British and American retail systems coexisting in the same physical stores.",
+  },
+
+  {
+    id: "beef_ball_meat_sg",
+    name: "The Singapore Beef Ball Logic",
+    region: "singapore",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Topside is standard for beef balls" },
+    ],
+    synonyms: ["niu rou wan", "beef ball meat"],
+    description: "Singapore's beef ball tradition (Niú ròu wán in Hokkien) follows the same pan-SE-Asian Bakso Problem logic: local butchers prioritize Topside (US Inside Round) for meatball production because of its low fat and high protein binding. 'Extra Lean' and 'Premium' designations at NTUC FairPrice minced beef sections reflect this preference. A US expat buying standard 80/20 ground beef for homemade beef balls will produce a texture locals recognize as wrong — the fat prevents the 'springy' bounce (Q-dan or kenyal) that defines authentic beef balls. Cross-reference the Indonesian Bakso Problem entity — Singapore's version is functionally identical but expressed through Commonwealth-retail labeling ('Topside,' 'Extra Lean') rather than local-language cut names. This is the clearest example in the database of identical culinary logic expressed through two different butchery vocabulary systems.",
+    notes: "Cross-reference the Indonesian Bakso Problem entity. Same cultural logic, different vocabulary system.",
+  },
+
+  {
+    id: "scotch_fillet_sg",
+    name: "Scotch Fillet (The Australian Import Bridge)",
+    region: "singapore",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "close", confidence: 0.90, note: "Australian 'Scotch Fillet' = US Ribeye" },
+    ],
+    synonyms: ["scotch fillet"],
+    description: "A uniquely Singaporean high-frequency term that documents the broader Commonwealth-retail influence in Southeast Asia. 'Scotch Fillet' is the Australian AUS-MEAT terminology for Ribeye — anatomically identical to the US Ribeye, but labeled by AUS-MEAT export convention. Singapore imports approximately 60% of its premium beef from Australia, making 'Scotch Fillet' the dominant ribeye label at Cold Storage, FairPrice, and high-end butchers. US expats see 'Scotch Fillet' and assume it's an unfamiliar cut — it's not. This single-term cross-reference point exists throughout the Commonwealth sphere wherever Australian beef is imported: UAE (existing entry), Malaysia (existing in this batch), Singapore (this entity), and the broader Gulf/Asia-Pacific region. After Australia is added as its own region (future batch), all existing 'Scotch Fillet' references across 4+ countries will gain a proper etymological anchor.",
+    notes: "Flags the future Australia batch as high-leverage — will retroactively strengthen existing Scotch Fillet entries in UAE, Saudi, Qatar, Malaysia, and Singapore.",
+  },
+
+  // === JAPAN ===
+
+  {
+    id: "sirloin_phonetic_trap_asia",
+    name: "The Pan-East-Asian Sirloin Phonetic Trap",
+    region: "japan",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.85, note: "Japan, Korea, China all use 'Sirloin' phonetic borrow for Striploin" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.70, note: "Taiwan alone uses the same phonetic borrow for Ribeye" },
+    ],
+    synonyms: ["サーロイン", "채끝", "沙朗", "西冷"],
+    description: "The single most consequential naming trap in East Asian butchery. All four major East Asian beef cultures borrowed the English word 'Sirloin' phonetically — but none of them use the word to mean what Americans call 'Sirloin' (the leaner top_sirloin cut). Japan (Sāroin, サーロイン), Korea (Chaekkeut, 채끝), and China (Xī lěng, 西冷) all use the phonetic borrow to mean STRIPLOIN — the premium NY Strip. Taiwan (Shā lǎng, 沙朗) uses the same phonetic borrow to mean RIBEYE instead — a semantic drift unique among the four. For an American expat anywhere in East Asia, ordering 'Sirloin' at a steakhouse will produce a significantly more expensive cut than expected, and in Taiwan specifically, a completely different cut. The three-way trap (leaner-sirloin expected, striploin received in JP/KR/CN, ribeye received in TW) has no equivalent in any other region of the database. The West→East flow of the word 'Sirloin' landed in a region where the actual US cut (top_sirloin) didn't have cultural prestige, so the premium associations of the word attached to whatever the local luxury cut was.",
+    notes: "Anchor entry for the pan-East-Asian phonetic trap. Cross-reference: Korean Chaekkeut, Taiwanese Shā lǎng, Chinese Xī lěng. All four entries should link back to this.",
+  },
+
+  {
+    id: "zabuton_jp",
+    name: "Zabuton (ザブトン, The Cushion)",
+    region: "japan",
+    maps_to: [
+      { canonical_id: "chuck_eye_steak", match_type: "approximate", confidence: 0.70, note: "Closest canonical — but anatomically Zabuton is chuck flap top, not chuck eye" },
+      { canonical_id: "chuck_roll", match_type: "approximate", confidence: 0.65, note: "Chuck roll sub-area" },
+    ],
+    synonyms: ["ザブトン"],
+    description: "One of the 'holy grail' cuts of Japanese Yakiniku butchery — and a genuine gap in the US canonical ontology. Zabuton (literally 'the cushion,' named for its square shape and rich texture) is the top portion of the chuck roll, adjacent to but distinct from the chuck eye. In Japanese A5 Wagyu, this area achieves marbling density rivaling the ribeye at a fraction of the price. US butchery typically doesn't isolate this muscle — it's absorbed into the generic chuck primal. No single US canonical cut describes Zabuton precisely; chuck_eye_steak is the closest but anatomically imprecise. Japanese butchers trim Zabuton with specific attention to fat cap preservation, and Yakiniku restaurants feature it prominently in 'rare cuts' (kibo no bui) tasting menus. An American butcher asked for 'chuck eye' cannot replicate Zabuton quality without specialized training.",
+    notes: "Documents a genuine limitation of the current US-centric canonical ontology. A future `chuck_flap_top` canonical would be a valuable addition.",
+  },
+
+  {
+    id: "misuji_jp",
+    name: "Misuji (ミスジ, The Three Sinews)",
+    region: "japan",
+    maps_to: [
+      { canonical_id: "flat_iron", match_type: "close", confidence: 0.90, note: "Anatomically the top blade / flat iron" },
+    ],
+    synonyms: ["ミスジ"],
+    description: "The rarest cut on the Japanese Yakiniku menu — each cow produces only about 2 kilograms of Misuji. Anatomically it's the top blade (flat iron), characterized by the central sinew that gives the cut its name ('three sinews' describes the muscle's internal structure). In Western butchery, the flat iron took off only after the late-1990s Nebraska research that identified it as a hidden gem. Japanese butchers have known this for generations. Misuji requires careful trimming — the central sinew must be removed without damaging the muscle fibers. Part of the pan-East-Asian flat iron trio: Japanese Misuji, Korean Buchaesal, Chinese Bǎn jiàn — same anatomical cut, three different names, all celebrated in their respective BBQ/grilling traditions while US butchery treats flat iron as a value cut.",
+    notes: "Flat iron has higher cultural prestige in East Asia than in the US — a reverse of the usual US-centric value flow. Cross-reference with Korean Buchaesal and Chinese Bǎn jiàn.",
+  },
+
+  {
+    id: "karubi_jp",
+    name: "Karubi (カルビ) — The Umbrella Term",
+    region: "japan",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.70, note: "Most commonly short ribs" },
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.60, note: "Also plate cuts" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.50, note: "Marbled chuck sometimes sold as Karubi" },
+    ],
+    synonyms: ["カルビ"],
+    description: "Karubi is NOT a specific muscle — it's a Japanese umbrella term for 'marbled grill cuts from the rib and plate region.' Price varies wildly depending on which sub-cut you receive: Jō-Karubi (premium, closer to the short rib), Tokujō-Karubi (super-premium, often short plate), and regular Karubi can be 3-5x price differences at the same restaurant. The term originates from Korean 'Galbi' (갈비) but shifted semantically as it entered Japanese Yakiniku culture. An American expat seeing 'Karubi' on a Yakiniku menu cannot predict the exact cut or quality without asking — the category spans multiple US canonical cuts. This ambiguity is culturally accepted in Japan; restaurants competing on Karubi quality differentiate through sub-categorization (Tokujō, Jō, regular) rather than anatomical naming.",
+    notes: "A rare example of a regional cut name that genuinely doesn't map to a single canonical. Multiple maps_to edges reflect the umbrella nature. Cross-reference Korean Galbi, which is more anatomically specific (short_ribs).",
+  },
+
+  // === SOUTH KOREA ===
+
+  {
+    id: "chadolbagi_kr",
+    name: "Chadolbagi (차돌박이, Shaved Brisket Point)",
+    region: "south_korea",
+    maps_to: [
+      { canonical_id: "brisket_point", match_type: "close", confidence: 0.90, note: "The fatty brisket point specifically — shaved, not sliced" },
+    ],
+    synonyms: ["차돌박이"],
+    description: "One of the most distinctive Korean BBQ cuts — and a textbook case of how preparation method redefines the cut itself. Chadolbagi is specifically the fatty POINT of the brisket (not the flat), frozen solid and shaved on a meat slicer into translucent sheets 1-2mm thick. The shaved sheets curl into characteristic rolls when placed on the hot grill, cooking in approximately 10 seconds. Using an unsliced American-style brisket slab for Chadolbagi preparation is physically impossible — the cut depends on the frozen-shave format. Conversely, attempting to smoke Chadolbagi slices American-BBQ-style would turn them to leather in minutes. This is the single best example in the Korean ontology of the paper-thin slicing convention redefining Western cut assumptions. Pairs with Yangji (brisket flat) as the other half of the Korean brisket split — same primal, completely different cooking methods.",
+    notes: "The Korean brisket split (Chadolbagi for grill / Yangji for soup) is one of the cleanest examples of 'cut name = cooking method + muscle' logic in the database.",
+  },
+
+  {
+    id: "salchisal_kr",
+    name: "Salchisal (살치살, Chuck Flap Tail)",
+    region: "south_korea",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "approximate", confidence: 0.70, note: "Chuck roll area — but specifically the rib cap portion" },
+    ],
+    synonyms: ["살치살"],
+    description: "Like Japanese Zabuton, Salchisal is a cut that highlights a genuine gap in the US canonical ontology. Anatomically Salchisal is the 'chuck flap tail' or 'rib cap' — the fat-laden extension of the chuck roll that runs alongside the upper ribs. In Korean BBQ tradition, Salchisal is one of the top three 'melt-in-your-mouth' cuts (alongside Chadolbagi and Galbi), prized for its intense marbling and buttery texture. US butchery absorbs this region into generic 'chuck eye' or 'chuck cap' without isolating it as a distinct retail cut. Korean butchers trim Salchisal with careful attention to the gristle lines and sell it specifically for high-heat grilling — a use case that would fail for a standard US chuck cut. The lack of an exact canonical match means the current `chuck_roll` mapping under-represents the cut's cultural status.",
+    notes: "Another example of 'one cow, a hundred flavors' Korean butchery generating named muscles that US canonical ontology doesn't isolate.",
+  },
+
+  {
+    id: "deungsim_range_kr",
+    name: "The Deungsim Range (등심 sub-categorization)",
+    region: "south_korea",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.80, note: "Primary — most Deungsim is ribeye-area" },
+      { canonical_id: "chuck_eye_steak", match_type: "cultural", confidence: 0.60, note: "Wit-deungsim is upper/chuck end" },
+    ],
+    synonyms: ["등심", "꽃등심", "윗등심", "아래등심"],
+    description: "Deungsim (등심, 'back heart') is a broad Korean category that maps loosely to 'the rib section' — but Korean butchery subdivides it with extreme precision. A-re-deungsim (아래등심, 'lower') is closest to the American ribeye. Wit-deungsim (윗등심, 'upper') extends into the chuck eye territory. Kkot-deungsim (꽃등심, 'flower ribeye') is the most marbled center portion, analogous to the Spinalis dorsi rib cap — considered the finest cut in the entire Korean ontology. An American expat ordering simple 'Deungsim' at a Korean butcher will receive a variable product depending on the butcher's inventory; the expert move is to specify Kkot-deungsim for the premium center cut. This sub-categorization is typical of the 'one cow, a hundred flavors' Korean philosophy — where Americans see 'ribeye,' Koreans see three distinct retail cuts with different price points and cooking applications.",
+    notes: "The Deungsim sub-categorization is a miniature version of the Karubi umbrella problem — same principle of cultural granularity beyond US canonical resolution.",
+  },
+
+  {
+    id: "guiyong_vs_gukgori_kr",
+    name: "Gu-i-yong vs Guk-gori (Grill Meat vs Soup Meat Labeling)",
+    region: "south_korea",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.50, note: "Gu-i-yong often marks short ribs or other grill cuts" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.50, note: "Guk-gori often marks shank or brisket for soup" },
+    ],
+    synonyms: ["구이용", "국거리"],
+    description: "A uniquely Korean labeling system that operates at the butcher-counter level rather than the cut level. Gu-i-yong (구이용) means 'for grilling' and is applied as a label across multiple anatomical cuts — you'll see Gu-i-yong Galbi, Gu-i-yong Chadolbagi, Gu-i-yong Deungsim. Guk-gori (국거리) means 'for soup' and is similarly cross-cut — Guk-gori Yangji, Guk-gori Satae, Guk-gori Kkori. An American shopper buying 'beef' at E-Mart or Homeplus without checking these functional labels can easily buy soup-destined meat for a grill (producing tough, stringy results) or grill-destined meat for a soup (which overcooks and loses its intended BBQ texture). This labeling convention has no Western equivalent — US retail assumes the buyer knows the cut's cooking application. Korean retail treats cooking intent as a first-class filter.",
+    notes: "Not a cut but a labeling system. Documents a structural difference between Korean and Western meat retail. Cross-reference with similar functional labels in Turkish (Kuşbaşı 'for cube') and Russian (meat grade labels).",
+  },
+
+  // === TAIWAN ===
+
+  {
+    id: "wen_ti_niu_tw",
+    name: "Warm Beef (溫體牛, Wēn tǐ niú)",
+    region: "taiwan",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.40, note: "Often inside round area, but varies" },
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.40, note: "Also outside round" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.35, note: "Sometimes top sirloin sections" },
+    ],
+    synonyms: ["溫體牛"],
+    description: "Not a cut but a SLAUGHTER METHOD — and a culturally critical Taiwanese concept that redefines what 'fresh beef' means. 'Warm Beef' (Wēn tǐ niú) is meat sold within hours of slaughter, never refrigerated or aged. The defining cultural use is Tainan's famous beef soup tradition: the beef is shaved from the just-slaughtered carcass across the hindquarter (typically the round area) paper-thin, served raw in a bowl, and cooked by the hot broth poured over it at the table. The 'bloom' and texture are completely different from chilled beef — Americans attempting to replicate Tainan Beef Soup with USDA-chilled meat will produce a recognizably inauthentic dish. The Wēn tǐ niú system exists only where slaughterhouse and retail are in tight geographic proximity (typically Tainan), making this one of the most location-specific cut/preparation combinations in the ontology. Modern Taipei beef culture (including imported USDA and Australian beef) operates on the opposite model of chilled, aged beef.",
+    notes: "Slaughter method as cut identity — unique in the ontology. Documents why USDA-chilled beef cannot replicate Tainan Beef Soup authentically.",
+  },
+
+  {
+    id: "niunan_tw",
+    name: "Taiwan Niú nǎn (牛腩, Beef Noodle Soup Complex)",
+    region: "taiwan",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "approximate", confidence: 0.70, note: "Primary — the traditional interpretation" },
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.70, note: "Often includes flank" },
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.60, note: "Intercostal plate meat" },
+    ],
+    synonyms: ["牛腩"],
+    description: "Taiwanese Niú nǎn is NOT US brisket — it's an umbrella term covering the entire 'lower front' meat region, including brisket + flank + intercostal meat (meat between the ribs). This multi-muscle grouping is the foundational cut for Taiwan's iconic Niú ròu miàn (Beef Noodle Soup). The culinary logic requires alternating layers of fat, meat, sinew, and gelatinous connective tissue — a texture profile a 'First Cut' US brisket cannot provide because it's a single lean muscle. A Taiwanese butcher selling 'Niú nǎn' for a Beef Noodle Soup will assemble a mix that includes the pectoral, the flank edge, and the intercostal meat together. American expats attempting to replicate the soup with a pure US brisket will produce a dish that locals recognize as inauthentic — the 'mouthfeel' (口感) is wrong. The same character set 牛腩 is used in mainland China but maps to a similarly umbrella concept there.",
+    notes: "Umbrella cut across brisket/flank/plate — the foundational Taiwanese soup complex. Parallels Chinese Niú nǎn but with Taiwanese regional variations.",
+  },
+
+  {
+    id: "shalang_tw",
+    name: "Shā lǎng (沙朗, The Taiwan Sirloin-Ribeye Drift)",
+    region: "taiwan",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.75, note: "Semantically maps to Ribeye in Taiwanese usage" },
+    ],
+    synonyms: ["沙朗"],
+    description: "Taiwan is the outlier of the pan-East-Asian Sirloin phonetic trap. Japan, Korea, and China all borrowed the English word 'Sirloin' phonetically and use their respective borrowings (Sāroin / Chaekkeut / Xī lěng) to mean STRIPLOIN. Taiwan alone took the same phonetic borrow (Shā lǎng, 沙朗) and shifted it semantically to mean RIBEYE instead. An American expat in Taipei who orders Shā lǎng at a traditional steakhouse will receive a Ribeye — not a US Sirloin, and not even the Striploin that the same phonetic borrow means elsewhere in Asia. The cultural theory for the drift: when Taiwan imported Western steakhouse culture in the 1970s-80s, the most prestigious cut on the menu was ribeye, and 'Sirloin' (a word associated with Western luxury) attached to the local ribeye rather than the striploin. Modern Taiwanese butchers use 紐約客 (Niǔ yuē kè, 'New Yorker') to specifically indicate Striploin when they need to disambiguate, and 肋眼 (Lèi yǎn) for ribeye when Shā lǎng confusion is likely.",
+    notes: "The Taiwan outlier in the 4-country phonetic trap. Cross-reference the anchor entity sirloin_phonetic_trap_asia in Japan.",
+  },
+
+  // === CHINA ===
+
+  {
+    id: "xileng_cn",
+    name: "Xī lěng (西冷, China's Striploin Phonetic Trap)",
+    region: "china",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.85, note: "Semantically maps to Striploin — NOT US Top Sirloin" },
+    ],
+    synonyms: ["西冷", "西冷牛排"],
+    description: "China's entry in the pan-East-Asian Sirloin phonetic trap. Xī lěng (西冷, phonetic approximation of 'Sirloin') sounds like the English word but refers to the STRIPLOIN (NY Strip) in Chinese usage — never the leaner US Top Sirloin. This follows the same pattern as Japanese Sāroin and Korean Chaekkeut. An American expat at a Shanghai or Beijing steakhouse ordering 'Sirloin' will receive a premium Striploin at premium pricing, significantly different from what they'd get at a US Outback. For the actual US Top Sirloin equivalent — the leaner, cheaper cut — the correct Chinese term is 上脑 (Shàng nǎo), which refers to the chuck/top-sirloin boundary area. Chinese modern supermarkets (Hema, Sam's Club, BHG) increasingly label with both the Chinese term and the English approximation, but smaller butcher shops and traditional restaurants use Xī lěng exclusively.",
+    notes: "Part of the 4-country phonetic trap anchored in sirloin_phonetic_trap_asia (Japan).",
+  },
+
+  {
+    id: "niunan_cn",
+    name: "Chinese Niú nǎn (牛腩, Umbrella Term)",
+    region: "china",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "approximate", confidence: 0.65, note: "Part of the umbrella" },
+      { canonical_id: "flank", match_type: "cultural", confidence: 0.65, note: "Often included" },
+      { canonical_id: "short_plate", match_type: "cultural", confidence: 0.60, note: "Plate cuts also" },
+    ],
+    synonyms: ["牛腩"],
+    description: "Chinese Niú nǎn is a 'catch-all' for any fatty, tough meat from the lower chest and belly — it routinely includes brisket, flank, plate, and intercostal meat in varying proportions. The term corresponds to a culinary concept (meat for red-braised stews, Hóng shāo niú ròu) rather than a specific anatomical muscle. A US expat wanting to smoke a Texas-style brisket in Beijing must specifically ask for 前胸肉 (Qiánxiōng ròu, 'front chest meat') to isolate the pectoral muscle — ordering 'Niú nǎn' will produce a mixed-muscle assembly unsuited for long smoking but perfect for Chinese red-braising. The umbrella pattern parallels Taiwanese Niú nǎn (same characters, regional variation) and extends the broader East Asian tendency to group cuts by intended cooking method rather than by anatomical specificity.",
+    notes: "Umbrella cut paralleling Taiwanese Niú nǎn. Both traditions prioritize cooking-method grouping over US-style anatomical precision.",
+  },
+
+  {
+    id: "bo_ren_cn",
+    name: "Bó rén (脖仁, The Wagyu of Chinese Hot Pot)",
+    region: "china",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "approximate", confidence: 0.70, note: "Chuck roll area — neck cap specifically" },
+    ],
+    synonyms: ["脖仁"],
+    description: "A Chaoshan-style hot pot specialty cut with no exact Western canonical equivalent. Bó rén is the most marbled portion of the neck (chuck roll) — specifically the 'neck cap' that sits just behind the head. In Chaoshan hot pot tradition, Bó rén is called 'the Wagyu of hot pot' because its marbling density rivals premium Japanese beef. The cut is sliced paper-thin and dipped in simmering broth for a precisely timed 8-10 seconds — any longer and the fat renders fully, losing the characteristic buttery texture. US butchery doesn't isolate this muscle; it's absorbed into the generic 'chuck roll' or 'chuck eye' primal. Chinese butchers serving the Chaoshan hot pot market trim Bó rén with specialized knife work and charge premium prices — in high-end restaurants, Bó rén can cost more per kilogram than ribeye despite coming from a 'cheaper' primal. This inversion of US price hierarchies is the clearest illustration of the Chinese 'texture over marbling' philosophy.",
+    notes: "Another genuine gap in US canonical ontology. Future `neck_cap` or `chuck_roll_top` canonical would help.",
+  },
+
+  {
+    id: "chaoshan_texture_cn",
+    name: "Chaoshan Texture-Over-Marbling Philosophy",
+    region: "china",
+    maps_to: [
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.50, note: "Shí bǐng (spoon handle) = shoulder segment priced over marbled cuts" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.50, note: "Bó rén and Diào lóng also follow the pattern" },
+    ],
+    synonyms: ["匙柄", "吊龙", "脖仁"],
+    description: "The single most distinctive butchery philosophy in East Asia — unique to the Chaoshan (Chaozhou-Shantou) region of Guangdong Province and spreading into modern Chinese hot pot culture nationally. Chaoshan butchery ranks cuts primarily by TEXTURE ('snap,' 'crunch,' 'elasticity') rather than by marbling or tenderness. The defining example: 匙柄 (Shí bǐng, 'spoon handle,' a specific segment of the shoulder) can be MORE expensive than heavily marbled cuts from the rib or loin, because it produces a uniquely elastic texture when dipped in hot pot broth for exactly 8 seconds. USDA grading entirely fails to capture this dimension — a grade-wise 'inferior' cut commands premium prices because marbling is the wrong metric for the application. This texture-primary philosophy has no equivalent in Japanese, Korean, or Western butchery systems. An American restaurant importing Chaoshan hot pot traditions must purchase cuts that USDA labels 'value' because the premium marbled options would literally be the WRONG cut for the intended preparation.",
+    notes: "The only documented case in the database of a regional system inverting USDA marbling-first logic. Uniquely Chinese — not even Japan's ultra-premium Wagyu culture operates this way (Japan is marbling-first; Chaoshan is texture-first).",
+  },
+
 ] as const;
