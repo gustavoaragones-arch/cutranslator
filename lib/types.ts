@@ -95,7 +95,9 @@ export type RegionSlug =
   | "philippines"
   | "indonesia"
   | "malaysia"
-  | "singapore";
+  | "singapore"
+  | "australia"
+  | "new_zealand";
 
 export type CanonicalId =
   | "ribeye"

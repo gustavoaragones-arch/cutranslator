@@ -1435,7 +1435,48 @@ const _asiaRegionalNames: readonly RegionalName[] = [
   { name: "niurou mo", region: "china", maps_to: "chuck_roll", confidence: 0.60, synonyms: ["牛肉末", "牛肉馅", "niúròu mò", "niúròu xiàn"] as const, notes: "Ground beef — typically from chuck area in Chinese butchery. Less standardized than US ground beef ratios." },
 ];
 
-export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames];
+const _oceaniaRegionalNames: readonly RegionalName[] = [
+  // ----- Australia (18 entries) -----
+  { name: "eye fillet", region: "australia", maps_to: "tenderloin", confidence: 0.95, synonyms: ["fillet"] as const, notes: "Premium tender cut — synonymous across UK/Ireland/Australia/NZ Commonwealth axis" },
+  { name: "porterhouse", region: "australia", maps_to: "striploin", confidence: 0.85, synonyms: ["sirloin"] as const, notes: "CRITICAL: In Victoria/SA, this cut is called 'Porterhouse'; in NSW/QLD it's 'Sirloin' — same boneless striploin (NY Strip equivalent), different state-by-state names. Tier 3 entity explains. NOT the US Porterhouse (which is a bone-in T-bone)." },
+  { name: "sirloin au", region: "australia", maps_to: "striploin", confidence: 0.85, synonyms: ["sirloin"] as const, notes: "CRITICAL: NSW/QLD term for what Victoria/SA calls Porterhouse. = US Striploin. NOT US Top Sirloin. Part of Commonwealth Sirloin trap." },
+  { name: "scotch fillet", region: "australia", maps_to: "ribeye", confidence: 0.95, notes: "The most popular premium steak in Australia — same anatomical cut as US Ribeye. AUS-MEAT terminology used across 5+ existing DB entries (UAE, Saudi, Qatar, Malaysia, Singapore)." },
+  { name: "rib cutlet", region: "australia", maps_to: "prime_rib", confidence: 0.85, synonyms: ["op rib", "tomahawk"] as const, notes: "Bone-in rib roast. 'OP' = Oven Prepared. Often served as Tomahawk for impact." },
+  { name: "t-bone au", region: "australia", maps_to: "t_bone", confidence: 0.90, synonyms: ["t bone", "tbone"] as const, notes: "Same cut as US T-bone but typically smaller portions. AU 'T-bone' has small fillet; for the US 'large fillet' version, ask for 'Large-eye T-bone' or 'Club Steak'." },
+  { name: "rump", region: "australia", maps_to: "top_sirloin", confidence: 0.90, synonyms: ["rump steak"] as const, notes: "CRITICAL: What Americans call 'Sirloin' (US Top Sirloin), Australians call 'Rump'. Pair of the Commonwealth Sirloin trap. The Aussie 'Sirloin' = US Striploin; the Aussie 'Rump' = US Sirloin. Two cuts, two swaps." },
+  { name: "silverside", region: "australia", maps_to: "outside_round", confidence: 0.90, notes: "Used primarily for Corned Beef (NOT brisket like in US). Lean, ham-like texture. Anglo-Commonwealth corned beef tradition." },
+  { name: "topside", region: "australia", maps_to: "inside_round", confidence: 0.90, notes: "Lean roasting joint. The Sunday Roast standard. Same as UK 'Topside'." },
+  { name: "knuckle au", region: "australia", maps_to: "sirloin_tip", confidence: 0.80, synonyms: ["round knuckle"] as const, notes: "Lean cylindrical leg muscle — for stir-fry or value steak applications" },
+  { name: "blade", region: "australia", maps_to: "chuck_blade", confidence: 0.90, synonyms: ["blade steak"] as const, notes: "Common term for shoulder steak — for braising. 'Blade' more common for steaks; 'Chuck' more common for slow-cooking pieces." },
+  { name: "chuck au", region: "australia", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["chuck"] as const, notes: "Standard slow-cooking cut. Used for Aussie Meat Pie filling — the national dish." },
+  { name: "bolar blade", region: "australia", maps_to: "chuck_blade", confidence: 0.85, notes: "Specifically the Bolar Blade — top blade roast. Popular for pot roast. AUS-MEAT specific terminology." },
+  { name: "brisket au", region: "australia", maps_to: "brisket", confidence: 0.90, synonyms: ["point end"] as const, notes: "'Point End' is the AUS-MEAT specification for the fatty point. Used to be a cheap cut, now popular for American-style smoking in Sydney/Melbourne BBQ scene." },
+  { name: "short ribs au", region: "australia", maps_to: "short_ribs", confidence: 0.85, synonyms: ["beef ribs"] as const, notes: "Increasingly popular with US-style smokehouse trend in modern Australian BBQ" },
+  { name: "bavette", region: "australia", maps_to: "flank", confidence: 0.80, synonyms: ["flank"] as const, notes: "French-derived term for flank — common in modern boutique butcheries. Used for London Broil equivalent preparations." },
+  { name: "thin skirt", region: "australia", maps_to: "skirt", confidence: 0.85, notes: "Outer skirt — for fajita-style applications" },
+  { name: "thick skirt", region: "australia", maps_to: "hanger", confidence: 0.85, synonyms: ["hanger"] as const, notes: "AUS terminology — what Americans call 'Hanger' is sold as 'Thick Skirt' in Australian butchery. Same anatomical cut." },
+  { name: "premium mince", region: "australia", maps_to: "inside_round", confidence: 0.50, synonyms: ["mince", "lean mince", "heart smart"] as const, notes: "NOT a specific muscle — Australian mince is sold by GRADE (Regular, Chuck, Premium, Heart Smart) rather than US fat % (80/20, 90/10). Tier 3 entity explains. For US-style burger, ask for 'Chuck Mince' specifically." },
+
+  // ----- New Zealand (16 entries) -----
+  { name: "eye fillet nz", region: "new_zealand", maps_to: "tenderloin", confidence: 0.95, synonyms: ["eye fillet", "fillet"] as const, notes: "Pan-Commonwealth term — identical to UK/AU convention. Often sold as a whole 'log' or individual steaks." },
+  { name: "sirloin nz", region: "new_zealand", maps_to: "striploin", confidence: 0.90, synonyms: ["sirloin"] as const, notes: "CRITICAL: NZ uses 'Sirloin' for striploin universally — UNLIKE Australia's regional split (Porterhouse vs Sirloin). NZ has consistent national terminology. Part of Commonwealth Sirloin trap." },
+  { name: "scotch fillet nz", region: "new_zealand", maps_to: "ribeye", confidence: 0.95, synonyms: ["scotch fillet"] as const, notes: "The Kiwi BBQ favorite — high fat content suits grilling. AUS-MEAT-derived terminology." },
+  { name: "ribeye on the bone", region: "new_zealand", maps_to: "prime_rib", confidence: 0.85, synonyms: ["standing rib roast"] as const, notes: "Bone-in rib roast. 'Standing Rib Roast' if left whole." },
+  { name: "t-bone nz", region: "new_zealand", maps_to: "t_bone", confidence: 0.90, synonyms: ["t bone"] as const, notes: "Usually cut thinner than US versions. For US-style large Porterhouse, ask for 'Large-eye T-Bone' — the term 'Porterhouse' is rarely used in NZ." },
+  { name: "rump nz", region: "new_zealand", maps_to: "top_sirloin", confidence: 0.90, synonyms: ["rump", "rump steak"] as const, notes: "Massive Kiwi favorite for value and flavor. = US Top Sirloin. Part of Commonwealth Sirloin trap." },
+  { name: "silverside nz", region: "new_zealand", maps_to: "outside_round", confidence: 0.90, synonyms: ["silverside"] as const, notes: "Almost exclusively used for Corned Silverside (brined). Not US-style brisket corned beef. Boiled with vinegar, brown sugar, and mustard seeds." },
+  { name: "topside nz", region: "new_zealand", maps_to: "inside_round", confidence: 0.90, synonyms: ["topside"] as const, notes: "The classic Kiwi Sunday Roast cut. Always paired with kumara (sweet potato) and roasted pumpkin." },
+  { name: "blade nz", region: "new_zealand", maps_to: "chuck_blade", confidence: 0.85, synonyms: ["blade steak"] as const, notes: "Common braising cut — for slow-cooked stews and pot roasts" },
+  { name: "chuck nz", region: "new_zealand", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["chuck"] as const, notes: "Slow-cooking standard. Used for Beef & Cheese Pie filling — a NZ bakery cornerstone." },
+  { name: "bolar blade nz", region: "new_zealand", maps_to: "chuck_blade", confidence: 0.80, notes: "Top blade roast — common Kiwi pot roast cut" },
+  { name: "brisket nz", region: "new_zealand", maps_to: "brisket", confidence: 0.90, notes: "Was a 'cheap cut'; now popular for smoking and slow-cooking with the modern BBQ trend in Auckland/Wellington" },
+  { name: "spare ribs nz", region: "new_zealand", maps_to: "short_ribs", confidence: 0.85, synonyms: ["short ribs"] as const, notes: "Often cut thinner (Flanken-style) in local butcheries" },
+  { name: "schnitzel nz", region: "new_zealand", maps_to: "inside_round", confidence: 0.70, synonyms: ["beef schnitzel"] as const, notes: "CRITICAL: 'Beef Schnitzel' in NZ is a SPECIFIC retail cut — Topside or Knuckle that has been mechanically tenderized (passed through a cuber). Weekday staple for quick frying. Not a German preparation method here; it's a cut name. Tier 3 entity explains." },
+  { name: "prime mince", region: "new_zealand", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["mince"] as const, notes: "NOT a specific muscle — NZ mince is graded as Prime (highest fat/flavor), Choice (standard), Premium (leanest). Inverse of US 80/20 system. For US-style burger, ask for 'Prime Mince'." },
+  { name: "hangi beef", region: "new_zealand", maps_to: "chuck_roll", confidence: 0.60, synonyms: ["hāngī beef"] as const, notes: "NOT a specific muscle — beef destined for traditional Māori earth-oven cooking. Requires tougher, often bone-in cuts (Chuck or Brisket). Cultural cut category. Tier 3 entity explains." },
+];
+
+export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames];
 
 /** Preferred consumer labels per canonical in each region (output layer). */
 export const canonicalLabels: Record<

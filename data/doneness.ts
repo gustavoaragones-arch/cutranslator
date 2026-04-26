@@ -82,6 +82,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       indonesia: "Kurang matang",
       malaysia: "Rare",
       singapore: "Rare",
+      australia: "Rare",
+      new_zealand: "Rare",
     },
   },
   {
@@ -160,6 +162,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       indonesia: "Kurang matang sedikit",
       malaysia: "Medium rare",
       singapore: "Medium rare",
+      australia: "Medium rare",
+      new_zealand: "Medium rare",
     },
   },
   {
@@ -238,6 +242,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       indonesia: "Setengah matang",
       malaysia: "Medium",
       singapore: "Medium",
+      australia: "Medium",
+      new_zealand: "Medium",
     },
   },
   {
@@ -316,6 +322,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       indonesia: "Matang",
       malaysia: "Masak penuh",
       singapore: "Well done",
+      australia: "Well done",
+      new_zealand: "Well done",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -375,6 +383,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       indonesia: "Traditional Indonesian beef dishes are cooked Matang (well done) — Rendang's 4-hour cook, Soto's long simmer, Sate's char-grill all produce well-done beef. Jakarta and Bali steakhouses use English terms, but local home cooking has almost no 'rare' concept. The Islamic cultural preference for fully-cooked meat reinforces this tradition.",
       malaysia: "Traditional Malaysian beef is almost always served Masak penuh (well done) — reflecting both Islamic cultural preferences and the local grass-fed beef toughness that requires long cooking. High-end Kuala Lumpur steakhouses use English terms. Rare beef is uncommon in local homes.",
       singapore: "Singapore's high-end steakhouses operate at international standards with the full 5-stage scale (Rare to Well Done). Local 'Zi Char' cuisine and food court beef dishes default to Well Done — especially Beef Hor Fun and stir-fried beef. Singapore is one of the few Southeast Asian cultures where Rare/Medium-Rare is commonly ordered by locals, not just expats.",
+      australia: "Australian dining culture trends toward Medium-Rare for premium steakhouse cuts (Eye Fillet, Scotch Fillet, Sirloin/Porterhouse). The Aussie 'barbie' (BBQ) tradition for Snags (sausages) and Rump steaks runs slightly more cooked than American BBQ — usually Medium to Medium-Well. MSA grading focuses on eating quality across all doneness levels, so even Well Done MSA-graded cuts retain reasonable tenderness.",
+      new_zealand: "NZ dining defaults to Medium for grass-fed cuts like Sirloin and Rump because grass-fed beef toughens at higher temperatures more rapidly than grain-fed. Lower cooking temperatures (Medium-Rare to Medium) preserve juiciness in NZ beef. Eye Fillet is typically served Medium-Rare. Important note for US visitors: NZ grass-fed beef should be cooked at LOWER temperatures than equivalent USDA cuts to compensate for the leaner profile.",
     },
   },
 ] as const;

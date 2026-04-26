@@ -2457,4 +2457,99 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "The only documented case in the database of a regional system inverting USDA marbling-first logic. Uniquely Chinese — not even Japan's ultra-premium Wagyu culture operates this way (Japan is marbling-first; Chaoshan is texture-first).",
   },
 
+  // ==================== OCEANIA ====================
+
+  // 🇦🇺 AUSTRALIA
+
+  {
+    id: "porterhouse_trinity_au",
+    name: "The Porterhouse Trinity (3-Country Same-Word Trap)",
+    region: "australia",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.85, note: "Australia: Porterhouse = boneless Striploin" },
+      { canonical_id: "t_bone", match_type: "cultural", confidence: 0.70, note: "USA: Porterhouse = giant T-bone with large fillet section" },
+    ],
+    synonyms: ["porterhouse"],
+    description: "Arguably the hardest single naming collision in the entire Cutranslator ontology — three Anglosphere countries using the same word for completely different cuts. In the USA, 'Porterhouse' is a giant T-bone steak with a fillet section greater than 1.25 inches wide — a luxury bone-in cut meant for two people. In Australia (specifically Victoria and South Australia), 'Porterhouse' is a BONELESS Striploin (NY Strip equivalent), with no bone and no fillet section at all. In New Zealand, the term 'Porterhouse' is rarely used — Sirloin is the standard term — but when used, it follows the Australian convention. An American expat in Melbourne ordering 'Porterhouse' expects a giant bone-in steak with a large fillet, receives a clean boneless NY Strip, and is genuinely disappointed. Australian or NZ expat in NYC ordering 'Porterhouse' expects an NY Strip-equivalent, receives a 24-ounce bone-in monster meant to feed two people. The collision exceeds the Asado trinity (5 meanings across 5 countries) in confusion intensity because all three uses are within the same Anglo food culture, sharing English language and Western dining conventions.",
+    notes: "Anchor entry for the Porterhouse 3-country trap. Cross-reference USA T-bone, Australia Sirloin/Porterhouse split, NZ Sirloin convention. Hardest single naming collision in the database.",
+  },
+
+  {
+    id: "commonwealth_sirloin_anchor_au",
+    name: "Commonwealth Sirloin Trap (Australia as Anchor)",
+    region: "australia",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.90, note: "Australian 'Sirloin' = US Striploin" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.90, note: "Australian 'Rump' = US Top Sirloin" },
+    ],
+    synonyms: ["sirloin", "rump", "porterhouse"],
+    description: "Australia is the architectural ANCHOR of the 7-country Commonwealth Sirloin trap that spans UK, Ireland, UAE, Malaysia, Singapore, Australia, and New Zealand. The AUS-MEAT (Meat Standards Australia) terminology system that defines this trap originates here. The convention: 'Sirloin' (or 'Porterhouse' in Victoria/SA) refers to the boneless Striploin — the US NY Strip equivalent. 'Rump' refers to what Americans call 'Top Sirloin' — the leaner cut. The two terms are paired swaps from US conventions: Aussie Sirloin = US Striploin; Aussie Rump = US Sirloin. This single distinction generates more expat confusion at Sydney/Melbourne supermarkets and butcher counters than any other naming convention. The Commonwealth Sirloin axis — UK → Ireland → UAE → Malaysia → Singapore → Australia → NZ — is one of the longest single-pattern threads in the database, all stemming from British colonial-era butchery conventions that the AUS-MEAT system codified and exported globally via Australian beef trade. Critically distinct from the East Asian Phonetic Sirloin trap (Japan/Korea/China/Taiwan), which is a borrowed-word semantic drift, not an inherited naming convention.",
+    notes: "Cross-reference all 6 other Commonwealth Sirloin entries (UK existing, Ireland existing, UAE existing, Malaysia existing, Singapore existing, NZ this batch). Australia is the architectural ROOT.",
+  },
+
+  {
+    id: "sirloin_porterhouse_state_split_au",
+    name: "Australian Sirloin/Porterhouse State Split (Vic/SA vs NSW/QLD)",
+    region: "australia",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.85, note: "Same cut, two state-specific names" },
+    ],
+    synonyms: ["sirloin", "porterhouse"],
+    description: "A unique within-country naming variation — the only documented case in the entire Cutranslator ontology where the same cut has different names depending on which Australian state you're in. In Victoria and South Australia, the boneless striploin is called 'Porterhouse.' In New South Wales and Queensland, the same cut is called 'Sirloin.' Both terms refer to the identical cut with identical preparation, but the state of the butcher determines which label appears on the price tag. Tasmania, Western Australia, and the Northern Territory show variable usage. An American expat moving from Sydney to Melbourne (or vice versa) must adjust their butcher vocabulary — same Aussie steakhouse menu, two completely different terms. This split has no parallel in any other country in the database — most countries use consistent national terminology even in federal systems (USA, Brazil, Argentina, India). Worth noting as a future 'regional personalization' feature for the tool: detect Australian state from user IP and surface the correct local term first.",
+    notes: "Unique in the database — only documented same-country state-by-state cut naming variation. Future 'invisible personalization' feature opportunity for the tool.",
+  },
+
+  {
+    id: "msa_grading_au",
+    name: "MSA — Meat Standards Australia (Non-USDA Grading)",
+    region: "australia",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.40, note: "Applies across all premium cuts, not specific" },
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.40, note: "Same convention" },
+    ],
+    synonyms: ["msa", "msa graded"],
+    description: "Australia's Meat Standards Australia (MSA) grading system differs fundamentally from USDA. While USDA's Select/Choice/Prime grading is driven primarily by intramuscular marbling, MSA scores beef on EATING QUALITY — tenderness, juiciness, and flavor — using a star system (3, 4, or 5 stars), with marbling tracked separately on a 0-9+ scale. The system was developed in response to consumer surveys showing that Australian beef shoppers prioritized eating quality over fat content. Combined with Australia's grass-fed dominance (most domestic beef is pasture-raised, leaner, with 'beefier' flavor and higher Omega-3 content than US grain-fed), the MSA framework produces a different product than USDA-equivalent grades suggest. An MSA 4-Star Australian Ribeye is NOT directly comparable to a USDA Choice Ribeye — different grading axis, different feeding profile, different cooking behavior. Australian Wagyu and premium Angus also use a separate Marbling Score (MS 4-5 = good, MS 7-9+ = exceptional), aligned with Japanese BMS but assessed independently. Cross-reference: this is the third documented non-USDA grading system in the database, alongside Russian/Belarusian GOST and Korean Hanwoo grading.",
+    notes: "MSA is one of three major non-USDA grading systems documented (GOST in post-Soviet, Hanwoo in Korea, MSA in Australia). Important context for any user comparing imported AUS beef to USDA equivalents.",
+  },
+
+  // 🇳🇿 NEW ZEALAND
+
+  {
+    id: "schnitzel_nz",
+    name: "Beef Schnitzel (NZ Specific Retail Cut)",
+    region: "new_zealand",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Topside primary; sometimes Knuckle" },
+      { canonical_id: "sirloin_tip", match_type: "cultural", confidence: 0.65, note: "Knuckle (sirloin tip) sometimes used" },
+    ],
+    synonyms: ["beef schnitzel"],
+    description: "In the US, 'Schnitzel' is a German-derived preparation method (pound thin, bread, fry) — not a specific cut. In New Zealand, 'Beef Schnitzel' is a SPECIFIC retail product: Topside (or Knuckle) that has been mechanically tenderized by being passed through a cuber machine, then sold in pre-cut portions intended for quick pan-frying. The mechanical tenderization breaks the muscle fibers visibly, leaving the characteristic 'pinhole' pattern. This is a weekday staple at every Pak'nSave, New World, and Countdown supermarket. The cut-as-product convention is unique to NZ retail — Australian butchers sell 'Minute Steak' for the same use case but without the formal Schnitzel labeling. An American visitor seeing 'Beef Schnitzel' in a NZ supermarket might assume it requires breading and frying like a Wienerschnitzel; in reality, the NZ product is unbreaded and ready to pan-sear.",
+    notes: "Format-driven cut, similar in spirit to Korean Chadolbagi (preparation defines the product) and Bolivian Silpancho (tortilla-thin pounded steak). NZ retail innovation.",
+  },
+
+  {
+    id: "corned_silverside_nz",
+    name: "Corned Silverside (Anglo-Commonwealth Tradition)",
+    region: "new_zealand",
+    maps_to: [
+      { canonical_id: "outside_round", match_type: "close", confidence: 0.90, note: "Specifically silverside, brined" },
+    ],
+    synonyms: ["corned silverside", "corned beef"],
+    description: "The New Zealand version of 'Corned Beef' completes the Anglo-Commonwealth corned beef tradition — silverside (bottom round), not brisket. Brined with vinegar, brown sugar, and mustard seeds (the 'NZ trinity' of corned beef seasoning), then boiled with carrots and potatoes. The result is lean, ham-like in texture, fundamentally different from American corned beef brisket. This is the same convention used in Ireland (existing entry) and Australia (this batch's silverside entry) — three Anglo-Commonwealth regions sharing the silverside tradition vs the USA's brisket tradition. An American expat in Auckland buying 'Corned Beef' expecting the fatty Reuben-sandwich-style product will receive a lean, ham-like roast that doesn't slice the same way and won't produce the same sandwich texture. The cultural divergence is one of the cleanest US-vs-Commonwealth food vocabulary distinctions in the database. The NZ preparation tradition (vinegar + brown sugar + mustard seeds) is distinct from Irish (typically just salt-brined) and Australian (salt + bay leaves), giving each Commonwealth country its own corned silverside identity.",
+    notes: "Cross-reference Irish corned_beef_cut_ie (existing) and Australian silverside entry. The 3-country Anglo-Commonwealth corned silverside tradition is fully documented after this batch.",
+  },
+
+  {
+    id: "hangi_beef_nz",
+    name: "Hāngī Beef (Māori Earth-Oven Tradition)",
+    region: "new_zealand",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.65, note: "Tougher chuck cuts handle long steam-cooking" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.60, note: "Brisket also used" },
+    ],
+    synonyms: ["hāngī", "hangi beef"],
+    description: "Hāngī is the traditional Māori method of steam-cooking food in an earth oven — heated stones placed in a pit, food layered above, covered with leaves and earth, cooked for several hours. Beef is sometimes included in Hāngī (alongside more traditional pork, chicken, lamb, kumara, and pumpkin). The cooking method requires cuts that benefit from long, low-temperature steam: tougher cuts with connective tissue (Chuck, Brisket, sometimes bone-in pieces). Premium tender cuts (eye fillet, sirloin) would be overcooked and dry. This is a culturally significant preparation for Māori communities and increasingly featured at New Zealand cultural events and tourism experiences. NZ butchers in areas with Māori communities (especially in Northland, East Cape, Bay of Plenty) often sell 'Hāngī Beef' as a pre-cut category — typically Chuck or Brisket cubed for layered steaming. Distinct from American BBQ in that the meat is steamed (not smoked), achieving a different texture and flavor profile.",
+    notes: "Cultural cut category — similar in spirit to Filipino Bulalo (bone-in shank for soup), Vietnamese Phở toppings (cut defined by dish), Indonesian Rendang cut (4-hour cook requirement). Documents Indigenous food traditions in the ontology.",
+  },
+
 ] as const;

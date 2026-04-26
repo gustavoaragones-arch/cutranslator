@@ -144,6 +144,8 @@ export const REGION_ENTITY: Record<
   indonesia: { id: "indonesia", formalName: "Indonesia", shortName: "Indonesia" },
   malaysia: { id: "malaysia", formalName: "Malaysia", shortName: "Malaysia" },
   singapore: { id: "singapore", formalName: "Singapore", shortName: "Singapore" },
+  australia: { id: "australia", formalName: "Australia", shortName: "Australia" },
+  new_zealand: { id: "new_zealand", formalName: "New Zealand", shortName: "NZ" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

@@ -437,4 +437,20 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "brisket_flat", region: "china", phrase: "Wǒ yào qián xiōng ròu, bú yào niú nǎn", notes: "'I want front chest (specific brisket), NOT Niú nǎn (umbrella)' — the key disambiguation" },
   { canonicalId: "chuck_roll", region: "china", phrase: "Bó rén yǒu mǎ? Chāo shàn shì huǒ guō yòng de", notes: "'Do you have Bó rén? For Chaoshan hot pot' — the premium neck cap request" },
   { canonicalId: "ribeye", region: "china", phrase: "Yǎn ròu qī fēn shú, xiè xie", notes: "'Ribeye medium (7/10 cooked), thanks' — uses the fraction doneness system" },
+
+  // AUSTRALIA
+  { canonicalId: "striploin", region: "australia", phrase: "Is this Sirloin or Porterhouse — which state are we in?", notes: "Disambiguation phrase for the Vic/SA vs NSW/QLD state split — NSW/QLD users say Sirloin, Vic/SA users say Porterhouse" },
+  { canonicalId: "ribeye", region: "australia", phrase: "Scotch Fillet, MSA 4-star or better please", notes: "MSA grading specification ensures eating quality" },
+  { canonicalId: "tenderloin", region: "australia", phrase: "Eye Fillet log, whole, for slicing", notes: "Whole tenderloin format — common at Aussie butcher shops" },
+  { canonicalId: "top_sirloin", region: "australia", phrase: "Rump, NOT Sirloin — for the barbie", notes: "Explicit disambiguation — confirms US Top Sirloin equivalent, not striploin" },
+  { canonicalId: "outside_round", region: "australia", phrase: "Silverside for corning, with the fat trimmed lean", notes: "Anglo-Commonwealth corned beef preparation request" },
+  { canonicalId: "chuck_roll", region: "australia", phrase: "Chuck Mince, kilo, for a meat pie", notes: "Format-driven request using metric (always kilos in AU) and dish-driven cut (chuck for meat pies)" },
+
+  // NEW ZEALAND
+  { canonicalId: "striploin", region: "new_zealand", phrase: "Sirloin, MSA 4-star equivalent if grass-fed", notes: "NZ doesn't have MSA but the request communicates eating quality preference" },
+  { canonicalId: "ribeye", region: "new_zealand", phrase: "Scotch Fillet, for the barbie", notes: "The Kiwi BBQ standard order" },
+  { canonicalId: "tenderloin", region: "new_zealand", phrase: "Eye Fillet, three steaks, kilo if you've got it", notes: "Metric measurement, premium cut request" },
+  { canonicalId: "outside_round", region: "new_zealand", phrase: "Corned Silverside, ready for the pot", notes: "Pre-brined silverside ready for boiling — NZ trinity preparation (vinegar, brown sugar, mustard seeds)" },
+  { canonicalId: "inside_round", region: "new_zealand", phrase: "Beef Schnitzel, two for tonight", notes: "Mechanically tenderized topside — NZ retail-specific cut request" },
+  { canonicalId: "chuck_roll", region: "new_zealand", phrase: "Hāngī Beef, cubed, for the weekend", notes: "Cultural preparation request — beef for traditional Māori earth-oven cooking" },
 ] as const;
