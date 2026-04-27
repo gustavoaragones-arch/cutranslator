@@ -101,6 +101,12 @@ export const regions = [
   // Oceania
   { id: "australia" as const, label: "Australia", flag: "🇦🇺", group: "oceania" as RegionGroup, aliases: ["aus", "oz", "aussie", "down under"] as readonly string[] },
   { id: "new_zealand" as const, label: "New Zealand", flag: "🇳🇿", group: "oceania" as RegionGroup, aliases: ["nz", "kiwi", "aotearoa"] as readonly string[] },
+
+  // Africa
+  { id: "south_africa" as const, label: "South Africa", flag: "🇿🇦", group: "africa" as RegionGroup, aliases: ["rsa", "sa", "south african"] as readonly string[] },
+  { id: "kenya" as const, label: "Kenya", flag: "🇰🇪", group: "africa" as RegionGroup, aliases: ["kenyan", "swahili"] as readonly string[] },
+  { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, aliases: ["naija", "nigerian"] as readonly string[] },
+  { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

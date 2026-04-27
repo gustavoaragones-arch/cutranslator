@@ -453,4 +453,30 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "outside_round", region: "new_zealand", phrase: "Corned Silverside, ready for the pot", notes: "Pre-brined silverside ready for boiling — NZ trinity preparation (vinegar, brown sugar, mustard seeds)" },
   { canonicalId: "inside_round", region: "new_zealand", phrase: "Beef Schnitzel, two for tonight", notes: "Mechanically tenderized topside — NZ retail-specific cut request" },
   { canonicalId: "chuck_roll", region: "new_zealand", phrase: "Hāngī Beef, cubed, for the weekend", notes: "Cultural preparation request — beef for traditional Māori earth-oven cooking" },
+
+  // SOUTH AFRICA
+  { canonicalId: "top_sirloin", region: "south_africa", phrase: "Two kilos of Rump for the Braai, dik gesny", notes: "'Thick-cut' for grilling — minimum 2-inch thickness for proper Braai" },
+  { canonicalId: "outside_round", region: "south_africa", phrase: "Biltong-cut Silverside, met die geel vet", notes: "'With the yellow fat' — explicitly requesting grass-fed indicators" },
+  { canonicalId: "ribeye", region: "south_africa", phrase: "Class A2 Scotch Fillet, 300 grams", notes: "Class A grading specification with metric portion" },
+  { canonicalId: "hind_shank", region: "south_africa", phrase: "Potjiekos mix, met been, vir die Sondag", notes: "'With bone, for the Sunday' — bone-in mandatory for Potjiekos" },
+  { canonicalId: "striploin", region: "south_africa", phrase: "Sirloin, NOT what Americans call sirloin — give me the striploin", notes: "Disambiguation phrase for the Commonwealth Sirloin trap" },
+
+  // KENYA
+  { canonicalId: "tenderloin", region: "kenya", phrase: "Nipe Fillet, nyama laini, kilo moja", notes: "'Soft meat fillet, one kilo' — the only reliably tender Kenyan cut request" },
+  { canonicalId: "short_ribs", region: "kenya", phrase: "Nyama Choma cut, na fat cap iko juu", notes: "'With fat cap on top' — non-negotiable for charcoal roasting" },
+  { canonicalId: "hind_shank", region: "kenya", phrase: "Nali ya kupika boilo, na mifupa", notes: "'Shank for boilo cooking, with bones' — soup preparation request" },
+  { canonicalId: "chuck_roll", region: "kenya", phrase: "Nyama ya kusaga, weka mafuta kiasi", notes: "'Ground meat, add some fat' — overrides the Kenyan lean default" },
+
+  // NIGERIA
+  { canonicalId: "inside_round", region: "nigeria", phrase: "I want buy two kilo Lap, for stew, parboil dey ready", notes: "'For stew, parboil-ready' — the universal Nigerian preparation expectation" },
+  { canonicalId: "tenderloin", region: "nigeria", phrase: "Suya cut from Fillet, slice am paper-thin", notes: "Specifying premium Suya from tenderloin (vs traditional Lap)" },
+  { canonicalId: "brisket", region: "nigeria", phrase: "Fatty meat for stew, no trim am", notes: "'Fatty meat for stew, do not trim' — explicit fat preservation request" },
+  { canonicalId: "chuck_roll", region: "nigeria", phrase: "Cow meat, not beef — I want fresh nama", notes: "Explicit avoidance of the 'Beef' = canned corned beef trap" },
+  { canonicalId: "hind_shank", region: "nigeria", phrase: "Shin-beef for pepper soup, with bone", notes: "Bone-in shank for the iconic Nigerian Pepper Soup" },
+
+  // ETHIOPIA
+  { canonicalId: "tenderloin", region: "ethiopia", phrase: "Fisilo, le tere siga — arif siga new?", notes: "'Tenderloin, for raw meat — is it fresh?' — the freshness check is mandatory" },
+  { canonicalId: "tenderloin", region: "ethiopia", phrase: "Le Kitfo kuta-legn, hand-minced, lean", notes: "'Cut for Kitfo, hand-minced, lean' — the explicit no-machine-grind specification" },
+  { canonicalId: "sirloin_tip", region: "ethiopia", phrase: "Kofia for Gored Gored, cubed", notes: "Sirloin tip cubes for raw beef cube preparation" },
+  { canonicalId: "chuck_roll", region: "ethiopia", phrase: "Le Wot, bone-in, with Niter Kibbeh ready", notes: "Stew-grade meat with butter expectation noted" },
 ] as const;

@@ -2552,4 +2552,182 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Cultural cut category — similar in spirit to Filipino Bulalo (bone-in shank for soup), Vietnamese Phở toppings (cut defined by dish), Indonesian Rendang cut (4-hour cook requirement). Documents Indigenous food traditions in the ontology.",
   },
 
+  // ===== AFRICA =====
+
+  // ----- South Africa (4 entities) -----
+
+  {
+    id: "commonwealth_sirloin_sa",
+    name: "Commonwealth Sirloin Trap (South Africa, 8th Country)",
+    region: "south_africa",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.90, note: "SA 'Sirloin' = US Striploin" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.90, note: "SA 'Rump' = US Top Sirloin" },
+    ],
+    synonyms: ["sirloin", "rump"],
+    description: "South Africa is the African node of the 8-country Commonwealth Sirloin axis (UK, Ireland, UAE, Malaysia, Singapore, Australia, New Zealand, South Africa). The British colonial-era butchery convention codified by Australian AUS-MEAT export terminology reaches its African expression in the South African Class A/B/C grading system. The convention is identical: 'Sirloin' = US Striploin (NY Strip), 'Rump' = US Top Sirloin. An American expat ordering 'Sirloin' at a Cape Town or Johannesburg steakhouse will receive a premium NY Strip at premium pricing — significantly different from what they'd get at a US chain. The two-term swap (Sirloin↔Striploin, Rump↔Sirloin) is the same as in all 7 other Commonwealth Sirloin countries. South Africa adds one cultural detail unique among the 8: 'Rump' is the most popular Braai (BBQ) steak in SA, valued for its higher fat content and stronger beefy flavor — making it culturally MORE prestigious than what Americans assume from 'Top Sirloin' (a value cut).",
+    notes: "Cross-reference architectural anchor `commonwealth_sirloin_anchor_au` (Australia) and the 6 other Commonwealth entries. South Africa completes the 8-country axis.",
+  },
+
+  {
+    id: "biltong_cut_sa",
+    name: "Biltong Cut (Format-Driven Cured Meat)",
+    region: "south_africa",
+    maps_to: [
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.75, note: "Silverside primary — the biltong standard" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.65, note: "Rump biltong is the premium variant" },
+    ],
+    synonyms: ["biltong", "biltong-cut silverside", "biltong-cut rump"],
+    description: "Biltong is South Africa's iconic spiced air-dried meat, and the cut is FORMAT-DRIVEN rather than muscle-specific. The defining requirement: meat must be sliced WITH the grain (not against it, like jerky and most Western drying traditions) in long thick planks (typically 30-40cm long, 4-5cm thick). This with-the-grain slicing produces the characteristic Biltong chew that's softer than jerky despite similar moisture content. The two standard cuts are Silverside (lean, ham-like, the everyday standard) and Rump (richer, more flavorful, the premium choice). Both must be sourced from grass-fed cattle for authentic flavor — the lean profile is essential. The cut format applied to a different muscle (e.g., chuck) won't produce authentic Biltong texture. South African butchers pre-cut 'Biltong-cut Silverside' or 'Biltong-cut Rump' as a specific retail product category. An American attempting Biltong with USDA grain-fed beef will produce something closer to American jerky — different chew, different flavor profile. Companion to Boerewors Mince and Potjiekos Cut as the three iconic South African format-driven retail categories.",
+    notes: "Format-driven cut — similar in spirit to Korean Chadolbagi (preparation defines the cut), Bolivian Silpancho (tortilla-thin pounded steak), Vietnamese Bò Né (sizzling skillet format). Sliced with the grain inverts the standard dried meat convention.",
+  },
+
+  {
+    id: "yellow_fat_quality_sa",
+    name: "Yellow Fat as Quality Marker (USDA Inversion)",
+    region: "south_africa",
+    maps_to: [
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.40, note: "Applies across premium grass-fed cuts" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.40, note: "Rump steak especially" },
+    ],
+    synonyms: ["geel vet", "yellow fat"],
+    description: "USDA actively penalizes yellow fat — it's associated with older or grass-fed cattle and considered visually less appealing. South African Braai culture INVERTS this: 'Geel vet' (Afrikaans for 'yellow fat') is explicitly valued as a quality indicator, signaling grass-fed, older animal, and more developed flavor. Braai practitioners specifically request meat with visible yellow fat for the rendering experience over coals. The Class A/B/C SA grading system reflects this: Class A is grain-fed and young (white fat), Class B is intermediate, Class C is older (yellow fat). USDA conventions assume Class A is universally better; SA Braai conventions assume Class A2-A3 (some yellow fat) is OPTIMAL because the rendering fat is the flavor source. An American shopping at a Cape Town butcher seeing yellow-fat Rump may assume it's lower quality and reject it; the local clientele is doing the opposite — buying it specifically for the yellow fat. This is the third documented USDA preference inversion in the database, alongside Chinese Chaoshan texture-over-marbling and Vietnamese/Korean shank-as-prestige.",
+    notes: "Third documented USDA-quality-inversion entry. Cross-reference Chinese Chaoshan (Batch 10), Vietnamese Bắp Hoa (Batch 11), Korean Yangji/Chadolbagi (Batch 10). South African yellow-fat preference is the most explicit — the fat color is the primary visual quality cue.",
+  },
+
+  {
+    id: "potjiekos_cut_sa",
+    name: "Potjiekos Cut (Bone-In Cast-Iron Stew)",
+    region: "south_africa",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.80, note: "Shin (shank) primary" },
+      { canonical_id: "oxtail", match_type: "cultural", confidence: 0.75, note: "Oxtail also standard" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.65, note: "Short ribs and neck also work" },
+    ],
+    synonyms: ["potjie", "potjiekos", "potjiekos mix"],
+    description: "Potjiekos is the traditional South African cast-iron pot stew — a 4-hour low-and-slow simmer over coals, layered with vegetables and meat in a three-legged 'potjie' pot. The cut requirement is absolute: BONE-IN chunks of Shin (shank), Neck, Oxtail, or Short Ribs. The bone marrow and connective tissue are essential to the dish's signature gelatinous body — boneless 'stew meat' from US convention will produce a thinner, less rich result that locals recognize as inauthentic. Some South African butchers sell pre-assembled 'Potjiekos Mix' specifically for the dish, combining shank pieces, oxtail, and small bone-in marrow chunks. Cross-references the broader Anglo-Commonwealth bone-in stew tradition: NZ Hāngī Beef (similar long-cook bone-in requirement), Filipino Bulalo (bone-in shank for soup), Italian Osso Buco (bone-in shank cross-cut). The Potjiekos tradition is older than European colonization — it adapts indigenous Khoisan and Bantu earth-cooking techniques to the iron pot brought by Dutch settlers, making it a genuinely Afro-European fusion dish.",
+    notes: "Bone-in mandatory for authentic gelatinous body. Cross-reference Filipino Bulalo, NZ Hāngī, Italian Osso Buco — pan-cultural bone-in long-cook tradition.",
+  },
+
+  // ----- Kenya (3 entities) -----
+
+  {
+    id: "soft_hard_duality_ke",
+    name: "Nyama Laini vs Nyama ya Mifupa (Soft/Hard Retail Duality)",
+    region: "kenya",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.50, note: "Nyama Laini covers tender boneless cuts" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.50, note: "Nyama ya Mifupa covers bone-in stew cuts" },
+    ],
+    synonyms: ["nyama laini", "nyama ya mifupa", "soft meat", "bone-in meat"],
+    description: "Kenya operates on a 'Total Utility' retail model where meat is functionally categorized rather than precisely cut-named. The two primary categories at any Nairobi Bucha: Nyama Laini ('soft meat' — boneless, tender, primarily Fillet) and Nyama ya Mifupa ('bone-in meat' — Shank, Short Ribs, Neck, anything that requires long cooking). An American expat shopping for 'Sirloin' at a local Kenyan butchery will be redirected: the butcher will ask whether they want laini or mifupa, then provide an appropriate boneless or bone-in cut. The Mgongo (Back) cut conflates striploin and ribeye under one term, requiring specialist butchers (City Market) for precise cut requests. This functional categorization is structurally equivalent to: Korean Gu-i-yong/Guk-gori (grill meat / soup meat from Batch 10), Nigerian Eran-Egun/Eran-Didi (bone-in / boneless), and Ethiopian Le Tere Siga/Le Wot (raw-grade / stew-grade). All four cultures replace USDA cut precision with usage-driven retail categories — a structural pattern unique to grass-fed, hot-boned, traditional-market beef cultures.",
+    notes: "Cross-reference Korean Gu-i-yong (Batch 10), Nigerian Eran-Egun (this batch), Ethiopian Le Tere Siga (this batch). Four-country pattern of functional retail categorization.",
+  },
+
+  {
+    id: "nyama_choma_ke",
+    name: "Nyama Choma (Charcoal-Roasted Cut Format)",
+    region: "kenya",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.65, note: "Short Loin / Rib section primary" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.60, note: "Bone-in ribeye section commonly used" },
+    ],
+    synonyms: ["nyama choma"],
+    description: "Nyama Choma (literally 'roasted meat' in Swahili) is Kenya's national dish and the centerpiece of social gatherings — large primal chunks of beef roasted whole over charcoal at outdoor 'choma joints' across Nairobi, Mombasa, and Kajiado. The cut format is a LARGE BONE-IN CHUNK (typically 2-4kg) with the FAT CAP LEFT INTACT — this is non-negotiable. Kenyan beef from grass-fed Zebu cattle is so lean that without the rendering fat cap, the meat dries out within 30 minutes over the coals. Common cuts: Short Loin section, bone-in Rib section, large primal pieces from Mgongo. The dish is served sliced thin against the grain, eaten with kachumbari (tomato-onion salad) and ugali (cornmeal). An American attempting Nyama Choma with trimmed USDA cuts will produce a dramatically different result — the trimmed fat is precisely what makes the Kenyan version work. Modern Nairobi 'choma joints' increasingly stock imported chilled cuts, but traditionalists insist on hot-boned same-day Kenyan beef for authentic flavor.",
+    notes: "Format-driven cut requiring fat cap retention. The grass-fed Zebu lean profile makes the fat cap mandatory — inverse of USDA trimming defaults.",
+  },
+
+  {
+    id: "kenya_lean_warning_ke",
+    name: "Grass-Fed Zebu Cooking Adaptation (Kenya)",
+    region: "kenya",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.40, note: "Even premium cuts require adaptation" },
+      { canonical_id: "ribeye", match_type: "cultural", confidence: 0.40, note: "Same applies" },
+    ],
+    synonyms: ["zebu beef", "kenyan beef cooking"],
+    description: "Most Kenyan beef comes from local Zebu cattle (Bos indicus) — grass-fed, work-hardened, and significantly leaner than USDA grain-fed beef. Critical practical implication for an American expat: standard USDA cooking methods (4-minute high-heat sear for a NY Strip, 6-minute medium-rare for a Ribeye) WILL FAIL with Kenyan equivalents. The meat will be tough and chewy because the muscle fibers haven't had grain-finishing to soften them. Required adaptations: (1) longer braising for stews, (2) pressure cooking for stewing cuts, (3) longer marination, (4) mechanical tenderization for grilling cuts. Kenyan butchers don't typically warn customers about this because local home cooks already know — but expats accustomed to USDA Choice/Prime tenderness will find their first attempts at Kenyan steak disappointing without adjusting technique. Even premium Mgongo (Back) for Nyama Choma works precisely BECAUSE it's a long-cook charcoal preparation; trying to flash-sear it will produce inedible toughness. Companion warnings for Nigeria (parboil before frying) and Ethiopia (use Niter Kibbeh for moisture) — the three African countries share the lean grass-fed Zebu adaptation requirement.",
+    notes: "Anchored in the broader Pan-African Lean Beef Axis. Cross-reference `pan_african_lean_beef_ng` (Nigeria, the explicit 'parboil' tradition) and `niter_kibbeh_et` (Ethiopia, the butter-based moisture solution).",
+  },
+
+  // ----- Nigeria (3 entities) -----
+
+  {
+    id: "pan_african_lean_beef_ng",
+    name: "The Pan-African Lean Beef Axis (Nigeria Anchor)",
+    region: "nigeria",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.50, note: "Lap (topside) is the universal Nigerian round cut" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.45, note: "Chuck cuts also subject to parboil requirement" },
+    ],
+    synonyms: ["zebu beef", "parboiled beef"],
+    description: "The architectural anchor of a three-country pan-African insight: Nigerian, Kenyan, and Ethiopian beef all come from grass-fed Zebu cattle (Bos indicus), producing a fundamentally different product than USDA grain-fed beef. Nigeria documents the most explicit cooking adaptation: PARBOIL (pre-boil) the meat for 20-40 minutes BEFORE frying or stewing. Without this step, Nigerian Beef Stew becomes inedibly tough — the meat fibers haven't been pre-tenderized by the boiling phase. This is universal practice across Lagos, Ibadan, Kano, and Abuja — every Nigerian home cook does it; every expat learns it the hard way. Kenya implements the same insight differently (long-braising and pressure cooking for stews, mechanical tenderization for grilling cuts); Ethiopia bypasses the issue by serving raw (Tere Siga) or using clarified butter (Niter Kibbeh) for moisture in Wot stews. Together, these three countries form the 'lean Zebu adaptation' axis — a structural insight that contradicts USDA cooking convention and is essential context for any African beef preparation. The parallel insight: Nigerians actively SEEK 'Fatty Meat' (Chest/brisket area) for stews because the fat is precisely what's missing from the lean Zebu profile, providing flavor and moisture during long-cooks.",
+    notes: "Anchor entry for the Pan-African Lean Beef Axis. Cross-reference Kenyan grass-fed warning, Ethiopian Niter Kibbeh tradition. Three countries, one universal cooking adaptation.",
+  },
+
+  {
+    id: "orishirishi_ng",
+    name: "Orishirishi (Nigerian Mixed Meat-and-Offal Cut Category)",
+    region: "nigeria",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.40, note: "Includes muscle but is umbrella for muscle+offal mix" },
+    ],
+    synonyms: ["orishirishi", "obstacle course"],
+    description: "Orishirishi (literally 'various things' in Yoruba, jokingly nicknamed 'the obstacle course' in Lagos street food vernacular) is a uniquely Nigerian cut category that has no single canonical equivalent — because it deliberately combines beef muscle with multiple offal types in a single retail bundle. The standard Orishirishi mix includes: Shaki (tripe), Edo (liver), Fuku (lungs), Abodi (intestines), and Kanda/Ponmo (cow skin). When a Nigerian asks for 'Beef' at a market, the butcher may automatically include some Orishirishi components alongside muscle meat — particularly for stew preparations where the variety provides textural complexity. Cow skin (Ponmo/Kanda) is treated as a beef cut in Nigerian retail, processed by either boiling or smoking, valued for its chewy texture in stews. From the canonical ontology perspective, only the muscle component (typically Chuck-area meat) maps to a beef cut canonical; the offal and skin components are outside the current beef-cuts ontology, similar to how Vietnamese Gân (tendon) and Sách (tripe) are documented as Phở context but not given canonical beef-cut mappings. American expats expecting clean muscle-only retail will find Nigerian beef shopping requires explicit clarification — 'Cow Meat without Orishirishi' or 'just the muscle' to avoid the bundled offal-and-skin inclusion.",
+    notes: "Documents an ontology gap — Nigerian Orishirishi includes products outside the beef-cuts canonical (offal, skin). Same handling pattern as Vietnamese Phở toppings (Gân/Sách from Batch 11). Future ontology expansion candidate for offal coverage.",
+  },
+
+  {
+    id: "cow_vs_beef_terminology_ng",
+    name: "The 'Cow Meat' vs 'Beef' Terminology Trap (Nigeria)",
+    region: "nigeria",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.50, note: "Functional category — fresh beef muscle" },
+    ],
+    synonyms: ["cow meat", "nama"],
+    description: "One of the cleanest documented cases in the entire Cutranslator ontology where standard English food vocabulary actively misleads. In Nigeria, asking for 'Beef' at a market or butcher may be interpreted as a request for canned corned beef (a popular processed product imported from various countries) or another specific processed beef product — NOT fresh muscle meat. The correct request for fresh beef is 'Cow Meat' (English) or 'Nama' (Hausa, the dominant northern Nigerian language). Local Yoruba and Igbo speakers also use 'Cow Meat' or their respective indigenous terms. The semantic split exists because Nigeria's colonial-era introduction of 'Beef' as a vocabulary term primarily came through canned/preserved imports rather than fresh meat retail; fresh muscle meat retained its descriptive 'Cow Meat' nomenclature. An American tourist visiting Lagos who orders 'Beef stew ingredients' may receive canned corned beef and tomato paste; the same tourist asking for 'Cow Meat' receives the expected fresh muscle. This trap is unique to Nigeria — neighboring Ghana, Cameroon, and Benin don't share this specific semantic split despite shared colonial histories. The trap is consequential enough that Nigerian food blogs explicitly warn diaspora returnees and tourists about the distinction.",
+    notes: "Unique Nigerian linguistic trap — 'Beef' = processed; 'Cow Meat' = fresh muscle. Documents the cleanest case in the database where standard English food vocabulary fails.",
+  },
+
+  // ----- Ethiopia (3 entities) -----
+
+  {
+    id: "tere_siga_et",
+    name: "Tere Siga (Ethiopian Raw Beef Tradition)",
+    region: "ethiopia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.85, note: "Fisilo (tenderloin) is the premium Tere Siga cut" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.65, note: "Top Sirloin for Gored Gored variant" },
+    ],
+    synonyms: ["tere siga", "raw meat"],
+    description: "Ethiopia is the only documented culture in the entire Cutranslator ontology where the cut's primary identity is its suitability for RAW CONSUMPTION. Tere Siga (long strips of fresh raw beef eaten with Mitmita spice powder and a small carving knife called Karra) and its companion preparations Kitfo (finely hand-minced raw beef with Niter Kibbeh clarified butter) and Gored Gored (raw beef cubes) collectively form a culinary tradition where beef is graded primarily by its suitability for raw eating, with cooked preparations being secondary applications. The defining requirement: HOT-BONED meat, sold and consumed within hours of slaughter. Aged or refrigerated beef is NEVER consumed raw — Ethiopian cultural conventions treat this as not just inferior but actively dangerous. The premium cut is Fisilo (tenderloin), carved long and served on a wooden platter for the diner to slice off pieces themselves. Other cultures have raw beef preparations (Korean Yukhoe, Japanese Yukke, Filipino Kilawin) but in all those traditions, raw is a SECONDARY application of beef quality. In Ethiopia, raw is the DEFAULT premium expression — cooked Tibs and Wot stews are everyday food; raw Tere Siga is the special-occasion delicacy. American expats encountering this for the first time should NEVER attempt Tere Siga with US supermarket beef (which is aged, refrigerated, and treated for raw consumption hazards differently than Ethiopian hot-boned beef). The freshness window is cultural and technical, not just preferential.",
+    notes: "Marquee Tier 3 entry. Only documented culture in the database where raw is the premium default. Strict freshness-mandatory cultural rule. The ontology's most distinctive raw-beef tradition.",
+  },
+
+  {
+    id: "niter_kibbeh_et",
+    name: "Niter Kibbeh as Moisture Solution (Cooking Adaptation)",
+    region: "ethiopia",
+    maps_to: [
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.40, note: "Yemigongo for Tibs" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.45, note: "Chuck for Wot stews" },
+    ],
+    synonyms: ["niter kibbeh", "spiced butter"],
+    description: "Ethiopia's culinary adaptation to extremely lean grass-fed Zebu beef is fundamentally different from Nigeria's parboiling and Kenya's long-braising — it's the use of Niter Kibbeh, a clarified butter spiced with cardamom, fenugreek, cinnamon, and other warming spices, as the moisture vehicle. Where Nigerian beef stew uses parboiling to pre-tenderize the meat and Kenyan stews use long-cook collagen breakdown, Ethiopian preparations use Niter Kibbeh's high fat content to provide the moisture and richness that the lean meat lacks intrinsically. Tibs (sautéed beef cubes), Wot (spicy stews), and Kitfo (raw minced beef) all rely on Niter Kibbeh as the primary fat source. An American attempting Ethiopian Tibs with USDA fatty Ribeye produces a dish that locals describe as 'greasy' rather than 'buttery' — the marbling fat doesn't replicate the spiced clarified butter's flavor profile. The adaptation works in reverse: Ethiopian-trained cooks attempting US recipes find that Niter Kibbeh-based techniques applied to USDA marbled beef produce dishes that are simultaneously over-fatty (from the meat) and under-flavored (because the butter's spiced complexity is masked by the meat's own fat). Each cuisine's adaptation only works with its native beef profile.",
+    notes: "Third national variation of the lean Zebu cooking adaptation. Cross-reference Nigerian parboil (`pan_african_lean_beef_ng`), Kenyan long-braise (`kenya_lean_warning_ke`). Three countries, three different solutions to the same lean-beef constraint.",
+  },
+
+  {
+    id: "kitfo_et",
+    name: "Kitfo (Hand-Minced Raw Beef)",
+    region: "ethiopia",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.80, note: "Lean Tenderloin primary" },
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.65, note: "Lean Round secondary" },
+    ],
+    synonyms: ["kitfo"],
+    description: "Kitfo is Ethiopia's finely hand-minced raw beef dish, mixed with Niter Kibbeh (spiced clarified butter), Mitmita (chili spice powder), and Korarima (Ethiopian cardamom). The critical technical distinction: machine-ground beef CANNOT be used. Kitfo requires HAND-mincing with a sharp blade until the meat reaches a consistent fine texture with absolutely no gristle, fat, or connective tissue remaining. The hand-mincing is what gives Kitfo its signature smooth-but-not-pasty texture; machine-grinding produces an unacceptably homogeneous result. The cut requirement: lean tenderloin or top round, exceptionally fresh (hot-boned). Three preparation styles exist: Leb-Leb (warm, lightly cooked), Yebesele (raw, room temperature), and the warm-leaning intermediate. The leb-leb variant is a concession to risk-averse modern diners; traditional Kitfo is room-temperature raw. American expats attempting Kitfo with USDA pre-ground beef produce a fundamentally different dish — the texture is wrong, and the food safety concerns of pre-aged ground meat make raw consumption inadvisable. Modern Addis Ababa restaurants often hand-mince to order in front of the customer, demonstrating both freshness and proper technique.",
+    notes: "Format-driven raw cut requiring HAND-mincing (not machine grind). Pairs with Tere Siga as the two premium Ethiopian raw beef preparations. Both require hot-boned mandatory freshness.",
+  },
+
 ] as const;
