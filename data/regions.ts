@@ -107,6 +107,14 @@ export const regions = [
   { id: "kenya" as const, label: "Kenya", flag: "🇰🇪", group: "africa" as RegionGroup, aliases: ["kenyan", "swahili"] as readonly string[] },
   { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, aliases: ["naija", "nigerian"] as readonly string[] },
   { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
+
+  // South Asia — India
+  { id: "kerala" as const, label: "Kerala", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["kochi", "trivandrum", "thiruvananthapuram", "malayali"] as readonly string[] },
+  { id: "tamil_nadu" as const, label: "Tamil Nadu", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["chennai", "madras", "tn", "tamil"] as readonly string[] },
+  { id: "telangana" as const, label: "Telangana", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["hyderabad", "tg"] as readonly string[] },
+  { id: "andhra_pradesh" as const, label: "Andhra Pradesh", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["amaravati", "ap", "telugu"] as readonly string[] },
+  { id: "maharashtra" as const, label: "Maharashtra", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["mumbai", "pune", "bombay", "marathi"] as readonly string[] },
+  { id: "goa" as const, label: "Goa", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["panjim", "panaji", "goan"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

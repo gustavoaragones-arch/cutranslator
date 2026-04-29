@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isDefaultSpecies, SPECIES_LABEL } from "@/lib/types";
 import type { CanonicalId, MatchType, ResolveResult, RegionSlug } from "@/lib/types";
 import { getCanonicalById } from "@/lib/canonical";
 import {
@@ -148,6 +149,11 @@ export function CutResult({
         {showAskFor && (
           <p className="translation-answer-ask">
             Ask for: <strong>{p.names[0]}</strong>
+            {!isDefaultSpecies(p.species[0]) && (
+              <span className="text-base font-normal text-muted-foreground italic">
+                {" "}({SPECIES_LABEL[p.species[0]]})
+              </span>
+            )}
             {p.names.length > 1 && (
               <span className="ml-1 text-sm font-normal text-[var(--text-secondary)]">
                 {" "}

@@ -33,9 +33,11 @@ function sortTargets(
 ): ResolvedTarget[] {
   const rows: ResolvedTarget[] = [];
   for (const [canonicalId, meta] of hits) {
+    const labelEntries = labelsForCanonical(canonicalId, targetRegion);
     rows.push({
       canonicalId,
-      names: labelsForCanonical(canonicalId, targetRegion),
+      names: labelEntries.map((e) => e.name),
+      species: labelEntries.map((e) => e.species),
       confidence: meta.confidence,
       match_type: meta.match_type,
       note: meta.note,
@@ -132,7 +134,7 @@ function buildRelated(
   const ids = relatedByCanonical[primaryId] ?? [];
   return ids.slice(0, RELATED_LIMIT).map((canonicalId) => ({
     canonicalId,
-    names: labelsForCanonical(canonicalId, targetRegion),
+    names: labelsForCanonical(canonicalId, targetRegion).map((e) => e.name),
   }));
 }
 

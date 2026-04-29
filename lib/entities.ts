@@ -150,6 +150,12 @@ export const REGION_ENTITY: Record<
   kenya: { id: "kenya", formalName: "Kenya", shortName: "Kenya" },
   nigeria: { id: "nigeria", formalName: "Nigeria", shortName: "Nigeria" },
   ethiopia: { id: "ethiopia", formalName: "Ethiopia", shortName: "Ethiopia" },
+  kerala: { id: "kerala", formalName: "Kerala", shortName: "Kerala" },
+  tamil_nadu: { id: "tamil_nadu", formalName: "Tamil Nadu", shortName: "Tamil Nadu" },
+  telangana: { id: "telangana", formalName: "Telangana", shortName: "Telangana" },
+  andhra_pradesh: { id: "andhra_pradesh", formalName: "Andhra Pradesh", shortName: "AP" },
+  maharashtra: { id: "maharashtra", formalName: "Maharashtra", shortName: "Maharashtra" },
+  goa: { id: "goa", formalName: "Goa", shortName: "Goa" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

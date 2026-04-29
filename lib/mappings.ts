@@ -1,6 +1,7 @@
 import { canonicalLabels, regionalNames } from "@/data/regionalNames";
 import { lookupIndex, regionSlugsInOrder } from "@/lib/indexes";
-import type { CanonicalId, MatchType, RegionSlug, RegionalCut, RegionalName } from "@/lib/types";
+import { getSpecies } from "@/lib/types";
+import type { CanonicalId, MatchType, RegionSlug, RegionalCut, RegionalName, Species } from "@/lib/types";
 
 export function findRegionalMappings(
   inputRegion: RegionSlug,
@@ -82,20 +83,22 @@ export function canonicalHitsFromRegionalCut(
   return map;
 }
 
+export type LabelEntry = { name: string; species: Species };
+
 export function labelsForCanonical(
   canonicalId: CanonicalId,
   region: RegionSlug,
-): string[] {
+): LabelEntry[] {
   const list = canonicalLabels[canonicalId]?.[region];
-  if (list) return [...list];
-  const fromData = regionalNames
-    .filter(
-      (rn) =>
-        rn.region === region && expandMapsTo(rn.maps_to).includes(canonicalId),
-    )
-    .map((rn) => rn.name);
-  if (fromData.length > 0) return fromData;
-  return [canonicalId.replace(/_/g, " ")];
+  if (list) return list.map((name) => ({ name, species: "cow" as Species }));
+  const fromData = regionalNames.filter(
+    (rn) =>
+      rn.region === region && expandMapsTo(rn.maps_to).includes(canonicalId),
+  );
+  if (fromData.length > 0) {
+    return fromData.map((rn) => ({ name: rn.name, species: getSpecies(rn) }));
+  }
+  return [{ name: canonicalId.replace(/_/g, " "), species: "cow" }];
 }
 
 export function representativeInputName(

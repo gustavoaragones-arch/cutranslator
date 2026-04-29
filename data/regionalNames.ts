@@ -1538,7 +1538,97 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "le wot", region: "ethiopia", maps_to: "chuck_roll", confidence: 0.40, synonyms: ["stew grade", "wot grade"] as const, notes: "NOT a cut — 'For Stew' GRADE classification. Pair of Le Tere Siga. Cross-reference Kenyan Nyama Laini/Mifupa, Korean Gu-i-yong/Guk-gori, Nigerian Eran-Egun/Eran-Didi." },
 ];
 
-export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames];
+const _southAsiaRegionalNames: readonly RegionalName[] = [
+  // ----- Kerala (14 entries — COW LEGAL) -----
+  { name: "undercut kl", region: "kerala", maps_to: "tenderloin", confidence: 0.95, synonyms: ["undercut", "naram"] as const, notes: "The softest cut. Used for high-end 'Beef Steak' or premium roasts. Often cow (Pashu) in Kerala — one of few Indian states where cow beef is legal." },
+  { name: "naram", region: "kerala", maps_to: "tenderloin", confidence: 0.90, synonyms: ["naram rachi"] as const, notes: "Generic 'soft meat' term, Hindi-derived. Cross-reference pan-Indian Hindi/Urdu vocabulary." },
+  { name: "variyellu", region: "kerala", maps_to: "striploin", confidence: 0.85, synonyms: ["loin", "rib-side"] as const, notes: "Literally 'rib-side' — the standard for high-quality Kerala 'Beef Steak'" },
+  { name: "nenju rachi", region: "kerala", maps_to: "brisket", confidence: 0.85, synonyms: ["nenju"] as const, notes: "'Chest meat' — prized for the fat layer. Essential for rich Nadan (traditional) curry." },
+  { name: "kozhuppu rachi", region: "kerala", maps_to: "brisket", confidence: 0.80, synonyms: ["kozhuppu"] as const, notes: "'Fatty meat' — alternative term for brisket area. Marker of quality in Kerala butchery." },
+  { name: "kaal kl", region: "kerala", maps_to: "hind_shank", confidence: 0.85, synonyms: ["nalli", "muscle"] as const, notes: "The leg/shank. Used for Paya (gelatinous bone broth) and slow-cooked soups." },
+  { name: "vaalan", region: "kerala", maps_to: "oxtail", confidence: 0.95, notes: "Literally 'tail.' Used for spicy, slow-cooked stews." },
+  { name: "beef fry cut", region: "kerala", maps_to: "inside_round", confidence: 0.70, synonyms: ["boti"] as const, notes: "NOT a specific muscle — small 1/2-inch cubes of lean meat (typically Topside) for Beef Ularthiyathu. The format-driven cut." },
+  { name: "topside kl", region: "kerala", maps_to: "inside_round", confidence: 0.85, synonyms: ["round"] as const, notes: "Lean — used for Beef Fry preparations" },
+  { name: "poti rachi", region: "kerala", maps_to: "tenderloin", confidence: 0.80, species: "buffalo", synonyms: ["poti", "buffalo"] as const, notes: "'Poti' = Buffalo in Malayalam. Distinct from cow (Pashu) — darker, leaner, stronger flavor. Preferred for deep fries." },
+  { name: "poti loin", region: "kerala", maps_to: "striploin", confidence: 0.75, species: "buffalo", synonyms: ["buffalo loin"] as const, notes: "Buffalo striploin — leaner than cow Variyellu, requires pressure cooking." },
+  { name: "kootu beef", region: "kerala", maps_to: "hind_shank", confidence: 0.65, synonyms: ["kootu"] as const, notes: "NOT a specific muscle — bone-in mixed cut for breakfast Appam pairings. Bone marrow enriches the gravy." },
+  { name: "urat", region: "kerala", maps_to: "hind_shank", confidence: 0.50, synonyms: ["tendon"] as const, notes: "Tendon/gristle inclusion — Kerala butchers intentionally include for chewy texture in curries." },
+  { name: "beef cutlet meat kl", region: "kerala", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["machine keema kl"] as const, notes: "Fine machine mince for Anglo-Indian-style Beef Cutlets — a Kerala Christian community tradition" },
+
+  // ----- Tamil Nadu (12 entries — BUFFALO ONLY) -----
+  { name: "undercut tn", region: "tamil_nadu", maps_to: "tenderloin", confidence: 0.90, species: "buffalo", synonyms: ["naram"] as const, notes: "The softest part. Buffalo (Buff) in Tamil Nadu — cow slaughter is restricted statewide. Marketed as 'Undercut' in urban Chennai butcheries; 'Naram' (soft) at traditional markets." },
+  { name: "loin tn", region: "tamil_nadu", maps_to: "striploin", confidence: 0.85, species: "buffalo", synonyms: ["variyellu", "rib-meat"] as const, notes: "'Rib-meat' or loin — Buffalo. The go-to for the local 'Beef Steak' (thin, spiced cutlet style)." },
+  { name: "kozhuppu rachi tn", region: "tamil_nadu", maps_to: "brisket", confidence: 0.85, species: "buffalo", synonyms: ["kozhuppu"] as const, notes: "Literally 'fatty meat' — Buffalo. Essential for rich Kuruva (curry)." },
+  { name: "kaal tn", region: "tamil_nadu", maps_to: "hind_shank", confidence: 0.90, species: "buffalo", synonyms: ["nalli"] as const, notes: "Leg/shank — Buffalo. The ONLY cut for the iconic Paya (gelatinous bone soup)." },
+  { name: "vaal tn", region: "tamil_nadu", maps_to: "oxtail", confidence: 0.95, species: "buffalo", notes: "Tail — Buffalo. For spicy, medicinal bone broths." },
+  { name: "chukka cut", region: "tamil_nadu", maps_to: "inside_round", confidence: 0.75, species: "buffalo", synonyms: ["chukka"] as const, notes: "NOT a specific muscle — small uniform 1/2-inch cubes of lean Topside for the iconic Beef Chukka (dry-roasted with pepper). Tier 3 entity explains the 'Boil-then-Fry' technique." },
+  { name: "elumbu kari", region: "tamil_nadu", maps_to: "hind_shank", confidence: 0.65, species: "buffalo", synonyms: ["bone-in mix"] as const, notes: "NOT a specific muscle — the standard 70/30 meat-to-bone Curry Cut. Default if 'beef' is requested without specification." },
+  { name: "kothu beef", region: "tamil_nadu", maps_to: "chuck_roll", confidence: 0.60, species: "buffalo", synonyms: ["kothu", "hand-minced beef"] as const, notes: "Hand-minced or beaten — for Kothu Parotta (the iconic Chennai street food). Distinct from machine mince used for cutlets." },
+  { name: "machine keema tn", region: "tamil_nadu", maps_to: "chuck_roll", confidence: 0.55, species: "buffalo", synonyms: ["minced beef"] as const, notes: "Machine-ground for Beef Cutlets — distinct from Kothu (hand-chopped)" },
+  { name: "naram tn", region: "tamil_nadu", maps_to: "tenderloin", confidence: 0.85, species: "buffalo", synonyms: ["soft meat"] as const, notes: "Generic Hindi-derived 'soft meat' term — Buffalo. Pan-Indian vocabulary spanning 15+ states." },
+  { name: "topside tn", region: "tamil_nadu", maps_to: "inside_round", confidence: 0.80, species: "buffalo", notes: "Lean — used for Chukka Cut and Beef Fry. Buffalo." },
+  { name: "charbi tn", region: "tamil_nadu", maps_to: "brisket", confidence: 0.50, species: "buffalo", synonyms: ["fat"] as const, notes: "NOT a specific cut — fat sold separately as a 'cut.' Compensates for lean Buffalo. Universally requested across Indian markets." },
+
+  // ----- Telangana / Hyderabad (16 entries — BUFFALO ONLY) -----
+  { name: "pasanda", region: "telangana", maps_to: "tenderloin", confidence: 0.95, species: "buffalo", synonyms: ["put", "undercut"] as const, notes: "CRITICAL: The flagship Hyderabadi cut. Soft undercut, hand-pounded into thin sheets. Buffalo. Used for legendary Hyderabadi Pasanda steaks and premium kebabs. The most prestigious cut in the city's beef culture." },
+  { name: "put", region: "telangana", maps_to: "tenderloin", confidence: 0.90, species: "buffalo", synonyms: ["pasanda"] as const, notes: "Alternative term for Pasanda — used at traditional Murgi Chowk butcher shops" },
+  { name: "dasti", region: "telangana", maps_to: "chuck_blade", confidence: 0.85, species: "buffalo", synonyms: ["gola", "shoulder"] as const, notes: "Shoulder/blade area. Buffalo. Standard for everyday 'Boti' fry. The workhorse cut of Hyderabadi home cooking." },
+  { name: "gola tg", region: "telangana", maps_to: "striploin", confidence: 0.80, species: "buffalo", synonyms: ["loin"] as const, notes: "Prime back-meat — Buffalo. Used for high-quality home preparations." },
+  { name: "seena tg", region: "telangana", maps_to: "brisket", confidence: 0.90, species: "buffalo", synonyms: ["seena", "chest"] as const, notes: "'Chest' — Buffalo. High-fat content essential for Chakna (offal-and-brisket stew) and rich Salans." },
+  { name: "machhli tg", region: "telangana", maps_to: "hind_shank", confidence: 0.95, species: "buffalo", synonyms: ["machhli", "shank"] as const, notes: "CRITICAL: The 'Fish' muscle — literally named for the calf's fish-shape. Mandatory for Hyderabadi Nihari and Haleem (the meat 'threads'/shreds after 12-hour pounding). Buffalo. The single most culturally important cut in Hyderabad." },
+  { name: "nalli tg", region: "telangana", maps_to: "hind_shank", confidence: 0.90, species: "buffalo", synonyms: ["nalli bone", "marrow bone"] as const, notes: "Marrow bone specifically — requested as an extra to thicken Salan. Universal Indian vocabulary." },
+  { name: "dum tg", region: "telangana", maps_to: "oxtail", confidence: 0.85, species: "buffalo", synonyms: ["dum"] as const, notes: "Tail — Buffalo. Specialty for slow-cooked medicinal soups." },
+  { name: "parcha", region: "telangana", maps_to: "tenderloin", confidence: 0.85, species: "buffalo", synonyms: ["thin sheets"] as const, notes: "CRITICAL: Hand-sliced THIN translucent sheets from Pasanda. Cooks in seconds. Used for traditional pan-fried steaks. Format-driven cut — same muscle, distinct slicing technique." },
+  { name: "rawa tg", region: "telangana", maps_to: "tenderloin", confidence: 0.80, species: "buffalo", synonyms: ["rawa", "grainy texture"] as const, notes: "CRITICAL: A specific texture — meat finely CHOPPED (not minced) to retain a 'grainy' juiciness. Essential for the best Tala Hua Gosht. Texture-driven cut." },
+  { name: "haleem cut", region: "telangana", maps_to: "hind_shank", confidence: 0.85, species: "buffalo", synonyms: ["haleem-cut machhli"] as const, notes: "NOT a specific muscle but a specific PREPARATION of Machhli — fibrous shank meat that 'threads' (shreds) perfectly after 12-hour pounding for Haleem. Without this, Haleem fails." },
+  { name: "hath ka keema", region: "telangana", maps_to: "chuck_roll", confidence: 0.75, species: "buffalo", synonyms: ["hand-chopped keema"] as const, notes: "Hand-chopped (not machine-ground) mince. Essential for Hyderabadi Lukmi (savory pastry) and authentic Seekh Kebabs. More expensive than machine-keema; prized for texture." },
+  { name: "machine keema tg", region: "telangana", maps_to: "chuck_roll", confidence: 0.55, species: "buffalo", synonyms: ["machine-ground keema"] as const, notes: "Fine machine-ground — for Kofta (meatballs). Distinct from Hath-ka-Keema." },
+  { name: "boti tg", region: "telangana", maps_to: "chuck_roll", confidence: 0.65, species: "buffalo", notes: "Generic 'cubed beef' — small bone-in or boneless chunks for daily Salan" },
+  { name: "charbi tg", region: "telangana", maps_to: "brisket", confidence: 0.50, species: "buffalo", synonyms: ["fat"] as const, notes: "Fat sold separately. Pan-Indian vocabulary." },
+  { name: "naram tg", region: "telangana", maps_to: "tenderloin", confidence: 0.85, species: "buffalo", synonyms: ["soft meat"] as const, notes: "Hindi-derived universal 'soft meat' term." },
+
+  // ----- Andhra Pradesh (10 entries — BUFFALO ONLY) -----
+  { name: "mettati mamsam", region: "andhra_pradesh", maps_to: "tenderloin", confidence: 0.95, species: "buffalo", synonyms: ["soft meat"] as const, notes: "Telugu 'soft meat.' Buffalo — used for high-end fry dishes." },
+  { name: "mishrama mamsam", region: "andhra_pradesh", maps_to: "striploin", confidence: 0.75, species: "buffalo", synonyms: ["mixed loin"] as const, notes: "Mixed loin meat — striploin/ribeye conflated in Andhra retail. Buffalo. Steaks rare; usually sold as chunks." },
+  { name: "rommu mukkalu", region: "andhra_pradesh", maps_to: "brisket", confidence: 0.80, species: "buffalo", synonyms: ["chest pieces"] as const, notes: "Telugu 'chest pieces.' Prized for fat in Andhra stews — counters extreme Guntur chili heat." },
+  { name: "nalukaya", region: "andhra_pradesh", maps_to: "hind_shank", confidence: 0.85, species: "buffalo", synonyms: ["shank"] as const, notes: "Telugu shank/leg. Essential for bone-marrow dishes (Nalli Emuka)." },
+  { name: "thoka", region: "andhra_pradesh", maps_to: "oxtail", confidence: 0.95, species: "buffalo", synonyms: ["tail"] as const, notes: "Tail — for rich gelatinous medicinal soups." },
+  { name: "nalli emuka", region: "andhra_pradesh", maps_to: "hind_shank", confidence: 0.85, species: "buffalo", synonyms: ["bone marrow"] as const, notes: "Marrow bone delicacy — often the STAR of the dish. Tier 3 entity explains the prestige inversion." },
+  { name: "bhujam mamsam", region: "andhra_pradesh", maps_to: "chuck_blade", confidence: 0.80, species: "buffalo", synonyms: ["shoulder"] as const, notes: "Telugu shoulder. Standard for daily curry." },
+  { name: "pirudu mamsam", region: "andhra_pradesh", maps_to: "inside_round", confidence: 0.80, species: "buffalo", synonyms: ["hip", "rump"] as const, notes: "Hip/Topside. Used for 'Boti' or dry fries." },
+  { name: "kovvu", region: "andhra_pradesh", maps_to: "brisket", confidence: 0.50, species: "buffalo", synonyms: ["fat"] as const, notes: "Telugu fat — added separately to lean Buffalo cuts for flavor. Universal pan-Indian Charbi pattern." },
+  { name: "keema ap", region: "andhra_pradesh", maps_to: "chuck_roll", confidence: 0.65, species: "buffalo", synonyms: ["minced meat"] as const, notes: "Minced — common for breakfast dishes. Buffalo." },
+
+  // ----- Maharashtra / Mumbai (13 entries — BUFFALO ONLY) -----
+  { name: "undercut mh", region: "maharashtra", maps_to: "tenderloin", confidence: 0.95, species: "buffalo", synonyms: ["pasanda", "fillet"] as const, notes: "CRITICAL: The most sought-after cut in Mumbai. Buffalo. Mumbai butchers are the most Western-literate in India — they recognize 'Undercut,' 'Fillet,' 'Tenderloin' interchangeably. Used for high-end steaks at Bandra/South Mumbai restaurants." },
+  { name: "pasanda mh", region: "maharashtra", maps_to: "tenderloin", confidence: 0.90, species: "buffalo", notes: "Hindi/Urdu term — same cut as Undercut. Used at traditional markets like Mohammed Ali Road." },
+  { name: "loin mh", region: "maharashtra", maps_to: "striploin", confidence: 0.85, species: "buffalo", synonyms: ["gola"] as const, notes: "Standard prime lean muscle. Buffalo." },
+  { name: "seena mh", region: "maharashtra", maps_to: "brisket", confidence: 0.85, species: "buffalo", synonyms: ["seena", "chest"] as const, notes: "Chest — Buffalo. Essential for Beef Stew preparations." },
+  { name: "machhli mh", region: "maharashtra", maps_to: "hind_shank", confidence: 0.95, species: "buffalo", synonyms: ["nalli", "shank"] as const, notes: "Calf muscle — Buffalo. Essential for Mumbai's famous Nalli Nihari." },
+  { name: "dum mh", region: "maharashtra", maps_to: "oxtail", confidence: 0.85, species: "buffalo", synonyms: ["dum"] as const, notes: "Specialty cut for rich slow-cooked soups" },
+  { name: "topside mh", region: "maharashtra", maps_to: "inside_round", confidence: 0.85, species: "buffalo", synonyms: ["round"] as const, notes: "Mumbai is one of few Indian cities where 'Topside' is widely recognized — used for Beef Roast and Bistek. English retail influence." },
+  { name: "silver side mh", region: "maharashtra", maps_to: "outside_round", confidence: 0.75, species: "buffalo", synonyms: ["silverside"] as const, notes: "Used by Mumbai's East Indian and Catholic communities for Salt Beef (corned beef). Anglo-Indian heritage." },
+  { name: "rawa keema", region: "maharashtra", maps_to: "chuck_roll", confidence: 0.70, species: "buffalo", synonyms: ["coarse keema"] as const, notes: "Hand-chopped/coarse — for the iconic Keema Pav breakfast. Distinct from Machine Keema (fine, for kebabs)." },
+  { name: "machine keema mh", region: "maharashtra", maps_to: "chuck_roll", confidence: 0.55, species: "buffalo", synonyms: ["fine keema"] as const, notes: "Fine machine mince — for kebabs and meatballs" },
+  { name: "curry cut mh", region: "maharashtra", maps_to: "chuck_roll", confidence: 0.55, species: "buffalo", synonyms: ["bone-in mix"] as const, notes: "Default at wet markets — bone-in 70/30 mix. Must specify 'Boneless cubes' for US-style stew meat." },
+  { name: "naram mh", region: "maharashtra", maps_to: "tenderloin", confidence: 0.85, species: "buffalo", synonyms: ["soft meat"] as const, notes: "Universal Hindi 'soft meat' term" },
+  { name: "charbi mh", region: "maharashtra", maps_to: "brisket", confidence: 0.50, species: "buffalo", synonyms: ["fat"] as const, notes: "Separately-sold fat. Universal Indian vocabulary." },
+
+  // ----- Goa (11 entries — COW LEGAL, Portuguese-bridged) -----
+  { name: "undercut goa", region: "goa", maps_to: "tenderloin", confidence: 0.95, synonyms: ["lomo"] as const, notes: "The gold standard. Cow (Gado) — Goa is one of few Indian states where cow beef is legal. 'Lomo' is the Portuguese-derived alternative. Used for Beef Roast and Goan-style steaks." },
+  { name: "lomo", region: "goa", maps_to: "tenderloin", confidence: 0.90, synonyms: ["undercut"] as const, notes: "Portuguese-colonial term — pairs with Pondicherry's Filet (French) and Daman's Filet (Portuguese). Indo-European bridge vocabulary." },
+  { name: "sirloin goa", region: "goa", maps_to: "striploin", confidence: 0.90, synonyms: ["loin", "bistek"] as const, notes: "Standard for the famous Goan Bistek (thin pan-fried steak)" },
+  { name: "rib goa", region: "goa", maps_to: "ribeye", confidence: 0.80, synonyms: ["rib-meat"] as const, notes: "Rib — usually sold bone-in for high-end roasts" },
+  { name: "brisket goa", region: "goa", maps_to: "brisket", confidence: 0.85, synonyms: ["chest"] as const, notes: "Essential for Salt Beef (brined corned beef) — a Goan Catholic tradition" },
+  { name: "shin goa", region: "goa", maps_to: "hind_shank", confidence: 0.85, synonyms: ["shank"] as const, notes: "Go-to for Beef Soup or Nilaga-style broths" },
+  { name: "tail goa", region: "goa", maps_to: "oxtail", confidence: 0.95, notes: "Prized for traditional rich Goan stews" },
+  { name: "salt meat", region: "goa", maps_to: "brisket", confidence: 0.70, synonyms: ["pickled beef", "corned beef"] as const, notes: "CRITICAL: Brined brisket or round — essential for Goan Beef Roast. Tier 3 entity explains the salt-cure tradition." },
+  { name: "topside goa", region: "goa", maps_to: "inside_round", confidence: 0.80, synonyms: ["topside"] as const, notes: "Standard lean cut for Beef Stir-fry or Ambot Tik (sour-spicy curry)" },
+  { name: "rump goa", region: "goa", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["rump"] as const, notes: "Anglo-Commonwealth term used in Goan English retail. = US Top Sirloin." },
+  { name: "kheema goa", region: "goa", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["minced beef"] as const, notes: "For Goan Beef Croquettes and Beef Patties" },
+];
+
+export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames];
 
 /** Preferred consumer labels per canonical in each region (output layer). */
 export const canonicalLabels: Record<

@@ -101,7 +101,14 @@ export type RegionSlug =
   | "south_africa"
   | "kenya"
   | "nigeria"
-  | "ethiopia";
+  | "ethiopia"
+  // South Asia — India (Batch 14b)
+  | "kerala"
+  | "tamil_nadu"
+  | "telangana"
+  | "andhra_pradesh"
+  | "maharashtra"
+  | "goa";
 
 export type CanonicalId =
   | "ribeye"
@@ -164,6 +171,46 @@ export type CanonicalCut = {
 export type MatchType = "exact" | "close" | "approximate" | "composite" | "cultural" | "none";
 
 /**
+ * Bovine species marker for regional names. Defaults to "cow" (Bos taurus)
+ * for all existing entries. Buffalo, Mithun, and Yak are introduced for
+ * Indian regional naming where these distinct bovine species are sold and
+ * consumed as "beef" in their respective regional traditions.
+ *
+ * Anatomically, all four species share the same canonical cut mappings —
+ * a Buffalo chuck, Mithun chuck, and cow chuck all map to canonical
+ * `chuck_blade`. The species field allows the page template and resolver
+ * to surface the species distinction to users so they don't expect cow
+ * meat in markets where it isn't sold.
+ */
+export type Species = "cow" | "buffalo" | "mithun" | "yak";
+
+/**
+ * Returns the species of a regional name, defaulting to "cow" if not specified.
+ * Use this everywhere instead of accessing `entry.species` directly.
+ */
+export function getSpecies(entry: { species?: Species }): Species {
+  return entry.species ?? "cow";
+}
+
+/**
+ * Human-readable label for a species, used in page CTAs and structured content.
+ */
+export const SPECIES_LABEL: Record<Species, string> = {
+  cow: "beef",
+  buffalo: "water buffalo (buff)",
+  mithun: "Mithun (Bos frontalis)",
+  yak: "Yak (Bos grunniens)",
+};
+
+/**
+ * Whether the species is the default (cow). Used to suppress redundant
+ * "(beef)" annotations on cow entries.
+ */
+export function isDefaultSpecies(species: Species | undefined): boolean {
+  return (species ?? "cow") === "cow";
+}
+
+/**
  * A typed connection between a regional cut and a canonical cut.
  * Carries the match quality and confidence of the equivalence.
  */
@@ -203,6 +250,14 @@ export type RegionalName = {
   type?: "ambiguous";       // kept for backward compat; prefer match_type going forward
   synonyms?: readonly string[];
   notes?: string;
+  /**
+   * Bovine species. Optional for backward compatibility — all existing
+   * entries default to "cow" when this field is absent. Indian regions
+   * with cow-slaughter restrictions will explicitly set "buffalo".
+   * Northeast Indian states will set "mithun" for prestige cuts.
+   * Ladakh entries may set "yak" for high-altitude winter beef.
+   */
+  species?: Species;
 };
 
 /** @deprecated Use `RegionalName`; kept for gradual refactors. */
@@ -220,6 +275,8 @@ export type ResolvedTarget = {
   canonicalId: CanonicalId;
   /** Consumer-facing names in the target region */
   names: string[];
+  /** Species per name, parallel to `names`. Defaults to "cow" if not specified. */
+  species: Species[];
   confidence: number;
   match_type?: MatchType;
   note?: string;

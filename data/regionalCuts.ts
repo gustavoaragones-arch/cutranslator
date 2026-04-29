@@ -2730,4 +2730,196 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Format-driven raw cut requiring HAND-mincing (not machine grind). Pairs with Tere Siga as the two premium Ethiopian raw beef preparations. Both require hot-boned mandatory freshness.",
   },
 
+  // ── INDIA: SOUTH + WEST (Batch 14b) ──────────────────────────────────────
+
+  // 🇮🇳 MAHARASHTRA (3 entities — pan-Indian anchors)
+
+  {
+    id: "india_cow_buff_legal_map",
+    name: "The Cow vs Buffalo Legal Map of India (Pan-Indian Anchor)",
+    region: "maharashtra",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.40, note: "Applies across all cuts" },
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.40, note: "Same convention" },
+    ],
+    synonyms: ["cow vs buffalo", "buff", "gomansa"],
+    description: "India's beef ontology cannot be understood without the Cow vs Buffalo legal-cultural axis — the most consequential cultural marker in any country in the Cutranslator database. Under Article 48 of the Indian Constitution and various state laws, COW slaughter is legally restricted in 21 of 28 Indian states. In those states, 'Beef' refers exclusively to Water Buffalo (Bos bubalis), known regionally as 'Bada' (Hindi/Urdu), 'Bade ka Maans,' 'Bade ka Gosht,' or 'Buff.' The cow (Bos taurus) is a sacred animal in Hindu tradition, and asking for 'cow meat' in restricted states can cause genuine cultural offense — a tourist or expat unaware of this distinction risks both legal and social consequences. The exceptions form a specific geographic pattern: COW IS LEGAL in Kerala, Goa, West Bengal, all 8 Northeastern states (Assam, Meghalaya, Manipur, Mizoram, Nagaland, Arunachal Pradesh, Tripura, Sikkim), Lakshadweep, and Andaman & Nicobar Islands. In Maharashtra, Telangana, Tamil Nadu, Karnataka, UP, Bihar, MP, Gujarat, Punjab, Haryana, Rajasthan, Chhattisgarh, Jharkhand, Odisha, J&K (varies by region), Himachal Pradesh, and Uttarakhand — the meat sold as 'beef' is ALWAYS Water Buffalo. Buffalo is leaner, darker, more fibrous, and significantly tougher than USDA cow beef. It requires 30-40% longer cooking, mandatory pressure-cooking or extensive marination (often with raw papaya or yogurt), and almost universally needs separately-purchased Charbi (fat) added for richness. An American expat using USDA recipes with Indian Buffalo without these adaptations produces 'rubbery' or 'livery' results that locals recognize as failed cooking. This entity is the architectural anchor for every Indian regional name with species: 'buffalo' — cross-referenced from every Buffalo-state Tier 3 entry.",
+    notes: "PAN-INDIAN ANCHOR. The single most important Tier 3 entry in the Indian dataset. Cross-reference from every Indian state's regional entries. Documents both the legal axis and the cooking-adaptation requirement.",
+  },
+
+  {
+    id: "pan_indian_hindi_urdu_in",
+    name: "The Pan-Indian Hindi/Urdu Butchery Vocabulary",
+    region: "maharashtra",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.45, note: "Naram Maans/Pasanda — universal soft-meat term" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.45, note: "Machhli/Nalli — universal shank/marrow" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.40, note: "Seena — universal brisket/chest" },
+    ],
+    synonyms: ["naram maans", "pasanda", "seena", "machhli", "nalli", "charbi"],
+    description: "Across nearly every Indian state — from Mumbai to Lucknow to Hyderabad to Patna to Chandigarh — a recurring set of Hindi/Urdu butchery terms appear, derived from the historical reach of Mughlai-Awadhi cuisine and the lingua-franca status of Hindi/Urdu in North and Central India. The universal vocabulary: NARAM MAANS or NARAM MANSA (literally 'soft meat,' refers to tenderloin/loin — recognized in 20+ states); PASANDA or PUT (the undercut, used for premium kebabs and steaks); SEENA (brisket/chest, prized for fat); MACHHLI (literally 'fish' — refers to the fish-shape of the calf muscle/shank, mandatory for Nihari and Haleem); NALLI (marrow bone, requested as a separate add-on for gravies); CHARBI (fat, sold separately to compensate for lean Buffalo). This pan-Indian vocabulary parallels the pan-Hispanic 'picanha/picaña/picanya' axis (13 countries, sirloin cap pattern) but operates within a single country across 20+ states. An American expat learning these 6 terms can navigate butchery in any Indian city, regardless of local language — the Hindi/Urdu vocabulary functions as the technical lingua franca of the trade. Regional languages (Tamil, Malayalam, Telugu, Bengali, Marathi) add their own terms for specific cuts, but these 6 Hindi/Urdu terms are universally understood by butchers nationwide.",
+    notes: "Architectural anchor for cross-state Indian vocabulary. Comparable to Picanha Axis (Batch 9, 13 countries) but within-country. Cross-reference from every Indian state's regional entries.",
+  },
+
+  {
+    id: "mumbai_two_tier_butchery_in",
+    name: "Mumbai's Two-Tier Butchery System",
+    region: "maharashtra",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.50, note: "Cross-cuts the Western/Traditional divide" },
+    ],
+    synonyms: ["nature's basket", "luscious", "crawford market"],
+    description: "Mumbai is unique among Indian beef markets in operating two parallel butchery systems in the same city. The 'Western Tier' at supermarkets (Nature's Basket, Foodhall) and specialty butchers (Luscious in Bandra) uses USDA-style English vocabulary — Tenderloin, Sirloin, Topside, Rib Roast — and provides cuts to Western specifications including thick steaks for grilling. The 'Traditional Tier' at wet markets (Crawford Market, Mohammed Ali Road, Kurla) uses Hindi/Urdu vocabulary — Pasanda, Seena, Dasti, Machhli — and defaults to Curry Cut (1-inch bone-in chunks for pressure-cooking). Both tiers sell exclusively Water Buffalo (per Maharashtra cow-slaughter restrictions), but the consumer experience is radically different. An expat moving from New York to Bandra finds Western Tier comforting initially; learning to navigate the Traditional Tier unlocks deeper cuisine and significantly lower prices (often 40-60% cheaper). Mumbai is the cleanest single-city example in the entire database of dual-system retail — most Indian cities have predominantly one tier or the other, but Mumbai's cosmopolitan affluence sustains both parallel tracks at scale.",
+    notes: "Unique architectural pattern — only city in the database with documented dual-tier butchery. Cross-reference future Bangalore/Karnataka batch (similar tech-expat-driven Western tier).",
+  },
+
+  // 🇮🇳 TELANGANA (4 entities — the Hyderabad anchor)
+
+  {
+    id: "hyderabad_precision_butchery_in",
+    name: "Hyderabad: India's Precision Butchery Anchor (the 'Beef Capital')",
+    region: "telangana",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.85, note: "Pasanda/Parcha/Rawa textures all derive from tenderloin" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "Machhli/Haleem-cut for shredding" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.70, note: "Hath-ka-Keema vs Machine-Keema distinction" },
+    ],
+    synonyms: ["hyderabadi", "awadhi", "pasanda", "parcha", "rawa", "haleem", "nihari"],
+    description: "Hyderabad is the architectural anchor for Indian beef butchery in the Cutranslator ontology — documented as 'the Beef Capital of India' in source research. The city's butchery tradition derives from the Nawabs of Awadh (modern Lucknow) who were exiled to Hyderabad after the 1857 Indian Rebellion, bringing with them the Awadhi-Mughlai cuisine and its surgical butchery requirements. Hyderabad's butchers — concentrated at Murgi Chowk, Nampally, and Musheerabad markets — are multi-generational specialists who can deconstruct a Water Buffalo carcass into specific muscle/fiber preparations that don't exist in any other butchery tradition documented in the database. Five precision techniques define the Hyderabadi system: PASANDA (the soft undercut, hand-pounded into thin sheets for Hyderabadi Pasanda steaks); PARCHA (paper-thin translucent sheets sliced from Pasanda — they cook in seconds in pan-fry preparations); RAWA (a finely-CHOPPED, NOT minced texture preserving 'grainy juiciness' for Tala Hua Gosht); HATH-KA-KEEMA (hand-chopped mince essential for Hyderabadi Lukmi savory pastries — distinct from machine-keema); and the HALEEM-CUT MACHHLI (the fish-shaped shank cut so it 'threads' or shreds perfectly after 12-hour pounding for Haleem). Each technique is a specific cooking-driven specification — the same Buffalo carcass yields different cuts based on the dish requirement, where the dish drives the cut, not the reverse. An American expat ordering generic 'tenderloin' in Hyderabad gets a default cut; ordering 'Pasanda for kebabs' or 'Rawa for fry' triggers specific techniques. This is the highest level of cooking-driven butchery precision documented in the entire database — surpassing even the Korean Wagyu grading system or Australian MSA in technique-specificity. Hyderabad is the single most architecturally important Indian region.",
+    notes: "MARQUEE TIER 3 ENTRY. The Indian beef ontology's Master Class anchor. Cross-references future Lucknow Awadhi entry (Batch 15) which is the spiritual predecessor. The 5 techniques (Pasanda, Parcha, Rawa, Hath-ka-Keema, Haleem-cut Machhli) are uniquely documented across Indian butchery.",
+  },
+
+  {
+    id: "hyderabadi_haleem_in",
+    name: "Hyderabadi Haleem — The 12-Hour Pounded Stew",
+    region: "telangana",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.90, note: "Machhli (shank) is non-negotiable" },
+    ],
+    synonyms: ["haleem"],
+    description: "Haleem is Hyderabad's iconic Ramadan dish — a meat-and-grain porridge slow-cooked for 12+ hours, then pounded with a wooden mallet (Ghotni) until the meat fibers shred into the grain mixture, creating a uniform paste-like texture. The cut requirement is absolute: ONLY the Machhli (shank) works, and specifically the Haleem-cut variant where the butcher slices it along the fiber direction so the long muscle fibers can break down and 'thread' (shred) after pounding. Using any other cut — including premium Pasanda or expensive ribeye — produces a Haleem that fails the texture test, where the meat stays in chunks rather than threading. American expats attempting Haleem with US Chuck or Brisket find the texture wrong; Hyderabadi cooks recognize the dish as failed within minutes of tasting. The 12-hour cook time is non-negotiable — there's no shortcut to the threading process. Modern Hyderabadi Haleem houses (Pista House, Sarvi, Shadab) operate Haleem-only kitchens during Ramadan, processing hundreds of kilos of Machhli daily. This is the cleanest example in the database of a dish that defines a cut — the Machhli is shaped, sliced, and prepared FOR Haleem before the dish even begins.",
+    notes: "Cut-defining-dish pattern. Cross-reference Indonesian Rendang cut, NZ Hāngī Beef, Filipino Bulalo — pan-cultural pattern of dishes that mandate specific cut formats.",
+  },
+
+  {
+    id: "hath_ka_keema_in",
+    name: "Hath-ka-Keema: Hand-Chopped Mince as Premium Texture",
+    region: "telangana",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.75, note: "Source meat from chuck/round" },
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.65, note: "Premium versions use Pasanda" },
+    ],
+    synonyms: ["hath ka keema", "hand-chopped keema"],
+    description: "Hath-ka-Keema (literally 'hand-mince') is the Hyderabadi distinction between hand-chopped and machine-ground beef — and it's not aesthetic, it's structural. Machine grinders shear muscle fibers, producing a homogeneous paste that cooks quickly but loses textural integrity in long-simmered dishes. Hand-chopping with a heavy cleaver produces irregular fragments that retain their fiber structure, allowing them to absorb spices without disintegrating during the 30-60 minute slow-cook required for Hyderabadi Lukmi (savory pastry filling) and authentic Seekh Kebabs. Hath-ka-Keema is ALWAYS more expensive than machine-keema (50-100% markup at Murgi Chowk), and Hyderabadi butchers maintain it as a separate retail category with its own pricing. American expats accustomed to USDA pre-ground beef find this premium baffling; one bite of properly-prepared Hyderabadi Seekh Kebab made with hand-keema vs the same recipe made with machine-keema demonstrates the distinction immediately. The Machine-Keema vs Hath-ka-Keema split is a cleaner version of similar distinctions documented elsewhere — Mumbai's Rawa-vs-Machine, Lucknow's Hath-ka vs Galouti-machine — but Hyderabad's articulation is the most precise.",
+    notes: "Texture-driven cut category. Cross-reference Mumbai Rawa-vs-Machine Keema, Korean Wagyu-cut precision, Vietnamese Bò Né meat-grade specification.",
+  },
+
+  {
+    id: "hyderabadi_nihari_in",
+    name: "Hyderabadi Nihari (vs Lucknawi Nihari)",
+    region: "telangana",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.90, note: "Machhli is the only valid cut" },
+    ],
+    synonyms: ["nihari", "nalli nihari"],
+    description: "Nihari is the slow-cooked overnight stew that anchors Hyderabadi Muslim breakfast culture — a 12-hour-simmered shank-and-marrow stew thickened by collagen rather than starch, finished with whole-spice tempering. The cut requirement: Machhli (Buffalo shank) PLUS Nalli (marrow bone) — both non-negotiable. The signature 'sticky' texture of Nihari gravy comes from collagen breakdown during the long cook, not from flour or roux. Using boneless US 'stew meat' produces a stew that's recognizably wrong to local palates within seconds. Hyderabadi Nihari is structurally similar to Lucknawi Nihari (the Awadhi predecessor — to be documented in Batch 15) but with subtle distinctions: Hyderabadi versions tend toward darker spice profiles (more black pepper, less rose water), and the meat is cut into larger chunks that diners pull apart at the table. The shared ancestor is the Awadhi tradition; the Hyderabadi expression is its own distinct lineage. Both require Machhli + Nalli; both reject any substitute cut.",
+    notes: "Cross-reference future Lucknow Nihari entry (Batch 15). Same dish, two regional traditions, same cut requirement. Document the shared ancestor pattern.",
+  },
+
+  // 🇮🇳 TAMIL NADU (2 entities)
+
+  {
+    id: "boil_then_fry_south_in",
+    name: "The South Indian Boil-then-Fry Convention",
+    region: "tamil_nadu",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.65, note: "Topside is the standard target" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.60, note: "Chuck also commonly used" },
+    ],
+    synonyms: ["boil-then-fry", "pressure-cook-then-fry", "chukka technique"],
+    description: "Across Tamil Nadu, Andhra Pradesh, Kerala, and Telangana — and extending into the entire South Indian beef-cooking tradition — meat is FIRST pressure-cooked or boiled to break down toughness, THEN pan-fried for crisping and spicing. This contradicts the universal USDA convention of direct high-heat searing. The reason is anatomical: South Indian beef is either Water Buffalo (Tamil Nadu, Andhra, Telangana — all cow-restricted states) or grass-fed local cattle (Kerala, where cow is legal but cattle are pasture-raised, lean, and tougher than USDA grain-fed). Direct pan-searing produces tough, rubbery results that locals describe as 'akin to chewing rope.' The boil-then-fry technique allows the iconic dishes — Beef Chukka (Tamil Nadu), Beef Ularthiyathu (Kerala), Tala Hua Gosht (Telangana), and various Andhra Pulusu preparations — to achieve their characteristic deep, crusted exterior with tender interior. American attempts at these dishes with USDA Choice cuts using direct-fry methods produce visibly different results; the local technique is non-negotiable for authentic outcomes. This is the inverse of the East Asian 'flash-fry of premium pre-tender cuts' pattern (Japanese yakiniku, Vietnamese Bò Lúc Lắc, Korean bulgogi) — South Indian cuisine assumes meat starts tough and tenderness must be MANUFACTURED through the boiling phase, then crisped in the frying phase. A two-step process for one dish.",
+    notes: "Pan-South-Indian cooking technique anchor. Cross-reference Kerala Beef Ularthiyathu, Telangana Tala Hua Gosht, Andhra Vepudu, Tamil Beef Chukka. Inverse of East Asian flash-fry convention.",
+  },
+
+  {
+    id: "kothu_parotta_in",
+    name: "Kothu (Beaten) Beef for Kothu Parotta",
+    region: "tamil_nadu",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.65, note: "Chuck-area meat hand-beaten on a tawa" },
+    ],
+    synonyms: ["kothu", "kothu parotta", "beaten beef"],
+    description: "Kothu (literally 'beaten' in Tamil) is a preparation technique unique to Chennai street food — beef is hand-chopped, then continuously CHOPPED on a hot griddle (tawa) with two metal chopping blades, simultaneously cooking and shredding the meat into irregular fragments. Combined with Kothu Parotta (chopped flatbread), egg, onion, and chili paste, this produces Chennai's iconic late-night street food dish. The cut requirement: Buffalo chuck/round area, NOT machine-minced. The hand-chopping followed by tawa-beating produces a distinctive texture that machine grinding cannot replicate — the irregular fragments retain enough integrity to bite through, while the high-heat tawa contact creates Maillard browning on every surface. Tamil Nadu Buffalo's leanness suits this technique perfectly; high-marbled US beef would render too much fat onto the tawa, creating a greasy rather than caramelized result. The Kothu Parotta vendors at Chennai's T.Nagar, Mylapore, and Adyar street stalls are demonstration kitchens — the chopping rhythm itself is the entertainment, with experienced cooks producing 30-40 chops per second.",
+    notes: "Format-driven cut. Cross-reference Korean Chadolbagi (preparation defines the cut), Lebanese Shawarma (hand-cutting precision). Chennai street-food signature.",
+  },
+
+  // 🇮🇳 KERALA (2 entities — cow-legal context)
+
+  {
+    id: "kerala_cow_legal_in",
+    name: "Kerala: Cow Beef Legal (One of the Few Indian Exceptions)",
+    region: "kerala",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.50, note: "Applies across all cuts" },
+    ],
+    synonyms: ["pashu", "cow beef", "potirachi"],
+    description: "Kerala is one of the small set of Indian states where COW slaughter is legal — alongside Goa, West Bengal, the 8 Northeastern states, Lakshadweep, and Andaman & Nicobar. This makes Kerala fundamentally different from the Buffalo-only majority of India. Local Malayalam usage distinguishes 'Pashu' (cow) from 'Poti' (Buffalo), and both are sold openly at Connemara/Palayam and Chalai markets in Thiruvananthapuram. Pashu is preferred for delicate curries (lighter color, more tender); Poti is preferred for deep fries and longer-cooked preparations (darker, more flavorful, more durable). Kerala's grass-fed local cattle produce beef that's leaner than USDA grain-fed but still significantly more tender than Buffalo — making Kerala the closest Indian equivalent to Western beef in cooking behavior. The state's Christian and Muslim communities (significant minorities at ~25% combined) have made beef central to Kerala cuisine; the iconic dishes Beef Ularthiyathu (slow-roasted dry fry) and Beef Curry are pan-state staples. Cross-reference the Cow vs Buffalo Legal Map of India (anchored in Maharashtra) for the broader legal context.",
+    notes: "First documented Indian region where cow is legal. Cross-reference future Goa entry (also cow legal), future West Bengal entry (cow legal), future Northeast batch (8 cow-legal states).",
+  },
+
+  {
+    id: "ularthiyathu_in",
+    name: "Beef Ularthiyathu — Kerala's Coconut-Oil Dry Fry",
+    region: "kerala",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Topside is the standard" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.65, note: "Rump as alternative" },
+    ],
+    synonyms: ["ularthiyathu", "beef ularthu"],
+    description: "Beef Ularthiyathu is the Kerala beef-fry archetype — small uniform cubes of Topside (Round) slow-roasted with fresh coconut chunks, curry leaves, black pepper, and copious coconut oil until the exterior caramelizes to dark mahogany. The dish embodies the 'Boil-then-Fry' technique (Tier 3 entity in Tamil Nadu) but adds Kerala's signature coconut layer: coconut oil is both the cooking medium AND a flavor component, while diced fresh coconut chunks (Thenga Kothu) are added in the final phase to crisp alongside the meat. The cut requirement: small clean cubes (Beef Fry Cut) of lean Topside. Using Brisket or Chuck creates a result that's too fatty; using Buffalo creates a tougher dish that requires longer cooking and loses the signature crispy-edged-tender-interior profile. Kerala's grass-fed cow Topside is the canonical match. American attempts using USDA Choice Round cubes work better than most Indian recipes adapted to USDA, because Kerala beef is closer to USDA in cooking behavior than Buffalo is. Modern Kerala home cooks may use Beef Coconut Fry (a slight variation with more coconut and less pepper) as a faster weekday version; traditional Ularthiyathu can take 90 minutes to achieve the proper caramelization.",
+    notes: "Pairs with the Boil-then-Fry South Indian convention. Cross-reference Tamil Beef Chukka (similar technique, less coconut). Kerala Christian-Muslim community staple.",
+  },
+
+  // 🇮🇳 ANDHRA PRADESH (1 entity)
+
+  {
+    id: "nalli_emuka_prestige_in",
+    name: "Nalli Emuka — The Marrow-Bone Prestige Inversion (Andhra)",
+    region: "andhra_pradesh",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.85, note: "The marrow-bone portion specifically" },
+    ],
+    synonyms: ["nalli emuka", "marrow bone"],
+    description: "In Andhra Pradesh's Telugu beef culture, Nalli Emuka (literally 'marrow bone' in Telugu) is treated not as a value-add to a curry but as the STAR of the dish — a major delicacy commanding premium pricing at Amaravati and Guntur markets. Diners scoop the rich, fatty marrow directly from the bone with their fingers or specialized spoons, eating it alongside steamed rice. This is part of the broader pan-South-Asian 'shank-as-prestige' inversion: Andhra Nalli Emuka, Vietnamese Bắp Hoa, Iranian Mahicheh, Egyptian/Saudi/UAE Moza, Italian Osso Buco — all elevated cuts from the leg/shank that USDA convention treats as cheap soup meat. The Andhra version is distinctive because the marrow itself is the main attraction, not the surrounding meat — Telugu households often buy marrow-bone-only portions for medicinal preparations during illness or postpartum recovery. The fiery Andhra spice profile (Guntur chili, intense black pepper) pairs with the marrow's richness in the same way that bone marrow on toast at Western haute-cuisine restaurants pairs with sea salt and parsley — opulent fat balanced against intense flavor.",
+    notes: "Part of the pan-cultural shank-as-prestige inversion documented across 8+ countries. Cross-reference Vietnamese Bắp Hoa (Batch 11), Iranian Mahicheh (Batch 6), Italian Osso Buco (existing).",
+  },
+
+  // 🇮🇳 GOA (2 entities)
+
+  {
+    id: "goa_portuguese_bridge_in",
+    name: "Goa as the Portuguese-Colonial Bridge",
+    region: "goa",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.80, note: "Lomo / Undercut Portuguese-derived" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.75, note: "Salt Meat tradition" },
+    ],
+    synonyms: ["lomo", "bistek", "salt meat", "lingua", "gado", "panaji"],
+    description: "Goa is the Portuguese-colonial bridge in the Indian beef ontology — alongside Pondicherry (French) and Daman (Portuguese) as the three Indo-European butchery hybrid regions. After 450 years of Portuguese rule (1510-1961), Goan beef butchery retains a vocabulary and technique inheritance that no other Indian state possesses. Lomo (the Portuguese-derived term for tenderloin/undercut) coexists with Hindi 'Naram' and English 'Undercut' at Panjim Municipal Market. Bistek refers specifically to thin pan-fried steaks (vinegar-marinated, spice-rubbed, finished with onions) — the Goan version of Portuguese 'bife' adapted to Indian spice expectations. Salt Meat is the Anglo-Goan corned beef tradition: brisket or rump brined with rock salt and saltpetre, typically prepared at home by buying fresh meat and salting it overnight, though some Panjim butchers sell pre-salted chunks. Língua (pickled tongue) is a Goan delicacy paired with Portuguese-style breadstuff (Pão). The state's significant Catholic population (~25%) maintains beef as a dietary staple; cow slaughter is legal in Goa, distinguishing it from Buffalo-only majority states. The vinegar-based marinade tradition (Goan Vindaloo and Beef Roast) is uniquely Portuguese — using local cashew feni vinegar or imported wine vinegar to chemically tenderize the meat, a technique imported from Iberian cuisine.",
+    notes: "Three-region Indo-European bridge: Goa (Portuguese, this entry), Daman (Portuguese, future), Pondicherry (French, future). Cross-reference all three for shared colonial vocabulary axis.",
+  },
+
+  {
+    id: "goa_salt_meat_in",
+    name: "Goan Salt Meat (Anglo-Goan Corned Beef)",
+    region: "goa",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "close", confidence: 0.85, note: "Brisket primary; rump as alternative" },
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.65, note: "Silverside/round less common but used" },
+    ],
+    synonyms: ["salt meat", "salt beef", "pickled beef"],
+    description: "Salt Meat is the Goan-Catholic corned beef tradition — brisket or rump brined with rock salt and saltpetre (potassium nitrate) for 5-7 days, then slow-cooked with spices for the iconic Goan Beef Roast. Distinct from American corned beef (which uses brisket exclusively and typically less aggressive curing) and Anglo-Commonwealth Silverside (Ireland, Australia, New Zealand — uses outside round). The Goan version sits between traditions: typically uses brisket (American convention) but with longer brining (Anglo-Commonwealth convention) and finished with Indian spice profiles (turmeric, cumin, coriander) that distinguish it from both predecessors. Many Panjim Municipal Market butchers sell 'pre-salted' chunks for customers who don't want to brine at home; others sell fresh brisket with explicit instruction on home-curing. The 'Is this salted or fresh?' disambiguation question is a standard part of Goan butcher-counter dialogue. Cross-references the broader Anglo-Commonwealth Corned Beef Trinity (USA brisket / Ireland-AU-NZ silverside) — Goa is the Indian variant adding spice complexity.",
+    notes: "Cross-reference USA brisket-corned-beef (existing), Irish silverside-corned-beef (existing), Australian silverside (Batch 12), NZ corned silverside (Batch 12). Goa is the 5th and Indian variant of the Anglo-Commonwealth corned beef tradition.",
+  },
+
 ] as const;

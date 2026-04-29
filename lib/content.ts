@@ -338,7 +338,7 @@ export function generateDefinition(args: {
         .filter((e) => e.region === region)
         .map((e) => e.name);
       const fromLabels = primaryCanonicalIds.flatMap((id) =>
-        labelsForCanonical(id, region),
+        labelsForCanonical(id, region).map((e) => e.name),
       );
       const merged = [...new Set([...fromEntries, ...fromLabels])];
       return {
@@ -482,7 +482,7 @@ export function generateCanonicalPage(canonicalId: CanonicalId): CanonicalHubCon
   });
 
   const namesByCountry = countriesWithSignal.map((r) => {
-    const lab = labelsForCanonical(canonicalId, r.id);
+    const lab = labelsForCanonical(canonicalId, r.id).map((e) => e.name);
     const rep = representativeInputName(r.id, canonicalId);
     const merged = [...new Set([...(rep ? [rep] : []), ...lab])];
     return {

@@ -32,6 +32,7 @@ import { resolveCut } from "@/lib/resolver";
 import { buildContentGraph, type FaqPair } from "@/lib/structured-data";
 import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
+import { isDefaultSpecies, SPECIES_LABEL } from "@/lib/types";
 import type { CanonicalId, MatchType } from "@/lib/types";
 import { cutSlugToNormalizedKey } from "@/utils/normalize";
 import { inferMatchType } from "@/components/MatchTypeBadge";
@@ -123,9 +124,14 @@ export default async function PairCutPage({ params }: PageProps) {
     { question: h1, answer: aiPrimary },
   ];
   if (result.primary != null && result.canonical != null) {
+    const primarySpecies = result.primary.species[0];
+    const speciesNote =
+      primarySpecies && !isDefaultSpecies(primarySpecies)
+        ? ` Note: in ${regionLabel(parsed.to)}, "${result.primary.names[0]}" refers to ${SPECIES_LABEL[primarySpecies]}, not standard cow beef.`
+        : "";
     faq.push({
       question: `What is ${cutDisplay} called in ${regionLabel(parsed.to)}?`,
-      answer: `Look for ${result.primary.names.join(", ")}—mapped to ${titleCaseCanonicalId(result.primary.canonicalId)} (${canonicalEntityTerm(result.primary.canonicalId)}).`,
+      answer: `Look for ${result.primary.names.join(", ")}—mapped to ${titleCaseCanonicalId(result.primary.canonicalId)} (${canonicalEntityTerm(result.primary.canonicalId)}).${speciesNote}`,
     });
     faq.push({
       question: `What primal is ${cutDisplay} from?`,

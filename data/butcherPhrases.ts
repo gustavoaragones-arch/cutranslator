@@ -479,4 +479,35 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "ethiopia", phrase: "Le Kitfo kuta-legn, hand-minced, lean", notes: "'Cut for Kitfo, hand-minced, lean' — the explicit no-machine-grind specification" },
   { canonicalId: "sirloin_tip", region: "ethiopia", phrase: "Kofia for Gored Gored, cubed", notes: "Sirloin tip cubes for raw beef cube preparation" },
   { canonicalId: "chuck_roll", region: "ethiopia", phrase: "Le Wot, bone-in, with Niter Kibbeh ready", notes: "Stew-grade meat with butter expectation noted" },
+
+  // 🇮🇳 KERALA (Malayalam-English mix)
+  { canonicalId: "tenderloin", region: "kerala", phrase: "Pashu undercut, oru kilo, taja", notes: "'Cow undercut, one kilo, fresh' — explicit cow specification (vs Poti/Buffalo)" },
+  { canonicalId: "inside_round", region: "kerala", phrase: "Beef Fry-inu chinnathayi murikku", notes: "'Cut small for Beef Fry' — the Beef Ularthiyathu cube format" },
+  { canonicalId: "brisket", region: "kerala", phrase: "Nenju rachi, taja, nadan curry-kku", notes: "'Brisket meat, fresh, for traditional curry'" },
+
+  // 🇮🇳 TAMIL NADU (Tamil-English mix)
+  { canonicalId: "tenderloin", region: "tamil_nadu", phrase: "Beef undercut, kilo, fresh-ah iruka", notes: "Buffalo undercut request; 'is it fresh' essential for hot-boned market" },
+  { canonicalId: "inside_round", region: "tamil_nadu", phrase: "Chukka cut, paper-thin, fry pannathuku", notes: "'Chukka cut, paper-thin, for frying' — the Beef Chukka format" },
+  { canonicalId: "hind_shank", region: "tamil_nadu", phrase: "Kaal, elumbu kooda, paya-kku", notes: "'Leg, with bone, for Paya' — bone-in mandatory for the soup" },
+
+  // 🇮🇳 TELANGANA / HYDERABAD (Urdu-Hindi mix)
+  { canonicalId: "tenderloin", region: "telangana", phrase: "Pasanda kaat ke do, parchey ki shape mein", notes: "'Cut Pasanda in Parcha shape' — explicit thin-sheet specification" },
+  { canonicalId: "hind_shank", region: "telangana", phrase: "Haleem ke liye Machhli, threads ke shape mein", notes: "'Machhli for Haleem, in thread-shape' — the cooking-driven cut request" },
+  { canonicalId: "chuck_roll", region: "telangana", phrase: "Hath-ka-keema, machine se nahi", notes: "Hand-chopped keema, NOT machine-ground — Lukmi/Seekh Kebab requirement" },
+  { canonicalId: "tenderloin", region: "telangana", phrase: "Rawa cut, grainy texture, Tala Hua Gosht ke liye", notes: "Texture-driven request for the iconic fried beef dish" },
+
+  // 🇮🇳 ANDHRA PRADESH (Telugu-Hindi mix)
+  { canonicalId: "hind_shank", region: "andhra_pradesh", phrase: "Nalli emuka, full marrow, kilo", notes: "'Marrow bone, full marrow, kilo' — prestige cut request" },
+  { canonicalId: "tenderloin", region: "andhra_pradesh", phrase: "Mettati mamsam, vepudu cooking ki", notes: "'Soft meat for dry-fry cooking' — Vepudu specification" },
+  { canonicalId: "brisket", region: "andhra_pradesh", phrase: "Rommu mukkalu, kovvu kuda kavali", notes: "'Chest pieces, with fat needed' — explicit fat retention for Andhra heat balance" },
+
+  // 🇮🇳 MAHARASHTRA (English-Hindi mix at modern shops; pure Hindi/Urdu at Crawford)
+  { canonicalId: "tenderloin", region: "maharashtra", phrase: "Undercut, fillet — Western style cut, Bandra restaurant ke liye", notes: "Modern English-Hindi mix at high-end butchers" },
+  { canonicalId: "tenderloin", region: "maharashtra", phrase: "Pasanda, taza, mausam ka maal nahi", notes: "Traditional Hindi/Urdu — 'fresh, not seasonal stock' (avoiding stale meat)" },
+  { canonicalId: "chuck_roll", region: "maharashtra", phrase: "Rawa keema for Keema Pav, hand-chopped", notes: "The iconic Mumbai breakfast preparation request" },
+
+  // 🇮🇳 GOA (Konkani-English-Portuguese mix)
+  { canonicalId: "tenderloin", region: "goa", phrase: "Lomo/Undercut, motto kat, BBQ-saathi", notes: "'Lomo/Undercut, thick cut, for BBQ' — Portuguese-Konkani-English trilingual" },
+  { canonicalId: "brisket", region: "goa", phrase: "Salt Meat, pre-salted, Beef Roast saathi", notes: "Pre-brined brisket request for Goan Beef Roast" },
+  { canonicalId: "outside_round", region: "goa", phrase: "Topside or Rump, Vindaloo-saathi, vinagre marinate karayche", notes: "'Topside or Rump, for Vindaloo, will marinate in vinegar' — explicit marination plan" },
 ] as const;
