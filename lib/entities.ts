@@ -156,6 +156,7 @@ export const REGION_ENTITY: Record<
   andhra_pradesh: { id: "andhra_pradesh", formalName: "Andhra Pradesh", shortName: "AP" },
   maharashtra: { id: "maharashtra", formalName: "Maharashtra", shortName: "Maharashtra" },
   goa: { id: "goa", formalName: "Goa", shortName: "Goa" },
+  karnataka: { id: "karnataka", formalName: "Karnataka", shortName: "Karnataka" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

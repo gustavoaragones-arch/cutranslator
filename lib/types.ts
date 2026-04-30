@@ -108,7 +108,9 @@ export type RegionSlug =
   | "telangana"
   | "andhra_pradesh"
   | "maharashtra"
-  | "goa";
+  | "goa"
+  // South Asia — India (Batch 15)
+  | "karnataka";
 
 export type CanonicalId =
   | "ribeye"

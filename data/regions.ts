@@ -115,6 +115,7 @@ export const regions = [
   { id: "andhra_pradesh" as const, label: "Andhra Pradesh", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["amaravati", "ap", "telugu"] as readonly string[] },
   { id: "maharashtra" as const, label: "Maharashtra", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["mumbai", "pune", "bombay", "marathi"] as readonly string[] },
   { id: "goa" as const, label: "Goa", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["panjim", "panaji", "goan"] as readonly string[] },
+  { id: "karnataka" as const, label: "Karnataka", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["bengaluru", "bangalore", "mysuru", "mysore", "mangaluru", "mangalore", "kannada", "dakhni", "udupi"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

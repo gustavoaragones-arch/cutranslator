@@ -2922,4 +2922,56 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Cross-reference USA brisket-corned-beef (existing), Irish silverside-corned-beef (existing), Australian silverside (Batch 12), NZ corned silverside (Batch 12). Goa is the 5th and Indian variant of the Anglo-Commonwealth corned beef tradition.",
   },
 
+  // 🇮🇳 KARNATAKA (4 entities)
+
+  {
+    id: "bengaluru_dual_tier_butchery_in",
+    name: "Bengaluru's Dual-Tier Butchery (Karnataka's Tech-Hub Pattern)",
+    region: "karnataka",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.50, note: "Cross-cuts the Western/Traditional divide" },
+    ],
+    synonyms: ["bengaluru", "bangalore", "russell market", "johnson market"],
+    description: "Bengaluru is the second documented Indian city operating a dual-tier butchery system, alongside Mumbai (Batch 14b). The 'Western Tier' at supermarkets (Nature's Basket Bangalore, Hypermart, Foodhall) and specialty shops uses USDA-style English vocabulary — Tenderloin, Topside, Sirloin, Rib Roast — driven by Bengaluru's tech-expat population (300,000+ tech professionals, many from US/UK/Australia working at Infosys, Wipro, and the city's large multinational offices). The 'Traditional Tier' at colonial-era markets (Russell Market in Shivaji Nagar, Johnson Market) uses Hindi/Dakhni Urdu/Kannada vocabulary — Pasanda, Naram Maunsa, Dasti, Machhli — with default Curry Cut (1-inch bone-in chunks). Both tiers sell exclusively Water Buffalo per Karnataka's cow-slaughter restrictions. Like Mumbai, Bengaluru is a city where consumer experience varies dramatically based on which tier you shop. The Russell Market butchers (operational since 1927, British colonial inheritance) speak excellent English alongside multiple Indian languages — they're often the most accessible Indian butchers for first-time expats. The dual-tier pattern in Bengaluru is structurally identical to Mumbai's but with a stronger tech-driven Western tier presence and a stronger English-language fluency at the Traditional Tier. Cross-references future Hyderabad expat butchery patterns (HITEC City) and Pondicherry's French-trained butchery (future batch).",
+    notes: "Second documented Indian city with dual-tier butchery. Cross-reference `mumbai_two_tier_butchery_in` (Batch 14b). Tech-expat-driven pattern unique to Mumbai and Bengaluru in the current dataset.",
+  },
+
+  {
+    id: "donne_biryani_cut_in",
+    name: "Donne Biryani Cut (Karnataka's Bone-In Bowl Tradition)",
+    region: "karnataka",
+    maps_to: [
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.70, note: "Bone-in rib chunks primary" },
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.65, note: "Shoulder bone-in alternative" },
+    ],
+    synonyms: ["donne biryani", "donne"],
+    description: "Donne Biryani is Karnataka's signature rustic biryani — served in 'donne' (palm-leaf bowls), distinguished from Hyderabadi Dum Biryani by its short-grain Seeraga Samba rice and herb-forward green coloring (mint, coriander, green chili). The cut requirement: small 1-inch BONE-IN chunks, typically from the Shoulder (Chuck) or Ribs of Buffalo. The bone marrow is expected to leech into the short-grain rice during the slow-simmer phase, producing the distinctive richness that defines authentic Donne Biryani. Using boneless USDA stew meat produces a biryani that locals immediately recognize as inauthentic — the rice tastes 'flat' without the marrow contribution. Bengaluru's Donne Biryani houses (Hotel Empire across multiple locations, Donne Biryani House on Mysore Road, Shivaji Military Hotel) maintain bone-in cut standards rigorously. The dish has spread from its Bengaluru-Mysuru origin to other Karnataka cities and increasingly to South Indian diaspora restaurants in the Gulf and Southeast Asia. Cross-references the broader pan-cultural bone-in-stew/rice tradition: Filipino Bulalo (Batch 11), Italian Osso Buco (existing), South African Potjiekos (Batch 13), New Zealand Hāngī Beef (Batch 12). The Donne Biryani version is distinctive in being a rice dish rather than a stew, but the bone-in mandate is identical — and the marrow-into-grain principle is unique to Donne Biryani in the current database.",
+    notes: "Bone-in cut requirement. Cross-reference Filipino Bulalo, NZ Hāngī, Italian Osso Buco, SA Potjiekos. The marrow-into-rice principle is unique among documented bone-in traditions.",
+  },
+
+  {
+    id: "mangalorean_bafat_roast_in",
+    name: "Mangalorean Bafat Roast (Karnataka's Coastal Goan-Portuguese Bridge)",
+    region: "karnataka",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Topside primary" },
+      { canonical_id: "outside_round", match_type: "cultural", confidence: 0.70, note: "Silverside as alternative" },
+    ],
+    synonyms: ["bafat", "mangalorean roast", "mangalore beef"],
+    description: "Mangalore (coastal Karnataka) operates a beef butchery tradition distinct from Bengaluru's tech-hub system. The Mangalorean Catholic community — descendants of converts from Portuguese-era Goa who migrated south to Mangalore in the 17th century during a series of Goan Inquisition displacements — maintains a Bafat Roast tradition that bridges Goan-Portuguese heritage and South Indian coastal cooking. The cut: large flat slabs of Topside (or Silverside), hand-pounded with a wooden mallet or the back of a heavy knife to mechanically tenderize the Buffalo, then marinated overnight in Bafat masala — a Mangalorean spice paste of Kashmiri chili (for color and mild heat), cumin, coriander, cinnamon, cloves, peppercorns, and toddy vinegar. The vinegar component is the explicit Goan-Portuguese inheritance — cross-references Goa Vindaloo's vinegar marinade (Batch 14b). The hand-pounding is the Mangalorean adaptation: Buffalo's leanness combined with the slow roasting requires mechanical tenderization that Goan beef (cow) doesn't strictly need. The result is a sliced cold-cut-style preparation served at Mangalorean Catholic feasts and major social events (weddings, baptisms, Christmas). Bengaluru-Mangalore cultural-heritage migration has brought Bafat Roast to high-end Bengaluru restaurants (Karavalli at the Taj West End, Coastal Cuisine on Lavelle Road) but the authentic version requires Mangalorean spices, hand-pounding, and overnight marination. Mangalore is the second Indian region documenting European-colonial butchery influence after Goa itself (Batch 14b), with future Pondicherry (French-colonial) being the third documented bridge.",
+    notes: "Cross-reference `goa_portuguese_bridge_in` (Batch 14b — vinegar marinade ancestor). Three Indian regions with European-colonial butchery influence: Goa (Portuguese), Mangalore-Karnataka (Goan-Portuguese-derived), future Pondicherry (French). Hand-pounding is the Mangalorean Buffalo adaptation of the Goan cow tradition.",
+  },
+
+  {
+    id: "uppu_saaru_cut_in",
+    name: "Uppu Saaru Cut (Karnataka Joins the Boil-then-Fry South Indian Convention)",
+    region: "karnataka",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Topside primary" },
+    ],
+    synonyms: ["uppu saaru", "salt and chili beef"],
+    description: "Uppu Saaru (literally 'salt water' in Kannada) is Karnataka's contribution to the South Indian Boil-then-Fry tradition (anchored in Tamil Nadu's `boil_then_fry_south_in`, Batch 14b). The cut requirement: very small uniform half-inch cubes from the Round/Rump. The dish progresses through three phases: (1) pressure-cook the cubes in salt water to break down Buffalo toughness, (2) drain and reserve the broth, (3) high-heat fry the boiled cubes with curry leaves, dried chilies, mustard seeds, and asafoetida in coconut oil. The final dish features the cubes simultaneously crispy-edged and tender-internal, served alongside steamed rice and the reserved broth as an accompanying soup. American attempts at Uppu Saaru using direct-fry of USDA Choice Round produces tough rubbery cubes — the boil phase is mandatory for Buffalo. Karnataka's Uppu Saaru is structurally identical to Tamil Beef Chukka (Batch 14b) but with smaller cubes and more aromatic frying spices. Both belong to the pan-South-Indian Boil-then-Fry convention, which now spans 5 documented states: Kerala (Beef Ularthiyathu), Tamil Nadu (Beef Chukka), Telangana (Tala Hua Gosht), Andhra Pradesh (Vepudu), Karnataka (Uppu Saaru). Five state implementations of one underlying technique — the most widely-distributed cooking convention in any single sub-region of the database. The Boil-then-Fry pattern is genuinely a pan-South-Indian inheritance, not just a single-state quirk.",
+    notes: "Cross-reference `boil_then_fry_south_in` (Tamil Nadu, Batch 14b). Karnataka's Uppu Saaru extends the pan-South-India technique to a 5th state (Kerala/TN/Telangana/Andhra now Karnataka). Most widely-distributed cooking convention in any sub-region of the database.",
+  },
+
 ] as const;

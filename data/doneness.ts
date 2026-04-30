@@ -94,6 +94,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       andhra_pradesh: "Rare",
       maharashtra: "Rare",
       goa: "Rare",
+      karnataka: "Rare",
     },
   },
   {
@@ -184,6 +185,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       andhra_pradesh: "Medium rare",
       maharashtra: "Medium rare",
       goa: "Medium rare",
+      karnataka: "Medium rare",
     },
   },
   {
@@ -274,6 +276,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       andhra_pradesh: "Medium",
       maharashtra: "Medium",
       goa: "Medium",
+      karnataka: "Medium",
     },
   },
   {
@@ -364,6 +367,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       andhra_pradesh: "Bagaa kallindi",
       maharashtra: "Bhuna",
       goa: "Bem feito",
+      karnataka: "Bhuna",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -435,6 +439,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       andhra_pradesh: "Andhra cuisine's intense Guntur chili heat and tamarind-based gravies require well-cooked Buffalo to avoid harsh raw textures. Vepudu (dry fries) and Pulusu (gravies) both demand fully-cooked meat. Buffalo + intense heat + long cook = well-done as default.",
       maharashtra: "Mumbai's two-tier butchery system produces split doneness preferences — high-end Bandra restaurants serve premium cuts at international doneness levels (Medium-Rare to Medium); traditional Crawford Market home cooking uniformly produces well-done Buffalo via pressure-cooking. Both are valid Mumbai expressions.",
       goa: "Goa's Portuguese influence introduces 'Bem feito' doneness for traditional Bistek (thin pan-fried), but the 1-2 minute high-heat cook actually produces Medium-Rare to Medium results despite the well-done terminology. Goan Beef Roast (slow-cooked salt-meat) produces classically well-done results. Modern Panjim restaurants operate at international standards.",
+      karnataka: "Karnataka beef cooking centers on slow-braised Buffalo dishes — Donne Biryani's marrow-leeching simmer, Mangalorean Bafat Roast's slow-roast caramelization, Beef Pepper Fry's high-heat finish, Uppu Saaru's pressure-cook-then-fry. All produce well-done results by default. Modern Bengaluru pub-restaurants (Pecos, Toit, Arbor Brewing) operate at international steakhouse standards and serve premium cuts at Medium-Rare to Medium for the tech-expat clientele. The dual-tier butchery system supports both ends of the doneness spectrum simultaneously. Beef Chili at Bengaluru's iconic pub culture is typically served Medium with charred edges — a hybrid of US BBQ doneness expectations and Indian heat preference.",
     },
   },
 ] as const;

@@ -510,4 +510,10 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "goa", phrase: "Lomo/Undercut, motto kat, BBQ-saathi", notes: "'Lomo/Undercut, thick cut, for BBQ' — Portuguese-Konkani-English trilingual" },
   { canonicalId: "brisket", region: "goa", phrase: "Salt Meat, pre-salted, Beef Roast saathi", notes: "Pre-brined brisket request for Goan Beef Roast" },
   { canonicalId: "outside_round", region: "goa", phrase: "Topside or Rump, Vindaloo-saathi, vinagre marinate karayche", notes: "'Topside or Rump, for Vindaloo, will marinate in vinegar' — explicit marination plan" },
+
+  // 🇮🇳 KARNATAKA (Kannada/Dakhni Urdu/English mix)
+  { canonicalId: "tenderloin", region: "karnataka", phrase: "Undercut, naram maunsa kodi, kilo eradu", notes: "'Undercut, soft meat please, two kilos' — Kannada-English mix at Russell Market" },
+  { canonicalId: "short_ribs", region: "karnataka", phrase: "Donne Biryani cut, bone-in chunks, Seeraga Samba ke saath", notes: "'Donne Biryani cut, bone-in, with [for use with] Seeraga Samba [rice]' — explicit dish-driven request" },
+  { canonicalId: "inside_round", region: "karnataka", phrase: "Bafat masala roast ke liye topside, hand-pounded", notes: "'Topside for Bafat masala roast, hand-pounded' — Mangalorean specialty request" },
+  { canonicalId: "brisket", region: "karnataka", phrase: "Charbi haaki, biryani-saathi", notes: "'Add some fat, for biryani' — explicit fat-add for lean Buffalo (Kannada haaki = 'put/add')" },
 ] as const;
