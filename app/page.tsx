@@ -11,8 +11,6 @@ import { buildHomePAAItems, mergeFaqWithPAA } from "@/lib/questions";
 import { buildContentGraph } from "@/lib/structured-data";
 import { POPULAR_TRANSLATIONS } from "@/data/popularTranslations";
 import { REGIONS } from "@/lib/regions";
-import { CowSilhouetteDivider } from "@/components/LogoSvg";
-
 export const metadata: Metadata = {
   title: "Beef Cut Translator | Cutranslator",
   description:
@@ -133,7 +131,14 @@ export default function Home() {
         <div className="hero-transition-band">
           <div className="hero-transition-line" />
           <div className="hero-transition-cow" aria-hidden>
-            <CowSilhouetteDivider className="w-16 h-16 md:w-20 md:h-20 text-[var(--accent-butcher)] opacity-90" />
+            {/* eslint-disable-next-line @next/next/no-img-element -- static SVG from public/ */}
+            <img
+              src="/cow.svg"
+              alt=""
+              width={80}
+              height={80}
+              className="h-16 w-16 object-contain opacity-90 md:h-20 md:w-20"
+            />
           </div>
         </div>
       </section>

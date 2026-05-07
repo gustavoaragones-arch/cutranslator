@@ -63,8 +63,3 @@ export function LogoSvg({ className }: Props) {
     </div>
   );
 }
-
-/** Standalone cow silhouette — for the light/dark transition divider. */
-export function CowSilhouetteDivider({ className }: { className?: string }) {
-  return <CowSilhouette className={className} />;
-}
