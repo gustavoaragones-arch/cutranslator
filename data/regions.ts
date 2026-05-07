@@ -116,6 +116,10 @@ export const regions = [
   { id: "maharashtra" as const, label: "Maharashtra", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["mumbai", "pune", "bombay", "marathi"] as readonly string[] },
   { id: "goa" as const, label: "Goa", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["panjim", "panaji", "goan"] as readonly string[] },
   { id: "karnataka" as const, label: "Karnataka", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["bengaluru", "bangalore", "mysuru", "mysore", "mangaluru", "mangalore", "kannada", "dakhni", "udupi"] as readonly string[] },
+
+  // South Asia — Sovereign (Batch 16)
+  { id: "pakistan" as const, label: "Pakistan", flag: "🇵🇰", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["pak", "karachi", "lahore", "islamabad", "urdu", "punjabi-pk", "saddar"] as readonly string[] },
+  { id: "bangladesh" as const, label: "Bangladesh", flag: "🇧🇩", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["bd", "dhaka", "chittagong", "bangla", "bengali", "kaptan bazar", "reazuddin"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

@@ -516,4 +516,19 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "short_ribs", region: "karnataka", phrase: "Donne Biryani cut, bone-in chunks, Seeraga Samba ke saath", notes: "'Donne Biryani cut, bone-in, with [for use with] Seeraga Samba [rice]' — explicit dish-driven request" },
   { canonicalId: "inside_round", region: "karnataka", phrase: "Bafat masala roast ke liye topside, hand-pounded", notes: "'Topside for Bafat masala roast, hand-pounded' — Mangalorean specialty request" },
   { canonicalId: "brisket", region: "karnataka", phrase: "Charbi haaki, biryani-saathi", notes: "'Add some fat, for biryani' — explicit fat-add for lean Buffalo (Kannada haaki = 'put/add')" },
+
+  // 🇵🇰 PAKISTAN (Urdu mix)
+  { canonicalId: "tenderloin", region: "pakistan", phrase: "Bachhiya undercut, kilo, taza", notes: "'Young cow undercut, kilo, fresh' — explicit species specification (vs Bhains)" },
+  { canonicalId: "tenderloin", region: "pakistan", phrase: "Bhains pasanda, Bihari Kebab ke liye, parchey ki shape mein", notes: "'Buffalo pasanda for Bihari Kebab, in parcha shape' — explicit species + cooking-format" },
+  { canonicalId: "hind_shank", region: "pakistan", phrase: "Machhli, Nihari ke liye, 18 ghante ka cook", notes: "'Shank for Nihari, 18-hour cook' — Karachi Nihari signature long cook" },
+  { canonicalId: "hind_shank", region: "pakistan", phrase: "Nalli, Karachi Nalli Biryani ke liye, femur bone", notes: "'Marrow bone for Karachi Nalli Biryani, femur bone specifically' — explicit bone-type specification" },
+  { canonicalId: "top_sirloin", region: "pakistan", phrase: "Hunter Beef cut, rump, saltpeter cure ke liye, Saddar style", notes: "'Hunter Beef cut, rump, for saltpeter curing, Saddar [district] style' — Pakistani delicatessen tradition" },
+  { canonicalId: "chuck_roll", region: "pakistan", phrase: "Hath-ka-keema, machine se nahi, Keema Matar ke liye", notes: "'Hand-chopped keema, NOT machine, for Keema Matar' — texture-preservation premium request" },
+
+  // 🇧🇩 BANGLADESH (Bengali mix)
+  { canonicalId: "tenderloin", region: "bangladesh", phrase: "Undercut piece-ta din, kilo ek, taja", notes: "'Give me an undercut piece, one kilo, fresh' — Dhaka Unimart standard request" },
+  { canonicalId: "chuck_blade", region: "bangladesh", phrase: "Kaand mangsho, Kalo Bhuna ke liye, connective tissue rakhun", notes: "'Shoulder meat for Kalo Bhuna, retain the connective tissue' — explicit slow-braise specification" },
+  { canonicalId: "brisket", region: "bangladesh", phrase: "Mezban cut, Charbi extra, Chittagong style, Reazuddin Bazar quality", notes: "'Mezban cut, with extra fat, Chittagong style, Reazuddin Bazar quality' — the fat-as-substance request" },
+  { canonicalId: "chuck_roll", region: "bangladesh", phrase: "Hath-e-kata keema, Boti diye kata, machine na", notes: "'Hand-cut mince with Boti, NOT machine' — the Boti technique premium request" },
+  { canonicalId: "hind_shank", region: "bangladesh", phrase: "Pa-er, Nihari ke liye, mustard oil garnish ke saath", notes: "'Leg shank for Nihari, with mustard oil garnish [later]' — Bangladeshi Nihari distinctive" },
 ] as const;

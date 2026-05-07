@@ -6,7 +6,7 @@ import type { RegionSlug } from "@/lib/types";
 import { getCutsByRegion, type DatasetCutOption } from "@/lib/cuts";
 import { pairSegment } from "@/lib/pairRoute";
 import { regionLabel } from "@/lib/regions";
-import { slugifyCut } from "@/utils/normalize";
+import { toUrlSlug } from "@/lib/url";
 import { CutSelect } from "@/components/CutSelect";
 import { CountrySelector } from "@/components/CountrySelector";
 
@@ -32,7 +32,7 @@ export function TranslateForm() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!selectedCut || from === to) return;
-    const slug = slugifyCut(selectedCut);
+    const slug = toUrlSlug(selectedCut);
     if (!slug) return;
     router.push(`/${pairSegment(from, to)}/${slug}`);
   }

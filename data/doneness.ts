@@ -95,6 +95,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       maharashtra: "Rare",
       goa: "Rare",
       karnataka: "Rare",
+      pakistan: "Rare",
+      bangladesh: "Rare",
     },
   },
   {
@@ -186,6 +188,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       maharashtra: "Medium rare",
       goa: "Medium rare",
       karnataka: "Medium rare",
+      pakistan: "Medium rare",
+      bangladesh: "Medium rare",
     },
   },
   {
@@ -277,6 +281,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       maharashtra: "Medium",
       goa: "Medium",
       karnataka: "Medium",
+      pakistan: "Medium",
+      bangladesh: "Medium",
     },
   },
   {
@@ -368,6 +374,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       maharashtra: "Bhuna",
       goa: "Bem feito",
       karnataka: "Bhuna",
+      pakistan: "Pakka",
+      bangladesh: "Bhalo bhabe rana",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -440,6 +448,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       maharashtra: "Mumbai's two-tier butchery system produces split doneness preferences — high-end Bandra restaurants serve premium cuts at international doneness levels (Medium-Rare to Medium); traditional Crawford Market home cooking uniformly produces well-done Buffalo via pressure-cooking. Both are valid Mumbai expressions.",
       goa: "Goa's Portuguese influence introduces 'Bem feito' doneness for traditional Bistek (thin pan-fried), but the 1-2 minute high-heat cook actually produces Medium-Rare to Medium results despite the well-done terminology. Goan Beef Roast (slow-cooked salt-meat) produces classically well-done results. Modern Panjim restaurants operate at international standards.",
       karnataka: "Karnataka beef cooking centers on slow-braised Buffalo dishes — Donne Biryani's marrow-leeching simmer, Mangalorean Bafat Roast's slow-roast caramelization, Beef Pepper Fry's high-heat finish, Uppu Saaru's pressure-cook-then-fry. All produce well-done results by default. Modern Bengaluru pub-restaurants (Pecos, Toit, Arbor Brewing) operate at international steakhouse standards and serve premium cuts at Medium-Rare to Medium for the tech-expat clientele. The dual-tier butchery system supports both ends of the doneness spectrum simultaneously. Beef Chili at Bengaluru's iconic pub culture is typically served Medium with charred edges — a hybrid of US BBQ doneness expectations and Indian heat preference.",
+      pakistan: "Pakistani home cooking universally produces well-done Bhains (Buffalo) results — Nihari simmers 12-18 hours, Karahi Gosht is wok-fried until deeply caramelized, Tala Hua Gosht is deep-fried until crispy. Bachhiya (young cow) at high-end Karachi steakhouses (BBQ Tonight, Kolachi, Karachi Boat Basin) is served at international standards (Medium-Rare to Medium). The cultural preference: Bachhiya Medium-Rare for premium experiences, Bhains Pakka (well-done) for everyday cooking. Pakistani Bihari Kebab specifically benefits from Bachhiya cooked Medium to retain the marinated tenderness. Karachi Nihari at dedicated shops produces the longest-cooked of all Nihari traditions (16-18 hours).",
+      bangladesh: "Bengali beef cooking is dominated by Kalo Bhuna (4-6 hour caramelization), Mezban (8-12 hour fat reduction), and Beef Tehari (slow rice-and-meat dum cooking) — all producing well-done results by default. The Bengali term 'Bhalo bhabe rana' literally means 'cooked well/properly' and is the cultural standard. Cow beef in Bangladesh (vs Buffalo elsewhere in the region) does allow for Medium-Rare preparations, and modern Dhaka steakhouses (Holey Artisan, Westin Dhaka) serve through the full doneness spectrum, but home cooking universally targets thoroughly-cooked. The fat-rich tradition (Mezban especially) requires extended cooking to render the Charbi properly — Medium-Rare in a Mezban context would be culturally illegible.",
     },
   },
 ] as const;
