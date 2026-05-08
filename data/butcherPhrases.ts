@@ -531,4 +531,30 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "brisket", region: "bangladesh", phrase: "Mezban cut, Charbi extra, Chittagong style, Reazuddin Bazar quality", notes: "'Mezban cut, with extra fat, Chittagong style, Reazuddin Bazar quality' — the fat-as-substance request" },
   { canonicalId: "chuck_roll", region: "bangladesh", phrase: "Hath-e-kata keema, Boti diye kata, machine na", notes: "'Hand-cut mince with Boti, NOT machine' — the Boti technique premium request" },
   { canonicalId: "hind_shank", region: "bangladesh", phrase: "Pa-er, Nihari ke liye, mustard oil garnish ke saath", notes: "'Leg shank for Nihari, with mustard oil garnish [later]' — Bangladeshi Nihari distinctive" },
+
+  // 🇮🇳 UTTAR PRADESH (Lucknawi Urdu — formal Tehzeeb register)
+  { canonicalId: "tenderloin", region: "uttar_pradesh", phrase: "Pasanda kaat dijiye, parchey ki shape mein, Galouti ke liye", notes: "'Cut Pasanda in Parcha shape, for Galouti' — explicit Lucknawi precision request with formal -dijiye polite register" },
+  { canonicalId: "tenderloin", region: "uttar_pradesh", phrase: "Galouti ke liye kidney fat aur kachi papita zaroori hai", notes: "'For Galouti, kidney fat and raw papaya are essential' — explicit blend specification" },
+  { canonicalId: "chuck_roll", region: "uttar_pradesh", phrase: "Hath-ka-keema, kofte ke liye double-mince", notes: "'Hand-chopped keema, double-minced for kofte' — the unique Lucknawi double-mince request" },
+  { canonicalId: "hind_shank", region: "uttar_pradesh", phrase: "Machhli, Lucknawi Nihari ke liye, 12 ghante ka cook", notes: "'Shank for Lucknawi Nihari, 12-hour cook' — the Awadhi original duration" },
+  { canonicalId: "chuck_roll", region: "uttar_pradesh", phrase: "Garam gosht hi chahiye, refrigerator ka nahi", notes: "'Only warm/fresh meat is acceptable, not refrigerated' — explicit Garam Gosht cultural standard" },
+
+  // 🇮🇳 PUNJAB (Hindi/Punjabi mix — Dhaba register)
+  { canonicalId: "chuck_roll", region: "punjab", phrase: "Gol-Boti, Karahi ke liye, dhaba style", notes: "'Gol-Boti uniform cubes for Karahi, Dhaba style' — Punjabi cube convention" },
+  { canonicalId: "brisket", region: "punjab", phrase: "Seena-Charbi, Tarka ke liye, alag se", notes: "'Chest-fat for Tarka, separately' — explicit fat-portion request for tempering" },
+  { canonicalId: "chuck_roll", region: "punjab", phrase: "Hath-chopped keema, motta-motta, machine ka nahi", notes: "'Hand-chopped keema, coarsely, NOT machine' — Punjabi coarser-than-Lucknawi preference" },
+
+  // 🇮🇳 RAJASTHAN (Hindi/Rajasthani mix)
+  { canonicalId: "tenderloin", region: "rajasthan", phrase: "Sula ke liye Pasanda, Kachri marinade overnight", notes: "'Pasanda for Sula, Kachri overnight marinade' — Jaipuri desert food-science specification" },
+  { canonicalId: "tenderloin", region: "rajasthan", phrase: "Safed Maans ke liye Naram, koi color na lagne paaye", notes: "'Naram for Safed Maans, no color allowed [during cooking]' — explicit pale-color preservation" },
+
+  // 🇮🇳 WEST BENGAL (Bengali mix — cow species default)
+  { canonicalId: "chuck_blade", region: "west_bengal", phrase: "Kolkata Biryani cut, charbi-wala, aalu ke saath cooking ke liye", notes: "'Kolkata Biryani cut, with fat, for cooking with potato' — explicit potato-tradition specification" },
+  { canonicalId: "inside_round", region: "west_bengal", phrase: "Beef Chaap cut, hand-pounded, tawa ke liye flat slices", notes: "'Beef Chaap cut, hand-pounded, flat slices for tawa' — explicit Mughlai-derived format" },
+  { canonicalId: "chuck_roll", region: "west_bengal", phrase: "Anglo-Indian cutlet meat, fine machine mince, Trinca's style", notes: "'Anglo-Indian cutlet meat, fine machine mince, [iconic restaurant] style' — colonial inheritance" },
+
+  // 🇮🇳 INDIA CENTRAL (Hindi mix — pan-state)
+  { canonicalId: "tenderloin", region: "india_central", phrase: "Bihari Kabab ke liye Pasanda, with-the-grain, raw papaya marinade", notes: "'Pasanda for Bihari Kabab, with-the-grain, raw papaya marinade' — explicit grain-direction specification" },
+  { canonicalId: "tenderloin", region: "india_central", phrase: "Bhopali Pasanda, wide rectangular sheets, Begum recipe ke liye", notes: "'Bhopali Pasanda, wide rectangular sheets, for Begum [historical] recipe' — Nawabi tradition request" },
+  { canonicalId: "hind_shank", region: "india_central", phrase: "Khichda cut, Bhopali Haleem ke liye, fibrous shank", notes: "'Khichda/Haleem cut for Bhopali Haleem, fibrous shank' — cross-references Hyderabadi Haleem-cut Machhli" },
 ] as const;

@@ -3094,4 +3094,125 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "Cross-reference `hath_ka_keema_in` (Telangana, Batch 14b — Hyderabadi parallel). Pan-Asian-African hand-vs-machine processing pattern: Bengali Boti, Hyderabadi Hath-ka-Keema, Korean Yukhoe, Vietnamese Phở slicing, Ethiopian Kitfo (Batch 13). Five-culture convergence on hand-processing premium.",
   },
 
+  // ==================== BATCH 17: NORTH/EAST/CENTRAL INDIA ====================
+
+  // ----- UTTAR PRADESH (3 entities) -----
+  {
+    id: "lucknow_awadhi_summit_in",
+    name: "Lucknow's Awadhi Summit (Marquee Architectural Anchor of Indian Beef Ontology)",
+    region: "uttar_pradesh",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.90, note: "Pasanda/Parcha/Galouti mince all derive from tenderloin" },
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.75, note: "Hath-ka-Keema and double-minced Kofte" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.80, note: "Machhli for Lucknawi Nihari" },
+    ],
+    synonyms: ["lucknawi", "awadhi", "pasanda", "parcha", "galouti", "kidney fat", "raw papaya", "garam gosht"],
+    description: "Lucknow is the architectural ANCESTOR of Indian beef butchery — the historical origin from which Hyderabadi precision butchery (Batch 14b — post-1857 exile of the Nawabs of Awadh), Karachi Pakistani Nihari tradition (Batch 16 — 1947 Partition migrations), and Dhaka Bengali Nihari (Batch 16 — Bengali Muslim adaptation) all derive. The Awadhi cuisine developed at the Lucknow Mughal court (1722-1857) as the most refined expression of Mughal-Persian-Indian fusion cooking — patronized by the Nawabs of Awadh whose obsession with culinary refinement led to multi-generational butcher specialists capable of techniques no other documented tradition matches. FIVE distinct precision techniques define the Lucknawi system, more than Hyderabad's already-elite five: PASANDA (the soft undercut, hand-pounded thin sheets — same technique as Hyderabadi but Lucknow is the origin); PARCHA (translucent strips so thin they cook in seconds — thinner than Hyderabadi version); HATH-KA-KEEMA (hand-chopped mince with explicit KIDNEY FAT blend — more precise fat-specification than Hyderabadi's generic Charbi); KOFTE KA KEEMA (DOUBLE-MINCED — passed through machine TWICE for melt-in-mouth Koftas that stay perfectly round and soft without breadcrumb binding — UNIQUE to Lucknow); and the legendary GALOUTI MINCE (Pasanda + Kidney Fat + RAW PAPAYA tenderizer producing machine-soft texture for the Galouti Kebab — UNIQUE to Lucknow, no other documented tradition uses this specific Kidney Fat + papaya enzyme blend). Plus the cultural standard of GARAM GOSHT (warm/fresh meat) — refrigerated meat is believed to compromise spice absorption, so meat must be hot-boned and cooked the same day. The Old Lucknow markets — Akbari Gate, Chowk, Maulviganj — operate multi-generational butcher establishments where the LUCKNAWI TEHZEEB (etiquette) at the meat counter is itself a cultural performance — butchers and customers exchange formal Urdu greetings before any business is conducted. Lucknow is the architectural PEAK paired with Hyderabad's Master Class as the two summits of South Asian beef ontology. The two cities relate as ancestor-and-descendant: Hyderabadi precision is the post-1857 Awadhi-derived expression, Karachi Pakistani is the post-1947 Awadhi-derived expression, Dhaka Bengali is the further-derived Bengali Muslim expression. All four traditions share the same architectural foundation: precision butchery driven by specific dish requirements, where the dish defines the cut rather than the reverse.",
+    notes: "MARQUEE TIER 3 ENTRY of Batch 17. Paired with `hyderabad_precision_butchery_in` (Telangana, Batch 14b) as the two architectural peaks of South Asian beef ontology. Cross-references all four Nihari Regional Traditions (Lucknawi anchor in this batch, Hyderabadi Batch 14b, Karachi Pakistani Batch 16, Dhaka Bengali Batch 16). Lucknow is the historical ancestor; the others are derivations.",
+  },
+
+  {
+    id: "lucknawi_nihari_in",
+    name: "Lucknawi Nihari (the Awadhi Ancestor — Closes the Four Nihari Regional Traditions Arc)",
+    region: "uttar_pradesh",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.90, note: "Machhli is universal across all four Nihari traditions" },
+    ],
+    synonyms: ["lucknawi nihari", "awadhi nihari", "nawabi nihari"],
+    description: "Lucknawi Nihari is the Mughal-court ANCESTOR of all four documented Nihari Regional Traditions in the Cutranslator database — the original 18th-century Awadhi expression from which Hyderabadi (Batch 14b — post-1857 exile derivation), Karachi Pakistani (Batch 16 — 1947 Partition derivation), and Dhaka Bengali (Batch 16 — Bengali Muslim derivation) all descend. The Lucknawi version is distinctively LIGHTER than its derivatives: ROSE WATER finishing, WHITE PEPPER as the dominant spice (vs the black pepper of Hyderabadi/Karachi), SMALLER MEAT CHUNKS (the Awadhi aesthetic preferred refined small portions over the larger rustic chunks of Hyderabad), and a 12-hour cook (vs Karachi's 16-18-hour cult-favorite extension). The cut requirement is identical across all four traditions: MACHHLI (Buffalo shank, the 'fish muscle' that 'threads'/shreds during the long cook) PLUS NALLI (marrow bone). The signature 'Resha' (thread) texture comes from the long muscle fibers of the shank breaking down and shredding into the gravy during the 12-hour cook, creating a stew where the meat is functionally inseparable from the gelatinous broth. Modern Old Lucknow Nihari shops (Tundey Kababi's Nihari department, Idris Biryani's morning Nihari service, Wahid Biryani) maintain the lighter Awadhi profile that Lucknow purists insist is the 'true' Nihari — though Karachi's cult-favorite version arguably has more global recognition. The historical chain: Mughal court at Lucknow → 1857 Indian Rebellion ends Awadhi rule → exiled Nawabs settle in Hyderabad bringing Awadhi cooks → Hyderabadi Nizams patronize them → 1947 Partition brings Awadhi-Hyderabadi cooks to Karachi → Karachi develops cult-favorite Nihari shops → Bengali Muslim communities (Dhaka) further adapt with mustard oil garnish. Four traditions, one ancestor. This entity CLOSES the Four Nihari Regional Traditions architectural arc opened by `nihari_regional_traditions_sa` (Pakistan, Batch 16).",
+    notes: "CLOSES the Four Nihari Regional Traditions arc. Cross-reference `nihari_regional_traditions_sa` (Pakistan, Batch 16 anchor), `hyderabadi_nihari_in` (Telangana, Batch 14b), `karachi_nihari_pk` (Pakistan, Batch 16). Lucknawi is the ancestor; the others are derivations. After this entity ships, the architectural arc is complete: 4 traditions, 1 documented ancestor, full historical chain.",
+  },
+
+  {
+    id: "northern_buff_belt_in",
+    name: "The Northern Buff Belt (Geographic Anchor for Buffalo-Only Hindi/Urdu States)",
+    region: "uttar_pradesh",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.50, note: "Pan-state Pasanda continuity" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.50, note: "Pan-state Machhli/Nalli continuity" },
+    ],
+    synonyms: ["northern buff belt", "buffalo belt", "gangetic plain beef"],
+    description: "The Northern Buff Belt is the GEOGRAPHIC anchor for the 8 contiguous Hindi/Urdu-speaking Buffalo-only states forming a continuous belt across the Indian Gangetic plain: Uttar Pradesh (anchor), Bihar, Punjab, Haryana, Rajasthan, Madhya Pradesh, Jharkhand, Chhattisgarh — plus shoulder regions Gujarat (Gujarati-language overlay) and Odisha (Oriya-language overlay). All 8 states share five architectural patterns: BUFFALO-ONLY legal status (cow restricted under Article 48 + state laws); pan-Indian HINDI/URDU VOCABULARY (Pasanda, Seena, Machhli, Nalli, Charbi — universal across the belt); MUGHLAI-AWADHI culinary inheritance (Nihari, Bhuna, Pasande, Keema all derive from Lucknow's Mughal court tradition); UNIVERSAL CURRY CUT default (1-inch bone-in 70/30 chunks at any wet market); PRESSURE-COOKING as default cooking method to handle Buffalo's lean toughness; and the 'ADD CHARBI SEPARATELY' pattern compensating for lean Buffalo with explicitly purchased fat. This Northern Buff Belt is the GEOGRAPHIC anchor that complements the linguistic anchor (`pan_indian_hindi_urdu_in`, Maharashtra Batch 14b) and the legal anchor (`india_cow_buff_legal_map`, Maharashtra Batch 14b) — three architectural axes describing the same underlying phenomenon at different scopes. After this batch, the Indian beef ontology has its complete three-axis architectural foundation: legal (where cow is restricted), linguistic (the 6 universal Hindi/Urdu terms), and geographic (the 8-state Gangetic-plain Buffalo Belt). The architectural triangulation makes the Indian beef ontology genuinely defensible — no other beef-cuts resource on the internet has this depth of regional-cultural mapping.",
+    notes: "GEOGRAPHIC anchor completing the three-axis Indian Buffalo Belt architecture. Cross-reference `pan_indian_hindi_urdu_in` (linguistic, Maharashtra Batch 14b) and `india_cow_buff_legal_map` (legal, Maharashtra Batch 14b). Three axes, one underlying phenomenon, full architectural triangulation.",
+  },
+
+  // ----- PUNJAB (1 entity) -----
+  {
+    id: "punjabi_dhaba_culture_in",
+    name: "Punjabi Dhaba Culture (Robust Cuts for High-Heat Highway Cooking)",
+    region: "punjab",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.65, note: "Gol-Boti, Khula Gosht generic" },
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.60, note: "Dasti for Karahi Gosht" },
+    ],
+    synonyms: ["dhaba", "punjabi dhaba", "amritsari", "ludhiana beef"],
+    description: "Punjab's beef culture (concentrated in Amritsar, Ludhiana, Mohali, and the joint Chandigarh territory) is shaped by the iconic DHABA tradition — highway roadside restaurants serving robust home-style cooking to truckers, travelers, and locals at high turnover. Dhaba beef must satisfy three constraints simultaneously: ROBUST enough for the heavy spice loads (Punjabi cuisine uses the most aggressive whole-spice tempering in any Indian regional tradition), QUICK-PRESSURE-COOKABLE (Dhaba turnover demands meat ready in 20-30 minutes from raw), and HEARTY portions ('Khula' — generous and plentiful, befitting Punjabi cultural emphasis on hospitality through abundance). These constraints produce Punjabi-specific cut conventions distinct from the more refined Awadhi-Mughlai precision of Lucknow: GOL-BOTI (uniform 1.5-inch cubes — slightly LARGER than other Indian regions' 1-inch standard, designed to stay structurally intact during high-pressure Dhaba cooking); HATH-CHOPPED KEEMA (COARSER than Lucknawi/Hyderabadi versions — prized for retaining 'snap' against heavy Punjabi spices rather than the melt-in-mouth refinement Awadhi tradition values); and SEENA-CHARBI (explicit chest-fat portion request — the Dhaba Tarka tempering relies on rendered Charbi as the primary cooking medium, more so than other regional traditions). The Punjab + Chandigarh + Haryana joint territory shares butchery patterns despite the political division, with Sector 45 Chandigarh, Mani Majra, and Mohali markets all operating identical conventions. Punjab is the AWADHI-INFLUENCED but NOT AWADHI-DERIVED neighbor: the Mughal court's reach extended to Punjab but the Dhaba tradition is its own distinct identity, less precision-focused, more abundance-focused.",
+    notes: "Punjabi Dhaba culinary identity anchor. Cross-references Lucknow Awadhi Summit (this batch) — Punjab is Awadhi-influenced but distinct, more rustic-abundance than refined-precision. Joint Punjab+Chandigarh+Haryana territory in single region.",
+  },
+
+  // ----- RAJASTHAN (1 entity) -----
+  {
+    id: "jaipur_kachri_tenderizer_in",
+    name: "Jaipur's Kachri Tenderizer (Desert-Adaptive Food Science)",
+    region: "rajasthan",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.70, note: "Sula and Pasanda use Kachri marination" },
+    ],
+    synonyms: ["kachri", "jaipur sula", "rajasthani tenderizer", "wild desert melon"],
+    description: "Rajasthan's beef cuisine — concentrated in Jaipur's Old City pockets (Ramganj, Ghat Gate, Sanganer) — operates a distinctive desert-adaptive food-science tradition: KACHRI (Mukia maderaspatana, a wild desert melon) as the natural protease tenderizer of choice for Rajasthani Buffalo. Kachri grows wild across the Thar Desert and contains protease enzymes similar to papain (raw papaya) and bromelain (pineapple) but milder and with a distinctive smoky-sour flavor that complements Rajasthani spice profiles (Lal Maas's Mathania chili, Safed Maans's almond-cardamom, Sula's whole-spice charcoal). The use of Kachri rather than raw papaya is region-specific food-science adaptation: Lucknawi Galouti tradition uses raw papaya (Kachi Papita); Hyderabadi Pasande tradition uses raw papaya; Bihari Kabab tradition uses raw papaya. Jaipur uses KACHRI specifically because raw papaya isn't traditionally available in the desert (papaya is a humid-climate fruit), while Kachri grows wild on Thar dunes. The choice is genuine pre-modern adaptation, not arbitrary regional preference. SULA is the iconic Rajput Kachri-marinated cut — Pasanda strips marinated overnight in Kachri paste + ginger + garlic + yogurt + Mathania chili, then charcoal-grilled (originally a Rajput hunting tradition adapted from game meat to Buffalo). SAFED MAANS (white meat) is the cream-and-almond-based variant requiring Naram (tenderloin) to preserve the pale color. Cross-references the broader pan-cultural enzyme-tenderizer pattern: Vietnamese papaya marinade for Bò Né (Batch 11), Filipino calamansi for Kilawin, Korean pear in bulgogi marinade (Batch 10), Lucknawi raw papaya for Galouti (this batch). Each culture identifies and uses the locally-available enzyme tenderizer; Jaipur's Kachri is the desert-specific expression.",
+    notes: "Desert-adaptive food science anchor. Cross-references pan-cultural enzyme-tenderizer pattern (Vietnamese papaya, Korean pear, Filipino calamansi). Region-specific selection of locally-available enzyme tenderizer.",
+  },
+
+  // ----- WEST BENGAL (2 entities) -----
+  {
+    id: "kolkata_biryani_potato_in",
+    name: "Kolkata Beef Biryani (the Potato Tradition)",
+    region: "west_bengal",
+    maps_to: [
+      { canonical_id: "chuck_blade", match_type: "cultural", confidence: 0.75, note: "Bone-in shoulder chunks primary" },
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.70, note: "Brisket alternative for fat content" },
+    ],
+    synonyms: ["kolkata biryani", "calcutta biryani", "potato biryani", "wajid ali shah biryani"],
+    description: "Kolkata Beef Biryani is uniquely Bengali — the only major Indian biryani tradition that includes POTATO. The historical origin is direct and well-documented: Wajid Ali Shah (last Nawab of Awadh, exiled by the British in 1856) settled in Metiabruz, a southern suburb of Kolkata, bringing his Awadhi cooks and culinary traditions. Faced with a reduced royal stipend that limited meat purchases, the cooks adapted by adding potato (an Indian newcomer at the time, recently introduced by colonial traders) to extend the meat content. The tradition stuck, became Bengali identity-defining, and now no Kolkata Biryani is considered authentic without potato. The cut requirement: 2-INCH BONE-IN chunks of Shoulder (Chuck) or Brisket with FAT (Charbi) attached — the bone marrow and rendered fat together provide the distinctive Kolkata Biryani richness. Using lean USDA-style stew meat produces a biryani Bengalis recognize as inauthentic — the rice tastes 'flat' and the dish loses its signature richness. West Bengal's COW-LEGAL status (one of the few mainland Indian states alongside Kerala and Goa) means Kolkata Biryani is traditionally cow-based, distinct from Hyderabadi/Karachi/Lucknawi Buffalo biryani traditions. New Market (Hogg Market), Park Circus, and Rajabazar are the historical Biryani-producing markets; Royal Indian Hotel (founded 1905), Aminia, and Arsalan are the iconic Biryani houses maintaining the tradition. Cross-references Pakistani Karachi Nalli Biryani (Batch 16, the cult-favorite marrow-bone variant) for the broader South Asian Biryani axis: Kolkata adds POTATO; Karachi adds NALLI (marrow bones); Hyderabadi adds DUM (sealed steaming); Lucknawi maintains the Awadhi original (smaller meat chunks, lighter spices). Four regional Biryani expressions, one Mughal-court ancestor.",
+    notes: "Marquee Kolkata Tier 3 entry. Cross-references Karachi Nalli Biryani (Pakistan, Batch 16) for the South Asian Biryani axis. Documents the unique historical origin (Wajid Ali Shah exile) of the Bengali potato addition.",
+  },
+
+  {
+    id: "kolkata_beef_chaap_in",
+    name: "Kolkata Beef Chaap (Slow-Cooked Pounded Thigh)",
+    region: "west_bengal",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.75, note: "Thigh primary" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.70, note: "Rump as alternative" },
+    ],
+    synonyms: ["beef chaap", "kolkata chaap"],
+    description: "Beef Chaap is Kolkata's iconic slow-cooked Mughlai-derived dish — flat wide hand-pounded slices of Cow Thigh or Rump, marinated overnight in yogurt + ginger-garlic + spices, then cooked low-and-slow on a flat tawa (cast-iron skillet) until the meat is fork-tender and bathed in a thick nutty almond/cashew gravy. The cut requirement: hand-pounded flat slices roughly 1cm thick — the pounding mechanically tenderizes the lean cuts (Inside Round or Top Sirloin) before the slow tawa cooking. Cooking time: 45-90 minutes on tawa, with the gravy reducing to a thick paste-like consistency that clings to the meat. Bengali Muslim restaurants (Sufia in New Market, Shiraz Golden Restaurant, Aliah) are the iconic Beef Chaap producers, with multi-generational Chaap-makers operating dedicated tawas. Cross-references Mughlai Pasanda traditions (Hyderabadi, Lucknawi, Bihari Kabab) — Beef Chaap is the Bengali Mughlai variant emphasizing the wide-flat pounded format and slow tawa cooking, distinct from the kebab-grilling format of other regional Pasanda traditions. The dish derives from the same Awadhi-Mughlai inheritance that brought Beef Biryani-with-Potato to Kolkata via the Wajid Ali Shah exile — both dishes are Bengali adaptations of Awadhi originals.",
+    notes: "Bengali Mughlai variant of pan-Indian Pasanda traditions. Cross-references Hyderabadi Pasanda (Batch 14b), Lucknawi Pasanda (this batch), Bihari Kabab (this batch). Wide-flat pounded format distinct from kebab-grilling traditions.",
+  },
+
+  // ----- INDIA CENTRAL (2 entities) -----
+  {
+    id: "bihari_kabab_cut_in",
+    name: "Bihari Kabab Cut (Third Pasanda Precision Tradition)",
+    region: "india_central",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.85, note: "Pasanda sliced with-the-grain" },
+    ],
+    synonyms: ["bihari kabab", "patna kabab", "with-the-grain ribbons"],
+    description: "Bihari Kabab is Bihar's iconic Pasanda variant — the THIRD distinct precision tradition using the soft undercut, complementing Hyderabadi (hand-pounded thin sheets, Batch 14b) and Lucknawi (translucent strips, this batch). The Bihari distinctive technique: Pasanda sliced WITH THE GRAIN (opposite of US convention which always slices across the grain) into long thin RIBBONS, marinated overnight with raw papaya (papain enzyme tenderizer) + ginger-garlic + mustard oil + Bihari black pepper. The with-the-grain slicing requires the raw papaya tenderization to make the meat chewable — without papaya, with-the-grain ribbons would be tough. The marinated ribbons are then cooked on direct charcoal at high heat for 5-8 minutes, producing the distinctive Bihari Kabab texture: long fibers that tear apart along the grain (the eating experience) but that have been pre-tenderized by the papaya enzymatic action. This is the architectural TRIANGULATION entry: three regional Pasanda traditions all using `tenderloin` canonical, all derived from one Awadhi origin, all expressing the precision butchery requirement differently. Hyderabadi: hand-pounded into thin sheets that cook in seconds at high heat. Lucknawi: sliced into translucent strips for delicate pan-fry. Bihari: sliced with-the-grain into ribbons for direct charcoal-grilling. Three traditions, one cut, three formats — the cleanest documented Pasanda precision triangulation. Patna's Sabzibagh and Phulwari Sharif markets maintain the multi-generational Bihari Kabab butcher tradition, with specific butchers known for the with-the-grain slicing technique that takes years to master.",
+    notes: "Architectural triangulation entry. Cross-references Hyderabadi Pasanda (Batch 14b), Lucknawi Parcha (this batch). Three precision Pasanda traditions from one Awadhi origin.",
+  },
+
+  {
+    id: "bhopali_pasanda_variant_in",
+    name: "Bhopali Pasanda (Wide Rectangular Sheets — Fourth Regional Pasanda Expression)",
+    region: "india_central",
+    maps_to: [
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.80, note: "Wide sheets cut from undercut" },
+    ],
+    synonyms: ["bhopali pasanda", "bhopali parcha", "nawabi sheets"],
+    description: "Bhopali Pasanda is Madhya Pradesh's Nawabi heritage Pasanda variant — the FOURTH documented regional expression (after Hyderabadi hand-pounded sheets, Lucknawi translucent strips, and Bihari with-the-grain ribbons). The Bhopali distinctive: WIDE RECTANGULAR SHEETS (typically 8-12cm wide, 1-2cm thick), distinct from the narrow Hyderabadi sheets and the long thin Lucknawi/Bihari strips. The shape is intentional: Bhopal's iconic dish 'Bhopali Pasande' (note plural) is built around wrapping/folding these wide sheets around stuffings or layering them in flat dishes — the rectangular geometry serves the dish format. Bhopali butchers in the Old City markets (Ibrahimpura, Budhwara) maintain the wider-sheet tradition as a precision specification: a Bhopali Pasande recipe specifies the exact rectangular dimensions, and butchers cut accordingly. The historical origin is Nawabi: Bhopal was a princely state ruled by the Begums of Bhopal (multiple female rulers, 1819-1926) who patronized refined court cuisine paralleling but distinct from Awadhi Lucknow. The Bhopali Nawabi tradition developed its own Pasanda format alongside the Lucknow original. Modern Bhopal Pasanda houses (Hakeem's, Filfora) maintain the wide-rectangular specification, and the 'shape' of the cut is a documented quality test — narrower sheets would produce a different dish, not authentic Bhopali Pasande.",
+    notes: "Fourth regional Pasanda expression. Cross-references Hyderabadi (Batch 14b), Lucknawi (this batch), Bihari (this batch). Bhopal's Nawabi heritage paralleled but distinct from Awadhi Lucknow.",
+  },
+
 ] as const;

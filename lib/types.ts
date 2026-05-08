@@ -113,7 +113,13 @@ export type RegionSlug =
   | "karnataka"
   // South Asia — Sovereign (Batch 16)
   | "pakistan"
-  | "bangladesh";
+  | "bangladesh"
+  // South Asia — North India "Hindustani Heartland" (Batch 17)
+  | "uttar_pradesh"
+  | "punjab"
+  | "rajasthan"
+  | "west_bengal"
+  | "india_central";
 
 export type CanonicalId =
   | "ribeye"

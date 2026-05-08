@@ -159,6 +159,11 @@ export const REGION_ENTITY: Record<
   karnataka: { id: "karnataka", formalName: "Karnataka", shortName: "Karnataka" },
   pakistan: { id: "pakistan", formalName: "Islamic Republic of Pakistan", shortName: "Pakistan" },
   bangladesh: { id: "bangladesh", formalName: "People's Republic of Bangladesh", shortName: "Bangladesh" },
+  uttar_pradesh: { id: "uttar_pradesh", formalName: "Uttar Pradesh", shortName: "UP" },
+  punjab: { id: "punjab", formalName: "Punjab (with Chandigarh & Haryana)", shortName: "Punjab" },
+  rajasthan: { id: "rajasthan", formalName: "Rajasthan", shortName: "Rajasthan" },
+  west_bengal: { id: "west_bengal", formalName: "West Bengal", shortName: "West Bengal" },
+  india_central: { id: "india_central", formalName: "Central India", shortName: "Central India" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

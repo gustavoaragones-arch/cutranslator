@@ -120,6 +120,15 @@ export const regions = [
   // South Asia — Sovereign (Batch 16)
   { id: "pakistan" as const, label: "Pakistan", flag: "🇵🇰", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["pak", "karachi", "lahore", "islamabad", "urdu", "punjabi-pk", "saddar"] as readonly string[] },
   { id: "bangladesh" as const, label: "Bangladesh", flag: "🇧🇩", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["bd", "dhaka", "chittagong", "bangla", "bengali", "kaptan bazar", "reazuddin"] as readonly string[] },
+
+  // South Asia — North India "Hindustani Heartland" (Batch 17)
+  { id: "uttar_pradesh" as const, label: "Uttar Pradesh", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "North India" as const, aliases: ["lucknow", "lucknawi", "awadhi", "agra", "varanasi", "kanpur", "up"] as readonly string[] },
+  { id: "punjab" as const, label: "Punjab", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "North India" as const, aliases: ["amritsar", "mohali", "chandigarh", "haryana", "ludhiana", "punjabi-india", "pb", "hr", "ch"] as readonly string[] },
+  { id: "rajasthan" as const, label: "Rajasthan", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "North India" as const, aliases: ["jaipur", "udaipur", "jodhpur", "rajput", "marwari", "rj"] as readonly string[] },
+  { id: "west_bengal" as const, label: "West Bengal", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "North India" as const, aliases: ["kolkata", "calcutta", "bengali-india", "wb"] as readonly string[] },
+
+  // South Asia — Central India (Batch 17)
+  { id: "india_central" as const, label: "Central India", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Central India" as const, aliases: ["bihar", "patna", "madhya pradesh", "bhopal", "gujarat", "ahmedabad", "gandhinagar", "jharkhand", "ranchi", "chhattisgarh", "raipur", "odisha", "bhubaneswar", "central india"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];
