@@ -164,6 +164,11 @@ export const REGION_ENTITY: Record<
   rajasthan: { id: "rajasthan", formalName: "Rajasthan", shortName: "Rajasthan" },
   west_bengal: { id: "west_bengal", formalName: "West Bengal", shortName: "West Bengal" },
   india_central: { id: "india_central", formalName: "Central India", shortName: "Central India" },
+  meghalaya: { id: "meghalaya", formalName: "Meghalaya", shortName: "Meghalaya" },
+  nagaland: { id: "nagaland", formalName: "Nagaland", shortName: "Nagaland" },
+  manipur: { id: "manipur", formalName: "Manipur", shortName: "Manipur" },
+  sikkim: { id: "sikkim", formalName: "Sikkim", shortName: "Sikkim" },
+  northeast_other: { id: "northeast_other", formalName: "Northeast India (Arunachal, Mizoram, Assam, Tripura)", shortName: "Northeast India" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

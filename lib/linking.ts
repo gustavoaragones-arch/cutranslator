@@ -19,6 +19,15 @@ import { regionLabel } from "@/lib/regions";
 import type { CanonicalId, RegionSlug } from "@/lib/types";
 import { normalizeForLookup, slugifyCut } from "@/utils/normalize";
 
+export type RouteListing = {
+  fromSlug: RegionSlug;
+  toSlug: RegionSlug;
+  cutSlug: string;
+  cutLabel: string;
+  fromLabel: string;
+  toLabel: string;
+};
+
 export type InternalLink = { href: string; label: string };
 
 function formatCanonicalTitle(id: CanonicalId): string {
@@ -293,4 +302,91 @@ export function getExploreMoreLinks(args: {
     }
   }
   return out;
+}
+
+/**
+ * Section A: fixed source country, varied destination.
+ * Returns routes where from = sourceSlug and the cut slug stays the same,
+ * sorted alphabetically by destination label, capped at limit.
+ * Excludes the current page's own destination.
+ */
+export function getOtherDestinationsForSourceCut(
+  sourceSlug: RegionSlug,
+  cutSlug: string,
+  currentDestSlug: RegionSlug,
+  limit = 12,
+): RouteListing[] {
+  const fromLabel = regionLabel(sourceSlug);
+  const cutLabel = cutSlug.replace(/-/g, " ");
+  const out: RouteListing[] = [];
+  for (const t of regions) {
+    const toSlug = t.id as RegionSlug;
+    if (toSlug === sourceSlug || toSlug === currentDestSlug) continue;
+    out.push({
+      fromSlug: sourceSlug,
+      toSlug,
+      cutSlug,
+      cutLabel,
+      fromLabel,
+      toLabel: regionLabel(toSlug),
+    });
+  }
+  out.sort((a, b) => a.toLabel.localeCompare(b.toLabel, "en"));
+  return out.slice(0, limit);
+}
+
+/**
+ * Section B: fixed destination country, varied source.
+ * Returns routes where to = destSlug and the source cut resolves to canonicalId,
+ * one route per source country, sorted alphabetically by source label, capped at limit.
+ * Excludes the current page's own source.
+ */
+export function getOtherSourcesForDestinationCanonical(
+  destSlug: RegionSlug,
+  canonicalId: CanonicalId,
+  currentFromSlug: RegionSlug,
+  limit = 12,
+): RouteListing[] {
+  const toLabel = regionLabel(destSlug);
+  const seen = new Set<RegionSlug>();
+  const out: RouteListing[] = [];
+  for (const m of regionalNames) {
+    const fromSlug = m.region;
+    if (fromSlug === destSlug || fromSlug === currentFromSlug) continue;
+    if (seen.has(fromSlug)) continue;
+    if (!expandMapsTo(m.maps_to).includes(canonicalId)) continue;
+    seen.add(fromSlug);
+    out.push({
+      fromSlug,
+      toSlug: destSlug,
+      cutSlug: slugifyCut(m.name),
+      cutLabel: m.name,
+      fromLabel: regionLabel(fromSlug),
+      toLabel,
+    });
+  }
+  out.sort((a, b) => a.fromLabel.localeCompare(b.fromLabel, "en"));
+  return out.slice(0, limit);
+}
+
+/**
+ * Total route counts for a canonical — used to show "Show all N" links
+ * when sections are capped.
+ * destinations: all possible destination regions for any source that has this canonical.
+ * sources: all source regions that have at least one name for this canonical.
+ */
+export function countRoutesForCanonical(canonicalId: CanonicalId): {
+  destinations: number;
+  sources: number;
+} {
+  const sourceRegions = new Set<RegionSlug>();
+  for (const m of regionalNames) {
+    if (expandMapsTo(m.maps_to).includes(canonicalId)) {
+      sourceRegions.add(m.region);
+    }
+  }
+  // Each source region can route to every other region as destination
+  const sources = sourceRegions.size;
+  const destinations = sources > 0 ? regions.length - 1 : 0;
+  return { destinations, sources };
 }

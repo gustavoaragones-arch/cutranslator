@@ -1,6 +1,104 @@
 @import "../styles/tokens.css";
 @import "tailwindcss";
 
+/* ─── Atlas editorial typography ─── */
+.atlas-serif {
+  font-family: var(--font-fraunces), Georgia, 'Times New Roman', serif;
+}
+.atlas-mono {
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.atlas-display-italic {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+}
+.atlas-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid var(--atlas-ink);
+  margin-bottom: 24px;
+}
+.atlas-section-head h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--atlas-ink);
+}
+.atlas-section-tag {
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--atlas-ink-mute);
+}
+.atlas-section-tag::before {
+  content: '§ ';
+  color: var(--atlas-ox-blood);
+}
+/* Doneness table rows */
+.atlas-doneness-row {
+  border-bottom: 0.5px solid var(--atlas-ink);
+  transition: background 0.15s;
+}
+.atlas-doneness-row:hover { background: var(--atlas-paper-warm); }
+.atlas-doneness-row:last-child { border-bottom: 1.5px solid var(--atlas-ink); }
+/* CTA explore block hover */
+.atlas-cta-block {
+  background: var(--atlas-paper);
+  transition: background 0.15s, color 0.15s;
+}
+.atlas-cta-block:hover { background: var(--atlas-ink); color: var(--atlas-paper); }
+.atlas-cta-block:hover .atlas-cta-num { color: var(--atlas-paper-deep); }
+.atlas-cta-block:hover .atlas-cta-arrow { color: var(--atlas-ox-blood); }
+/* Related cut chips */
+.atlas-cut-chip {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 16px;
+  padding: 10px 18px;
+  border: 0.5px solid var(--atlas-ink);
+  background: var(--atlas-paper);
+  transition: all 0.15s;
+  color: var(--atlas-ink);
+}
+.atlas-cut-chip:hover { background: var(--atlas-ink); color: var(--atlas-paper); }
+.atlas-cut-chip:hover .atlas-chip-primal { color: var(--atlas-paper-deep); }
+/* Route rows (other countries ledger) */
+.atlas-route-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--atlas-ink-fade);
+  transition: padding-left 0.15s;
+  color: var(--atlas-ink);
+}
+.atlas-route-row:hover { padding-left: 8px; }
+.atlas-route-row:hover .atlas-route-label { color: var(--atlas-ox-blood); }
+/* Compare cards */
+.atlas-compare-card {
+  border: 0.5px solid var(--atlas-ink);
+  background: var(--atlas-paper);
+  padding: 20px 22px 22px;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--atlas-ink);
+}
+.atlas-compare-card:hover {
+  background: var(--atlas-paper-warm);
+  border-color: var(--atlas-ox-blood);
+}
+
 @theme inline {
   --font-sans: ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;

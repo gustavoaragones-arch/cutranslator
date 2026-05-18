@@ -15,34 +15,31 @@ const eeatLinks = [
 export function SiteFooter() {
   const { cuts, compares, translations } = getFooterCuratedLinks();
   return (
-    <footer className="cut-footer mt-auto">
-      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <nav
-          aria-label="Site information"
-          className="flex flex-wrap justify-center gap-x-4 gap-y-2 border-b border-[rgba(250,247,242,0.1)] pb-8 text-sm"
-        >
-          {eeatLinks.map((l) => (
-            <Link key={l.href} href={l.href} className="cut-muted-link underline">
-              {l.label}
-            </Link>
-          ))}
-        </nav>
-
-        <p className="mt-8 text-center text-sm text-[var(--text-muted)]">
-          <a href={`mailto:${site.email}`} className="cut-link font-medium underline">
-            {site.email}
-          </a>
-        </p>
-
-        <div className="mt-10 grid gap-10 sm:grid-cols-3">
+    <footer
+      style={{
+        borderTop: "1.5px solid var(--atlas-ink)",
+        backgroundColor: "var(--atlas-paper)",
+        color: "var(--atlas-ink-mute)",
+      }}
+    >
+      <div className="mx-auto max-w-[1180px] px-6 sm:px-12 py-10">
+        {/* Link columns */}
+        <div className="grid gap-10 sm:grid-cols-3 mb-10">
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+            <h2
+              className="atlas-mono mb-3"
+              style={{ color: "var(--atlas-ink-mute)" }}
+            >
               Top cuts
             </h2>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="space-y-2">
               {cuts.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="cut-muted-link underline">
+                  <Link
+                    href={l.href}
+                    className="atlas-serif text-[14px] transition-colors hover:text-[var(--atlas-ox-blood)]"
+                    style={{ color: "var(--atlas-ink-mute)" }}
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -50,13 +47,20 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+            <h2
+              className="atlas-mono mb-3"
+              style={{ color: "var(--atlas-ink-mute)" }}
+            >
               Top comparisons
             </h2>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="space-y-2">
               {compares.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="cut-muted-link underline">
+                  <Link
+                    href={l.href}
+                    className="atlas-serif text-[14px] transition-colors hover:text-[var(--atlas-ox-blood)]"
+                    style={{ color: "var(--atlas-ink-mute)" }}
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -64,13 +68,20 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+            <h2
+              className="atlas-mono mb-3"
+              style={{ color: "var(--atlas-ink-mute)" }}
+            >
               Top translations
             </h2>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="space-y-2">
               {translations.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="cut-muted-link underline">
+                  <Link
+                    href={l.href}
+                    className="atlas-serif text-[14px] transition-colors hover:text-[var(--atlas-ox-blood)]"
+                    style={{ color: "var(--atlas-ink-mute)" }}
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -79,15 +90,45 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="mt-10 text-center text-xs text-[var(--text-muted)]">
-          © 2026 {site.name} · Operated by {site.entity}
-        </p>
-        <p className="mt-2 text-center text-xs text-[var(--text-muted)]">
-          <Link href="/" className="cut-link font-medium underline">
-            {site.name}
-          </Link>
-          · Beef cut ontology & regional names
-        </p>
+        {/* EEAT links */}
+        <nav
+          aria-label="Site information"
+          className="flex flex-wrap gap-x-4 gap-y-2 py-6"
+          style={{ borderTop: "0.5px solid var(--atlas-ink-fade)" }}
+        >
+          {eeatLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="atlas-mono transition-colors hover:text-[var(--atlas-ox-blood)]"
+              style={{ color: "var(--atlas-ink-mute)" }}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Bottom bar */}
+        <div
+          className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-6"
+          style={{ borderTop: "0.5px solid var(--atlas-ink-fade)" }}
+        >
+          <span
+            className="atlas-serif italic font-medium text-[18px]"
+            style={{ color: "var(--atlas-ox-blood)" }}
+          >
+            cutranslator
+          </span>
+          <span className="atlas-mono" style={{ color: "var(--atlas-ink-mute)" }}>
+            © {site.entity} · 2026 ·{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="transition-colors hover:text-[var(--atlas-ox-blood)]"
+            >
+              {site.email}
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );

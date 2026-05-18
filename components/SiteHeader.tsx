@@ -2,22 +2,27 @@ import Link from "next/link";
 
 export function SiteHeader() {
   return (
-    <header className="cut-site-header-light">
-      <div className="mx-auto flex max-w-5xl items-center justify-center px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
+    <header
+      style={{
+        borderBottom: "1.5px solid var(--atlas-ink)",
+        backgroundColor: "var(--atlas-paper)",
+      }}
+    >
+      <div className="mx-auto flex max-w-[1180px] items-baseline justify-between px-6 py-6 sm:px-12">
         <Link
           href="/"
-          className="block transition-opacity hover:opacity-80"
+          className="atlas-serif italic font-medium text-[28px] tracking-[-0.02em] transition-opacity hover:opacity-80"
+          style={{ color: "var(--atlas-ox-blood)" }}
           aria-label="Cutranslator home"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element -- brand asset at public/logo.png */}
-          <img
-            src="/logo.png"
-            alt="Cutranslator"
-            width={899}
-            height={567}
-            className="h-12 w-auto max-h-14 max-w-[min(100%,280px)] object-contain object-left sm:h-14 sm:max-h-16"
-          />
+          cutranslator
         </Link>
+        <span
+          className="atlas-mono hidden sm:block"
+          style={{ color: "var(--atlas-ink-mute)" }}
+        >
+          International beef cuts atlas · vol. 1
+        </span>
       </div>
     </header>
   );

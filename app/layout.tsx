@@ -1,12 +1,27 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display, Protest_Strike } from "next/font/google";
+import { DM_Sans, Fraunces, JetBrains_Mono, Playfair_Display, Protest_Strike } from "next/font/google";
 import { AITransparencyBlock } from "@/components/AITransparencyBlock";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { buildSiteIdentityGraph } from "@/lib/structured-data";
-import { getSiteUrl, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import "./globals.css";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 const protestStrike = Protest_Strike({
   subsets: ["latin"],
@@ -29,8 +44,13 @@ const dmSans = DM_Sans({
 
 const defaultTitle = `Beef Cut Translator | ${site.name}`;
 
+// NEXT_PUBLIC_* vars are inlined at build time; fall back to the canonical apex
+// so metadataBase (and the sitemap index <loc> entries Next.js derives from it)
+// never resolves to http://localhost:3000 in any environment.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cutranslator.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(getSiteUrl()),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: defaultTitle,
     template: `%s | ${site.name}`,
@@ -63,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${protestStrike.variable} ${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${jetbrainsMono.variable} ${protestStrike.variable} ${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <script

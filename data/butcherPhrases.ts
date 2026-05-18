@@ -557,4 +557,38 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "india_central", phrase: "Bihari Kabab ke liye Pasanda, with-the-grain, raw papaya marinade", notes: "'Pasanda for Bihari Kabab, with-the-grain, raw papaya marinade' — explicit grain-direction specification" },
   { canonicalId: "tenderloin", region: "india_central", phrase: "Bhopali Pasanda, wide rectangular sheets, Begum recipe ke liye", notes: "'Bhopali Pasanda, wide rectangular sheets, for Begum [historical] recipe' — Nawabi tradition request" },
   { canonicalId: "hind_shank", region: "india_central", phrase: "Khichda cut, Bhopali Haleem ke liye, fibrous shank", notes: "'Khichda/Haleem cut for Bhopali Haleem, fibrous shank' — cross-references Hyderabadi Haleem-cut Machhli" },
+
+  // 🇮🇳 MEGHALAYA (Khasi formal register)
+  { canonicalId: "tenderloin", region: "meghalaya", phrase: "Doh jem ai, Iewduh market ka best quality", notes: "'Give Doh Jem (soft meat), Iewduh market best quality' — Khasi market reference" },
+  { canonicalId: "brisket", region: "meghalaya", phrase: "Doh khlein, Jadoh ka liye, charbi-wala", notes: "'Doh Khlein for Jadoh, fatty' — explicit fat-mandate for rice-meat dish" },
+  { canonicalId: "brisket", region: "meghalaya", phrase: "Doh masi thang, Dpei hearth ka, fresh se mehenga bhi chalega", notes: "'Doh Masi Thang (smoked), from Dpei hearth, more expensive than fresh is fine' — USDA-quality inversion acknowledgment" },
+  { canonicalId: "striploin", region: "meghalaya", phrase: "Mithun meghalaya, slow-braise ke liye, grill mat kariye", notes: "'Meghalaya Mithun for slow-braising, do NOT grill' — explicit Mithun texture-failure warning" },
+
+  // 🇮🇳 NAGALAND (Angami Naga + Nagamese register)
+  { canonicalId: "brisket", region: "nagaland", phrase: "Vitho kezhu, Axone ka liye, charbi extra", notes: "'Vitho Kezhu (fatty brisket) for Axone, extra fat' — explicit Fermentation-Fat Axis cut request" },
+  { canonicalId: "brisket", region: "nagaland", phrase: "Vitho keshu, Thukhu hearth ka, weeks-old smoke", notes: "'Vitho Keshu (smoked), from Thukhu hearth, weeks-old smoke' — explicit MARQUEE smoked-beef request" },
+  { canonicalId: "striploin", region: "nagaland", phrase: "Cuo, Feasts of Merit ke liye, prestige cut", notes: "'Cuo (Mithun) for Feasts of Merit, prestige cut' — ceremonial Mithun selection" },
+  { canonicalId: "striploin", region: "nagaland", phrase: "Hornbill Festival ka Mithun, Bhoot Jolokia ke saath braise", notes: "'Hornbill Festival Mithun, braise with Bhoot Jolokia' — explicit cooking-method specification" },
+  { canonicalId: "brisket", region: "nagaland", phrase: "Anishi ke liye Vitho Keshu, smoke flavor strong chahiye", notes: "'For Anishi (fermented yam-leaf), Vitho Keshu, strong smoke flavor required'" },
+
+  // 🇮🇳 MANIPUR (Meiteilon register)
+  { canonicalId: "brisket", region: "manipur", phrase: "Tha-sa, Berma ke liye, charbi mandatory", notes: "'Tha-sa fatty brisket for Berma, fat is mandatory' — explicit Fermentation-Fat Axis cut request" },
+  { canonicalId: "brisket", region: "manipur", phrase: "Kangshoy cut, fatty brisket, lean mat dena", notes: "'Kangshoy stew cut, fatty brisket, no lean' — explicit Manipuri stew requirement" },
+  { canonicalId: "brisket", region: "manipur", phrase: "Shan-sa Meihouba, kitchen hearth ka smoked", notes: "'Shan-sa Meihouba, kitchen-hearth smoked' — explicit Manipuri smoked-beef request" },
+  { canonicalId: "striploin", region: "manipur", phrase: "Mithun manipur, festival ke liye, regular se mehenga", notes: "'Manipur Mithun for festival, more expensive than regular' — prestige tier acknowledgment" },
+
+  // 🇮🇳 SIKKIM (Sikkim Nepali register)
+  { canonicalId: "bottom_round_roast", region: "sikkim", phrase: "Sukuti dinnuhos, Sadheko ke liye, salt mat lagaiyena", notes: "'Give Sukuti, for Sadheko, do not salt' — explicit cooking-ingredient (not jerky) specification" },
+  { canonicalId: "brisket", region: "sikkim", phrase: "Boso halnuhos, Momo ke liye, 30 percent fat", notes: "'Add fat for Momo, 30 percent fat' — explicit Momo fat-ratio specification for high-altitude dehydration prevention" },
+  { canonicalId: "hind_shank", region: "sikkim", phrase: "Khutta ko masu, Thukpa ke liye, gelatin chahiye", notes: "'Leg meat for Thukpa, gelatin required' — explicit shank-for-broth specification" },
+  { canonicalId: "chuck_roll", region: "sikkim", phrase: "Yak ko masu, winter availability check kariye", notes: "'Yak meat, check winter availability' — DEFERRED-SPECIES entry, Yak activates in Batch 19" },
+
+  // 🇮🇳 NORTHEAST OTHER (mixed registers across 4 states)
+  { canonicalId: "brisket", region: "northeast_other", phrase: "Sa-thau (Mizoram), Bai ke liye, oil substitute", notes: "'Sa-thau (Mizo fatty meat) for Bai, oil substitute' — Mizo zero-oil cuisine fat-mandate" },
+  { canonicalId: "brisket", region: "northeast_other", phrase: "Sa-rep (Mizoram), Tap-chhak hearth smoked", notes: "'Sa-rep, Tap-chhak-hearth smoked' — iconic Mizo smoked-beef request" },
+  { canonicalId: "striploin", region: "northeast_other", phrase: "Sial (Mizoram), Christian festival ke liye, prestige", notes: "'Sial (Mizo Mithun) for Christian festival, prestige' — Mizo ceremonial Mithun selection" },
+  { canonicalId: "brisket", region: "northeast_other", phrase: "Suka Mansa (Arunachal), Haphu hearth smoke, Basti ke liye", notes: "'Suka Mansa, Haphu-hearth-smoked, for bamboo-shoot preparation'" },
+  { canonicalId: "chuck_roll", region: "northeast_other", phrase: "Goru mangxo (Assam), Moh mangxo nahi, cow specifically", notes: "'Goru mangxo (cow) Assam, NOT Moh (buffalo), cow specifically' — explicit cow-vs-buffalo disambiguation in Assamese Guwahati markets" },
+  { canonicalId: "brisket", region: "northeast_other", phrase: "Buk-er (Tripura), Chakhwi ke liye, alkali-resistant fatty", notes: "'Buk-er (Tripura fatty brisket) for Chakhwi, alkali-resistant fatty cut' — Tripura tribal Chakhwi fat-mandate, third Fermentation-Fat Axis state" },
+  { canonicalId: "brisket", region: "northeast_other", phrase: "Dhua-khua mangxo (Assam), hill se laaya hua smoked", notes: "'Dhua-khua mangxo, hill-brought smoked' — Assamese smoked-beef sourced from hill markets" },
 ] as const;

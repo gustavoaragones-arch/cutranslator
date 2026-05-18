@@ -129,6 +129,13 @@ export const regions = [
 
   // South Asia — Central India (Batch 17)
   { id: "india_central" as const, label: "Central India", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Central India" as const, aliases: ["bihar", "patna", "madhya pradesh", "bhopal", "gujarat", "ahmedabad", "gandhinagar", "jharkhand", "ranchi", "chhattisgarh", "raipur", "odisha", "bhubaneswar", "central india"] as readonly string[] },
+
+  // South Asia — Northeast India (Batch 18)
+  { id: "meghalaya" as const, label: "Meghalaya", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["shillong", "khasi", "iewduh", "bara bazar", "jadoh", "doh masi", "ml"] as readonly string[] },
+  { id: "nagaland" as const, label: "Nagaland", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["kohima", "naga", "angami", "ao", "sema", "vitho", "axone", "hornbill", "feasts of merit", "nl"] as readonly string[] },
+  { id: "manipur" as const, label: "Manipur", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["imphal", "meitei", "meiteilon", "shan-sa", "berma", "kangshoy", "mn"] as readonly string[] },
+  { id: "sikkim" as const, label: "Sikkim", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["gangtok", "sukuti", "momo", "thukpa", "lall market", "lepcha", "bhutia", "sk"] as readonly string[] },
+  { id: "northeast_other" as const, label: "Northeast India (Other States)", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["arunachal", "itanagar", "mithun", "mizoram", "aizawl", "sa-rep", "sial", "assam", "guwahati", "dispur", "goru mangxo", "tripura", "agartala", "mos-sa", "chakhwi", "northeast india"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

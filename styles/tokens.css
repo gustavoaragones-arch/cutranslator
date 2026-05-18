@@ -68,6 +68,20 @@
   --footer-bg: #1C1917;
   --footer-text: #A8A29E;
 
+  /* Atlas editorial palette */
+  --atlas-paper:         #F2EBDD;
+  --atlas-paper-warm:    #ECE3D0;
+  --atlas-paper-deep:    #E3D7BC;
+  --atlas-ink:           #1A1612;
+  --atlas-ink-soft:      #2D2620;
+  --atlas-ink-mute:      #5A4A38;
+  --atlas-ink-fade:      #8B7A60;
+  --atlas-ox-blood:      #8B2A1F;
+  --atlas-ox-blood-deep: #6B1E14;
+  --atlas-gold:          #D89C3A;
+  --atlas-moss:          #4A6B3F;
+  --atlas-moss-soft:     #C9D6BA;
+
   /* Semantic */
   --danger-border: rgba(155, 35, 53, 0.45);
   --danger-bg: rgba(155, 35, 53, 0.12);

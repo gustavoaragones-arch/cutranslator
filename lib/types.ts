@@ -119,7 +119,13 @@ export type RegionSlug =
   | "punjab"
   | "rajasthan"
   | "west_bengal"
-  | "india_central";
+  | "india_central"
+  // South Asia — Northeast India (Batch 18)
+  | "meghalaya"
+  | "nagaland"
+  | "manipur"
+  | "sikkim"
+  | "northeast_other";
 
 export type CanonicalId =
   | "ribeye"
