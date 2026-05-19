@@ -754,22 +754,13 @@ export default async function PairCutPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* ── Other countries & routes ── */}
-        {(otherDestinations.length > 0 || otherSources.length > 0) && (
-          <section className="mx-auto max-w-[1180px] px-6 sm:px-12 mb-20">
+        {/* ── Section A: fixed source, varied destination ── */}
+        {otherDestinations.length > 0 && (
+          <section className="mx-auto max-w-[1180px] px-6 sm:px-12 mb-14">
             <div className="atlas-section-head">
-              <h2>Other countries & routes</h2>
-              <span className="atlas-section-tag">Same canonical cut</span>
+              <h2>{cutDisplay} in other countries</h2>
+              <span className="atlas-section-tag">Same {from} cut, other markets</span>
             </div>
-            {canonicalLabel && (
-              <p
-                className="atlas-serif italic text-[17px] leading-[1.55] mb-6 max-w-[640px]"
-                style={{ color: "var(--atlas-ink-mute)" }}
-              >
-                The same canonical cut translates differently across markets. Below: how{" "}
-                <em>{cutDisplay}</em> resolves in other regional ontologies.
-              </p>
-            )}
             <div
               className="grid grid-cols-1 sm:grid-cols-2 gap-x-12"
               style={{ borderTop: "0.5px solid var(--atlas-ink)" }}
@@ -791,6 +782,32 @@ export default async function PairCutPage({ params }: PageProps) {
                   </span>
                 </Link>
               ))}
+            </div>
+            {destinationCount > 12 && primaryCanonical && (
+              <Link
+                href={`/cuts/${primaryCanonical}`}
+                className="atlas-mono text-[10px] tracking-[0.14em] mt-4 inline-block transition-colors hover:text-[var(--atlas-ox-blood)]"
+                style={{ color: "var(--atlas-ink-mute)", borderBottom: "0.5px solid var(--atlas-ink-mute)" }}
+              >
+                Show all {destinationCount} destinations →
+              </Link>
+            )}
+          </section>
+        )}
+
+        {/* ── Section B: fixed destination, varied source ── */}
+        {otherSources.length > 0 && canonicalLabel && (
+          <section className="mx-auto max-w-[1180px] px-6 sm:px-12 mb-14">
+            <div className="atlas-section-head">
+              <h2>
+                {canonicalLabel.charAt(0).toUpperCase() + canonicalLabel.slice(1)} around the world
+              </h2>
+              <span className="atlas-section-tag">How other countries name this cut</span>
+            </div>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-x-12"
+              style={{ borderTop: "0.5px solid var(--atlas-ink)" }}
+            >
               {otherSources.map((r) => (
                 <Link
                   key={`src-${r.fromSlug}-${r.toSlug}`}
@@ -815,16 +832,29 @@ export default async function PairCutPage({ params }: PageProps) {
                 </Link>
               ))}
             </div>
-            {(destinationCount > 12 || sourceCount > 12) && primaryCanonical && (
+            {sourceCount > 12 && primaryCanonical && (
               <Link
                 href={`/cuts/${primaryCanonical}`}
                 className="atlas-mono text-[10px] tracking-[0.14em] mt-4 inline-block transition-colors hover:text-[var(--atlas-ox-blood)]"
                 style={{ color: "var(--atlas-ink-mute)", borderBottom: "0.5px solid var(--atlas-ink-mute)" }}
               >
-                Show all {destinationCount + sourceCount} routes →
+                Show all {sourceCount} source countries →
               </Link>
             )}
           </section>
+        )}
+
+        {/* ── Section C: canonical hub crosslink ── */}
+        {primaryCanonical && canonicalLabel && (
+          <aside className="mx-auto max-w-[1180px] px-6 sm:px-12 mb-14">
+            <Link
+              href={`/cuts/${primaryCanonical}`}
+              className="atlas-serif italic text-[16px] transition-colors hover:text-[var(--atlas-ox-blood)]"
+              style={{ color: "var(--atlas-ink-mute)" }}
+            >
+              See all regional names for {canonicalLabel} across every country →
+            </Link>
+          </aside>
         )}
 
         {/* ── Alternatives ── */}
