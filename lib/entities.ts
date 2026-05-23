@@ -169,6 +169,11 @@ export const REGION_ENTITY: Record<
   manipur: { id: "manipur", formalName: "Manipur", shortName: "Manipur" },
   sikkim: { id: "sikkim", formalName: "Sikkim", shortName: "Sikkim" },
   northeast_other: { id: "northeast_other", formalName: "Northeast India (Arunachal, Mizoram, Assam, Tripura)", shortName: "Northeast India" },
+  ladakh: { id: "ladakh", formalName: "Ladakh", shortName: "Ladakh" },
+  jammu_kashmir: { id: "jammu_kashmir", formalName: "Jammu & Kashmir", shortName: "Jammu & Kashmir" },
+  himachal_uttarakhand: { id: "himachal_uttarakhand", formalName: "Himachal Pradesh & Uttarakhand", shortName: "Himachal & Uttarakhand" },
+  india_coastal_colonial: { id: "india_coastal_colonial", formalName: "Coastal-Colonial India (Pondicherry French + Daman Portuguese)", shortName: "Coastal-Colonial India" },
+  india_islands: { id: "india_islands", formalName: "Indian Islands (Andaman & Nicobar + Lakshadweep)", shortName: "Indian Islands" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

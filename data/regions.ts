@@ -136,6 +136,13 @@ export const regions = [
   { id: "manipur" as const, label: "Manipur", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["imphal", "meitei", "meiteilon", "shan-sa", "berma", "kangshoy", "mn"] as readonly string[] },
   { id: "sikkim" as const, label: "Sikkim", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["gangtok", "sukuti", "momo", "thukpa", "lall market", "lepcha", "bhutia", "sk"] as readonly string[] },
   { id: "northeast_other" as const, label: "Northeast India (Other States)", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Northeast India" as const, aliases: ["arunachal", "itanagar", "mithun", "mizoram", "aizawl", "sa-rep", "sial", "assam", "guwahati", "dispur", "goru mangxo", "tripura", "agartala", "mos-sa", "chakhwi", "northeast india"] as readonly string[] },
+
+  // South Asia — Himalayan + Coastal-Colonial + Islands (Batch 19)
+  { id: "ladakh" as const, label: "Ladakh", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Himalayan India" as const, aliases: ["leh", "yak", "yag-sha", "sha-skam", "ladakhi", "bhoti", "tibetan", "momo", "thukpa", "sha-phaley", "altitude", "la"] as readonly string[] },
+  { id: "jammu_kashmir" as const, label: "Jammu & Kashmir", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Himalayan India" as const, aliases: ["srinagar", "jammu", "kashmir", "kashmiri", "wazwan", "waza", "gushtaba", "rista", "gosh-par", "dogri", "hazratbal", "bohri kadal", "gujjar nagar", "jk"] as readonly string[] },
+  { id: "himachal_uttarakhand" as const, label: "Himachal Pradesh & Uttarakhand", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Himalayan India" as const, aliases: ["himachal", "shimla", "lower bazaar", "pahari", "uttarakhand", "dehradun", "doon", "reetha mandi", "mehuwala", "hp", "uk", "foothills"] as readonly string[] },
+  { id: "india_coastal_colonial" as const, label: "Coastal-Colonial India (Pondicherry & Daman)", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Coastal-Colonial India" as const, aliases: ["pondicherry", "puducherry", "pondy", "goubert", "french", "filet", "contre-filet", "daman", "diu", "portuguese", "salt meat", "bistek", "moti daman", "colonial"] as readonly string[] },
+  { id: "india_islands" as const, label: "Indian Islands (Andaman, Nicobar & Lakshadweep)", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Indian Islands" as const, aliases: ["andaman", "nicobar", "port blair", "aberdeen bazar", "junglighat", "lakshadweep", "kavaratti", "ularthu", "island", "coconut"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

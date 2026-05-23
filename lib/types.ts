@@ -125,7 +125,13 @@ export type RegionSlug =
   | "nagaland"
   | "manipur"
   | "sikkim"
-  | "northeast_other";
+  | "northeast_other"
+  // South Asia — Himalayan + Coastal-Colonial + Islands (Batch 19)
+  | "ladakh"
+  | "jammu_kashmir"
+  | "himachal_uttarakhand"
+  | "india_coastal_colonial"
+  | "india_islands";
 
 export type CanonicalId =
   | "ribeye"
