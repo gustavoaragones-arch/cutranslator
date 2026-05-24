@@ -1974,6 +1974,49 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "coconut oil correction lakshadweep", region: "india_islands", maps_to: "brisket", confidence: 0.60, synonyms: ["coconut beef", "oil-corrected beef", "thalassery style"] as const, notes: "Format-specific request: beef prepared with EXTRAORDINARY coconut oil quantity to compensate for zero marbling in lean island cattle. A US 'low-fat' cooking method produces dry, stringy results. The Coconut-Oil Correction parallels Kerala's pattern (Batch 14b) but at a more extreme isolation. Cross-references lakshadweep_island_isolation_in." },
   { name: "lej lakshadweep", region: "india_islands", maps_to: "oxtail", confidence: 0.80, synonyms: ["lakshadweep tail", "cow tail"] as const, notes: "'Tail' (Lej) at Kavaratti. Used for island-style coconut-milk bone broths. Cow default." },
   { name: "naram lakshadweep", region: "india_islands", maps_to: "tenderloin", confidence: 0.75, synonyms: ["lakshadweep tenderloin", "soft meat"] as const, notes: "Soft meat/tenderloin at Kavaratti market. Island cattle are lean — the tenderloin is especially prized for non-braised preparations. Cow default." },
+
+  // 🇱🇰 SRI LANKA (Sinhalese + Tamil + English-legacy terminology — COW default + Water Buffalo) — 16 entries
+
+  // Universal cuts (bilingual Sinhalese/Tamil synonyms)
+  { name: "undercut sri lanka", region: "sri_lanka", maps_to: "tenderloin", confidence: 0.85, synonyms: ["gaba", "naram", "ceylon tenderloin", "soft meat", "undercut"] as const, notes: "The softest premium tissue. 'Gaba' (Sinhalese) / 'Naram' (Tamil) / 'Undercut' (English-legacy trade term) — the same muscle carries all three names in a single Pettah or Kandy stall. Essential for Beef Fry, Devilled Beef, or steaks. Cow default — Sri Lanka is cow-permissive (no cow-slaughter restriction). Cross-references the Tamil Nadu/Kerala 'Naram' vocabulary (Batch 14b) across the Palk Strait." },
+
+  { name: "pita mas", region: "sri_lanka", maps_to: "striploin", confidence: 0.80, synonyms: ["mudugu iraitchi", "back meat", "ceylon loin", "ceylon sirloin"] as const, notes: "'Back meat' — 'Pita Mas' (Sinhalese) / 'Mudugu Iraitchi' (Tamil). Lean, high-quality muscle used for baking or slicing. CRITICAL: exceptionally lean grass-fed zebu/buffalo — grilled at high heat without tenderizing, it becomes leathery. Requires lime-juice or green-papaya marinade / slow braise (the Lime/Acid Correction). Cow default." },
+
+  { name: "penna", region: "sri_lanka", maps_to: "brisket", confidence: 0.85, synonyms: ["thaba", "nenju", "kozhuppu", "ceylon brisket", "chest meat"] as const, notes: "'Chest' — 'Penna'/'Thaba' (Sinhalese) / 'Nenju'/'Kozhuppu' (Tamil). High external and internal fat layer; critical for rich gravy and Beef Black Curry. Cross-references the Tamil Nadu/Kerala 'Nenju'/'Kozhuppu' vocabulary (Batch 14b). Cow default." },
+
+  { name: "kenda sri lanka", region: "sri_lanka", maps_to: "hind_shank", confidence: 0.85, synonyms: ["valalu", "kendai", "nalli", "ceylon shank", "leg muscle"] as const, notes: "Leg muscle — 'Kenda'/'Valalu' (Sinhalese) / 'Kendai'/'Nalli' (Tamil). Mandatory for gelatinous bone soups and Paya. The Tamil 'Nalli' is the pan-South-Asian shank/marrow term (cross-references pan_indian_hindi_urdu_in, Batch 14b). Cow default." },
+
+  { name: "vandiya", region: "sri_lanka", maps_to: "oxtail", confidence: 0.80, synonyms: ["vala", "vaal", "ceylon tail", "oxtail"] as const, notes: "'Tail' — 'Vandiya'/'Vala' (Sinhalese) / 'Vaal' (Tamil). Used for slow-cooked rich broths. Cross-references the Tamil Nadu/Kerala 'Vaal' tail vocabulary (Batch 14b). Cow default." },
+
+  { name: "harek", region: "sri_lanka", maps_to: "bottom_round_roast", confidence: 0.75, synonyms: ["mirika", "thodai", "ceylon round", "rump", "topside"] as const, notes: "Thigh/round area — 'Harek'/'Mirika' (Sinhalese) / 'Thodai' (Tamil). Standard for slicing into uniform curry cubes, and the joint used (tied) for Beef Smore. Cow default." },
+
+  // Generic beef (bilingual)
+  { name: "haraka mas", region: "sri_lanka", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["madu iraitchi", "ceylon beef", "generic beef"] as const, notes: "Generic beef — 'Haraka Mas' (Sinhalese) / 'Madu Iraitchi' (Tamil). Defaults to the Ceylon Curry Cut (1/2 to 3/4 inch micro-cubes) at Pettah/Kandy markets unless a specific cut is requested. Cross-references ceylon_curry_cut_lk. Cow default; the entirely hot-boned market sells fresh daily." },
+
+  // Water Buffalo option
+  { name: "buffalo haraka mas", region: "sri_lanka", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["meeharaka mas", "ceylon buffalo beef", "buffalo curry cut"] as const, species: "buffalo", notes: "Water Buffalo beef in Sri Lanka — leaner, darker, stronger-flavored than cow, requiring longer cooking and the Lime/Acid tenderization correction. Both Cow and Buffalo are sold at the same hot-boned counters; the buyer specifies. Buffalo." },
+
+  // Format-specific: Ceylon Curry Cut — MARQUEE
+  { name: "ceylon curry cut", region: "sri_lanka", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["curry cut sri lanka", "ceylon micro-cube", "kalu kudu cut", "mix cut"] as const, notes: "MARQUEE format entry. The 1/2-inch to 3/4-inch uniform micro-cube (bone-in or boneless) — SMALLER than a US stew cut (1 to 1.5 inch). Engineered for maximum surface area so roasted Kalu Kudu (black curry powder) penetrates fully. The Sri Lankan translation of 'US Stew Meat' is this CUTTING STYLE, not a single anatomical cut. Cross-references ceylon_curry_cut_lk, the Chennai Chukka Cut, and the Indian Gol-Boti / Curry Cut micro-cube traditions (Batch 14b-19). Cow default." },
+
+  // Format-specific: Devilled Beef
+  { name: "devilled beef cut", region: "sri_lanka", maps_to: "tenderloin", confidence: 0.75, synonyms: ["devil beef strips", "ceylon stir-fry strips", "wok-toss cut"] as const, notes: "Thin, elongated rectangular strips hand-sliced from the Undercut or Rump, for high-heat wok-tossing with banana peppers, onions, and chili (Beef Devilled — a fiery sweet-and-sour stir-fry). Best from Undercut (Tenderloin) for rapid cooking. Cross-references sri_lankan_devilled_beef_lk. Cow default." },
+
+  { name: "devilled beef rump cut", region: "sri_lanka", maps_to: "bottom_round_roast", confidence: 0.65, synonyms: ["devil rump strips", "ceylon rump strips"] as const, notes: "Rump-sourced variant of the Devilled Beef strip (when Undercut is unavailable or for a chewier texture). Hand-sliced thin for wok-tossing. Cross-references sri_lankan_devilled_beef_lk. Cow default." },
+
+  // Format-specific: Hand-Beaten Mince (Moor cutlets)
+  { name: "hand-beaten mince sri lanka", region: "sri_lanka", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["ceylon cutlet mince", "moor mince", "log-chopped mince"] as const, notes: "Found in traditional Muslim (Moor) butcheries for Cutlets (spiced croquettes) — meat repeatedly chopped on a heavy wooden log to a coarse texture that holds shape without turning mushy. A hand-mince tradition (parallels the Indian Hath-ka-Keema and the Lakshadweep Kothu hand-beaten mince, Batch 14b/19) but for cutlet structure. Cow default." },
+
+  // Format-specific: Beef Smore joint (Dutch-Burgher)
+  { name: "beef smore cut", region: "sri_lanka", maps_to: "bottom_round_roast", confidence: 0.75, synonyms: ["smore joint", "ceylon pot-roast joint", "topside smore", "burgher roast"] as const, notes: "MARQUEE Dutch-Burgher format entry. A whole Topside or Rump joint tied tightly with string for Beef Smore — the Dutch-Burgher colonial-legacy pot-roast (from Dutch 'smoor', to braise). CRITICAL: the lean joint must be larded and slow-braised, or it dries out; request 'Thel ekka' (with fat) since Sri Lankan butchers default to trimming. Cross-references dutch_burgher_beef_smore_lk and indo_european_colonial_bridges_in (extends the axis to a 4th colonial power — Dutch). Cow default." },
+
+  { name: "beef smore rump cut", region: "sri_lanka", maps_to: "top_round_steak", confidence: 0.65, synonyms: ["smore rump", "burgher rump roast"] as const, notes: "Rump variant of the Beef Smore joint. Tied and pot-roasted. Cross-references dutch_burgher_beef_smore_lk. Cow default." },
+
+  // Format-specific: fat request
+  { name: "thel ekka cut", region: "sri_lanka", maps_to: "short_plate", confidence: 0.60, synonyms: ["with-fat request", "ceylon fat cut", "fat cap sri lanka"] as const, notes: "Format request for meat WITH the fat retained — 'Thel ekka' (Sinhalese, 'with fat'). CRITICAL inversion: Sri Lankan butchers DEFAULT TO TRIMMING fat unless told otherwise (the opposite of the Buffalo-Belt fat-addition cultures). For Beef Smore and rich gravies, the fat must be explicitly requested. Cross-references sri_lankan_lean_zebu_correction_lk. Cow default." },
+
+  // Shoulder for Black Curry
+  { name: "dalla sri lanka", region: "sri_lanka", maps_to: "chuck_blade", confidence: 0.65, synonyms: ["ceylon shoulder", "chuck sri lanka", "black curry cut"] as const, notes: "Shoulder/chuck area. The standard for Sri Lankan Beef Black Curry (a deeply dark, rich gravy with intensely roasted spices) — used with a mix of bone to balance the roasted Kalu Kudu. Cow default." },
 ];
 
 export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames];

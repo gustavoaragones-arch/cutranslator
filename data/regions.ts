@@ -143,6 +143,9 @@ export const regions = [
   { id: "himachal_uttarakhand" as const, label: "Himachal Pradesh & Uttarakhand", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Himalayan India" as const, aliases: ["himachal", "shimla", "lower bazaar", "pahari", "uttarakhand", "dehradun", "doon", "reetha mandi", "mehuwala", "hp", "uk", "foothills"] as readonly string[] },
   { id: "india_coastal_colonial" as const, label: "Coastal-Colonial India (Pondicherry & Daman)", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Coastal-Colonial India" as const, aliases: ["pondicherry", "puducherry", "pondy", "goubert", "french", "filet", "contre-filet", "daman", "diu", "portuguese", "salt meat", "bistek", "moti daman", "colonial"] as readonly string[] },
   { id: "india_islands" as const, label: "Indian Islands (Andaman, Nicobar & Lakshadweep)", flag: "🇮🇳", group: "south_asia" as RegionGroup, subregion: "Indian Islands" as const, aliases: ["andaman", "nicobar", "port blair", "aberdeen bazar", "junglighat", "lakshadweep", "kavaratti", "ularthu", "island", "coconut"] as readonly string[] },
+
+  // South Asia — Sovereign (Batch 20)
+  { id: "sri_lanka" as const, label: "Sri Lanka", flag: "🇱🇰", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["ceylon", "colombo", "pettah", "kandy", "sinhalese", "tamil sri lanka", "moor", "burgher", "haraka mas", "madu iraitchi", "devilled beef", "beef smore", "black curry", "babath", "lk", "lanka"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];

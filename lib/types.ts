@@ -131,7 +131,9 @@ export type RegionSlug =
   | "jammu_kashmir"
   | "himachal_uttarakhand"
   | "india_coastal_colonial"
-  | "india_islands";
+  | "india_islands"
+  // South Asia — Sovereign (Batch 20)
+  | "sri_lanka";
 
 export type CanonicalId =
   | "ribeye"

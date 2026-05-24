@@ -107,6 +107,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       manipur: "Rare",
       sikkim: "Rare",
       northeast_other: "Rare",
+      sri_lanka: "Rare",
     },
   },
   {
@@ -210,6 +211,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       manipur: "Medium rare",
       sikkim: "Medium rare",
       northeast_other: "Medium rare",
+      sri_lanka: "Medium rare",
     },
   },
   {
@@ -313,6 +315,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       manipur: "Medium",
       sikkim: "Medium",
       northeast_other: "Medium",
+      sri_lanka: "Medium",
     },
   },
   {
@@ -416,6 +419,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       manipur: "Manghatpa",
       sikkim: "Ramro paaka",
       northeast_other: "Pakka",
+      sri_lanka: "Hondata uyala / Nalla ventathu",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -500,6 +504,7 @@ export const donenessLevels: readonly DonenessLevel[] = [
       manipur: "Meitei beef cooking produces well-done results — Shan-sa Ngari Thongba (beef with Berma) slow-braises 60-90 minutes; Kangshoy stews cook 90+ minutes for the rich broth; Shan-sa Fry uses small pieces cooked through quickly. Smoked Shan-sa Meihouba rehydration takes extended simmering. Modern Imphal restaurants serve international doneness for premium cuts, but traditional Manipuri home cooking is uniformly Manghatpa (well-cooked).",
       sikkim: "Sikkim cooking produces well-done results across all traditional preparations — Sukuti Sadheko requires pre-processed dried meat that is then dry-fried thoroughly; Beef Momo fillings are cooked through during steam-cooking (15+ minutes); Thukpa noodle soups simmer 90+ minutes with Khutta (shank) for the gelatinous broth. The high-altitude Gangtok cooking environment (boiling point ~96°C at 1650m elevation) extends cooking times. Modern Sikkim home cooking is uniformly Ramro paaka (well-cooked).",
       northeast_other: "Northeast Other (Arunachal, Mizoram, Assam, Tripura) beef cooking spans 4 grouped states with shared tribal/Bengali Muslim preparation traditions — all producing well-done results. Mizo Bai (oil-free vegetable stew with Sa-thau or Sa-rep) simmers 60-90 minutes; Assamese Mangxor Jool (bone-in beef curry) cooks 90+ minutes; Tripura Chakhwi simmers with bamboo shoots and baking soda alkali for tenderization; Arunachal beef with Basti (bamboo shoots) slow-cooks 60+ minutes. The smoked beef variants (Sa-rep, Suka Mansa, Dhua-khua, Mos-sa Meihouba) all require rehydration before consumption. NE Other home cooking is uniformly Pakka (well-cooked).",
+      sri_lanka: "Sri Lankan beef cooking produces well-done results across all traditional preparations. The exceptionally lean grass-fed zebu/buffalo requires long slow braising or acid (lime/green-papaya) tenderization (the Lean-Zebu Correction); Beef Black Curry slow-cooks Shoulder/Round with intensely roasted Kalu Kudu spices; Beef Smore is a fully-cooked pot-roast of a tied Topside/Rump joint; Beef Devilled is a high-heat wok stir-fry of thin Undercut strips, cooked through. Local-menu 'Beef Steak' is itself a thin pan-fried spiced sheet, not a rare Western steak. Sri Lankan home cooking is uniformly well-done (Hondata uyala / Nalla ventathu).",
     },
   },
 ] as const;

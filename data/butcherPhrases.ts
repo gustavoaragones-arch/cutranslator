@@ -591,4 +591,11 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "chuck_roll", region: "northeast_other", phrase: "Goru mangxo (Assam), Moh mangxo nahi, cow specifically", notes: "'Goru mangxo (cow) Assam, NOT Moh (buffalo), cow specifically' — explicit cow-vs-buffalo disambiguation in Assamese Guwahati markets" },
   { canonicalId: "brisket", region: "northeast_other", phrase: "Buk-er (Tripura), Chakhwi ke liye, alkali-resistant fatty", notes: "'Buk-er (Tripura fatty brisket) for Chakhwi, alkali-resistant fatty cut' — Tripura tribal Chakhwi fat-mandate, third Fermentation-Fat Axis state" },
   { canonicalId: "brisket", region: "northeast_other", phrase: "Dhua-khua mangxo (Assam), hill se laaya hua smoked", notes: "'Dhua-khua mangxo, hill-brought smoked' — Assamese smoked-beef sourced from hill markets" },
+
+  // 🇱🇰 SRI LANKA (Sinhalese + Tamil + English-legacy register)
+  { canonicalId: "chuck_roll", region: "sri_lanka", phrase: "Haraka mas, ceylon curry cut, kudu cubes (chinna)", notes: "'Beef, Ceylon curry cut, small spice-powder cubes' — MARQUEE micro-cube default (1/2 to 3/4 inch), smaller than US stew" },
+  { canonicalId: "tenderloin", region: "sri_lanka", phrase: "Undercut / Naram, devilled beef ke liye, thin strips", notes: "'Undercut (Sinhalese/Tamil), for Devilled Beef, thin strips' — wok-toss stir-fry strip format" },
+  { canonicalId: "bottom_round_roast", region: "sri_lanka", phrase: "Harek / Thodai, beef smore joint, string se baandho, Thel ekka", notes: "'Round (Sinhalese/Tamil), Beef Smore joint, tie with string, with fat' — Dutch-Burgher pot-roast + fat-request inversion" },
+  { canonicalId: "striploin", region: "sri_lanka", phrase: "Pita mas, lime marinade zaroori, slow braise warna leather", notes: "'Back meat, lime marinade essential, slow-braise or it's leather' — Lean-Zebu lime/acid correction" },
+  { canonicalId: "hind_shank", region: "sri_lanka", phrase: "Kenda / Nalli, paya ke liye, katu kalle (marrow bones)", notes: "'Shank (Sinhalese/Tamil), for Paya, marrow bones' — gelatinous bone-soup shank" },
 ] as const;
