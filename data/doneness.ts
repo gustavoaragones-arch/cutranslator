@@ -108,6 +108,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sikkim: "Rare",
       northeast_other: "Rare",
       sri_lanka: "Rare",
+      nepal: "Rare",
+      bhutan: "Rare",
     },
   },
   {
@@ -212,6 +214,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sikkim: "Medium rare",
       northeast_other: "Medium rare",
       sri_lanka: "Medium rare",
+      nepal: "Medium rare",
+      bhutan: "Medium rare",
     },
   },
   {
@@ -316,6 +320,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sikkim: "Medium",
       northeast_other: "Medium",
       sri_lanka: "Medium",
+      nepal: "Medium",
+      bhutan: "Medium",
     },
   },
   {
@@ -420,6 +426,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sikkim: "Ramro paaka",
       northeast_other: "Pakka",
       sri_lanka: "Hondata uyala / Nalla ventathu",
+      nepal: "Paakeko",
+      bhutan: "Yoel",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -505,6 +513,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sikkim: "Sikkim cooking produces well-done results across all traditional preparations — Sukuti Sadheko requires pre-processed dried meat that is then dry-fried thoroughly; Beef Momo fillings are cooked through during steam-cooking (15+ minutes); Thukpa noodle soups simmer 90+ minutes with Khutta (shank) for the gelatinous broth. The high-altitude Gangtok cooking environment (boiling point ~96°C at 1650m elevation) extends cooking times. Modern Sikkim home cooking is uniformly Ramro paaka (well-cooked).",
       northeast_other: "Northeast Other (Arunachal, Mizoram, Assam, Tripura) beef cooking spans 4 grouped states with shared tribal/Bengali Muslim preparation traditions — all producing well-done results. Mizo Bai (oil-free vegetable stew with Sa-thau or Sa-rep) simmers 60-90 minutes; Assamese Mangxor Jool (bone-in beef curry) cooks 90+ minutes; Tripura Chakhwi simmers with bamboo shoots and baking soda alkali for tenderization; Arunachal beef with Basti (bamboo shoots) slow-cooks 60+ minutes. The smoked beef variants (Sa-rep, Suka Mansa, Dhua-khua, Mos-sa Meihouba) all require rehydration before consumption. NE Other home cooking is uniformly Pakka (well-cooked).",
       sri_lanka: "Sri Lankan beef cooking produces well-done results across all traditional preparations. The exceptionally lean grass-fed zebu/buffalo requires long slow braising or acid (lime/green-papaya) tenderization (the Lean-Zebu Correction); Beef Black Curry slow-cooks Shoulder/Round with intensely roasted Kalu Kudu spices; Beef Smore is a fully-cooked pot-roast of a tied Topside/Rump joint; Beef Devilled is a high-heat wok stir-fry of thin Undercut strips, cooked through. Local-menu 'Beef Steak' is itself a thin pan-fried spiced sheet, not a rare Western steak. Sri Lankan home cooking is uniformly well-done (Hondata uyala / Nalla ventathu).",
+      nepal: "Nepali buff and yak cooking produces well-done results across all traditional preparations — Buff Momo steam-cooks through at 15+ minutes; Sukuti is air-dried meat that must be re-cooked extensively; Choila is grilled to full doneness before serving cold. Kachila (Newari raw tartare) is the single raw exception, consumed by locals only from same-day hot-boned Tenderloin — NOT medium-rare in any Western sense but a trusted raw tradition. High-altitude Yak requires ~30% more cooking time than cow (compounded by altitude boiling-point physics). Thamel tourist restaurants serve modern steakhouse doneness for premium buff cuts, but traditional Nepali cooking is uniformly Paakeko (well-cooked). Critical note: 'Steak' on a Thamel menu is water buffalo, not cow — cow slaughter is strictly illegal in Nepal.",
+      bhutan: "Bhutanese cooking using Sukam (dried beef) requires extensive boiling (45-90 minutes) before the meat is usable in Shakam Datshi or Shakam Paa — uniformly well-done. Fresh imported Indian beef/buffalo and mountain Yak both require long braises compounded by Thimphu's ~2,300m altitude (water boils at ~92°C; cooking times run 20-30% longer than sea level). Bhutan has no rare or medium-rare tradition; the Datshi-based cuisine is defined by long slow cooking of tough dried or lean meat. Modern restaurants in Thimphu serving international steakhouse cuts operate at international standards but are the exception. Traditional Bhutanese home cooking is uniformly Yoel (well-cooked).",
     },
   },
 ] as const;

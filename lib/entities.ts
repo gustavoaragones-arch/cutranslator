@@ -175,6 +175,8 @@ export const REGION_ENTITY: Record<
   india_coastal_colonial: { id: "india_coastal_colonial", formalName: "Coastal-Colonial India (Pondicherry French + Daman Portuguese)", shortName: "Coastal-Colonial India" },
   india_islands: { id: "india_islands", formalName: "Indian Islands (Andaman & Nicobar + Lakshadweep)", shortName: "Indian Islands" },
   sri_lanka: { id: "sri_lanka", formalName: "Democratic Socialist Republic of Sri Lanka", shortName: "Sri Lanka" },
+  nepal: { id: "nepal", formalName: "Federal Democratic Republic of Nepal", shortName: "Nepal" },
+  bhutan: { id: "bhutan", formalName: "Kingdom of Bhutan", shortName: "Bhutan" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

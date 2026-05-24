@@ -133,7 +133,10 @@ export type RegionSlug =
   | "india_coastal_colonial"
   | "india_islands"
   // South Asia — Sovereign (Batch 20)
-  | "sri_lanka";
+  | "sri_lanka"
+  // South Asia — Sovereign (Batch 21)
+  | "nepal"
+  | "bhutan";
 
 export type CanonicalId =
   | "ribeye"

@@ -2017,6 +2017,72 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
 
   // Shoulder for Black Curry
   { name: "dalla sri lanka", region: "sri_lanka", maps_to: "chuck_blade", confidence: 0.65, synonyms: ["ceylon shoulder", "chuck sri lanka", "black curry cut"] as const, notes: "Shoulder/chuck area. The standard for Sri Lankan Beef Black Curry (a deeply dark, rich gravy with intensely roasted spices) — used with a mix of bone to balance the roasted Kalu Kudu. Cow default." },
+
+  // 🇳🇵 NEPAL (Nepali + Newari terminology — BUFFALO valley + YAK high-altitude, ZERO cow — cow slaughter strictly illegal) — 15 entries
+
+  // Valley cuts — Water Buffalo (Buff / Bhaisi)
+  { name: "naram masu nepal", region: "nepal", maps_to: "tenderloin", confidence: 0.85, synonyms: ["undercut nepal", "soft meat nepal", "choila cut", "kachila cut"] as const, species: "buffalo", notes: "The softest cut — 'Naram Masu' / Undercut. Essential for premium Choila (spiced grilled meat served cold) or Kachila (Newari raw tartare). CRITICAL: Nepal has NO cow — cow slaughter is strictly illegal; this is Water Buffalo (Buff/Bhaisi). Buffalo. Cross-references newari_precision_butchery_np." },
+
+  { name: "dhad ko masu", region: "nepal", maps_to: "striploin", confidence: 0.80, synonyms: ["back meat nepal", "nepali loin", "buff striploin"] as const, species: "buffalo", notes: "'Back meat' — used for pan-frying or standard buff curries. Lean buffalo; thin-slice against the grain or it toughens. Buffalo (cow legally absent in Nepal)." },
+
+  { name: "chhati nepal", region: "nepal", maps_to: "brisket", confidence: 0.85, synonyms: ["boso nepal", "chest meat nepal", "nepali brisket", "momo fat"] as const, species: "buffalo", notes: "'Chest' — the source of Boso (yellow hard fat) that is REQUIRED for Momo mince. Critical utility: lean buff needs the Boso added back. Cross-references nepal_momo_mince_boso_np. Buffalo." },
+
+  { name: "khutta nepal", region: "nepal", maps_to: "hind_shank", confidence: 0.85, synonyms: ["nalli nepal", "leg nepal", "nepali shank", "bone broth cut"] as const, species: "buffalo", notes: "The leg — used for gelatinous bone broths to fight the mountain cold. 'Nalli' is the pan-South-Asian shank/marrow term (cross-references pan_indian_hindi_urdu_in, Batch 14b). Buffalo." },
+
+  { name: "keema nepal", region: "nepal", maps_to: "chuck_roll", confidence: 0.70, synonyms: ["nepali mince", "hand-chopped keema nepal", "buff keema"] as const, species: "buffalo", notes: "Mince — rarely machine-ground in local shops; usually HAND-CHOPPED. The base for Momo Keema (mixed with Boso fat) and Kachila (when from clean Tenderloin). Cross-references nepal_momo_mince_boso_np and newari_precision_butchery_np. Buffalo." },
+
+  { name: "bhaisi ko masu", region: "nepal", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["buff nepal", "generic buff", "nepali beef"] as const, species: "buffalo", notes: "Generic buffalo meat — 'Bhaisi ko Masu'. The valley-default 'beef' in Kathmandu/Pokhara. Bone-in default (a mix of bone, meat, fat hacked with a cleaver) unless boneless is requested. Cross-references hot_boned_fresh_meat_convention_sa (Batch 16). Buffalo (cow legally absent)." },
+
+  { name: "buff round nepal", region: "nepal", maps_to: "bottom_round_roast", confidence: 0.70, synonyms: ["thigh nepal", "sukuti cut nepal", "dried meat strip"] as const, species: "buffalo", notes: "Round/thigh — the lean cut sliced into long thin strips for Sukuti (dried meat, hung over wood fire or air-dried). The Himalayan jerky, rehydrated in spicy tomato curries. Cross-references himalayan_sukuti_source_np. Buffalo." },
+
+  { name: "momo keema", region: "nepal", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["momo mince", "keema boso mix", "buff momo cut"] as const, species: "buffalo", notes: "MARQUEE format entry. Hand-chopped lean buff mixed with 20-30% Boso (hard buffalo fat) to replicate US 80/20 ground beef — without the added fat, momos are dry and choke-inducing. The fat-addition correction for exceptionally lean buff. Cross-references nepal_momo_mince_boso_np. Buffalo." },
+
+  { name: "kachila cut nepal", region: "nepal", maps_to: "tenderloin", confidence: 0.78, synonyms: ["raw mince nepal", "newari tartare", "kachila tenderloin"] as const, species: "buffalo", notes: "The Newari raw steak-tartare cut — the absolute freshest, cleanest Tenderloin, meticulously HAND-minced to remove ALL gristle, dressed with mustard oil, fenugreek, garlic. Raw consumption demands same-day hot-boned slaughter. The raw node of the precision-mince family. Cross-references newari_precision_butchery_np and kashmiri_wazwan_pounded_mince_in (Batch 19). Buffalo." },
+
+  { name: "sukuti cut nepal", region: "nepal", maps_to: "bottom_round_roast", confidence: 0.78, synonyms: ["dried buff nepal", "nepali jerky", "sukuti sandheko cut"] as const, species: "buffalo", notes: "Long thin lean strips (from Round/Thigh) for drying — the SOURCE tradition that Sikkim's Nepali-vocabulary Sukuti (Batch 18) descends from. Rehydrated in curries or made into Sukuti Sandheko (spicy dried-meat salad). Cross-references himalayan_sukuti_source_np, sikkim_sukuti_cooking_ingredient_in (Batch 18), and ladakh_sha_skam_in (Batch 19). Buffalo." },
+
+  // High-Himalaya cuts — YAK / NAK (above ~3,000m)
+  { name: "yak masu nepal", region: "nepal", maps_to: "striploin", confidence: 0.80, synonyms: ["yak nepal", "nak masu", "high altitude yak", "yak back meat"] as const, species: "yak", notes: "Yak (male) / Nak (female) — the high-Himalaya dominant meat above ~3,000m (Everest/Annapurna regions), replacing Buff entirely at altitude. Intensely gamey, dark red, high myoglobin, exceptionally lean. Yak. Cross-references yak_dominance_himalayan_axis_sa and yak_in_ladakh_in (Batch 19)." },
+
+  { name: "yak loin nepal", region: "nepal", maps_to: "tenderloin", confidence: 0.72, synonyms: ["yak tenderloin nepal", "nak loin", "yak naram"] as const, species: "yak", notes: "Yak loin — the softest yak cut, still requiring ~30% longer cooking than cow (compounded by altitude physics). Cannot be seared like a US steak. Yak. Cross-references yak_dominance_himalayan_axis_sa." },
+
+  { name: "yak shank nepal", region: "nepal", maps_to: "hind_shank", confidence: 0.72, synonyms: ["yak khutta", "nak shank", "yak bone broth"] as const, species: "yak", notes: "Yak leg/shank — for the long gelatinous high-altitude broths that fight extreme cold. Braises take nearly twice as long as sea-level cow stew (altitude boiling-point physics). Yak. Cross-references yak_dominance_himalayan_axis_sa and ladakh_altitude_cooking_in (Batch 19)." },
+
+  { name: "yak keema nepal", region: "nepal", maps_to: "chuck_roll", confidence: 0.68, synonyms: ["yak mince nepal", "nak keema", "yak momo mince"] as const, species: "yak", notes: "Yak mince — used for high-altitude Yak momos; like buff, the exceptionally lean yak needs hard fat added for moisture. Yak. Cross-references nepal_momo_mince_boso_np and yak_dominance_himalayan_axis_sa." },
+
+  { name: "yak fat nepal", region: "nepal", maps_to: "short_plate", confidence: 0.60, synonyms: ["boso yak", "yak tsillu nepal", "high altitude fat"] as const, species: "yak", notes: "Yak hard fat — the prized standalone fat added to mince and stews at altitude (the Nepali parallel to Bhutan's Yak Tsillu). Inverts the USDA trim-and-discard convention. Yak. Cross-references yak_dominance_himalayan_axis_sa." },
+
+  // 🇧🇹 BHUTAN (Dzongkha terminology — COW imported from India + YAK high-valley) — 14 entries
+
+  // Cow (Sha) — imported from India
+  { name: "geba bhutan", region: "bhutan", maps_to: "tenderloin", confidence: 0.82, synonyms: ["sha naram", "soft loin bhutan", "bhutanese tenderloin"] as const, notes: "The softest loin muscle — 'Geba' / 'Sha-Naram'. Used for quick stir-fries. CRITICAL: fresh cow beef (Sha) in Bhutan is almost entirely IMPORTED from India (domestic slaughter is taboo); apply the buffalo-lean correction. Cow default (imported). Cross-references bhutan_import_paradox_bt." },
+
+  { name: "phu-sha", region: "bhutan", maps_to: "striploin", confidence: 0.80, synonyms: ["phu sha", "back meat bhutan", "bhutanese loin"] as const, notes: "'Back meat' — the standard for stews or slicing into strips. Almost always dried (Sukam) or bone-in. Imported Indian cow/buff or mountain yak. Cow default (imported). Cross-references bhutan_import_paradox_bt." },
+
+  { name: "tsa-sha", region: "bhutan", maps_to: "brisket", confidence: 0.85, synonyms: ["tsa sha", "tsillu", "fatty meat bhutan", "chili coating fat"] as const, notes: "'Fatty meat' — the hard fat (Tsillu) is PRIZED as a standalone ingredient, sliced into cubes and melted into chili stews to provide calories and buffer pepper heat. Inverts USDA trim-and-discard. Cow default (imported). Cross-references bhutan_datshi_chili_butchery_bt." },
+
+  { name: "kangling bhutan", region: "bhutan", maps_to: "hind_shank", confidence: 0.82, synonyms: ["sha-ru", "leg bones bhutan", "bhutanese shank", "winter broth bone"] as const, notes: "The leg bones — 'Kangling' / 'Sha-ru'. Essential for rich warming winter broths. Bone-in default; marrow enriches the broth. Cow default (imported)." },
+
+  { name: "me-do bhutan", region: "bhutan", maps_to: "oxtail", confidence: 0.78, synonyms: ["medo", "tail bhutan", "bhutanese oxtail"] as const, notes: "'Tail' — slow-braised to extract gelatin in cold weather. Cow default (imported)." },
+
+  { name: "ra-sha bhutan", region: "bhutan", maps_to: "short_ribs", confidence: 0.80, synonyms: ["rasha", "short ribs bhutan", "bone-in rib bhutan"] as const, notes: "Rib sections — typically chopped bone-in with a heavy cleaver. Used for hearty stews (Phaksha / Shakam Shungo) boiled with greens. Bone marrow crucial to the broth. Cow default (imported). Cross-references bhutan_datshi_chili_butchery_bt." },
+
+  { name: "sha bhutan", region: "bhutan", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["bhutanese beef", "generic sha", "imported beef bhutan"] as const, notes: "Generic beef — 'Sha'. Almost entirely IMPORTED Indian cow/buffalo (domestic slaughter taboo; natural-death meat also legally consumed). Bone-in default, jagged cleaver chunks. Cow default (imported). Cross-references bhutan_import_paradox_bt." },
+
+  { name: "sukam bhutan", region: "bhutan", maps_to: "bottom_round_roast", confidence: 0.80, synonyms: ["sikam", "dried beef bhutan", "shakam", "dried strip bhutan"] as const, notes: "MARQUEE format entry. Dried beef — thick long strips with fat fully attached, hung to air-dry in the cold windy valley air. Incredibly tough; must be boiled extensively. The historical default (fresh meat couldn't be kept in the mountains). Used in Shakam Datshi and Shakam Paa. Cow default (imported, then dried). Cross-references bhutan_import_paradox_bt and the Himalayan Dried-Beef Axis (himalayan_sukuti_source_np, ladakh_sha_skam_in Batch 19, sikkim_sukuti_cooking_ingredient_in Batch 18)." },
+
+  { name: "shakam datshi cut", region: "bhutan", maps_to: "bottom_round_roast", confidence: 0.72, synonyms: ["shakam cut", "datshi beef", "dried beef cheese cut"] as const, notes: "The dried-beef cut for Shakam Datshi (dried beef in cheese + green chili sauce). Requires Sukam. Cow default (imported, dried). Cross-references bhutan_datshi_chili_butchery_bt." },
+
+  { name: "shakam paa cut", region: "bhutan", maps_to: "bottom_round_roast", confidence: 0.70, synonyms: ["paa cut", "fatty sukam", "dried beef chili cut"] as const, notes: "Fatty Sukam cut into thick strips for Shakam Paa (dry rich stew of dried beef, dried chilies, radish). The fat must stay attached. Cow default (imported, dried). Cross-references bhutan_datshi_chili_butchery_bt." },
+
+  // Yak (Yak-sha) — high valleys (Thimphu, Paro, Bumthang)
+  { name: "yak-sha bhutan", region: "bhutan", maps_to: "striploin", confidence: 0.80, synonyms: ["yak sha", "yak bhutan", "mountain yak bhutan", "yak back meat"] as const, species: "yak", notes: "Yak meat — the high-valley dominant bovine (Thimphu, Paro, Bumthang). Exceptionally lean, dense, dark, complex-flavored. Cannot be seared; pressure-cook or thin-slice against the grain. Yak. Cross-references yak_dominance_himalayan_axis_sa and yak_in_ladakh_in (Batch 19)." },
+
+  { name: "yak geba bhutan", region: "bhutan", maps_to: "tenderloin", confidence: 0.72, synonyms: ["yak tenderloin bhutan", "yak naram bhutan", "yak soft loin"] as const, species: "yak", notes: "Yak loin — softest yak cut for quick stir-fries, still requiring extended cooking (altitude-compounded). Yak. Cross-references yak_dominance_himalayan_axis_sa." },
+
+  { name: "yak tsillu", region: "bhutan", maps_to: "short_plate", confidence: 0.62, synonyms: ["yak fat bhutan", "tsillu yak", "standalone yak fat"] as const, species: "yak", notes: "Yak hard fat — sliced into cubes and melted directly into chili stews for calories and to BLOCK pepper heat. The standalone-fat-as-ingredient pattern, a heat-buffering function unique in the dataset. Inverts USDA trim convention. Yak. Cross-references bhutan_datshi_chili_butchery_bt and yak_dominance_himalayan_axis_sa." },
+
+  { name: "yak ribs bhutan", region: "bhutan", maps_to: "short_ribs", confidence: 0.68, synonyms: ["yak rasha", "yak short ribs", "bone-in yak"] as const, species: "yak", notes: "Yak rib sections — bone-in cleaver-chopped for hearty high-valley stews. Yak. Cross-references yak_dominance_himalayan_axis_sa." },
 ];
 
 export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames];

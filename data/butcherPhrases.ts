@@ -592,6 +592,20 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "brisket", region: "northeast_other", phrase: "Buk-er (Tripura), Chakhwi ke liye, alkali-resistant fatty", notes: "'Buk-er (Tripura fatty brisket) for Chakhwi, alkali-resistant fatty cut' — Tripura tribal Chakhwi fat-mandate, third Fermentation-Fat Axis state" },
   { canonicalId: "brisket", region: "northeast_other", phrase: "Dhua-khua mangxo (Assam), hill se laaya hua smoked", notes: "'Dhua-khua mangxo, hill-brought smoked' — Assamese smoked-beef sourced from hill markets" },
 
+  // 🇳🇵 NEPAL (Nepali + Newari register — ZERO cow; buffalo valley + yak altitude)
+  { canonicalId: "chuck_roll", region: "nepal", phrase: "Momo keema, boso milaunuhos, 20 percent fat, machine nahi", notes: "'Momo mince, add Boso fat, 20% fat, NOT machine' — the fat-addition correction for lean buff mince" },
+  { canonicalId: "tenderloin", region: "nepal", phrase: "Naram masu, kachila ko lagi, fresh aaja ko, gristle hataunuhos", notes: "'Naram Masu for Kachila, slaughtered today, remove all gristle' — the freshness demand for Newari raw tartare" },
+  { canonicalId: "bottom_round_roast", region: "nepal", phrase: "Sukuti ko lagi, thin strips, dry huncha, round batata", notes: "'For Sukuti, thin strips, will be dried, from the round' — the source cut for the Himalayan Dried-Beef Axis" },
+  { canonicalId: "hind_shank", region: "nepal", phrase: "Khutta, nalli, bone soup ko lagi, cold season", notes: "'Leg, shank, for bone soup, cold season' — gelatinous mountain broth shank" },
+  { canonicalId: "striploin", region: "nepal", phrase: "Yak ko masu, dhad ko, altitude slow cook zaroori, grill nahi", notes: "'Yak back meat, altitude slow-cook essential, do NOT grill' — the altitude + species cooking warning" },
+
+  // 🇧🇹 BHUTAN (Dzongkha register — imported cow + yak high valleys)
+  { canonicalId: "bottom_round_roast", region: "bhutan", phrase: "Sukam, fat attached rakhiyo, thin long strips, Shakam Datshi ko lagi", notes: "'Sukam, keep fat attached, thin long strips, for Shakam Datshi' — the fat-on Bhutanese dried beef specification" },
+  { canonicalId: "short_plate", region: "bhutan", phrase: "Tsillu, cube cut, chili stew ko lagi, fat only", notes: "'Tsillu, cut into cubes, for chili stew, fat only' — the standalone fat-as-ingredient heat-buffering request" },
+  { canonicalId: "short_ribs", region: "bhutan", phrase: "Ra-sha, bone-in, cleaver chop, marrow chahiye, datshi ko lagi", notes: "'Ra-sha, bone-in, cleaver-chop, marrow required, for datshi' — the bone-marrow-enrichment-for-cheese-broth specification" },
+  { canonicalId: "striploin", region: "bhutan", phrase: "Yak-sha, high valley, pressure cook zaroor, grill bilkul nahi", notes: "'Yak-sha, high valley, pressure cook mandatory, absolutely no grilling' — altitude + species cooking warning" },
+  { canonicalId: "chuck_roll", region: "bhutan", phrase: "Sha, imported Indian, altitude 40% zyada time, slow boil", notes: "'Sha (imported Indian), altitude cooking 40% more time, slow boil' — the altitude physics reminder for imported beef" },
+
   // 🇱🇰 SRI LANKA (Sinhalese + Tamil + English-legacy register)
   { canonicalId: "chuck_roll", region: "sri_lanka", phrase: "Haraka mas, ceylon curry cut, kudu cubes (chinna)", notes: "'Beef, Ceylon curry cut, small spice-powder cubes' — MARQUEE micro-cube default (1/2 to 3/4 inch), smaller than US stew" },
   { canonicalId: "tenderloin", region: "sri_lanka", phrase: "Undercut / Naram, devilled beef ke liye, thin strips", notes: "'Undercut (Sinhalese/Tamil), for Devilled Beef, thin strips' — wok-toss stir-fry strip format" },

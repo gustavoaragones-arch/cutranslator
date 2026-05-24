@@ -146,6 +146,10 @@ export const regions = [
 
   // South Asia — Sovereign (Batch 20)
   { id: "sri_lanka" as const, label: "Sri Lanka", flag: "🇱🇰", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["ceylon", "colombo", "pettah", "kandy", "sinhalese", "tamil sri lanka", "moor", "burgher", "haraka mas", "madu iraitchi", "devilled beef", "beef smore", "black curry", "babath", "lk", "lanka"] as readonly string[] },
+
+  // South Asia — Sovereign (Batch 21)
+  { id: "nepal" as const, label: "Nepal", flag: "🇳🇵", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["kathmandu", "pokhara", "newari", "buff", "bhaisi", "buff momo", "choila", "kachila", "sukuti", "yak nepal", "nak", "thamel", "annapurna", "everest", "np"] as readonly string[] },
+  { id: "bhutan" as const, label: "Bhutan", flag: "🇧🇹", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["thimphu", "paro", "bumthang", "dzongkha", "yak sha", "sha", "sukam", "sikam", "shakam datshi", "shakam paa", "ema datshi", "tsillu", "centenary farmers market", "bt"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];
