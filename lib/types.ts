@@ -136,7 +136,10 @@ export type RegionSlug =
   | "sri_lanka"
   // South Asia — Sovereign (Batch 21)
   | "nepal"
-  | "bhutan";
+  | "bhutan"
+  // Asia-Pacific + Southeast Asia (Batch 22)
+  | "mongolia"
+  | "myanmar";
 
 export type CanonicalId =
   | "ribeye"

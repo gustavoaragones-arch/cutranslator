@@ -110,6 +110,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sri_lanka: "Rare",
       nepal: "Rare",
       bhutan: "Rare",
+      mongolia: "Rare",
+      myanmar: "Rare",
     },
   },
   {
@@ -216,6 +218,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sri_lanka: "Medium rare",
       nepal: "Medium rare",
       bhutan: "Medium rare",
+      mongolia: "Medium rare",
+      myanmar: "Medium rare",
     },
   },
   {
@@ -322,6 +326,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sri_lanka: "Medium",
       nepal: "Medium",
       bhutan: "Medium",
+      mongolia: "Medium",
+      myanmar: "Medium",
     },
   },
   {
@@ -428,6 +434,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sri_lanka: "Hondata uyala / Nalla ventathu",
       nepal: "Paakeko",
       bhutan: "Yoel",
+      mongolia: "Bolgoson / Sain bolgoson",
+      myanmar: "Kyetko / A-pyauk-pyauk",
     },
     notes: {
       france: "Most French steaks are served rare (saignant) by default. Asking for bien cuit may surprise your waiter.",
@@ -515,6 +523,8 @@ export const donenessLevels: readonly DonenessLevel[] = [
       sri_lanka: "Sri Lankan beef cooking produces well-done results across all traditional preparations. The exceptionally lean grass-fed zebu/buffalo requires long slow braising or acid (lime/green-papaya) tenderization (the Lean-Zebu Correction); Beef Black Curry slow-cooks Shoulder/Round with intensely roasted Kalu Kudu spices; Beef Smore is a fully-cooked pot-roast of a tied Topside/Rump joint; Beef Devilled is a high-heat wok stir-fry of thin Undercut strips, cooked through. Local-menu 'Beef Steak' is itself a thin pan-fried spiced sheet, not a rare Western steak. Sri Lankan home cooking is uniformly well-done (Hondata uyala / Nalla ventathu).",
       nepal: "Nepali buff and yak cooking produces well-done results across all traditional preparations — Buff Momo steam-cooks through at 15+ minutes; Sukuti is air-dried meat that must be re-cooked extensively; Choila is grilled to full doneness before serving cold. Kachila (Newari raw tartare) is the single raw exception, consumed by locals only from same-day hot-boned Tenderloin — NOT medium-rare in any Western sense but a trusted raw tradition. High-altitude Yak requires ~30% more cooking time than cow (compounded by altitude boiling-point physics). Thamel tourist restaurants serve modern steakhouse doneness for premium buff cuts, but traditional Nepali cooking is uniformly Paakeko (well-cooked). Critical note: 'Steak' on a Thamel menu is water buffalo, not cow — cow slaughter is strictly illegal in Nepal.",
       bhutan: "Bhutanese cooking using Sukam (dried beef) requires extensive boiling (45-90 minutes) before the meat is usable in Shakam Datshi or Shakam Paa — uniformly well-done. Fresh imported Indian beef/buffalo and mountain Yak both require long braises compounded by Thimphu's ~2,300m altitude (water boils at ~92°C; cooking times run 20-30% longer than sea level). Bhutan has no rare or medium-rare tradition; the Datshi-based cuisine is defined by long slow cooking of tough dried or lean meat. Modern restaurants in Thimphu serving international steakhouse cuts operate at international standards but are the exception. Traditional Bhutanese home cooking is uniformly Yoel (well-cooked).",
+      mongolia: "Mongolian beef cooking produces well-done results across all traditional preparations — Khorkhog (hot-stone stew) sealed in a pot or milk can cooks bone-in cuts for 2-3 hours; Tsuivan (fried noodles with beef) stir-fries thin strips to full doneness; Buuz (steamed dumplings) steam for 20-25 minutes to cook through hand-chopped mince. Borts (air-dried compressed beef) requires extended simmering to rehydrate and is by definition fully cooked by preservation. Yak from Khovsgol requires an additional 30% cooking time versus cattle, compounded by the same altitude physics documented in the Himalayan axis. Modern Ulaanbaatar restaurants (Khuchit Shonhor district, BD's Mongolian Grill equivalents) serve international doneness for premium imported beef, but traditional Mongolian steppe cooking is uniformly Bolgoson (cooked/well-done). The Fat Premium Inversion means well-done is not a quality failure — fat renders fully and the dish is considered richer and better for it.",
+      myanmar: "Burmese beef cooking produces well-done results across all traditional preparations — Si-byan (oil-returns curry) simmers Chuck/Brisket until the oil separates back out, a 45-90 minute process after which the meat is fully cooked; Todo-Thar (dry-fry) wok-cooks thin slices to full doneness; Amae Thar Hnat (braised shank) simmers 90+ minutes for the bone broth base. The sole raw exception is Beef Thoke (raw-marinated salad) and Kachin/Shan pounded raw preparations — but these are tradition-specific, not the urban default, and use lime-acid denaturation rather than heat. Working Zebu cattle require the Lean Correction (longer cooking than USDA equivalents due to age and musculature). Yangon modern steakhouses (Strand Hotel, downtown restaurants) serve international doneness, but traditional Burmese home cooking is uniformly Kyetko / A-pyauk-pyauk (well-cooked).",
     },
   },
 ] as const;

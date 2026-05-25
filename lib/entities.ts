@@ -177,6 +177,8 @@ export const REGION_ENTITY: Record<
   sri_lanka: { id: "sri_lanka", formalName: "Democratic Socialist Republic of Sri Lanka", shortName: "Sri Lanka" },
   nepal: { id: "nepal", formalName: "Federal Democratic Republic of Nepal", shortName: "Nepal" },
   bhutan: { id: "bhutan", formalName: "Kingdom of Bhutan", shortName: "Bhutan" },
+  mongolia: { id: "mongolia", formalName: "Mongolia", shortName: "Mongolia" },
+  myanmar: { id: "myanmar", formalName: "Republic of the Union of Myanmar", shortName: "Myanmar" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {

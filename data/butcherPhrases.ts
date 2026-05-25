@@ -612,4 +612,18 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "bottom_round_roast", region: "sri_lanka", phrase: "Harek / Thodai, beef smore joint, string se baandho, Thel ekka", notes: "'Round (Sinhalese/Tamil), Beef Smore joint, tie with string, with fat' — Dutch-Burgher pot-roast + fat-request inversion" },
   { canonicalId: "striploin", region: "sri_lanka", phrase: "Pita mas, lime marinade zaroori, slow braise warna leather", notes: "'Back meat, lime marinade essential, slow-braise or it's leather' — Lean-Zebu lime/acid correction" },
   { canonicalId: "hind_shank", region: "sri_lanka", phrase: "Kenda / Nalli, paya ke liye, katu kalle (marrow bones)", notes: "'Shank (Sinhalese/Tamil), for Paya, marrow bones' — gelatinous bone-soup shank" },
+
+  // 🇲🇳 MONGOLIA (Mongolian + transliterated register — Cyrillic in notes only)
+  { canonicalId: "chuck_roll", region: "mongolia", phrase: "Tatamal makh, buuz keema, hand-chop only, machine nahi, 20% ookh fat blend", notes: "'Rolled meat, buuz mince, hand-chop ONLY, not machine, blend 20% belly fat' — the MARQUEE hand-chop vs machine-grind mince distinction" },
+  { canonicalId: "bottom_round_roast", region: "mongolia", phrase: "Guya, borts ko lagi, fat zero, lean strips thin, winter supply", notes: "'Haunch/round, for Borts dried beef, zero fat (rancidity risk), thin lean strips, winter supply' — the extreme dehydration cut specification" },
+  { canonicalId: "short_plate", region: "mongolia", phrase: "Ookh, fat plate, khorkhog ke liye, premium hai yahan", notes: "'Belly fat, for Khorkhog, this is premium here' — the Fat Premium Inversion reminder for Western buyers" },
+  { canonicalId: "short_ribs", region: "mongolia", phrase: "Makhnii khavirga, bone-in, khorkhog steam stones, seal tight", notes: "'Meat ribs, bone-in, Khorkhog hot-stone sealed pot' — the ritual hot-stone stew bone specification" },
+  { canonicalId: "striploin", region: "mongolia", phrase: "Sarlagiin makh, yak loin, October-November only, slow cook zaroor", notes: "'Yak loin, Khovsgol seasonal (Oct-Nov only), slow-cook mandatory' — the Khovsgol Yak seasonal availability warning" },
+
+  // 🇲🇲 MYANMAR (Burmese + transliterated register — Burmese script in notes only)
+  { canonicalId: "chuck_blade", region: "myanmar", phrase: "Sibyan curry cut, slow simmer, oil return dekho — si-byan ho jaye tab ready", notes: "'Sibyan curry cut, slow simmer, watch for oil to return — when si-byan happens it is ready' — the MARQUEE oil-return doneness signal" },
+  { canonicalId: "tenderloin", region: "myanmar", phrase: "A-thar-hlyar, thoke ke liye, thin slice, lime-acid, fresh only", notes: "'Slender/smooth meat, for beef thoke salad, thin slice, lime-acid cure, fresh only' — the raw-salad freshness demand" },
+  { canonicalId: "hind_shank", region: "myanmar", phrase: "Gyin-thar, hnat cut, bone-in, long simmer noodle broth base", notes: "'Shank, braised cut, bone-in, long-simmer noodle broth base' — the Amae Thar Hnat slow-braise specification" },
+  { canonicalId: "chuck_roll", region: "myanmar", phrase: "A-mae-thar, zebu working cattle, slow braise, tenderloin assume mat karo", notes: "'Working cattle beef, slow-braise required, do NOT assume tenderloin quality' — the Zebu Lean Correction market reminder" },
+  { canonicalId: "brisket", region: "myanmar", phrase: "Yin-nyunt, black curry ke liye, bone-in zyada sahi, full cook through", notes: "'Chest cut, for black curry, bone-in better, cook fully through' — the si-byan collagen brisket cut" },
 ] as const;

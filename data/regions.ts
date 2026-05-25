@@ -150,6 +150,11 @@ export const regions = [
   // South Asia — Sovereign (Batch 21)
   { id: "nepal" as const, label: "Nepal", flag: "🇳🇵", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["kathmandu", "pokhara", "newari", "buff", "bhaisi", "buff momo", "choila", "kachila", "sukuti", "yak nepal", "nak", "thamel", "annapurna", "everest", "np"] as readonly string[] },
   { id: "bhutan" as const, label: "Bhutan", flag: "🇧🇹", group: "south_asia" as RegionGroup, subregion: "Sovereign South Asia" as const, aliases: ["thimphu", "paro", "bumthang", "dzongkha", "yak sha", "sha", "sukam", "sikam", "shakam datshi", "shakam paa", "ema datshi", "tsillu", "centenary farmers market", "bt"] as readonly string[] },
+
+  // Asia-Pacific (Batch 22)
+  { id: "mongolia" as const, label: "Mongolia", flag: "🇲🇳", group: "asia_pacific" as RegionGroup, aliases: ["ulaanbaatar", "ukhriin makh", "sarlagiin makh", "yak mongolia", "borts", "buuz", "khuushuur", "khorkhog", "tatamal", "guya", "khovsgol", "khuchit shonhor", "tsagaan sar", "ookh", "mn"] as readonly string[] },
+  // Southeast Asia (Batch 22)
+  { id: "myanmar" as const, label: "Myanmar", flag: "🇲🇲", group: "southeast_asia" as RegionGroup, aliases: ["burma", "burmese", "yangon", "mandalay", "amae thar", "sibyan", "amae shwar", "kachin", "shan", "beef thoke", "todo thar", "hush hush meat", "theingyi zei", "yin nyunt", "my", "mm"] as readonly string[] },
 ] as const;
 
 export type RegionRecord = (typeof regions)[number];
