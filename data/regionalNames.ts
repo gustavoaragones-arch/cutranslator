@@ -1572,6 +1572,102 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "wot cut", region: "ethiopia", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["wot meat"] as const, notes: "NOT a specific muscle — meat for Wot (spicy stew). Bone-in shank or chuck for long simmering. Niter Kibbeh provides moisture (since Ethiopian beef is extremely lean)." },
   { name: "le tere siga", region: "ethiopia", maps_to: "tenderloin", confidence: 0.40, synonyms: ["raw grade", "tere siga grade"] as const, notes: "NOT a cut — 'For Raw Eating' GRADE classification. Must be hot-boned, never aged, never refrigerated. The Ethiopian quality axis where freshness defines premium grade." },
   { name: "le wot", region: "ethiopia", maps_to: "chuck_roll", confidence: 0.40, synonyms: ["stew grade", "wot grade"] as const, notes: "NOT a cut — 'For Stew' GRADE classification. Pair of Le Tere Siga. Cross-reference Kenyan Nyama Laini/Mifupa, Korean Gu-i-yong/Guk-gori, Nigerian Eran-Egun/Eran-Didi." },
+
+  // ----- 🇧🇼 BOTSWANA (Setswana + local English — cow default, grass-fed Tswana/Brahman) — 12 entries -----
+
+  { name: "tjele botswana", region: "botswana", maps_to: "tenderloin", confidence: 0.85, synonyms: ["nama e e boleta", "fillet botswana", "soft tissue botswana"] as const, notes: "'Nama e e boleta' / Tjele — the ultimate premium soft tissue (Fillet), for high-end steaks. Grass-fed lean: sear at max heat to medium-rare, then rest 5-8 min (cooks ~20% faster than US grain-fed). Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "mogolo", region: "botswana", maps_to: "striploin", confidence: 0.82, synonyms: ["sirloin botswana", "porterhouse botswana", "striploin botswana", "fat cap loin"] as const, notes: "COMMONWEALTH SIRLOIN TRAP: 'Mogolo' / local 'Sirloin' or 'Porterhouse' = boneless STRIPLOIN with its fat cap, NOT US Top Sirloin. A US user wanting their 'Sirloin' must ask for Rump (Sera). Cow default. Cross-references southern_african_export_grade_af and the Commonwealth Sirloin Trap (Batch 13)." },
+
+  { name: "nama ya dikgopo", region: "botswana", maps_to: "ribeye", confidence: 0.80, synonyms: ["scotch fillet botswana", "ribeye botswana", "braai ribeye"] as const, notes: "'Nama ya dikgopo' / Scotch Fillet — boneless ribeye, prized for braaing (superior moisture retention on the lean grass-fed profile). Cow default." },
+
+  { name: "sera botswana", region: "botswana", maps_to: "top_sirloin", confidence: 0.82, synonyms: ["rump botswana", "sera", "open-fire rump", "braai rump"] as const, notes: "'Sera' / Rump — the definitive everyday premium choice for open-fire braai grilling. This is what a US user calling for 'Sirloin' actually wants (vs the local 'Sirloin' = Mogolo/striploin). Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "sehuba", region: "botswana", maps_to: "brisket", confidence: 0.82, synonyms: ["sehublo", "brisket botswana", "chest botswana", "breast botswana"] as const, notes: "'Sehublo'/'Sehuba' — 'Chest/Breast' (Brisket), the classic deep-flavored fatty cut. Cow default." },
+
+  { name: "tlhako", region: "botswana", maps_to: "hind_shank", confidence: 0.85, synonyms: ["molala", "shin botswana", "shin-beef", "neck botswana", "seswaa shank"] as const, notes: "CRITICAL SESWAA PILLAR: 'Tlhako' (Shin) / 'Molala' (Neck) — high-collagen bone-in cuts, the foundation of Seswaa. Must NOT be trimmed or deboned — marrow + connective tissue prevent the pounded meat from drying to dust. Cow default. Cross-references botswana_seswaa_pounded_af." },
+
+  { name: "nama ya serope", region: "botswana", maps_to: "bottom_round_roast", confidence: 0.80, synonyms: ["silverside botswana", "biltong cut botswana", "serope"] as const, notes: "'Nama ya serope' / Silverside — the primary cut for high-quality Biltong (sliced with the grain into fat-attached planks). Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "seswaa cut", region: "botswana", maps_to: "hind_shank", confidence: 0.80, synonyms: ["seswaa nama", "chotlho cut", "pounded beef cut", "bone-in utility botswana"] as const, notes: "MARQUEE format entry. The bone-in utility mix (Shin/Neck/Chuck, untrimmed, bone-in) for Seswaa — heavily salted, boiled for hours, pounded with wooden poles into a fluffy shred. Cow default. Cross-references botswana_seswaa_pounded_af." },
+
+  { name: "seswaa chuck cut", region: "botswana", maps_to: "chuck_roll", confidence: 0.72, synonyms: ["seswaa chuck", "chotlho chuck", "pounded chuck botswana"] as const, notes: "Chuck variant of the Seswaa cut (when Shin/Neck unavailable) — bone-in, untrimmed, for the boil-and-pound. Cow default. Cross-references botswana_seswaa_pounded_af." },
+
+  { name: "nama ya kgomo", region: "botswana", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["generic beef botswana", "botswana beef", "bees"] as const, notes: "Generic beef — 'Nama ya kgomo'. BMC-graded premium grass-fed Tswana/Brahman. Standard supermarket 'stewing beef' defaults bone-in (preferred for flavoring Bogobe porridge); ask for 'Boneless Stewing Beef' for US-style cubes. Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "biltong cut botswana", region: "botswana", maps_to: "bottom_round_roast", confidence: 0.78, synonyms: ["biltong botswana", "dried beef botswana", "silverside plank"] as const, notes: "Silverside (or Topside) sliced WITH the grain into long ~2-inch planks with a ~1/4-inch firm white outer fat layer attached, salt-air-cured into Biltong. Cow default. Cross-references southern_african_export_grade_af (the fat-attached salt-air dried-meat node)." },
+
+  { name: "mogodu botswana", region: "botswana", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["tripe botswana", "offal mix botswana", "serobe"] as const, notes: "Mogodu — tripe/intestine/internal-fat mix, treated with prime-cut reverence, slow-cooked tender (and Serobe, the chopped tripe/lung/intestine Seswaa-style dish). Offal mapped loosely; primarily Tier 3 prose. Cow default. Cross-references botswana_seswaa_pounded_af." },
+
+  // ----- 🇳🇦 NAMIBIA (local English + Afrikaans/German — cow default, grass-fed Bonsmara/Sanga/Brahman) — 12 entries -----
+
+  { name: "fillet namibia", region: "namibia", maps_to: "tenderloin", confidence: 0.85, synonyms: ["beesfillet", "rinderfilet", "fillet na", "carpaccio cut"] as const, notes: "Fillet (Afrikaans 'Beesfillet' / German 'Rinderfilet') — premium soft muscle for carpaccio/high-end. Grass-fed lean: max-heat sear, rest 5-8 min, cooks ~20% faster than US grain-fed. Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "sirloin namibia", region: "namibia", maps_to: "striploin", confidence: 0.82, synonyms: ["lende", "rumpfsteak", "sirloin na", "striploin namibia", "fat cap sirloin"] as const, notes: "COMMONWEALTH SIRLOIN TRAP: Namibian 'Sirloin' (Afrikaans 'Lende' / German 'Rumpfsteak') = boneless STRIPLOIN (NY Strip) with fat cap, NOT US Top Sirloin. US-Sirloin seekers want Rump (Kruisskyf). Cow default. Cross-references southern_african_export_grade_af and the Commonwealth Sirloin Trap (Batch 13)." },
+
+  { name: "scotch fillet namibia", region: "namibia", maps_to: "ribeye", confidence: 0.80, synonyms: ["ribeye namibia", "scotch fillet na", "braai ribeye namibia"] as const, notes: "Scotch Fillet / Ribeye (boneless) — the top braai pick (retains the most juice on the lean grass-fed profile). Cow default." },
+
+  { name: "kruisskyf", region: "namibia", maps_to: "top_sirloin", confidence: 0.82, synonyms: ["rump namibia", "kruisskyf na", "everyday steak namibia"] as const, notes: "'Kruisskyf' / Rump — the quintessential deep-flavored Namibian everyday steak (and the cut a US 'Sirloin' search should map to). Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "borsstuk", region: "namibia", maps_to: "brisket", confidence: 0.80, synonyms: ["brisket namibia", "borsstuk na", "potjie brisket", "smoking brisket namibia"] as const, notes: "'Borsstuk' / Brisket — high-collagen robust cut, essential for smoking or potjies. Cow default." },
+
+  { name: "biltong-vleis", region: "namibia", maps_to: "bottom_round_roast", confidence: 0.82, synonyms: ["silverside namibia", "biltong cut namibia", "biltong vleis", "dried beef namibia"] as const, notes: "MARQUEE: 'Biltong-vleis' / Silverside — the primary cut for Namibia's world-famous Biltong, sliced WITH the grain into ~2-inch planks with a mandatory ~1/4-inch firm white outer fat layer attached. Namibia rivals South Africa in dried-meat production. Cow default. Cross-references namibia_kapana_biltong_af and southern_african_export_grade_af." },
+
+  { name: "binnboud", region: "namibia", maps_to: "top_round_steak", confidence: 0.75, synonyms: ["topside namibia", "binnboud na", "lean roast namibia", "minute steak cut"] as const, notes: "'Binnboud' / Topside — lean Sunday roasts, minute steaks, premium mince. Also a Biltong/Kapana source. Cow default." },
+
+  { name: "skenkel", region: "namibia", maps_to: "hind_shank", confidence: 0.82, synonyms: ["hesse", "shin namibia", "beef shin namibia", "potjie shin", "skenkel na"] as const, notes: "'Skenkel'/'Hesse' / Shin — thick bone-in cross-cuts for stews and Potjiekos. Cow default. Cross-references namibia_kapana_biltong_af." },
+
+  { name: "kapana cut", region: "namibia", maps_to: "top_sirloin", confidence: 0.78, synonyms: ["kapana namibia", "katutura street cut", "flash-grill cubes", "rump cubes namibia"] as const, notes: "MARQUEE format entry. From Windhoek's Katutura township — Rump or Topside fully DEBONED and hand-sliced into tiny uniform ~1/2-inch cubes for flash-cooking on a blazing flat-top steel grill over wild-wood charcoal (Kapana street food, tossed in salt/chili/spice). Cow default. Cross-references namibia_kapana_biltong_af." },
+
+  { name: "potjiekos cut namibia", region: "namibia", maps_to: "hind_shank", confidence: 0.74, synonyms: ["potjie cut", "potjiekos blend", "bone-in stew namibia", "shin oxtail neck mix"] as const, notes: "The Potjiekos blend — never boneless: a calculated mix of Shin (Shank), Oxtail, and Neck hacked into chunks; bone marrow + connective tissue thicken the gravy over a 4-hour wood-fire simmer. Cow default. Cross-references namibia_kapana_biltong_af." },
+
+  { name: "beesvleis", region: "namibia", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["generic beef namibia", "namibia beef", "vleis"] as const, notes: "Generic beef ('Vleis'/'Beesvleis'). 100% free-range, grass-fed, hormone-free, organic Bonsmara/Sanga/Brahman. Yellow-tinted fat is PRIZED (grass-fed beta-carotene marker, not a defect). Cow default. Cross-references southern_african_export_grade_af." },
+
+  { name: "droewors cut", region: "namibia", maps_to: "chuck_roll", confidence: 0.60, synonyms: ["droewors", "dried sausage cut namibia", "boerewors dried"] as const, notes: "Droewors — the dried-sausage companion to Biltong (coarse beef, often with fat, air-dried). A dried-meat tradition cut. Cow default. Cross-references namibia_kapana_biltong_af." },
+
+  // ----- 🇹🇿 TANZANIA (Swahili + local English — cow default, Tanzania Shorthorn Zebu, Hot-Boned) — 10 entries -----
+
+  { name: "nyama laini tanzania", region: "tanzania", maps_to: "tenderloin", confidence: 0.82, synonyms: ["fillet tanzania", "nyama laini", "soft meat tanzania", "mishkaki cut"] as const, notes: "'Nyama Laini' / Fillet — 'soft meat', the premier cut for quick stir-fries (Sekela/Karanga) and Mishkaki skewers. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "nyama ya mgongo", region: "tanzania", maps_to: "striploin", confidence: 0.80, synonyms: ["loin tanzania", "mgongo", "back meat tanzania", "nyama choma loin"] as const, notes: "'Nyama ya Mgongo' / Loin — 'back meat', highest-status for premium Nyama Choma. For an actual steak, ask for the Mgongo cut ACROSS the bone (a plain bucha 'steak' just means boneless). Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "kidari tanzania", region: "tanzania", maps_to: "brisket", confidence: 0.82, synonyms: ["brisket tanzania", "kidari tz", "chest tanzania", "stew fat tanzania"] as const, notes: "'Kidari' / Brisket — 'Chest', prized for thick external fat layers vital for flavoring stews. Cow default." },
+
+  { name: "nshonsho", region: "tanzania", maps_to: "hind_shank", confidence: 0.82, synonyms: ["mushkila", "shin tanzania", "shank tanzania", "supu shank"] as const, notes: "'Nshonsho'/'Mushkila' / Shin — lower leg, mandatory for gelatinous slow-cooked soups (Supu). Highly valued for therapeutic marrow. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "bega tanzania", region: "tanzania", maps_to: "chuck_roll", confidence: 0.75, synonyms: ["shoulder tanzania", "bega", "utility stew tanzania", "mchuzi shoulder"] as const, notes: "'Bega' / Shoulder — the classic hardworking utility cut for everyday family stews (Mchuzi wa Nyama, bone-in). Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "nyama ya mapaja", region: "tanzania", maps_to: "bottom_round_roast", confidence: 0.74, synonyms: ["rapa", "round tanzania", "thigh meat tanzania", "steak tanzania", "curry cubes tz"] as const, notes: "'Rapa'/'Nyama ya Mapaja' / 'Steak' — 'thigh meat', very lean boneless muscle cut into uniform curry cubes. NOTE: 'Steak' in a bucha = boneless meat (often tough Round), NOT a searable Western steak. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "mkia tanzania", region: "tanzania", maps_to: "oxtail", confidence: 0.80, synonyms: ["oxtail tanzania", "mkia", "supu ya mkia", "tail tanzania"] as const, notes: "'Mkia' / Oxtail — heavily demanded for high-collagen night-time/early-morning broths (Supu ya Mkia). Cow default." },
+
+  { name: "nyama ya mchuzi tanzania", region: "tanzania", maps_to: "chuck_roll", confidence: 0.72, synonyms: ["curry cut tanzania", "nyama ya mchuzi", "bone-in curry mix tz", "coconut curry cut"] as const, notes: "The 'Curry Cut' — a rough jagged mix of bone, meat, connective tissue cleaver-hacked; bone is non-negotiable for sweetness/depth in coconut-based coastal/Zanzibari curries (Mchuzi). Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "nyama choma cut tanzania", region: "tanzania", maps_to: "short_ribs", confidence: 0.72, synonyms: ["choma slab tanzania", "nyama choma primal", "bone-in loin slab tz", "fat-cap rib slab"] as const, notes: "The Nyama Choma primal — a massive bone-in Short Loin/Rib slab (Mgongo) with the FULL FAT CAP intact, the fat acting as a natural basting shield over charcoal for the lean Zebu. Not sliced into individual steaks. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "mishkaki cut tanzania", region: "tanzania", maps_to: "tenderloin", confidence: 0.76, synonyms: ["mishkaki", "skewer cut tanzania", "papaya-marinated cubes", "1-inch cubes tz"] as const, notes: "Mishkaki — Fillet (or exceptionally clean Rump) in tiny uniform 1-inch cubes, heavily papaya/garlic/ginger marinated to chemically break down the pasture-raised fibers before flash-grilling. Cow default. Cross-references east_african_choma_parboil_af (the papaya-tenderizer correction)." },
+
+  // ----- 🇺🇬 UGANDA (Luganda + local English — cow default, Ankole longhorn/Zebu, Hot-Boned) — 10 entries -----
+
+  { name: "nyama engonvu", region: "uganda", maps_to: "tenderloin", confidence: 0.82, synonyms: ["fillet uganda", "nyama engonvu", "soft meat uganda", "luwombo cut"] as const, notes: "'Nyama Engonvu' / Fillet — 'soft meat', the premier muscle for quick pan-frying and the high-status Luwombo (leaf-steamed). Cow default. Cross-references uganda_katogo_luwombo_af." },
+
+  { name: "mugongo", region: "uganda", maps_to: "striploin", confidence: 0.80, synonyms: ["loin uganda", "mugongo", "back meat uganda", "muchomo loin"] as const, notes: "'Mugongo' / Loin — 'back meat', high-status lean muscle for high-end roasting/grilling and the Muchomo charcoal roast. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "kifuba", region: "uganda", maps_to: "brisket", confidence: 0.82, synonyms: ["brisket uganda", "kifuba ug", "chest uganda", "fatty chest uganda"] as const, notes: "'Kifuba' / Brisket — 'Chest', prized for thick external fat layers essential for deep flavor. Cow default." },
+
+  { name: "kigere", region: "uganda", maps_to: "hind_shank", confidence: 0.82, synonyms: ["shin uganda", "shank uganda", "kigere", "mulokoni shank"] as const, notes: "'Kigere' / Shin — leg muscle, mandatory for gelatinous breakfast stews and Mulokoni (cow-heel/hoof soup, prized for therapeutic marrow — hangover/joint cure). Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "kifuba kyokubega", region: "uganda", maps_to: "chuck_roll", confidence: 0.74, synonyms: ["shoulder uganda", "kifuba ky'okubega", "katogo shoulder", "utility stew uganda"] as const, notes: "Shoulder — the hardworking utility cut for everyday family stews and the bone-in Katogo breakfast stew. Cow default. Cross-references uganda_katogo_luwombo_af." },
+
+  { name: "ekisambi", region: "uganda", maps_to: "bottom_round_roast", confidence: 0.74, synonyms: ["nyama yakabina", "round uganda", "thigh uganda", "steak uganda", "ekisambi"] as const, notes: "'Nyama y'akabina'/'Ekisambi' / 'Steak' — 'thigh/buttock meat', extremely lean clean boneless muscle diced for stews. NOTE: 'Steak' in a Ugandan butchery = boneless muscle (often tough Round), NOT a searable Western steak — ask for Fillet instead. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "mukira", region: "uganda", maps_to: "oxtail", confidence: 0.80, synonyms: ["oxtail uganda", "mukira", "tail uganda", "collagen broth uganda"] as const, notes: "'Mukira' / Oxtail — heavily demanded for high-collagen medicinal broths. Cow default." },
+
+  { name: "katogo cut", region: "uganda", maps_to: "chuck_roll", confidence: 0.74, synonyms: ["katogo", "matooke beef cut", "bone-in stew mix uganda", "neck shoulder katogo"] as const, notes: "MARQUEE format entry. The Katogo cut (for the matooke-banana breakfast stew) — a jagged cleaver-hacked mix of bone, muscle, heavy connective tissue (Shoulder/Neck), untrimmed; melting collagen creates the thick gravy that coats the bananas. Cow default. Cross-references uganda_katogo_luwombo_af." },
+
+  { name: "muchomo cut", region: "uganda", maps_to: "short_ribs", confidence: 0.72, synonyms: ["muchomo", "roast slab uganda", "bone-in loin slab ug", "fat-cap muchomo"] as const, notes: "The Muchomo cut — a large bone-in Short Loin/Rib slab (Mugongo) with the full fat cap intact, the fat basting the lean Ankole beef over fierce charcoal. Cow default. Cross-references east_african_choma_parboil_af." },
+
+  { name: "luwombo cut", region: "uganda", maps_to: "tenderloin", confidence: 0.74, synonyms: ["luwombo", "banana-leaf cut", "royal steamed cut", "peanut sauce cut uganda"] as const, notes: "The Luwombo cut — boneless ultra-clean Fillet (or premium Rump) cubes, lightly seared then sealed in smoked banana leaves with peanut sauce and steamed (a high-status royal dish). Cow default. Cross-references uganda_katogo_luwombo_af." },
 ];
 
 const _southAsiaRegionalNames: readonly RegionalName[] = [

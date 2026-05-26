@@ -139,7 +139,12 @@ export type RegionSlug =
   | "bhutan"
   // Asia-Pacific + Southeast Asia (Batch 22)
   | "mongolia"
-  | "myanmar";
+  | "myanmar"
+  // Africa (Batch 23)
+  | "botswana"
+  | "namibia"
+  | "tanzania"
+  | "uganda";
 
 export type CanonicalId =
   | "ribeye"

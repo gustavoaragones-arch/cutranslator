@@ -102,11 +102,18 @@ export const regions = [
   { id: "australia" as const, label: "Australia", flag: "🇦🇺", group: "oceania" as RegionGroup, aliases: ["aus", "oz", "aussie", "down under"] as readonly string[] },
   { id: "new_zealand" as const, label: "New Zealand", flag: "🇳🇿", group: "oceania" as RegionGroup, aliases: ["nz", "kiwi", "aotearoa"] as readonly string[] },
 
-  // Africa
-  { id: "south_africa" as const, label: "South Africa", flag: "🇿🇦", group: "africa" as RegionGroup, aliases: ["rsa", "sa", "south african"] as readonly string[] },
-  { id: "kenya" as const, label: "Kenya", flag: "🇰🇪", group: "africa" as RegionGroup, aliases: ["kenyan", "swahili"] as readonly string[] },
-  { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, aliases: ["naija", "nigerian"] as readonly string[] },
-  { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
+  // Africa — Southern Africa
+  { id: "south_africa" as const, label: "South Africa", flag: "🇿🇦", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["rsa", "sa", "south african"] as readonly string[] },
+  { id: "botswana" as const, label: "Botswana", flag: "🇧🇼", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["gaborone", "francistown", "setswana", "seswaa", "chotlho", "bmc", "botswana meat commission", "tswana cattle", "mogolo", "sera", "tlhako", "serobe", "mogodu", "bw"] as readonly string[] },
+  { id: "namibia" as const, label: "Namibia", flag: "🇳🇦", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["windhoek", "katutura", "kapana", "biltong namibia", "droewors", "potjiekos", "bonsmara", "afrikaans beef", "slaghuis", "kruisskyf", "biltong-vleis", "na"] as readonly string[] },
+  // Africa — East Africa
+  { id: "kenya" as const, label: "Kenya", flag: "🇰🇪", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["kenyan", "swahili"] as readonly string[] },
+  { id: "tanzania" as const, label: "Tanzania", flag: "🇹🇿", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["dar es salaam", "arusha", "mwanza", "swahili beef", "nyama choma", "mishkaki", "mchuzi", "zebu", "bucha", "mgongo", "kidari", "nyama ya ngombe", "zanzibar beef", "tz"] as readonly string[] },
+  { id: "uganda" as const, label: "Uganda", flag: "🇺🇬", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["kampala", "kalerwe", "nakasero", "luganda beef", "katogo", "muchomo", "luwombo", "ankole", "mulokoni", "mugongo", "nyama ya ente", "matooke beef", "ug"] as readonly string[] },
+  // Africa — West Africa
+  { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["naija", "nigerian"] as readonly string[] },
+  // Africa — Horn of Africa
+  { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, subregion: "Horn of Africa" as const, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
 
   // South Asia — India
   { id: "kerala" as const, label: "Kerala", flag: "🇮🇳", group: "south_asia" as RegionGroup, aliases: ["kochi", "trivandrum", "thiruvananthapuram", "malayali"] as readonly string[] },

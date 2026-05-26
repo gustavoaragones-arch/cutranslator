@@ -626,4 +626,29 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "hind_shank", region: "myanmar", phrase: "Gyin-thar, hnat cut, bone-in, long simmer noodle broth base", notes: "'Shank, braised cut, bone-in, long-simmer noodle broth base' — the Amae Thar Hnat slow-braise specification" },
   { canonicalId: "chuck_roll", region: "myanmar", phrase: "A-mae-thar, zebu working cattle, slow braise, tenderloin assume mat karo", notes: "'Working cattle beef, slow-braise required, do NOT assume tenderloin quality' — the Zebu Lean Correction market reminder" },
   { canonicalId: "brisket", region: "myanmar", phrase: "Yin-nyunt, black curry ke liye, bone-in zyada sahi, full cook through", notes: "'Chest cut, for black curry, bone-in better, cook fully through' — the si-byan collagen brisket cut" },
+
+  // 🇧🇼 BOTSWANA
+  { canonicalId: "hind_shank", region: "botswana", phrase: "Tlhako, bone-in, fat on, do NOT debone — Seswaa ke liye, marrow zaroor", notes: "'Shin, bone-in, fat on, do NOT debone — for Seswaa, marrow is essential' — the MARQUEE Untrimmed-Bone-In rule for pounding" },
+  { canonicalId: "top_sirloin", region: "botswana", phrase: "Sera, thick cut 2 inches, max heat sear, rest 5 minutes — grass-fed lean, cooks fast", notes: "'Rump, 2-inch thick, max-heat sear, rest 5 min — grass-fed lean, cooks fast' — the sear-and-rest correction" },
+  { canonicalId: "striploin", region: "botswana", phrase: "Mogolo — NOT US sirloin, fat cap on, Commonwealth style, braai ready", notes: "'Mogolo — NOT US sirloin, fat cap on, Commonwealth style, braai ready' — the Commonwealth Sirloin Trap disambiguation" },
+  { canonicalId: "bottom_round_roast", region: "botswana", phrase: "Nama ya serope, with the grain, fat layer on, biltong cut — do NOT trim", notes: "'Silverside, with the grain, fat layer on, biltong cut — do NOT trim' — the fat-attached Biltong plank specification" },
+
+  // 🇳🇦 NAMIBIA
+  { canonicalId: "top_sirloin", region: "namibia", phrase: "Kruisskyf, deboned, tiny half-inch cubes — Kapana cut, flat-top ready", notes: "'Rump, deboned, tiny 1/2-inch cubes — Kapana cut, flat-top ready' — the MARQUEE Kapana street food cut specification" },
+  { canonicalId: "bottom_round_roast", region: "namibia", phrase: "Biltong-vleis, met die vetlaag, saam die grein — do NOT trim the fat", notes: "'Silverside, with the fat layer, with the grain — do NOT trim the fat' — Afrikaans Biltong plank specification" },
+  { canonicalId: "striploin", region: "namibia", phrase: "Lende / Rumpfsteak — NOT US sirloin, fat cap hou, Commonwealth trap", notes: "'Striploin — NOT US sirloin, keep fat cap, Commonwealth trap' — Afrikaans/German dual disambiguation" },
+  { canonicalId: "hind_shank", region: "namibia", phrase: "Potjiekos mix: Skenkel, oxtail en nek — bone-in always, 4-hour simmer", notes: "'Potjie mix: Shin, oxtail and neck — bone-in always, 4-hour simmer' — the Potjiekos bone-in mandatory blend" },
+  { canonicalId: "tenderloin", region: "namibia", phrase: "Beesfillet / Rinderfilet, max heat sear, 5 min rest — grass-fed lean, sneller gaar", notes: "'Fillet, max heat sear, 5 min rest — grass-fed lean, cooks faster' — the grass-fed-lean sear-and-rest correction, Afrikaans/German" },
+
+  // 🇹🇿 TANZANIA
+  { canonicalId: "tenderloin", region: "tanzania", phrase: "Nyama Laini, mishkaki cut — 1-inch cubes, papaya marinate zaroor, then grill", notes: "'Soft meat, skewer cut — 1-inch cubes, papaya marinade mandatory, then grill' — the papaya-tenderizer Mishkaki requirement" },
+  { canonicalId: "striploin", region: "tanzania", phrase: "Mgongo, bone-in slab, fat cap juu — Nyama Choma, whole primal, do NOT slice", notes: "'Back meat, bone-in slab, fat cap on top — Nyama Choma, whole primal, do NOT slice' — the Choma fat-cap-shield slab" },
+  { canonicalId: "chuck_roll", region: "tanzania", phrase: "Nyama ya Mchuzi — bone-in, jagged, coconut curry, bone non-negotiable", notes: "'Curry Cut — bone-in, jagged, coconut curry, bone non-negotiable' — the Zanzibari Curry Cut specification" },
+  { canonicalId: "hind_shank", region: "tanzania", phrase: "Nshonsho, bone-in, parboil kwanza — ginger, kitunguu, unga — kisha fry", notes: "'Shin, bone-in, parboil first — ginger, garlic, onion — then fry' — the mandatory parboiling correction in Swahili" },
+
+  // 🇺🇬 UGANDA
+  { canonicalId: "chuck_roll", region: "uganda", phrase: "Kifuba-ky'okubega, bone-in, jagged — Katogo cut, matooke stew, bone lazima", notes: "'Shoulder, bone-in, jagged — Katogo cut, matooke stew, bone is mandatory' — the Katogo collagen-for-gravy rule in Luganda" },
+  { canonicalId: "tenderloin", region: "uganda", phrase: "Nyama Engonvu, clean cubes — Luwombo: sear, banana leaf, peanut sauce, steam", notes: "'Soft meat, clean cubes — Luwombo: sear, banana leaf, peanut sauce, steam' — the royal Luwombo cut specification" },
+  { canonicalId: "short_ribs", region: "uganda", phrase: "Mugongo, bone-in slab, fat cap teri — Muchomo, fierce charcoal, do NOT slice", notes: "'Back meat, bone-in slab, fat cap on — Muchomo, fierce charcoal, do NOT slice' — the Muchomo fat-cap Ankole slab" },
+  { canonicalId: "hind_shank", region: "uganda", phrase: "Kigere, bone-in, Mulokoni — long simmer morning, therapeutic marrow, do not debone", notes: "'Shin, bone-in, Mulokoni — long morning simmer, therapeutic marrow, do not debone' — the Ugandan bone-prestige marrow soup" },
 ] as const;

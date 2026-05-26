@@ -179,6 +179,10 @@ export const REGION_ENTITY: Record<
   bhutan: { id: "bhutan", formalName: "Kingdom of Bhutan", shortName: "Bhutan" },
   mongolia: { id: "mongolia", formalName: "Mongolia", shortName: "Mongolia" },
   myanmar: { id: "myanmar", formalName: "Republic of the Union of Myanmar", shortName: "Myanmar" },
+  botswana: { id: "botswana", formalName: "Republic of Botswana", shortName: "Botswana" },
+  namibia: { id: "namibia", formalName: "Republic of Namibia", shortName: "Namibia" },
+  tanzania: { id: "tanzania", formalName: "United Republic of Tanzania", shortName: "Tanzania" },
+  uganda: { id: "uganda", formalName: "Republic of Uganda", shortName: "Uganda" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {
