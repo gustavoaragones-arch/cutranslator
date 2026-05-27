@@ -651,4 +651,11 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "uganda", phrase: "Nyama Engonvu, clean cubes — Luwombo: sear, banana leaf, peanut sauce, steam", notes: "'Soft meat, clean cubes — Luwombo: sear, banana leaf, peanut sauce, steam' — the royal Luwombo cut specification" },
   { canonicalId: "short_ribs", region: "uganda", phrase: "Mugongo, bone-in slab, fat cap teri — Muchomo, fierce charcoal, do NOT slice", notes: "'Back meat, bone-in slab, fat cap on — Muchomo, fierce charcoal, do NOT slice' — the Muchomo fat-cap Ankole slab" },
   { canonicalId: "hind_shank", region: "uganda", phrase: "Kigere, bone-in, Mulokoni — long simmer morning, therapeutic marrow, do not debone", notes: "'Shin, bone-in, Mulokoni — long morning simmer, therapeutic marrow, do not debone' — the Ugandan bone-prestige marrow soup" },
+
+  // 🇿🇼 ZIMBABWE (English/Shona/Ndebele register)
+  { canonicalId: "top_sirloin", region: "zimbabwe", phrase: "Braai pack / Chidya (Rump) yegocha, bone-in, thin slices", notes: "'Braai pack / Rump for the braai, bone-in, thin slices' — mixed flash-grill bundle; lean grass-fed cooks fast, rest generously" },
+  { canonicalId: "striploin", region: "zimbabwe", phrase: "Musana / Sirloin (NOT US-sirloin), fat cap edge", notes: "'Sirloin with fat-cap edge' — Commonwealth trap: this is striploin; US-sirloin seekers want Chidya/Rump" },
+  { canonicalId: "bottom_round_roast", region: "zimbabwe", phrase: "Gura / Silverside ye Biltong, with the grain, fat on", notes: "'Silverside for Biltong, with the grain, fat on' — wide plank, firm outer fat cap preserved" },
+  { canonicalId: "chuck_roll", region: "zimbabwe", phrase: "High-density stewing beef, Sadza neNyama, mafupa nemafuta", notes: "'High-density stewing beef for Sadza neNyama, with bone and fat' — collagen thickens the gravy; multi-hour braise" },
+  { canonicalId: "t_bone", region: "zimbabwe", phrase: "T-Bone (kana Porterhouse, zvakafanana)", notes: "'T-Bone (or Porterhouse, same thing)' — any spinal bone-in striploin+tenderloin cut, fillet width irrelevant" },
 ] as const;

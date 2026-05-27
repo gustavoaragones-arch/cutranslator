@@ -144,7 +144,9 @@ export type RegionSlug =
   | "botswana"
   | "namibia"
   | "tanzania"
-  | "uganda";
+  | "uganda"
+  // Africa (Batch 24)
+  | "zimbabwe";
 
 export type CanonicalId =
   | "ribeye"

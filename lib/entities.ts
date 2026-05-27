@@ -183,6 +183,7 @@ export const REGION_ENTITY: Record<
   namibia: { id: "namibia", formalName: "Republic of Namibia", shortName: "Namibia" },
   tanzania: { id: "tanzania", formalName: "United Republic of Tanzania", shortName: "Tanzania" },
   uganda: { id: "uganda", formalName: "Republic of Uganda", shortName: "Uganda" },
+  zimbabwe: { id: "zimbabwe", formalName: "Republic of Zimbabwe", shortName: "Zimbabwe" },
 };
 
 export function regionEntityFormal(slug: RegionSlug): string {
