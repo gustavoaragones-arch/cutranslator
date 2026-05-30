@@ -484,11 +484,13 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "kerala", phrase: "Pashu undercut, oru kilo, taja", notes: "'Cow undercut, one kilo, fresh' — explicit cow specification (vs Poti/Buffalo)" },
   { canonicalId: "inside_round", region: "kerala", phrase: "Beef Fry-inu chinnathayi murikku", notes: "'Cut small for Beef Fry' — the Beef Ularthiyathu cube format" },
   { canonicalId: "brisket", region: "kerala", phrase: "Nenju rachi, taja, nadan curry-kku", notes: "'Brisket meat, fresh, for traditional curry'" },
+  { canonicalId: "tenderloin", region: "kerala", phrase: "Nalla naramulla rachi tharu", notes: "'Give me properly soft meat' — general soft-cut request; Pashu (cow) undercut is the expected answer" },
 
   // 🇮🇳 TAMIL NADU (Tamil-English mix)
   { canonicalId: "tenderloin", region: "tamil_nadu", phrase: "Beef undercut, kilo, fresh-ah iruka", notes: "Buffalo undercut request; 'is it fresh' essential for hot-boned market" },
   { canonicalId: "inside_round", region: "tamil_nadu", phrase: "Chukka cut, paper-thin, fry pannathuku", notes: "'Chukka cut, paper-thin, for frying' — the Beef Chukka format" },
   { canonicalId: "hind_shank", region: "tamil_nadu", phrase: "Kaal, elumbu kooda, paya-kku", notes: "'Leg, with bone, for Paya' — bone-in mandatory for the soup" },
+  { canonicalId: "chuck_roll", region: "tamil_nadu", phrase: "Elumbu illama kudunga", notes: "'Give it without bones' — standard boneless request at Chennai markets; default is bone-in curry cut" },
 
   // 🇮🇳 TELANGANA / HYDERABAD (Urdu-Hindi mix)
   { canonicalId: "tenderloin", region: "telangana", phrase: "Pasanda kaat ke do, parchey ki shape mein", notes: "'Cut Pasanda in Parcha shape' — explicit thin-sheet specification" },
@@ -500,6 +502,7 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "hind_shank", region: "andhra_pradesh", phrase: "Nalli emuka, full marrow, kilo", notes: "'Marrow bone, full marrow, kilo' — prestige cut request" },
   { canonicalId: "tenderloin", region: "andhra_pradesh", phrase: "Mettati mamsam, vepudu cooking ki", notes: "'Soft meat for dry-fry cooking' — Vepudu specification" },
   { canonicalId: "brisket", region: "andhra_pradesh", phrase: "Rommu mukkalu, kovvu kuda kavali", notes: "'Chest pieces, with fat needed' — explicit fat retention for Andhra heat balance" },
+  { canonicalId: "chuck_roll", region: "andhra_pradesh", phrase: "Boneless ivvandi", notes: "'Please give boneless' — Telugu market default is bone-in; this overrides it for curry cubes" },
 
   // 🇮🇳 MAHARASHTRA (English-Hindi mix at modern shops; pure Hindi/Urdu at Crawford)
   { canonicalId: "tenderloin", region: "maharashtra", phrase: "Undercut, fillet — Western style cut, Bandra restaurant ke liye", notes: "Modern English-Hindi mix at high-end butchers" },
@@ -510,6 +513,7 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "tenderloin", region: "goa", phrase: "Lomo/Undercut, motto kat, BBQ-saathi", notes: "'Lomo/Undercut, thick cut, for BBQ' — Portuguese-Konkani-English trilingual" },
   { canonicalId: "brisket", region: "goa", phrase: "Salt Meat, pre-salted, Beef Roast saathi", notes: "Pre-brined brisket request for Goan Beef Roast" },
   { canonicalId: "outside_round", region: "goa", phrase: "Topside or Rump, Vindaloo-saathi, vinagre marinate karayche", notes: "'Topside or Rump, for Vindaloo, will marinate in vinegar' — explicit marination plan" },
+  { canonicalId: "hind_shank", region: "goa", phrase: "Fokot haddi, stock-saathi", notes: "'Only the bones, for stock' — Portuguese-Konkani mix; Goan Beef Stock is the base for many stews" },
 
   // 🇮🇳 KARNATAKA (Kannada/Dakhni Urdu/English mix)
   { canonicalId: "tenderloin", region: "karnataka", phrase: "Undercut, naram maunsa kodi, kilo eradu", notes: "'Undercut, soft meat please, two kilos' — Kannada-English mix at Russell Market" },
@@ -552,6 +556,7 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "chuck_blade", region: "west_bengal", phrase: "Kolkata Biryani cut, charbi-wala, aalu ke saath cooking ke liye", notes: "'Kolkata Biryani cut, with fat, for cooking with potato' — explicit potato-tradition specification" },
   { canonicalId: "inside_round", region: "west_bengal", phrase: "Beef Chaap cut, hand-pounded, tawa ke liye flat slices", notes: "'Beef Chaap cut, hand-pounded, flat slices for tawa' — explicit Mughlai-derived format" },
   { canonicalId: "chuck_roll", region: "west_bengal", phrase: "Anglo-Indian cutlet meat, fine machine mince, Trinca's style", notes: "'Anglo-Indian cutlet meat, fine machine mince, [iconic restaurant] style' — colonial inheritance" },
+  { canonicalId: "striploin", region: "west_bengal", phrase: "Dui aangler mota kore kato, steak-er jonyo", notes: "'Cut two fingers thick, for steak' — Bengali steak request at Park Street or New Market butchers" },
 
   // 🇮🇳 INDIA CENTRAL (Hindi mix — pan-state)
   { canonicalId: "tenderloin", region: "india_central", phrase: "Bihari Kabab ke liye Pasanda, with-the-grain, raw papaya marinade", notes: "'Pasanda for Bihari Kabab, with-the-grain, raw papaya marinade' — explicit grain-direction specification" },
@@ -658,4 +663,20 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "bottom_round_roast", region: "zimbabwe", phrase: "Gura / Silverside ye Biltong, with the grain, fat on", notes: "'Silverside for Biltong, with the grain, fat on' — wide plank, firm outer fat cap preserved" },
   { canonicalId: "chuck_roll", region: "zimbabwe", phrase: "High-density stewing beef, Sadza neNyama, mafupa nemafuta", notes: "'High-density stewing beef for Sadza neNyama, with bone and fat' — collagen thickens the gravy; multi-hour braise" },
   { canonicalId: "t_bone", region: "zimbabwe", phrase: "T-Bone (kana Porterhouse, zvakafanana)", notes: "'T-Bone (or Porterhouse, same thing)' — any spinal bone-in striploin+tenderloin cut, fillet width irrelevant" },
+
+  // 🇳🇬 NIGERIA — Hausa / Yoruba / Pidgin register (Batch 26)
+  { canonicalId: "inside_round", region: "nigeria", phrase: "Ina son naman sa kilo daya", notes: "Hausa: 'I want one kilo of beef' — the universal market opening; naman sa = cow meat, the safe register" },
+  { canonicalId: "hind_shank", region: "nigeria", phrase: "Fun mi ni eran ti ko ni egungun", notes: "Yoruba: 'Give me meat without bone' — boneless request; egungun = bone" },
+  { canonicalId: "inside_round", region: "nigeria", phrase: "Yanka shi siriri na Suya", notes: "Hausa: 'Cut it thin for Suya' — marquee Suya-prep instruction; siriri = thin/fine; the paper-thin shave specification" },
+  { canonicalId: "chuck_roll", region: "nigeria", phrase: "I want buy Orishirishi", notes: "Nigerian Pidgin: 'assorted' mixed muscle-and-offal bundle — offal components deferred to post-Batch-25 supplement; muscle anchor maps to chuck" },
+  { canonicalId: "inside_round", region: "nigeria", phrase: "Nama yau ne?", notes: "Hausa: 'Is it today's kill?' — hot-boned freshness verification; yau = today; the mandatory freshness check before buying" },
+  { canonicalId: "chuck_roll", region: "nigeria", phrase: "Eran malu, tabi nama — ko corned beef", notes: "Yoruba/Hausa mix: 'Cow meat, or nama — not corned beef' — the false-friend correction; 'beef' alone risks being interpreted as canned corned beef" },
+
+  // 🇲🇱 MALI — Bambara / Fulfulde register (Batch 26)
+  { canonicalId: "inside_round", region: "mali", phrase: "N b'a fe ka sogo kilo kelen san", notes: "Bambara: 'I want to buy one kilo of meat' — standard market opening; sogo = meat, kilo kelen = one kilo" },
+  { canonicalId: "inside_round", region: "mali", phrase: "Sogo tege te bolo", notes: "Bambara: 'Give me boneless' — tege = cut, te bolo = without bone; boneless request" },
+  { canonicalId: "tenderloin", region: "mali", phrase: "N ma sogo duman di", notes: "Bambara: 'Give me the soft part' — duman = soft/good; targets the tenderloin zone for upscale brochettes" },
+  { canonicalId: "brisket", region: "mali", phrase: "Tulu do k'a kan", notes: "Bambara: 'Add some fat, please' — tulu = fat/oil; critical request for lean Zebu Peul beef; fat-bead threading instruction for brochettes" },
+  { canonicalId: "inside_round", region: "mali", phrase: "Bi sogo lo wa?", notes: "Bambara: 'Is it today's meat?' — freshness verification; bi = today; mandatory parboil-context check" },
+  { canonicalId: "inside_round", region: "mali", phrase: "Mi yidi kilo tew nagge gooto", notes: "Fulfulde: 'I want one kilo of beef' — tew nagge = cow meat in Fulfulde; the Fulfulde-vocabulary marker tying to Peul transhumance herder tradition" },
 ] as const;

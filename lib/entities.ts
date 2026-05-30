@@ -48,6 +48,17 @@ export const CANONICAL_ENTITY_TERM: Record<CanonicalId, string> = {
   top_round_steak: "top round steak",
   bottom_round_roast: "bottom round roast",
   inside_skirt: "inside skirt steak",
+  // Phase 4 — Offal (Batch 25):
+  tongue: "beef tongue",
+  tripe: "beef tripe",
+  tendon: "beef tendon",
+  bone_marrow: "bone marrow",
+  skin: "beef skin (hide)",
+  liver: "beef liver",
+  heart: "beef heart",
+  kidney: "beef kidney",
+  intestines: "beef intestines",
+  head_cheek: "beef cheek (head cheek)",
 };
 
 export function canonicalEntityTerm(id: CanonicalId): string {
@@ -148,7 +159,8 @@ export const REGION_ENTITY: Record<
   new_zealand: { id: "new_zealand", formalName: "New Zealand", shortName: "NZ" },
   south_africa: { id: "south_africa", formalName: "South Africa", shortName: "South Africa" },
   kenya: { id: "kenya", formalName: "Kenya", shortName: "Kenya" },
-  nigeria: { id: "nigeria", formalName: "Nigeria", shortName: "Nigeria" },
+  nigeria: { id: "nigeria", formalName: "Federal Republic of Nigeria", shortName: "Nigeria" },
+  mali: { id: "mali", formalName: "Republic of Mali", shortName: "Mali" },
   ethiopia: { id: "ethiopia", formalName: "Ethiopia", shortName: "Ethiopia" },
   kerala: { id: "kerala", formalName: "Kerala", shortName: "Kerala" },
   tamil_nadu: { id: "tamil_nadu", formalName: "Tamil Nadu", shortName: "Tamil Nadu" },

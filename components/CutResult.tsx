@@ -179,7 +179,7 @@ export function CutResult({
             <>
               <p>{result.canonical.description}</p>
               <p className="mt-2 text-sm text-[var(--text-muted)]">
-                {result.canonical.primal} primal · {result.canonical.location}
+                {result.canonical.primal === "offal" ? "offal" : `${result.canonical.primal} primal`} · {result.canonical.location}
               </p>
             </>
           ) : (

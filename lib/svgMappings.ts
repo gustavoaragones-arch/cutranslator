@@ -44,6 +44,17 @@ export const canonicalSvgPaths: Record<CanonicalId, string> = {
   top_round_steak: "/svg/canonical/top_round_steak.svg",
   bottom_round_roast: "/svg/canonical/bottom_round_roast.svg",
   inside_skirt: "/svg/canonical/inside_skirt.svg",
+  // Phase 4 — Offal (Batch 25; SVG overlays Phase-B-pending — files absent, fetch returns 404, diagram shows base cow):
+  tongue: "/svg/canonical/tongue.svg",
+  tripe: "/svg/canonical/tripe.svg",
+  tendon: "/svg/canonical/tendon.svg",
+  bone_marrow: "/svg/canonical/bone_marrow.svg",
+  skin: "/svg/canonical/skin.svg",
+  liver: "/svg/canonical/liver.svg",
+  heart: "/svg/canonical/heart.svg",
+  kidney: "/svg/canonical/kidney.svg",
+  intestines: "/svg/canonical/intestines.svg",
+  head_cheek: "/svg/canonical/head_cheek.svg",
 };
 
 export const cowSilhouettePath = "/svg/cow.svg";

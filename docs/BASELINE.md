@@ -1,8 +1,14 @@
 # Cutranslator Dataset Baseline
 
-**Last updated:** 2026-05-27
-**Last batch deployed:** 24.5 (consolidation — no data additions)
-**Last data batch:** 24 (Zimbabwe)
+**Last updated:** 2026-05-28
+**Last batch deployed:** 26 (West Africa Tier 1: Nigeria + Mali)
+**Last data batch:** 26 (West Africa — Nigeria + Mali)
+
+## Phase B pending (Batch 25)
+
+Offal SVG diagram overlays are not yet drawn. Until Illustrator delivers the 10 offal layer files, all offal cuts (`tongue`, `tripe`, `tendon`, `bone_marrow`, `skin`, `liver`, `heart`, `kidney`, `intestines`, `head_cheek`) fall back to showing the base cow silhouette without a highlighted region. This is intentional and safe. Phase B wiring: add SVG files to `public/svg/canonical/`, no code changes needed.
+
+**Internal organ visual-language decision LOCKED:** liver, heart, kidney, intestines use **cutaway diagram** style — a cross-section window cut into the body silhouette revealing the organ in anatomical position. Decided 2026-05-28.
 
 ## Authoritative counts
 
@@ -11,9 +17,10 @@ Every future batch prompt's "before" count must match this file, not a running c
 
 | Metric | Count | How to verify |
 |---|---|---|
-| Regions | 113 | `grep -c "id:" data/regions.ts` |
-| Regional names | 1622 | `grep -c "name:" data/regionalNames.ts` |
-| Tier 3 entities | 302 | `grep -c "maps_to:" data/regionalCuts.ts` |
+| Regions | 114 | `grep -c "id:" data/regions.ts` |
+| Canonicals | 46 | python `re.findall(r'\bid:\s*"([^"]+)"', open("data/canonicalCuts.ts").read())` |
+| Regional names | 1644 | `grep -c "name:" data/regionalNames.ts` |
+| Tier 3 entities | 310 | `grep -c "maps_to:" data/regionalCuts.ts` |
 | Multi-canonical anchors | 193 | see python script below |
 
 **Anchor verification script:**
@@ -46,7 +53,7 @@ print(f"Multi-canonical: {sum(1 for b in blocks if b.count('canonical_id:') > 1)
 | Oceania | 2 |
 | Africa — Southern | 4 (South Africa, Botswana, Namibia, Zimbabwe) |
 | Africa — East | 3 (Kenya, Tanzania, Uganda) |
-| Africa — West | 1 (Nigeria) |
+| Africa — West | 2 (Nigeria, Mali) |
 | Africa — Horn | 1 (Ethiopia) |
 | South Asia — Sovereign | 5 (Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan) |
 | South Asia — India (South) | 7 (Kerala, Tamil Nadu, Telangana, Andhra Pradesh, Maharashtra, Goa, Karnataka) |
@@ -55,7 +62,7 @@ print(f"Multi-canonical: {sum(1 for b in blocks if b.count('canonical_id:') > 1)
 | South Asia — India (Northeast) | 5 (Meghalaya, Nagaland, Manipur, Sikkim, Northeast Other) |
 | South Asia — India (Himalayan) | 3 (Ladakh, Jammu & Kashmir, Himachal/Uttarakhand) |
 | South Asia — India (Coastal/Islands) | 2 (Coastal-Colonial, Islands) |
-| **TOTAL** | **113** |
+| **TOTAL** | **114** |
 
 ## Species breakdown (regionalNames.ts)
 
@@ -64,8 +71,8 @@ print(f"Multi-canonical: {sum(1 for b in blocks if b.count('canonical_id:') > 1)
 | Buffalo | 195 |
 | Yak | 19 |
 | Mithun | 10 |
-| Cow (default, no explicit field) | 1398 |
-| **TOTAL** | **1622** |
+| Cow (default, no explicit field) | 1420 |
+| **TOTAL** | **1644** |
 
 ## Known curated apostrophe exceptions
 
@@ -153,8 +160,10 @@ for n, r in sorted(apostrophe_rows, key=lambda x: (x[1], x[0])):
 
 | Priority | Region(s) | Notes |
 |---|---|---|
-| High | India supplemental (Batch 19.5) | Deferred enrichment from india.pdf (Bhujam Mamsam, Chukka Cut, etc.) — no new research needed |
-| Medium | West African Fulani/Sahel | Pastoral transhumance beef pattern; needs research |
+| High | India supplemental (Batch 19.5) | **DEPLOYED** — rawa_juicy_texture_in Tier 3 + 5 butcher phrases added; all other entries confirmed already in production |
+| High | West Africa Tier 1B (Batch 27) | Senegal + Niger — Dibi format, Madaoua Kilishi heartland, Tuareg Taba-Nany |
+| High | West Africa Tier 2 (Batch 28) | Chad + Burkina Faso — Charmout, Riz Gras, Marara (needs B25 offal canonicals) |
+| High | Post-B25/B26 offal supplement | Nigeria Orishirishi components (Ponmo, Shaki, Fuku, Edo, Abodi) — wait for offal canonicals |
 | Low | Zambia, Mozambique, Madagascar | Southern Africa expansion |
 | Low | Levant (Iraq, Jordan, Lebanon, Syria) | Middle East fill |
 | Low | Caucasus / remaining Central Asia (Georgia, Armenia, Azerbaijan, Kyrgyzstan) | |

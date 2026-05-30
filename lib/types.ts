@@ -146,7 +146,9 @@ export type RegionSlug =
   | "tanzania"
   | "uganda"
   // Africa (Batch 24)
-  | "zimbabwe";
+  | "zimbabwe"
+  // Africa — West Africa (Batch 26)
+  | "mali";
 
 export type CanonicalId =
   | "ribeye"
@@ -187,7 +189,11 @@ export type CanonicalId =
   | "brisket_flat" | "brisket_point"
   | "flap_steak"
   | "top_round_steak" | "bottom_round_roast"
-  | "inside_skirt";
+  | "inside_skirt"
+  // Phase 4 — Offal (Batch 25 — SVG overlays Phase-B-pending):
+  | "tongue" | "tripe" | "tendon" | "bone_marrow"
+  | "skin" | "liver" | "heart" | "kidney"
+  | "intestines" | "head_cheek";
 
 export type CanonicalCut = {
   id: CanonicalId;

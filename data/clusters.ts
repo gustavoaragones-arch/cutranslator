@@ -46,4 +46,15 @@ export const relatedByCanonical: Record<CanonicalId, readonly CanonicalId[]> = {
   top_round_steak: ["inside_round", "bottom_round_roast"],
   bottom_round_roast: ["outside_round", "top_round_steak"],
   inside_skirt: ["skirt", "hanger", "flank"],
+  // Phase 4 — Offal (Batch 25):
+  tongue: ["head_cheek"],
+  tripe: ["intestines"],
+  tendon: ["hind_shank"],
+  bone_marrow: ["hind_shank", "oxtail"],
+  skin: [],
+  liver: ["kidney", "heart"],
+  heart: ["liver"],
+  kidney: ["liver"],
+  intestines: ["tripe"],
+  head_cheek: ["tongue"],
 };

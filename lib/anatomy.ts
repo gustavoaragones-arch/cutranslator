@@ -60,6 +60,17 @@ export const CANONICAL_ID_TO_SVG_BASENAME: Readonly<
   top_round_steak: "top_round_steak",
   bottom_round_roast: "bottom_round_roast",
   inside_skirt: "inside_skirt",
+  // Phase 4 — Offal (Batch 25 — SVG files Phase-B-pending):
+  tongue: "tongue",
+  tripe: "tripe",
+  tendon: "tendon",
+  bone_marrow: "bone_marrow",
+  skin: "skin",
+  liver: "liver",
+  heart: "heart",
+  kidney: "kidney",
+  intestines: "intestines",
+  head_cheek: "head_cheek",
 };
 
 export function datasetPrimalToSvgSlug(datasetPrimal: string): string {

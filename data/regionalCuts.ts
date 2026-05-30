@@ -3029,6 +3029,19 @@ export const regionalCuts: readonly RegionalCut[] = [
   },
 
   {
+    id: "rawa_juicy_texture_in",
+    name: "Rawa: The Grainy-Juicy Hand-Chopped Texture (Cross-Regional India)",
+    region: "telangana",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.65, note: "Source meat is typically chuck or round — the texture, not the muscle, is the spec" },
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.60, note: "Topside/round in lean Rawa versions" },
+    ],
+    synonyms: ["rawa", "rawa cut", "grainy texture", "juicy mince", "rawa keema"],
+    description: "Rawa is the pan-North-and-Central-Indian designation for a finely hand-chopped texture that is distinct from both whole-cut cookery and machine-ground mince. The word itself denotes a granular, sand-like coarseness — the same word used for semolina (rawa/suji) captures the visual idea: each fragment retains its own identity in the larger mass. Machine grinding shears fibers into a homogeneous paste; Rawa hand-chopping leaves irregular fragments with their cellular walls partially intact, producing a 'grainy juiciness' where each bite has both surface browning and an interior that releases moisture under chewing. Documented in five distinct regional expressions: (1) TELANGANA — 'Rawa cut' is the specification for Tala Hua Gosht, where the grainy texture allows deep Maillard browning on each fragment individually; (2) BIHAR — 'Rawa Bihar' is the hand-chopped mince for Litti-Chokha accompaniment mince, coarser than Lucknawi double-mince; (3) BHOPAL — hand-chop tradition parallel to Lucknawi precision, used for stuffed paratha and kebab fillings; (4) MUMBAI — 'Rawa Keema' is the distinction from machine Keema at Crawford Market, used for Keema Pav where the coarser texture absorbs the Pav bread's structure rather than soaking through it; (5) CHANDIGARH/PUNJAB — coarser still, 'hath-chopped motta-motta' (coarsely-hand-chopped), the Dhaba version. The unifying principle across all five: texture is the specification, not the muscle. A butcher 'making Rawa' is performing a skilled technique, not selecting a body part. This Tier 3 entry is the architectural partner to `hath_ka_keema_in` (Hyderabadi Hath-ka-Keema), which documents the SAME hand-chopping premium from Hyderabad's vantage. The difference: Hath-ka-Keema is a category at Hyderabad's market counters (with pricing), while Rawa is the texture-word used across North India to specify the result. Both oppose the same enemy: machine-ground paste that loses textural identity.",
+    notes: "Cross-regional texture node. Partner to `hath_ka_keema_in` (Hyderabadi market-counter version of the same principle). Five-state documentation: Telangana, Bihar, Bhopal, Mumbai, Punjab. Cross-reference `kashmiri_wazwan_pounded_mince_in` (the paste extreme of the same spectrum — hand-pounded into pure paste for Gushtaba/Rista).",
+  },
+
+  {
     id: "hyderabadi_nihari_in",
     name: "Hyderabadi Nihari (vs Lucknawi Nihari)",
     region: "telangana",
@@ -3964,6 +3977,99 @@ export const regionalCuts: readonly RegionalCut[] = [
     synonyms: ["sikkim sukuti", "air-dried beef", "sukuti sadheko", "nepali dried beef", "himalayan dried beef", "sikkim cooking ingredient"],
     description: "Sikkim Sukuti is the iconic Sikkimese dried beef — sliced thin and air-dried (often in the dry Himalayan winter air, sometimes smoked over the kitchen hearth for an intensified variant). Sukuti is widely confused by international visitors and food writers with US-style jerky, but the two preparations occupy fundamentally different culinary categories. THE DISTINCTION MATTERS BOTH CULINARILY AND COMMERCIALLY: US JERKY is seasoned (heavily flavored with salt, sugar, soy, smoke, spices) and smoked, intended as a READY-TO-EAT SNACK consumed directly from the package — a complete preparation. SIKKIM SUKUTI is unseasoned (low or zero salt, no added flavorings) and air-dried only (with optional hearth smoke), intended as a COOKING INGREDIENT consumed only after further preparation. Eating Sukuti directly from the bag — as a tourist would eat jerky — produces an inedible result: tough, dry, and flavorless. The dish-completion happens in the kitchen, not at the dryer. The canonical Sikkim preparation is SUKUTI SADHEKO — pounded Sukuti pieces (a wooden mallet or stone is used to break down the dried fibers) dry-fried with chilies, mustard oil, lime juice, garlic, ginger, and chopped onions. The result is a spicy, intensely savory side dish that pairs with rice or chura (beaten rice). Other Sukuti preparations: SUKUTI KO ACHAR (Sukuti pickle — Sadheko-style with added tamarind/lime for tartness); SUKUTI THUKPA (Sukuti added to noodle soup as flavor concentrate); SUKUTI BHUTUWA (Sukuti dry-fried with spices, similar to Sadheko but with more spice complexity). The architectural lesson: preservation method does not equal final preparation. Sukuti is the SEMI-FINISHED INPUT to multiple dish preparations, requiring further processing for completion. This architectural pattern will recur in Batch 19 with LADAKH SHA-SKAM — Ladakhi dried beef using essentially identical air-drying technique with a different language (Bhoti/Ladakhi vs Sikkim Nepali) and slightly different processing. After Batch 19 deploys, the Sikkim Sukuti and Ladakh Sha-skam will form a paired Himalayan Dried-Beef Axis — same technique, two languages, parallel cooking-ingredient cultural pattern.",
     notes: "UPDATED in Batch 19 to close the Himalayan Dried-Beef Axis. Cross-references `ladakh_sha_skam_in` (Batch 19) as the structural parallel — same air-drying preservation, different language (Bhoti/Ladakhi vs Sikkim Nepali), same cooking-ingredient distinction from US-style jerky. The Axis is FULLY CLOSED. Cross-references `smoked_beef_northeast_axis_in` for the smoked variant of Sukuti (when Sukuti is hearth-smoked in addition to air-drying). Cross-references `lakshadweep_island_isolation_in` for contrast — Lakshadweep Ularthu is SALTED, while Sukuti and Sha-skam are UNSALTED.",
+  },
+
+  // ----- Nigeria — Batch 26 (2 entities) -----
+
+  {
+    id: "suya_paper_thin_shave_af",
+    name: "Suya Paper-Thin Shave (Nigerian Grill Format)",
+    region: "nigeria",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.85, note: "Lap/Topside (inside round) is the traditional Suya source" },
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.75, note: "Tenderloin used in upscale Lagos Suya houses" },
+    ],
+    synonyms: ["suya", "mai suya cut", "paper-thin shave", "suya lap"],
+    description: "The Mai Suya hand-shave format: completely lean Lap (Topside/Inside Round) or Fillet, paper-thin ribbons cut ACROSS THE GRAIN while the meat is fresh (not chilled), crusted with Yaji (a dry spice blend: ground kuli-kuli peanut cake + cayenne + ginger + garlic salt), flash-grilled over hardwood charcoal. The defining technical signature is the shave direction and thickness — paper-thin cross-grain cuts maximise surface area for Yaji adhesion and ensure the meat cooks through in seconds over fierce charcoal. USDA translation: Flank or Top Round (inside_round), partially frozen for 20-30 min to firm the muscle for thin slicing, cut at 45° angle paper-thin. Distinct from Brochette format (ribbon vs chunk) and from Kilishi (grilled-fresh vs sun-dried sheet). The 'Suya cut' is not a muscle: it is a preparation specification tied to the leanest available round or loin muscle. The parboiling prerequisite does NOT apply here — Suya is the one Nigerian beef preparation where the meat is not pre-boiled. The Yaji crust and the quick charcoal flash compensate for Zebu leanness.",
+    notes: "Marquee Nigeria Tier 3 entry. USDA replication rule: partially freeze Inside Round 20-30 min, shave paper-thin at 45° against the grain. Cross-references pan_african_lean_beef_ng (parboiling prerequisite does NOT apply to Suya). Cross-references sahelian_parboiling_prerequisite_af for the contrast. Forward-ref: B27 Senegalese Dibi and Niger Brochettes are distinct but related Sahel grill formats.",
+  },
+
+  {
+    id: "kilishi_sheet_dry_af",
+    name: "Kilishi Sheet-Dry (Hausa Beef Preservation)",
+    region: "nigeria",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.80, note: "Topside/inside round sliced into continuous translucent sheets" },
+      { canonical_id: "top_sirloin", match_type: "cultural", confidence: 0.65, note: "Rump also used for premium Kilishi in Kano" },
+    ],
+    synonyms: ["kilishi", "hausa jerky", "northern beef", "kano kilishi", "madaoua kilishi"],
+    description: "The Hausa beef-preservation tradition of Northern Nigeria and the Sahel: lean round or rump muscle sliced into CONTINUOUS TRANSLUCENT SHEETS (not strips), sun-dried to stiff boards, coated in wet kuli-kuli peanut cake paste mixed with cayenne, ginger, and garlic, then fire-flashed (briefly re-charred) to cook the paste coating. Kilishi occupies a distinct position in the global dried-beef preservation taxonomy: (1) Sheet-format not strip — the continuous sheet maximises surface for paste adhesion; (2) Peanut-paste coat not soy-cure — the kuli-kuli paste is the flavour carrier, not a brine or soy-ferment cure; (3) Fire-finished not oven-only — the final fire flash chars the paste and re-moistens the meat surface. This is architecturally distinct from: US Jerky (strip-cut, soy-smoke cure, oven-dried, ready-to-eat snack); Himalayan Sukuti (unseasoned sheet air-dried, cooking ingredient — cross-ref himalayan_sukuti_source_np); Mongolian Borts (freeze-dried-then-pounded into powder, extreme long-term preservation — cross-ref mongolian_borts_airdried_mn); Northeast India smoked beef (hearth-smoked, fresh-seasoned, cooking ingredient — cross-ref smoked_beef_northeast_axis_in). Kilishi's closest structural relative is Biltong (fat-attached salt-air planks) in the sheet/plank dimension, but Kilishi is lean-only, paste-coated, and fire-finished — completely different mechanism and product. The Kano Kilishi market (particularly Sabo Gari and Kurmi markets) is the global production centre; the heartland moves northward to Madaoua (Niger) in Batch 27.",
+    notes: "Extends the dried-beef preservation taxonomy to a fourth distinct mechanism. Cross-references: himalayan_sukuti_source_np (Himalayan air-dry), mongolian_borts_airdried_mn (freeze-dry-pound), smoked_beef_northeast_axis_in (hearth-smoke). Forward-ref: B27 Niger's Madaoua deepens the Kilishi heartland axis.",
+  },
+
+  // ----- Mali — Batch 26 (3 entities) -----
+
+  {
+    id: "sahel_brochette_ribbon_format_af",
+    name: "Sahel Brochette Ribbon Format (Transhumance Grill Solution)",
+    region: "mali",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.82, note: "Bolo sogo (inside round) is the primary ribbon source" },
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.70, note: "Tenderloin ribbons for premium brochettes" },
+    ],
+    synonyms: ["malian brochette", "brochette sahel", "fat-bead skewer", "bolo sogo strip", "brochette ribbon"],
+    description: "The pan-Sahel solution to lean-Zebu-on-skewer: hand-sliced razor-thin ribbons of inside round (Bolo sogo) threaded with ALTERNATING BEADS OF HUMP FAT (Zebu ngoun) or brisket fat. The fat beads self-baste the lean ribbon during charcoal grilling, compensating for the near-zero intramuscular fat of Sahel Zebu. The fat-bead alternation is the architectural signature — it is not decorative but functional. Without fat beads, lean Zebu ribbon dries to cardboard in seconds over charcoal. DISTINCT FROM SUYA (Nigeria): Suya ribbons are grilled directly with a Yaji spice-crust; no fat beads, the spice crust is the flavour carrier. DISTINCT FROM DIBI (Senegal, B27): Dibi is cleaver-hacked bone-in chunks with fat attached — a different lean-Zebu solution that uses attached fat rather than threaded beads. These three formats — Brochette ribbon-with-beads (Mali/Niger/Chad), Suya paper-thin shave (Nigeria), and Dibi cleaver-chunk (Senegal) — collectively form the Sahel Grill Format taxonomy, each adapted to the same lean-Zebu constraint via a different technique. USDA translation for the Brochette: use inside round or flank, slice paper-thin ribbons, alternate with cubes of beef fat (suet from brisket point) on the skewer.",
+    notes: "Pan-Sahel axis entry established with Mali as anchor. Forward-ref: B27 Senegal (Dibi format), Niger (Brochette heartland), B28 Chad and Burkina extending the ribbon format. Cross-references suya_paper_thin_shave_af for the Suya contrast. Cross-references zebu_hump_fat_axis_af for the fat-bead source.",
+  },
+
+  {
+    id: "tiguadege_collagen_matrix_ml",
+    name: "Tiguadege Collagen Matrix (Mali Maafe Cut Logic)",
+    region: "mali",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.80, note: "Chuck is the primary bone-in chunk source" },
+      { canonical_id: "fore_shank", match_type: "cultural", confidence: 0.75, note: "Fore shank provides high-collagen bone-in pieces" },
+      { canonical_id: "hind_shank", match_type: "cultural", confidence: 0.70, note: "Hind shank for maximum marrow and collagen yield" },
+    ],
+    synonyms: ["tiguadege", "maafe cut", "peanut stew cut", "collagen matrix cut"],
+    description: "Mali's Maafe (Tiguadege na — 'peanut stew') requires bone-in JAGGED 1-INCH CHUNKS with connective tissue and marrow intact, from the chuck, neck, or shank area. The engineering constraint is chemical, not aesthetic: the melting collagen from bone, cartilage, and connective tissue during the multi-hour braise is WHAT PREVENTS PEANUT-FAT SEPARATION. Malian peanut stew is an oil-rich preparation (ground peanut paste + tomato + stock) that naturally wants to split into oil and water phases. The gelatine extracted from bone-in jagged cuts during the braise acts as the emulsifier — binding the peanut oil into a stable, creamy, unified sauce. A clean-trimmed boneless chuck cut produces a split, greasy sauce; the same cut bone-in and jagged-edged produces the characteristic velvety Tiguadege texture. This is the peanut-stew-specific architectural rule. USDA translation: English-style braising beef, bone-in, never trimmed, sawn or chopped into 1-inch irregular pieces rather than clean cubes. Cross-regional: Senegalese Maafe (B27), Burkinabè Sauce Tiga (B28), Chadian Daraba (B28) all share the same collagen-emulsification logic, making Tiguadege the pan-West-African peanut-stew anchor.",
+    notes: "Marquee Mali Tier 3 entry. The collagen-as-emulsifier mechanism distinguishes this from general braising-beef entries. Forward-ref: B27 Senegal Maafe, B28 Burkina Sauce Tiga and Chad Daraba all extend this axis. Cross-references sahelian_parboiling_prerequisite_af (Tiguadege follows the braise-first rule).",
+  },
+
+  // ----- Pan-Sahel — Batch 26 (2 architectural axes) -----
+
+  {
+    id: "zebu_hump_fat_axis_af",
+    name: "Zebu Hump Fat Axis (Pan-Sahel Off-Chart Premium Fat)",
+    region: "nigeria",
+    maps_to: [
+      { canonical_id: "brisket", match_type: "cultural", confidence: 0.30, note: "Nearest fat-bearing canonical; the hump is anatomically distinct — maps here as proxy only" },
+    ],
+    synonyms: ["zebu hump", "kaba nigeria", "zebu ngoun mali", "hump fat sahel", "azawak hump", "bunaji hump", "peul zebu hump"],
+    description: "The Zebu hump (thoracic hump muscle + high-melt-point intramuscular fat) is the recurring OFF-CHART PREMIUM FAT MODIFIER of the entire Sahel. It has NO USDA anatomical equivalent: the hump is a distinct muscular-fatty structure specific to Bos indicus cattle (Zebu), formed by hypertrophied thoracic vertebrae processes and surrounded by a composite of very hard fat and highly flavourful muscle. This batch establishes the axis with two-country evidence: Nigeria `kaba` (Azawak/Bunaji Zebu hump — Northern Nigerian market premium) and Mali `zebu ngoun` (Zebu Peul hump — Malian market luxury). KEY PROPERTIES: high-melt-point fat (40-50°C, compared to USDA brisket fat at 30-35°C); intense flavour from the heavy-use muscle fibres; used primarily as the fat-bead threading material in Sahel Brochettes (threading alternating with lean ribbon prevents the fat from over-rendering before the ribbon cooks through); sold separately as a luxury item in Sahelian markets. CANONICAL MAPPING: mapped to `brisket` as the nearest fat-bearing canonical, but the mapping is explicitly approximate — the hump is not brisket anatomy, it is hump anatomy. Future canonical promotion to a dedicated `zebu_hump` canonical would require its own isolated batch with SVG diagram treatment showing the hump position on the Zebu silhouette. That promotion is not this batch. B27 extends: Senegal and Niger hump terms; B28 extends: Chad `al-sanam`, Burkina `toggo`.",
+    notes: "Pan-Sahel axis established with 2-country evidence (Nigeria + Mali). brisket mapping is proxy only — explicitly noted. Forward-ref to B27 (SN/NE hump terms) and B28 (TD al-sanam, BF toggo). Canonical promotion to zebu_hump is a future deliberate batch. Cross-references sahel_brochette_ribbon_format_af (hump fat as the fat-bead threading source).",
+  },
+
+  {
+    id: "sahelian_parboiling_prerequisite_af",
+    name: "Sahelian Parboiling Prerequisite (Braise-First Rule)",
+    region: "nigeria",
+    maps_to: [],
+    synonyms: ["sahel parboil", "braise-first", "pre-boil sahel", "zebu parboil", "sahel tenderising"],
+    description: "All Sahel-Zebu skeletal muscle — except tenderloin — MUST be pre-boiled with onions and salt until the water evaporates before any frying, grilling, stewing, or further cooking. Without this prerequisite, Sahel Zebu beef is 'completely unchewable' (the research's exact characterisation). This rule is DISTINCT from the East African parboiling correction documented in `east_african_choma_parboil_af` (B23), despite using the same pre-boiling technique. THE MECHANISM DIFFERS: East Africa parboils to enter the Choma grill format — Nyama Choma requires par-tenderised meat for the charcoal method to work without drying out; the parboil is method-specific, and not all East African beef preparations require it (Kenyan stews slow-braise without pre-boil). The SAHEL rule is unconditional and method-INDEPENDENT: Sahel-Zebu is uniformly tough from transhumance (constant walking cattle are pure muscle, near-zero intramuscular fat), and every preparation except tenderloin requires the pre-boil regardless of whether the end dish is fried (Beef Stew), stewed (Tiguadege), or grilled (Suya from Lap — though premium Suya from Fillet skips it). This batch establishes the axis with 2-country evidence: Nigeria (explicit pan_african_lean_beef_ng Tier 3) and Mali (parboil before Tiguadege and all domestic stews). B27 and B28 extend to Senegal, Niger, Chad, and Burkina Faso.",
+    notes: "Pan-Sahel architecture axis. CRITICAL DISTINCTION from east_african_choma_parboil_af: same technique, different mechanism — Sahel rule is universal and method-independent; East Africa rule is method-specific to Choma. 2-country evidence base (NG + ML); forward-ref to B27/B28 for 6-country evidence. Cross-references pan_african_lean_beef_ng (Nigeria anchor), tiguadege_collagen_matrix_ml (Mali parboil application).",
+  },
+
+  // ----- Mali — Batch 26 (1 cultural-lineage entity) -----
+
+  {
+    id: "mali_dairy_retired_zebu_ml",
+    name: "Mali Dairy-Retired Zebu (Pastoral Economy → Market Beef)",
+    region: "mali",
+    maps_to: [],
+    synonyms: ["dairy retired zebu", "fulani cattle mali", "peul zebu market", "eid cattle", "old cow mali", "mature zebu beef"],
+    description: "Malian market beef is frequently sourced from Zebu cattle slaughtered only after the animal is no longer productive in the pastoral economy — no longer producing milk or calves, or specifically slaughtered for Eid al-Adha and other religious festivals. This is a structural consequence of the Fulani/Peul pastoral economy: cattle are CAPITAL ASSETS in a transhumance system, not production animals raised for beef. They earn their keep through milk, calves, and draft power; only retirement or religious obligation produces slaughter animals. IMPLICATIONS: (1) MATURITY — Malian market Zebu is frequently 4-8+ years old at slaughter, meaning darker, more intensely flavoured, iron-rich beef with well-developed musculature but substantially tougher than any USDA reference point; (2) EXTENDED BRAISE WINDOWS — even the parboiling prerequisite takes longer for mature animals (the parboil that tenderises a 2-year-old Zebu in 20 minutes may need 45-60 minutes for an 8-year-old dairy cow); (3) SUPERIOR FLAVOUR DEPTH — older animals produce more complex, mineral-rich beef, particularly in stews and bone-based preparations; (4) SEASONAL VARIATION — Eid concentration of slaughter creates quality peaks and troughs in market availability. This is the clearest 'producer rules the market' node in the entire Cutranslator dataset — the pastoral-economic system upstream of the butcher completely determines the product characteristics downstream. No other documented region ties beef-butchery logic this directly to a dairy/pastoral economic system. Contrast: Ethiopian Tere Siga requires hot-boned young animals (freshness-driven); Nigerian Suya selects from the lean-young Zebu profile; Malian beef starts from the dairy-retirement endpoint of the same pastoral system.",
+    notes: "First dataset node explicitly tying beef-butchery logic to a dairy/pastoral economic system. The mature-animal context deepens the sahelian_parboiling_prerequisite_af — longer parboil windows required for older animals. Cross-references mali_dairy_retired_zebu_ml is self; forward-ref to B27/B28 for Fulani transhumance continuity across the Sahel.",
   },
 
 ] as const;

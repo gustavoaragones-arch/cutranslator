@@ -277,4 +277,78 @@ export const canonicalCuts: readonly CanonicalCut[] = [
     description: "The 'other' skirt steak. Thinner, wider, and slightly tougher than the outside skirt (which is the standard 'skirt steak'). Most restaurant fajitas use inside skirt because the outside skirt is exported or sold at premium. Requires high heat, fast cooking, and slicing against the grain.",
     aliases: ["inside skirt steak", "inner skirt"] as const,
   },
+
+  // ─── Phase 4 — Offal (Batch 25) ───────────────────────────────────────────
+  // SVG diagram overlays are Phase-B-pending (Illustrator delivery required).
+  // All offal cuts fall back to the base cow silhouette until overlays ship.
+  {
+    id: "tongue",
+    primal: "offal",
+    location: "Head — muscular organ extending from the mouth",
+    description: "Beef tongue is a large, smooth-muscle organ prized for its tender, gelatinous texture when slow-braised. Widely eaten across Latin America, Europe, Japan, and South Asia — typically pickled, braised, or sliced and fried. One of the most flavourful offal cuts.",
+    aliases: ["lengua", "lingua", "langue", "lengua de res"] as const,
+  },
+  {
+    id: "tripe",
+    primal: "offal",
+    location: "Stomach lining — abdominal cavity",
+    description: "The lining of the beef stomach, sold cleaned and blanched. Honeycomb tripe (reticulum) is the most valued; blanket/smooth tripe (rumen) is also common. Slow-cooked for soups and stews across every cuisine that butchers the whole animal — menudo, callos, trippa, bhuri, mogodu.",
+    aliases: ["beef tripe", "honeycomb tripe", "blanket tripe", "menudo", "callos"] as const,
+  },
+  {
+    id: "tendon",
+    primal: "offal",
+    location: "Connective tissue at joints — particularly the hock/lower leg",
+    description: "Collagen-rich connective tissue extracted from the leg joints, particularly the Achilles tendon area. Extremely gelatinous when slow-cooked; provides body and sticky texture to braises and soups. Prized in Korean, Vietnamese, and South Asian cuisine for its chew and the richness it adds to broth.",
+    aliases: ["beef tendon", "achilles tendon", "gristle"] as const,
+  },
+  {
+    id: "bone_marrow",
+    primal: "offal",
+    location: "Interior of long bones — femur and tibia (leg bones)",
+    description: "The fatty marrow inside beef leg bones, rendered by roasting or slow-simmering. Roasted bone marrow is a fine-dining staple; as a cooking ingredient it enriches biryani, Nihari, and pho with depth and body. Ordered separately as 'nalli' (South Asia) or as a set of cut marrow bones from the butcher.",
+    aliases: ["nalli", "bone marrow", "marrow bone", "os a moelle"] as const,
+  },
+  {
+    id: "skin",
+    primal: "offal",
+    location: "Outer hide — whole-body surface",
+    description: "Beef hide/skin, sold cleaned and processed. Boiled to a gelatinous softness (ponmo/kpomo in Nigeria) or dried then rehydrated (cham in Arunachal, un in Manipur). Very high collagen; adds sticky body to stews. Culturally significant as a protein extender and a prized cut in West and Northeast African and Indian traditions.",
+    aliases: ["beef skin", "hide", "ponmo", "kpomo", "cham"] as const,
+  },
+  {
+    id: "liver",
+    primal: "offal",
+    location: "Abdominal cavity — behind the diaphragm, forward of the kidneys",
+    description: "The largest internal organ; iron-rich, with a strong mineral flavour that mellows when soaked in milk or acidulated water. Seared quickly to avoid overcooking (which makes it grainy and bitter). Widely eaten grilled, fried, or blended into pâté. Standard offal market cut across all beef-eating regions.",
+    aliases: ["beef liver", "calf liver", "foie de boeuf"] as const,
+  },
+  {
+    id: "heart",
+    primal: "offal",
+    location: "Chest cavity — between the lungs, behind the brisket",
+    description: "A dense, muscular organ with a mild, beefy flavour — closer to lean muscle meat than most offal. Often grilled on skewers (anticuchos in Peru) or braised. Very lean; benefits from marination. Widely eaten in Latin America, Eastern Europe, and across Asia.",
+    aliases: ["beef heart", "coeur de boeuf", "corazon"] as const,
+  },
+  {
+    id: "kidney",
+    primal: "offal",
+    location: "Lower back — lumbar region, embedded in suet",
+    description: "Beef kidney has an intense, mineral flavour distinctive of the organ. Often sold trimmed of its surrounding suet (kidney fat) or with it attached. Used in steak-and-kidney pie (UK), grilled whole, or sliced and sautéed. Requires the central white core (ureter) to be removed before cooking.",
+    aliases: ["beef kidney", "rognon", "rinon"] as const,
+  },
+  {
+    id: "intestines",
+    primal: "offal",
+    location: "Abdominal cavity — small and large intestine",
+    description: "Cleaned and processed beef intestines, sold for grilling or stewing. Gopchang (small intestine) in Korea is a BBQ favourite; chitterlings and sausage casings in Western traditions; aie in Arunachal Pradesh; various tripe-adjacent preparations across Africa. Requires thorough cleaning and long cooking.",
+    aliases: ["beef intestines", "gopchang", "chitterlings", "aie"] as const,
+  },
+  {
+    id: "head_cheek",
+    primal: "offal",
+    location: "Head — cheek/jaw muscles and facial meat",
+    description: "The cheek muscles and facial meat of the beef head, heavily worked and rich in collagen. Slow-braised to become extraordinarily tender — the basis of Mexican barbacoa, Meghalayan dohkhlieh (a head-meat salad), and upscale bistro 'joue de boeuf.' The head is typically steamed or braised whole then the meat stripped and dressed.",
+    aliases: ["beef cheek", "joue de boeuf", "barbacoa", "cachete"] as const,
+  },
 ] as const;

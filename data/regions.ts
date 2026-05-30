@@ -111,8 +111,9 @@ export const regions = [
   { id: "kenya" as const, label: "Kenya", flag: "🇰🇪", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["kenyan", "swahili"] as readonly string[] },
   { id: "tanzania" as const, label: "Tanzania", flag: "🇹🇿", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["dar es salaam", "arusha", "mwanza", "swahili beef", "nyama choma", "mishkaki", "mchuzi", "zebu", "bucha", "mgongo", "kidari", "nyama ya ngombe", "zanzibar beef", "tz"] as readonly string[] },
   { id: "uganda" as const, label: "Uganda", flag: "🇺🇬", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["kampala", "kalerwe", "nakasero", "luganda beef", "katogo", "muchomo", "luwombo", "ankole", "mulokoni", "mugongo", "nyama ya ente", "matooke beef", "ug"] as readonly string[] },
-  // Africa — West Africa
-  { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["naija", "nigerian"] as readonly string[] },
+  // Africa — West Africa (Batch 26)
+  { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["naija", "nigerian", "lagos", "kano", "ibadan", "abuja", "suya", "kilishi", "mile 12", "jalli market", "hausa", "yoruba", "igbo", "nama", "cow meat"] as readonly string[] },
+  { id: "mali" as const, label: "Mali", flag: "🇲🇱", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["malian", "bamako", "mopti", "segou", "fulani", "peul", "bambara", "maafe", "tiguadege", "sogo", "brochette mali", "zebu mali"] as readonly string[] },
   // Africa — Horn of Africa
   { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, subregion: "Horn of Africa" as const, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
 

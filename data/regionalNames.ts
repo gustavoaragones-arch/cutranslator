@@ -1056,7 +1056,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "silverside uae", region: "uae", maps_to: "outside_round", confidence: 0.85, notes: "UK/AUS term — often used for salt beef or lean roasting joints" },
   { name: "short ribs uae", region: "uae", maps_to: "short_ribs", confidence: 0.85, synonyms: ["asado"], notes: "Large Latin/smokehouse culture in Dubai — 'Asado' is common (US short ribs, not Argentine asado)" },
   { name: "chuck uae", region: "uae", maps_to: "chuck_blade", confidence: 0.80, synonyms: ["shoulder", "stewing beef"], notes: "Usually sold in cubes for 'stewing beef'" },
-  { name: "beef cheek", region: "uae", maps_to: "chuck_roll", confidence: 0.65, notes: "Popular in Dubai's Western fine-dining scene" },
+  { name: "beef cheek", region: "uae", maps_to: "head_cheek", confidence: 0.95, match_type: "exact", notes: "Popular in Dubai's Western fine-dining scene — slow-braised cheek is a bistro staple in upscale UAE restaurants." },
   { name: "eye round", region: "uae", maps_to: "eye_of_round", confidence: 0.80, notes: "US terminology used in import-heavy retailers" },
   { name: "flank steak uae", region: "uae", maps_to: "flank", confidence: 0.80, notes: "US-style imported terminology — popular for fajita/stir-fry" },
 
@@ -1545,7 +1545,7 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "nyama choma cut", region: "kenya", maps_to: "short_ribs", confidence: 0.55, synonyms: ["nyama choma"] as const, notes: "NOT a specific muscle — a 'large primal chunk' for charcoal roasting. Often Short Loin or Rib section, FAT CAP MUST BE LEFT ON to prevent the lean African beef from drying out. Tier 3 entity explains." },
   { name: "nyama ya kusaga", region: "kenya", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["minced meat", "kusaga"] as const, notes: "Ground beef — defaults to LEAN in Kenyan butcheries. For US-style burgers, must explicitly request the butcher to add Mafuta (fat) during the grind. Inverse of US 80/20 default." },
 
-  // ----- Nigeria (12 entries) -----
+  // ----- Nigeria (19 entries — Batch 26 adds 7 Hausa/Yoruba indigenous terms) -----
   { name: "fillet ng", region: "nigeria", maps_to: "tenderloin", confidence: 0.85, synonyms: ["fillet", "soft meat"] as const, notes: "Found mostly in Lagos/Ibadan supermarkets and high-end butchers. Used for Suya (when not made from Lap/Topside)." },
   { name: "back meat ng", region: "nigeria", maps_to: "striploin", confidence: 0.70, synonyms: ["back meat", "loin"] as const, notes: "Premium cut for roasting. Often sold in large slabs at Nigerian markets. Conflates striploin and ribeye, similar to Kenyan Mgongo and Ethiopian Yemigongo." },
   { name: "chest ng", region: "nigeria", maps_to: "brisket", confidence: 0.80, synonyms: ["fatty meat", "chest"] as const, notes: "CRITICAL: 'Fatty Meat' — highly prized for the OIL it releases into stews. The exact opposite of US lean preference. Essential for authentic Nigerian Beef Stew flavor." },
@@ -1558,6 +1558,24 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "eran didi", region: "nigeria", maps_to: "inside_round", confidence: 0.40, synonyms: ["fried meat", "boneless meat"] as const, notes: "NOT a specific muscle — Yoruba 'Eran-Didi' = Fried/Boneless meat. Pair of Eran-Egun. Cross-reference Kenyan Nyama Laini and Korean Gu-i-yong." },
   { name: "cow meat", region: "nigeria", maps_to: "chuck_roll", confidence: 0.50, synonyms: ["nama"] as const, notes: "CRITICAL: 'Cow Meat' is the standard Nigerian retail term — 'Beef' may be interpreted as canned corned beef or processed product. Always say 'Cow Meat' or 'Nama' (Hausa) for fresh muscle. Tier 3 entity explains the trap." },
   { name: "minced meat ng", region: "nigeria", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["minced", "minced cow meat"] as const, notes: "Default lean — must explicitly request fat addition for US-style burgers. Same pattern as Kenya." },
+  { name: "kirji", region: "nigeria", maps_to: "brisket", confidence: 0.78, synonyms: ["eran elelo", "chest hausa"] as const, notes: "Hausa: chest/brisket zone. Prized for the fat it renders into stews; same high-value fatty-tissue logic as 'chest ng' but in Hausa register. Cross-reference sahelian_parboiling_prerequisite_af." },
+  { name: "kwauri", region: "nigeria", maps_to: "hind_shank", confidence: 0.82, synonyms: ["eran isu", "shin hausa"] as const, notes: "Hausa: shin/shank. The default 'curry cut' — holds shape during long boiling because collagen sets rather than disintegrating. Cross-reference sahelian_parboiling_prerequisite_af." },
+  { name: "kafa", region: "nigeria", maps_to: "inside_round", confidence: 0.80, synonyms: ["eran lap", "topside hausa", "thigh hausa"] as const, notes: "Hausa: topside/inside round (same muscle as 'Lap'). Lean solid blocks; uniform cubes for party dishes and Suya. See suya_paper_thin_shave_af." },
+  { name: "gindi", region: "nigeria", maps_to: "oxtail", confidence: 0.90, synonyms: ["iru eran", "tail hausa"] as const, notes: "Hausa: oxtail. High-status premium; for Pepper Soup at celebrations. Equivalent to 'tail ng' in Hausa register." },
+  { name: "nama na baya", region: "nigeria", maps_to: ["striploin", "ribeye"], confidence: 0.68, match_type: "composite", synonyms: ["back meat hausa", "loin hausa"] as const, notes: "Hausa: 'back meat' — lean slabs from the loin/rib area; spans striploin and ribeye. Needs heavy marinade or slow roast due to Zebu leanness." },
+  { name: "eran malu", region: "nigeria", maps_to: ["chuck_roll", "brisket", "hind_shank"], confidence: 0.45, match_type: "composite", synonyms: ["cow meat yoruba", "nama"] as const, notes: "Yoruba: 'cow meat' — the generic request that can mean any fresh muscle. Explicitly NOT corned beef (the false-friend trap). See cow_vs_beef_terminology_ng." },
+  { name: "kaba", region: "nigeria", maps_to: "brisket", confidence: 0.30, match_type: "cultural", synonyms: ["zebu hump", "hump fat nigeria"] as const, notes: "Hausa: Azawak/Bunaji Zebu hump fat — high-melt-point composite of hard fat and muscle with no USDA anatomical equivalent. Mapped to brisket as the nearest fat-bearing canonical. See zebu_hump_fat_axis_af for the architectural distinction." },
+
+  // ----- Mali (9 entries — Batch 26) -----
+  { name: "sogo nege", region: "mali", maps_to: "tenderloin", confidence: 0.88, synonyms: ["sogo nege", "filet mali", "tew naram"] as const, notes: "Bambara: 'iron meat' (the firm-yet-tender loin). Saved for upscale Brochettes in Bamako restaurants. See sahel_brochette_ribbon_format_af." },
+  { name: "koko sogo", region: "mali", maps_to: ["striploin", "ribeye"], confidence: 0.68, match_type: "composite", synonyms: ["koko tew", "spine meat", "back meat mali"] as const, notes: "Bambara: spine/back meat — spans striploin and ribeye. Dries instantly if grilled without fat; the fat-bead Brochette technique is the solution. See sahel_brochette_ribbon_format_af." },
+  { name: "sisiko", region: "mali", maps_to: "brisket", confidence: 0.80, synonyms: ["sisi", "bile mali", "chest mali"] as const, notes: "Bambara: chest/brisket. High-value: carries the Zebu's only significant fat deposits; essential for Tiguadege na peanut stew richness. See tiguadege_collagen_matrix_ml." },
+  { name: "sen koto sogo", region: "mali", maps_to: "hind_shank", confidence: 0.83, synonyms: ["koyngal tew", "leg muscle mali"] as const, notes: "Bambara: leg muscle/shank. Heavy collagen; bedrock of Malian family stews. Mandatory parboil before any secondary cooking. See sahelian_parboiling_prerequisite_af." },
+  { name: "bolo sogo", region: "mali", maps_to: "inside_round", confidence: 0.80, synonyms: ["gba", "kwalal", "thigh mali"] as const, notes: "Bambara: thigh/inside round. Ultra-lean blocks cut into uniform stew cubes; also sliced razor-thin for Malian Brochettes. See sahel_brochette_ribbon_format_af." },
+  { name: "kala sogo", region: "mali", maps_to: "oxtail", confidence: 0.90, synonyms: ["laasol", "tail mali"] as const, notes: "Bambara: tail/oxtail. For warming bone broths; high marrow and collagen yield from Zebu tail." },
+  { name: "tiguadege cut", region: "mali", maps_to: ["chuck_roll", "fore_shank"], confidence: 0.72, match_type: "cultural", synonyms: ["maafe cut", "peanut stew cut"] as const, notes: "Bambara: Maafe (Tiguadege na) cut — bone-in jagged 1-inch chunks with connective tissue and marrow intact. The melting collagen prevents peanut-fat separation in the multi-hour braise. See tiguadege_collagen_matrix_ml." },
+  { name: "malian brochette strip", region: "mali", maps_to: "inside_round", confidence: 0.75, match_type: "cultural", synonyms: ["brochette mali", "bolo sogo strip"] as const, notes: "Hand-sliced razor-thin ribbons of inside round (Bolo sogo), threaded with alternating hump or brisket fat beads — the transhumance solution to lean Zebu on skewer. See sahel_brochette_ribbon_format_af." },
+  { name: "zebu ngoun", region: "mali", maps_to: "brisket", confidence: 0.30, match_type: "cultural", synonyms: ["zebu n'goun", "hump mali", "hump fat mali"] as const, notes: "Bambara/Peul: Zebu hump — premium luxury fat; high-melt hard fat plus flavorful muscle. Mapped to brisket as nearest fat-bearing canonical; anatomically distinct. See zebu_hump_fat_axis_af." },
 
   // ----- Ethiopia (12 entries) -----
   { name: "fisilo", region: "ethiopia", maps_to: "tenderloin", confidence: 0.95, notes: "Literally 'the undercut' — the ULTIMATE choice for Tere Siga (raw beef). Premium Ethiopian cut. Strict freshness requirement (hot-boned only)." },
@@ -1597,7 +1615,7 @@ const _africaRegionalNames: readonly RegionalName[] = [
 
   { name: "biltong cut botswana", region: "botswana", maps_to: "bottom_round_roast", confidence: 0.78, synonyms: ["biltong botswana", "dried beef botswana", "silverside plank"] as const, notes: "Silverside (or Topside) sliced WITH the grain into long ~2-inch planks with a ~1/4-inch firm white outer fat layer attached, salt-air-cured into Biltong. Cow default. Cross-references southern_african_export_grade_af (the fat-attached salt-air dried-meat node)." },
 
-  { name: "mogodu botswana", region: "botswana", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["tripe botswana", "offal mix botswana", "serobe"] as const, notes: "Mogodu — tripe/intestine/internal-fat mix, treated with prime-cut reverence, slow-cooked tender (and Serobe, the chopped tripe/lung/intestine Seswaa-style dish). Offal mapped loosely; primarily Tier 3 prose. Cow default. Cross-references botswana_seswaa_pounded_af." },
+  { name: "mogodu botswana", region: "botswana", maps_to: "tripe", confidence: 0.80, match_type: "cultural", synonyms: ["tripe botswana", "offal mix botswana", "serobe"] as const, notes: "Mogodu — tripe/stomach-lining, treated with prime-cut reverence, slow-cooked tender. Serobe is the chopped tripe/lung/intestine Seswaa-style dish. Cow default. Cross-references botswana_seswaa_pounded_af." },
 
   // ----- 🇳🇦 NAMIBIA (local English + Afrikaans/German — cow default, grass-fed Bonsmara/Sanga/Brahman) — 12 entries -----
 
@@ -1699,7 +1717,7 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "poti rachi", region: "kerala", maps_to: "tenderloin", confidence: 0.80, species: "buffalo", synonyms: ["poti", "buffalo"] as const, notes: "'Poti' = Buffalo in Malayalam. Distinct from cow (Pashu) — darker, leaner, stronger flavor. Preferred for deep fries." },
   { name: "poti loin", region: "kerala", maps_to: "striploin", confidence: 0.75, species: "buffalo", synonyms: ["buffalo loin"] as const, notes: "Buffalo striploin — leaner than cow Variyellu, requires pressure cooking." },
   { name: "kootu beef", region: "kerala", maps_to: "hind_shank", confidence: 0.65, synonyms: ["kootu"] as const, notes: "NOT a specific muscle — bone-in mixed cut for breakfast Appam pairings. Bone marrow enriches the gravy." },
-  { name: "urat", region: "kerala", maps_to: "hind_shank", confidence: 0.50, synonyms: ["tendon"] as const, notes: "Tendon/gristle inclusion — Kerala butchers intentionally include for chewy texture in curries." },
+  { name: "urat", region: "kerala", maps_to: "tendon", confidence: 0.90, match_type: "exact", synonyms: ["tendon", "gristle"] as const, notes: "Tendon/gristle intentionally included for chewy texture in Kerala curries." },
   { name: "beef cutlet meat kl", region: "kerala", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["machine keema kl"] as const, notes: "Fine machine mince for Anglo-Indian-style Beef Cutlets — a Kerala Christian community tradition" },
 
   // ----- Tamil Nadu (12 entries — BUFFALO ONLY) -----
@@ -1773,6 +1791,7 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "topside goa", region: "goa", maps_to: "inside_round", confidence: 0.80, synonyms: ["topside"] as const, notes: "Standard lean cut for Beef Stir-fry or Ambot Tik (sour-spicy curry)" },
   { name: "rump goa", region: "goa", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["rump"] as const, notes: "Anglo-Commonwealth term used in Goan English retail. = US Top Sirloin." },
   { name: "kheema goa", region: "goa", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["minced beef"] as const, notes: "For Goan Beef Croquettes and Beef Patties" },
+  { name: "lingua", region: "goa", maps_to: "tongue", confidence: 0.95, match_type: "exact", synonyms: ["lingua", "tongue", "beef tongue"] as const, notes: "(Goa) Tongue — Portuguese-legacy delicacy. Pickled in brine and slow-roasted; a Goan Catholic Christmas and festive tradition. Available at Panjim Municipal Market on request." },
 
   // ----- Karnataka (12 entries — BUFFALO ONLY) -----
   // Universal pan-Indian Hindi/Urdu vocabulary (Bengaluru is highly multilingual)
@@ -1967,6 +1986,7 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "nalli manipur", region: "manipur", maps_to: "hind_shank", confidence: 0.75, synonyms: ["meitei marrow"] as const, notes: "Marrow bone (Hindi loanword in Imphal's mixed-language markets). Used for Kangshoy depth." },
   { name: "dasti manipur", region: "manipur", maps_to: "chuck_blade", confidence: 0.70, synonyms: ["meitei shoulder"] as const, notes: "Shoulder/blade. Standard for everyday Manipuri curries." },
   { name: "buffalo shan-sa", region: "manipur", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["meitei buffalo"] as const, species: "buffalo", notes: "Water Buffalo option in Manipur — less common than Cow. Found at some Imphal markets serving Muslim communities." },
+  { name: "un", region: "manipur", maps_to: "skin", confidence: 0.85, match_type: "cultural", synonyms: ["beef skin manipur", "hide"] as const, notes: "(Imphal/Manipur) Dried beef skin — boiled until gelatinous, then added to stews for body and texture. A distinctive Meitei offal tradition." },
 
   // ----- SIKKIM (Nepali terminology — COW only) — 13 entries -----
   { name: "naram masu", region: "sikkim", maps_to: "tenderloin", confidence: 0.85, synonyms: ["soft meat", "sikkim tenderloin"] as const, notes: "'Soft meat' in Sikkim Nepali. The loin area. Best for quick stir-fry. Cow default." },
@@ -2014,6 +2034,10 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "mos-sa", region: "northeast_other", maps_to: "chuck_roll", confidence: 0.70, synonyms: ["tripura beef", "kokborok beef"] as const, notes: "Generic Kokborok-derived term for beef in tribal Tripura. Standard 'Curry Cut' at Agartala markets. Cow default." },
   { name: "mos-sa meihouba tripura", region: "northeast_other", maps_to: "brisket", confidence: 0.65, synonyms: ["tripura smoked beef", "tribal smoked beef"] as const, notes: "Tribal smoked beef in Tripura. Hung above the hearth until dark and concentrated. Used sparingly as flavor enhancer — distinct from the larger-quantity smoked-beef usage of Naga/Mizo cuisine. Member of the 8-state Smoked Beef Northeast Axis (smoked_beef_northeast_axis_in)." },
   { name: "tripura chakhwi cut", region: "northeast_other", maps_to: "brisket", confidence: 0.70, synonyms: ["chakhwi brisket", "bamboo-shoot stew cut"] as const, notes: "Format-specific request for Beef Chakhwi (tribal Tripuri stew with bamboo shoots and alkali baking soda). Requires fatty Buk-er brisket — the fat substitutes for cooking oil. Pairs with Manipuri Berma + Naga Axone as the Fermentation-Fat Axis. Cross-references manipuri_berma_beef_pairing_in." },
+  { name: "bhuri", region: "northeast_other", maps_to: "tripe", confidence: 0.90, match_type: "exact", synonyms: ["stomach", "tripe", "assamese tripe"] as const, notes: "(Assam/Guwahati) Tripe — beef stomach lining, stir-fried with spices. A popular offal street-food at Guwahati markets; pan-North-Indian Hindi vocabulary adopted across NE markets." },
+  { name: "cham", region: "northeast_other", maps_to: "skin", confidence: 0.85, match_type: "cultural", synonyms: ["beef skin", "hide", "arunachal skin"] as const, notes: "(Arunachal Pradesh) Dried beef skin, boiled until gelatinous and added to stews for body. A traditional protein source in the Himalayan tribal belt." },
+  { name: "vun", region: "northeast_other", maps_to: "skin", confidence: 0.85, match_type: "cultural", synonyms: ["mizo beef skin", "mizoram hide"] as const, notes: "(Mizoram/Aizawl) Dried beef skin in Mizo usage. Rehydrated and slow-cooked in Bai (zero-oil stew). Distinct from Sa-rep (smoked muscle) — vun is specifically skin/hide." },
+  { name: "aie", region: "northeast_other", maps_to: "intestines", confidence: 0.85, match_type: "cultural", synonyms: ["intestines", "arunachal intestines"] as const, notes: "(Arunachal Pradesh) Beef intestines, cleaned and cooked in tribal stews. Widely eaten across NE India in tribal communities; aie is the Arunachali term." },
 
   // ----- LADAKH (Buddhist-majority, cow-permissive + YAK dominant in winter) — 16 entries -----
   { name: "sha-nyam", region: "ladakh", maps_to: "tenderloin", confidence: 0.85, synonyms: ["soft meat", "ladakhi tenderloin"] as const, notes: "'Soft Meat' in Ladakhi/Bhoti. The undercut/loin area. Used for Sha-Phaley (deep-fried meat bread). The premium cut at Leh Main Market. Cow default — Ladakh is Buddhist-majority and cow-permissive (not cow-protective), with Yak as the winter prestige meat." },
@@ -2572,4 +2596,15 @@ export const canonicalLabels: Record<
     usa: ["Inside skirt steak"],
     canada: ["Inside skirt"],
   },
+  // Phase 4 — Offal (Batch 25 — consumer labels sparse; SVG overlays Phase-B-pending):
+  tongue: { usa: ["Beef tongue"], uk: ["Ox tongue"], france: ["Langue de boeuf"], mexico: ["Lengua"], goa: ["Lingua"] },
+  tripe: { usa: ["Beef tripe"], uk: ["Ox tripe"], france: ["Tripes"], mexico: ["Tripa", "Menudo"], botswana: ["Mogodu"] },
+  tendon: { usa: ["Beef tendon"], south_korea: ["힘줄"], vietnam: ["Gân bò"], kerala: ["Urat"] },
+  bone_marrow: { usa: ["Bone marrow"], uk: ["Bone marrow"], france: ["Os à moelle"], andhra_pradesh: ["Nalli emuka"] },
+  skin: { manipur: ["Un"], northeast_other: ["Cham", "Vun"] },
+  liver: { usa: ["Beef liver"], france: ["Foie de boeuf"], uk: ["Ox liver"] },
+  heart: { usa: ["Beef heart"], france: ["Coeur de boeuf"], peru: ["Corazón"] },
+  kidney: { usa: ["Beef kidney"], uk: ["Ox kidney"], france: ["Rognon de boeuf"] },
+  intestines: { usa: ["Beef intestines"], south_korea: ["Gopchang"], northeast_other: ["Aie"] },
+  head_cheek: { usa: ["Beef cheek"], france: ["Joue de boeuf"], mexico: ["Cabeza", "Cachete"], uae: ["Beef cheek"] },
 };
