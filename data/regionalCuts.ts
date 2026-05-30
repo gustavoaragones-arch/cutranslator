@@ -4072,4 +4072,84 @@ export const regionalCuts: readonly RegionalCut[] = [
     notes: "First dataset node explicitly tying beef-butchery logic to a dairy/pastoral economic system. The mature-animal context deepens the sahelian_parboiling_prerequisite_af — longer parboil windows required for older animals. Cross-references mali_dairy_retired_zebu_ml is self; forward-ref to B27/B28 for Fulani transhumance continuity across the Sahel.",
   },
 
+  // ----- Senegal — Batch 27 (3 entities) -----
+
+  {
+    id: "dibi_cleaver_chunk_format_sn",
+    name: "Dibi Cleaver-Chunk Format (Senegalese Grill Mechanic)",
+    region: "senegal",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.75, note: "Shoulder/Chuck is the primary Dibi source; bone-in chunks deliver marrow basting" },
+      { canonical_id: "short_ribs", match_type: "cultural", confidence: 0.72, note: "Rib sections cleaver-hacked bone-in; marrow renders over wood-fire smoke" },
+      { canonical_id: "striploin", match_type: "cultural", confidence: 0.65, note: "Short Loin sections used in upscale Dibiteries; bone-in strip for premium version" },
+    ],
+    synonyms: ["dibi", "dibiterie cut", "senegal grill", "dakar bbq", "bone-in grill senegal", "cleaver chunk"],
+    description: "Dibi is the third distinct Sahel grill mechanic, completing the documented three-way distinction: Suya (paper-thin cross-grain shave, no bone, Nigerian), Brochette (thin ribbon with hump-fat beads, skewered, Malian/pan-Sahel), and Dibi (bone-in cleaver-chunk, Senegalese). Unlike Suya or Brochette, Dibi takes the primal cut — Short Loin, Ribs, or Shoulder — and cleaver-hacks it bone-in into rough 1 to 1.5 inch chunks, bones and cartilage intact. The bone marrow renders over wood-fire smoke, naturally basting the lean Zebu without the need for added fat or threading technique. Served wrapped in brown paper with raw onions and sharp Dijon mustard — the Dijon is itself a French-colonial signature (paralleling the French-vocabulary butchery at Boucheries, documented in francophone_wolof_butchery_bridge_sn). USDA translation: Whole Bone-In Chuck Roast, Short Ribs, or Bone-In Strip, cleaver-chopped across the bone into rough 1.5-inch chunks — do not trim the cartilage, it basts. CRITICAL NOTE on the parboiling prerequisite: Dibi may bypass the Sahelian parboiling prerequisite (sahelian_parboiling_prerequisite_af) because the bone marrow rendering during charcoal grill provides natural basting that compensates for Zebu leanness — the marrow does the work the parboil normally does. This makes Dibi structurally analogous to Suya (which also skips parboil via Yaji-crust protection) rather than to Tiguadege or Thieboudienne (which rely on parboil-first). The three Sahel grill mechanics are now documented: USDA replication rules differ for each.",
+    notes: "Marquee Senegal Tier 3 entry. Third Sahel grill mechanic alongside suya_paper_thin_shave_af (Nigeria, B26) and sahel_brochette_ribbon_format_af (Mali, B26). USDA rule: bone-in Chuck or Short Ribs cleaver-chopped across the bone. Cross-references francophone_wolof_butchery_bridge_sn (Dijon mustard as French-colonial signature), thieboudienne_collagen_matrix_sn (the other major Senegalese bone-in preparation), and sahelian_parboiling_prerequisite_af (Dibi may bypass via marrow basting). Cow default.",
+  },
+
+  {
+    id: "thieboudienne_collagen_matrix_sn",
+    name: "Thieboudienne Collagen Matrix (Senegalese National Dish Bone-In Requirement)",
+    region: "senegal",
+    maps_to: [
+      { canonical_id: "hind_shank", match_type: "approximate", confidence: 0.80, note: "Bone-in Jarret (shank) is the primary Thieboudienne source; marrow emulsifies the rice base" },
+      { canonical_id: "brisket", match_type: "approximate", confidence: 0.75, note: "Bone-in Poitrine provides the fat layer and collagen for oil emulsification" },
+      { canonical_id: "chuck_roll", match_type: "approximate", confidence: 0.65, note: "Shoulder used when Jarret is not available; bone-in is mandatory regardless" },
+    ],
+    synonyms: ["thieboudienne", "thiebou yapp", "ceebu yapp", "rice beef senegal", "national dish senegal"],
+    description: "Thieboudienne (ceebu yapp, or thiebou yapp in the meat variant) is the Senegalese national dish: broken rice slow-cooked in a meat-and-tomato base with vegetables. The collagen requirement is the critical butchery insight: the dish requires bone-in Jarret (shank) or Poitrine (brisket) — the bones must stay in during initial boiling to emulsify the oil base into the broken-rice grains. Lean trimmed US stew meat produces dry rice missing the signature glossy mouthfeel. The mechanism is the same as Mali's Tiguadege na peanut stew (tiguadege_collagen_matrix_ml, B26): lean Zebu + bone-in + slow braise + collagen emulsification — but the stew family is different: Thieboudienne is rice-based (tomato-onion-oil); Tiguadege na is peanut-butter-based. Two parallel collagen-emulsification logics in the same Sahel region type (West African stew), different stew vehicle. The rice-dish parallel also extends to Niger's Zebu-context and forward-references the Burkina Riz Gras (B28 projection), where the same collagen-emulsification logic operates in a fattier Mossi mechanic. USDA translation: Bone-In Hind Shank or Bone-In Brisket Point — do not bone out; the marrow and connective tissue must be in contact with the cooking liquid.",
+    notes: "Parallel to tiguadege_collagen_matrix_ml (Mali, B26): same bone-in collagen-emulsification logic, different stew family (rice-based vs peanut-based). Cross-references sahelian_parboiling_prerequisite_af — the parboil also applies to Thieboudienne preparation, extending the prerequisite to 4-country evidence (NG + ML + SN + NE). Forward-ref to B28 Burkina Riz Gras as the Mossi parallel. Cow default.",
+  },
+
+  {
+    id: "francophone_wolof_butchery_bridge_sn",
+    name: "Francophone-Wolof Butchery Bridge (Senegalese Colonial Vocabulary Dual-Channel)",
+    region: "senegal",
+    maps_to: [],
+    synonyms: ["wolof french bridge", "dakar butchery bridge", "senegal french colonial", "boucherie dakar", "wolof french primal"],
+    description: "Senegal's Boucherie stalls and Dibiteries operate in DUAL VOCABULARY: Wolof anatomical terms (sox la/tenderloin, guinar gu/back meat, poitrin mi/brisket, jarret bi/shank, sikh bi/oxtail) coexist with French primal loanwords (filet, faux-filet, poitrine, jarret, queue de boeuf) in the same market stall. The same anatomical muscle is named in two languages by two communities at the same butcher block. This is the West African instance of the Indo-European Colonial Bridges pattern (indo_european_colonial_bridges_in, B19), which documented French-into-Tamil at Pondicherry and Portuguese-into-Konkan at Daman/Goa. The structural parallel is exact: one colonial power (France), one colonized language (Wolof), one muscle, two names, one stall. The bridge is uniquely bidirectional in Senegal: UPSCALE direction — Marche Kermel, hotel Boucheries, and restaurant butcheries use French primal vocabulary with Wolof-speaking customers who understand both; NEIGHBORHOOD direction — Dibiteries and street markets use Wolof anatomical terms with French speakers who also switch registers. The Dijon mustard served with Dibi is the culinary trace of the same French-colonial encounter that produced the dual vocabulary. No other West African country in the current dataset operates with this level of integrated dual-primal-vocabulary at the street level.",
+    notes: "Extends the indo_european_colonial_bridges_in family (B19) from South Asia to West Africa — same colonial-bridge structural pattern (one muscle, two languages, two communities, one stall), different colonial power node. Cross-references pondicherry_french_bridge_in (B19) as the structural parallel — French-into-Tamil vs French-into-Wolof. Cross-references dibi_cleaver_chunk_format_sn (Dijon mustard as the culinary trace of the French-colonial encounter). Pairs with sahel_hausa_trade_language_af (this batch) as two distinct linguistic-axis types in a single batch. No canonical mapping — linguistic bridge node. Cow default.",
+  },
+
+  // ----- Niger — Batch 27 (2 entities) -----
+
+  {
+    id: "taba_nany_pounded_dried_ne",
+    name: "Taba-Nany Pounded-Dried (Tuareg Nomadic Preservation — Fifth Dried-Beef Mechanism)",
+    region: "niger",
+    maps_to: [
+      { canonical_id: "chuck_roll", match_type: "cultural", confidence: 0.68, note: "Lean Shoulder boiled heavily, then dried and pounded to fibrous powder" },
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.72, note: "Lean Round also used; the leanest available muscle is preferred for maximum fibre-separation" },
+    ],
+    synonyms: ["taba nany", "tuareg beef powder", "tuareg preserved beef", "saharan dried beef", "nomadic beef niger"],
+    description: "Taba-Nany is the Tuareg nomadic preservation technique from Niger's desert regions: lean Shoulder or Round is HEAVILY BOILED first (rendering the muscle fully cooked), then sun-dried on desert mats until completely desiccated, then POUNDED WITH MORTAR AND PESTLE until it forms a fine fibrous shelf-stable powder — used as a flavour base for travel broths, rehydrated into soups, or eaten dry as a portable protein source. This establishes the FIFTH DISTINCT DRIED-BEEF MECHANISM in the dataset, distinct from all prior documented methods: (1) Himalayan/Sukuti — AIR-DRY uncooked strips, cooking ingredient (himalayan_sukuti_source_np, Nepal, B21); (2) Mongolian Borts — FREEZE-DRY-THEN-POUND from raw, extreme long-term preservation (mongolian_borts_airdried_mn, B22); (3) Northeast India hearth-SMOKE-dry, fresh-seasoned cooking ingredient (smoked_beef_northeast_axis_in, B18); (4) Kilishi — sheet-dry-paste-fire-flash, snack/street food (kilishi_sheet_dry_af, B26). Taba-Nany's defining sequence is BOIL-DRY-POUND — the cooked-then-preserved logic. It shares the pound-to-powder endpoint with Mongolian Borts but differs fundamentally in the pre-drying step: Borts freeze-dries raw (the freezing does the cellular disruption); Taba-Nany boils first (cooking breaks the collagen into separable fibres). The structural lineage most closely parallels Burmese A-mae-shwar's cooked-pounding logic (B22) — both cook before drying. The desert-mat sun-drying and nomadic-portability context make Taba-Nany the most ecologically specific entry in the dried-beef taxonomy: it is an answer to the specific problem of preserving beef for weeks-long trans-Saharan caravan crossings where fire fuel is scarce and cooling is impossible.",
+    notes: "Fifth distinct dried-beef mechanism. Sequence: boil-dry-pound. Distinguished from: himalayan_sukuti_source_np (air-dry uncooked), mongolian_borts_airdried_mn (freeze-dry-pound from raw), smoked_beef_northeast_axis_in (hearth-smoke), kilishi_sheet_dry_af (sheet-dry-paste-flash). Most structurally parallel to Mongolian Borts at the pound-to-powder endpoint but differs at the pre-drying step (boil vs freeze). Forward-ref: niger_kilishi_heartland_ne (the other Niger Tier 3 entry). Cross-references sahelian_parboiling_prerequisite_af (the boil-first step is a structural analog of the Sahel parboil, but here for preservation not tenderizing). Cow default.",
+  },
+
+  {
+    id: "niger_kilishi_heartland_ne",
+    name: "Niger Kilishi Heartland (Madaoua Origin Node — Deepening the Kilishi Axis)",
+    region: "niger",
+    maps_to: [
+      { canonical_id: "inside_round", match_type: "cultural", confidence: 0.85, note: "Inside Round is the canonical Madaoua Kilishi source: the widest continuous flat muscle for maximum sheet size" },
+      { canonical_id: "tenderloin", match_type: "cultural", confidence: 0.70, note: "Tenderloin used for premium Madaoua Kilishi — the finest grain for the thinnest translucent sheets" },
+    ],
+    synonyms: ["madaoua kilishi", "niger kilishi", "kilishi heartland", "kilishi ne", "hausa jerky niger"],
+    description: "Madaoua (Niger) is the documented heartland of Kilishi production — the geographic origin node of the format that the kilishi_sheet_dry_af axis (B26) established at the Nigerian level. The Niger version is distinguished by: (1) WIDER CONTINUOUS SHEETS — Madaoua butchers slice Inside Round into the widest possible continuous translucent sheets rather than strips, maximising the paste-adhesion surface; (2) SPECIFIC PASTE RATIO — the Madaoua peanut-paste formula uses a higher proportion of kuli-kuli to cayenne, with more ginger than garlic, producing a nuttier and less fiery profile than Kano Kilishi; (3) PRODUCTION SCALE — Madaoua's dry-season production is a regional export industry, with product traded south into Nigeria (completing the cultural loop with kilishi_sheet_dry_af) and north toward the Saharan trade routes. This entry is a DEEPENING NODE, not a replacement: kilishi_sheet_dry_af remains the parent axis establishing the format generically; niger_kilishi_heartland_ne provides the geographic anchor at the format's acknowledged origin. The Hausa vocabulary at Madaoua (siriri for thin, yanka for cut, kilishi for the finished product) is identical to Kano Hausa — confirming sahel_hausa_trade_language_af's trans-national vocabulary claim with a culinary-production data point. USDA translation: same as kilishi_sheet_dry_af — partially frozen Inside Round sliced paper-thin, but here specifically the widest possible continuous sheet rather than the thicker Nigerian strips.",
+    notes: "Deepening node for kilishi_sheet_dry_af (B26, Nigeria) — geographic anchor at the format's origin. Does not replace or supersede the parent axis. The Madaoua vocabulary cross-confirms sahel_hausa_trade_language_af (same Hausa terms across the border). USDA rule: widest possible continuous translucent sheet from partially-frozen Inside Round. Cross-references taba_nany_pounded_dried_ne (the other Niger Tier 3 entry). Cow default.",
+  },
+
+  // ----- Pan-Sahel — Batch 27 (1 linguistic-axis entity) -----
+
+  {
+    id: "sahel_hausa_trade_language_af",
+    name: "Sahel Hausa Trade-Language Axis (Trans-National Butchery Vocabulary)",
+    region: "niger",
+    maps_to: [],
+    synonyms: ["hausa trade language", "sahel lingua franca beef", "hausa butchery axis", "trans-sahel hausa", "hausa vocabulary niger nigeria"],
+    description: "Hausa functions as the SAHEL LINGUA FRANCA across at least three countries — Nigeria (Kano, Sabon Gari), Niger (Niamey, Maradi, Zinder, Madaoua), and Chad (forward-ref B28) — making the Hausa term-set a TRANS-NATIONAL BUTCHERY VOCABULARY rather than a Nigeria-specific one. This batch establishes the axis with TWO-COUNTRY EVIDENCE: the same Hausa anatomical terms recur across the Niger/Nigeria border with identical form and meaning: kafa (inside_round/topside), kirji (brisket/chest), kwauri (hind_shank), kaba (zebu hump fat), nama na baya (back meat/striploin+ribeye), nama yau ne (is it today's kill?), and yanka shi siriri (cut it thin). The same butcher-market phrases work identically in Kano and in Niamey. This is the first explicitly LINGUISTIC-AXIS Tier 3 entry in the dataset — prior cross-regional axes have been CULINARY-TECHNIQUE-based (sahelian_parboiling_prerequisite_af, zebu_hump_fat_axis_af, sahel_brochette_ribbon_format_af) or CULTURAL-PRACTICE-based (east_african_choma_parboil_af). The Hausa axis is distinct: it documents that a single VOCABULARY set spans national borders, not just a technique or cut. The dataset parallel is the Francophone-Wolof Bridge in this same batch (francophone_wolof_butchery_bridge_sn), which documents WITHIN-COUNTRY dual-language coexistence. The Hausa axis is ACROSS-COUNTRY single-language continuity. Structural parallel to the Spanish-across-Latin-America family (if one exists in this dataset) or the Arabic-across-MENA pattern. IMPORTANT CAVEAT: this axis is established with 2-country evidence (NG + NE) and FORWARD-REFERENCES Chad as the third confirming node in B28 — claiming Sahel-wide coverage from NG+NE alone would be premature.",
+    notes: "First linguistic-axis Tier 3 in the dataset. Two-country evidence (Nigeria B26 + Niger B27); forward-ref to B28 Chad as third node. Cross-references: sahel_brochette_ribbon_format_af (the Hausa vocabulary node most tied to this technique), kilishi_sheet_dry_af and niger_kilishi_heartland_ne (Kilishi as the most documented Hausa-vocabulary culinary object), sahelian_parboiling_prerequisite_af (the parboil axis where Hausa terms are the dominant vocabulary). Pairs with francophone_wolof_butchery_bridge_sn (this batch) as two distinct linguistic-axis types: across-country single-language (Hausa) vs within-country dual-language (Wolof/French). No canonical mapping — linguistic bridge node. Cow default.",
+  },
+
 ] as const;

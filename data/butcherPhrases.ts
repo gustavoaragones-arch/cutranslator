@@ -679,4 +679,20 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "brisket", region: "mali", phrase: "Tulu do k'a kan", notes: "Bambara: 'Add some fat, please' — tulu = fat/oil; critical request for lean Zebu Peul beef; fat-bead threading instruction for brochettes" },
   { canonicalId: "inside_round", region: "mali", phrase: "Bi sogo lo wa?", notes: "Bambara: 'Is it today's meat?' — freshness verification; bi = today; mandatory parboil-context check" },
   { canonicalId: "inside_round", region: "mali", phrase: "Mi yidi kilo tew nagge gooto", notes: "Fulfulde: 'I want one kilo of beef' — tew nagge = cow meat in Fulfulde; the Fulfulde-vocabulary marker tying to Peul transhumance herder tradition" },
+
+  // 🇸🇳 SENEGAL — Wolof primary / French alternate register (Batch 27)
+  { canonicalId: "inside_round", region: "senegal", phrase: "Dama begg benn kilo nag", notes: "Wolof: 'I want one kilo of beef' — nag = cow; the standard Dibiterie market opening (native: Dama bëgg benn kilo nag)" },
+  { canonicalId: "inside_round", region: "senegal", phrase: "May ma yapp bu amul jakh", notes: "Wolof: 'Give me boneless' — yapp = meat, jakh = bone (native: bu amul jëkh/yäkh); universal boneless request across registers" },
+  { canonicalId: "chuck_roll", region: "senegal", phrase: "Daggil ma ko ngir dibi waay", notes: "Wolof: 'Cut it for Dibi, please' — marquee Dibi-prep instruction; the bone-in cleaver-chunk specification at the Dibiterie; waay = familiar address particle. See dibi_cleaver_chunk_format_sn." },
+  { canonicalId: "brisket", region: "senegal", phrase: "Dolle ma ci liir diw", notes: "Wolof: 'Add some fat' — critical request for lean transhumance Zebu; fat cap essential for Dibi bone-marrow basting (native: bëres for fat)" },
+  { canonicalId: "inside_round", region: "senegal", phrase: "Yappu tey la?", notes: "Wolof: 'Is it today's kill?' — freshness verification at the Dibiterie and neighborhood market; yappu = the meat/kill" },
+  { canonicalId: "striploin", region: "senegal", phrase: "Faux-filet, s'il vous plait", notes: "French loanword request — used at upscale Boucheries (Marche Kermel) where the French primal vocabulary is expected alongside Wolof anatomical terms. See francophone_wolof_butchery_bridge_sn." },
+
+  // 🇳🇪 NIGER — Hausa primary / French alternate register (Batch 27)
+  { canonicalId: "inside_round", region: "niger", phrase: "Ina son naman sa kilo daya", notes: "Hausa: 'I want one kilo of beef' — identical to Nigeria's phrase; naman sa = cow meat; the Hausa trade-language node confirming the same vocabulary across the border. See sahel_hausa_trade_language_af." },
+  { canonicalId: "inside_round", region: "niger", phrase: "Ba ni maras kashi", notes: "Hausa: 'Give me boneless' — maras kashi = without bone; the boneless request in Hausa register" },
+  { canonicalId: "inside_round", region: "niger", phrase: "Yanka shi siriri na Kilishi", notes: "Hausa: 'Cut it thin for Kilishi' — marquee Kilishi-prep instruction; siriri = thin/fine; the paper-thin continuous-sheet specification at the Madaoua Kilishi heartland. See niger_kilishi_heartland_ne." },
+  { canonicalId: "brisket", region: "niger", phrase: "Sanya mai kadan", notes: "Hausa: 'Add a little fat' — essential request for lean Azawak Zebu before Brochette threading or stewing. French alternate: Ajoutez du gras." },
+  { canonicalId: "inside_round", region: "niger", phrase: "Naman yau ne?", notes: "Hausa: 'Is it today's kill?' — identical to Nigeria's freshness-verification phrase; yau = today; another Hausa trade-language signature recurring across the border. See sahel_hausa_trade_language_af." },
+  { canonicalId: "inside_round", region: "niger", phrase: "Coupe-le mince pour Kilishi", notes: "French alternate: 'Cut it thin for Kilishi' — used at upscale Niamey market stalls and French-vocabulary butchers; parallel to the Hausa Yanka shi siriri na Kilishi." },
 ] as const;

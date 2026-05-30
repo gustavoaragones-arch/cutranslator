@@ -161,6 +161,8 @@ export const REGION_ENTITY: Record<
   kenya: { id: "kenya", formalName: "Kenya", shortName: "Kenya" },
   nigeria: { id: "nigeria", formalName: "Federal Republic of Nigeria", shortName: "Nigeria" },
   mali: { id: "mali", formalName: "Republic of Mali", shortName: "Mali" },
+  senegal: { id: "senegal", formalName: "Republic of Senegal", shortName: "Senegal" },
+  niger: { id: "niger", formalName: "Republic of Niger", shortName: "Niger" },
   ethiopia: { id: "ethiopia", formalName: "Ethiopia", shortName: "Ethiopia" },
   kerala: { id: "kerala", formalName: "Kerala", shortName: "Kerala" },
   tamil_nadu: { id: "tamil_nadu", formalName: "Tamil Nadu", shortName: "Tamil Nadu" },
