@@ -117,6 +117,9 @@ export const regions = [
   // Africa — West Africa (Batch 27)
   { id: "senegal" as const, label: "Senegal", flag: "🇸🇳", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["senegalese", "dakar", "wolof", "dibi", "dibiterie", "thieboudienne", "thiebou yapp", "maffe", "soupoukandja", "marche kermel", "marche tilene"] as readonly string[] },
   { id: "niger" as const, label: "Niger", flag: "🇳🇪", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["nigerien", "niamey", "kilishi", "madaoua", "azawak zebu", "hausa", "tuareg", "taba nany", "zinder", "maradi"] as readonly string[] },
+  // Africa — West Africa (Batch 28)
+  { id: "chad" as const, label: "Chad", flag: "🇹🇩", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["chadian", "ndjamena", "n'djamena", "sarh", "moundou", "kouri", "arab zebu", "charmout", "daraba", "marara"] as readonly string[] },
+  { id: "burkina_faso" as const, label: "Burkina Faso", flag: "🇧🇫", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["burkinabe", "burkinabe", "ouagadougou", "ouaga", "mossi", "moore", "more", "fulani", "peul", "riz gras", "rood-woko", "grand marche"] as readonly string[] },
   // Africa — Horn of Africa
   { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, subregion: "Horn of Africa" as const, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
 

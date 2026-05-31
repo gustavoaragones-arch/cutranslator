@@ -151,7 +151,10 @@ export type RegionSlug =
   | "mali"
   // Africa — West Africa (Batch 27)
   | "senegal"
-  | "niger";
+  | "niger"
+  // Africa — West Africa (Batch 28)
+  | "chad"
+  | "burkina_faso";
 
 export type CanonicalId =
   | "ribeye"

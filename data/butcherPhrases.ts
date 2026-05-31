@@ -695,4 +695,20 @@ export const butcherPhrases: readonly ButcherPhrase[] = [
   { canonicalId: "brisket", region: "niger", phrase: "Sanya mai kadan", notes: "Hausa: 'Add a little fat' — essential request for lean Azawak Zebu before Brochette threading or stewing. French alternate: Ajoutez du gras." },
   { canonicalId: "inside_round", region: "niger", phrase: "Naman yau ne?", notes: "Hausa: 'Is it today's kill?' — identical to Nigeria's freshness-verification phrase; yau = today; another Hausa trade-language signature recurring across the border. See sahel_hausa_trade_language_af." },
   { canonicalId: "inside_round", region: "niger", phrase: "Coupe-le mince pour Kilishi", notes: "French alternate: 'Cut it thin for Kilishi' — used at upscale Niamey market stalls and French-vocabulary butchers; parallel to the Hausa Yanka shi siriri na Kilishi." },
+
+  // 🇹🇩 CHAD — Chadian Arabic primary / French alternate register (Batch 28)
+  { canonicalId: "inside_round", region: "chad", phrase: "Ana bido kilo wahid lahm bagar", notes: "Chadian Arabic: 'I want 1kg of beef' — lahm bagar = cow meat; the standard N'Djamena market opening" },
+  { canonicalId: "inside_round", region: "chad", phrase: "Al-teeni lahm bidun adhum", notes: "Chadian Arabic: 'Give me boneless' — adhum = bone; universal boneless request at the market stall" },
+  { canonicalId: "inside_round", region: "chad", phrase: "Gatta'o khafif le Charmout", notes: "Chadian Arabic: 'Cut it thin for Charmout' — marquee Charmout-prep instruction; thin-strip specification for sun-dried preservation. See charmout_sundried_strip_td." },
+  { canonicalId: "brisket", region: "chad", phrase: "Zid li al-shahm, min fadlak", notes: "Chadian Arabic: 'Add some fat, please' — al-shahm = fat; critical for lean Kouri/Arab Zebu before Brochette threading or Daraba stewing" },
+  { canonicalId: "inside_round", region: "chad", phrase: "Al-lahm da hagi al-yom?", notes: "Chadian Arabic: 'Is it today's kill?' — mandatory freshness verification; al-yom = today" },
+  { canonicalId: "inside_round", region: "chad", phrase: "Je veux un kilo de boeuf", notes: "French alternate — used at upscale N'Djamena Boucheries where French primal vocabulary coexists with Chadian Arabic. See francophone_west_africa_bridge_af." },
+
+  // 🇧🇫 BURKINA FASO — Moore primary / French alternate register (Batch 28)
+  { canonicalId: "inside_round", region: "burkina_faso", phrase: "M booda nao-ndo kilo a ye", notes: "Moore: 'I want 1kg of beef' — nao-ndo = meat/beef; the standard Ouagadougou Boucherie market opening (native form uses diacritics stripped here per ASCII rule)" },
+  { canonicalId: "inside_round", region: "burkina_faso", phrase: "Kao kobre, dam nza", notes: "Moore: 'Give me boneless' — dam = bone (native: dam nza); universal boneless request at neighborhood Boucheries" },
+  { canonicalId: "tenderloin", region: "burkina_faso", phrase: "Kom nao-ndo nere", notes: "Moore: 'Give me soft meat' — nere = soft/good; targets the tenderloin zone for upscale Brochettes" },
+  { canonicalId: "brisket", region: "burkina_faso", phrase: "Paas-m kam-ndo bilfu", notes: "Moore: 'Add some fat' — kam-ndo = fat; critical for lean transhumance Zebu before Brochette threading or Riz Gras. Parallels Mali's tulu-do fat-request phrase." },
+  { canonicalId: "inside_round", region: "burkina_faso", phrase: "Nama ya runda n-de?", notes: "Moore: 'Is it today's meat?' — runda = day; freshness verification at the market stall" },
+  { canonicalId: "chuck_roll", region: "burkina_faso", phrase: "Coupe-le pour Riz Gras", notes: "French: 'Cut it for Riz Gras' — marquee Riz Gras prep instruction at upscale Ouagadougou Boucheries; bone-in chunk specification. See riz_gras_transit_matrix_bf." },
 ] as const;
