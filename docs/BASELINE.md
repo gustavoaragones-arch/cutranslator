@@ -10,6 +10,8 @@ Offal SVG diagram overlays are not yet drawn. Until Illustrator delivers the 10 
 
 **Internal organ visual-language decision LOCKED:** liver, heart, kidney, intestines use **cutaway diagram** style — a cross-section window cut into the body silhouette revealing the organ in anatomical position. Decided 2026-05-28.
 
+**`bone_marrow` Phase B visual decision OPEN:** The marrow lives inside the shank bones. Three options under consideration for the Illustrator: (a) sub-overlay nested inside the `fore_shank` / `hind_shank` regions, highlighting the marrow cavity within those existing leg-cut regions; (b) a distinct callout in empty viewBox space, disconnected from the body silhouette; (c) legend-only entry with no on-cow highlight. This decision belongs to the Phase B drawing session, not to the data layer. See ADR-001 below.
+
 ## Authoritative counts
 
 These numbers are the source of truth for all future batch prompts.
@@ -155,6 +157,79 @@ for n, r in sorted(apostrophe_rows, key=lambda x: (x[1], x[0])):
    set to that batch's new slugs only.
 3. The global apostrophe inventory is informational; the 7 entries above are
    pre-approved and must not appear in the per-batch FAIL output.
+
+## Architectural Decisions
+
+### ADR-001: Promote `bone_marrow` to canonical (Batch 25)
+
+**Date:** 2026-05-28 (shipped in commit `7fa54a5`)
+**Status:** Promoted — Phase A (data) complete, Phase B (SVG overlay) pending
+**Decided by:** Gus
+
+**Decision.** `bone_marrow` is a `CanonicalId`. It was promoted in Batch 25 alongside
+the other 9 offal canonicals. It has a canonical cut entry in `data/canonicalCuts.ts`
+and 4 deployed consumer labels in the entity display map.
+
+**What triggered the promotion.**
+
+Standalone retail marrow vocabulary exists in deployed Western markets:
+- USA: "Bone marrow" (retail label, sold as halved leg bones for roasting)
+- UK: "Bone marrow" (same retail form, also "marrow bones" as a butcher term)
+- France: "Os à moelle" (a discrete butcher display cut — literally "marrow bone,"
+  sold split lengthwise as a standalone bistro and home-cook product)
+- India (Andhra Pradesh): "Nalli emuka" (the marrow-bone component of Nalli Nihari,
+  where marrow is the valued outcome, not the shank context)
+
+This meets trigger condition #1 from the original deferral proposal: *"Research arrives
+for a region where marrow is sold or prepared as a standalone retail product distinct
+from the shank."* The French `os à moelle` is the clearest case — a bone split and
+sold specifically for the marrow, displayed separately from bone-in shank cuts.
+
+**How the record was corrected.**
+
+The pre-Batch-25 reconciliation prompt (session 2026-06-06) proposed deferring
+`bone_marrow` on the grounds that "production has never had a bone_marrow canonical."
+That reasoning was wrong about production state — the canonical had already shipped
+in commit `7fa54a5`. The audit step (`grep -E '"bone_marrow"' lib/types.ts`) was what
+exposed the gap between the working mental model and reality. The audit was the right
+tool; the prior assumption was the error. The promotion was correct on the merits even
+though the upstream reasoning was muddled by a misread of the handoff history.
+
+**tsc and orphan status at audit time (2026-06-06):**
+- `bone_marrow` is in `CanonicalId` — correct.
+- 4 consumer labels in the entity map — correct.
+- 0 orphan regional names mapping to `bone_marrow` via `maps_to` — clean.
+- 0 Tier 3 entities referencing `bone_marrow` via `maps_to` — clean.
+- No `bone_marrow.svg` in source — Phase B pending.
+- `tsc --noEmit` — clean.
+
+**Phase B completion criteria (the SVG overlay).**
+
+The data layer is done. The SVG overlay is unblocked the moment it's drawn. Before
+drawing, the illustrator needs to make one visual decision:
+
+> *Does bone_marrow render as a sub-overlay nested inside the `fore_shank` / `hind_shank`
+> regions (showing the cavity within the leg), as a disconnected callout in empty viewBox
+> space, or as a legend-only entry with no on-cow highlight?*
+
+The sub-overlay approach is anatomically honest but risks visual overlap with the shank
+highlights. The callout approach avoids overlap but breaks the "everything on the cow"
+convention used by every other canonical. The legend-only approach is the safe punt.
+Recommend the illustrator mock all three and choose at drawing time — this is an SVG
+decision, not a data-layer decision, and the right answer depends on how it looks.
+
+**Worked example for future offal promotions.**
+
+The defer-or-promote pattern applied here:
+1. Does standalone retail vocabulary exist in deployed regions? → Yes (France, UK, USA) → promote.
+2. Does the visual placement have a clear answer? → No (marrow is inside a bone, inside a
+   shank region) → defer that specific drawing decision to Phase B, not the canonical decision.
+3. Does the canonical addition break tsc or create orphans? → No → safe to promote.
+
+Apply this same checklist to the next missing-canonical question: Nigerian `Fuku` (lung)
+in the offal supplement batch.
+
+---
 
 ## Live candidates for upcoming batches
 
