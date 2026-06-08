@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbBar } from "@/components/BreadcrumbBar";
-import { listOffalCuts } from "@/lib/offalData";
+import { listOffalCuts, listOffalTraditions } from "@/lib/offalData";
 import { titleCaseCanonicalId } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 export default function OffalIndexPage() {
   const cuts = listOffalCuts();
+  const traditions = listOffalTraditions();
 
   return (
     <div className="cut-bg">
@@ -67,7 +68,7 @@ export default function OffalIndexPage() {
           </ul>
         </section>
 
-        {/* Traditions placeholder */}
+        {/* Traditions grid */}
         <section className="mt-16">
           <h2
             className="font-heading text-2xl font-semibold"
@@ -76,9 +77,42 @@ export default function OffalIndexPage() {
             Offal Traditions
           </h2>
           <p className="mt-2 text-sm" style={{ color: "var(--atlas-ink-mute)" }}>
-            Cultural offal traditions — Argentine achuras, Nigerian Orishirishi, Chadian
-            Marara, Peruvian anticuchos, and more — coming soon.
+            Cultural traditions built around offal — how different societies prepare,
+            serve, and celebrate these cuts.
           </p>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+            {traditions.map((t) => (
+              <li key={t.id}>
+                <Link
+                  href={`/offal/traditions/${t.id}`}
+                  className="block rounded-lg border p-5 transition-colors hover:bg-[var(--atlas-paper-warm)]"
+                  style={{
+                    borderColor: "var(--atlas-paper-deep)",
+                    backgroundColor: "var(--atlas-paper)",
+                  }}
+                >
+                  <span
+                    className="font-heading text-lg font-semibold"
+                    style={{ color: "var(--atlas-ink)" }}
+                  >
+                    {t.name}
+                  </span>
+                  <span
+                    className="mt-1 block atlas-mono text-xs"
+                    style={{ color: "var(--atlas-ox-blood)" }}
+                  >
+                    {t.region}
+                  </span>
+                  <span
+                    className="mt-2 block text-sm leading-relaxed line-clamp-2"
+                    style={{ color: "var(--atlas-ink-fade)" }}
+                  >
+                    {t.summary}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
     </div>
