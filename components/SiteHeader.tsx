@@ -17,12 +17,23 @@ export function SiteHeader() {
         >
           cutranslator
         </Link>
-        <span
-          className="atlas-mono hidden sm:block"
-          style={{ color: "var(--atlas-ink-mute)" }}
-        >
-          International beef cuts atlas · vol. 1
-        </span>
+        <div className="flex items-baseline gap-6">
+          <nav aria-label="Main navigation">
+            <Link
+              href="/offal"
+              className="atlas-mono text-sm transition-colors hover:text-[var(--atlas-ox-blood)]"
+              style={{ color: "var(--atlas-ink-mute)" }}
+            >
+              Offal
+            </Link>
+          </nav>
+          <span
+            className="atlas-mono hidden sm:block"
+            style={{ color: "var(--atlas-ink-mute)" }}
+          >
+            International beef cuts atlas · vol. 1
+          </span>
+        </div>
       </div>
     </header>
   );
