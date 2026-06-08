@@ -4,13 +4,26 @@
 **Last batch deployed:** 28 (West Africa Tier 2: Chad + Burkina Faso — Sahel Set COMPLETE)
 **Last data batch:** 28 (West Africa — Chad + Burkina Faso)
 
-## Phase B pending (Batch 25)
+## Phase B — Offal SVG overlays: COMPLETE
 
-Offal SVG diagram overlays are not yet drawn. Until Illustrator delivers the 10 offal layer files, all offal cuts (`tongue`, `tripe`, `tendon`, `bone_marrow`, `skin`, `liver`, `heart`, `kidney`, `intestines`, `head_cheek`) fall back to showing the base cow silhouette without a highlighted region. This is intentional and safe. Phase B wiring: add SVG files to `public/svg/canonical/`, no code changes needed.
+All 10 offal overlay SVGs are in `public/svg/offal/` and pass `validate_offal_svgs.sh` (10/10).
+The diagram component (`CowDiagramNew.tsx`) routes offal IDs to `/svg/offal/` and muscle IDs to
+`/svg/canonical/` based on the canonical's `primal` field.
 
-**Internal organ visual-language decision LOCKED:** liver, heart, kidney, intestines use **cutaway diagram** style — a cross-section window cut into the body silhouette revealing the organ in anatomical position. Decided 2026-05-28.
+**Verified 2026-06-07:** `./validate_offal_svgs.sh` → 10 pass, 0 fail.
 
-**`bone_marrow` Phase B visual decision OPEN:** The marrow lives inside the shank bones. Three options under consideration for the Illustrator: (a) sub-overlay nested inside the `fore_shank` / `hind_shank` regions, highlighting the marrow cavity within those existing leg-cut regions; (b) a distinct callout in empty viewBox space, disconnected from the body silhouette; (c) legend-only entry with no on-cow highlight. This decision belongs to the Phase B drawing session, not to the data layer. See ADR-001 below.
+**viewBox note:** Offal overlays use `viewBox="0 0 711.89 605.37"`; cow + muscle overlays use
+`viewBox="0 0 711.89 622.56"`. The 17.19-unit difference at the bottom of the full SVG is
+invisible in the component's crop viewBox (`"464 186 264 128"`, y=186–314). No render-time
+transform is needed.
+
+**Internal organ visual-language decision LOCKED:** liver, heart, kidney, intestines use
+**cutaway diagram** style — a cross-section window cut into the body silhouette revealing the
+organ in anatomical position. Decided 2026-05-28.
+
+**`bone_marrow` visual decision RESOLVED:** bone marrow overlay uses a cream-filled path
+(`#efe6d0`) positioned in the hind-leg area, representing the marrow cavity within the shank
+bones. See ADR-001 for context.
 
 ## Authoritative counts
 
@@ -228,6 +241,33 @@ The defer-or-promote pattern applied here:
 
 Apply this same checklist to the next missing-canonical question: Nigerian `Fuku` (lung)
 in the offal supplement batch.
+
+### ADR-002: Sparse-coverage rendering for offal cuts
+
+**Date:** 2026-06-07
+**Status:** Active
+
+**Decision.** Offal canonicals carry `coverage: "sparse"` in `data/canonicalCuts.ts`. The
+`app/cuts/[canonical]/page.tsx` template suppresses "Countries that use it" and "Names by
+country" sections when `cutRow.coverage === "sparse"`. A render-time safety net additionally
+filters any `namesByCountry` row whose name (case-insensitive, trimmed) exactly equals the
+canonical's title-cased ID string — this catches silent English-fallback strings on any cut,
+regardless of its coverage flag.
+
+**Rationale.** Offal cuts have sparse researched regional vocabulary by design. Only the
+countries where a cut has a distinct retail term get an entry (e.g. tongue: USA "Beef tongue",
+Mexico "Lengua", France "Langue de boeuf", UK "Ox tongue"). For the remaining ~110 regions no
+researched data exists — rendering their canonical English name as a "translation" asserts false
+coverage and harms dataset credibility. Suppression is the honest choice.
+
+**Future re-coverage path.** A future Tier 3 batch (Asado/BBQ-Traditions: Argentine achuras,
+Western North American nose-to-tail, Spanish criadillas, Turkish ocakbaşı, Nigerian Orishirishi,
+Chadian Marara) will add cultural-prep Tier 3 nodes referencing the offal canonicals — but as
+cross-regional architectural axes, not as country-by-country regional-name fills.
+
+**New-cut checklist.** When adding a canonical with thin coverage, set `coverage: "sparse"`.
+Do not rely on the safety net alone — the flag captures editorial intent; the safety net catches
+accidents.
 
 ---
 

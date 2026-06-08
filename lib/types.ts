@@ -201,12 +201,25 @@ export type CanonicalId =
   | "skin" | "liver" | "heart" | "kidney"
   | "intestines" | "head_cheek";
 
+/**
+ * 'global'  — country-by-country regional names are researched and meaningful.
+ *             The cut appears across many markets with distinct retail vocabulary.
+ * 'sparse'  — regional names are only researched for the few countries where the
+ *             cut has a distinct retail term. Country-list sections must be omitted
+ *             on cut pages to avoid asserting false translations for uncovered markets.
+ *             Defaults to 'global' when the field is absent (backward-compatible).
+ */
+export type CoverageDensity = "global" | "sparse";
+
 export type CanonicalCut = {
   id: CanonicalId;
   primal: string;
   location: string;
   description: string;
   aliases?: readonly string[];
+  /** Defaults to "global" when omitted. Set to "sparse" on offal and other
+   *  thin-coverage canonicals so the template suppresses country-list sections. */
+  coverage?: CoverageDensity;
 };
 
 /**

@@ -150,38 +150,51 @@ export default async function CanonicalHubPage({ params }: PageProps) {
           aria-label="Explanation"
         >
           <p>
-            Use the sections below for country-by-country retail names, translation
-            deep-links, and comparisons—terminology matches the Cutranslator
-            canonical entities ({canonicalEntityTerm(id)}).
+            {cutRow?.coverage === "sparse"
+              ? `Use the sections below for translation deep-links and comparisons—terminology matches the Cutranslator canonical entities (${canonicalEntityTerm(id)}).`
+              : `Use the sections below for country-by-country retail names, translation deep-links, and comparisons—terminology matches the Cutranslator canonical entities (${canonicalEntityTerm(id)}).`}
           </p>
         </section>
 
         <PAASection items={paaItems} />
 
-        <section className="mt-10">
-          <h2 className="text-xl font-semibold text-[var(--text-primary)]">
-            Countries that use it
-          </h2>
-          <p className="mt-3 text-[var(--text-muted)]">
-            {content.countries.map((c) => c.label).join(" · ")}
-          </p>
-        </section>
+        {cutRow?.coverage !== "sparse" && (
+          <>
+            <section className="mt-10">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)]">
+                Countries that use it
+              </h2>
+              <p className="mt-3 text-[var(--text-muted)]">
+                {content.countries.map((c) => c.label).join(" · ")}
+              </p>
+            </section>
 
-        <section className="mt-10">
-          <h2 className="text-xl font-semibold text-[var(--text-primary)]">
-            Names by country
-          </h2>
-          <ul className="mt-4 space-y-3 text-[var(--text-muted)]">
-            {content.namesByCountry.map((row) => (
-              <li key={row.region}>
-                <span className="font-medium text-[var(--text-primary)]">
-                  {row.label}
-                </span>
-                : {row.names}
-              </li>
-            ))}
-          </ul>
-        </section>
+            <section className="mt-10">
+              <h2 className="text-xl font-semibold text-[var(--text-primary)]">
+                Names by country
+              </h2>
+              <ul className="mt-4 space-y-3 text-[var(--text-muted)]">
+                {content.namesByCountry
+                  .filter((row) => {
+                    // Safety net: hide rows where the regional name is just the
+                    // canonical English term — these are silent fallbacks, not
+                    // researched translations. Catches credibility leaks on any cut.
+                    const norm = (s: string) =>
+                      s.toLowerCase().trim().replace(/\s+/g, " ");
+                    return norm(row.names) !== norm(titleCaseId(raw));
+                  })
+                  .map((row) => (
+                    <li key={row.region}>
+                      <span className="font-medium text-[var(--text-primary)]">
+                        {row.label}
+                      </span>
+                      : {row.names}
+                    </li>
+                  ))}
+              </ul>
+            </section>
+          </>
+        )}
 
         {whatIsLinks.length > 0 && (
           <section className="mt-10">

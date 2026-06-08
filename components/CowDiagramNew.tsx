@@ -57,7 +57,9 @@ export function CowDiagramNew({ highlights, showPrimals = false }: Props) {
       .catch(() => {});
 
     highlights.forEach((h) => {
-      fetch(`/svg/canonical/${h.canonicalId}.svg`)
+      const canonicalRow = getCanonicalById(h.canonicalId);
+      const subdir = canonicalRow?.primal === "offal" ? "offal" : "canonical";
+      fetch(`/svg/${subdir}/${h.canonicalId}.svg`)
         .then((r) => (r.ok ? r.text() : null))
         .then((raw) => {
           if (!raw) return;
