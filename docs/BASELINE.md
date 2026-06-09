@@ -245,29 +245,22 @@ in the offal supplement batch.
 ### ADR-002: Sparse-coverage rendering for offal cuts
 
 **Date:** 2026-06-07
-**Status:** Active
+**Status: Superseded** by ADR-004 (PR 3). See `docs/adr/ADR-002.md` for the full archived
+record. Sparse-coverage logic was retired; offal cuts now live at `/offal`. The main tool
+renders all canonicals uniformly. `CoverageDensity` type and all `coverage: "sparse"` fields
+removed from the codebase.
 
-**Decision.** Offal canonicals carry `coverage: "sparse"` in `data/canonicalCuts.ts`. The
-`app/cuts/[canonical]/page.tsx` template suppresses "Countries that use it" and "Names by
-country" sections when `cutRow.coverage === "sparse"`. A render-time safety net additionally
-filters any `namesByCountry` row whose name (case-insensitive, trimmed) exactly equals the
-canonical's title-cased ID string — this catches silent English-fallback strings on any cut,
-regardless of its coverage flag.
+### ADR-004: Two-product architecture — main tool and offal product
 
-**Rationale.** Offal cuts have sparse researched regional vocabulary by design. Only the
-countries where a cut has a distinct retail term get an entry (e.g. tongue: USA "Beef tongue",
-Mexico "Lengua", France "Langue de boeuf", UK "Ox tongue"). For the remaining ~110 regions no
-researched data exists — rendering their canonical English name as a "translation" asserts false
-coverage and harms dataset credibility. Suppression is the honest choice.
+**Date:** 2026-06-08
+**Status:** Accepted
 
-**Future re-coverage path.** A future Tier 3 batch (Asado/BBQ-Traditions: Argentine achuras,
-Western North American nose-to-tail, Spanish criadillas, Turkish ocakbaşı, Nigerian Orishirishi,
-Chadian Marara) will add cultural-prep Tier 3 nodes referencing the offal canonicals — but as
-cross-regional architectural axes, not as country-by-country regional-name fills.
+See `docs/adr/ADR-004.md` for the full record.
 
-**New-cut checklist.** When adding a canonical with thin coverage, set `coverage: "sparse"`.
-Do not rely on the safety net alone — the flag captures editorial intent; the safety net catches
-accidents.
+**Summary.** Two products, shared canonical layer, separate everything else. Main tool:
+`/cuts/[canonical]`, muscle cuts × country pairs. Offal product: `/offal/...`, offal cuts ×
+cultural traditions. Shared: `CanonicalId` union (`lib/types.ts`). Separate: routes, templates,
+data, Tier 3 nodes, diagram handling.
 
 ---
 
@@ -282,3 +275,24 @@ accidents.
 | Low | Zambia, Mozambique, Madagascar | Southern Africa expansion |
 | Low | Levant (Iraq, Jordan, Lebanon, Syria) | Middle East fill |
 | Low | Caucasus / remaining Central Asia (Georgia, Armenia, Azerbaijan, Kyrgyzstan) | |
+
+---
+
+## Product Architecture (as of PR 3)
+
+Two products share one repository and one canonical layer:
+
+| Product | Route | Dataset | Primary value |
+|---|---|---|---|
+| Main tool | `/cuts/[canonical]` | Muscle cuts × country pairs | Cross-country name translation |
+| Offal product | `/offal/cuts/[id]`, `/offal/traditions/[id]` | Offal cuts × cultural traditions | Culinary/cultural reference |
+
+**Shared:** `CanonicalId` union (`lib/types.ts`) — anatomical truth does not fork.
+
+**Separate:** routes, page templates, data files (`lib/offalData.ts`), Tier 3 nodes, diagram
+handling, tradition data, SVG overlay directories.
+
+**Cross-linking:** offal canonicals remain reachable at `/cuts/[canonical]` in the main tool
+with a cross-link pointing to their dedicated `/offal/cuts/[id]` page.
+
+See `docs/adr/ADR-004.md` for the full architectural decision record.
