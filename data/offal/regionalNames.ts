@@ -443,6 +443,421 @@ const IT: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Spain (ES) ───────────────────────────────────────────────────────────────
+
+const ES: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "ES",
+    localName: "lengua de vacuno",
+    altNames: ["lengua de ternera"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "ES",
+    localName: "callos",
+    confidence: "high",
+    traditionIds: ["callos-madrilenos"],
+  },
+  {
+    canonicalId: "liver",
+    country: "ES",
+    localName: "hígado de vacuno",
+    altNames: ["hígado de ternera"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "ES",
+    localName: "corazón de vacuno",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "ES",
+    localName: "riñones de ternera",
+    altNames: ["riñones de vacuno"],
+    confidence: "high",
+    traditionIds: ["rinones-al-jerez"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "ES",
+    localName: "tripas",
+    altNames: ["intestinos"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "skin",
+    country: "ES",
+    localName: "piel de vacuno",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "ES",
+    localName: "tendón de vacuno",
+    confidence: "medium",
+    traditionIds: ["callos-madrilenos"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "ES",
+    localName: "carrillera",
+    altNames: ["carrillada", "cabeza de ternera"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "ES",
+    localName: "tuétano",
+    confidence: "high",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "ES",
+    localName: "mollejas",
+    confidence: "high",
+  },
+  {
+    canonicalId: "testicles",
+    country: "ES",
+    localName: "criadillas",
+    altNames: ["criadillas de toro"],
+    confidence: "high",
+  },
+];
+
+// ─── Nigeria (NG) ─────────────────────────────────────────────────────────────
+
+const NG: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "NG",
+    localName: "beef tongue",
+    confidence: "medium",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "NG",
+    localName: "shaki",
+    confidence: "high",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "liver",
+    country: "NG",
+    localName: "liver",
+    altNames: ["ẹdọ"],
+    confidence: "high",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "heart",
+    country: "NG",
+    localName: "heart",
+    confidence: "high",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "NG",
+    localName: "kidney",
+    confidence: "high",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "NG",
+    localName: "roundabout",
+    confidence: "high",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "skin",
+    country: "NG",
+    localName: "ponmo",
+    altNames: ["kpomo", "kanda"],
+    confidence: "high",
+    traditionIds: ["ponmo"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "NG",
+    localName: "ponmo tissues",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "NG",
+    localName: "head meat",
+    confidence: "high",
+    traditionIds: ["orishirishi"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "NG",
+    localName: "bone marrow",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "NG",
+    localName: "assorted meat",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "testicles",
+    country: "NG",
+    localName: "testicles",
+    confidence: "medium",
+  },
+];
+
+// ─── Philippines (PH) ─────────────────────────────────────────────────────────
+
+const PH: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "PH",
+    localName: "dila ng baka",
+    confidence: "high",
+    traditionIds: ["lengua-estofada"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "PH",
+    localName: "tuwalya",
+    altNames: ["tripas ng baka"],
+    confidence: "high",
+    traditionIds: ["kare-kare", "goto"],
+  },
+  {
+    canonicalId: "liver",
+    country: "PH",
+    localName: "atay ng baka",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "PH",
+    localName: "puso ng baka",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "PH",
+    localName: "bato ng baka",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "PH",
+    localName: "bituka ng baka",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "skin",
+    country: "PH",
+    localName: "balat ng baka",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "PH",
+    localName: "litid ng baka",
+    confidence: "high",
+    traditionIds: ["kare-kare", "bulalo"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "PH",
+    localName: "ulo ng baka",
+    altNames: ["pisngi ng baka"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "PH",
+    localName: "utak ng buto",
+    confidence: "high",
+    traditionIds: ["bulalo"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "PH",
+    localName: "laman-loob",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "testicles",
+    country: "PH",
+    localName: "bayag ng baka",
+    confidence: "medium",
+  },
+];
+
+// ─── Turkey (TR) ─────────────────────────────────────────────────────────────
+
+const TR: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "TR",
+    localName: "dil",
+    altNames: ["dana dili"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "TR",
+    localName: "işkembe",
+    confidence: "high",
+    traditionIds: ["iskembe-corbasi"],
+  },
+  {
+    canonicalId: "liver",
+    country: "TR",
+    localName: "ciğer",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "TR",
+    localName: "yürek",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "TR",
+    localName: "böbrek",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "TR",
+    localName: "bağırsak",
+    altNames: ["kokoreç"],
+    confidence: "high",
+    traditionIds: ["kokorec"],
+  },
+  {
+    canonicalId: "skin",
+    country: "TR",
+    localName: "deri",
+    altNames: ["dana derisi"],
+    confidence: "medium",
+    traditionIds: ["kelle-paca"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "TR",
+    localName: "kiriş",
+    altNames: ["dana tendonu"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "TR",
+    localName: "kelle",
+    altNames: ["yanak"],
+    confidence: "high",
+    traditionIds: ["kelle-paca"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "TR",
+    localName: "kemik iliği",
+    confidence: "high",
+    traditionIds: ["kelle-paca"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "TR",
+    localName: "uykuluk",
+    confidence: "high",
+    traditionIds: ["kokorec"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "TR",
+    localName: "koç yumurtası",
+    speciesNote: "traditionally ram, not beef",
+    confidence: "high",
+  },
+];
+
+// ─── Ethiopia (ET) ────────────────────────────────────────────────────────────
+// Note: ET skin, tendon, and sweetbreads are intentionally omitted —
+// no culinary tradition documented (skin/tendon) or confidence too low (sweetbreads).
+
+const ET: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "ET",
+    localName: "milas",
+    nativeScript: "ምላስ",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tripe",
+    country: "ET",
+    localName: "cheguara",
+    nativeScript: "ጨጓራ",
+    confidence: "high",
+    traditionIds: ["dulet"],
+  },
+  {
+    canonicalId: "liver",
+    country: "ET",
+    localName: "gubet",
+    nativeScript: "ጉበት",
+    confidence: "high",
+    traditionIds: ["dulet"],
+  },
+  {
+    canonicalId: "heart",
+    country: "ET",
+    localName: "lib",
+    nativeScript: "ልብ",
+    confidence: "medium",
+    traditionIds: ["dulet"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "ET",
+    localName: "kulalit",
+    nativeScript: "ኩላሊት",
+    confidence: "medium",
+    traditionIds: ["dulet"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "ET",
+    localName: "internal organs",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "ET",
+    localName: "head meat",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "ET",
+    localName: "bone marrow",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "testicles",
+    country: "ET",
+    localName: "testicles",
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -451,4 +866,9 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...KR,
   ...FR,
   ...IT,
+  ...ES,
+  ...NG,
+  ...PH,
+  ...TR,
+  ...ET,
 ];

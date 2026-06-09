@@ -40,6 +40,11 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   KR: "South Korea",
   FR: "France",
   IT: "Italy",
+  ES: "Spain",
+  NG: "Nigeria",
+  PH: "Philippines",
+  TR: "Turkey",
+  ET: "Ethiopia",
 };
 
 /** All offal regional name entries across all countries. */
@@ -524,6 +529,212 @@ const traditions: readonly OffalTradition[] = [
       "is dipped in the cooking broth (bagnato). Topped with salsa verde (parsley, garlic, " +
       "capers, anchovy) and a spicy red sauce (salsa piccante). Eaten immediately.",
     cuts: ["tripe"],
+  },
+
+  // ── Spain ───────────────────────────────────────────────────────────────────
+
+  {
+    id: "callos-madrilenos",
+    name: "Callos a la Madrileña",
+    region: "Europe — Spain (Madrid)",
+    summary:
+      "Spain's most famous tripe dish. Beef tripe and tendon-rich tissues slow-braised " +
+      "with chorizo, morcilla, paprika, and garlic in a rich gelatinous stew.",
+    culturalContext:
+      "Originating in Madrid, now consumed nationwide. A fixture of traditional taverns, " +
+      "winter dining, and classic Spanish restaurants. The defining dish of casquería culture.",
+    preparationNotes:
+      "Tripe and tendon-rich tissues braised for many hours with chorizo, morcilla, jamón, " +
+      "paprika, onion, garlic, and spices. Served in earthenware.",
+    cuts: ["tripe", "tendon"],
+  },
+  {
+    id: "rinones-al-jerez",
+    name: "Riñones al Jerez",
+    region: "Europe — Spain (Andalusia)",
+    summary:
+      "Kidneys quickly sautéed and finished with Jerez sherry. One of Spain's most iconic " +
+      "offal tapas, especially associated with Andalusia and sherry-producing regions.",
+    culturalContext:
+      "A classic of tapas bar culture. Sherry production regions in Andalusia developed the " +
+      "most celebrated versions. Frequently appears in traditional Spanish cookbooks.",
+    preparationNotes:
+      "Kidneys carefully cleaned, sliced, quickly sautéed in olive oil with garlic and " +
+      "parsley, deglazed with fino or amontillado sherry.",
+    cuts: ["kidney"],
+  },
+
+  // ── Nigeria ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "orishirishi",
+    name: "Orishirishi — Nigerian Assorted Meat",
+    region: "Africa — Nigeria",
+    summary:
+      "The foundational Nigerian offal tradition. Multiple organs and connective tissues " +
+      "combined into soups, stews, and pepper soups. Not a single dish but a cultural " +
+      "system of whole-animal utilization.",
+    culturalContext:
+      "Consumed across all ethnic groups and economic classes. Appears in street food, " +
+      "home cooking, and celebratory meals. Ponmo and shaki are its most commercially " +
+      "important components.",
+    preparationNotes:
+      "Organs boiled separately until tender, then combined in heavily seasoned soups " +
+      "with peppers, onions, stock cubes, and local spice blends.",
+    cuts: ["tripe", "heart", "kidney", "liver", "intestines", "tongue", "head_cheek"],
+  },
+  {
+    id: "ponmo",
+    name: "Ponmo",
+    region: "Africa — Nigeria",
+    summary:
+      "Nigeria's most commercially important cattle by-product. Beef skin singed, scraped, " +
+      "boiled, and added to soups and stews for texture. Consumed across all social classes.",
+    culturalContext:
+      "Functions almost as its own food category. Demand is strong enough that ponmo is " +
+      "traded as an independent commodity. Valued for chewy texture and collagen rather " +
+      "than flavor.",
+    preparationNotes:
+      "Skin singed over flame, scraped clean, boiled until soft. Added to pepper soup, " +
+      "stews, and rice dishes. Texture ranges from firm to soft depending on cooking time.",
+    cuts: ["skin"],
+  },
+
+  // ── Philippines ──────────────────────────────────────────────────────────────
+
+  {
+    id: "kare-kare",
+    name: "Kare-Kare",
+    region: "Asia — Philippines",
+    summary:
+      "One of the Philippines' most important national dishes. Tripe and tendon simmered " +
+      "in a rich peanut sauce, served with bagoong (fermented shrimp paste). A fiesta and " +
+      "celebration staple.",
+    culturalContext:
+      "Particularly associated with Tagalog regions. Served at family celebrations, " +
+      "fiestas, and special occasions. The peanut sauce and bagoong combination is a " +
+      "defining Filipino flavor pairing.",
+    preparationNotes:
+      "Tripe and tendon simmered until very tender. Peanut sauce made from ground roasted " +
+      "peanuts, annatto, and stock. Served with bagoong on the side.",
+    cuts: ["tripe", "tendon"],
+  },
+  {
+    id: "bulalo",
+    name: "Bulalo",
+    region: "Asia — Philippines (Batangas)",
+    summary:
+      "A rich bone marrow and beef shank soup. One of the Philippines' most beloved beef " +
+      "dishes. Marrow is scooped directly from the bone at the table.",
+    culturalContext:
+      "Especially associated with Batangas and Tagaytay. A cold-weather comfort dish. " +
+      "Roadside bulalo restaurants are a defining feature of the Tagaytay–Batangas corridor.",
+    preparationNotes:
+      "Marrow-rich bones and beef shank simmered for many hours with onion, peppercorns, " +
+      "and fish sauce. Served with vegetables and rice. Marrow consumed directly from bone.",
+    cuts: ["bone_marrow", "tendon"],
+  },
+  {
+    id: "lengua-estofada",
+    name: "Lengua Estofada",
+    region: "Asia — Philippines",
+    summary:
+      "Braised beef tongue in mushroom cream sauce. A Spanish-derived festive dish that " +
+      "became fully embedded in Filipino celebration cuisine.",
+    culturalContext:
+      "Served at fiestas, weddings, and holiday gatherings. Spanish colonial influence " +
+      "preserved through Filipino adaptation. One of the most prestigious offal cuts in " +
+      "Filipino festive cooking.",
+    preparationNotes:
+      "Tongue simmered until tender, skin removed, sliced and served in mushroom cream " +
+      "sauce or tomato-based estofado braise.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "goto",
+    name: "Goto",
+    region: "Asia — Philippines",
+    summary:
+      "Beef tripe rice porridge. One of Southeast Asia's most important tripe traditions " +
+      "and a Filipino breakfast staple.",
+    culturalContext:
+      "Sold by street vendors, carinderias, and small restaurants throughout the Philippines. " +
+      "A common breakfast and late-night dish. Particularly associated with urban Tagalog regions.",
+    preparationNotes:
+      "Tripe boiled until tender, added to rice porridge (lugaw) with ginger, garlic, fish " +
+      "sauce. Topped with fried garlic, spring onion, hard-boiled egg, and calamansi.",
+    cuts: ["tripe"],
+  },
+
+  // ── Turkey ───────────────────────────────────────────────────────────────────
+
+  {
+    id: "iskembe-corbasi",
+    name: "İşkembe Çorbası",
+    region: "Middle East — Turkey",
+    summary:
+      "Turkey's most famous tripe soup. Served around the clock in dedicated soup " +
+      "restaurants, especially late at night and early morning. Associated with hangover " +
+      "recovery and winter dining.",
+    culturalContext:
+      "Dedicated işkembe restaurants operate throughout Turkey. A late-night urban " +
+      "institution. Strongly associated with Istanbul street food culture and traditional " +
+      "soup houses.",
+    preparationNotes:
+      "Tripe cleaned extensively and simmered for many hours. Served as garlic-rich soup " +
+      "with vinegar, lemon juice, and red pepper flakes on the side.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "kokorec",
+    name: "Kokoreç",
+    region: "Middle East — Turkey",
+    summary:
+      "Turkey's defining intestine tradition. Cleaned intestines wrapped around sweetbreads " +
+      "and fatty internal tissues, skewered and roasted over charcoal, then chopped and " +
+      "served in bread.",
+    culturalContext:
+      "One of Turkey's most famous street foods. Found throughout the country, especially " +
+      "in coastal cities and Istanbul. Inseparable from late-night urban food culture.",
+    preparationNotes:
+      "Intestines thoroughly cleaned, wrapped tightly around uykuluk and fatty tissues on " +
+      "a horizontal spit. Roasted over charcoal, basted continuously. Chopped fine on the " +
+      "spit, served in bread with oregano and chili.",
+    cuts: ["intestines", "sweetbreads"],
+  },
+  {
+    id: "kelle-paca",
+    name: "Kelle-Paça",
+    region: "Middle East — Turkey",
+    summary:
+      "A whole-head and trotter soup tradition. Head meat, skin, tongue, and marrow-rich " +
+      "bones simmered for many hours. One of Turkey's most important offal soup traditions.",
+    culturalContext:
+      "Dedicated kelle-paça soup houses operate throughout Turkey. Particularly associated " +
+      "with central Anatolia. A restorative winter dish.",
+    preparationNotes:
+      "Head boiled for many hours. Meat, skin, and connective tissues removed from bone. " +
+      "Served as soup with garlic, vinegar, and red pepper flakes.",
+    cuts: ["head_cheek", "skin", "tongue", "bone_marrow"],
+  },
+
+  // ── Ethiopia ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "dulet",
+    name: "Dulet",
+    region: "Africa — Ethiopia",
+    summary:
+      "Ethiopia's most important offal dish. Finely minced liver, tripe, and stomach " +
+      "tissues mixed with spices and clarified butter. Served raw, lightly warmed, or sautéed.",
+    culturalContext:
+      "A classic of Ethiopian butcher-shop dining. Strongly associated with freshness and " +
+      "communal meat-eating. Consumed during holidays, celebrations, and communal slaughter events.",
+    preparationNotes:
+      "Liver, tripe, and stomach tissues finely minced or chopped. Mixed with niter kibbeh, " +
+      "mitmita or berbere spice blend, and onion. Served immediately, raw or lightly cooked " +
+      "to order.",
+    cuts: ["liver", "tripe", "heart", "kidney"],
   },
 ];
 
