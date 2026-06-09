@@ -4,9 +4,13 @@ import { notFound } from "next/navigation";
 import { BreadcrumbBar } from "@/components/BreadcrumbBar";
 import { titleCaseCanonicalId } from "@/lib/content";
 import { isCanonicalId } from "@/lib/canonical";
-import { listOffalCuts, isOffalId, traditionsForCut } from "@/lib/offalData";
-import { canonicalToRegionsMap } from "@/lib/indexes";
-import { regionLabel } from "@/lib/regions";
+import {
+  listOffalCuts,
+  isOffalId,
+  traditionsForCut,
+  getOffalRegionalNamesForCut,
+  OFFAL_COUNTRY_LABELS,
+} from "@/lib/offalData";
 import { loadSvgInner, sanitizeSvgInner } from "@/lib/svgLoader";
 import type { CanonicalId } from "@/lib/types";
 
@@ -50,18 +54,11 @@ export default async function OffalCutPage({ params }: PageProps) {
     ? sanitizeSvgInner(rawOverlay, `offal-${canonicalId}`)
     : null;
 
-  // ── Regional names ───────────────────────────────────────────────────────
-  // Only regions with at least one researched regional name entry are shown.
-  // Hard invariant: if a region appears, it has real data — no greyed states.
-  const regionsWithNames = canonicalToRegionsMap.get(canonicalId);
-  const regionEntries: Array<{ slug: string; label: string }> = regionsWithNames
-    ? [...regionsWithNames]
-        .map((slug) => ({ slug, label: regionLabel(slug) }))
-        .sort((a, b) => a.label.localeCompare(b.label, "en"))
-    : [];
+  // ── Regional names (offal-specific dataset) ──────────────────────────────
+  const regionalNames = getOffalRegionalNamesForCut(canonicalId);
 
   // ── Cross-links ──────────────────────────────────────────────────────────
-  const mainToolExists = isCanonicalId(canonicalId); // always true for offal — they're in CanonicalId
+  const mainToolExists = isCanonicalId(canonicalId);
   const traditions = traditionsForCut(canonicalId);
 
   return (
@@ -112,7 +109,7 @@ export default async function OffalCutPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Regional names / country selector */}
+        {/* Regional names */}
         <section className="mt-10">
           <h2
             className="font-heading text-xl font-semibold"
@@ -121,7 +118,7 @@ export default async function OffalCutPage({ params }: PageProps) {
             Regional names
           </h2>
 
-          {regionEntries.length === 0 ? (
+          {regionalNames.length === 0 ? (
             <p
               className="mt-3 text-sm leading-relaxed"
               style={{ color: "var(--atlas-ink-fade)" }}
@@ -129,21 +126,79 @@ export default async function OffalCutPage({ params }: PageProps) {
               Regional names coming soon — research for this cut is in progress.
             </p>
           ) : (
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {regionEntries.map(({ slug, label }) => (
-                <li key={slug}>
-                  <span
-                    className="inline-block rounded border px-3 py-1 text-sm"
-                    style={{
-                      borderColor: "var(--atlas-paper-deep)",
-                      backgroundColor: "var(--atlas-paper)",
-                      color: "var(--atlas-ink-mute)",
-                    }}
-                  >
-                    {label}
-                  </span>
-                </li>
-              ))}
+            <ul className="mt-4 divide-y" style={{ borderColor: "var(--atlas-paper-deep)" }}>
+              {regionalNames.map((entry) => {
+                const countryLabel =
+                  OFFAL_COUNTRY_LABELS[entry.country] ?? entry.country;
+                return (
+                  <li key={entry.country} className="py-3">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span
+                        className="atlas-mono text-xs font-medium"
+                        style={{ color: "var(--atlas-ink-fade)", minWidth: "7rem" }}
+                      >
+                        {countryLabel}
+                      </span>
+                      <span
+                        className="font-heading font-semibold"
+                        style={{ color: "var(--atlas-ink)" }}
+                      >
+                        {entry.localName}
+                      </span>
+                      {entry.nativeScript && (
+                        <span
+                          className="text-base"
+                          style={{ color: "var(--atlas-ink-mute)" }}
+                        >
+                          {entry.nativeScript}
+                        </span>
+                      )}
+                      <span
+                        className="atlas-mono text-xs"
+                        style={{
+                          color:
+                            entry.confidence === "high"
+                              ? "var(--atlas-moss)"
+                              : entry.confidence === "medium"
+                                ? "var(--atlas-gold)"
+                                : "var(--atlas-ink-fade)",
+                        }}
+                      >
+                        {entry.confidence}
+                      </span>
+                    </div>
+                    {entry.altNames && entry.altNames.length > 0 && (
+                      <p
+                        className="mt-1 text-sm"
+                        style={{ color: "var(--atlas-ink-mute)" }}
+                      >
+                        also: {entry.altNames.join(" · ")}
+                      </p>
+                    )}
+                    {entry.speciesNote && (
+                      <p
+                        className="mt-1 text-xs italic"
+                        style={{ color: "var(--atlas-ink-fade)" }}
+                      >
+                        {entry.speciesNote}
+                      </p>
+                    )}
+                    {entry.traditionIds && entry.traditionIds.length > 0 && (
+                      <p className="mt-1 text-xs" style={{ color: "var(--atlas-ink-fade)" }}>
+                        {entry.traditionIds.map((tid) => (
+                          <Link
+                            key={tid}
+                            href={`/offal/traditions/${tid}`}
+                            className="underline transition-colors hover:text-[var(--atlas-ox-blood)]"
+                          >
+                            Tradition →
+                          </Link>
+                        ))}
+                      </p>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           )}
         </section>

@@ -56,6 +56,14 @@ export default async function OffalTraditionPage({ params }: PageProps) {
         >
           {tradition.region}
         </p>
+        {tradition.speciesNote && (
+          <p
+            className="mt-1 text-xs italic"
+            style={{ color: "var(--atlas-ink-fade)" }}
+          >
+            {tradition.speciesNote}
+          </p>
+        )}
 
         {/* Summary */}
         <p className="mt-5 text-base leading-relaxed" style={{ color: "var(--atlas-ink-mute)" }}>

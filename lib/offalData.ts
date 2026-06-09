@@ -1,5 +1,6 @@
 import { listCanonicalCuts, isCanonicalId } from "@/lib/canonical";
 import type { CanonicalCut, CanonicalId } from "@/lib/types";
+import { offalRegionalNames } from "@/data/offal/regionalNames";
 
 // ─── Offal canonicals ────────────────────────────────────────────────────────
 
@@ -11,6 +12,52 @@ export function isOffalId(s: string): s is CanonicalId {
   if (!isCanonicalId(s)) return false;
   const cut = listCanonicalCuts().find((c) => c.id === s);
   return !!cut && cut.primal === "offal";
+}
+
+// ─── Offal regional names ─────────────────────────────────────────────────────
+
+export type OffalRegionalName = {
+  canonicalId: CanonicalId;
+  /** ISO 3166-1 alpha-2 country code */
+  country: string;
+  /** Romanized primary local name */
+  localName: string;
+  /** Original script rendering (Hanzi, Hangul, etc.) */
+  nativeScript?: string;
+  /** Regional variants or alternative retail names */
+  altNames?: readonly string[];
+  /** Display-only note where veal or other species differs from beef */
+  speciesNote?: string;
+  confidence: "high" | "medium" | "low";
+  /** Offal tradition IDs this name is associated with */
+  traditionIds?: readonly string[];
+};
+
+/** ISO country code → display label for offal regional names. */
+export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
+  MX: "Mexico",
+  CN: "China",
+  KR: "South Korea",
+  FR: "France",
+  IT: "Italy",
+};
+
+/** All offal regional name entries across all countries. */
+export function listOffalRegionalNames(): readonly OffalRegionalName[] {
+  return offalRegionalNames;
+}
+
+/** Regional name entries for a specific canonical ID, sorted by country label. */
+export function getOffalRegionalNamesForCut(
+  cutId: CanonicalId,
+): readonly OffalRegionalName[] {
+  return offalRegionalNames
+    .filter((r) => r.canonicalId === cutId)
+    .sort((a, b) => {
+      const la = OFFAL_COUNTRY_LABELS[a.country] ?? a.country;
+      const lb = OFFAL_COUNTRY_LABELS[b.country] ?? b.country;
+      return la.localeCompare(lb, "en");
+    });
 }
 
 // ─── Traditions ───────────────────────────────────────────────────────────────
@@ -36,6 +83,8 @@ export type OffalTradition = {
   cuts: readonly CanonicalId[];
   /** Optional secondary canonical references */
   relatedCuts?: readonly CanonicalId[];
+  /** Display-only species note (e.g. "Traditionally veal, not beef") */
+  speciesNote?: string;
   /** Optional attribution / research notes */
   sources?: readonly string[];
 };
@@ -198,6 +247,283 @@ const traditions: readonly OffalTradition[] = [
       "Colleen Taylor Sen, Feasts and Fasts: A History of Food in India (2015)",
       "Karim's Restaurant, Old Delhi — menu and historical notes",
     ],
+  },
+
+  // ─── Mexico ─────────────────────────────────────────────────────────────────
+
+  {
+    id: "tacos-de-cabeza",
+    name: "Tacos de Cabeza",
+    region: "North America — Mexico",
+    summary:
+      "The Mexican tradition of slow-cooking the entire beef head and selling individual " +
+      "anatomical parts as taco fillings. Vendors typically offer cachete, lengua, trompa, " +
+      "labio, and often sesos — each to order.",
+    culturalContext:
+      "Tacos de cabeza are central to urban taquería culture across Mexico. The barbacoa de " +
+      "cabeza tradition extends the practice to pit or steam cooking — the whole head wrapped " +
+      "in maguey leaves and cooked underground overnight. What makes tacos de cabeza distinctive " +
+      "is their granularity: customers specify exact anatomical cuts rather than ordering 'beef.' " +
+      "Cachete (cheek), lengua (tongue), trompa (snout), labio (lip), and ojo (eye) are each " +
+      "sold as discrete fillings with individual price points and distinct textures. " +
+      "The tradition is strongest in Mexico City and the surrounding state, but extends " +
+      "through the Bajío and northern cattle states in regional variants.",
+    preparationNotes:
+      "The head is slow-cooked in an earth pit lined with hot coals and maguey leaves " +
+      "(barbacoa) or in large industrial steamers (taquería variant). Cooking time ranges " +
+      "from eight to twelve hours. Parts are chopped to order on a wooden block and served " +
+      "in soft corn tortillas with salsa verde or roja, raw white onion, fresh cilantro, " +
+      "and lime. Broth collected from the cooking vessel is served alongside as consomé.",
+    cuts: ["head_cheek", "tongue", "tendon"],
+  },
+  {
+    id: "tacos-de-tripa",
+    name: "Tacos de Tripa",
+    region: "North America — Mexico",
+    summary:
+      "Beef intestines cleaned, boiled, and finished on a comal or in rendered fat. " +
+      "Served soft or crispy. One of Mexico's most important offal taco categories, " +
+      "with its own dedicated vendor culture.",
+    culturalContext:
+      "Tacos de tripa are strongest in northern cattle states — Sonora, Chihuahua, " +
+      "Coahuila — where cattle processing tradition is deepest. The machitos variant, " +
+      "found in Sonora and Sinaloa, involves intestines wrapped around other organ meats " +
+      "(heart, lung) before grilling — a technique that gives structural integrity to " +
+      "the filling. In taquería culture, customers specify doneness level: suaves (soft, " +
+      "just-cooked) or doradas (crispy, rendered further on the comal). The distinction " +
+      "matters — crispy tripa has a different texture profile and a more intense rendered-fat " +
+      "flavour than the soft version.",
+    preparationNotes:
+      "Intestines are cleaned thoroughly through multiple washes, then parboiled in " +
+      "salted water until tender. For taquería service, portions are finished on a flat " +
+      "comal in their own rendered fat until the customer's preferred doneness. Suaves " +
+      "(soft) leave the comal after light browning; doradas are pressed flat and " +
+      "rendered until the exterior crisps. Served in corn tortillas with salsa and lime.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "menudo",
+    name: "Menudo / Pancita",
+    region: "North America — Mexico",
+    summary:
+      "Mexico's most important tripe dish. A long-simmered broth served on weekends, " +
+      "holidays, and as a hangover remedy. Northern versions use dried red chile; " +
+      "central versions may be white (blanco).",
+    culturalContext:
+      "Menudo is one of the most socially embedded offal traditions in the Americas. " +
+      "It is a communal weekend dish — prepared in large batches that take hours of " +
+      "simmering, eaten at family tables on Sunday mornings, and strongly associated " +
+      "with Christmas, New Year, and quinceañera celebrations. Its reputation as a " +
+      "hangover cure (levantamuertos — 'raises the dead') is part of its cultural " +
+      "identity. Regional variation is significant: northern menudo (rojo) uses dried " +
+      "red chiles (ancho, guajillo) and hominy; central pancita may be white (blanco) " +
+      "without chiles. The dish is also called menudo colorado, menudo blanco, and " +
+      "pancita depending on region and preparation.",
+    preparationNotes:
+      "Honeycomb tripe is cleaned and cut into two-centimetre pieces. For rojo, dried " +
+      "chiles are toasted, soaked, and blended with garlic and onion, then added to the " +
+      "broth. Hominy (maíz cacahuazintle) is added and the pot simmered for four to six " +
+      "hours until tripe is completely tender and broth is deeply flavoured. Served in " +
+      "deep bowls with dried oregano, crushed dried chiles, chopped raw onion, lime " +
+      "wedges, and stacked corn tortillas.",
+    cuts: ["tripe"],
+  },
+
+  // ─── China ───────────────────────────────────────────────────────────────────
+
+  {
+    id: "niuza",
+    name: "Niúzá — Cantonese Mixed Beef Offal",
+    region: "Asia — China (Cantonese)",
+    summary:
+      "The defining beef offal tradition of southern China and Hong Kong. Multiple " +
+      "organs braised together in master stock and served as a unified dish, soup, " +
+      "or noodle topping.",
+    culturalContext:
+      "Niúzá (牛杂) is rooted in Cantonese whole-animal utilization — the practice of " +
+      "extracting value from every part of the animal. In Hong Kong and Guangdong, " +
+      "dedicated niúzá stalls operate in wet markets, dai pai dongs (outdoor eateries), " +
+      "and noodle shops. The dish is consumed at all meal times and is associated with " +
+      "working-class Cantonese eating culture. The defining feature is the braising " +
+      "together of disparate organs in a shared master stock — the flavours unify over " +
+      "hours of slow cooking. Each organ retains a different texture: tripe yielding " +
+      "and chewy, tendon gelatinous, intestines tender with rendered fat.",
+    preparationNotes:
+      "Organs are cleaned and parboiled separately to remove impurities and set texture. " +
+      "They are then unified in a master stock (lou soi) based on soy sauce, five-spice, " +
+      "ginger, and rice wine and braised together for two to three hours. Served over " +
+      "wide rice noodles (ho fun) with hoisin sauce and chili paste, or as a standalone " +
+      "braised platter. The braising liquid is kept active across service — organs added " +
+      "and removed continuously.",
+    cuts: ["tripe", "intestines", "heart", "liver", "tendon"],
+  },
+  {
+    id: "sichuan-hotpot-offal",
+    name: "Sichuan–Chongqing Hot Pot Offal",
+    region: "Asia — China (Sichuan/Chongqing)",
+    summary:
+      "One of the world's largest organized offal consumption traditions. Sichuan and " +
+      "Chongqing hot pot culture treats tripe, intestines, and tongue as premium " +
+      "ingredients cooked tableside in spicy broth.",
+    culturalContext:
+      "Sichuan and Chongqing hot pot restaurants specialize in offal cuts to an extent " +
+      "rare in any other cuisine. Máodǔ (omasum/book tripe) is the prestige cut — " +
+      "briefly dipped for seven to ten seconds in boiling málà broth (tallow-based, " +
+      "chili and Sichuan peppercorn) before eating. The correct dip time is a mark of " +
+      "expertise; overdipped tripe loses its texture. Chongqing hot pot is central to " +
+      "urban dining culture — restaurants seat hundreds at a time, often running " +
+      "twenty-four hours. The tradition has expanded nationally through chain restaurants " +
+      "and is now one of the dominant food formats in Chinese cities.",
+    preparationNotes:
+      "Offal is paper-thin sliced and served raw alongside the table hot pot. Tripe " +
+      "is dipped for seconds in boiling tallow-based broth; tongue is held longer for " +
+      "two to three minutes; tendon is lowered in a wire basket and simmered five to " +
+      "eight minutes until fully gelatinous. Bone marrow bones are added to the pot " +
+      "to enrich the broth. Dipping sauce (sesame paste, oyster sauce, garlic, scallion) " +
+      "accompanies all cuts.",
+    cuts: ["tripe", "tongue", "intestines", "bone_marrow", "tendon"],
+  },
+
+  // ─── South Korea ─────────────────────────────────────────────────────────────
+
+  {
+    id: "gopchang-gui",
+    name: "Gopchang-gui",
+    region: "Asia — South Korea",
+    summary:
+      "South Korea's defining beef offal barbecue tradition. Entire restaurant " +
+      "categories specialize in grilled intestines, tripe, and heart cooked over " +
+      "charcoal at the table.",
+    culturalContext:
+      "Gopchang-gui is inseparable from Korean drinking culture and late-night dining. " +
+      "In Seoul, dedicated gopchang restaurants cluster in Mapo-gu and Euljiro; Daegu " +
+      "is the most important regional centre, especially for makchang (large intestine " +
+      "end section, prized for its fat content). The meal is a social ritual: the grill " +
+      "is managed tableside by staff, scissors are used to cut cooked pieces, and the " +
+      "meal is accompanied by soju or makgeolli. The sequence of cuts matters — " +
+      "gopchang (small intestine) first, then daechang (large intestine), then makchang " +
+      "as the finale. Restaurants that specialize exclusively in gopchang are called " +
+      "gopchangjip and maintain a distinct identity from general Korean barbecue.",
+    preparationNotes:
+      "Intestines are cleaned, fat content preserved, and grilled directly over charcoal " +
+      "at high heat. As the fat renders, it creates a crisp exterior while the interior " +
+      "remains tender. Scissors are used tableside to cut cooked pieces into bite-sized " +
+      "sections. Eaten wrapped in perilla leaf with ssamjang (fermented bean and chili " +
+      "paste), fresh garlic, and green onion. Kkakdugi (radish kimchi) is the canonical " +
+      "accompaniment.",
+    cuts: ["intestines", "tripe", "heart"],
+  },
+
+  // ─── France ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "tripes-caen",
+    name: "Tripes à la Mode de Caen",
+    region: "Europe — France (Normandy)",
+    summary:
+      "France's most famous tripe dish. Multiple stomach chambers slow-cooked for " +
+      "many hours with Normandy cider, Calvados, and aromatics in a sealed earthenware " +
+      "vessel.",
+    culturalContext:
+      "Tripes à la Mode de Caen originated in Normandy and is now a recognized symbol " +
+      "of French regional gastronomy. The dish is historically associated with working-class " +
+      "Norman cooking — utilitarian, slow, and economical. A Confrérie de la Tripière d'Or " +
+      "(Brotherhood of the Golden Tripière) was established to oversee tradition standards " +
+      "and hold annual competitions. The sealed earthenware cooking vessel (tripière) is " +
+      "central to the dish's identity — the seal traps steam and cider vapour, creating a " +
+      "braising environment impossible to replicate in an open pan. The dish is eaten across " +
+      "France but Caen-branded versions carry a distinct prestige.",
+    preparationNotes:
+      "Multiple stomach chambers (rumen, reticulum, omasum, abomasum) plus calf's foot " +
+      "(for gelatin) are sealed in a tripière with Normandy cider, Calvados, carrots, " +
+      "leeks, onion, cloves, and a bouquet garni. The vessel is sealed with a flour-and-water " +
+      "paste and placed in a low oven for ten to twelve hours minimum. Served directly from " +
+      "the tripière in deep bowls. The broth thickens to a glossy, heavily flavoured sauce " +
+      "from the collagen released during cooking.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "tete-de-veau",
+    name: "Tête de Veau",
+    region: "Europe — France",
+    speciesNote: "Traditionally veal, not beef",
+    summary:
+      "One of France's most iconic bistro dishes. Calf head poached whole and served " +
+      "with sauce gribiche or ravigote. Deep historical associations with French " +
+      "republican tradition.",
+    culturalContext:
+      "Tête de veau is a fixture of traditional Parisian bistros and has been served " +
+      "at republican political banquets since the French Revolution — a deliberate " +
+      "symbolic consumption in contrast to royalist 'crown roast' traditions. The dish " +
+      "is associated with the Left in French political culture and was famously eaten " +
+      "at socialist party gatherings in the twentieth century. In contemporary Paris, " +
+      "it marks a specific kind of traditional bistro identity — establishments that " +
+      "maintain the dish signal continuity with French working-class culinary tradition " +
+      "over modern restaurant fashion.",
+    preparationNotes:
+      "The calf head is cleaned, blanched, and poached whole in a court-bouillon of " +
+      "white wine, vinegar, vegetables, and aromatics until completely tender. Served " +
+      "with sliced tongue, facial meat, and historically with brain (now rarer due to " +
+      "BSE regulations). Sauce gribiche — hard-boiled egg–based vinaigrette with " +
+      "capers, cornichons, and herbs — is the canonical accompaniment. Sauce ravigote " +
+      "(vinaigrette with shallots, herbs, capers) is the lighter alternative.",
+    cuts: ["head_cheek", "tongue", "skin"],
+  },
+
+  // ─── Italy ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "quinto-quarto",
+    name: "Quinto Quarto Romano",
+    region: "Europe — Italy (Rome)",
+    summary:
+      "Rome's historic whole-animal offal tradition. After prime cuts were distributed " +
+      "to wealthy buyers, slaughterhouse workers claimed the remaining fifth quarter — " +
+      "organs, offal, and extremities — as their own cuisine.",
+    culturalContext:
+      "The quinto quarto (fifth quarter) tradition is central to Roman working-class " +
+      "identity. Rome's historic slaughterhouse (Mattatoio) operated in the Testaccio " +
+      "neighborhood, and workers were paid partly in offal — the cuts the wealthy buyers " +
+      "did not want. Testaccio remains the epicenter of quinto quarto cooking, with " +
+      "trattorias maintaining active menus of rigatoni con pajata, trippa alla romana, " +
+      "coratella, and other offal preparations. The tradition has been elevated in recent " +
+      "decades by chefs who see it as both cultural preservation and nose-to-tail ethics. " +
+      "Quinto quarto cooking is distinctively Roman rather than generally Italian — " +
+      "Florence has its own separate tradition (lampredotto) and other regions their own.",
+    preparationNotes:
+      "Each organ has distinct preparations: trippa alla romana (honeycomb tripe simmered " +
+      "in tomato sauce with fresh mint and pecorino), pajata (veal intestine still containing " +
+      "milk curds, tied in loops and cooked in tomato sauce, served with rigatoni), " +
+      "coratella (mixed organ sauté of heart, lung, and liver with onion and white wine), " +
+      "and rigatoni con pajata. The cuisine is unified by Roman working-class identity, " +
+      "the tomato-herb-pecorino flavour profile, and the Testaccio neighborhood.",
+    cuts: ["tripe", "intestines", "sweetbreads", "liver", "head_cheek", "kidney"],
+  },
+  {
+    id: "lampredotto",
+    name: "Lampredotto",
+    region: "Europe — Italy (Florence)",
+    summary:
+      "Florence's most important street food. The fourth stomach (abomasum) simmered " +
+      "in aromatic broth, sliced, and served in bread soaked with cooking liquid. " +
+      "Europe's most significant stomach-based street food tradition.",
+    culturalContext:
+      "Lampredotto is a Florentine identity marker with no real equivalent elsewhere in " +
+      "Italian cuisine. Dedicated street vendors (lampredottai) operate from fixed carts " +
+      "throughout Florence — the most celebrated outside the Mercato Centrale and at " +
+      "Nerbone inside the market building. The bread (semelle or rosette) is dipped in " +
+      "the cooking broth — bagnato (wet) is the traditional request; asciutto (dry) is " +
+      "available but considered less authentic. The dish is consumed standing at the cart " +
+      "in the Florentine street-food tradition. It is a lunch and mid-morning food, not " +
+      "typically dinner. The name derives from the lamprey — the stomach's internal " +
+      "texture was thought to resemble the fish.",
+    preparationNotes:
+      "The abomasum (fourth stomach) is simmered for several hours in an aromatic broth " +
+      "of celery, carrot, onion, tomato, and herbs until completely tender. At the cart, " +
+      "it is sliced thin to order, placed in a split roll, and the top half of the roll " +
+      "is dipped in the cooking broth (bagnato). Topped with salsa verde (parsley, garlic, " +
+      "capers, anchovy) and a spicy red sauce (salsa piccante). Eaten immediately.",
+    cuts: ["tripe"],
   },
 ];
 
