@@ -2656,4 +2656,6 @@ export const canonicalLabels: Record<
   kidney: { usa: ["Beef kidney"], uk: ["Ox kidney"], france: ["Rognon de boeuf"] },
   intestines: { usa: ["Beef intestines"], south_korea: ["Gopchang"], northeast_other: ["Aie"] },
   head_cheek: { usa: ["Beef cheek"], france: ["Joue de boeuf"], mexico: ["Cabeza", "Cachete"], uae: ["Beef cheek"] },
+  sweetbreads: { argentina: ["Mollejas"], france: ["Ris de veau"], uk: ["Sweetbreads"], usa: ["Sweetbreads"] },
+  testicles: { usa: ["Rocky Mountain Oysters"], canada: ["Prairie Oysters"], spain: ["Criadillas"], argentina: ["Criadillas"] },
 };

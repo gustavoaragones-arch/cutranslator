@@ -196,10 +196,12 @@ export type CanonicalId =
   | "flap_steak"
   | "top_round_steak" | "bottom_round_roast"
   | "inside_skirt"
-  // Phase 4 — Offal (Batch 25 — SVG overlays Phase-B-pending):
+  // Phase 4 — Offal (Batch 25 — SVG overlays Phase-B-complete):
   | "tongue" | "tripe" | "tendon" | "bone_marrow"
   | "skin" | "liver" | "heart" | "kidney"
-  | "intestines" | "head_cheek";
+  | "intestines" | "head_cheek"
+  // Phase 4 expansion — Offal (Batch 26):
+  | "sweetbreads" | "testicles";
 
 export type CanonicalCut = {
   id: CanonicalId;

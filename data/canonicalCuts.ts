@@ -351,4 +351,22 @@ export const canonicalCuts: readonly CanonicalCut[] = [
     description: "The cheek muscles and facial meat of the beef head, heavily worked and rich in collagen. Slow-braised to become extraordinarily tender — the basis of Mexican barbacoa, Meghalayan dohkhlieh (a head-meat salad), and upscale bistro 'joue de boeuf.' The head is typically steamed or braised whole then the meat stripped and dressed.",
     aliases: ["beef cheek", "joue de boeuf", "barbacoa", "cachete"] as const,
   },
+
+  // ─── Phase 4 expansion — Offal (Batch 26) ────────────────────────────────
+  // SVG overlays to be placed by Gus at public/svg/offal/{id}.svg.
+  // loadSvgInner returns null gracefully when the file is not yet present.
+  {
+    id: "sweetbreads",
+    primal: "offal",
+    location: "Neck/throat (thymus) or abdominal cavity near pancreas",
+    description: "Thymus or pancreas gland. Prized for their delicate, creamy texture and mild, rich flavour. A prestige cut in Argentine asado (mollejas) and French haute cuisine (ris de veau). Often blanched then pan-fried or grilled.",
+    aliases: ["mollejas", "ris de veau", "animelle", "lechecillas"] as const,
+  },
+  {
+    id: "testicles",
+    primal: "offal",
+    location: "Removed at castration — sold as a standalone cut",
+    description: "Bull testicles. Sold and prepared as a standalone cut across multiple cultures. Known as criadillas in Spain and Latin America, Rocky Mountain Oysters in the US west, and Prairie Oysters in Canada. Typically peeled, sliced, and deep-fried or grilled.",
+    aliases: ["criadillas", "rocky mountain oysters", "prairie oysters", "huevos de toro", "animelles"] as const,
+  },
 ] as const;

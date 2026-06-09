@@ -31,8 +31,7 @@ export type OffalTradition = {
   /**
    * Canonical IDs for cuts central to this tradition.
    * All values must exist in the CanonicalId union at commit time.
-   * May be empty when the relevant canonical is not yet shipped
-   * (see ADR-005 for the testicles deferral pattern).
+   * May be empty or partial when a relevant canonical is not yet promoted.
    */
   cuts: readonly CanonicalId[];
   /** Optional secondary canonical references */
@@ -45,10 +44,9 @@ export type OffalTradition = {
 //
 // Cut mapping notes:
 //   argentine-achuras: mondongo → tripe | rinones → kidney | chinchulines → intestines
-//     mollejas (sweetbreads) and morcilla (blood sausage) have no canonical yet —
-//     deferred per ADR-005 pattern; cuts[] will be updated when those canonicals ship.
-//   rocky-mountain-oysters: testicles canonical does not exist yet (ADR-005).
-//     cuts: [] is intentional — tradition page ships now; link added when canonical ships.
+//     mollejas → sweetbreads (canonical added Batch 26) | testicles (canonical added Batch 26)
+//     morcilla is a preparation (blood sausage), not a cut — tradition-only, no canonical planned.
+//   rocky-mountain-oysters: testicles canonical added Batch 26; cuts[] updated.
 //   nalli-nihari: "shank" generic not in union; using fore_shank + hind_shank (nihari
 //     uses the full shank bone with marrow).
 
@@ -82,8 +80,9 @@ const traditions: readonly OffalTradition[] = [
       "grilled whole until the skin blisters and just begins to split. All achuras " +
       "are eaten simply — salt, lemon, and chimichurri only.",
     // mondongo → tripe | rinones → kidney | chinchulines → intestines
-    // mollejas and morcilla deferred — no canonical yet (ADR-005 pattern)
-    cuts: ["tripe", "kidney", "intestines"],
+    // mollejas → sweetbreads | testicles (both canonicals added Batch 26)
+    // morcilla is a preparation (blood sausage), not a cut — tradition-only, no canonical planned
+    cuts: ["tripe", "kidney", "intestines", "sweetbreads", "testicles"],
     sources: [
       "Francis Mallmann, Seven Fires: Grilling the Argentine Way (2009)",
       "Patricio Tapia, Argentine asado traditions (field notes)",
@@ -151,9 +150,7 @@ const traditions: readonly OffalTradition[] = [
       "with a creamy interior and crisp exterior when fresh from the fryer. Served " +
       "immediately with dipping sauce — ranch, cocktail, or hot sauce depending on " +
       "the house.",
-    // Testicles canonical does not exist yet — ADR-005 deferral.
-    // cuts: [] is intentional. This field will be updated when the canonical ships.
-    cuts: [],
+    cuts: ["testicles"],
     sources: [
       "Clinton, Montana Testicle Festival historical records",
       "USDA offal processing guidelines",

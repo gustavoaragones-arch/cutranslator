@@ -59,6 +59,8 @@ export const CANONICAL_ENTITY_TERM: Record<CanonicalId, string> = {
   kidney: "beef kidney",
   intestines: "beef intestines",
   head_cheek: "beef cheek (head cheek)",
+  sweetbreads: "sweetbreads (thymus/pancreas)",
+  testicles: "testicles (criadillas/Rocky Mountain Oysters)",
 };
 
 export function canonicalEntityTerm(id: CanonicalId): string {
