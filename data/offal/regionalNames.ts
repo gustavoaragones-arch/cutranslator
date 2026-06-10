@@ -1947,6 +1947,277 @@ const ID: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Iran (IR) ────────────────────────────────────────────────────────────────
+// Note: IR skin, tendon intentionally omitted.
+
+const IR: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "IR",
+    localName: "zabān",
+    nativeScript: "زبان",
+    confidence: "high",
+    traditionIds: ["kaleh-pacheh"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "IR",
+    localName: "sirābi",
+    nativeScript: "سیرابی",
+    confidence: "high",
+    traditionIds: ["sirabi-sheerdan"],
+  },
+  {
+    canonicalId: "liver",
+    country: "IR",
+    localName: "jegar",
+    nativeScript: "جگر",
+    confidence: "high",
+    traditionIds: ["jigaraki"],
+  },
+  {
+    canonicalId: "heart",
+    country: "IR",
+    localName: "del",
+    nativeScript: "دل",
+    confidence: "high",
+    traditionIds: ["jigaraki"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "IR",
+    localName: "gholveh",
+    nativeScript: "قلوه",
+    confidence: "high",
+    traditionIds: ["jigaraki"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "IR",
+    localName: "rudeh",
+    nativeScript: "روده",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "IR",
+    localName: "kalleh",
+    nativeScript: "کله",
+    confidence: "high",
+    traditionIds: ["kaleh-pacheh"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "IR",
+    localName: "maghz-e ostokhān",
+    nativeScript: "مغز استخوان",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "IR",
+    localName: "donbalān",
+    nativeScript: "دنبلان",
+    terminologyNote:
+      "donbalān refers to glandular tissues broadly in some contexts and testicles specifically " +
+      "in modern restaurant usage. Not identical meaning across regions.",
+    confidence: "high",
+    traditionIds: ["jigaraki"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "IR",
+    localName: "donbalān",
+    nativeScript: "دنبلان",
+    terminologyNote:
+      "In modern Iranian restaurant culture donbalān most commonly refers to testicles. " +
+      "Terminology overlaps with sweetbreads in some contexts.",
+    confidence: "high",
+    traditionIds: ["jigaraki"],
+  },
+  {
+    canonicalId: "brain",
+    country: "IR",
+    localName: "maghz",
+    nativeScript: "مغز",
+    confidence: "high",
+    traditionIds: ["kaleh-pacheh"],
+  },
+];
+
+// ─── Egypt (EG) ───────────────────────────────────────────────────────────────
+// Note: EG skin, tendon, brain intentionally omitted.
+
+const EG: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "EG",
+    localName: "lisān",
+    nativeScript: "لسان",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "EG",
+    localName: "karsha",
+    nativeScript: "كرشة",
+    confidence: "high",
+    traditionIds: ["karsha-traditions"],
+  },
+  {
+    canonicalId: "liver",
+    country: "EG",
+    localName: "kibda",
+    nativeScript: "كبدة",
+    confidence: "high",
+    traditionIds: ["kibda-iskandarani"],
+  },
+  {
+    canonicalId: "heart",
+    country: "EG",
+    localName: "qalb",
+    nativeScript: "قلب",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "EG",
+    localName: "kalawi",
+    nativeScript: "كلاوي",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "EG",
+    localName: "am'ā'",
+    nativeScript: "أمعاء",
+    altNames: ["mombar context"],
+    confidence: "high",
+    traditionIds: ["mombar"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "EG",
+    localName: "ra's",
+    nativeScript: "رأس",
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "EG",
+    localName: "nukhā'",
+    nativeScript: "نخاع",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "EG",
+    localName: "makhasi",
+    nativeScript: "مخاصي",
+    terminologyNote:
+      "makhasi terminology overlaps between sweetbreads and testicles in Egyptian usage. " +
+      "Context-dependent.",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "testicles",
+    country: "EG",
+    localName: "makhasi",
+    nativeScript: "مخاصي",
+    altNames: ["makhasi meshwi"],
+    terminologyNote:
+      "makhasi most commonly refers to testicles in Egyptian butcher and grill culture. " +
+      "Terminology overlaps with sweetbreads in some contexts.",
+    confidence: "high",
+  },
+];
+
+// ─── Brazil (BR) ──────────────────────────────────────────────────────────────
+// Note: BR brain intentionally omitted.
+
+const BR: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "BR",
+    localName: "língua bovina",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "BR",
+    localName: "dobradinha",
+    altNames: ["bucho"],
+    confidence: "high",
+    traditionIds: ["dobradinha"],
+  },
+  {
+    canonicalId: "liver",
+    country: "BR",
+    localName: "fígado bovino",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "BR",
+    localName: "coração bovino",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "BR",
+    localName: "rim bovino",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "intestines",
+    country: "BR",
+    localName: "tripa",
+    altNames: ["intestino bovino"],
+    confidence: "high",
+    traditionIds: ["churrasco-miudos"],
+  },
+  {
+    canonicalId: "skin",
+    country: "BR",
+    localName: "couro bovino",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "BR",
+    localName: "tendão bovino",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "BR",
+    localName: "bochecha",
+    altNames: ["cabeça"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "BR",
+    localName: "tutano",
+    confidence: "high",
+    traditionIds: ["tutano-tradition"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "BR",
+    localName: "molejas",
+    altNames: ["mollejas"],
+    confidence: "medium",
+    traditionIds: ["churrasco-miudos"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "BR",
+    localName: "criadillas",
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1974,4 +2245,7 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...IN,
   ...GR,
   ...ID,
+  ...IR,
+  ...EG,
+  ...BR,
 ];

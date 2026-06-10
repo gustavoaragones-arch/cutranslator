@@ -60,6 +60,9 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   IN: "India",
   GR: "Greece",
   ID: "Indonesia",
+  IR: "Iran",
+  EG: "Egypt",
+  BR: "Brazil",
 };
 
 /** All offal regional name entries across all countries. */
@@ -1536,6 +1539,171 @@ const traditions: readonly OffalTradition[] = [
       "sauce. Skewered and grilled over charcoal. Served with peanut sauce, lontong (compressed rice), " +
       "and pickled vegetables.",
     cuts: ["intestines", "heart", "liver", "kidney"],
+  },
+
+  // ── Iran ──────────────────────────────────────────────────────────────────────
+
+  {
+    id: "kaleh-pacheh",
+    name: "Kaleh Pacheh",
+    region: "Middle East — Iran",
+    summary:
+      "One of the world's most important head-meat traditions. Head components and trotters " +
+      "simmered overnight with turmeric, cinnamon, and onions. Traditionally served as breakfast " +
+      "in dedicated tabbakhi restaurants.",
+    culturalContext:
+      "Diners may specifically order individual head components — cheek, tongue, eye, brain. " +
+      "Strongly associated with winter dining, Ramadan, and traditional morning meals. Comparable " +
+      "to Turkey's kelle-paça and India's siri-paya as one of the world's great head-and-collagen traditions.",
+    preparationNotes:
+      "Head and trotters cleaned and simmered overnight in water with turmeric, cinnamon, onions, " +
+      "and salt. Served with flatbread, lemon, cinnamon, and sometimes dried mint. Each component " +
+      "served separately or together per diner preference.",
+    cuts: ["head_cheek", "tongue", "brain", "bone_marrow"],
+  },
+  {
+    id: "jigaraki",
+    name: "Jigaraki — Iranian Organ Grill",
+    region: "Middle East — Iran",
+    summary:
+      "Iran's defining organ-grill tradition. Dedicated jigaraki restaurants specialize in " +
+      "charcoal-grilled liver, heart, kidney, and specialty glandular organs. Late-night liver " +
+      "grilling is especially prominent in urban areas.",
+    culturalContext:
+      "Jigaraki restaurants are a fixture of Iranian urban food culture. Liver (jegar) is the " +
+      "anchor item; heart, kidney, and donbalān are ordered alongside. Served with flatbread, " +
+      "grilled tomatoes, raw onion, sumac, and lemon. Structurally parallel to Turkey's offal " +
+      "grill culture.",
+    preparationNotes:
+      "Organs cubed or sliced and skewered. Grilled over charcoal with minimal seasoning — salt, " +
+      "lemon, sumac. Liver cooked quickly to preserve tenderness. Donbalān grilled whole or halved.",
+    cuts: ["liver", "heart", "kidney", "sweetbreads", "testicles"],
+  },
+  {
+    id: "sirabi-sheerdan",
+    name: "Sirabi-o-Sheerdan",
+    region: "Middle East — Iran",
+    summary:
+      "Iran's most important tripe and stomach tradition. Tripe meticulously cleaned and slowly " +
+      "simmered for many hours, served in broth with bread, lemon, and spices. Associated with " +
+      "breakfast culture and dedicated tripe restaurants.",
+    culturalContext:
+      "Dedicated sirabi restaurants operate in Iranian cities, especially during colder months. " +
+      "Structurally parallel to Turkey's işkembe çorbası and Greece's patsás as a late-night / " +
+      "early-morning tripe soup tradition.",
+    preparationNotes:
+      "Tripe and stomach tissues meticulously cleaned and simmered for many hours. Served in clear " +
+      "broth with flatbread, lemon juice, dried mint, and spices.",
+    cuts: ["tripe"],
+  },
+
+  // ── Egypt ─────────────────────────────────────────────────────────────────────
+
+  {
+    id: "kibda-iskandarani",
+    name: "Kibda Iskandarani",
+    region: "Middle East — Egypt (Alexandria)",
+    summary:
+      "Egypt's most famous organ dish and one of the Arab world's iconic street foods. Thinly " +
+      "sliced liver rapidly sautéed with garlic, cumin, coriander, chili, and vinegar, served in bread.",
+    culturalContext:
+      "Liver sandwiches are ubiquitous in Alexandria and throughout Egypt. The dish is known " +
+      "across the Arab world as a symbol of Alexandrian street food. Working-class and widely accessible.",
+    preparationNotes:
+      "Liver sliced thin. Sautéed rapidly in hot oil with garlic, green pepper, cumin, coriander, " +
+      "chili, and a splash of vinegar. Served immediately in baladi bread with tahini or garlic sauce.",
+    cuts: ["liver"],
+  },
+  {
+    id: "mombar",
+    name: "Mombar",
+    region: "Middle East — Egypt",
+    summary:
+      "Egypt's most important intestine tradition. Cleaned intestines stuffed with seasoned rice, " +
+      "herbs, and spices, then boiled and fried until crisp. A centerpiece of Eid and family cooking.",
+    culturalContext:
+      "Virtually every Egyptian is familiar with mombar. Especially prominent during Eid al-Adha. " +
+      "One of the strongest stuffed-intestine traditions in the Arab world. Distinct in technique " +
+      "from Turkish kokoreç or Korean gopchang — stuffing rather than wrapping.",
+    preparationNotes:
+      "Intestines cleaned thoroughly. Stuffed with rice mixed with onion, tomato, herbs, spices, " +
+      "and sometimes meat. Tied at intervals. Boiled until cooked through, then pan-fried or baked " +
+      "until skin crisps.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "karsha-traditions",
+    name: "Karsha",
+    region: "Middle East — Egypt",
+    summary:
+      "Egypt's principal tripe tradition. Tripe stuffed with rice and spices (mahshi style) or " +
+      "slow-braised in tomato sauce with garlic. Especially prominent during Eid al-Adha and " +
+      "family celebrations.",
+    culturalContext:
+      "One of Egypt's most recognized offal preparations. The mahshi (stuffed) version is " +
+      "distinctive in global tripe traditions — few countries stuff tripe with rice. Reflects " +
+      "Egypt's broader mahshi culinary tradition.",
+    preparationNotes:
+      "Tripe cleaned extensively. Stuffed with rice, herbs, tomato, onion, and spices. Sewn " +
+      "closed and simmered in tomato sauce or broth until cooked through. Alternatively braised " +
+      "flat in garlic and spice-rich tomato sauce.",
+    cuts: ["tripe"],
+  },
+
+  // ── Brazil ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "dobradinha",
+    name: "Dobradinha",
+    region: "South America — Brazil",
+    summary:
+      "Brazil's most important offal dish and one of Latin America's major tripe traditions. " +
+      "Tripe slow-cooked with white beans, sausage, garlic, tomatoes, and bay leaves.",
+    culturalContext:
+      "Especially associated with Minas Gerais and Rio de Janeiro. A staple of traditional bars, " +
+      "working-class restaurants, and home cooking. Portuguese culinary influence visible in the " +
+      "bean-and-tripe combination. Comparable in national importance to Spain's callos and " +
+      "France's tripes à la mode de Caen.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender. Simmered with white beans, chouriço or linguiça, " +
+      "garlic, onion, tomatoes, bay leaves, and paprika. Long slow cook until beans and tripe " +
+      "are both fully tender.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "tutano-tradition",
+    name: "Tutano Assado",
+    region: "South America — Brazil",
+    summary:
+      "Brazil's most important marrow tradition. Marrow bones roasted or grilled and served with " +
+      "bread, chimichurri, or incorporated into traditional soups. Increasingly prominent in " +
+      "modern churrascaria and restaurant culture.",
+    culturalContext:
+      "Roasted tutano appears in traditional churrascarias and has gained renewed visibility in " +
+      "modern Brazilian gastronomy. Also foundational to traditional soups and stews. Structurally " +
+      "parallel to Argentine tuétano a la parrilla.",
+    preparationNotes:
+      "Marrow bones split or left whole. Roasted in oven or grilled over charcoal. Marrow scooped " +
+      "and spread on bread with coarse salt, parsley, and lemon. Also simmered in mocotó-style " +
+      "soups for collagen extraction.",
+    cuts: ["bone_marrow"],
+  },
+  {
+    id: "churrasco-miudos",
+    name: "Churrasco de Miúdos",
+    region: "South America — Brazil",
+    summary:
+      "Brazil's mixed offal grill tradition. The miúdos equivalent of Argentine achuras — organs " +
+      "grilled over charcoal at churrascarias and family barbecues, especially in southern Brazil.",
+    culturalContext:
+      "Less formalized than Argentine or Uruguayan achura culture but structurally parallel. " +
+      "Strongest in Rio Grande do Sul near the Uruguayan and Argentine borders. The term miúdos " +
+      "covers organs, entrails, and secondary cuts broadly.",
+    preparationNotes:
+      "Organs cleaned and grilled over charcoal with salt and occasionally chimichurri. Intestines " +
+      "cleaned and grilled until crisp. Sweetbreads grilled until golden. Kidneys split and " +
+      "grilled simply.",
+    cuts: ["intestines", "kidney", "heart", "sweetbreads"],
   },
 ];
 
