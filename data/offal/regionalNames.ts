@@ -1662,6 +1662,129 @@ const HU: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── India (IN) ──────────────────────────────────────────────────────────────
+// Single country code covers six regional culinary systems:
+// North India/Mughlai, Hyderabad/Deccan, Kerala, Goa,
+// Northeast India, and West Bengal/Kolkata.
+
+const IN: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "IN",
+    localName: "zubaan",
+    nativeScript: "زبان",
+    altNames: ["naakku (Kerala)", "lingua (Goa)", "jibh (Bengali)"],
+    confidence: "high",
+    traditionIds: ["naakku-roast", "lingua-vindalho"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "IN",
+    localName: "botti",
+    altNames: ["ojhri (اوجھڑی)", "boti", "bhuri (ভুঁড়ি)"],
+    confidence: "high",
+    traditionIds: ["botti-curry", "ojhri-tradition", "nalli-nihari"],
+  },
+  {
+    canonicalId: "liver",
+    country: "IN",
+    localName: "kaleji",
+    nativeScript: "کلیجی",
+    altNames: ["karal (Kerala)", "kolija (Bengali)"],
+    confidence: "high",
+    traditionIds: ["gurda-kaleji", "karal-fry"],
+  },
+  {
+    canonicalId: "heart",
+    country: "IN",
+    localName: "dil",
+    nativeScript: "دل",
+    altNames: ["hridayam (Kerala)"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "IN",
+    localName: "gurda",
+    nativeScript: "گردہ",
+    confidence: "high",
+    traditionIds: ["gurda-kaleji"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "IN",
+    localName: "ojhri",
+    nativeScript: "اوجھڑی",
+    altNames: ["chaal (Kerala)", "boti"],
+    confidence: "high",
+    traditionIds: ["ojhri-tradition", "chaal-roast"],
+  },
+  {
+    canonicalId: "skin",
+    country: "IN",
+    localName: "thol",
+    altNames: ["Kerala regional usage"],
+    confidence: "medium",
+    traditionIds: ["northeast-whole-animal"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "IN",
+    localName: "maghaz-e-haddi tissues",
+    confidence: "medium",
+    traditionIds: ["northeast-whole-animal"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "IN",
+    localName: "siri",
+    nativeScript: "سری",
+    altNames: ["thala (Kerala)", "naakku thala"],
+    confidence: "high",
+    traditionIds: ["siri-paya", "thala-curry"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "IN",
+    localName: "maghaz-e-haddi",
+    nativeScript: "مغز ہڈی",
+    altNames: ["majja (Kerala)", "nalli"],
+    confidence: "high",
+    traditionIds: ["nalli-nihari", "marag"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "IN",
+    localName: "kapura",
+    nativeScript: "کپورا",
+    terminologyNote:
+      "kapura refers to sweetbreads in some North Indian contexts and testicles in others, " +
+      "especially Hyderabad. Never assume identical meaning across regions.",
+    confidence: "medium",
+    traditionIds: ["kapura-fry"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "IN",
+    localName: "kapura",
+    nativeScript: "کپورا",
+    altNames: ["unda (Kerala)"],
+    terminologyNote:
+      "In Hyderabad restaurant culture kapura most commonly means testicles. In North India " +
+      "it may mean sweetbreads or glandular tissues generally. Terminology is not standardized.",
+    confidence: "medium",
+    traditionIds: ["kapura-fry"],
+  },
+  {
+    canonicalId: "brain",
+    country: "IN",
+    localName: "bheja",
+    nativeScript: "بھیجا",
+    altNames: ["bheja fry"],
+    confidence: "high",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1686,4 +1809,5 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...UY,
   ...DE,
   ...HU,
+  ...IN,
 ];

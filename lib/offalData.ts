@@ -28,6 +28,8 @@ export type OffalRegionalName = {
   altNames?: readonly string[];
   /** Display-only note where veal or other species differs from beef */
   speciesNote?: string;
+  /** Note on ambiguous or non-standardized terminology across sub-regions */
+  terminologyNote?: string;
   confidence: "high" | "medium" | "low";
   /** Offal tradition IDs this name is associated with */
   traditionIds?: readonly string[];
@@ -55,6 +57,7 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   UY: "Uruguay",
   DE: "Germany",
   HU: "Hungary",
+  IN: "India",
 };
 
 /** All offal regional name entries across all countries. */
@@ -1184,6 +1187,224 @@ const traditions: readonly OffalTradition[] = [
       "paprika added, then slow-simmered with garlic, peppers, and stock until tender. " +
       "Served with bread.",
     cuts: ["testicles"],
+  },
+
+  // ── India ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "gurda-kaleji",
+    name: "Gurda-Kaleji",
+    region: "South Asia — India (North India / Mughlai)",
+    summary:
+      "North India's most important named offal tradition. Kidney and liver rapidly stir-fried " +
+      "together with onions, ginger, garlic, tomatoes, green chilies, and garam masala. Found " +
+      "in street markets, Muslim neighborhoods, and Eid celebrations throughout the Mughlai belt.",
+    culturalContext:
+      "Gurda-kaleji stalls are a defining feature of evening food culture in Delhi, Lucknow, " +
+      "Aligarh, and other historic Mughlai centers. Arguably the strongest kidney-based tradition " +
+      "in South Asia.",
+    preparationNotes:
+      "Both organs cleaned separately. Liver and kidney stir-fried rapidly in hot oil to preserve " +
+      "tenderness. Onions, ginger-garlic paste, tomatoes, green chilies, coriander, and garam " +
+      "masala added. Finished with fresh coriander and lemon.",
+    cuts: ["kidney", "liver"],
+  },
+  {
+    id: "siri-paya",
+    name: "Siri-Paya",
+    region: "South Asia — India / Pakistan",
+    summary:
+      "One of the most important collagen-rich traditions in the Muslim world. Head meat and " +
+      "trotters simmered overnight with aromatic spices into a richly gelatinous broth. Consumed " +
+      "as breakfast in traditional neighborhoods across North India, Hyderabad, and Kolkata.",
+    culturalContext:
+      "Associated with old-city Muslim neighborhoods, Ramadan culture, and communal feasting. " +
+      "Specialist siri-paya vendors open before dawn. The dish is as important in Pakistan as " +
+      "in India — a shared culinary heritage across the subcontinent.",
+    preparationNotes:
+      "Head meat and trotters cleaned and simmered overnight with onions, ginger, garlic, whole " +
+      "spices, and aromatic masala. Broth becomes deeply gelatinous. Served with naan, fresh " +
+      "ginger, green chili, and lemon.",
+    cuts: ["head_cheek", "bone_marrow"],
+  },
+  {
+    id: "ojhri-tradition",
+    name: "Ojhri",
+    region: "South Asia — India (North India / Mughlai)",
+    summary:
+      "North India's major digestive-organ tradition. Intestines and stomach tissues extensively " +
+      "cleaned and slow-cooked in chili-rich masalas. Especially associated with Eid slaughter " +
+      "and traditional Muslim eateries.",
+    culturalContext:
+      "Dedicated ojhri vendors exist in some cities. Particularly prominent during Eid al-Adha. " +
+      "Remains an important community food despite declining mainstream visibility.",
+    preparationNotes:
+      "Extensive cleaning essential. Braised with onions, ginger, garlic, turmeric, coriander, " +
+      "cumin, chili, and garam masala until tender.",
+    cuts: ["intestines", "tripe"],
+  },
+  {
+    id: "marag",
+    name: "Marag",
+    region: "South Asia — India (Hyderabad)",
+    summary:
+      "One of the most important marrow-rich soups in South Asia. Marrow bones simmered for " +
+      "many hours with onions, spices, ginger, garlic, and sometimes cream or yogurt. A " +
+      "Hyderabadi wedding staple.",
+    culturalContext:
+      "Traditionally served at Hyderabadi Muslim weddings and major celebrations. Rich, white, " +
+      "fragrant broth. Considered a mark of culinary prestige. Classified globally alongside " +
+      "nihari, bulalo, and gomtang as a premier marrow soup tradition.",
+    preparationNotes:
+      "Marrow-rich bones simmered many hours with onions, whole spices, green chilies, ginger, " +
+      "garlic, and yogurt. Broth strained and finished with fried onions, fresh coriander, " +
+      "and lemon.",
+    cuts: ["bone_marrow"],
+  },
+  {
+    id: "kapura-fry",
+    name: "Kapura Fry",
+    region: "South Asia — India (Hyderabad)",
+    summary:
+      "Hyderabad's most distinctive glandular offal tradition. In Hyderabadi restaurant culture, " +
+      "kapura most commonly refers to testicles, parboiled and fried with onions, green chilies, " +
+      "black pepper, and garam masala.",
+    culturalContext:
+      "One of India's strongest testicle traditions and unusually visible in a commercial " +
+      "restaurant context. Hyderabad's kapura culture is more developed than almost anywhere " +
+      "else in South Asia. Note: kapura terminology is not standardized across India — see " +
+      "terminologyNote on IN testicles and sweetbreads entries.",
+    preparationNotes:
+      "Parboiled, membrane removed, sliced. Fried in oil with onions, ginger-garlic paste, " +
+      "green chilies, black pepper, coriander, and garam masala. Finished with lemon.",
+    cuts: ["testicles", "sweetbreads"],
+  },
+  {
+    id: "botti-curry",
+    name: "Botti Curry / Botti Roast",
+    region: "South Asia — India (Kerala)",
+    summary:
+      "Kerala's most important tripe tradition and arguably the strongest tripe preparation in " +
+      "India. Tripe pressure-cooked then simmered with black pepper, curry leaves, coconut oil, " +
+      "and spices.",
+    culturalContext:
+      "Found throughout Kerala in homes, roadside restaurants, toddy shops, and Muslim eateries. " +
+      "Unlike North Indian tripe traditions that favor slow gravies, Kerala's botti uses the " +
+      "distinctive pepper-and-curry-leaf flavor profile of the region.",
+    preparationNotes:
+      "Tripe cleaned and pressure-cooked. Simmered with onions, ginger, garlic, black pepper, " +
+      "chili, turmeric, coriander, curry leaves, and coconut oil. Dry-roast (ularthiyathu) " +
+      "variant reduces gravy until coating.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "chaal-roast",
+    name: "Chaal Roast",
+    region: "South Asia — India (Kerala / Malabar)",
+    summary:
+      "Kerala's defining intestine tradition and one of the strongest in South Asia. Beef " +
+      "intestines pressure-cooked then roasted with black pepper, curry leaves, fennel, coconut " +
+      "oil, and spices.",
+    culturalContext:
+      "Especially important in Malabar Muslim cuisine and toddy-shop culture. Chaal roast is a " +
+      "recognized specialty rather than an everyday dish. Far more prominent in Kerala than " +
+      "intestine dishes elsewhere in India.",
+    preparationNotes:
+      "Intestines cleaned extensively and pressure-cooked. Roasted with onions, ginger, garlic, " +
+      "black pepper, chili, fennel, curry leaves, and coconut oil until dry and well-coated.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "karal-fry",
+    name: "Karal Fry",
+    region: "South Asia — India (Kerala)",
+    summary:
+      "Kerala's most common liver preparation. Liver quickly stir-fried with onions, black " +
+      "pepper, curry leaves, ginger, garlic, and coconut oil. Ubiquitous in restaurants, toddy " +
+      "shops, and home cooking.",
+    culturalContext:
+      "One of the most everyday offal preparations in India. Karal fry appears across communities " +
+      "— Christian, Muslim, and many Hindu households. The black pepper and curry leaf combination " +
+      "is distinctively Keralite.",
+    preparationNotes:
+      "Liver sliced thin and marinated briefly with turmeric, chili, and pepper. Stir-fried " +
+      "rapidly in hot coconut oil with onions, ginger, garlic, green chilies, curry leaves, " +
+      "and black pepper. Finished with fresh coriander.",
+    cuts: ["liver"],
+  },
+  {
+    id: "naakku-roast",
+    name: "Naakku Roast",
+    region: "South Asia — India (Kerala)",
+    summary:
+      "Kerala's most important tongue tradition and one of India's strongest. Tongue pressure- " +
+      "cooked, peeled, sliced, then roasted with onions, curry leaves, black pepper, and " +
+      "coconut oil.",
+    culturalContext:
+      "Appears in Christian households, Muslim kitchens, and specialty restaurants. Tongue roast " +
+      "is especially common during festive meals and family gatherings. Kerala treats tongue as " +
+      "a prestige cut rather than an everyday ingredient.",
+    preparationNotes:
+      "Tongue pressure-cooked until tender, skin peeled, sliced. Roasted with onions, ginger, " +
+      "garlic, black pepper, green chilies, curry leaves, coconut oil, and garam masala until " +
+      "dry and well-coated.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "thala-curry",
+    name: "Thala Curry",
+    region: "South Asia — India (Kerala)",
+    summary:
+      "Kerala's head-meat tradition. Head pressure-cooked then simmered with onions, black " +
+      "pepper, curry leaves, and roasted spices. Widely consumed across Christian, Muslim, and " +
+      "some Hindu communities.",
+    culturalContext:
+      "Head meat is particularly valued in Muslim and Syrian Christian communities. Thala curry " +
+      "is a recognized specialty in many parts of Kerala rather than a generic preparation.",
+    preparationNotes:
+      "Head meat pressure-cooked with turmeric, salt, and water. Simmered with onions, ginger, " +
+      "garlic, black pepper, coriander, curry leaves, coconut oil, and roasted coconut paste.",
+    cuts: ["head_cheek"],
+  },
+  {
+    id: "lingua-vindalho",
+    name: "Lingua Vindalho",
+    region: "South Asia — India (Goa)",
+    summary:
+      "Goa's most important tongue tradition and one of India's most distinctive. Tongue cooked " +
+      "in vinegar-rich vindalho masala. A centerpiece of Goan Catholic feast cuisine.",
+    culturalContext:
+      "Served at Goan Catholic weddings, Christmas celebrations, and parish feasts. The vindalho " +
+      "technique — deriving from Portuguese vinha d'alhos — transforms tongue into a festive " +
+      "centerpiece. Many Goan cooks consider it a premium ingredient.",
+    preparationNotes:
+      "Tongue simmered until tender, peeled, sliced. Cooked in vindalho masala of vinegar, " +
+      "garlic, dried red chilies, cumin, cinnamon, cloves, and ginger until sauce thickens " +
+      "and coats the meat.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "northeast-whole-animal",
+    name: "Northeast India Whole-Animal Beef Tradition",
+    region: "South Asia — India (Northeast)",
+    summary:
+      "One of Asia's most comprehensive surviving whole-animal bovine food systems. Across " +
+      "Meghalaya, Nagaland, Mizoram, and hill regions of Assam, cattle are utilized with " +
+      "minimal waste through boiling, smoking, roasting, and fermentation-adjacent cooking.",
+    culturalContext:
+      "The cultural unit is the slaughter event, not the individual recipe. Many preparations " +
+      "are community-specific and do not have standardized names. Northeast India has India's " +
+      "strongest intestine culture, strongest head-meat culture, and most complete whole-animal " +
+      "utilization. Comparable in comprehensiveness to Ethiopian dulet culture and highland " +
+      "Southeast Asian traditions.",
+    preparationNotes:
+      "Methods vary by community — boiling, smoking, grilling, roasting, and slow-stewing. " +
+      "Black pepper, local herbs, fermented soybean products, and chilies are common flavor " +
+      "markers. Smoked offal is especially important in Nagaland.",
+    cuts: [
+      "tongue", "tripe", "liver", "heart", "kidney",
+      "intestines", "skin", "tendon", "head_cheek", "bone_marrow",
+    ],
   },
 ];
 

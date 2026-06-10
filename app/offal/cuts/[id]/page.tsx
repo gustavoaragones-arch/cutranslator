@@ -189,6 +189,14 @@ export default async function OffalCutPage({ params }: PageProps) {
                         {entry.speciesNote}
                       </p>
                     )}
+                    {entry.terminologyNote && (
+                      <p
+                        className="mt-1 text-xs"
+                        style={{ color: "var(--atlas-gold)" }}
+                      >
+                        ⚠ {entry.terminologyNote}
+                      </p>
+                    )}
                     {entry.traditionIds && entry.traditionIds.length > 0 && (
                       <p className="mt-1 text-xs" style={{ color: "var(--atlas-ink-fade)" }}>
                         {entry.traditionIds.map((tid) => (
