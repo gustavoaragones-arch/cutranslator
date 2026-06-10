@@ -1293,6 +1293,84 @@ const JP: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Argentina (AR) ──────────────────────────────────────────────────────────
+// Note: AR skin and tendon intentionally omitted — low confidence.
+
+const AR: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "AR",
+    localName: "lengua",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "AR",
+    localName: "mondongo",
+    confidence: "high",
+  },
+  {
+    canonicalId: "liver",
+    country: "AR",
+    localName: "hígado",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "heart",
+    country: "AR",
+    localName: "corazón",
+    confidence: "medium",
+    traditionIds: ["argentine-achuras"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "AR",
+    localName: "riñón",
+    confidence: "high",
+    traditionIds: ["argentine-achuras"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "AR",
+    localName: "chinchulines",
+    altNames: ["tripa gorda"],
+    confidence: "high",
+    traditionIds: ["argentine-achuras"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "AR",
+    localName: "cabeza",
+    altNames: ["cachete"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "AR",
+    localName: "tuétano",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "AR",
+    localName: "mollejas",
+    confidence: "high",
+    traditionIds: ["argentine-achuras"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "AR",
+    localName: "criadillas",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "AR",
+    localName: "sesos",
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1312,4 +1390,5 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...MA,
   ...PE,
   ...JP,
+  ...AR,
 ];

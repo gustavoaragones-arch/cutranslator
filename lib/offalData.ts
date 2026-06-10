@@ -50,6 +50,7 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   MA: "Morocco",
   PE: "Peru",
   JP: "Japan",
+  AR: "Argentina",
 };
 
 /** All offal regional name entries across all countries. */
