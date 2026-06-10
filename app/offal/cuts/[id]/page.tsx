@@ -11,6 +11,9 @@ import {
   getOffalRegionalNamesForCut,
   OFFAL_COUNTRY_LABELS,
 } from "@/lib/offalData";
+import {
+  getAxisNodesForCanonical,
+} from "@/data/offal/axisNodes";
 import { loadSvgInner, sanitizeSvgInner } from "@/lib/svgLoader";
 import type { CanonicalId } from "@/lib/types";
 
@@ -56,6 +59,9 @@ export default async function OffalCutPage({ params }: PageProps) {
 
   // ── Regional names (offal-specific dataset) ──────────────────────────────
   const regionalNames = getOffalRegionalNamesForCut(canonicalId);
+
+  // ── Axis nodes (sub-canonical identities) ────────────────────────────────
+  const axisNodes = getAxisNodesForCanonical(canonicalId);
 
   // ── Cross-links ──────────────────────────────────────────────────────────
   const mainToolExists = isCanonicalId(canonicalId);
@@ -202,6 +208,56 @@ export default async function OffalCutPage({ params }: PageProps) {
             </ul>
           )}
         </section>
+
+        {/* Regional sub-cuts (axis nodes) */}
+        {axisNodes.length > 0 && (
+          <section className="mt-10">
+            <h2
+              className="font-heading text-xl font-semibold"
+              style={{ color: "var(--atlas-ink)" }}
+            >
+              Regional sub-cuts
+            </h2>
+            <ul className="mt-4 divide-y" style={{ borderColor: "var(--atlas-paper-deep)" }}>
+              {axisNodes.map((node) => {
+                const countryLabel =
+                  OFFAL_COUNTRY_LABELS[node.country] ?? node.country;
+                return (
+                  <li key={node.id} className="py-3">
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <span
+                        className="atlas-mono text-xs font-medium"
+                        style={{ color: "var(--atlas-ink-fade)", minWidth: "7rem" }}
+                      >
+                        {countryLabel}
+                      </span>
+                      <span
+                        className="font-heading font-semibold"
+                        style={{ color: "var(--atlas-ink)" }}
+                      >
+                        {node.localName}
+                      </span>
+                      {node.nativeScript && (
+                        <span
+                          className="text-base"
+                          style={{ color: "var(--atlas-ink-mute)" }}
+                        >
+                          {node.nativeScript}
+                        </span>
+                      )}
+                    </div>
+                    <p
+                      className="mt-1 text-sm leading-relaxed"
+                      style={{ color: "var(--atlas-ink-mute)" }}
+                    >
+                      {node.note}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
 
         {/* Cross-links */}
         <section

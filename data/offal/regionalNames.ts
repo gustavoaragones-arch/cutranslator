@@ -875,10 +875,10 @@ const BRAIN: readonly OffalRegionalName[] = [
   { canonicalId: "brain", country: "JP", localName: "nōmiso", nativeScript: "脳みそ", confidence: "medium" },
 ];
 
-// DEFERRED: tripe sub-canonicals (mino/senmai/hachinosu for JP,
-// makchang for KR). Multiple countries now flag distinct stomach
-// chambers as separate culinary ingredients. Architectural decision
-// required before splitting canonical.
+// Tripe sub-canonical architecture resolved in ADR-006 (c1cb321).
+// Distinct stomach chambers modeled as axis nodes in
+// data/offal/axisNodes.ts: maodu_axis_cn, mino_axis_jp,
+// makchang_axis_kr. altNames preserved for search/display.
 
 // ─── United Kingdom (GB) ─────────────────────────────────────────────────────
 // Note: GB skin, tendon, and testicles intentionally omitted —
