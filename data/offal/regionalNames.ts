@@ -1514,6 +1514,154 @@ const UY: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Germany (DE) ────────────────────────────────────────────────────────────
+// Note: DE skin, tendon, testicles, brain intentionally omitted.
+
+const DE: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "DE",
+    localName: "Rinderzunge",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "DE",
+    localName: "Kutteln",
+    altNames: ["Flecke"],
+    confidence: "high",
+    traditionIds: ["saure-kutteln"],
+  },
+  {
+    canonicalId: "liver",
+    country: "DE",
+    localName: "Rinderleber",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "DE",
+    localName: "Rinderherz",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "DE",
+    localName: "Rinderniere",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "DE",
+    localName: "Rinderdarm",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "DE",
+    localName: "Ochsenbacke",
+    altNames: ["Rinderbacke"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "DE",
+    localName: "Knochenmark",
+    confidence: "high",
+    traditionIds: ["markklosschen"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "DE",
+    localName: "Kalbsbries",
+    speciesNote: "traditionally veal not beef",
+    confidence: "high",
+  },
+];
+
+// ─── Hungary (HU) ────────────────────────────────────────────────────────────
+// Note: HU skin and brain intentionally omitted.
+
+const HU: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "HU",
+    localName: "marhanyelv",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "HU",
+    localName: "pacal",
+    confidence: "high",
+    traditionIds: ["pacalporkolt", "hungarian-porkolt-offal"],
+  },
+  {
+    canonicalId: "liver",
+    country: "HU",
+    localName: "marhamáj",
+    confidence: "high",
+    traditionIds: ["hungarian-porkolt-offal"],
+  },
+  {
+    canonicalId: "heart",
+    country: "HU",
+    localName: "marhaszív",
+    confidence: "high",
+    traditionIds: ["hungarian-porkolt-offal"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "HU",
+    localName: "marhavese",
+    confidence: "high",
+    traditionIds: ["hungarian-porkolt-offal"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "HU",
+    localName: "marhabél",
+    altNames: ["bél"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "HU",
+    localName: "ín",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "HU",
+    localName: "pofa",
+    altNames: ["marhafej"],
+    confidence: "high",
+    traditionIds: ["hungarian-porkolt-offal"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "HU",
+    localName: "velő",
+    confidence: "high",
+    traditionIds: ["velős-csont"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "HU",
+    localName: "borjúmirigy",
+    altNames: ["borjúbríz"],
+    speciesNote: "traditionally veal not beef",
+    confidence: "high",
+  },
+  {
+    canonicalId: "testicles",
+    country: "HU",
+    localName: "bikahere",
+    confidence: "high",
+    traditionIds: ["bikahere-porkolt"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1536,4 +1684,6 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...AR,
   ...CL,
   ...UY,
+  ...DE,
+  ...HU,
 ];

@@ -53,6 +53,8 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   AR: "Argentina",
   CL: "Chile",
   UY: "Uruguay",
+  DE: "Germany",
+  HU: "Hungary",
 };
 
 /** All offal regional name entries across all countries. */
@@ -1073,6 +1075,115 @@ const traditions: readonly OffalTradition[] = [
       "crisp. Chinchulines cleaned and grilled until golden. Riñones split and grilled simply " +
       "with salt. Served with lemon and chimichurri.",
     cuts: ["sweetbreads", "intestines", "kidney", "heart", "tongue"],
+  },
+
+  // ── Germany ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "saure-kutteln",
+    name: "Saure Kutteln",
+    region: "Europe — Germany (Swabia)",
+    summary:
+      "Germany's most important tripe tradition. Tripe boiled until tender, sliced into strips, " +
+      "and cooked in a tangy vinegar-based sauce with onions, wine, and herbs. A defining dish " +
+      "of Swabian cuisine.",
+    culturalContext:
+      "Centered in Baden-Württemberg but recognized throughout Germany as the country's flagship " +
+      "tripe preparation. Symbol of southern German butcher and tavern culture. Sometimes called " +
+      "Flecke in regional variants.",
+    preparationNotes:
+      "Tripe cleaned and simmered until tender, sliced into strips. Cooked in roux-based or " +
+      "vinegar-based sauce with onions, white wine, marjoram, and bay leaf. Served with bread " +
+      "or Spätzle.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "markklosschen",
+    name: "Markklößchensuppe",
+    region: "Europe — Germany",
+    summary:
+      "Germany's most distinctive marrow tradition. Bone marrow mixed into dumplings and simmered " +
+      "in clear beef broth. A classic of traditional German and Austrian-influenced cooking.",
+    culturalContext:
+      "Found in traditional restaurants, home cooking, and Sunday lunch traditions throughout " +
+      "Germany. Transforms marrow into a dumpling ingredient rather than serving it directly — " +
+      "an approach unique in global marrow traditions.",
+    preparationNotes:
+      "Marrow extracted from bones, mixed with egg, breadcrumbs, parsley, salt, and nutmeg into " +
+      "small dumplings. Poached in clear beef broth and served as soup course.",
+    cuts: ["bone_marrow"],
+  },
+
+  // ── Hungary ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "pacalporkolt",
+    name: "Pacalpörkölt",
+    region: "Europe — Hungary",
+    summary:
+      "Hungary's most important offal dish and one of Europe's premier tripe traditions. Tripe " +
+      "slow-stewed with onions, lard, paprika, garlic, and peppers in the classic pörkölt style.",
+    culturalContext:
+      "Nationally recognized and found in homes, traditional csárda restaurants, and cooking " +
+      "competitions throughout Hungary. Ranks alongside France's tripes à la mode de Caen, " +
+      "Spain's callos, and Italy's trippa alla romana as a defining European tripe dish.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender. Onions sweated in lard until soft, sweet paprika " +
+      "added off heat. Tripe added with garlic, peppers, and stock. Simmered slowly until sauce " +
+      "thickens. Served with bread or potatoes.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "hungarian-porkolt-offal",
+    name: "Hungarian Pörkölt Offal Tradition",
+    region: "Europe — Hungary",
+    summary:
+      "Hungary's broader offal framework. Multiple organs prepared in the paprika-based pörkölt " +
+      "style — a uniquely Hungarian approach that transforms nearly any organ into a rich, " +
+      "deeply spiced stew.",
+    culturalContext:
+      "Paprika is the defining flavor marker across all Hungarian offal preparations. The pörkölt " +
+      "technique unifies diverse organs under a single culinary identity. Hungary maintains one " +
+      "of Europe's broadest surviving multi-organ traditions.",
+    preparationNotes:
+      "Base of onions sweated in lard, paprika bloomed off heat, organ meat added with garlic " +
+      "and peppers. Long slow simmer until tender. Each organ type has its own timing and " +
+      "cleaning requirements.",
+    cuts: ["tripe", "heart", "kidney", "liver", "testicles", "head_cheek"],
+  },
+  {
+    id: "velős-csont",
+    name: "Velős Csont",
+    region: "Europe — Hungary",
+    summary:
+      "Hungary's most important marrow tradition. Marrow bones roasted or simmered and served " +
+      "with toast, paprika, parsley, and onions. One of Central Europe's most celebrated " +
+      "marrow dishes.",
+    culturalContext:
+      "Common in Budapest restaurants and traditional Hungarian homes. Marrow on toast with " +
+      "paprika and raw onion is a distinctively Hungarian preparation that differs from the " +
+      "French and British versions in its spicing.",
+    preparationNotes:
+      "Marrow bones roasted or poached in broth. Marrow served directly from bone or spread " +
+      "on toast. Seasoned with coarse salt, sweet paprika, chopped raw onion, and parsley.",
+    cuts: ["bone_marrow"],
+  },
+  {
+    id: "bikahere-porkolt",
+    name: "Bikahere Pörkölt",
+    region: "Europe — Hungary",
+    summary:
+      "Hungary's bull testicle stew. One of Europe's most prominent surviving testicle traditions. " +
+      "Prepared in the classic pörkölt style with paprika, onions, garlic, and lard.",
+    culturalContext:
+      "Well known in rural areas, hunting lodges, and traditional butcher culture throughout " +
+      "Hungary. Unusually prominent by European standards — few countries maintain a nationally " +
+      "recognizable testicle preparation. Associated with strength and traditional masculine foodways.",
+    preparationNotes:
+      "Testicles cleaned and membrane removed, cut into pieces. Sweated with onions and lard, " +
+      "paprika added, then slow-simmered with garlic, peppers, and stock until tender. " +
+      "Served with bread.",
+    cuts: ["testicles"],
   },
 ];
 
