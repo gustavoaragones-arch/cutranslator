@@ -1,8 +1,8 @@
 # Cutranslator Dataset Baseline
 
-**Last updated:** 2026-05-31
-**Last batch deployed:** 28 (West Africa Tier 2: Chad + Burkina Faso — Sahel Set COMPLETE)
-**Last data batch:** 28 (West Africa — Chad + Burkina Faso)
+**Last updated:** 2026-06-10
+**Last batch deployed:** 28 (West Africa Tier 2: Chad + Burkina Faso — Sahel Set COMPLETE) / Offal: IR + EG + BR (commit ccb9c25)
+**Last data batch:** 28 (West Africa — Chad + Burkina Faso) / Offal: Iran, Egypt, Brazil
 
 ## Phase B — Offal SVG overlays: COMPLETE
 
@@ -296,3 +296,103 @@ handling, tradition data, SVG overlay directories.
 with a cross-link pointing to their dedicated `/offal/cuts/[id]` page.
 
 See `docs/adr/ADR-004.md` for the full architectural decision record.
+
+---
+
+## Offal Product — Baseline (as of commit ccb9c25)
+
+### Canonicals
+
+13 offal canonicals:
+`tongue`, `tripe`, `liver`, `heart`, `kidney`, `intestines`, `skin`,
+`tendon`, `head_cheek`, `bone_marrow`, `sweetbreads`, `testicles`, `brain`
+
+### Regional Name Entries
+
+**298 entries across 26 countries.**
+
+Country entry counts (authoritative, from grep audit):
+
+| Country | Code | Entries |
+|---|---|---|
+| India | IN | 13 |
+| Turkey | TR | 12 |
+| Philippines | PH | 12 |
+| Peru | PE | 12 |
+| Nigeria | NG | 12 |
+| Mexico | MX | 12 |
+| South Korea | KR | 12 |
+| Italy | IT | 12 |
+| France | FR | 12 |
+| Spain | ES | 12 |
+| China | CN | 12 |
+| Brazil | BR | 12 |
+| Vietnam | VN | 11 |
+| Japan | JP | 11 |
+| Iran | IR | 11 |
+| Hungary | HU | 11 |
+| Argentina | AR | 11 |
+| Uruguay | UY | 10 |
+| Morocco | MA | 10 |
+| Indonesia | ID | 10 |
+| Greece | GR | 10 |
+| Egypt | EG | 10 |
+| Chile | CL | 10 |
+| United Kingdom | GB | 9 |
+| Ethiopia | ET | 9 |
+| Germany | DE | 9 |
+
+**Audit commands:**
+```bash
+grep -c "country:" data/offal/regionalNames.ts
+grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
+```
+
+### Tradition Pages
+
+**78 tradition pages.**
+
+### Axis Nodes
+
+3 axis nodes (tripe sub-canonicals per ADR-006):
+`maodu_axis_cn`, `mino_axis_jp`, `makchang_axis_kr`
+
+### SVG Overlays
+
+Pending Illustrator delivery:
+- `public/svg/offal/brain.svg`
+- `public/svg/offal/sweetbreads.svg`
+- `public/svg/offal/testicles.svg`
+
+All three: `viewBox="0 0 711.89 605.37"`
+
+Pages render cow silhouette gracefully when overlay is absent.
+
+### Active ADRs
+
+- **ADR-004:** Two-product split
+- **ADR-005:** Forward-reference discipline
+- **ADR-006:** Tripe sub-canonical axis node approach
+
+### Known Deferred Items
+
+- Brain tradition page updates (`tacos-de-cabeza`, `quinto-quarto`, `fritto-misto`) pending brain research batch
+- Second Ethiopia pass (brain and additional cuts)
+- Third sweep countries: Pakistan, Lebanon/Levant, and others TBD
+- Tripe sub-canonical Option B (full split) deferred pending evidence from 3+ additional cultures
+
+### Count Reconciliation Note
+
+Running batch prompts use expected counts that accumulate drift from intentional omissions.
+The authoritative count is always the grep audit:
+
+```bash
+grep -c "country:" data/offal/regionalNames.ts
+```
+
+Per-country breakdown:
+```bash
+grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
+```
+
+(Ignore duplicate `brain` entries in grep output — these are a display artifact of inline object syntax.)
