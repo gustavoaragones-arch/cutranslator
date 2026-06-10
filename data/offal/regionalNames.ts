@@ -1371,6 +1371,76 @@ const AR: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Chile (CL) ──────────────────────────────────────────────────────────────
+// Note: CL skin, tendon, and brain intentionally omitted —
+// skin/tendon low confidence, brain not documented in research.
+
+const CL: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "CL",
+    localName: "lengua",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "CL",
+    localName: "guatitas",
+    confidence: "high",
+    traditionIds: ["guatitas-chilenas"],
+  },
+  {
+    canonicalId: "liver",
+    country: "CL",
+    localName: "hígado",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "CL",
+    localName: "corazón",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "CL",
+    localName: "riñón",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "CL",
+    localName: "chunchules",
+    confidence: "high",
+    traditionIds: ["chunchules-asados"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "CL",
+    localName: "cabeza",
+    altNames: ["cachete"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "CL",
+    localName: "tuétano",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "CL",
+    localName: "mollejas",
+    confidence: "high",
+  },
+  {
+    canonicalId: "testicles",
+    country: "CL",
+    localName: "criadillas",
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1391,4 +1461,5 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...PE,
   ...JP,
   ...AR,
+  ...CL,
 ];

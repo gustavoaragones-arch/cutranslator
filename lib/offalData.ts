@@ -51,6 +51,7 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   PE: "Peru",
   JP: "Japan",
   AR: "Argentina",
+  CL: "Chile",
 };
 
 /** All offal regional name entries across all countries. */
@@ -1012,6 +1013,43 @@ const traditions: readonly OffalTradition[] = [
       "Tendon blanched, then simmered for 2–3 hours with konnyaku, soy sauce, sake, " +
       "mirin, sugar, and ginger. Served in small portions as izakaya drinking food.",
     cuts: ["tendon"],
+  },
+
+  // ── Chile ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "guatitas-chilenas",
+    name: "Guatitas a la Chilena",
+    region: "South America — Chile",
+    summary:
+      "Chile's most important offal dish. Tripe slow-cooked with onions, garlic, potatoes, " +
+      "peas, paprika, and vegetables into a hearty stew. A cornerstone of traditional " +
+      "Chilean home cooking.",
+    culturalContext:
+      "Found throughout Chile in homes, traditional restaurants, and markets. Comparable in " +
+      "national importance to Peru's cau cau, Spain's callos, and Mexico's menudo. Strongly " +
+      "associated with working-class and family cuisine.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender, then stewed with sofrito of onion, garlic, " +
+      "carrots, potatoes, peas, paprika, and spices. Served with bread or rice.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "chunchules-asados",
+    name: "Chunchules Asados",
+    region: "South America — Chile",
+    summary:
+      "Chile's most distinctive intestine tradition. Cleaned intestines grilled over charcoal " +
+      "until crisp outside and tender inside. A defining feature of Chilean rural barbecue " +
+      "and fonda culture.",
+    culturalContext:
+      "Especially associated with rural southern Chile and Fiestas Patrias celebrations. " +
+      "Related to Argentine chinchulines but with its own Chilean identity. Common at " +
+      "traditional markets and outdoor cookouts.",
+    preparationNotes:
+      "Intestines cleaned thoroughly, seasoned with salt, grilled over charcoal. " +
+      "Served with lemon and pebre (Chilean herb sauce).",
+    cuts: ["intestines"],
   },
 ];
 
