@@ -1441,6 +1441,79 @@ const CL: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Uruguay (UY) ────────────────────────────────────────────────────────────
+// Note: UY skin, tendon, and brain intentionally omitted —
+// skin/tendon low confidence, brain not documented in research.
+
+const UY: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "UY",
+    localName: "lengua",
+    confidence: "high",
+    traditionIds: ["achuras-uruguayas"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "UY",
+    localName: "mondongo",
+    confidence: "high",
+  },
+  {
+    canonicalId: "liver",
+    country: "UY",
+    localName: "hígado",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "heart",
+    country: "UY",
+    localName: "corazón",
+    confidence: "medium",
+    traditionIds: ["achuras-uruguayas"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "UY",
+    localName: "riñón",
+    confidence: "high",
+    traditionIds: ["achuras-uruguayas"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "UY",
+    localName: "chinchulines",
+    confidence: "high",
+    traditionIds: ["achuras-uruguayas"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "UY",
+    localName: "cabeza",
+    altNames: ["cachete"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "UY",
+    localName: "tuétano",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "UY",
+    localName: "mollejas",
+    confidence: "high",
+    traditionIds: ["achuras-uruguayas"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "UY",
+    localName: "criadillas",
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1462,4 +1535,5 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...JP,
   ...AR,
   ...CL,
+  ...UY,
 ];

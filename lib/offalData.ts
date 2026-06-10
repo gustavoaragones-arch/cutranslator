@@ -52,6 +52,7 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   JP: "Japan",
   AR: "Argentina",
   CL: "Chile",
+  UY: "Uruguay",
 };
 
 /** All offal regional name entries across all countries. */
@@ -1050,6 +1051,28 @@ const traditions: readonly OffalTradition[] = [
       "Intestines cleaned thoroughly, seasoned with salt, grilled over charcoal. " +
       "Served with lemon and pebre (Chilean herb sauce).",
     cuts: ["intestines"],
+  },
+
+  // ── Uruguay ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "achuras-uruguayas",
+    name: "Achuras Uruguayas",
+    region: "South America — Uruguay",
+    summary:
+      "The offal framework of Uruguayan asado. Sweetbreads, chinchulines, and kidneys served " +
+      "as the opening course of a parrilla. One of the world's elite offal cultures, organized " +
+      "around collective prestige of multiple cuts rather than a single organ.",
+    culturalContext:
+      "Offal is not niche in Uruguay — it is a standard and celebrated part of barbecue culture " +
+      "consumed at family gatherings, football events, holiday celebrations, and restaurant " +
+      "parrillas. Mollejas are the prestige cut; chinchulines and riñones are the workhorses. " +
+      "Arguably more achura-focused than Argentina.",
+    preparationNotes:
+      "All cuts grilled over wood embers or charcoal. Mollejas blanched first then grilled until " +
+      "crisp. Chinchulines cleaned and grilled until golden. Riñones split and grilled simply " +
+      "with salt. Served with lemon and chimichurri.",
+    cuts: ["sweetbreads", "intestines", "kidney", "heart", "tongue"],
   },
 ];
 
