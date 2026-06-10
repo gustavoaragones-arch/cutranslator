@@ -369,4 +369,16 @@ export const canonicalCuts: readonly CanonicalCut[] = [
     description: "Bull testicles. Sold and prepared as a standalone cut across multiple cultures. Known as criadillas in Spain and Latin America, Rocky Mountain Oysters in the US west, and Prairie Oysters in Canada. Typically peeled, sliced, and deep-fried or grilled.",
     aliases: ["criadillas", "rocky mountain oysters", "prairie oysters", "huevos de toro", "animelles"] as const,
   },
+  {
+    id: "brain",
+    primal: "offal",
+    location: "Cranial cavity",
+    description:
+      "Cerebral tissue. Prized for its delicate, creamy texture. Historically important in Mexican " +
+      "taquería culture (sesos), French bistro cooking (cervelle de veau), Italian fritto misto " +
+      "(cervello), and Spanish tapas (sesos rebozados). Consumption declined in Europe following " +
+      "BSE-related restrictions in the 1990s but remains culturally significant and active in many " +
+      "non-European traditions.",
+    aliases: ["sesos", "cervelle", "cervello", "mokh", "dimag"] as const,
+  },
 ] as const;

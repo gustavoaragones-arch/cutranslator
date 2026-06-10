@@ -57,6 +57,7 @@ export const canonicalSvgPaths: Record<CanonicalId, string> = {
   head_cheek: "/svg/canonical/head_cheek.svg",
   sweetbreads: "/svg/offal/sweetbreads.svg",
   testicles: "/svg/offal/testicles.svg",
+  brain: "/svg/offal/brain.svg",
 };
 
 export const cowSilhouettePath = "/svg/cow.svg";

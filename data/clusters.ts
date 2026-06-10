@@ -59,4 +59,5 @@ export const relatedByCanonical: Record<CanonicalId, readonly CanonicalId[]> = {
   head_cheek: ["tongue"],
   sweetbreads: ["testicles"],
   testicles: ["sweetbreads"],
+  brain: ["head_cheek"],
 };

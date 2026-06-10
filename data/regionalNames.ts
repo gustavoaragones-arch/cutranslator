@@ -2658,4 +2658,5 @@ export const canonicalLabels: Record<
   head_cheek: { usa: ["Beef cheek"], france: ["Joue de boeuf"], mexico: ["Cabeza", "Cachete"], uae: ["Beef cheek"] },
   sweetbreads: { argentina: ["Mollejas"], france: ["Ris de veau"], uk: ["Sweetbreads"], usa: ["Sweetbreads"] },
   testicles: { usa: ["Rocky Mountain Oysters"], canada: ["Prairie Oysters"], spain: ["Criadillas"], argentina: ["Criadillas"] },
+  brain: { france: ["Cervelle de veau"], mexico: ["Sesos"], italy: ["Cervello"], spain: ["Sesos", "Sesos rebozados"] },
 };

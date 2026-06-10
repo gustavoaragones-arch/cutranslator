@@ -73,6 +73,7 @@ export const CANONICAL_ID_TO_SVG_BASENAME: Readonly<
   head_cheek: "head_cheek",
   sweetbreads: "sweetbreads",
   testicles: "testicles",
+  brain: "head",
 };
 
 export function datasetPrimalToSvgSlug(datasetPrimal: string): string {

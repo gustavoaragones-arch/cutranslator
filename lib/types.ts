@@ -201,7 +201,7 @@ export type CanonicalId =
   | "skin" | "liver" | "heart" | "kidney"
   | "intestines" | "head_cheek"
   // Phase 4 expansion — Offal (Batch 26):
-  | "sweetbreads" | "testicles";
+  | "sweetbreads" | "testicles" | "brain";
 
 export type CanonicalCut = {
   id: CanonicalId;

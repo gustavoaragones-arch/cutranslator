@@ -858,6 +858,23 @@ const ET: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Brain — researched country entries ──────────────────────────────────────
+// NG, PH, ET, VN omitted — no documented standalone tradition with sufficient confidence.
+
+const BRAIN: readonly OffalRegionalName[] = [
+  { canonicalId: "brain", country: "MX", localName: "sesos", confidence: "high" },
+  { canonicalId: "brain", country: "CN", localName: "niúnǎo", nativeScript: "牛脑", confidence: "high" },
+  { canonicalId: "brain", country: "KR", localName: "골 (gol)", nativeScript: "골", confidence: "medium" },
+  { canonicalId: "brain", country: "FR", localName: "cervelle de veau", speciesNote: "veau", confidence: "high" },
+  { canonicalId: "brain", country: "IT", localName: "cervello", altNames: ["cervello fritto"], confidence: "high" },
+  { canonicalId: "brain", country: "ES", localName: "sesos", altNames: ["sesos rebozados"], confidence: "high" },
+  { canonicalId: "brain", country: "TR", localName: "beyin", confidence: "high" },
+  { canonicalId: "brain", country: "GB", localName: "calf's brain", speciesNote: "traditionally veal not beef", confidence: "medium" },
+  { canonicalId: "brain", country: "MA", localName: "mokh", nativeScript: "مخ", confidence: "high" },
+  { canonicalId: "brain", country: "PE", localName: "sesos", confidence: "high" },
+  { canonicalId: "brain", country: "JP", localName: "nōmiso", nativeScript: "脳みそ", confidence: "medium" },
+];
+
 // DEFERRED: tripe sub-canonicals (mino/senmai/hachinosu for JP,
 // makchang for KR). Multiple countries now flag distinct stomach
 // chambers as separate culinary ingredients. Architectural decision
@@ -1279,6 +1296,7 @@ const JP: readonly OffalRegionalName[] = [
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
+  ...BRAIN,
   ...MX,
   ...CN,
   ...KR,
