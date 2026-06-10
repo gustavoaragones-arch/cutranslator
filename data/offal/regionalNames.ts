@@ -1785,6 +1785,168 @@ const IN: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Greece (GR) ─────────────────────────────────────────────────────────────
+// Note: GR skin, tendon, brain intentionally omitted.
+
+const GR: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "GR",
+    localName: "glóssa vodinoú",
+    nativeScript: "γλώσσα βοδινού",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "GR",
+    localName: "patsás",
+    nativeScript: "πατσάς",
+    confidence: "high",
+    traditionIds: ["patsas"],
+  },
+  {
+    canonicalId: "liver",
+    country: "GR",
+    localName: "sykóti",
+    nativeScript: "συκώτι",
+    confidence: "high",
+    traditionIds: ["kokoretsi", "greek-easter-offal"],
+  },
+  {
+    canonicalId: "heart",
+    country: "GR",
+    localName: "kardiá",
+    nativeScript: "καρδιά",
+    confidence: "high",
+    traditionIds: ["kokoretsi", "greek-easter-offal"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "GR",
+    localName: "nefró",
+    nativeScript: "νεφρό",
+    confidence: "high",
+    traditionIds: ["kokoretsi", "greek-easter-offal"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "GR",
+    localName: "éntera",
+    nativeScript: "έντερα",
+    confidence: "high",
+    traditionIds: ["kokoretsi", "greek-easter-offal"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "GR",
+    localName: "kefáli",
+    nativeScript: "κεφάλι",
+    altNames: ["mágoulo (μάγουλο)"],
+    confidence: "high",
+    traditionIds: ["greek-easter-offal"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "GR",
+    localName: "medoúli",
+    nativeScript: "μεδούλι",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "GR",
+    localName: "glykádia",
+    nativeScript: "γλυκάδια",
+    speciesNote: "traditionally lamb, beef versions documented",
+    confidence: "high",
+    traditionIds: ["kokoretsi", "greek-easter-offal"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "GR",
+    localName: "amelétita",
+    nativeScript: "αμελέτητα",
+    confidence: "high",
+    traditionIds: ["greek-easter-offal"],
+  },
+];
+
+// ─── Indonesia (ID) ───────────────────────────────────────────────────────────
+// Note: ID sweetbreads, testicles, brain intentionally omitted.
+
+const ID: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "ID",
+    localName: "lidah sapi",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "ID",
+    localName: "babat",
+    confidence: "high",
+    traditionIds: ["soto-jeroan", "padang-offal"],
+  },
+  {
+    canonicalId: "liver",
+    country: "ID",
+    localName: "hati sapi",
+    confidence: "high",
+    traditionIds: ["soto-jeroan", "sate-jeroan"],
+  },
+  {
+    canonicalId: "heart",
+    country: "ID",
+    localName: "jantung sapi",
+    confidence: "high",
+    traditionIds: ["soto-jeroan", "sate-jeroan"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "ID",
+    localName: "ginjal sapi",
+    confidence: "high",
+    traditionIds: ["soto-jeroan", "sate-jeroan"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "ID",
+    localName: "usus sapi",
+    confidence: "high",
+    traditionIds: ["soto-jeroan", "padang-offal", "sate-jeroan"],
+  },
+  {
+    canonicalId: "skin",
+    country: "ID",
+    localName: "kikil",
+    confidence: "high",
+    traditionIds: ["kikil", "soto-jeroan", "padang-offal"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "ID",
+    localName: "urat sapi",
+    confidence: "high",
+    traditionIds: ["soto-jeroan", "padang-offal"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "ID",
+    localName: "kepala sapi",
+    altNames: ["pipi sapi"],
+    confidence: "high",
+    traditionIds: ["padang-offal"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "ID",
+    localName: "sumsum",
+    confidence: "high",
+    traditionIds: ["padang-offal"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -1810,4 +1972,6 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...DE,
   ...HU,
   ...IN,
+  ...GR,
+  ...ID,
 ];

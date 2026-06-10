@@ -58,6 +58,8 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   DE: "Germany",
   HU: "Hungary",
   IN: "India",
+  GR: "Greece",
+  ID: "Indonesia",
 };
 
 /** All offal regional name entries across all countries. */
@@ -1405,6 +1407,135 @@ const traditions: readonly OffalTradition[] = [
       "tongue", "tripe", "liver", "heart", "kidney",
       "intestines", "skin", "tendon", "head_cheek", "bone_marrow",
     ],
+  },
+
+  // ── Greece ───────────────────────────────────────────────────────────────────
+
+  {
+    id: "kokoretsi",
+    name: "Kokoretsi",
+    region: "Europe — Greece",
+    speciesNote: "Traditionally lamb at Easter; beef and mixed versions documented. Culinary tradition applies to bovine offal.",
+    summary:
+      "Greece's most important offal tradition and one of the world's great whole-organ roasting " +
+      "systems. Seasoned organs wrapped in cleaned intestines, skewered, and slowly roasted over " +
+      "charcoal or open fire.",
+    culturalContext:
+      "A defining dish of Greek Orthodox Easter. Virtually every Greek is familiar with kokoretsi. " +
+      "Associated with village feasts, family celebrations, and outdoor roasting. Structurally " +
+      "similar to Turkish kokoreç — both traditions wrap organs in intestines for spit-roasting, " +
+      "likely sharing Ottoman-era origins.",
+    preparationNotes:
+      "Organs seasoned with oregano, salt, pepper, and lemon. Wrapped tightly in intestines on a " +
+      "horizontal spit. Roasted slowly over charcoal for 2–3 hours, basted with lemon and herbs. " +
+      "Sliced and served immediately.",
+    cuts: ["intestines", "sweetbreads", "liver", "heart", "kidney"],
+  },
+  {
+    id: "patsas",
+    name: "Patsás",
+    region: "Europe — Greece",
+    summary:
+      "Greece's most important tripe tradition and one of the strongest in southeastern Europe. " +
+      "Tripe boiled for many hours and served as a garlic-rich soup with vinegar, lemon, and paprika.",
+    culturalContext:
+      "Patsás shops historically operated throughout Greece and remain common in Athens and " +
+      "Thessaloniki. Strongly associated with late-night dining, hangover recovery, and working- " +
+      "class food culture. Structurally parallel to Turkish işkembe çorbası — both are late-night " +
+      "tripe soups with garlic and vinegar.",
+    preparationNotes:
+      "Tripe cleaned extensively and simmered for many hours until tender. Served as soup with " +
+      "garlic sauce, vinegar, lemon juice, and paprika. Often eaten very late at night or early morning.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "greek-easter-offal",
+    name: "Greek Easter Offal Tradition",
+    region: "Europe — Greece",
+    speciesNote: "Primarily lamb at Easter; beef versions consumed year-round.",
+    summary:
+      "The organizing framework for Greek offal culture. Multiple organs grilled, skewered, and " +
+      "roasted during Orthodox Easter celebrations. Easter is the principal annual driver of organ " +
+      "consumption in Greece.",
+    culturalContext:
+      "Orthodox Easter is the most important food event in the Greek calendar. Whole animals are " +
+      "roasted on the spit. Organs are consumed separately — as kokoretsi, as mixed grills, or in " +
+      "soups. Head, sweetbreads, testicles, and liver are all part of the Easter offal tradition.",
+    preparationNotes:
+      "Each organ grilled or roasted with olive oil, oregano, lemon, and salt. Kokoretsi is the " +
+      "centerpiece. Liver and heart are often grilled first as the fire establishes. Sweetbreads " +
+      "and testicles follow.",
+    cuts: ["intestines", "sweetbreads", "liver", "kidney", "heart", "testicles", "head_cheek"],
+  },
+
+  // ── Indonesia ─────────────────────────────────────────────────────────────────
+
+  {
+    id: "soto-jeroan",
+    name: "Soto Jeroan",
+    region: "Asia — Indonesia",
+    summary:
+      "Indonesia's most important offal soup framework. Multiple organs simmered in spiced broth " +
+      "and served with rice, vermicelli, fried shallots, and sambal.",
+    culturalContext:
+      "Soto is one of Indonesia's national dishes. The jeroan version incorporates multiple offal " +
+      "cuts into the same bowl. Found nationwide in street stalls, warungs, and restaurants. Among " +
+      "the world's most diverse single-bowl offal traditions.",
+    preparationNotes:
+      "Organs cleaned and blanched separately. Broth built from beef bones, lemongrass, galangal, " +
+      "turmeric, ginger, garlic, and shallots. Organs added and simmered until tender. Served with " +
+      "rice or vermicelli, fried shallots, lime, sambal, and kecap manis.",
+    cuts: ["tripe", "intestines", "liver", "heart", "kidney", "skin", "tendon"],
+  },
+  {
+    id: "padang-offal",
+    name: "Padang Beef Offal",
+    region: "Asia — Indonesia (West Sumatra)",
+    summary:
+      "West Sumatra's Minangkabau cuisine produces one of the world's most complete whole-animal " +
+      "beef systems. Tripe, tendon, skin, and marrow are all cooked in rich coconut-milk curries " +
+      "with complex spice pastes.",
+    culturalContext:
+      "Padang restaurants (Rumah Makan Padang) operate throughout Indonesia and internationally, " +
+      "spreading Minangkabau offal traditions nationwide. The Padang system is unusual because it " +
+      "treats connective tissues — skin, tendon — with the same culinary seriousness as organs.",
+    preparationNotes:
+      "Each cut cooked separately in rendang-adjacent or gulai-style coconut milk curry with " +
+      "turmeric, galangal, lemongrass, chili, garlic, and shallots. Served at room temperature " +
+      "in small dishes alongside rice.",
+    cuts: ["tripe", "tendon", "skin", "bone_marrow", "head_cheek", "intestines"],
+  },
+  {
+    id: "kikil",
+    name: "Kikil",
+    region: "Asia — Indonesia",
+    summary:
+      "Indonesia's most important cattle-skin tradition and one of the strongest in the world. " +
+      "Beef skin boiled until gelatinous, then incorporated into soto, curries, and spicy stews.",
+    culturalContext:
+      "Kikil is a highly valued ingredient rather than a marginal by-product. Dedicated kikil soto " +
+      "and kikil dishes are common in Surabaya and Java. The prized quality is the gelatinous, " +
+      "chewy texture after long cooking. Globally comparable to Nigerian ponmo in cultural prominence.",
+    preparationNotes:
+      "Skin singed, scraped, and boiled until tender and gelatinous. Incorporated into soto broth, " +
+      "gulai curry, or spicy sambal stews. Served with rice and condiments.",
+    cuts: ["skin"],
+  },
+  {
+    id: "sate-jeroan",
+    name: "Sate Jeroan",
+    region: "Asia — Indonesia",
+    summary:
+      "Indonesia's grilled offal satay tradition. Multiple organs skewered and grilled over charcoal, " +
+      "served with peanut sauce or kecap manis.",
+    culturalContext:
+      "Sate vendors throughout Indonesia offer jeroan alongside muscle-meat satay. Intestines, heart, " +
+      "liver, and kidney are standard offerings. A defining feature of Indonesian street-food culture.",
+    preparationNotes:
+      "Organs cleaned and cubed. Marinated briefly with garlic, shallots, coriander, and sweet soy " +
+      "sauce. Skewered and grilled over charcoal. Served with peanut sauce, lontong (compressed rice), " +
+      "and pickled vegetables.",
+    cuts: ["intestines", "heart", "liver", "kidney"],
   },
 ];
 
