@@ -858,6 +858,424 @@ const ET: readonly OffalRegionalName[] = [
   },
 ];
 
+// DEFERRED: tripe sub-canonicals (mino/senmai/hachinosu for JP,
+// makchang for KR). Multiple countries now flag distinct stomach
+// chambers as separate culinary ingredients. Architectural decision
+// required before splitting canonical.
+
+// ─── United Kingdom (GB) ─────────────────────────────────────────────────────
+// Note: GB skin, tendon, and testicles intentionally omitted —
+// no culinary tradition documented (skin/tendon) or confidence too low (testicles).
+
+const GB: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "GB",
+    localName: "ox tongue",
+    altNames: ["beef tongue"],
+    confidence: "high",
+    traditionIds: ["pressed-tongue"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "GB",
+    localName: "tripe",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "liver",
+    country: "GB",
+    localName: "ox liver",
+    altNames: ["beef liver"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "GB",
+    localName: "ox heart",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "GB",
+    localName: "ox kidney",
+    confidence: "high",
+    traditionIds: ["steak-kidney-pie"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "GB",
+    localName: "beef intestines",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "GB",
+    localName: "ox cheek",
+    altNames: ["beef cheek"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "GB",
+    localName: "bone marrow",
+    altNames: ["marrow bones"],
+    confidence: "high",
+    traditionIds: ["bone-marrow-toast"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "GB",
+    localName: "sweetbreads",
+    confidence: "medium",
+  },
+];
+
+// ─── Vietnam (VN) ────────────────────────────────────────────────────────────
+// Note: VN sweetbreads intentionally omitted — confidence too low.
+
+const VN: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "VN",
+    localName: "lưỡi bò",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "VN",
+    localName: "lá sách",
+    altNames: ["bao tử bò", "tổ ong"],
+    confidence: "high",
+    traditionIds: ["pho-bo", "long-bo"],
+  },
+  {
+    canonicalId: "liver",
+    country: "VN",
+    localName: "gan bò",
+    confidence: "high",
+    traditionIds: ["long-bo"],
+  },
+  {
+    canonicalId: "heart",
+    country: "VN",
+    localName: "tim bò",
+    confidence: "high",
+    traditionIds: ["long-bo"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "VN",
+    localName: "cật bò",
+    confidence: "high",
+    traditionIds: ["long-bo"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "VN",
+    localName: "lòng bò",
+    confidence: "high",
+    traditionIds: ["long-bo"],
+  },
+  {
+    canonicalId: "skin",
+    country: "VN",
+    localName: "da bò",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "VN",
+    localName: "gân bò",
+    confidence: "high",
+    traditionIds: ["pho-bo", "bo-kho"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "VN",
+    localName: "má bò",
+    altNames: ["đầu bò"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "VN",
+    localName: "tủy bò",
+    confidence: "high",
+    traditionIds: ["pho-bo", "bo-kho"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "VN",
+    localName: "ngọc bò",
+    confidence: "medium",
+  },
+];
+
+// ─── Morocco (MA) ────────────────────────────────────────────────────────────
+// Note: MA skin and tendon intentionally omitted —
+// skin: confidence too low; tendon: present but not culturally distinct.
+
+const MA: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "MA",
+    localName: "lsane",
+    nativeScript: "لسان",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "MA",
+    localName: "kercha",
+    nativeScript: "كرشة",
+    confidence: "high",
+    traditionIds: ["douara"],
+  },
+  {
+    canonicalId: "liver",
+    country: "MA",
+    localName: "kebda",
+    nativeScript: "كبدة",
+    confidence: "high",
+    traditionIds: ["boulfaf", "eid-organ-grill"],
+  },
+  {
+    canonicalId: "heart",
+    country: "MA",
+    localName: "qalb",
+    nativeScript: "قلب",
+    confidence: "high",
+    traditionIds: ["eid-organ-grill"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "MA",
+    localName: "kliwa",
+    nativeScript: "كلوة",
+    confidence: "high",
+    traditionIds: ["eid-organ-grill"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "MA",
+    localName: "douara",
+    nativeScript: "دوارة",
+    confidence: "high",
+    traditionIds: ["douara"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "MA",
+    localName: "ras",
+    nativeScript: "رأس",
+    altNames: ["khadd (خد)"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "MA",
+    localName: "mokh l-ʿdam",
+    nativeScript: "مخ العظام",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "MA",
+    localName: "ghodda",
+    nativeScript: "غدة",
+    confidence: "medium",
+    traditionIds: ["eid-organ-grill"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "MA",
+    localName: "dghmira",
+    nativeScript: "دغميرة",
+    confidence: "high",
+    traditionIds: ["eid-organ-grill"],
+  },
+];
+
+// ─── Peru (PE) ───────────────────────────────────────────────────────────────
+
+const PE: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "PE",
+    localName: "lengua de res",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "PE",
+    localName: "mondongo",
+    altNames: ["tripa"],
+    confidence: "high",
+    traditionIds: ["cau-cau"],
+  },
+  {
+    canonicalId: "liver",
+    country: "PE",
+    localName: "hígado de res",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "PE",
+    localName: "corazón de res",
+    confidence: "high",
+    traditionIds: ["anticuchos"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "PE",
+    localName: "riñón de res",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "intestines",
+    country: "PE",
+    localName: "choncholí",
+    altNames: ["chunchulí"],
+    confidence: "high",
+    traditionIds: ["anticuchos"],
+  },
+  {
+    canonicalId: "skin",
+    country: "PE",
+    localName: "cuero de res",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "PE",
+    localName: "tendón de res",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "PE",
+    localName: "cabeza",
+    altNames: ["cachete"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "PE",
+    localName: "tuétano",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "PE",
+    localName: "mollejas",
+    confidence: "high",
+    traditionIds: ["anticuchos"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "PE",
+    localName: "criadillas",
+    confidence: "medium",
+  },
+];
+
+// ─── Japan (JP) ──────────────────────────────────────────────────────────────
+// Note: JP skin intentionally omitted — low confidence.
+// DEFERRED: mino/hachinosu/senmai are distinct stomach chambers treated as
+// separate menu items in yakiniku. Modeled as altNames pending tripe
+// sub-canonical architectural decision.
+
+const JP: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "JP",
+    localName: "gyūtan",
+    nativeScript: "牛タン",
+    confidence: "high",
+    traditionIds: ["gyutan-culture"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "JP",
+    localName: "mino",
+    nativeScript: "ミノ",
+    altNames: ["hachinosu (ハチノス)", "senmai (センマイ)"],
+    confidence: "high",
+    traditionIds: ["horumon-yaki", "motsu-nabe"],
+  },
+  {
+    canonicalId: "liver",
+    country: "JP",
+    localName: "gyū rebā",
+    nativeScript: "牛レバー",
+    confidence: "high",
+    traditionIds: ["horumon-yaki"],
+  },
+  {
+    canonicalId: "heart",
+    country: "JP",
+    localName: "hatsu",
+    nativeScript: "ハツ",
+    confidence: "high",
+    traditionIds: ["horumon-yaki"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "JP",
+    localName: "mame",
+    nativeScript: "マメ",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "intestines",
+    country: "JP",
+    localName: "motsu",
+    nativeScript: "モツ",
+    altNames: ["shimachō (シマチョウ)", "shōchō (小腸)"],
+    confidence: "high",
+    traditionIds: ["horumon-yaki", "motsu-nabe"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "JP",
+    localName: "gyūsuji",
+    nativeScript: "牛すじ",
+    confidence: "high",
+    traditionIds: ["gyusuji-traditions"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "JP",
+    localName: "tsurami",
+    nativeScript: "ツラミ",
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "JP",
+    localName: "kotsuzui",
+    nativeScript: "骨髄",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "JP",
+    localName: "shibire",
+    nativeScript: "シビレ",
+    confidence: "high",
+    traditionIds: ["horumon-yaki"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "JP",
+    localName: "ushi no kōgan",
+    nativeScript: "牛の睾丸",
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -871,4 +1289,9 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...PH,
   ...TR,
   ...ET,
+  ...GB,
+  ...VN,
+  ...MA,
+  ...PE,
+  ...JP,
 ];

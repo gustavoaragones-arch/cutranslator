@@ -45,6 +45,11 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   PH: "Philippines",
   TR: "Turkey",
   ET: "Ethiopia",
+  GB: "United Kingdom",
+  VN: "Vietnam",
+  MA: "Morocco",
+  PE: "Peru",
+  JP: "Japan",
 };
 
 /** All offal regional name entries across all countries. */
@@ -735,6 +740,277 @@ const traditions: readonly OffalTradition[] = [
       "mitmita or berbere spice blend, and onion. Served immediately, raw or lightly cooked " +
       "to order.",
     cuts: ["liver", "tripe", "heart", "kidney"],
+  },
+
+  // ── United Kingdom ───────────────────────────────────────────────────────────
+
+  {
+    id: "pressed-tongue",
+    name: "Pressed Ox Tongue",
+    region: "Europe — United Kingdom",
+    summary:
+      "Beef tongue simmered until tender, peeled, and pressed into a terrine or loaf. " +
+      "A classic British butcher tradition now associated with traditional cookery and " +
+      "specialist food culture.",
+    culturalContext:
+      "Once a standard British household item, particularly in working-class and " +
+      "middle-class kitchens. The nose-to-tail revival has restored some visibility. " +
+      "Associated with cold supper tables and traditional sandwich culture.",
+    preparationNotes:
+      "Tongue simmered with vegetables and spices, peeled, shaped and pressed while " +
+      "warm, chilled overnight. Sliced cold. Pickled variants also traditional.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "steak-kidney-pie",
+    name: "Steak and Kidney Pie",
+    region: "Europe — United Kingdom",
+    summary:
+      "One of Britain's most famous savory pies. Kidney cooked with beef in rich gravy, " +
+      "encased in shortcrust or suet pastry. A foundational dish of British pub and home cooking.",
+    culturalContext:
+      "Deeply embedded in British food culture. Associated with pubs, working-class tradition, " +
+      "and national identity. Devilled kidneys as a standalone breakfast tradition is a related " +
+      "Victorian-era preparation.",
+    preparationNotes:
+      "Kidney cleaned and cubed, cooked slowly with beef, onion, stock, Worcestershire sauce, " +
+      "and mustard. Encased in pastry and baked.",
+    cuts: ["kidney"],
+  },
+  {
+    id: "bone-marrow-toast",
+    name: "Bone Marrow on Toast",
+    region: "Europe — United Kingdom",
+    summary:
+      "Roasted marrow bones served with toast, parsley salad, shallots, and sea salt. " +
+      "The defining dish of the British nose-to-tail revival, associated with Fergus Henderson " +
+      "and St. John restaurant.",
+    culturalContext:
+      "Transformed from working-class thrift food into a celebrated restaurant dish. " +
+      "Launched a broader revival of British offal cookery. Now found in gastropubs and " +
+      "restaurants throughout the UK.",
+    preparationNotes:
+      "Marrow bones roasted at high heat until marrow softens. Served immediately with " +
+      "sourdough toast, flat-leaf parsley salad dressed with capers and shallots, and " +
+      "coarse sea salt.",
+    cuts: ["bone_marrow"],
+  },
+
+  // ── Vietnam ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "pho-bo",
+    name: "Phở Bò",
+    region: "Asia — Vietnam",
+    summary:
+      "Vietnam's most important beef dish and one of the world's great soup traditions. " +
+      "Broth built from marrow-rich bones and collagen-rich connective tissues, served " +
+      "with rice noodles and fresh herbs.",
+    culturalContext:
+      "Consumed at all hours, particularly breakfast and late night. Phở shops are a " +
+      "defining feature of Vietnamese urban life. Northern (Hanoi) and southern (Saigon) " +
+      "versions differ in broth style and toppings. Tripe and tendon are standard " +
+      "mixed-cut options.",
+    preparationNotes:
+      "Marrow bones charred and simmered with charred onion and ginger, star anise, " +
+      "cassia, cloves, and fish sauce for many hours. Served with rice noodles, sliced " +
+      "beef, tripe, tendon, fresh herbs, lime, and chili.",
+    cuts: ["bone_marrow", "tripe", "tendon"],
+  },
+  {
+    id: "bo-kho",
+    name: "Bò Kho",
+    region: "Asia — Vietnam",
+    summary:
+      "Vietnam's most famous beef stew. Tendon and marrow-enriched broth slow-cooked " +
+      "with lemongrass, star anise, and annatto. Served with bread or noodles.",
+    culturalContext:
+      "Popular throughout Vietnam, especially in southern regions. A street food and " +
+      "home-cooking staple. The tendon component is prized for its gelatinous texture " +
+      "after long braising.",
+    preparationNotes:
+      "Beef and tendon marinated with lemongrass, fish sauce, and spices, then braised " +
+      "with annatto oil, star anise, lemongrass, and tomato until deeply flavored. " +
+      "Tendon cooked until gelatinous.",
+    cuts: ["tendon", "bone_marrow"],
+  },
+  {
+    id: "long-bo",
+    name: "Lòng Bò Traditions",
+    region: "Asia — Vietnam",
+    summary:
+      "Vietnam's broader beef-offal culture, organized around the concept of lòng (entrails). " +
+      "Multiple organs served boiled, grilled, or in hot pots with herbs, fish sauce, and chili.",
+    culturalContext:
+      "Lòng is an organizing cultural category covering internal organs across Vietnamese " +
+      "cuisine. Beef lòng traditions are especially strong in southern Vietnam and " +
+      "drinking-food contexts.",
+    preparationNotes:
+      "Organs cleaned thoroughly, boiled until tender, sliced and served with mắm tôm " +
+      "(fermented shrimp paste), lime, fresh herbs, and chili. Also served in hot pots " +
+      "and rice porridge.",
+    cuts: ["intestines", "tripe", "liver", "heart", "kidney"],
+  },
+
+  // ── Morocco ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "boulfaf",
+    name: "Boulfaf",
+    region: "Africa — Morocco",
+    summary:
+      "Morocco's most iconic offal dish. Fresh liver wrapped in caul fat, skewered, " +
+      "and grilled immediately after slaughter. A centerpiece of Eid al-Adha cooking.",
+    culturalContext:
+      "Among the first foods prepared and shared following Eid slaughter. Symbolizes " +
+      "generosity and communal celebration. The caul fat wrapping bastes the liver during " +
+      "grilling. Found at market grills year-round in urban areas.",
+    preparationNotes:
+      "Liver cubed and seasoned with cumin, paprika, salt, and herbs. Wrapped in caul fat " +
+      "(épiploon), skewered, grilled over charcoal until caul fat renders and crisps. " +
+      "Served immediately.",
+    cuts: ["liver"],
+  },
+  {
+    id: "douara",
+    name: "Douara",
+    region: "Africa — Morocco",
+    summary:
+      "A Moroccan offal stew combining intestines and stomach tissues, spiced with cumin, " +
+      "saffron, ginger, paprika, and preserved lemon. Especially associated with Eid al-Adha.",
+    culturalContext:
+      "Prepared in homes across Morocco following slaughter. A complex dish requiring " +
+      "extensive cleaning and long cooking. Regional variations exist across Fez, Marrakesh, " +
+      "and Casablanca.",
+    preparationNotes:
+      "Intestines and stomach thoroughly cleaned, cut, and braised with cumin, saffron, " +
+      "paprika, ginger, garlic, preserved lemon, and herbs. Cooked until tender and " +
+      "deeply spiced.",
+    cuts: ["intestines", "tripe"],
+  },
+  {
+    id: "eid-organ-grill",
+    name: "Eid al-Adha Organ Grills",
+    region: "Africa — Morocco",
+    summary:
+      "The immediate post-slaughter grilling tradition of Eid al-Adha. Fresh organs " +
+      "seasoned simply and grilled over charcoal within hours of slaughter.",
+    culturalContext:
+      "Practiced across Morocco and the broader Muslim world. The freshness and immediacy " +
+      "is culturally central — organs are consumed the same day as slaughter. A family " +
+      "and communal celebration.",
+    preparationNotes:
+      "Organs cleaned and cut, seasoned with cumin, paprika, salt, and sometimes chermoula. " +
+      "Grilled quickly over charcoal. Liver is usually first; heart, kidneys, and sweetbreads follow.",
+    cuts: ["liver", "heart", "kidney", "sweetbreads", "testicles"],
+  },
+
+  // ── Peru ─────────────────────────────────────────────────────────────────────
+
+  {
+    id: "anticuchos",
+    name: "Anticuchos",
+    region: "South America — Peru",
+    summary:
+      "Peru's most iconic street food and arguably the strongest single-organ culinary " +
+      "tradition in the world. Beef heart marinated in ají panca, vinegar, garlic, and " +
+      "cumin, skewered and grilled over charcoal.",
+    culturalContext:
+      "Originating in Afro-Peruvian communities, now a national symbol consumed across all " +
+      "social classes. Dedicated vendors (anticucheras) are a defining feature of evening " +
+      "street-food culture. Heart is the primary cut; intestines (choncholí) and sweetbreads " +
+      "(mollejas) are standard variants.",
+    preparationNotes:
+      "Heart trimmed of fat and membrane, cubed, marinated overnight in ají panca paste, " +
+      "red wine vinegar, garlic, cumin, and oregano. Skewered and grilled over charcoal. " +
+      "Served with boiled potato, corn, and rocoto sauce.",
+    cuts: ["heart", "intestines", "sweetbreads", "kidney"],
+  },
+  {
+    id: "cau-cau",
+    name: "Cau Cau",
+    region: "South America — Peru",
+    summary:
+      "One of Lima's most important criollo dishes. Tripe diced and cooked with onions, " +
+      "garlic, turmeric, potatoes, and mint. A cornerstone of Peruvian home cooking.",
+    culturalContext:
+      "Associated with Lima's criollo tradition and Afro-Peruvian culinary heritage. " +
+      "Common in homes, markets, and traditional restaurants. The mint (hierbabuena) is " +
+      "a defining flavor marker.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender, diced, then cooked with sofrito of onion, " +
+      "garlic, turmeric, ají amarillo. Potatoes and hierbabuena added. Served with white rice.",
+    cuts: ["tripe"],
+  },
+
+  // ── Japan ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "horumon-yaki",
+    name: "Horumon-Yaki",
+    region: "Asia — Japan",
+    summary:
+      "Japan's defining offal grill tradition. Multiple organ cuts grilled over charcoal " +
+      "at specialized restaurants. One of the world's most anatomically precise offal systems.",
+    culturalContext:
+      "Deeply embedded in Japanese drinking culture and yakiniku dining. Osaka is the " +
+      "cultural center. Restaurants distinguish many sub-cuts — shimachō, mino, shibire, " +
+      "hatsu — as separate menu items.",
+    preparationNotes:
+      "Organs cleaned and portioned to order. Grilled over charcoal with salt (shio) or " +
+      "tare sauce. Intestines valued for rendered fat; sweetbreads for creamy texture; " +
+      "heart for firm bite.",
+    cuts: ["intestines", "tripe", "liver", "heart", "sweetbreads", "kidney"],
+  },
+  {
+    id: "motsu-nabe",
+    name: "Motsu-Nabe",
+    region: "Asia — Japan (Fukuoka)",
+    summary:
+      "Fukuoka's most famous dish. Beef intestines and tripe simmered in miso or soy " +
+      "broth with cabbage, garlic chives, garlic, and chili. One of Japan's most important " +
+      "regional offal hot-pot traditions.",
+    culturalContext:
+      "Motsu-nabe became a Fukuoka cultural icon and spread nationally. Especially " +
+      "associated with post-work drinking culture and cold-weather dining.",
+    preparationNotes:
+      "Intestines cleaned and blanched. Simmered in dashi-based broth with miso or soy, " +
+      "nira (garlic chives), cabbage, garlic, and togarashi. Finished with champon noodles.",
+    cuts: ["intestines", "tripe"],
+  },
+  {
+    id: "gyutan-culture",
+    name: "Gyūtan — Sendai Tongue Tradition",
+    region: "Asia — Japan (Sendai)",
+    summary:
+      "Japan's most famous tongue tradition and one of the world's strongest single-organ " +
+      "culinary traditions. Thick-sliced aged tongue grilled over charcoal, served with " +
+      "barley rice and oxtail soup.",
+    culturalContext:
+      "Sendai is nationally synonymous with gyūtan. Specialized restaurants exist throughout " +
+      "Japan. Unlike most countries where tongue remains niche, Japanese consumers treat " +
+      "gyūtan as a mainstream and desirable cut.",
+    preparationNotes:
+      "Tongue aged and seasoned, sliced thick (shio-tan) or thin, grilled over charcoal " +
+      "until lightly charred. Served with mugi gohan (barley rice), pickled vegetables, " +
+      "and oxtail soup (tenziru).",
+    cuts: ["tongue"],
+  },
+  {
+    id: "gyusuji-traditions",
+    name: "Gyūsuji Nikomi",
+    region: "Asia — Japan (Kansai)",
+    summary:
+      "Kansai's beloved tendon stew. Beef tendon simmered for many hours in soy, miso, " +
+      "sake, and mirin until gelatinous. A classic izakaya and home-cooking tradition.",
+    culturalContext:
+      "Tendon is sought out intentionally by Japanese diners rather than treated as a " +
+      "secondary by-product. Gyūsuji nikomi is especially associated with Osaka izakaya " +
+      "culture. Doteni is the Nagoya variant using hatcho miso.",
+    preparationNotes:
+      "Tendon blanched, then simmered for 2–3 hours with konnyaku, soy sauce, sake, " +
+      "mirin, sugar, and ginger. Served in small portions as izakaya drinking food.",
+    cuts: ["tendon"],
   },
 ];
 
