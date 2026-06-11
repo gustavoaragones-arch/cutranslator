@@ -63,6 +63,8 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   IR: "Iran",
   EG: "Egypt",
   BR: "Brazil",
+  PK: "Pakistan",
+  LB: "Lebanon / Levant",
 };
 
 /** All offal regional name entries across all countries. */
@@ -752,7 +754,7 @@ const traditions: readonly OffalTradition[] = [
       "Liver, tripe, and stomach tissues finely minced or chopped. Mixed with niter kibbeh, " +
       "mitmita or berbere spice blend, and onion. Served immediately, raw or lightly cooked " +
       "to order.",
-    cuts: ["liver", "tripe", "heart", "kidney"],
+    cuts: ["liver", "tripe", "heart", "kidney", "sweetbreads"],
   },
 
   // ── United Kingdom ───────────────────────────────────────────────────────────
@@ -1704,6 +1706,179 @@ const traditions: readonly OffalTradition[] = [
       "cleaned and grilled until crisp. Sweetbreads grilled until golden. Kidneys split and " +
       "grilled simply.",
     cuts: ["intestines", "kidney", "heart", "sweetbreads"],
+  },
+
+  // ── Pakistan ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "nihari-pk",
+    name: "Nihari",
+    region: "South Asia — Pakistan",
+    summary:
+      "One of the world's great marrow traditions and Pakistan's most iconic slow-cooked dish. " +
+      "Marrow bones, shank, and connective tissues simmered overnight with aromatic spices. " +
+      "Historically a Mughal elite breakfast, now a national dish.",
+    culturalContext:
+      "Nihari restaurants open before dawn in Lahore and Karachi. The dish is consumed for " +
+      "breakfast after overnight cooking. A shared culinary heritage with North India — the " +
+      "nalli-nihari tradition in the dataset covers the Indian variant. Pakistani nihari tends " +
+      "to be spicier and richer in tallow.",
+    preparationNotes:
+      "Marrow bones and beef shank simmered overnight with nihari masala, onions, ginger, " +
+      "garlic, and ghee. Finished with fried onions, fresh ginger, green chili, lemon, and " +
+      "coriander. Served with naan or kulcha.",
+    cuts: ["bone_marrow", "tendon"],
+  },
+  {
+    id: "siri-paya-pk",
+    name: "Siri-Paya",
+    region: "South Asia — Pakistan",
+    summary:
+      "One of South Asia's most important head-meat and collagen traditions. Head meat and " +
+      "trotters simmered overnight. The Pakistani variant is particularly associated with " +
+      "Lahore, Peshawar, and Karachi breakfast culture.",
+    culturalContext:
+      "Specialist siri-paya restaurants open before dawn. The dish is consumed as breakfast, " +
+      "especially in winter. Deeply associated with Lahore's food identity. The IN siri-paya " +
+      "entry in the dataset covers the shared subcontinent tradition — this entry captures " +
+      "Pakistani-specific context.",
+    preparationNotes:
+      "Head and trotters cleaned and simmered overnight with ginger, garlic, onions, turmeric, " +
+      "coriander, garam masala, and ghee. Served with naan, fresh ginger, green chili, and lemon.",
+    cuts: ["head_cheek", "bone_marrow"],
+  },
+  {
+    id: "gurda-kaleji-pk",
+    name: "Gurda-Kaleji",
+    region: "South Asia — Pakistan",
+    summary:
+      "Pakistan's flagship organ preparation. Kidney and liver rapidly griddle-cooked with " +
+      "butter or ghee, onions, chilies, tomatoes, and spices. Street food, breakfast food, " +
+      "Eid food — one of the most visible organ dishes anywhere in the world.",
+    culturalContext:
+      "Gurda-kaleji stalls operate across Pakistan from early morning. Especially prominent " +
+      "during Eid al-Adha when fresh organs are immediately cooked after slaughter. The " +
+      "Pakistani version tends toward higher heat and more butter than the North Indian equivalent.",
+    preparationNotes:
+      "Kidneys and liver cleaned and chopped. Cooked rapidly on hot tawa with butter or ghee, " +
+      "onions, green chilies, ginger, garlic, tomatoes, coriander, and garam masala. Finished " +
+      "with fresh coriander and lemon.",
+    cuts: ["kidney", "liver"],
+  },
+  {
+    id: "gurda-kapura",
+    name: "Gurda-Kapura",
+    region: "South Asia — Pakistan",
+    summary:
+      "One of Pakistan's most distinctive offal traditions. Kidney and kapura (testicles " +
+      "and/or glandular tissues) rapidly griddle-fried together. Dedicated stalls operate " +
+      "across major cities.",
+    culturalContext:
+      "Gurda-kapura stalls are a fixture of Karachi, Lahore, Rawalpindi, and Peshawar food " +
+      "culture. One of the world's most commercially visible testicle traditions. Kapura " +
+      "terminology varies across South Asia — in Pakistani usage it most commonly refers to testicles.",
+    preparationNotes:
+      "Kidneys and kapura cleaned and chopped. Cooked rapidly on hot tawa with butter or ghee, " +
+      "green chilies, onions, ginger, garlic, and spices. Served immediately with naan and chutney.",
+    cuts: ["kidney", "testicles", "sweetbreads"],
+  },
+  {
+    id: "katakat",
+    name: "Katakat",
+    region: "South Asia — Pakistan (Karachi)",
+    summary:
+      "Pakistan's most distinctive mixed-organ cooking tradition. Multiple organs rapidly " +
+      "chopped and cooked on a large iron griddle using metal spatulas that produce the " +
+      "characteristic \"kata-kat\" sound.",
+    culturalContext:
+      "Especially associated with Karachi. The sound of the spatulas is as much a part of " +
+      "the experience as the food. Multiple organs cooked simultaneously to order. One of " +
+      "the world's most theatrical organ-cooking traditions. Structurally distinct from " +
+      "Iranian jigaraki (skewer-grill) and Japanese horumon-yaki (individual cuts) — katakat " +
+      "combines everything on one griddle simultaneously.",
+    preparationNotes:
+      "Multiple organs cleaned and chopped. Cooked together on a large flat iron tawa over " +
+      "high heat with ghee, onions, tomatoes, green chilies, ginger, garlic, and spices. " +
+      "Constantly chopped and mixed with metal spatulas. Served with naan.",
+    cuts: ["kidney", "liver", "heart", "testicles", "brain", "intestines"],
+  },
+  {
+    id: "ojhri-pk",
+    name: "Ojhri",
+    region: "South Asia — Pakistan",
+    summary:
+      "Pakistan's defining digestive-organ tradition. Tripe and intestines extensively " +
+      "cleaned and slow-cooked in chili-rich masala. Especially prominent after " +
+      "Eid al-Adha slaughter.",
+    culturalContext:
+      "One of South Asia's strongest tripe and intestine traditions. The IN ojhri-tradition " +
+      "entry in the dataset covers the shared North Indian context — this entry captures the " +
+      "Pakistani variant, which has particularly strong visibility in Karachi and Lahore.",
+    preparationNotes:
+      "Extensive cleaning essential. Braised with onions, ginger, garlic, turmeric, coriander, " +
+      "cumin, chili, and garam masala until tender. Served with naan or rice.",
+    cuts: ["tripe", "intestines"],
+  },
+
+  // ── Lebanon / Levant ──────────────────────────────────────────────────────────
+
+  {
+    id: "mashawi-levant",
+    name: "Mashawi Mshakkaleh",
+    region: "Middle East — Levant",
+    summary:
+      "The Levant's defining mixed-grill offal tradition. Liver, heart, kidney, sweetbreads, " +
+      "and testicles grilled over charcoal and served with flatbread, garlic sauce, and lemon.",
+    culturalContext:
+      "A central feature of restaurant dining, butcher culture, and celebrations throughout " +
+      "Lebanon, Syria, Jordan, and Palestine. Structurally parallel to Iranian jigaraki, " +
+      "Japanese horumon-yaki, and Argentine achuras as a multi-organ grill tradition. Liver " +
+      "is the anchor item; sweetbreads and testicles are the premium additions.",
+    preparationNotes:
+      "Organs cleaned and cubed or sliced. Grilled over charcoal with minimal seasoning — " +
+      "salt, lemon, sumac, and cumin. Served with garlic sauce (toum), flatbread, pickles, " +
+      "and raw onion.",
+    cuts: ["liver", "heart", "kidney", "sweetbreads", "testicles"],
+  },
+  {
+    id: "kibdeh-levant",
+    name: "Kibdeh Meshwi",
+    region: "Middle East — Levant",
+    summary:
+      "The Levant's most important liver tradition. Liver grilled over charcoal or sautéed " +
+      "with pomegranate molasses, garlic, parsley, and cumin. A breakfast staple and mezze " +
+      "standard throughout the region.",
+    culturalContext:
+      "One of the strongest liver traditions in the Arab world. Fresh liver is especially " +
+      "prominent immediately after Eid slaughter. The pomegranate molasses version " +
+      "(kibdeh bil-dibs) is distinctively Levantine.",
+    preparationNotes:
+      "Liver cleaned and sliced thin. Grilled over charcoal or sautéed in olive oil with " +
+      "garlic, cumin, coriander, chili, and pomegranate molasses. Finished with fresh " +
+      "parsley and lemon.",
+    cuts: ["liver"],
+  },
+
+  // ── Ethiopia second pass ──────────────────────────────────────────────────────
+
+  {
+    id: "ethiopia-slaughter-day",
+    name: "Ethiopian Slaughter-Day Tradition",
+    region: "Africa — Ethiopia",
+    summary:
+      "The organizing framework for Ethiopian offal culture. Organs consumed immediately " +
+      "after communal slaughter — raw, lightly cooked, or quickly sautéed. The cultural " +
+      "unit is the slaughter event, not the individual recipe.",
+    culturalContext:
+      "Unlike most countries where offal appears in named restaurant dishes, Ethiopia " +
+      "organizes offal consumption around the slaughter event itself. Freshness is the " +
+      "central value. Comparable to Northeast India's whole-animal traditions and Peru's " +
+      "anticucho origins in Afro-Peruvian communal cooking.",
+    preparationNotes:
+      "Methods vary by community and organ. Liver often eaten raw or lightly sautéed first. " +
+      "Heart and kidney grilled quickly. Tripe and head meat boiled or slow-cooked. Berbere, " +
+      "mitmita, and niter kibbeh are the principal flavor markers.",
+    cuts: ["tongue", "tripe", "liver", "heart", "kidney", "intestines", "head_cheek", "bone_marrow"],
   },
 ];
 

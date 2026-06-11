@@ -789,8 +789,8 @@ const TR: readonly OffalRegionalName[] = [
 ];
 
 // ─── Ethiopia (ET) ────────────────────────────────────────────────────────────
-// Note: ET skin, tendon, and sweetbreads are intentionally omitted —
-// no culinary tradition documented (skin/tendon) or confidence too low (sweetbreads).
+// Second pass (batch PK/LB/ET-2): head_cheek updated to ras/ራስ,
+// skin and tendon added. sweetbreads still omitted — confidence too low.
 
 const ET: readonly OffalRegionalName[] = [
   {
@@ -841,13 +841,27 @@ const ET: readonly OffalRegionalName[] = [
   {
     canonicalId: "head_cheek",
     country: "ET",
-    localName: "head meat",
-    confidence: "medium",
+    localName: "ras",
+    nativeScript: "ራስ",
+    confidence: "high",
+    traditionIds: ["ethiopia-slaughter-day"],
   },
   {
     canonicalId: "bone_marrow",
     country: "ET",
     localName: "bone marrow",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "skin",
+    country: "ET",
+    localName: "skin",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "ET",
+    localName: "connective tissues",
     confidence: "medium",
   },
   {
@@ -2218,6 +2232,198 @@ const BR: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Pakistan (PK) ───────────────────────────────────────────────────────────
+// Note: PK skin intentionally omitted — low confidence.
+
+const PK: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "PK",
+    localName: "zabān",
+    nativeScript: "زبان",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "PK",
+    localName: "ojhri",
+    nativeScript: "اوجھڑی",
+    confidence: "high",
+    traditionIds: ["ojhri-pk", "katakat"],
+  },
+  {
+    canonicalId: "liver",
+    country: "PK",
+    localName: "kaleji",
+    nativeScript: "کلیجی",
+    confidence: "high",
+    traditionIds: ["gurda-kaleji-pk", "katakat"],
+  },
+  {
+    canonicalId: "heart",
+    country: "PK",
+    localName: "dil",
+    nativeScript: "دل",
+    confidence: "high",
+    traditionIds: ["katakat"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "PK",
+    localName: "gurda",
+    nativeScript: "گردہ",
+    confidence: "high",
+    traditionIds: ["gurda-kaleji-pk", "gurda-kapura", "katakat"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "PK",
+    localName: "ojhri",
+    nativeScript: "اوجھڑی",
+    altNames: ["digestive tract"],
+    confidence: "high",
+    traditionIds: ["ojhri-pk", "katakat"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "PK",
+    localName: "paya tissues",
+    confidence: "high",
+    traditionIds: ["nihari-pk"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "PK",
+    localName: "siri",
+    nativeScript: "سری",
+    confidence: "high",
+    traditionIds: ["siri-paya-pk"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "PK",
+    localName: "maghaz-e-haddi",
+    nativeScript: "مغزِ ہڈی",
+    confidence: "high",
+    traditionIds: ["nihari-pk", "siri-paya-pk"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "PK",
+    localName: "kapura",
+    nativeScript: "کپورا",
+    terminologyNote:
+      "kapura refers to testicles in most Pakistani culinary contexts. Glandular tissue usage " +
+      "also documented. Never assume identical meaning across South Asia.",
+    confidence: "high",
+    traditionIds: ["gurda-kapura"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "PK",
+    localName: "kapura",
+    nativeScript: "کپورا",
+    terminologyNote:
+      "In Pakistani restaurant and street-food culture kapura most commonly means testicles. " +
+      "One of the world's strongest testicle traditions. Terminology overlaps with sweetbreads " +
+      "in some contexts.",
+    confidence: "high",
+    traditionIds: ["gurda-kapura", "katakat"],
+  },
+  {
+    canonicalId: "brain",
+    country: "PK",
+    localName: "maghaz",
+    nativeScript: "مغز",
+    confidence: "high",
+    traditionIds: ["katakat"],
+  },
+];
+
+// ─── Lebanon / Levant (LB) ────────────────────────────────────────────────────
+// Note: LB skin, tendon, brain intentionally omitted.
+
+const LB: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "LB",
+    localName: "lisān",
+    nativeScript: "لسان",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "LB",
+    localName: "karsha",
+    nativeScript: "كرشة",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "liver",
+    country: "LB",
+    localName: "kibdeh",
+    nativeScript: "كبدة",
+    confidence: "high",
+    traditionIds: ["mashawi-levant", "kibdeh-levant"],
+  },
+  {
+    canonicalId: "heart",
+    country: "LB",
+    localName: "qalb",
+    nativeScript: "قلب",
+    confidence: "high",
+    traditionIds: ["mashawi-levant"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "LB",
+    localName: "klawi",
+    nativeScript: "كلاوي",
+    altNames: ["klayeh"],
+    confidence: "high",
+    traditionIds: ["mashawi-levant"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "LB",
+    localName: "am'ā'",
+    nativeScript: "أمعاء",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "LB",
+    localName: "ra's",
+    nativeScript: "رأس",
+    altNames: ["khadd (خد)"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "LB",
+    localName: "nukha'",
+    nativeScript: "نخاع",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "LB",
+    localName: "mukh",
+    nativeScript: "مخ",
+    confidence: "high",
+    traditionIds: ["mashawi-levant"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "LB",
+    localName: "khusa",
+    nativeScript: "خصى",
+    altNames: ["khisyan (خصيان)"],
+    confidence: "high",
+    traditionIds: ["mashawi-levant"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -2248,4 +2454,6 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...IR,
   ...EG,
   ...BR,
+  ...PK,
+  ...LB,
 ];
