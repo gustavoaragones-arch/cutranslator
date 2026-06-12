@@ -134,59 +134,34 @@ export default async function OffalCutPage({ params }: PageProps) {
           {cut.description}
         </p>
 
-        {/* SVG diagram */}
+        {/* SVG diagram — same pattern as CowDiagramNewClient */}
         <section className="mt-10" aria-label="Anatomical diagram">
-          {/* Outer centering wrapper — max 700px wide, full-width on mobile */}
-          <div style={{ maxWidth: "700px", margin: "0 auto", width: "100%" }}>
-            {/*
-              Aspect-ratio container derived from the base cow viewBox (711.89 × 622.56).
-              Both SVGs are absolutely positioned inside so they share the same
-              coordinate space without conflicting heights.
-            */}
-            <div
-              className="relative overflow-hidden rounded-lg border"
-              style={{
-                aspectRatio: "711.89 / 622.56",
-                borderColor: "var(--atlas-paper-deep)",
-                backgroundColor: "var(--atlas-paper)",
-              }}
+          <section
+            className="cow-diagram relative mx-auto w-full max-w-2xl overflow-hidden rounded-2xl border border-[var(--atlas-paper-deep)] bg-[var(--atlas-paper)] p-4"
+            aria-label={`${name} anatomical position on beef carcass`}
+          >
+            <svg
+              viewBox="0 0 711.89 622.56"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid meet"
+              className="block h-auto w-full [filter:drop-shadow(0_4px_24px_rgba(44,36,24,0.10))]"
+              aria-hidden
+              focusable="false"
             >
-              {/* Base cow silhouette — viewBox matches artboard exactly */}
               {cowInner && (
-                <svg
-                  viewBox="0 0 711.89 622.56"
-                  preserveAspectRatio="xMidYMid meet"
-                  aria-label={`${name} anatomical position on beef carcass`}
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    display: "block",
-                  }}
+                <g
+                  className="cow-silhouette"
                   dangerouslySetInnerHTML={{ __html: cowInner }}
                 />
               )}
-              {/* Offal overlay — 17.19 units shorter; align to top so anatomy lines up */}
               {overlayInner && (
-                <svg
-                  viewBox="0 0 711.89 605.37"
-                  preserveAspectRatio="xMidYMin meet"
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    display: "block",
-                  }}
+                <g
+                  className="cut-highlight cut-highlight-exact"
                   dangerouslySetInnerHTML={{ __html: overlayInner }}
                 />
               )}
-            </div>
-          </div>
+            </svg>
+          </section>
         </section>
 
         {/* Regional names table */}
