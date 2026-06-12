@@ -1381,7 +1381,8 @@ const AR: readonly OffalRegionalName[] = [
     canonicalId: "brain",
     country: "AR",
     localName: "sesos",
-    confidence: "medium",
+    confidence: "high",
+    traditionIds: ["sesos-parrilla", "argentine-achuras"],
   },
 ];
 
@@ -2424,6 +2425,271 @@ const LB: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Saudi Arabia (SA) ───────────────────────────────────────────────────────
+// Note: SA skin, tendon, brain intentionally omitted.
+
+const SA: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "SA",
+    localName: "lisān",
+    nativeScript: "لسان",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "SA",
+    localName: "karsha",
+    nativeScript: "كرشة",
+    confidence: "high",
+  },
+  {
+    canonicalId: "liver",
+    country: "SA",
+    localName: "kabdah",
+    nativeScript: "كبدة",
+    confidence: "high",
+    traditionIds: ["kabdah-jeddawiyah"],
+  },
+  {
+    canonicalId: "heart",
+    country: "SA",
+    localName: "qalb",
+    nativeScript: "قلب",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "SA",
+    localName: "kalawi",
+    nativeScript: "كلاوي",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "SA",
+    localName: "masarin",
+    nativeScript: "مصارين",
+    confidence: "high",
+    traditionIds: ["masarin-traditions"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "SA",
+    localName: "ra's",
+    nativeScript: "رأس",
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "SA",
+    localName: "nukha'",
+    nativeScript: "نخاع",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "SA",
+    localName: "ghudad",
+    nativeScript: "غدد",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "testicles",
+    country: "SA",
+    localName: "khusa",
+    nativeScript: "خصى",
+    confidence: "medium",
+  },
+];
+
+// ─── Colombia (CO) ────────────────────────────────────────────────────────────
+
+const CO: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "CO",
+    localName: "lengua",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "CO",
+    localName: "mondongo",
+    altNames: ["callo"],
+    confidence: "high",
+    traditionIds: ["mondongo-colombiano"],
+  },
+  {
+    canonicalId: "liver",
+    country: "CO",
+    localName: "hígado",
+    confidence: "high",
+    traditionIds: ["fritanga-colombiana"],
+  },
+  {
+    canonicalId: "heart",
+    country: "CO",
+    localName: "corazón",
+    confidence: "medium",
+    traditionIds: ["fritanga-colombiana"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "CO",
+    localName: "riñón",
+    confidence: "medium",
+    traditionIds: ["fritanga-colombiana"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "CO",
+    localName: "chunchullo",
+    confidence: "high",
+    traditionIds: ["chunchullo-asado", "fritanga-colombiana"],
+  },
+  {
+    canonicalId: "skin",
+    country: "CO",
+    localName: "cuero",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "CO",
+    localName: "tendón",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "CO",
+    localName: "cabeza",
+    altNames: ["cachete"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "CO",
+    localName: "tuétano",
+    confidence: "medium",
+    traditionIds: ["changua-tuetano"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "CO",
+    localName: "mollejas",
+    confidence: "high",
+    traditionIds: ["fritanga-colombiana"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "CO",
+    localName: "criadillas",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "CO",
+    localName: "sesos",
+    confidence: "medium",
+    traditionIds: ["fritanga-colombiana"],
+  },
+];
+
+// ─── South Africa (ZA) ───────────────────────────────────────────────────────
+
+const ZA: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "ZA",
+    localName: "ox tongue",
+    altNames: ["tongue"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "ZA",
+    localName: "mogodu",
+    altNames: ["tripe"],
+    confidence: "high",
+    traditionIds: ["mala-mogodu"],
+  },
+  {
+    canonicalId: "liver",
+    country: "ZA",
+    localName: "beef liver",
+    altNames: ["liver"],
+    confidence: "high",
+    traditionIds: ["skilpadjies", "sa-braai-offal"],
+  },
+  {
+    canonicalId: "heart",
+    country: "ZA",
+    localName: "heart",
+    confidence: "high",
+    traditionIds: ["sa-braai-offal"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "ZA",
+    localName: "kidney",
+    confidence: "high",
+    traditionIds: ["cape-malay-offal"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "ZA",
+    localName: "intestines",
+    altNames: ["ulusu"],
+    confidence: "high",
+    traditionIds: ["sa-braai-offal"],
+  },
+  {
+    canonicalId: "skin",
+    country: "ZA",
+    localName: "skin",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "ZA",
+    localName: "tendon",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "ZA",
+    localName: "head meat",
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "ZA",
+    localName: "bone marrow",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "ZA",
+    localName: "sweetbreads",
+    confidence: "medium",
+    traditionIds: ["sa-braai-offal"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "ZA",
+    localName: "testicles",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "ZA",
+    localName: "brain",
+    altNames: ["brain curry"],
+    confidence: "medium",
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -2456,4 +2722,7 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...BR,
   ...PK,
   ...LB,
+  ...SA,
+  ...CO,
+  ...ZA,
 ];

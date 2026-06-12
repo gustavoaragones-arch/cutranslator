@@ -65,6 +65,9 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   BR: "Brazil",
   PK: "Pakistan",
   LB: "Lebanon / Levant",
+  SA: "Saudi Arabia",
+  CO: "Colombia",
+  ZA: "South Africa",
 };
 
 /** All offal regional name entries across all countries. */
@@ -156,7 +159,7 @@ const traditions: readonly OffalTradition[] = [
     // mondongo → tripe | rinones → kidney | chinchulines → intestines
     // mollejas → sweetbreads | testicles (both canonicals added Batch 26)
     // morcilla is a preparation (blood sausage), not a cut — tradition-only, no canonical planned
-    cuts: ["tripe", "kidney", "intestines", "sweetbreads", "testicles"],
+    cuts: ["tripe", "kidney", "intestines", "sweetbreads", "testicles", "brain"],
     sources: [
       "Francis Mallmann, Seven Fires: Grilling the Argentine Way (2009)",
       "Patricio Tapia, Argentine asado traditions (field notes)",
@@ -1879,6 +1882,205 @@ const traditions: readonly OffalTradition[] = [
       "Heart and kidney grilled quickly. Tripe and head meat boiled or slow-cooked. Berbere, " +
       "mitmita, and niter kibbeh are the principal flavor markers.",
     cuts: ["tongue", "tripe", "liver", "heart", "kidney", "intestines", "head_cheek", "bone_marrow"],
+  },
+
+  // ── Saudi Arabia ─────────────────────────────────────────────────────────────
+
+  {
+    id: "kabdah-jeddawiyah",
+    name: "Kabdah Jeddawiyah",
+    region: "Middle East — Saudi Arabia (Jeddah)",
+    summary:
+      "Saudi Arabia's most important organ dish. Fresh liver rapidly sautéed with garlic, " +
+      "black pepper, cumin, and chili. A defining breakfast and street-food tradition of " +
+      "western Saudi Arabia, especially Jeddah.",
+    culturalContext:
+      "Dedicated liver stalls operate throughout Jeddah, Mecca, and Riyadh. One of the " +
+      "strongest liver street-food traditions in the Arab world. Comparable to Egypt's kibda " +
+      "iskandarani in cultural prominence but with a distinctly Saudi spice profile.",
+    preparationNotes:
+      "Fresh liver sliced thin. Rapidly sautéed in oil with garlic, black pepper, cumin, " +
+      "chili, and sometimes tomato. Served immediately with khubz flatbread.",
+    cuts: ["liver"],
+  },
+  {
+    id: "masarin-traditions",
+    name: "Masarin",
+    region: "Middle East — Saudi Arabia",
+    summary:
+      "Saudi Arabia's most important intestine tradition. Intestines stuffed with rice and " +
+      "spices or grilled over charcoal. One of the Gulf's strongest intestine traditions.",
+    culturalContext:
+      "Especially prominent in Jeddah and western Saudi Arabia. Particularly associated with " +
+      "Eid al-Adha and family slaughter events. The stuffed version (masarin mahshi) resembles " +
+      "Egypt's mombar — both reflect a broader Arab tradition of stuffed intestines.",
+    preparationNotes:
+      "Intestines cleaned thoroughly. Stuffed with rice, onion, tomato, herbs, and spices " +
+      "then simmered. Or cleaned and grilled directly over charcoal with salt and cumin.",
+    cuts: ["intestines"],
+  },
+
+  // ── Colombia ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "mondongo-colombiano",
+    name: "Mondongo Colombiano",
+    region: "South America — Colombia",
+    summary:
+      "Colombia's most important offal dish. Tripe slow-simmered in a hearty soup with " +
+      "potatoes, yuca, plantain, cilantro, and cumin. Distinct from Argentine mondongo in " +
+      "being soup-based and vegetable-heavy.",
+    culturalContext:
+      "A staple of Colombian home cooking, especially in Antioquia, Medellín, and the Eje " +
+      "Cafetero. Weekend family dish comparable in cultural importance to Mexican menudo and " +
+      "Spanish callos. Strongly associated with Antioquian identity.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender. Simmered in broth with potatoes, yuca, green " +
+      "plantain, onion, tomato, cilantro, garlic, and cumin. Served with avocado, rice, " +
+      "and hogao (tomato-onion sauce).",
+    cuts: ["tripe"],
+  },
+  {
+    id: "chunchullo-asado",
+    name: "Chunchullo Asado",
+    region: "South America — Colombia",
+    summary:
+      "Colombia's defining intestine tradition. Cleaned intestines salted and grilled over " +
+      "charcoal until crisp outside and chewy inside. A centerpiece of Colombian mixed-grill culture.",
+    culturalContext:
+      "Especially associated with Antioquia, Valle del Cauca, and Bogotá fritanga culture. " +
+      "Related to Argentine chinchulines and Chilean chunchules but with distinct Colombian " +
+      "preparation and cultural context.",
+    preparationNotes:
+      "Intestines cleaned thoroughly and salted. Grilled over charcoal or wood until exterior " +
+      "crisps. Served with ají (Colombian hot sauce), papa criolla, and arepa.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "fritanga-colombiana",
+    name: "Fritanga Colombiana",
+    region: "South America — Colombia",
+    summary:
+      "Colombia's mixed-offal framework. Multiple organs fried or grilled together and served " +
+      "as a shared platter. The Colombian equivalent of Argentine achuras or Iranian jigaraki.",
+    culturalContext:
+      "Common in Bogotá, Medellín, and Cali street-food and restaurant culture. Brings " +
+      "together chunchullo, mollejas, hígado, riñones, and other organs in a single communal " +
+      "dish. One of Latin America's most diverse multi-organ traditions.",
+    preparationNotes:
+      "Each organ cleaned and prepared separately. Fried or grilled with salt and spices. " +
+      "Combined on a shared platter with papa criolla, arepa, ají, and chimichurri.",
+    cuts: ["intestines", "sweetbreads", "liver", "kidney", "heart", "head_cheek", "brain"],
+  },
+  {
+    id: "changua-tuetano",
+    name: "Changua de Tuétano",
+    region: "South America — Colombia (Andean)",
+    summary:
+      "A distinctive Andean marrow breakfast soup. Marrow-rich bones simmered in milk or " +
+      "water with eggs, herbs, and bread. A cold-morning staple in the Colombian highlands.",
+    culturalContext:
+      "Especially associated with Bogotá and the Andean highlands. Changua is one of " +
+      "Colombia's most distinctive breakfast traditions. The marrow variant adds richness " +
+      "and body to the soup. Differs substantially from Argentine or British marrow traditions " +
+      "in its milk-based and breakfast-oriented character.",
+    preparationNotes:
+      "Marrow bones simmered in water or milk with scallions, cilantro, and salt. Eggs " +
+      "poached directly in the broth. Served with stale bread or calado soaked in the soup.",
+    cuts: ["bone_marrow"],
+  },
+
+  // ── South Africa ──────────────────────────────────────────────────────────────
+
+  {
+    id: "skilpadjies",
+    name: "Skilpadjies",
+    region: "Africa — South Africa",
+    summary:
+      "South Africa's most distinctive offal preparation and one of the world's great liver " +
+      "traditions. Liver cubes wrapped in caul fat and grilled over open flame. A braai centerpiece.",
+    culturalContext:
+      "Skilpadjies (Afrikaans for \"little tortoises\") are a defining feature of South African " +
+      "braai culture. The caul fat wrapping bastes the liver during grilling. A direct parallel " +
+      "to Morocco's boulfaf and Turkey's ciğer sarma — an example of convergent offal cookery " +
+      "across cultures. Common at farm braais, family gatherings, and traditional celebrations.",
+    preparationNotes:
+      "Liver cubed and seasoned with salt, pepper, and sometimes coriander. Wrapped in caul " +
+      "fat (omentum). Grilled over open coals until caul fat renders and crisps. Served immediately.",
+    cuts: ["liver"],
+  },
+  {
+    id: "mala-mogodu",
+    name: "Mala Mogodu",
+    region: "Africa — South Africa",
+    summary:
+      "South Africa's most important tripe tradition and one of Africa's strongest. Tripe " +
+      "simmered for many hours with onions, tomatoes, and spices, served with pap (maize porridge).",
+    culturalContext:
+      "A staple of Black South African home cooking and township culture. Consumed across " +
+      "ethnic groups including Zulu, Xhosa, Sotho, and Tswana communities. One of Africa's " +
+      "most culturally embedded tripe traditions alongside Nigerian shaki and Ethiopian botti.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender. Simmered with onions, tomatoes, garlic, curry " +
+      "powder, and mixed spices. Served with pap or rice. Cooking time is long — up to 4 hours.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "cape-malay-offal",
+    name: "Cape Malay Offal Curries",
+    region: "Africa — South Africa (Cape Town)",
+    summary:
+      "A distinctive regional offal system unique to South Africa. Multiple organs curried " +
+      "with turmeric, coriander, cinnamon, cloves, cardamom, and vinegar. Reflects the fusion " +
+      "of Indonesian, Indian, and African influences in Cape Malay cuisine.",
+    culturalContext:
+      "Developed by the Cape Malay community in Cape Town, descended from enslaved and " +
+      "indentured workers brought from Southeast Asia and South Asia by the Dutch East India " +
+      "Company. One of the most culturally distinctive regional offal traditions in Africa. " +
+      "No direct parallel exists elsewhere in the dataset.",
+    preparationNotes:
+      "Organs cleaned and marinated in vinegar, turmeric, and spices. Slow-cooked in curry " +
+      "with onions, garlic, ginger, cardamom, cinnamon, cloves, and chili. Served with roti or rice.",
+    cuts: ["liver", "kidney", "tripe", "heart"],
+  },
+  {
+    id: "sa-braai-offal",
+    name: "South African Braai Offal",
+    region: "Africa — South Africa",
+    summary:
+      "The organizing framework for South African offal consumption. Multiple organs grilled " +
+      "over open coals at a braai. South Africa's equivalent of Argentine achuras or Iranian jigaraki.",
+    culturalContext:
+      "The braai is South Africa's national cooking tradition. Offal is a standard part of " +
+      "traditional braai culture across Afrikaner, Black African, and Coloured communities. " +
+      "Skilpadjies is the most famous element but liver, heart, kidney, and sweetbreads all " +
+      "appear regularly.",
+    preparationNotes:
+      "Each organ cleaned and seasoned with salt and spices. Grilled over hardwood coals. " +
+      "Liver often wrapped in caul fat (skilpadjies). Intestines boiled first then finished " +
+      "on the braai. Served with pap, chakalaka, and braai bread.",
+    cuts: ["liver", "heart", "kidney", "sweetbreads", "intestines", "testicles"],
+  },
+
+  // ── Argentina (brain) ─────────────────────────────────────────────────────────
+
+  {
+    id: "sesos-parrilla",
+    name: "Sesos a la Parrilla",
+    region: "South America — Argentina",
+    summary:
+      "The traditional Argentine preparation of beef brain within the achuras system. Brain " +
+      "soaked, cleaned, and lightly poached before grilling over wood embers as one of the " +
+      "opening courses of an asado.",
+    culturalContext:
+      "Part of the broader Argentine nose-to-tail philosophy of the asado. Less common today " +
+      "than mollejas or chinchulines but historically documented and still served in traditional " +
+      "parrillas. Consumption has declined due to changing preferences and regulatory concerns " +
+      "around brain tissue.",
+    preparationNotes:
+      "Brain soaked in cold water to remove blood. Lightly poached or parboiled. Grilled " +
+      "over wood embers with salt and lemon. Sometimes breaded and fried as an alternative preparation.",
+    cuts: ["brain"],
   },
 ];
 
