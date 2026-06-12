@@ -141,7 +141,7 @@ export default async function OffalCutPage({ params }: PageProps) {
             aria-label={`${name} anatomical position on beef carcass`}
           >
             <svg
-              viewBox="0 0 711.89 622.56"
+              viewBox="464 186 264 128"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="xMidYMid meet"
               className="block h-auto w-full [filter:drop-shadow(0_4px_24px_rgba(44,36,24,0.10))]"
