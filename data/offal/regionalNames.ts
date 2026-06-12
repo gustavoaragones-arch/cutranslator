@@ -2690,6 +2690,247 @@ const ZA: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Poland (PL) ─────────────────────────────────────────────────────────────
+// Note: PL skin, tendon, testicles intentionally omitted — low confidence.
+
+const PL: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "PL",
+    localName: "ozór wołowy",
+    confidence: "high",
+    traditionIds: ["ozor-w-chrzanie"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "PL",
+    localName: "flaki wołowe",
+    altNames: ["flaki"],
+    confidence: "high",
+    traditionIds: ["flaki"],
+  },
+  {
+    canonicalId: "liver",
+    country: "PL",
+    localName: "wątróbka wołowa",
+    confidence: "high",
+    traditionIds: ["watrobka-z-cebula"],
+  },
+  {
+    canonicalId: "heart",
+    country: "PL",
+    localName: "serce wołowe",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "PL",
+    localName: "nerki wołowe",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "PL",
+    localName: "jelita",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "PL",
+    localName: "głowizna",
+    altNames: ["policzki wołowe"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "PL",
+    localName: "szpik",
+    confidence: "high",
+    traditionIds: ["rosol-ze-szpikiem"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "PL",
+    localName: "grasica",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "PL",
+    localName: "móżdżek wołowy",
+    confidence: "high",
+    traditionIds: ["mozdzek-z-jajkiem"],
+  },
+];
+
+// ─── Czech Republic (CZ) ─────────────────────────────────────────────────────
+// Note: CZ skin, tendon, testicles intentionally omitted — low confidence.
+
+const CZ: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "CZ",
+    localName: "hovězí jazyk",
+    confidence: "high",
+    traditionIds: ["hovezi-jazyk-kren"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "CZ",
+    localName: "dršťky",
+    confidence: "high",
+    traditionIds: ["drstkova-polevka"],
+  },
+  {
+    canonicalId: "liver",
+    country: "CZ",
+    localName: "hovězí játra",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "CZ",
+    localName: "hovězí srdce",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "kidney",
+    country: "CZ",
+    localName: "hovězí ledviny",
+    confidence: "high",
+  },
+  {
+    canonicalId: "intestines",
+    country: "CZ",
+    localName: "střeva",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "CZ",
+    localName: "hovězí líčka",
+    altNames: ["hlava"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "CZ",
+    localName: "morek",
+    confidence: "high",
+    traditionIds: ["hovezi-vyvar-morekem"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "CZ",
+    localName: "brzlík",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "CZ",
+    localName: "hovězí mozeček",
+    confidence: "high",
+    traditionIds: ["mozecek-s-vejci"],
+  },
+];
+
+// ─── Russia (RU) ─────────────────────────────────────────────────────────────
+// Note: RU testicles intentionally omitted — low confidence.
+
+const RU: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "RU",
+    localName: "govyazhiy yazyk",
+    nativeScript: "говяжий язык",
+    confidence: "high",
+    traditionIds: ["zalivnoy-yazyk"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "RU",
+    localName: "rubets",
+    nativeScript: "рубец",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "liver",
+    country: "RU",
+    localName: "pechen'",
+    nativeScript: "печень",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "RU",
+    localName: "serdtse",
+    nativeScript: "сердце",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "RU",
+    localName: "pochki",
+    nativeScript: "почки",
+    confidence: "high",
+    traditionIds: ["pochki-v-smetane"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "RU",
+    localName: "kishki",
+    nativeScript: "кишки",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "skin",
+    country: "RU",
+    localName: "shkura",
+    nativeScript: "шкура",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "RU",
+    localName: "sukhozhiliya",
+    nativeScript: "сухожилия",
+    confidence: "high",
+    traditionIds: ["kholodets-ru"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "RU",
+    localName: "golova",
+    nativeScript: "голова",
+    altNames: ["shchyoki (щёки)"],
+    confidence: "high",
+    traditionIds: ["kholodets-ru"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "RU",
+    localName: "kostny mozg",
+    nativeScript: "костный мозг",
+    confidence: "high",
+    traditionIds: ["russian-marrow-broth"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "RU",
+    localName: "zobnaya zheleza",
+    nativeScript: "зобная железа",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "RU",
+    localName: "mozgi",
+    nativeScript: "мозги",
+    confidence: "high",
+    traditionIds: ["mozgi-traditions"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -2725,4 +2966,7 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...SA,
   ...CO,
   ...ZA,
+  ...PL,
+  ...CZ,
+  ...RU,
 ];

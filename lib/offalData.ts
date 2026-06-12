@@ -68,6 +68,9 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   SA: "Saudi Arabia",
   CO: "Colombia",
   ZA: "South Africa",
+  PL: "Poland",
+  CZ: "Czech Republic",
+  RU: "Russia",
 };
 
 /** All offal regional name entries across all countries. */
@@ -2081,6 +2084,247 @@ const traditions: readonly OffalTradition[] = [
       "Brain soaked in cold water to remove blood. Lightly poached or parboiled. Grilled " +
       "over wood embers with salt and lemon. Sometimes breaded and fried as an alternative preparation.",
     cuts: ["brain"],
+  },
+
+  // ── Poland ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "flaki",
+    name: "Flaki",
+    region: "Europe — Poland",
+    summary:
+      "Poland's national offal dish and one of Europe's great tripe soups. Tripe simmered " +
+      "for many hours in rich broth with marjoram, nutmeg, black pepper, and root vegetables. " +
+      "Documented since at least the medieval period.",
+    culturalContext:
+      "Virtually every Pole recognizes flaki. Historically served to nobility, soldiers, and " +
+      "workers alike. One of the strongest tripe traditions in Europe alongside Hungarian " +
+      "pacalpörkölt, Spanish callos, and Turkish işkembe.",
+    preparationNotes:
+      "Tripe cleaned and simmered for many hours. Broth built with root vegetables, marjoram, " +
+      "nutmeg, black pepper, and allspice. Finished thick and aromatic. Served with bread or rolls.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "ozor-w-chrzanie",
+    name: "Ozór w Chrzanie",
+    region: "Europe — Poland",
+    summary:
+      "Poland's flagship tongue preparation. Beef tongue simmered with root vegetables and " +
+      "spices, sliced and served with horseradish sauce.",
+    culturalContext:
+      "A premium traditional dish served at holiday meals, weddings, and family celebrations. " +
+      "Tongue is viewed as a prestige offal cut in Polish culture rather than poverty food. " +
+      "Comparable to Russia's zalivnoy yazyk and Germany's rinderzunge in cultural standing.",
+    preparationNotes:
+      "Tongue simmered with carrots, onions, celery root, bay leaves, peppercorns, and " +
+      "allspice until tender. Skin peeled while hot. Sliced and served with horseradish sauce or mustard.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "watrobka-z-cebula",
+    name: "Wątróbka z Cebulą",
+    region: "Europe — Poland",
+    summary:
+      "Poland's most common liver preparation. Liver pan-fried with onions and served with " +
+      "potatoes or bread. A staple of Polish home cooking and milk-bar culture.",
+    culturalContext:
+      "Milk bars (bar mleczny) — subsidized communist-era canteens that survived into modern " +
+      "Poland — serve wątróbka z cebulą as a daily staple. One of Poland's most accessible " +
+      "and widely recognized offal dishes.",
+    preparationNotes:
+      "Liver sliced, optionally soaked in milk to reduce bitterness. Pan-fried in butter or " +
+      "oil with sliced onions until just cooked through. Served with boiled potatoes and pickle.",
+    cuts: ["liver"],
+  },
+  {
+    id: "mozdzek-z-jajkiem",
+    name: "Móżdżek z Jajkiem",
+    region: "Europe — Poland",
+    summary:
+      "Poland's classic brain preparation. Beef brain poached then scrambled with eggs, " +
+      "onions, and parsley. One of Central Europe's most documented brain traditions.",
+    culturalContext:
+      "Historically common in Polish home cooking and restaurants. Older generations remain " +
+      "especially familiar with the dish. Consumption declined after BSE-related concerns. Part " +
+      "of a broader Central European brain-with-eggs pattern shared with Czech, Hungarian, and " +
+      "Russian cuisines.",
+    preparationNotes:
+      "Brain soaked in cold salted water, membrane removed. Poached in salted water with vinegar. " +
+      "Broken into pieces and scrambled with beaten eggs, butter, onion, and parsley. Served on " +
+      "toast or with bread.",
+    cuts: ["brain"],
+  },
+  {
+    id: "rosol-ze-szpikiem",
+    name: "Rosół ze Szpikiem",
+    region: "Europe — Poland",
+    summary:
+      "Poland's marrow-enriched broth tradition. Marrow bones simmered in Poland's classic " +
+      "clear beef soup, contributing richness and body. Marrow also served directly on bread.",
+    culturalContext:
+      "Rosół is Poland's most important soup. The marrow variant adds depth and nourishment. " +
+      "Historically associated with Sunday family meals, recovery from illness, and winter warmth.",
+    preparationNotes:
+      "Marrow bones and beef simmered for many hours with carrots, celery root, parsley root, " +
+      "onion, leek, and peppercorns. Broth strained clear. Marrow scooped from bones and spread " +
+      "on toast as accompaniment.",
+    cuts: ["bone_marrow"],
+  },
+
+  // ── Czech Republic ────────────────────────────────────────────────────────────
+
+  {
+    id: "drstkova-polevka",
+    name: "Dršťková Polévka",
+    region: "Europe — Czech Republic",
+    summary:
+      "The Czech Republic's most important offal tradition. Tripe cleaned, sliced, and simmered " +
+      "with paprika, garlic, marjoram, and onion into a thick, strongly seasoned soup. A national " +
+      "pub staple.",
+    culturalContext:
+      "Found in traditional pubs, village restaurants, and worker lunches throughout the Czech " +
+      "Republic. One of Central Europe's most recognizable tripe soups alongside Poland's flaki " +
+      "and Hungary's pacalpörkölt.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender, sliced into strips. Simmered with paprika, " +
+      "marjoram, garlic, onion, and beef stock. Finished thick and aromatic. Served with bread.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "mozecek-s-vejci",
+    name: "Mozeček s Vejci",
+    region: "Europe — Czech Republic",
+    summary:
+      "Czech brain scrambled with eggs — one of Central Europe's classic brain preparations. " +
+      "Brain poached and mixed with eggs, butter, and parsley.",
+    culturalContext:
+      "Historically a pub and home-cooking staple in Czech tavern culture. Consumption declined " +
+      "after BSE-related restrictions. Part of the same Central European brain-with-eggs pattern " +
+      "as Poland's móżdżek z jajkiem and Hungary's equivalent preparations.",
+    preparationNotes:
+      "Brain soaked, membrane removed, poached. Broken into pieces and scrambled with eggs, " +
+      "butter, onion, and parsley. Seasoned with salt, pepper, and nutmeg. Served with bread.",
+    cuts: ["brain"],
+  },
+  {
+    id: "hovezi-jazyk-kren",
+    name: "Hovězí Jazyk s Křenem",
+    region: "Europe — Czech Republic",
+    summary:
+      "Czech beef tongue with horseradish sauce. Tongue simmered with root vegetables and " +
+      "spices, served sliced with horseradish cream or sauce and dumplings.",
+    culturalContext:
+      "A premium traditional dish served at holiday meals and family gatherings. Part of the " +
+      "Central European tongue-with-horseradish tradition shared with Poland, Russia, and Ukraine.",
+    preparationNotes:
+      "Tongue simmered with root vegetables, bay leaves, and peppercorns until tender. Peeled " +
+      "while hot, sliced. Served with horseradish cream sauce and bread dumplings.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "hovezi-vyvar-morekem",
+    name: "Hovězí Vývar s Morekem",
+    region: "Europe — Czech Republic",
+    summary:
+      "Czech marrow broth tradition. Marrow bones simmered into clear beef broth, contributing " +
+      "richness and depth. Marrow spread on bread as accompaniment.",
+    culturalContext:
+      "Traditional beef broth is one of Czech cuisine's most valued preparations. The marrow " +
+      "contribution is considered essential for authentic depth of flavor.",
+    preparationNotes:
+      "Marrow bones and beef simmered for many hours with root vegetables and aromatics. Broth " +
+      "strained clear. Marrow served on toast alongside.",
+    cuts: ["bone_marrow"],
+  },
+
+  // ── Russia ────────────────────────────────────────────────────────────────────
+
+  {
+    id: "zalivnoy-yazyk",
+    name: "Zalivnoy Yazyk",
+    region: "Europe — Russia",
+    summary:
+      "Russia's most important tongue tradition. Beef tongue simmered, sliced, and set in " +
+      "clear aspic — a classic holiday and banquet dish.",
+    culturalContext:
+      "A centerpiece of New Year and wedding tables in Russian tradition. Tongue in aspic " +
+      "represents the prestige end of Russian offal culture. Part of the Eastern European " +
+      "tongue tradition shared with Poland, Czech Republic, and Ukraine.",
+    preparationNotes:
+      "Tongue simmered with carrots, onions, bay leaves, and peppercorns. Peeled while hot, " +
+      "sliced. Arranged in molds with clarified stock enriched with gelatin. Chilled until set. " +
+      "Served with horseradish and mustard.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "kholodets-ru",
+    name: "Kholodets",
+    region: "Europe — Russia",
+    summary:
+      "Russia's defining whole-animal cold dish. Head meat, tendons, and collagen-rich tissues " +
+      "simmered for many hours until the broth sets solid when chilled. A centerpiece of winter " +
+      "and holiday tables.",
+    culturalContext:
+      "Kholodets belongs alongside Mexico's cabeza, India's siri-paya, and Turkey's kelle-paça " +
+      "as one of the world's great head-and-collagen traditions. The dish extracts maximum value " +
+      "from collagen-rich cuts — head, tendon, skin — through overnight cooking. Identical " +
+      "tradition exists in Ukraine under the same name.",
+    preparationNotes:
+      "Head, trotters, tendons, and bones simmered 12+ hours. Meat picked from bones and " +
+      "arranged in molds. Natural gelatin broth poured over. Chilled overnight until firmly set. " +
+      "Served with horseradish, mustard, and black bread.",
+    cuts: ["head_cheek", "tendon", "skin", "bone_marrow"],
+  },
+  {
+    id: "pochki-v-smetane",
+    name: "Pochki v Smetane",
+    region: "Europe — Russia",
+    summary:
+      "Russia's flagship kidney preparation. Kidneys braised in sour cream with onions, " +
+      "mustard, and mushrooms. One of Eastern Europe's strongest kidney traditions.",
+    culturalContext:
+      "A classic of Imperial Russian cuisine that survived into Soviet home cooking. Sour cream " +
+      "is the defining flavor marker — the same technique applies across Russian braised organ dishes.",
+    preparationNotes:
+      "Kidneys soaked and cleaned to remove odor. Sliced and braised with onions, mushrooms, " +
+      "mustard, and sour cream. Finished with dill and parsley. Served with boiled potatoes or buckwheat.",
+    cuts: ["kidney"],
+  },
+  {
+    id: "mozgi-traditions",
+    name: "Mozgi — Russian Brain Traditions",
+    region: "Europe — Russia",
+    summary:
+      "Russia's historically documented brain tradition. Brain poached and fried, scrambled " +
+      "with eggs, or incorporated into pâtés. Part of a broad Eastern European cluster of " +
+      "brain-with-eggs preparations.",
+    culturalContext:
+      "Historically common in Russian home cooking and restaurants. Consumption declined after " +
+      "BSE-related concerns. Russia belongs to the European cluster where brain consumption was " +
+      "mainstream — alongside France, Spain, Italy, Poland, Czech Republic, and Hungary.",
+    preparationNotes:
+      "Brain soaked in cold salted water. Membrane removed. Poached in salted water with vinegar. " +
+      "Breaded and fried, or broken into pieces and scrambled with eggs, butter, and herbs.",
+    cuts: ["brain"],
+  },
+  {
+    id: "russian-marrow-broth",
+    name: "Russian Marrow Broth Tradition",
+    region: "Europe — Russia",
+    cuts: ["bone_marrow", "tendon"],
+    summary:
+      "Russia's marrow and collagen soup tradition. Marrow-rich bones and tendon-rich cuts " +
+      "simmered for many hours into deeply nourishing broths. Associated with winter recovery " +
+      "and traditional home cooking.",
+    culturalContext:
+      "Marrow broth is foundational to Russian soup culture. Unlike France's roasted marrow " +
+      "or Britain's marrow on toast, Russian tradition emphasizes long extraction into broth " +
+      "rather than direct consumption.",
+    preparationNotes:
+      "Marrow bones and tendon-rich cuts simmered for many hours with root vegetables and " +
+      "aromatics. Broth skimmed and strained. Served as soup with bread or used as base for " +
+      "other dishes.",
   },
 ];
 
