@@ -155,7 +155,12 @@ export default async function OffalCutPage({ params }: PageProps) {
                 />
               )}
               {overlayInner && (
+                /* Translate down 17.19 units to compensate for the artboard height
+                   difference between the cow base (622.56) and offal overlays (605.37).
+                   Illustrator bottom-left origin means every overlay path is 17.19 units
+                   too high when composited into the cow's coordinate space. */
                 <g
+                  transform="translate(0, 17.19)"
                   className="cut-highlight cut-highlight-exact"
                   dangerouslySetInnerHTML={{ __html: overlayInner }}
                 />
