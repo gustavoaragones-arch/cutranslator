@@ -71,6 +71,8 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   PL: "Poland",
   CZ: "Czech Republic",
   RU: "Russia",
+  UA: "Ukraine",
+  TH: "Thailand",
 };
 
 /** All offal regional name entries across all countries. */
@@ -2325,6 +2327,137 @@ const traditions: readonly OffalTradition[] = [
       "Marrow bones and tendon-rich cuts simmered for many hours with root vegetables and " +
       "aromatics. Broth skimmed and strained. Served as soup with bread or used as base for " +
       "other dishes.",
+  },
+
+  // ── Ukraine ───────────────────────────────────────────────────────────────────
+
+  {
+    id: "kholodets-ua",
+    name: "Kholodets",
+    region: "Europe — Ukraine",
+    summary:
+      "Ukraine's defining whole-animal cold dish. Head meat, tendons, and collagen-rich " +
+      "tissues simmered overnight until the broth sets solid when chilled. A centerpiece " +
+      "of Christmas, New Year, and wedding tables.",
+    culturalContext:
+      "Identical dish exists in Russia under the same name — shared East Slavic culinary " +
+      "heritage. Ukrainian kholodets has a stronger association with village slaughter " +
+      "traditions and Christmas celebrations. Greater influence of Polish and Central " +
+      "European foodways in western Ukraine.",
+    preparationNotes:
+      "Head, trotters, tendons, and bones simmered 12+ hours. Meat picked from bones and " +
+      "arranged in molds. Natural gelatin broth poured over. Chilled overnight until firmly " +
+      "set. Served with horseradish, mustard, and black bread.",
+    cuts: ["head_cheek", "tendon", "skin", "bone_marrow"],
+  },
+  {
+    id: "yazyk-z-khronom",
+    name: "Yazyk z Khronom",
+    region: "Europe — Ukraine",
+    summary:
+      "Ukraine's flagship tongue preparation. Beef tongue simmered with root vegetables " +
+      "and spices, served sliced with horseradish or mustard. A prestige dish for holiday " +
+      "and celebration tables.",
+    culturalContext:
+      "Part of the Eastern European tongue-with-horseradish tradition shared with Poland, " +
+      "Czech Republic, and Russia. Tongue is viewed as a premium offal cut in Ukrainian " +
+      "culture rather than everyday food.",
+    preparationNotes:
+      "Tongue simmered with carrots, onions, celery root, bay leaves, and peppercorns until " +
+      "tender. Peeled while hot, sliced. Served with horseradish sauce or cold in aspic.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "mizky-z-yaitsem",
+    name: "Mizky z Yaitsem",
+    region: "Europe — Ukraine",
+    summary:
+      "Ukrainian brain scrambled with eggs — one of Eastern Europe's classic brain " +
+      "preparations. Brain poached then mixed with eggs, butter, and parsley.",
+    culturalContext:
+      "Historically common in Ukrainian home cooking. Part of the Central and Eastern " +
+      "European brain-with-eggs pattern shared with Poland's móżdżek z jajkiem, Czech " +
+      "mozeček s vejci, and Russian mozgi preparations. Consumption declined after " +
+      "BSE-related concerns.",
+    preparationNotes:
+      "Brain soaked in cold salted water, membrane removed. Poached in salted water with " +
+      "vinegar. Broken into pieces and scrambled with beaten eggs, butter, onion, and parsley.",
+    cuts: ["brain"],
+  },
+  {
+    id: "ukrainian-marrow-broth",
+    name: "Ukrainian Marrow Broth Tradition",
+    region: "Europe — Ukraine",
+    summary:
+      "Ukraine's marrow and collagen soup tradition. Marrow-rich bones and tendon-rich cuts " +
+      "simmered for many hours. Associated with winter nourishment and traditional home cooking.",
+    culturalContext:
+      "Foundational to Ukrainian soup culture. Marrow broth is associated with recovery, " +
+      "winter warmth, and village cooking. Part of the broader Eastern European marrow-broth " +
+      "tradition shared with Russia and Poland.",
+    preparationNotes:
+      "Marrow bones and tendon-rich cuts simmered with root vegetables and aromatics. Broth " +
+      "skimmed and strained. Served as soup or used as base for other dishes.",
+    cuts: ["bone_marrow", "tendon"],
+  },
+
+  // ── Thailand ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "kuaitiao-nuea",
+    name: "Kuaitiao Nuea",
+    region: "Asia — Thailand",
+    summary:
+      "Thailand's most important bovine-offal tradition. Beef noodle soup combining multiple " +
+      "offal cuts in aromatic broth with star anise, cinnamon, garlic, and cilantro root. " +
+      "A national street-food staple.",
+    culturalContext:
+      "Thai beef noodle culture draws heavily from Chinese culinary traditions. Multiple " +
+      "offal cuts coexist in a single bowl — tripe, tendon, and intestines are standard " +
+      "offerings. Comparable to Vietnam's phở bò and Indonesia's soto jeroan as a " +
+      "multi-organ soup tradition.",
+    preparationNotes:
+      "Rich broth built from marrow bones with star anise, cinnamon, garlic, cilantro root, " +
+      "and white pepper. Offal cuts prepared separately and added to order. Served with rice " +
+      "noodles, bean sprouts, herbs, lime, chili, and fish sauce.",
+    cuts: ["tripe", "tendon", "intestines", "liver", "kidney", "bone_marrow"],
+  },
+  {
+    id: "tom-saep-offal",
+    name: "Tom Saep Offal",
+    region: "Asia — Thailand (Isan)",
+    summary:
+      "Isan's defining spicy offal soup. Multiple organs simmered in intensely sour and " +
+      "spicy broth with lime, chili, fish sauce, and toasted rice. Distinct from northern " +
+      "Thai or Bangkok offal traditions.",
+    culturalContext:
+      "Tom saep is especially associated with northeastern Thailand (Isan). The sour-spicy " +
+      "flavor profile is distinctively Isan rather than Chinese-influenced. One of Southeast " +
+      "Asia's most distinctive offal-soup traditions.",
+    preparationNotes:
+      "Offal cuts boiled until tender. Broth seasoned with fish sauce, lime juice, dried " +
+      "chili, lemongrass, galangal, and toasted rice powder. Finished with fresh herbs " +
+      "and green onion.",
+    cuts: ["tripe", "intestines", "tendon"],
+  },
+  {
+    id: "northern-thai-larb",
+    name: "Northern Thai Larb Offal",
+    region: "Asia — Thailand (Chiang Mai)",
+    summary:
+      "Northern Thailand's distinctive organ-meat tradition. Multiple offal cuts finely " +
+      "chopped and dressed with bile, dried spices, toasted rice, and herbs. Distinct from " +
+      "Isan larb in its use of bile and complex dry-spice blends.",
+    culturalContext:
+      "Lanna (northern Thai) larb is one of the most distinctive offal traditions in " +
+      "Southeast Asia. The use of bile as a seasoning element is unusual in global offal " +
+      "traditions. Organ larb incorporates a wider variety of cuts than muscle-meat larb. " +
+      "Especially associated with Chiang Mai and highland communities.",
+    preparationNotes:
+      "Organs finely chopped or minced. Dressed with bile, dried spices (makhwaen pepper, " +
+      "long pepper), toasted rice powder, dried chili, shallots, garlic, and fresh herbs. " +
+      "Served raw or lightly cooked depending on region and preference.",
+    cuts: ["liver", "intestines", "heart", "tripe"],
   },
 ];
 

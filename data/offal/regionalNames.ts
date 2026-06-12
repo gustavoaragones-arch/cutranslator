@@ -2931,6 +2931,185 @@ const RU: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Ukraine (UA) ────────────────────────────────────────────────────────────
+// Note: UA testicles intentionally omitted — low confidence.
+
+const UA: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "UA",
+    localName: "yalovychyi yazyk",
+    nativeScript: "яловичий язик",
+    confidence: "high",
+    traditionIds: ["yazyk-z-khronom"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "UA",
+    localName: "rubets",
+    nativeScript: "рубець",
+    confidence: "high",
+  },
+  {
+    canonicalId: "liver",
+    country: "UA",
+    localName: "pechinka",
+    nativeScript: "печінка",
+    confidence: "high",
+  },
+  {
+    canonicalId: "heart",
+    country: "UA",
+    localName: "sertse",
+    nativeScript: "серце",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "UA",
+    localName: "nyrky",
+    nativeScript: "нирки",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "intestines",
+    country: "UA",
+    localName: "kyshky",
+    nativeScript: "кишки",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "skin",
+    country: "UA",
+    localName: "shkira",
+    nativeScript: "шкіра",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "UA",
+    localName: "sukhozhyllya",
+    nativeScript: "сухожилля",
+    confidence: "high",
+    traditionIds: ["kholodets-ua"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "UA",
+    localName: "holova",
+    nativeScript: "голова",
+    altNames: ["shchoky (щоки)"],
+    confidence: "high",
+    traditionIds: ["kholodets-ua"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "UA",
+    localName: "kistkovyi mozok",
+    nativeScript: "кістковий мозок",
+    confidence: "high",
+    traditionIds: ["ukrainian-marrow-broth"],
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "UA",
+    localName: "zobna zaloza",
+    nativeScript: "зобна залоза",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "UA",
+    localName: "mizky",
+    nativeScript: "мізки",
+    confidence: "high",
+    traditionIds: ["mizky-z-yaitsem"],
+  },
+];
+
+// ─── Thailand (TH) ───────────────────────────────────────────────────────────
+// Note: TH sweetbreads, testicles, brain intentionally omitted.
+
+const TH: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "TH",
+    localName: "lin wua",
+    nativeScript: "ลิ้นวัว",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tripe",
+    country: "TH",
+    localName: "pha khi riu",
+    nativeScript: "ผ้าขี้ริ้ว",
+    altNames: ["khrueang nai wua (เครื่องในวัว)"],
+    confidence: "high",
+    traditionIds: ["kuaitiao-nuea", "tom-saep-offal"],
+  },
+  {
+    canonicalId: "liver",
+    country: "TH",
+    localName: "tap wua",
+    nativeScript: "ตับวัว",
+    confidence: "high",
+    traditionIds: ["northern-thai-larb"],
+  },
+  {
+    canonicalId: "heart",
+    country: "TH",
+    localName: "huachai wua",
+    nativeScript: "หัวใจวัว",
+    confidence: "high",
+  },
+  {
+    canonicalId: "kidney",
+    country: "TH",
+    localName: "tai wua",
+    nativeScript: "ไตวัว",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "intestines",
+    country: "TH",
+    localName: "sai wua",
+    nativeScript: "ไส้วัว",
+    confidence: "high",
+    traditionIds: ["kuaitiao-nuea", "tom-saep-offal", "northern-thai-larb"],
+  },
+  {
+    canonicalId: "skin",
+    country: "TH",
+    localName: "nang wua",
+    nativeScript: "หนังวัว",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "TH",
+    localName: "en wua",
+    nativeScript: "เอ็นวัว",
+    confidence: "high",
+    traditionIds: ["kuaitiao-nuea"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "TH",
+    localName: "kaem wua",
+    nativeScript: "แก้มวัว",
+    altNames: ["hua wua (หัววัว)"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "TH",
+    localName: "khai kraduk wua",
+    nativeScript: "ไขกระดูกวัว",
+    confidence: "high",
+    traditionIds: ["kuaitiao-nuea"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -2969,4 +3148,6 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...PL,
   ...CZ,
   ...RU,
+  ...UA,
+  ...TH,
 ];
