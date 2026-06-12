@@ -95,5 +95,29 @@ deploy sequence:
 This makes it impossible to accidentally deploy a 
 stale `.open-next`.
 
+## macOS 12.6 Deploy Workaround
+
+`wrangler deploy` on macOS 12.6 fails because `workerd` 
+requires macOS 13.5+ C++ runtime symbols. Two patches 
+are required in node_modules (not committed — reapply 
+after `npm install`):
+
+**1. `node_modules/miniflare/dist/src/index.js` line ~51223:**
+Add `return;` as the first line of `checkMacOSVersion()` 
+to skip the OS version check.
+
+**2. `node_modules/@opennextjs/cloudflare/dist/cli/commands/utils/helpers.js`:**
+Wrap the `getPlatformProxy(...)` call in a macOS version 
+guard so it is skipped on macOS < 13 (darwin kernel < 22). 
+The `[vars]` block in `wrangler.toml` already provides 
+all required env vars for this project.
+
+After applying both patches, `npx wrangler deploy` 
+works normally. The post-deploy 
+`Failed to fetch auth token: 400 Bad Request` error 
+is a telemetry/log-streaming step and does not affect 
+the deploy — the worker is live when you see 
+`Deployed cutranslator triggers`.
+
 ---
 Last updated: June 11, 2026
