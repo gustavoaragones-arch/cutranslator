@@ -99,7 +99,14 @@ export default async function OffalCutPage({ params }: PageProps) {
 
   // ── Cross-links ──────────────────────────────────────────────────────────
   const mainToolExists = isCanonicalId(canonicalId);
-  const traditions = traditionsForCut(canonicalId);
+  const allTraditions = traditionsForCut(canonicalId);
+  // Cap at 8, prioritising traditions that reference the most cuts from this canonical.
+  const TRADITIONS_CAP = 8;
+  const sortedTraditions = [...allTraditions].sort(
+    (a, b) => b.cuts.length - a.cuts.length,
+  );
+  const traditions = sortedTraditions.slice(0, TRADITIONS_CAP);
+  const traditionsOverflow = allTraditions.length > TRADITIONS_CAP;
 
   return (
     <div className="cut-bg">
@@ -129,23 +136,56 @@ export default async function OffalCutPage({ params }: PageProps) {
 
         {/* SVG diagram */}
         <section className="mt-10" aria-label="Anatomical diagram">
-          <div
-            className="overflow-hidden rounded-lg border"
-            style={{ borderColor: "var(--atlas-paper-deep)", backgroundColor: "var(--atlas-paper)" }}
-          >
-            <svg
-              viewBox="0 0 711.89 622.56"
-              width="100%"
-              aria-label={`${name} anatomical position on beef carcass`}
-              style={{ display: "block" }}
+          {/* Outer centering wrapper — max 700px wide, full-width on mobile */}
+          <div style={{ maxWidth: "700px", margin: "0 auto", width: "100%" }}>
+            {/*
+              Aspect-ratio container derived from the base cow viewBox (711.89 × 622.56).
+              Both SVGs are absolutely positioned inside so they share the same
+              coordinate space without conflicting heights.
+            */}
+            <div
+              className="relative overflow-hidden rounded-lg border"
+              style={{
+                aspectRatio: "711.89 / 622.56",
+                borderColor: "var(--atlas-paper-deep)",
+                backgroundColor: "var(--atlas-paper)",
+              }}
             >
+              {/* Base cow silhouette — viewBox matches artboard exactly */}
               {cowInner && (
-                <g dangerouslySetInnerHTML={{ __html: cowInner }} />
+                <svg
+                  viewBox="0 0 711.89 622.56"
+                  preserveAspectRatio="xMidYMid meet"
+                  aria-label={`${name} anatomical position on beef carcass`}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: cowInner }}
+                />
               )}
+              {/* Offal overlay — 17.19 units shorter; align to top so anatomy lines up */}
               {overlayInner && (
-                <g dangerouslySetInnerHTML={{ __html: overlayInner }} />
+                <svg
+                  viewBox="0 0 711.89 605.37"
+                  preserveAspectRatio="xMidYMin meet"
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: overlayInner }}
+                />
               )}
-            </svg>
+            </div>
           </div>
         </section>
 
@@ -425,6 +465,17 @@ export default async function OffalCutPage({ params }: PageProps) {
               </Link>
             </p>
           ))}
+
+          {traditionsOverflow && (
+            <p>
+              <Link
+                href="/offal#traditions"
+                className="transition-colors hover:text-[var(--atlas-ox-blood)] underline"
+              >
+                View all {allTraditions.length} traditions →
+              </Link>
+            </p>
+          )}
         </section>
       </main>
     </div>
