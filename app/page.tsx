@@ -90,13 +90,18 @@ export default function Home() {
       <section className="cut-hero-light">
         <div className="mx-auto flex max-w-3xl flex-col gap-10 px-4 pb-16 pt-12 sm:px-6 lg:px-8">
           <header className="text-center">
-            <h1 className="cut-heading-display">Beef Cut Translator</h1>
-            <p className="cut-hero-subtitle">
+            <h1
+              className="atlas-display-italic"
+              style={{ fontSize: "clamp(2.5rem, 7vw, 5.5rem)", color: "var(--atlas-ink)" }}
+            >
+              Beef Cut Translator
+            </h1>
+            <p className="cut-hero-subtitle atlas-serif">
               Instantly translate beef cuts between countries — no guessing, no confusion.
             </p>
           </header>
           <section aria-label="Popular translations" className="popular-translations">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-[var(--fg-ink-muted)]">
+            <h2 className="atlas-mono text-[var(--fg-ink-muted)]">
               Popular translations
             </h2>
             <div className="popular-translations-grid">
@@ -114,7 +119,7 @@ export default function Home() {
                       <span className="pop-trans-arrow" aria-hidden>→</span>
                       <span aria-hidden>{toRegion?.flag ?? ""}</span>
                     </div>
-                    <span className="pop-trans-name">{pt.cutLabel}</span>
+                    <span className="atlas-serif text-[18px] font-[500] leading-[1.2] text-[var(--fg-ink)]">{pt.cutLabel}</span>
                     <span className="pop-trans-tagline">{pt.tagline}</span>
                   </Link>
                 );
@@ -145,7 +150,7 @@ export default function Home() {
 
       {/* Body — warm paper */}
       <main className="mx-auto flex max-w-3xl flex-col gap-12 px-4 pt-16 pb-12 sm:px-6 lg:px-8">
-        <p className="home-description">
+        <p className="home-description atlas-serif text-[18px] leading-[1.55]">
           {homeAIAnswer.primary}
         </p>
 
