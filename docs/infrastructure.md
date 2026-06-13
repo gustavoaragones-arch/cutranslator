@@ -1,7 +1,9 @@
 # Infrastructure Notes — Cutranslator
 
 ## Stack
-Next.js → OpenNext → Cloudflare Workers (via wrangler)
+Next.js → Vercel (as of June 2026)
+
+Previously: Next.js → OpenNext → Cloudflare Workers (via wrangler)
 
 ## The Two-Build Problem
 
@@ -119,5 +121,34 @@ is a telemetry/log-streaming step and does not affect
 the deploy — the worker is live when you see 
 `Deployed cutranslator triggers`.
 
+## Migration: Cloudflare → Vercel (June 2026)
+
+Migrated from Cloudflare Workers + OpenNext to Vercel.
+
+**Reasons:**
+- $160/month CPU charges with minimal traffic
+- Two-build problem (`next build` + `opennextjs-cloudflare build`) caused repeated production failures — stale `.open-next` directories silently served weeks-old code
+- macOS 12.6 incompatibility with `wrangler deploy` required patching `node_modules` after every `npm install`
+- OpenNext bundle staleness caused offal cut and tradition pages to 404 in production for weeks despite clean code and cache purges
+
+**Vercel setup:**
+- Import repo at vercel.com
+- Framework: Next.js (auto-detected)
+- Build command: `next build`
+- Environment variable: `NEXT_PUBLIC_SITE_URL=https://cutranslator.com`
+- DNS: update cutranslator.com CNAME to Vercel
+
+**Files archived** (not deleted — see `docs/cloudflare-archive/`):
+- `open-next.config.ts`
+- `wrangler.toml`
+
+**Dependencies removed from package.json:**
+- `@opennextjs/cloudflare`
+- `wrangler`
+- `@emnapi/core`, `@emnapi/runtime` (emnapi shims required by OpenNext)
+
+**Scripts removed:**
+- `pages:build`, `preview:cf`, `deploy:cf`, `cf-typegen`
+
 ---
-Last updated: June 11, 2026
+Last updated: June 12, 2026
