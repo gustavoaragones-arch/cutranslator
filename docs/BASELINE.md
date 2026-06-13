@@ -1,8 +1,9 @@
 # Cutranslator Dataset Baseline
 
-**Last updated:** 2026-06-10
+**Last updated:** 2026-06-12
 **Last batch deployed:** 28 (West Africa Tier 2: Chad + Burkina Faso — Sahel Set COMPLETE) / Offal: IR + EG + BR (commit ccb9c25)
 **Last data batch:** 28 (West Africa — Chad + Burkina Faso) / Offal: Iran, Egypt, Brazil
+**Deployment:** Vercel (migrated from Cloudflare Workers June 12 2026)
 
 ## Phase B — Offal SVG overlays: COMPLETE
 

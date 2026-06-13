@@ -1,154 +1,68 @@
 # Infrastructure Notes — Cutranslator
 
 ## Stack
-Next.js → Vercel (as of June 2026)
+Next.js → Vercel
 
-Previously: Next.js → OpenNext → Cloudflare Workers (via wrangler)
+## Deployment
 
-## The Two-Build Problem
+Platform: Vercel (migrated from Cloudflare Workers, June 12 2026)
 
-There are two separate build artifacts that must both be 
-current before deploying:
+Deploy sequence:
+- Push to main branch on GitHub
+- Vercel auto-builds and deploys on every push
+- No manual build steps required
+- Build command: `next build` (auto-detected)
 
-- `.next/` — built by `next build` or `next build --webpack`. 
-  Used by local dev and type checking. Claude Code runs this 
-  to validate correctness.
-- `.open-next/` — built by `npx opennextjs-cloudflare build`. 
-  This is what Cloudflare Workers actually runs. If this is 
-  stale, the live site runs old code regardless of what is 
-  in `.next`.
+Environment variables (set in Vercel dashboard):
+- `NEXT_PUBLIC_SITE_URL=https://cutranslator.com`
 
-**The correct deploy sequence — all three steps, every time:**
-```bash
-next build --webpack
-npx opennextjs-cloudflare build
-npx wrangler deploy
-```
+Domains:
+- `cutranslator.com` → Production (Vercel)
+- `www.cutranslator.com` → 308 redirect to cutranslator.com
+- `beefcutsconverter.com` → 308 redirect to cutranslator.com
+- `cutranslator.vercel.app` → Production (Vercel)
 
-Skipping the middle step means Cloudflare runs whatever 
-`.open-next` was last built, which could be weeks old.
+DNS: Managed by Cloudflare (free plan, DNS only, no proxying). Cloudflare is not used for compute.
 
-## Symptoms of a Stale .open-next
+## What Was Removed
 
-- Routes work on localhost, 404 on production
-- Data changes don't appear on live site
-- Cache purge and redeploy appear to do nothing
+The following Cloudflare-specific artifacts were removed or archived during migration:
 
-This is what caused all offal cut and tradition pages to 
-404 in production through June 2026 despite clean builds 
-and cache purges. The `.open-next` directory was dated 
-May 19 while code had been shipping through June 11.
+- `open-next.config.ts` → archived to `docs/cloudflare-archive/`
+- `wrangler.toml` → archived to `docs/cloudflare-archive/`
+- `@opennextjs/cloudflare` dependency removed
+- `wrangler` dependency removed
+- `pages:build`, `preview:cf`, `deploy:cf`, `cf-typegen` scripts removed from package.json
+- Cloudflare Worker (cutranslator) deleted
+- Workers Paid plan cancelled
 
-## Cloudflare Pain Points on This Project
+## Why We Migrated
 
-**Aggressive edge caching** — cached responses persist 
-after fixes. Requires manual purge in dashboard or via 
-wrangler. Never debug with cached HTML.
+- **$160/month CPU charges with minimal traffic** — OpenNext Worker executed SSR on every request including crawlers and health checks
+- **Two-build problem caused repeated production failures** — `next build` and `opennextjs-cloudflare build` had to both run before deploying; skipping either caused stale production. The `.open-next` directory was dated May 19 while code shipped through June 11 — offal pages 404'd in production for weeks undetected.
+- **macOS 12.6 incompatibility with `wrangler deploy`** — local deployment impossible without patching `node_modules` after every `npm install`
+- **OpenNext bundle staleness caused features to be missing in production for weeks undetected**
+- **Fail-open behavior hid errors silently** — if a Worker function failed, Cloudflare served the static fallback, making the site appear working while broken
 
-**Fail-open behavior** — if a Worker function fails, 
-Cloudflare serves the static fallback (index.html). 
-Errors are hidden. The system appears working but is 
-broken. Disable fail-open during development.
+## Vercel Advantages for This Project
 
-**OpenNext build layer** — the extra build step 
-(`opennextjs-cloudflare build`) is easy to omit in 
-manual deploys. It is not part of the standard Next.js 
-workflow and easy to forget.
+- Next.js is Vercel's native framework — zero configuration required
+- Static pages served from CDN with zero compute cost — no CPU billing for pre-rendered pages
+- Single build step — push to GitHub, done
+- Deployment failures are visible, not silent
+- No OpenNext layer, no wrangler, no two-build problem
 
-**Turbopack font cache** — `@vercel/turbopack-next/internal/
-font/google/font` errors appear in sandbox/CI environments 
-where the font cache is empty. Use `next build --webpack` 
-as fallback. This is an infrastructure artifact, not a 
-code problem.
+## Historical Context (Cloudflare Era)
 
-**Static file limit on free plan** — ~20,000 files per 
-deployment. Programmatic SEO sites approach this quickly. 
-Resolved by moving to paid plan.
+The original Cloudflare deployment exhibited several failure modes documented here for reference.
 
-**Multi-domain canonical risk** — `.pages.dev` subdomain 
-always exists alongside the custom domain. Risk of 
-duplicate content indexing if canonical tags are not 
-enforced on every page.
+**The Two-Build Problem:** Two separate build artifacts had to both be current before deploying — `.next/` (Next.js build) and `.open-next/` (OpenNext/Cloudflare build). Skipping the second step deployed a stale Worker regardless of what was in `.next/`. There was no warning — the deploy succeeded silently while running old code.
 
-## Retrospective
+**Fail-open behavior:** If a Worker function failed, Cloudflare served the static fallback (index.html). Errors were hidden. The system appeared working but was broken. This made debugging extremely difficult — routes worked on localhost, 404'd on production, and cache purges appeared to do nothing.
 
-Cloudflare's architecture creates invisible failure modes 
-that cost significant debugging time on this project. 
-The OpenNext layer adds operational complexity that 
-standard Next.js deployments don't have.
+**Turbopack font cache:** `@vercel/turbopack-next/internal/font/google/font` errors appeared in environments where the font cache was empty. Workaround was `next build --webpack`. Not relevant on Vercel.
 
-For a Next.js project of this complexity, Vercel would 
-have been the simpler choice — direct framework integration, 
-no OpenNext layer, no wrangler config, no two-build problem, 
-deployment failures are visible rather than silent.
-
-If starting over: Vercel for deployment. Cloudflare for 
-DNS only if needed.
-
-## Package.json Deploy Script
-
-Add this to package.json scripts to enforce correct 
-deploy sequence:
-
-```json
-"deploy": "next build --webpack && npx opennextjs-cloudflare build && npx wrangler deploy"
-```
-
-This makes it impossible to accidentally deploy a 
-stale `.open-next`.
-
-## macOS 12.6 Deploy Workaround
-
-`wrangler deploy` on macOS 12.6 fails because `workerd` 
-requires macOS 13.5+ C++ runtime symbols. Two patches 
-are required in node_modules (not committed — reapply 
-after `npm install`):
-
-**1. `node_modules/miniflare/dist/src/index.js` line ~51223:**
-Add `return;` as the first line of `checkMacOSVersion()` 
-to skip the OS version check.
-
-**2. `node_modules/@opennextjs/cloudflare/dist/cli/commands/utils/helpers.js`:**
-Wrap the `getPlatformProxy(...)` call in a macOS version 
-guard so it is skipped on macOS < 13 (darwin kernel < 22). 
-The `[vars]` block in `wrangler.toml` already provides 
-all required env vars for this project.
-
-After applying both patches, `npx wrangler deploy` 
-works normally. The post-deploy 
-`Failed to fetch auth token: 400 Bad Request` error 
-is a telemetry/log-streaming step and does not affect 
-the deploy — the worker is live when you see 
-`Deployed cutranslator triggers`.
-
-## Migration: Cloudflare → Vercel (June 2026)
-
-Migrated from Cloudflare Workers + OpenNext to Vercel.
-
-**Reasons:**
-- $160/month CPU charges with minimal traffic
-- Two-build problem (`next build` + `opennextjs-cloudflare build`) caused repeated production failures — stale `.open-next` directories silently served weeks-old code
-- macOS 12.6 incompatibility with `wrangler deploy` required patching `node_modules` after every `npm install`
-- OpenNext bundle staleness caused offal cut and tradition pages to 404 in production for weeks despite clean code and cache purges
-
-**Vercel setup:**
-- Import repo at vercel.com
-- Framework: Next.js (auto-detected)
-- Build command: `next build`
-- Environment variable: `NEXT_PUBLIC_SITE_URL=https://cutranslator.com`
-- DNS: update cutranslator.com CNAME to Vercel
-
-**Files archived** (not deleted — see `docs/cloudflare-archive/`):
-- `open-next.config.ts`
-- `wrangler.toml`
-
-**Dependencies removed from package.json:**
-- `@opennextjs/cloudflare`
-- `wrangler`
-- `@emnapi/core`, `@emnapi/runtime` (emnapi shims required by OpenNext)
-
-**Scripts removed:**
-- `pages:build`, `preview:cf`, `deploy:cf`, `cf-typegen`
+The archived Cloudflare config files are in `docs/cloudflare-archive/` for reference.
 
 ---
 Last updated: June 12, 2026
