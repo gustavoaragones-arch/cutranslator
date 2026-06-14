@@ -85,6 +85,12 @@ const MX: readonly OffalRegionalName[] = [
     localName: "criadillas",
     confidence: "medium",
   },
+  {
+    canonicalId: "brain",
+    country: "MX",
+    localName: "sesos",
+    confidence: "high",
+  },
 ];
 
 // ─── China (CN) ───────────────────────────────────────────────────────────────
@@ -177,6 +183,13 @@ const CN: readonly OffalRegionalName[] = [
     localName: "niú gāowán",
     nativeScript: "牛睾丸",
     confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "CN",
+    localName: "niúnǎo",
+    nativeScript: "牛脑",
+    confidence: "high",
   },
 ];
 
@@ -272,6 +285,13 @@ const KR: readonly OffalRegionalName[] = [
     nativeScript: "소불알",
     confidence: "medium",
   },
+  {
+    canonicalId: "brain",
+    country: "KR",
+    localName: "골 (gol)",
+    nativeScript: "골",
+    confidence: "medium",
+  },
 ];
 
 // ─── France (FR) ──────────────────────────────────────────────────────────────
@@ -353,6 +373,13 @@ const FR: readonly OffalRegionalName[] = [
     country: "FR",
     localName: "animelles",
     confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "FR",
+    localName: "cervelle de veau",
+    speciesNote: "veau",
+    confidence: "high",
   },
 ];
 
@@ -441,6 +468,13 @@ const IT: readonly OffalRegionalName[] = [
     localName: "granelli",
     confidence: "medium",
   },
+  {
+    canonicalId: "brain",
+    country: "IT",
+    localName: "cervello",
+    altNames: ["cervello fritto"],
+    confidence: "high",
+  },
 ];
 
 // ─── Spain (ES) ───────────────────────────────────────────────────────────────
@@ -525,6 +559,13 @@ const ES: readonly OffalRegionalName[] = [
     country: "ES",
     localName: "criadillas",
     altNames: ["criadillas de toro"],
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "ES",
+    localName: "sesos",
+    altNames: ["sesos rebozados"],
     confidence: "high",
   },
 ];
@@ -786,6 +827,12 @@ const TR: readonly OffalRegionalName[] = [
     speciesNote: "traditionally ram, not beef",
     confidence: "high",
   },
+  {
+    canonicalId: "brain",
+    country: "TR",
+    localName: "beyin",
+    confidence: "high",
+  },
 ];
 
 // ─── Ethiopia (ET) ────────────────────────────────────────────────────────────
@@ -872,22 +919,7 @@ const ET: readonly OffalRegionalName[] = [
   },
 ];
 
-// ─── Brain — researched country entries ──────────────────────────────────────
-// NG, PH, ET, VN omitted — no documented standalone tradition with sufficient confidence.
-
-const BRAIN: readonly OffalRegionalName[] = [
-  { canonicalId: "brain", country: "MX", localName: "sesos", confidence: "high" },
-  { canonicalId: "brain", country: "CN", localName: "niúnǎo", nativeScript: "牛脑", confidence: "high" },
-  { canonicalId: "brain", country: "KR", localName: "골 (gol)", nativeScript: "골", confidence: "medium" },
-  { canonicalId: "brain", country: "FR", localName: "cervelle de veau", speciesNote: "veau", confidence: "high" },
-  { canonicalId: "brain", country: "IT", localName: "cervello", altNames: ["cervello fritto"], confidence: "high" },
-  { canonicalId: "brain", country: "ES", localName: "sesos", altNames: ["sesos rebozados"], confidence: "high" },
-  { canonicalId: "brain", country: "TR", localName: "beyin", confidence: "high" },
-  { canonicalId: "brain", country: "GB", localName: "calf's brain", speciesNote: "traditionally veal not beef", confidence: "medium" },
-  { canonicalId: "brain", country: "MA", localName: "mokh", nativeScript: "مخ", confidence: "high" },
-  { canonicalId: "brain", country: "PE", localName: "sesos", confidence: "high" },
-  { canonicalId: "brain", country: "JP", localName: "nōmiso", nativeScript: "脳みそ", confidence: "medium" },
-];
+// Brain entries omitted for NG, PH, ET, VN — no documented standalone tradition with sufficient confidence.
 
 // Tripe sub-canonical architecture resolved in ADR-006 (c1cb321).
 // Distinct stomach chambers modeled as axis nodes in
@@ -958,6 +990,13 @@ const GB: readonly OffalRegionalName[] = [
     canonicalId: "sweetbreads",
     country: "GB",
     localName: "sweetbreads",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "GB",
+    localName: "calf's brain",
+    speciesNote: "traditionally veal not beef",
     confidence: "medium",
   },
 ];
@@ -1126,6 +1165,13 @@ const MA: readonly OffalRegionalName[] = [
     confidence: "high",
     traditionIds: ["eid-organ-grill"],
   },
+  {
+    canonicalId: "brain",
+    country: "MA",
+    localName: "mokh",
+    nativeScript: "مخ",
+    confidence: "high",
+  },
 ];
 
 // ─── Peru (PE) ───────────────────────────────────────────────────────────────
@@ -1209,6 +1255,12 @@ const PE: readonly OffalRegionalName[] = [
     country: "PE",
     localName: "criadillas",
     confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "PE",
+    localName: "sesos",
+    confidence: "high",
   },
 ];
 
@@ -1303,6 +1355,13 @@ const JP: readonly OffalRegionalName[] = [
     country: "JP",
     localName: "ushi no kōgan",
     nativeScript: "牛の睾丸",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "JP",
+    localName: "nōmiso",
+    nativeScript: "脳みそ",
     confidence: "medium",
   },
 ];
@@ -3435,7 +3494,6 @@ const EC: readonly OffalRegionalName[] = [
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
-  ...BRAIN,
   ...MX,
   ...CN,
   ...KR,

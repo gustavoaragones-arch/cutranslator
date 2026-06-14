@@ -300,7 +300,7 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ---
 
-## Offal Product — Baseline (as of commit ccb9c25)
+## Offal Product — Baseline (as of June 14 2026)
 
 ### Canonicals
 
@@ -310,48 +310,62 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ### Regional Name Entries
 
-**298 entries across 26 countries.**
+**458 entries across 40 countries.**
 
 Country entry counts (authoritative, from grep audit):
 
 | Country | Code | Entries |
 |---|---|---|
+| South Africa | ZA | 13 |
 | India | IN | 13 |
-| Turkey | TR | 12 |
+| Ecuador | EC | 13 |
+| Colombia | CO | 13 |
+| Bolivia | BO | 13 |
+| Turkey | TR | 13 |
+| Mexico | MX | 13 |
+| South Korea | KR | 13 |
+| Italy | IT | 13 |
+| France | FR | 13 |
+| Spain | ES | 13 |
+| China | CN | 13 |
+| Peru | PE | 13 |
+| Ukraine | UA | 12 |
+| Russia | RU | 12 |
+| Pakistan | PK | 12 |
 | Philippines | PH | 12 |
-| Peru | PE | 12 |
 | Nigeria | NG | 12 |
-| Mexico | MX | 12 |
-| South Korea | KR | 12 |
-| Italy | IT | 12 |
-| France | FR | 12 |
-| Spain | ES | 12 |
-| China | CN | 12 |
 | Brazil | BR | 12 |
+| Japan | JP | 12 |
 | Vietnam | VN | 11 |
-| Japan | JP | 11 |
 | Iran | IR | 11 |
 | Hungary | HU | 11 |
+| Ethiopia | ET | 11 |
 | Argentina | AR | 11 |
+| Morocco | MA | 11 |
 | Uruguay | UY | 10 |
-| Morocco | MA | 10 |
+| Thailand | TH | 10 |
+| Senegal | SN | 10 |
+| Saudi Arabia | SA | 10 |
+| Poland | PL | 10 |
+| Lebanon | LB | 10 |
+| Israel | IL | 10 |
 | Indonesia | ID | 10 |
 | Greece | GR | 10 |
 | Egypt | EG | 10 |
+| Czech Republic | CZ | 10 |
 | Chile | CL | 10 |
-| United Kingdom | GB | 9 |
-| Ethiopia | ET | 9 |
+| United Kingdom | GB | 10 |
 | Germany | DE | 9 |
 
 **Audit commands:**
 ```bash
 grep -c "country:" data/offal/regionalNames.ts
-grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
+grep -oE 'country: "[A-Z]{2}"' data/offal/regionalNames.ts | sort | uniq -c | sort -rn
 ```
 
 ### Tradition Pages
 
-**78 tradition pages.**
+**132 tradition pages.**
 
 ### Axis Nodes
 
@@ -369,6 +383,10 @@ All three: `viewBox="0 0 711.89 605.37"`
 
 Pages render cow silhouette gracefully when overlay is absent.
 
+### Deployment
+
+Vercel (migrated from Cloudflare Workers June 12 2026). See `docs/infrastructure.md`.
+
 ### Active ADRs
 
 - **ADR-004:** Two-product split
@@ -378,22 +396,24 @@ Pages render cow silhouette gracefully when overlay is absent.
 ### Known Deferred Items
 
 - Brain tradition page updates (`tacos-de-cabeza`, `quinto-quarto`, `fritto-misto`) pending brain research batch
-- Second Ethiopia pass (brain and additional cuts)
-- Third sweep countries: Pakistan, Lebanon/Levant, and others TBD
+- Third sweep countries TBD
 - Tripe sub-canonical Option B (full split) deferred pending evidence from 3+ additional cultures
+- Zebu hump canonical promotion deferred until 5-6 country evidence accumulates
 
 ### Count Reconciliation Note
 
-Running batch prompts use expected counts that accumulate drift from intentional omissions.
 The authoritative count is always the grep audit:
 
 ```bash
 grep -c "country:" data/offal/regionalNames.ts
 ```
 
-Per-country breakdown:
+Per-country breakdown (covers both multi-line and inline-object entry syntax):
 ```bash
-grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
+grep -oE 'country: "[A-Z]{2}"' data/offal/regionalNames.ts | sort | uniq -c | sort -rn
 ```
 
-(Ignore duplicate `brain` entries in grep output — these are a display artifact of inline object syntax.)
+Note: `grep "country:" ... | sort | uniq -c` (without `-oE`) undercounts entries
+that use inline-object syntax (currently 11 `brain` entries for CN, ES, FR, GB,
+IT, JP, KR, MA, MX, PE, TR), since each inline object is a distinct unique line
+and doesn't aggregate with the multi-line entries for the same country.
