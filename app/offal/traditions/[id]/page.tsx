@@ -70,6 +70,16 @@ export default async function OffalTraditionPage({ params }: PageProps) {
           {tradition.summary}
         </p>
 
+        {/* Cultural note */}
+        {tradition.culturalNote && (
+          <p
+            className="mt-4 border-l-2 pl-4 text-sm leading-relaxed italic"
+            style={{ borderColor: "var(--atlas-ox-blood)", color: "var(--atlas-ink-mute)" }}
+          >
+            {tradition.culturalNote}
+          </p>
+        )}
+
         {/* Cuts in this tradition */}
         <section className="mt-10">
           <h2

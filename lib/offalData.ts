@@ -73,6 +73,10 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   RU: "Russia",
   UA: "Ukraine",
   TH: "Thailand",
+  IL: "Israel",
+  SN: "Senegal",
+  BO: "Bolivia",
+  EC: "Ecuador",
 };
 
 /** All offal regional name entries across all countries. */
@@ -118,6 +122,8 @@ export type OffalTradition = {
   relatedCuts?: readonly CanonicalId[];
   /** Display-only species note (e.g. "Traditionally veal, not beef") */
   speciesNote?: string;
+  /** Optional short display-only callout, e.g. a notable cultural/religious detail */
+  culturalNote?: string;
   /** Optional attribution / research notes */
   sources?: readonly string[];
 };
@@ -2458,6 +2464,264 @@ const traditions: readonly OffalTradition[] = [
       "long pepper), toasted rice powder, dried chili, shallots, garlic, and fresh herbs. " +
       "Served raw or lightly cooked depending on region and preference.",
     cuts: ["liver", "intestines", "heart", "tripe"],
+  },
+  {
+    id: "kaved-al-haesh",
+    name: "Kaved Al Ha-Esh",
+    region: "Middle East — Israel",
+    culturalNote:
+      "Kosher preparation requires liver to be grilled or broiled to remove blood, " +
+      "making charcoal-grilled liver uniquely prominent in Israeli offal culture.",
+    summary:
+      "Israel's most important organ-meat tradition. Liver grilled over charcoal " +
+      "after kosher preparation, served with onions, tahini, pickles, and bread. " +
+      "The kosher requirement to grill liver makes this preparation culturally " +
+      "distinctive.",
+    culturalContext:
+      "Kosher dietary laws require liver to be broiled or grilled rather than " +
+      "pan-fried, as grilling is the approved method for removing blood. This makes " +
+      "Israeli grilled liver distinct from Egyptian kibda or Iranian jegar — the " +
+      "technique is religiously shaped, not merely traditional. Tongue appears " +
+      "alongside liver in many traditional Ashkenazi and Mizrahi contexts.",
+    preparationNotes:
+      "Liver salted and grilled over charcoal or under broiler until cooked through. " +
+      "Served with grilled onions, tahini, amba (pickled mango), and fresh bread.",
+    cuts: ["liver", "tongue"],
+  },
+  {
+    id: "rosh-hashana-head",
+    name: "Rosh Hashanah Head Traditions",
+    region: "Middle East — Israel",
+    culturalNote:
+      "Serving a head at Rosh Hashanah carries symbolic religious meaning — to be " +
+      "'the head and not the tail' in the coming year.",
+    summary:
+      "A distinctive ritual offal tradition with no direct parallel elsewhere in the " +
+      "dataset. Head meat and tongue served during the Jewish New Year as a symbol " +
+      "of blessing and renewal.",
+    culturalContext:
+      "Both sheep and cattle heads have historically appeared at Rosh Hashanah " +
+      "tables. The tradition is especially preserved in Sephardi and Mizrahi " +
+      "communities. The symbolic dimension elevates head meat beyond a culinary " +
+      "choice into a ritual act.",
+    preparationNotes:
+      "Head boiled or roasted with aromatic spices and served at the holiday table. " +
+      "Tongue simmered and sliced. Specific preparations vary by community — " +
+      "Moroccan, Iraqi, Yemenite, and Ashkenazi traditions differ.",
+    cuts: ["head_cheek", "tongue"],
+  },
+  {
+    id: "yemenite-marrow-soup",
+    name: "Yemenite Marrow Soup Traditions",
+    region: "Middle East — Israel (Yemenite)",
+    summary:
+      "One of Israel's most important marrow traditions. Marrow-rich bones and " +
+      "connective tissues simmered in spiced broths. Especially associated with " +
+      "Yemenite Jewish cuisine and Sabbath cooking.",
+    culturalContext:
+      "Yemenite Jewish cuisine preserved distinctive spice traditions including " +
+      "hawaij (a spice blend) and zhug. Marrow-rich bone soups are associated with " +
+      "Sabbath and holiday meals. The Yemenite tradition is one of the most distinct " +
+      "within Israeli food culture.",
+    preparationNotes:
+      "Marrow bones and tendon-rich cuts simmered with hawaij spice blend, onion, " +
+      "garlic, and tomato. Served with bread and zhug (Yemenite hot sauce).",
+    cuts: ["bone_marrow", "tendon"],
+  },
+  {
+    id: "dibi-organ",
+    name: "Dibi Organ Tradition",
+    region: "Africa — Senegal",
+    summary:
+      "Senegal's most important offal grill tradition. Multiple organs " +
+      "charcoal-grilled and served at dibi stalls — Senegal's ubiquitous open-air " +
+      "grilled-meat vendors.",
+    culturalContext:
+      "Dibi is primarily associated with grilled lamb and beef, but organ meats are " +
+      "commonly incorporated. Liver is the anchor item — fresh liver grilled " +
+      "immediately after Tabaski slaughter is one of Senegal's most culturally " +
+      "embedded offal practices. Structurally comparable to Iran's jigaraki and the " +
+      "Levant's mashawi.",
+    preparationNotes:
+      "Organs grilled over charcoal with onion, black pepper, chili, mustard, and " +
+      "Maggi seasoning. Served with bread, mustard sauce, and sliced onion.",
+    cuts: ["liver", "heart", "kidney", "intestines"],
+  },
+  {
+    id: "tabaski-senegal",
+    name: "Tabaski — Senegalese Eid Offal Tradition",
+    region: "Africa — Senegal",
+    summary:
+      "The primary framework for Senegalese offal consumption. During Tabaski (Eid " +
+      "al-Adha), virtually every edible part of the slaughtered animal is prepared " +
+      "and consumed by the family. Organs are cooked immediately after slaughter.",
+    culturalContext:
+      "Tabaski is the most important food event in the Senegalese calendar. Offal " +
+      "consumption is heaviest in the hours following slaughter. The tradition is " +
+      "shared across the broader Sahelian belt — Senegal, Mali, Niger, Mauritania, " +
+      "northern Nigeria — making it one of West Africa's most culturally significant " +
+      "multi-organ frameworks.",
+    preparationNotes:
+      "Each organ prepared according to family preference — liver grilled first, " +
+      "intestines cleaned and grilled, tripe cleaned and stewed, head boiled or " +
+      "roasted. Communal meal shared among extended family.",
+    cuts: ["tripe", "intestines", "head_cheek", "liver", "heart", "kidney"],
+  },
+  {
+    id: "mondongo-boliviano",
+    name: "Mondongo Boliviano",
+    region: "South America — Bolivia",
+    summary:
+      "Bolivia's most important offal dish. Tripe simmered in ají rojo, garlic, " +
+      "cumin, onion, and potatoes into a hearty highland stew. Distinct from " +
+      "Colombian mondongo in its Andean spice profile.",
+    culturalContext:
+      "Especially common in Cochabamba, Sucre, and Potosí. A staple of market " +
+      "lunches and family meals. Part of the broader Latin American mondongo " +
+      "family alongside Colombian, Argentine, and Uruguayan versions — each " +
+      "distinct in technique and spicing.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender. Simmered with ají rojo, garlic, " +
+      "onion, cumin, and potatoes. Served with bread or rice and fresh herbs.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "chanfaina-boliviana",
+    name: "Chanfaina Boliviana",
+    region: "South America — Bolivia",
+    culturalNote:
+      "Chanfaina traditionally incorporates lung in many Bolivian and Andean " +
+      "preparations. Lung is not a canonical in this dataset — cuts[] maps to " +
+      "liver and heart only.",
+    summary:
+      "One of Bolivia's most important mixed-organ traditions. Liver, heart, and " +
+      "other organs cooked in a spiced sauce. Especially important in highland and " +
+      "festival cuisine.",
+    culturalContext:
+      "Part of the broader Iberian-derived chanfaina tradition that spread through " +
+      "Spanish colonial cuisine across Latin America. The Bolivian version is " +
+      "especially associated with festival cooking in Sucre and highland " +
+      "communities. Comparable to Colombian fritanga and Argentine achuras as a " +
+      "multi-organ cultural system.",
+    preparationNotes:
+      "Organs cleaned and sautéed with onion, garlic, ají, cumin, and tomato. " +
+      "Simmered until tender in spiced sauce. Served with potatoes and rice.",
+    cuts: ["liver", "heart"],
+  },
+  {
+    id: "chinchulines-bo",
+    name: "Chinchulines Asados",
+    region: "South America — Bolivia",
+    summary:
+      "Bolivia's defining intestine tradition. Cleaned intestines salted and " +
+      "grilled over charcoal until crisp outside and tender inside. Part of the " +
+      "Southern Cone intestine grill family.",
+    culturalContext:
+      "Especially prominent in cattle-producing lowland regions around Santa Cruz. " +
+      "Related to Argentine chinchulines and Colombian chunchullo but with distinct " +
+      "Bolivian preparation context. Common at mixed grills and market food stalls.",
+    preparationNotes:
+      "Intestines cleaned and salted. Grilled over charcoal until exterior crisps. " +
+      "Served with ají, llajwa (Bolivian hot sauce), and potato.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "caldo-de-cabeza-bo",
+    name: "Caldo de Cabeza",
+    region: "South America — Bolivia",
+    summary:
+      "Bolivia's most important head-meat tradition. The entire head simmered for " +
+      "many hours into a rich broth with potatoes, herbs, and chili. Served as " +
+      "breakfast, recovery food, and market dish.",
+    culturalContext:
+      "Especially important in La Paz and highland Bolivia. Head soups are " +
+      "associated with early-morning markets and cold Andean mornings. Part of a " +
+      "broader Andean head-soup tradition shared with Peru and Ecuador.",
+    preparationNotes:
+      "Head boiled for many hours with onion, garlic, cumin, ají, and potatoes. " +
+      "Meat shredded from skull and served in rich broth with fresh herbs and " +
+      "chili.",
+    cuts: ["head_cheek"],
+  },
+  {
+    id: "fritanga-boliviana",
+    name: "Fritanga Boliviana",
+    region: "South America — Bolivia",
+    summary:
+      "Bolivia's mixed-offal market tradition. Multiple organs fried or grilled " +
+      "together and served as a shared platter at markets and festivals.",
+    culturalContext:
+      "Found in markets and festival settings across Bolivia. Comparable to " +
+      "Colombian fritanga and Argentine parrillada as a multi-organ communal " +
+      "tradition. The Bolivian version integrates more Andean spices and " +
+      "accompaniments.",
+    preparationNotes:
+      "Each organ cleaned and prepared separately. Fried or grilled with cumin, " +
+      "garlic, ají, and salt. Served with papa (potato), mote (hominy), and llajwa.",
+    cuts: ["liver", "heart", "kidney", "intestines"],
+  },
+  {
+    id: "guatita",
+    name: "Guatita",
+    region: "South America — Ecuador",
+    summary:
+      "Ecuador's national offal dish and one of Latin America's most distinctive " +
+      "tripe preparations. Tripe slow-cooked in peanut sauce with potatoes, cumin, " +
+      "and cilantro. The peanut base makes it immediately distinct from all other " +
+      "major tripe traditions.",
+    culturalContext:
+      "Found throughout Ecuador in markets, family restaurants, and homes. A " +
+      "genuine national dish consumed across all social classes. The peanut sauce " +
+      "reflects indigenous Andean flavor traditions. Belongs alongside menudo, " +
+      "callos, flaki, and patsás as one of the world's canonical tripe dishes.",
+    preparationNotes:
+      "Tripe cleaned and simmered until tender. Sauce made from peanut butter, " +
+      "onion, garlic, cumin, achiote, and broth. Tripe added to sauce with potatoes " +
+      "and cilantro. Served with rice, avocado, and ají.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "tripa-mishqui",
+    name: "Tripa Mishqui",
+    region: "South America — Ecuador",
+    summary:
+      "Ecuador's defining intestine street food. Beef intestines cleaned, seasoned " +
+      "with cumin, garlic, and achiote, then grilled over charcoal until crisp. One " +
+      "of South America's strongest standalone intestine traditions.",
+    culturalContext:
+      "Especially associated with Quito and highland Ecuador. A recognized street " +
+      "food sold by dedicated vendors. \"Mishqui\" means sweet or delicious in " +
+      "Kichwa — the name itself reflects Indigenous Andean heritage. Comparable to " +
+      "Colombian chunchullo and Argentine chinchulines but with a distinctly " +
+      "Ecuadorian preparation.",
+    preparationNotes:
+      "Intestines cleaned thoroughly and boiled. Seasoned with cumin, garlic, " +
+      "achiote, and salt. Grilled over charcoal until exterior crisps. Served with " +
+      "potatoes, corn, and ají criollo.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "caldo-de-pata",
+    name: "Caldo de Pata",
+    region: "South America — Ecuador",
+    culturalNote:
+      "Caldo de pata is centered on cattle feet — the tendons and skin extracted " +
+      "from the hoof area. Feet are not a canonical in this dataset; cuts[] maps to " +
+      "tendon and skin as the closest structural equivalents.",
+    summary:
+      "Ecuador's most important collagen tradition. A rich soup made from cattle " +
+      "feet — extracting tendon, skin, and collagen into a gelatinous broth. One of " +
+      "the strongest tendon traditions in Latin America.",
+    culturalContext:
+      "Especially associated with Ambato and highland Ecuador. Served at markets as " +
+      "a breakfast and recovery dish. The gelatinous texture of the broth is the " +
+      "defining quality. Comparable to Vietnamese bò kho for collagen richness and " +
+      "to Turkish kelle-paça for the foot-centered approach.",
+    preparationNotes:
+      "Cattle feet cleaned and split. Simmered many hours with onion, garlic, " +
+      "cumin, achiote, and mote (hominy). Broth becomes deeply gelatinous. Served " +
+      "with mote, cilantro, and ají.",
+    cuts: ["tendon", "skin"],
   },
 ];
 
