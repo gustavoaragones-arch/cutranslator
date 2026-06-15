@@ -577,6 +577,7 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "tongue",
     country: "NG",
     localName: "beef tongue",
+    altNames: ["ahọn màlúù (Yoruba)", "harshen saniya (Hausa)"],
     confidence: "medium",
     traditionIds: ["orishirishi"],
   },
@@ -584,14 +585,15 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "tripe",
     country: "NG",
     localName: "shaki",
+    altNames: ["tumbi (Hausa)"],
     confidence: "high",
     traditionIds: ["orishirishi"],
   },
   {
     canonicalId: "liver",
     country: "NG",
-    localName: "liver",
-    altNames: ["ẹdọ"],
+    localName: "ẹdọ",
+    altNames: ["liver", "hanta (Hausa)"],
     confidence: "high",
     traditionIds: ["orishirishi"],
   },
@@ -599,6 +601,7 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "heart",
     country: "NG",
     localName: "heart",
+    altNames: ["ọkàn màlúù (Yoruba)", "zuciyar saniya (Hausa)"],
     confidence: "high",
     traditionIds: ["orishirishi"],
   },
@@ -606,6 +609,7 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "kidney",
     country: "NG",
     localName: "kidney",
+    altNames: ["kidinrin màlúù (Yoruba)", "kodan saniya (Hausa)"],
     confidence: "high",
     traditionIds: ["orishirishi"],
   },
@@ -613,6 +617,7 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "intestines",
     country: "NG",
     localName: "roundabout",
+    altNames: ["ifun (Yoruba)", "hanji (Hausa)"],
     confidence: "high",
     traditionIds: ["orishirishi"],
   },
@@ -634,6 +639,7 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "head_cheek",
     country: "NG",
     localName: "head meat",
+    altNames: ["ori màlúù (Yoruba)", "kan saniya (Hausa)"],
     confidence: "high",
     traditionIds: ["orishirishi"],
   },
@@ -653,6 +659,13 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "testicles",
     country: "NG",
     localName: "testicles",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "NG",
+    localName: "ọpọlọ màlúù",
+    altNames: ["kwakwalwar saniya (Hausa)"],
     confidence: "medium",
   },
 ];
@@ -919,7 +932,7 @@ const ET: readonly OffalRegionalName[] = [
   },
 ];
 
-// Brain entries omitted for NG, PH, ET, VN — no documented standalone tradition with sufficient confidence.
+// Brain entries omitted for PH, ET — no documented standalone tradition with sufficient confidence.
 
 // Tripe sub-canonical architecture resolved in ADR-006 (c1cb321).
 // Distinct stomach chambers modeled as axis nodes in
@@ -1010,6 +1023,7 @@ const VN: readonly OffalRegionalName[] = [
     country: "VN",
     localName: "lưỡi bò",
     confidence: "high",
+    traditionIds: ["quan-nhau-offal"],
   },
   {
     canonicalId: "tripe",
@@ -1017,35 +1031,35 @@ const VN: readonly OffalRegionalName[] = [
     localName: "lá sách",
     altNames: ["bao tử bò", "tổ ong"],
     confidence: "high",
-    traditionIds: ["pho-bo", "long-bo"],
+    traditionIds: ["pho-bo", "long-bo", "pho-dac-biet"],
   },
   {
     canonicalId: "liver",
     country: "VN",
     localName: "gan bò",
     confidence: "high",
-    traditionIds: ["long-bo"],
+    traditionIds: ["long-bo", "lau-long-bo", "quan-nhau-offal"],
   },
   {
     canonicalId: "heart",
     country: "VN",
     localName: "tim bò",
     confidence: "high",
-    traditionIds: ["long-bo"],
+    traditionIds: ["long-bo", "lau-long-bo", "quan-nhau-offal"],
   },
   {
     canonicalId: "kidney",
     country: "VN",
     localName: "cật bò",
     confidence: "high",
-    traditionIds: ["long-bo"],
+    traditionIds: ["long-bo", "lau-long-bo", "quan-nhau-offal"],
   },
   {
     canonicalId: "intestines",
     country: "VN",
     localName: "lòng bò",
     confidence: "high",
-    traditionIds: ["long-bo"],
+    traditionIds: ["long-bo", "lau-long-bo", "quan-nhau-offal"],
   },
   {
     canonicalId: "skin",
@@ -1058,7 +1072,7 @@ const VN: readonly OffalRegionalName[] = [
     country: "VN",
     localName: "gân bò",
     confidence: "high",
-    traditionIds: ["pho-bo", "bo-kho"],
+    traditionIds: ["pho-bo", "bo-kho", "pho-dac-biet"],
   },
   {
     canonicalId: "head_cheek",
@@ -1072,13 +1086,20 @@ const VN: readonly OffalRegionalName[] = [
     country: "VN",
     localName: "tủy bò",
     confidence: "high",
-    traditionIds: ["pho-bo", "bo-kho"],
+    traditionIds: ["pho-bo", "bo-kho", "pho-dac-biet"],
   },
   {
     canonicalId: "testicles",
     country: "VN",
     localName: "ngọc bò",
     confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "VN",
+    localName: "óc bò",
+    confidence: "high",
+    traditionIds: ["lau-long-bo"],
   },
 ];
 
@@ -3491,6 +3512,274 @@ const EC: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Portugal (PT) ───────────────────────────────────────────────────────────
+// skin, tendon omitted — low confidence.
+
+const PT: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "PT",
+    localName: "língua de vaca",
+    confidence: "high",
+    traditionIds: ["lingua-estufada-pt", "portuguese-rural-slaughter"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "PT",
+    localName: "tripas",
+    confidence: "high",
+    traditionIds: ["tripas-porto", "dobrada-pt"],
+  },
+  {
+    canonicalId: "liver",
+    country: "PT",
+    localName: "fígado",
+    confidence: "high",
+    traditionIds: ["iscas-figado", "portuguese-rural-slaughter"],
+  },
+  {
+    canonicalId: "heart",
+    country: "PT",
+    localName: "coração",
+    confidence: "medium",
+    traditionIds: ["portuguese-rural-slaughter"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "PT",
+    localName: "rins",
+    confidence: "high",
+    traditionIds: ["portuguese-rural-slaughter"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "PT",
+    localName: "tripas",
+    altNames: ["intestinos"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "PT",
+    localName: "bochechas",
+    altNames: ["cabeça"],
+    confidence: "high",
+    traditionIds: ["bochechas-estufadas", "portuguese-rural-slaughter"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "PT",
+    localName: "tutano",
+    confidence: "high",
+  },
+  {
+    canonicalId: "sweetbreads",
+    country: "PT",
+    localName: "mílharas",
+    altNames: ["molejas"],
+    confidence: "medium",
+  },
+  {
+    canonicalId: "testicles",
+    country: "PT",
+    localName: "criadilhas",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "PT",
+    localName: "mioleira",
+    confidence: "high",
+    traditionIds: ["portuguese-rural-slaughter"],
+  },
+];
+
+// ─── Kazakhstan (KZ) ─────────────────────────────────────────────────────────
+// skin omitted — low confidence. sweetbreads omitted — medium confidence,
+// not independently marketed.
+
+const KZ: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "KZ",
+    localName: "siyr tili",
+    nativeScript: "сиыр тілі",
+    confidence: "high",
+    traditionIds: ["bas-tartu", "beshbarmak-feast"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "KZ",
+    localName: "qaryn",
+    nativeScript: "қарын",
+    confidence: "high",
+    traditionIds: ["kuirdak"],
+  },
+  {
+    canonicalId: "liver",
+    country: "KZ",
+    localName: "bauyr",
+    nativeScript: "бауыр",
+    confidence: "high",
+    traditionIds: ["kuirdak"],
+  },
+  {
+    canonicalId: "heart",
+    country: "KZ",
+    localName: "zhürek",
+    nativeScript: "жүрек",
+    confidence: "high",
+    traditionIds: ["kuirdak"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "KZ",
+    localName: "büirek",
+    nativeScript: "бүйрек",
+    confidence: "high",
+    traditionIds: ["kuirdak"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "KZ",
+    localName: "ishek",
+    nativeScript: "ішек",
+    confidence: "high",
+    traditionIds: ["qarta-traditions"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "KZ",
+    localName: "siñir",
+    nativeScript: "сіңір",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "KZ",
+    localName: "bas",
+    nativeScript: "бас",
+    confidence: "high",
+    traditionIds: ["bas-tartu", "beshbarmak-feast"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "KZ",
+    localName: "zhilik maiy",
+    nativeScript: "жілік майы",
+    confidence: "high",
+    traditionIds: ["beshbarmak-feast"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "KZ",
+    localName: "atalyq bez",
+    nativeScript: "аталық без",
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "KZ",
+    localName: "mi",
+    nativeScript: "ми",
+    confidence: "high",
+    traditionIds: ["bas-tartu"],
+  },
+];
+
+// ─── Uzbekistan (UZ) ─────────────────────────────────────────────────────────
+// skin, sweetbreads omitted — low/medium confidence, not independently marketed.
+
+const UZ: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "UZ",
+    localName: "mol tili",
+    nativeScript: "мол тили",
+    confidence: "high",
+    traditionIds: ["kalla-pocha-uz"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "UZ",
+    localName: "qorin",
+    nativeScript: "қорин",
+    confidence: "high",
+    traditionIds: ["qovurdoq"],
+  },
+  {
+    canonicalId: "liver",
+    country: "UZ",
+    localName: "jigar",
+    nativeScript: "жигар",
+    confidence: "high",
+    traditionIds: ["jigar-kabob", "qovurdoq"],
+  },
+  {
+    canonicalId: "heart",
+    country: "UZ",
+    localName: "yurak",
+    nativeScript: "юрак",
+    confidence: "high",
+    traditionIds: ["qovurdoq"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "UZ",
+    localName: "buyrak",
+    nativeScript: "буйрак",
+    confidence: "high",
+    traditionIds: ["qovurdoq"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "UZ",
+    localName: "ichak",
+    nativeScript: "ичак",
+    confidence: "high",
+    traditionIds: ["hasip"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "UZ",
+    localName: "pay",
+    nativeScript: "пай",
+    confidence: "high",
+    traditionIds: ["kalla-pocha-uz", "shurpa-marrow"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "UZ",
+    localName: "kalla",
+    nativeScript: "калла",
+    confidence: "high",
+    traditionIds: ["kalla-pocha-uz"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "UZ",
+    localName: "ilik",
+    nativeScript: "илик",
+    confidence: "high",
+    traditionIds: ["shurpa-marrow"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "UZ",
+    localName: "moyak",
+    nativeScript: "мояк",
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "UZ",
+    localName: "miya",
+    nativeScript: "мия",
+    confidence: "high",
+    traditionIds: ["kalla-pocha-uz"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -3534,4 +3823,7 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...SN,
   ...BO,
   ...EC,
+  ...PT,
+  ...KZ,
+  ...UZ,
 ];

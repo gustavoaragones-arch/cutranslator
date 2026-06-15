@@ -77,6 +77,9 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   SN: "Senegal",
   BO: "Bolivia",
   EC: "Ecuador",
+  PT: "Portugal",
+  KZ: "Kazakhstan",
+  UZ: "Uzbekistan",
 };
 
 /** All offal regional name entries across all countries. */
@@ -2722,6 +2725,366 @@ const traditions: readonly OffalTradition[] = [
       "cumin, achiote, and mote (hominy). Broth becomes deeply gelatinous. Served " +
       "with mote, cilantro, and ají.",
     cuts: ["tendon", "skin"],
+  },
+  {
+    id: "lau-long-bo",
+    name: "Lẩu Lòng Bò",
+    region: "Asia — Vietnam",
+    summary:
+      "Vietnam's most important multi-organ hotpot tradition. Multiple beef organs " +
+      "simmered at the table in spiced broth. Comparable to Korean gopchang jeongol " +
+      "and Chinese mixed-offal hotpots.",
+    culturalContext:
+      "A major communal dining tradition especially popular in southern Vietnam. " +
+      "Organs ordered separately and combined in a shared pot. Beer-food culture " +
+      "drives much of the consumption. One of Southeast Asia's most diverse " +
+      "single-meal offal traditions.",
+    preparationNotes:
+      "Broth built from lemongrass, ginger, shallots, and spices. Organs cleaned " +
+      "and blanched separately. Added to simmering broth at table. Served with " +
+      "fresh herbs, rice noodles, lime, and chili.",
+    cuts: ["intestines", "tripe", "heart", "kidney", "liver", "brain"],
+  },
+  {
+    id: "quan-nhau-offal",
+    name: "Quán Nhậu Offal Culture",
+    region: "Asia — Vietnam",
+    summary:
+      "Vietnam's beer-food offal tradition. Multiple organs grilled or stir-fried " +
+      "and served as drinking food at quán nhậu (beer restaurants). A major driver " +
+      "of everyday offal consumption.",
+    culturalContext:
+      "Quán nhậu are Vietnam's ubiquitous beer-and-food establishments. Organ " +
+      "meats are standard menu items — heart, kidney, and intestines are " +
+      "especially common. Structurally comparable to Japanese izakaya horumon " +
+      "culture and Korean anju offal traditions.",
+    preparationNotes:
+      "Organs grilled over charcoal or stir-fried with garlic, lemongrass, chili, " +
+      "and fish sauce. Served with fresh herbs, rice paper, and cold beer.",
+    cuts: ["heart", "kidney", "tongue", "intestines", "liver"],
+  },
+  {
+    id: "pho-dac-biet",
+    name: "Phở Đặc Biệt",
+    region: "Asia — Vietnam",
+    summary:
+      "Vietnam's combination phở — the full-offal version of the national dish. " +
+      "Tripe, tendon, and marrow-rich bones combined in the same bowl. The primary " +
+      "vehicle for offal consumption within phở culture.",
+    culturalContext:
+      "Many international discussions of phở focus only on muscle cuts. " +
+      "Traditional combination phở serves as a practical offal delivery system — " +
+      "tripe and tendon are standard options at any traditional phở shop. The " +
+      "marrow broth is foundational.",
+    preparationNotes:
+      "Tripe and tendon prepared separately and added to order. Marrow-rich bones " +
+      "simmered many hours in the base broth. Served with rice noodles, fresh " +
+      "herbs, lime, hoisin, and sriracha.",
+    cuts: ["tripe", "tendon", "bone_marrow"],
+  },
+  {
+    id: "nigerian-pepper-soup",
+    name: "Nigerian Pepper Soup",
+    region: "Africa — Nigeria",
+    summary:
+      "One of West Africa's most important offal delivery systems. Multiple " +
+      "organs simmered in a thin but intensely spiced broth with scotch bonnet " +
+      "peppers, uziza leaves, and local spice blends.",
+    culturalContext:
+      "Pepper soup is served at restaurants, bukas, and homes throughout " +
+      "Nigeria. Different organs are ordered separately or as assorted meat. " +
+      "Brain pepper soup is especially associated with specialist vendors. One " +
+      "of the most culturally embedded multi-organ traditions in Africa.",
+    preparationNotes:
+      "Organs cleaned and boiled until tender in spiced water. Pepper soup spice " +
+      "blend added with scotch bonnet, crayfish, uziza leaves, and seasoning. " +
+      "Simmered until broth is fragrant and thin. Served with bread, agidi, or " +
+      "alone.",
+    cuts: ["head_cheek", "tripe", "intestines", "liver", "kidney", "brain"],
+  },
+  {
+    id: "tripas-porto",
+    name: "Tripas à Moda do Porto",
+    region: "Europe — Portugal (Porto)",
+    summary:
+      "Portugal's most important offal dish and one of Europe's canonical tripe " +
+      "preparations. Tripe slowly stewed with white beans, sausages, cured meats, " +
+      "onion, and garlic. So iconic that Porto's residents are nicknamed Tripeiros.",
+    culturalContext:
+      "According to tradition, Porto's citizens donated prime meat to support " +
+      "Portuguese military expeditions and kept the tripe for themselves — " +
+      "creating both the dish and the nickname. One of the world's great " +
+      "city-specific offal traditions alongside Florence's lampredotto, Sendai's " +
+      "gyūtan, and Quito's tripa mishqui.",
+    preparationNotes:
+      "Tripe cleaned and simmered until tender. Stewed with white beans, " +
+      "chouriço, morcela, presunto, onion, garlic, bay leaf, parsley, and cumin. " +
+      "Long slow cook until unified and thick.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "dobrada-pt",
+    name: "Dobrada",
+    region: "Europe — Portugal",
+    summary:
+      "Portugal's broader tripe stew tradition found nationwide outside Porto. " +
+      "Tripe stewed with chickpeas, sausage, and spices — the Portuguese ancestor " +
+      "of Brazil's dobradinha.",
+    culturalContext:
+      "The direct culinary ancestor of Brazil's dobradinha, demonstrating the " +
+      "Lusophone offal connection. Found throughout Portugal in traditional " +
+      "restaurants and home cooking. The bean-and-tripe combination is the " +
+      "defining structural link between Portuguese and Brazilian offal traditions.",
+    preparationNotes:
+      "Tripe cleaned and boiled until tender. Stewed with chickpeas or white " +
+      "beans, chouriço, onion, garlic, paprika, bay leaf, and parsley.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "iscas-figado",
+    name: "Iscas de Fígado à Portuguesa",
+    region: "Europe — Portugal (Lisbon)",
+    summary:
+      "Portugal's flagship liver dish. Thin slices marinated in garlic, vinegar, " +
+      "white wine, and bay leaf, then fried until just cooked. Especially " +
+      "associated with Lisbon.",
+    culturalContext:
+      "A defining dish of Lisbon's tavern culture. The vinegar marinade is the " +
+      "distinctive flavor marker — shared with Goa's vindalho traditions, " +
+      "reflecting Portuguese colonial culinary dispersal. One of the strongest " +
+      "national liver traditions in Europe.",
+    preparationNotes:
+      "Liver sliced thin and marinated overnight in garlic, white wine vinegar, " +
+      "white wine, and bay leaf. Pan-fried quickly in lard or oil. Served with " +
+      "fried potatoes and pickled vegetables.",
+    cuts: ["liver"],
+  },
+  {
+    id: "bochechas-estufadas",
+    name: "Bochechas de Vaca Estufadas",
+    region: "Europe — Portugal",
+    summary:
+      "Portugal's most important head-meat tradition. Beef cheeks slow-braised " +
+      "in red wine, garlic, onion, and bay leaf until extraordinarily tender.",
+    culturalContext:
+      "Cheeks have become one of the most celebrated cuts in modern Portuguese " +
+      "gastronomy while remaining rooted in traditional butcher culture. A dish " +
+      "that bridges traditional offal cooking and contemporary restaurant cuisine.",
+    preparationNotes:
+      "Cheeks trimmed and seasoned. Seared then braised in red wine, beef stock, " +
+      "garlic, onion, carrot, bay leaf, and thyme for 3–4 hours until fork-tender.",
+    cuts: ["head_cheek"],
+  },
+  {
+    id: "lingua-estufada-pt",
+    name: "Língua Estufada",
+    region: "Europe — Portugal",
+    summary:
+      "Portugal's classic braised tongue. Slow-cooked with onion, garlic, bay " +
+      "leaf, white wine, and tomato, then sliced and served in sauce.",
+    culturalContext:
+      "A fixture of Portuguese home cooking and traditional restaurants. Tongue " +
+      "enjoys more mainstream visibility in Portugal than in most other Western " +
+      "European countries — a reflection of the country's strong surviving offal " +
+      "culture.",
+    preparationNotes:
+      "Tongue simmered until tender, skin peeled. Sliced and returned to braising " +
+      "liquid of onion, garlic, white wine, tomato, and bay leaf. Served with rice " +
+      "or potatoes.",
+    cuts: ["tongue"],
+  },
+  {
+    id: "portuguese-rural-slaughter",
+    name: "Portuguese Rural Slaughter Tradition",
+    region: "Europe — Portugal",
+    summary:
+      "The primary framework for traditional Portuguese offal utilization. " +
+      "Following slaughter, all organs are prepared and consumed — liver first, " +
+      "then tongue, brain, kidneys, and head meat.",
+    culturalContext:
+      "Rural slaughter traditions preserve Portugal's most complete offal " +
+      "culture. The matança (slaughter event) is a community and family " +
+      "tradition especially preserved in Alentejo and Minho. Many classic " +
+      "Portuguese offal dishes originate in this whole-animal context.",
+    preparationNotes:
+      "Each organ prepared according to tradition. Liver fried first as iscas. " +
+      "Brain breaded and fried as mioleira. Tongue braised as língua estufada. " +
+      "Head meat incorporated into soups and stews.",
+    cuts: ["tongue", "liver", "kidney", "brain", "head_cheek", "heart"],
+  },
+  {
+    id: "kuirdak",
+    name: "Kuirdak (Quyrdaq)",
+    region: "Asia — Kazakhstan",
+    summary:
+      "Kazakhstan's most important offal tradition. Liver, heart, kidney, and " +
+      "tripe fried together in tail fat with onion. Traditionally the first dish " +
+      "prepared after slaughter.",
+    culturalContext:
+      "Kuirdak is structurally comparable to Iranian jigaraki, Pakistani katakat, " +
+      "and Indonesian jeroan as a multi-organ framework. The use of tail fat " +
+      "(qurtyq) as cooking medium is distinctively Central Asian. Fresh organ " +
+      "quality is considered essential — the dish is at its best immediately " +
+      "after slaughter.",
+    preparationNotes:
+      "Organs diced and fried in rendered tail fat with onion, garlic, salt, and " +
+      "pepper. Liver added last to avoid overcooking. Served with bread and " +
+      "fresh vegetables.",
+    cuts: ["liver", "heart", "kidney", "tripe"],
+  },
+  {
+    id: "bas-tartu",
+    name: "Bas Tartu",
+    region: "Asia — Kazakhstan",
+    summary:
+      "Kazakhstan's ceremonial head-serving tradition. A whole boiled head " +
+      "presented to the honored guest, who ceremonially carves and distributes " +
+      "specific portions according to age, family hierarchy, and social status.",
+    culturalContext:
+      "One of the world's most formalized ceremonial offal traditions. The " +
+      "ritual distribution of head parts carries deep social meaning — cheeks to " +
+      "honored guests, ears to younger attendees, eyes to those asked to be " +
+      "observant. No direct parallel exists in the dataset for this level of " +
+      "ritualized organ allocation.",
+    preparationNotes:
+      "Whole head cleaned and boiled until tender with onion, peppercorns, and " +
+      "salt. Presented intact to the honored guest on a large platter. " +
+      "Ceremonially carved and distributed according to traditional protocol.",
+    cuts: ["head_cheek", "tongue", "brain", "bone_marrow"],
+  },
+  {
+    id: "beshbarmak-feast",
+    name: "Beshbarmak Feast System",
+    region: "Asia — Kazakhstan",
+    summary:
+      "Kazakhstan's national feast dish and the primary vehicle for marrow and " +
+      "prestige organ consumption. Boiled meat and pasta sheets served in broth, " +
+      "with marrow bones and tongue among the most prized elements.",
+    culturalContext:
+      "Beshbarmak means \"five fingers\" — eaten by hand. While not strictly an " +
+      "offal dish, it is a major vehicle for marrow and tongue consumption at " +
+      "ceremonial meals. The marrow bones and tongue are distributed to honored " +
+      "guests. One of Central Asia's most important feast traditions.",
+    preparationNotes:
+      "Meat and marrow bones boiled in seasoned broth. Flat pasta sheets " +
+      "(zhaima) cooked in broth. Assembled in layers with meat, onion sauce, and " +
+      "broth. Marrow bones and tongue served alongside as prestige elements.",
+    cuts: ["bone_marrow", "tongue", "head_cheek"],
+  },
+  {
+    id: "qarta-traditions",
+    name: "Qarta — Kazakh Intestine Traditions",
+    region: "Asia — Kazakhstan",
+    summary:
+      "Kazakhstan's intestine tradition. Cleaned intestines stuffed, boiled, " +
+      "smoked, or dried — one of Central Asia's most important intestine-centered " +
+      "food categories.",
+    culturalContext:
+      "Unlike many countries where intestines are merely casings, Kazakh cuisine " +
+      "treats them as a food category in their own right. Qarta and related " +
+      "preparations appear at feasts and celebrations. Part of the broader Kazakh " +
+      "whole-animal philosophy where organs carry prestige rather than stigma.",
+    preparationNotes:
+      "Intestines cleaned thoroughly. Stuffed with fat, meat, and seasonings or " +
+      "left plain. Boiled, smoked, or air-dried depending on region and " +
+      "preparation style.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "kalla-pocha-uz",
+    name: "Kalla-Pocha",
+    region: "Asia — Uzbekistan",
+    summary:
+      "Uzbekistan's most important offal tradition. Head meat, tongue, brain, " +
+      "and tendons simmered overnight in spiced broth. Served at dawn at bazaar " +
+      "restaurants and market stalls.",
+    culturalContext:
+      "Belongs to the Eurasian head-and-feet soup corridor alongside Turkey's " +
+      "kelle-paça, Iran's kaleh pacheh, and Pakistan's siri-paya. The Uzbek " +
+      "version is especially associated with bazaar culture and early-morning " +
+      "dining. Tashkent's specialist kalla-pocha restaurants open before dawn.",
+    preparationNotes:
+      "Head cleaned and split. Simmered overnight with trotters, tendons, onion, " +
+      "garlic, and spices. Meat picked from skull. Served in broth with brain, " +
+      "tongue, and head meat. Garnished with onion, vinegar, and fresh herbs.",
+    cuts: ["head_cheek", "tongue", "brain", "tendon"],
+  },
+  {
+    id: "hasip",
+    name: "Hasip",
+    region: "Asia — Uzbekistan",
+    summary:
+      "Uzbekistan's signature intestine tradition. Intestines stuffed with rice, " +
+      "organ meats, fat, and spices, then boiled and sliced. A recognized dish " +
+      "rather than merely a sausage.",
+    culturalContext:
+      "Unlike ordinary sausage traditions, Hasip is itself a recognized Uzbek " +
+      "dish served at feasts and celebrations. Especially associated with Bukhara " +
+      "and traditional market food. Comparable to Egypt's mombar and Saudi " +
+      "Arabia's masarin in being a culturally distinct stuffed-intestine " +
+      "preparation.",
+    preparationNotes:
+      "Intestines cleaned thoroughly. Stuffed with rice, chopped organ meats " +
+      "(liver, heart), tail fat, onion, cumin, and pepper. Tied at intervals and " +
+      "boiled until cooked through. Sliced and served warm with bread.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "jigar-kabob",
+    name: "Jigar Kabob",
+    region: "Asia — Uzbekistan",
+    summary:
+      "Uzbekistan's most important liver preparation. Fresh liver cubed and " +
+      "skewered with tail fat, then grilled over charcoal. One of Central Asia's " +
+      "strongest single-organ traditions.",
+    culturalContext:
+      "Liver kebabs are ubiquitous at Uzbek markets, roadside grills, and " +
+      "chaikhanas. Fresh liver quality is considered essential. Comparable in " +
+      "cultural prominence to Saudi kabdah, Egyptian kibda, and Iranian jegar as " +
+      "a dominant liver-grill tradition.",
+    preparationNotes:
+      "Liver cubed and threaded onto skewers alternating with pieces of tail fat " +
+      "(dumba). Grilled over charcoal, seasoned with salt, cumin, and black " +
+      "pepper. Served immediately with non bread and raw onion.",
+    cuts: ["liver"],
+  },
+  {
+    id: "qovurdoq",
+    name: "Qovurdoq (Kovurdak)",
+    region: "Asia — Uzbekistan",
+    summary:
+      "Uzbekistan's primary mixed-organ tradition. Multiple organs fried together " +
+      "with onion and fat. Traditionally one of the first dishes prepared after " +
+      "slaughter. The Uzbek equivalent of Kazakhstan's kuirdak.",
+    culturalContext:
+      "Comparable to Kazakhstan's kuirdak, Pakistan's katakat, and Indonesia's " +
+      "jeroan as a multi-organ frying tradition. The Central Asian mixed-organ " +
+      "fry appears across the region under different names — a shared culinary " +
+      "heritage of the Turkic world.",
+    preparationNotes:
+      "Organs diced and fried in oil or fat with onion, garlic, cumin, " +
+      "coriander, and pepper. Each organ type added in sequence according to " +
+      "cooking time. Served with non bread and fresh vegetables.",
+    cuts: ["liver", "heart", "kidney", "tripe"],
+  },
+  {
+    id: "shurpa-marrow",
+    name: "Shurpa Marrow Tradition",
+    region: "Asia — Uzbekistan",
+    summary:
+      "Uzbekistan's marrow and collagen soup tradition. Marrow-rich bones and " +
+      "tendon-rich cuts simmered in shurpa broth. Marrow eaten directly from the " +
+      "bone at the table.",
+    culturalContext:
+      "Shurpa is one of Central Asia's most important soups. Marrow bones are " +
+      "among the most prized elements — served to honored guests and elders. The " +
+      "direct consumption of marrow from the bone is culturally normalized and " +
+      "expected.",
+    preparationNotes:
+      "Marrow bones and tendon-rich cuts simmered in shurpa with onion, carrot, " +
+      "tomato, pepper, and herbs. Marrow bones served whole alongside the soup. " +
+      "Marrow scooped with bread.",
+    cuts: ["bone_marrow", "tendon"],
   },
 ];
 

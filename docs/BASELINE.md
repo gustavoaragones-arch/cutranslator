@@ -310,62 +310,25 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ### Regional Name Entries
 
-**458 entries across 40 countries.**
+**493 entries across 43 countries.**
 
 Country entry counts (authoritative, from grep audit):
 
-| Country | Code | Entries |
-|---|---|---|
-| South Africa | ZA | 13 |
-| India | IN | 13 |
-| Ecuador | EC | 13 |
-| Colombia | CO | 13 |
-| Bolivia | BO | 13 |
-| Turkey | TR | 13 |
-| Mexico | MX | 13 |
-| South Korea | KR | 13 |
-| Italy | IT | 13 |
-| France | FR | 13 |
-| Spain | ES | 13 |
-| China | CN | 13 |
-| Peru | PE | 13 |
-| Ukraine | UA | 12 |
-| Russia | RU | 12 |
-| Pakistan | PK | 12 |
-| Philippines | PH | 12 |
-| Nigeria | NG | 12 |
-| Brazil | BR | 12 |
-| Japan | JP | 12 |
-| Vietnam | VN | 11 |
-| Iran | IR | 11 |
-| Hungary | HU | 11 |
-| Ethiopia | ET | 11 |
-| Argentina | AR | 11 |
-| Morocco | MA | 11 |
-| Uruguay | UY | 10 |
-| Thailand | TH | 10 |
-| Senegal | SN | 10 |
-| Saudi Arabia | SA | 10 |
-| Poland | PL | 10 |
-| Lebanon | LB | 10 |
-| Israel | IL | 10 |
-| Indonesia | ID | 10 |
-| Greece | GR | 10 |
-| Egypt | EG | 10 |
-| Czech Republic | CZ | 10 |
-| Chile | CL | 10 |
-| United Kingdom | GB | 10 |
-| Germany | DE | 9 |
-
-**Audit commands:**
-```bash
-grep -c "country:" data/offal/regionalNames.ts
-grep -oE 'country: "[A-Z]{2}"' data/offal/regionalNames.ts | sort | uniq -c | sort -rn
+```
+ZA: 13  TR: 13  PE: 13  NG: 13  MX: 13
+KR: 13  IT: 13  IN: 13  FR: 13  ES: 13
+EC: 13  CO: 13  CN: 13  BO: 13  VN: 12
+UA: 12  RU: 12  PK: 12  PH: 12  JP: 12
+BR: 12  UZ: 11  PT: 11  MA: 11  KZ: 11
+IR: 11  HU: 11  ET: 11  AR: 11  UY: 10
+TH: 10  SN: 10  SA: 10  PL: 10  LB: 10
+IL: 10  ID: 10  GR: 10  GB: 10  EG: 10
+CZ: 10  CL: 10  DE: 9
 ```
 
 ### Tradition Pages
 
-**132 tradition pages.**
+**151 tradition pages.**
 
 ### Axis Nodes
 
@@ -381,8 +344,6 @@ Pending Illustrator delivery:
 
 All three: `viewBox="0 0 711.89 605.37"`
 
-Pages render cow silhouette gracefully when overlay is absent.
-
 ### Deployment
 
 Vercel (migrated from Cloudflare Workers June 12 2026). See `docs/infrastructure.md`.
@@ -396,24 +357,21 @@ Vercel (migrated from Cloudflare Workers June 12 2026). See `docs/infrastructure
 ### Known Deferred Items
 
 - Brain tradition page updates (`tacos-de-cabeza`, `quinto-quarto`, `fritto-misto`) pending brain research batch
-- Third sweep countries TBD
 - Tripe sub-canonical Option B (full split) deferred pending evidence from 3+ additional cultures
 - Zebu hump canonical promotion deferred until 5-6 country evidence accumulates
 
 ### Count Reconciliation Note
 
-The authoritative count is always the grep audit:
+Authoritative count command:
 
 ```bash
 grep -c "country:" data/offal/regionalNames.ts
 ```
 
-Per-country breakdown (covers both multi-line and inline-object entry syntax):
+Per-country breakdown:
+
 ```bash
-grep -oE 'country: "[A-Z]{2}"' data/offal/regionalNames.ts | sort | uniq -c | sort -rn
+grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
 ```
 
-Note: `grep "country:" ... | sort | uniq -c` (without `-oE`) undercounts entries
-that use inline-object syntax (currently 11 `brain` entries for CN, ES, FR, GB,
-IT, JP, KR, MA, MX, PE, TR), since each inline object is a distinct unique line
-and doesn't aggregate with the multi-line entries for the same country.
+All brain entries are now in standard multi-line format (refactored in commit after 243b2e8). Plain `grep -c` returns the correct total.
