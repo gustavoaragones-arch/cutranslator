@@ -909,8 +909,10 @@ const ET: readonly OffalRegionalName[] = [
   {
     canonicalId: "bone_marrow",
     country: "ET",
-    localName: "bone marrow",
+    localName: "meqni",
+    nativeScript: "መቅኒ",
     confidence: "medium",
+    traditionIds: ["raw-beef-marrow-et"],
   },
   {
     canonicalId: "skin",
@@ -930,9 +932,17 @@ const ET: readonly OffalRegionalName[] = [
     localName: "testicles",
     confidence: "medium",
   },
+  {
+    canonicalId: "brain",
+    country: "ET",
+    localName: "angol",
+    nativeScript: "አንጎል",
+    confidence: "high",
+    traditionIds: ["ethiopia-slaughter-day", "dulet"],
+  },
 ];
 
-// Brain entries omitted for PH, ET — no documented standalone tradition with sufficient confidence.
+// Brain entry omitted for PH — no documented standalone tradition with sufficient confidence.
 
 // Tripe sub-canonical architecture resolved in ADR-006 (c1cb321).
 // Distinct stomach chambers modeled as axis nodes in
@@ -1610,7 +1620,7 @@ const UY: readonly OffalRegionalName[] = [
 ];
 
 // ─── Germany (DE) ────────────────────────────────────────────────────────────
-// Note: DE skin, tendon, testicles, brain intentionally omitted.
+// Note: DE skin, tendon intentionally omitted.
 
 const DE: readonly OffalRegionalName[] = [
   {
@@ -1618,6 +1628,7 @@ const DE: readonly OffalRegionalName[] = [
     country: "DE",
     localName: "Rinderzunge",
     confidence: "high",
+    traditionIds: ["schlachtfest-de"],
   },
   {
     canonicalId: "tripe",
@@ -1632,6 +1643,7 @@ const DE: readonly OffalRegionalName[] = [
     country: "DE",
     localName: "Rinderleber",
     confidence: "high",
+    traditionIds: ["schlachtfest-de"],
   },
   {
     canonicalId: "heart",
@@ -1644,6 +1656,7 @@ const DE: readonly OffalRegionalName[] = [
     country: "DE",
     localName: "Rinderniere",
     confidence: "high",
+    traditionIds: ["schlachtfest-de"],
   },
   {
     canonicalId: "intestines",
@@ -1657,6 +1670,7 @@ const DE: readonly OffalRegionalName[] = [
     localName: "Ochsenbacke",
     altNames: ["Rinderbacke"],
     confidence: "high",
+    traditionIds: ["ochsenbacken", "schlachtfest-de"],
   },
   {
     canonicalId: "bone_marrow",
@@ -1671,6 +1685,22 @@ const DE: readonly OffalRegionalName[] = [
     localName: "Kalbsbries",
     speciesNote: "traditionally veal not beef",
     confidence: "high",
+    traditionIds: ["kalbsbries-de"],
+  },
+  {
+    canonicalId: "brain",
+    country: "DE",
+    localName: "hirn",
+    altNames: ["kalbshirn"],
+    speciesNote: "traditionally veal not beef",
+    confidence: "high",
+    traditionIds: ["hirn-mit-ei", "schlachtfest-de"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "DE",
+    localName: "stierhoden",
+    confidence: "medium",
   },
 ];
 
@@ -3780,6 +3810,192 @@ const UZ: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Kyrgyzstan (KG) ─────────────────────────────────────────────────────────
+// skin, sweetbreads omitted — medium confidence, not independently marketed.
+
+const KG: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "KG",
+    localName: "uy tili",
+    nativeScript: "уй тили",
+    confidence: "high",
+    traditionIds: ["bash-tartuu", "beshbarmak-kg"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "KG",
+    localName: "karyn",
+    nativeScript: "карын",
+    confidence: "high",
+    traditionIds: ["kuurdak-kg", "olobo"],
+  },
+  {
+    canonicalId: "liver",
+    country: "KG",
+    localName: "boor",
+    nativeScript: "боор",
+    confidence: "high",
+    traditionIds: ["kuurdak-kg"],
+  },
+  {
+    canonicalId: "heart",
+    country: "KG",
+    localName: "jürök",
+    nativeScript: "жүрөк",
+    confidence: "high",
+    traditionIds: ["kuurdak-kg"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "KG",
+    localName: "böyrök",
+    nativeScript: "бөйрөк",
+    confidence: "high",
+    traditionIds: ["kuurdak-kg"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "KG",
+    localName: "ichegi",
+    nativeScript: "ичеги",
+    confidence: "high",
+    traditionIds: ["chuchuk-kg"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "KG",
+    localName: "taramysh",
+    nativeScript: "тарамыш",
+    confidence: "high",
+    traditionIds: ["beshbarmak-kg"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "KG",
+    localName: "bash",
+    nativeScript: "баш",
+    confidence: "high",
+    traditionIds: ["bash-tartuu", "beshbarmak-kg"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "KG",
+    localName: "jilik maiy",
+    nativeScript: "жилик майы",
+    confidence: "high",
+    traditionIds: ["beshbarmak-kg"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "KG",
+    localName: "uruk bezderi",
+    nativeScript: "урук бездери",
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "KG",
+    localName: "mee",
+    nativeScript: "мээ",
+    confidence: "high",
+    traditionIds: ["bash-tartuu"],
+  },
+];
+
+// ─── Tajikistan (TJ) ─────────────────────────────────────────────────────────
+// skin, sweetbreads omitted — medium confidence, not independently marketed.
+
+const TJ: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "TJ",
+    localName: "zaboni gov",
+    nativeScript: "забони гов",
+    confidence: "high",
+    traditionIds: ["kallapocha-tj"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "TJ",
+    localName: "qorin",
+    nativeScript: "қорин",
+    confidence: "high",
+    traditionIds: ["qovurma-tj"],
+  },
+  {
+    canonicalId: "liver",
+    country: "TJ",
+    localName: "jigar",
+    nativeScript: "ҷигар",
+    confidence: "high",
+    traditionIds: ["jigar-kabob-tj", "qovurma-tj"],
+  },
+  {
+    canonicalId: "heart",
+    country: "TJ",
+    localName: "dil",
+    nativeScript: "дил",
+    confidence: "high",
+    traditionIds: ["qovurma-tj"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "TJ",
+    localName: "gurda",
+    nativeScript: "гурда",
+    confidence: "high",
+    traditionIds: ["qovurma-tj"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "TJ",
+    localName: "ruda",
+    nativeScript: "рӯда",
+    confidence: "high",
+    traditionIds: ["stuffed-intestines-tj"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "TJ",
+    localName: "pay",
+    nativeScript: "пай",
+    confidence: "high",
+    traditionIds: ["kallapocha-tj", "shurbo-marrow-tj"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "TJ",
+    localName: "kalla",
+    nativeScript: "калла",
+    confidence: "high",
+    traditionIds: ["kallapocha-tj"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "TJ",
+    localName: "maghzi ustukhon",
+    nativeScript: "мағзи устухон",
+    confidence: "high",
+    traditionIds: ["shurbo-marrow-tj"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "TJ",
+    localName: "khoya",
+    nativeScript: "хоя",
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "TJ",
+    localName: "maghz",
+    nativeScript: "мағз",
+    confidence: "high",
+    traditionIds: ["kallapocha-tj"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -3826,4 +4042,6 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...PT,
   ...KZ,
   ...UZ,
+  ...KG,
+  ...TJ,
 ];

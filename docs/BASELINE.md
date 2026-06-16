@@ -300,7 +300,7 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ---
 
-## Offal Product — Baseline (as of June 14 2026)
+## Offal Product — Baseline (as of June 15 2026)
 
 ### Canonicals
 
@@ -310,7 +310,7 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ### Regional Name Entries
 
-**493 entries across 43 countries.**
+**518 entries across 45 countries.**
 
 Country entry counts (authoritative, from grep audit):
 
@@ -319,16 +319,16 @@ ZA: 13  TR: 13  PE: 13  NG: 13  MX: 13
 KR: 13  IT: 13  IN: 13  FR: 13  ES: 13
 EC: 13  CO: 13  CN: 13  BO: 13  VN: 12
 UA: 12  RU: 12  PK: 12  PH: 12  JP: 12
-BR: 12  UZ: 11  PT: 11  MA: 11  KZ: 11
-IR: 11  HU: 11  ET: 11  AR: 11  UY: 10
-TH: 10  SN: 10  SA: 10  PL: 10  LB: 10
-IL: 10  ID: 10  GR: 10  GB: 10  EG: 10
-CZ: 10  CL: 10  DE: 9
+ET: 12  BR: 12  UZ: 11  TJ: 11  PT: 11
+MA: 11  KZ: 11  KG: 11  IR: 11  HU: 11
+DE: 11  AR: 11  UY: 10  TH: 10  SN: 10
+SA: 10  PL: 10  LB: 10  IL: 10  ID: 10
+GR: 10  GB: 10  EG: 10  CZ: 10  CL: 10
 ```
 
 ### Tradition Pages
 
-**151 tradition pages.**
+**167 tradition pages.**
 
 ### Axis Nodes
 
@@ -374,4 +374,4 @@ Per-country breakdown:
 grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
 ```
 
-All brain entries are now in standard multi-line format (refactored in commit after 243b2e8). Plain `grep -c` returns the correct total.
+All entries are in standard multi-line format. Plain `grep -c` returns the correct total.

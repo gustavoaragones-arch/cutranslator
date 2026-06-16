@@ -80,6 +80,8 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   PT: "Portugal",
   KZ: "Kazakhstan",
   UZ: "Uzbekistan",
+  KG: "Kyrgyzstan",
+  TJ: "Tajikistan",
 };
 
 /** All offal regional name entries across all countries. */
@@ -771,7 +773,7 @@ const traditions: readonly OffalTradition[] = [
       "Liver, tripe, and stomach tissues finely minced or chopped. Mixed with niter kibbeh, " +
       "mitmita or berbere spice blend, and onion. Served immediately, raw or lightly cooked " +
       "to order.",
-    cuts: ["liver", "tripe", "heart", "kidney", "sweetbreads"],
+    cuts: ["liver", "tripe", "heart", "kidney", "sweetbreads", "brain"],
   },
 
   // ── United Kingdom ───────────────────────────────────────────────────────────
@@ -1139,6 +1141,84 @@ const traditions: readonly OffalTradition[] = [
       "Marrow extracted from bones, mixed with egg, breadcrumbs, parsley, salt, and nutmeg into " +
       "small dumplings. Poached in clear beef broth and served as soup course.",
     cuts: ["bone_marrow"],
+  },
+
+  // ── Germany second pass ───────────────────────────────────────────────────────
+
+  {
+    id: "hirn-mit-ei",
+    name: "Hirn mit Ei",
+    region: "Europe — Germany (Bavaria/Swabia)",
+    speciesNote: "Traditionally made with veal brain (Kalbshirn) rather than mature beef.",
+    summary:
+      "Germany's most important brain preparation. Brain poached then scrambled with eggs, " +
+      "butter, and parsley. Part of the Central European brain-with-eggs tradition shared with " +
+      "Poland, Czech Republic, Ukraine, and Russia.",
+    culturalContext:
+      "Historically common in Bavaria, Swabia, and Franconia. Consumption declined after " +
+      "BSE-related restrictions. Remains documented in traditional cookbooks and occasional " +
+      "specialty restaurants. Part of the same Central European brain-with-eggs pattern as " +
+      "Czech mozeček s vejci and Polish móżdżek z jajkiem.",
+    preparationNotes:
+      "Brain soaked in cold salted water, membrane removed. Poached in salted water with " +
+      "vinegar. Broken into pieces and scrambled with beaten eggs, butter, onion, and parsley. " +
+      "Seasoned with salt, pepper, and nutmeg.",
+    cuts: ["brain"],
+  },
+  {
+    id: "schlachtfest-de",
+    name: "Schlachtfest",
+    region: "Europe — Germany",
+    summary:
+      "Germany's traditional slaughter festival. The annual pig or cattle slaughter was a major " +
+      "communal event where all organs were prepared and consumed immediately. The primary " +
+      "framework for understanding German offal utilization historically.",
+    culturalContext:
+      "The Schlachtfest (slaughter festival) was practiced across rural Germany and remains a " +
+      "living tradition in some regions. Comparable to Ukrainian slaughter-day traditions, " +
+      "Kazakh feast slaughter, and Portuguese rural matança. Many classic German offal " +
+      "preparations originate in this context.",
+    preparationNotes:
+      "Each organ prepared immediately after slaughter. Liver fried first. Tongue boiled. " +
+      "Brain scrambled with eggs. Kidney sautéed. Head meat incorporated into head cheese and " +
+      "brawn. Blood used for Blutwurst.",
+    cuts: ["tongue", "liver", "kidney", "brain", "head_cheek", "intestines"],
+  },
+  {
+    id: "ochsenbacken",
+    name: "Ochsenbacken Geschmort",
+    region: "Europe — Germany",
+    summary:
+      "Germany's most important head-meat tradition. Beef cheeks slow-braised in red wine with " +
+      "root vegetables, juniper, and bay leaves until extremely tender.",
+    culturalContext:
+      "Beef cheeks have experienced a major revival in modern German gastronomy. Now found in " +
+      "traditional restaurants and modern bistros throughout Germany. Comparable to Portugal's " +
+      "bochechas estufadas and France's joue de bœuf braisée.",
+    preparationNotes:
+      "Cheeks trimmed and seared. Braised in red wine, beef stock, root vegetables, garlic, " +
+      "juniper berries, bay leaves, and thyme for 3–4 hours until fork-tender. Served with " +
+      "Spätzle or potato purée.",
+    cuts: ["head_cheek"],
+  },
+  {
+    id: "kalbsbries-de",
+    name: "Kalbsbries",
+    region: "Europe — Germany",
+    speciesNote: "Traditionally veal (Kalbs-) not mature beef.",
+    summary:
+      "Germany's sweetbread tradition. Veal sweetbreads poached, trimmed, and then sautéed, " +
+      "breaded, or fried. Especially associated with southern German and Bavarian restaurant " +
+      "cuisine.",
+    culturalContext:
+      "Sweetbreads occupy a more important place in German cuisine than many first-pass " +
+      "profiles suggest. Associated with bourgeois cooking and traditional restaurant " +
+      "gastronomy in Bavaria and Baden-Württemberg.",
+    preparationNotes:
+      "Sweetbreads soaked in cold water, blanched, and pressed to firm the texture. Trimmed of " +
+      "membrane. Sautéed in butter with shallots and cream, or breaded and pan-fried until " +
+      "golden.",
+    cuts: ["sweetbreads"],
   },
 
   // ── Hungary ──────────────────────────────────────────────────────────────────
@@ -1896,6 +1976,25 @@ const traditions: readonly OffalTradition[] = [
       "Heart and kidney grilled quickly. Tripe and head meat boiled or slow-cooked. Berbere, " +
       "mitmita, and niter kibbeh are the principal flavor markers.",
     cuts: ["tongue", "tripe", "liver", "heart", "kidney", "intestines", "head_cheek", "bone_marrow"],
+  },
+  {
+    id: "raw-beef-marrow-et",
+    name: "Raw Beef and Marrow Tradition",
+    region: "Africa — Ethiopia",
+    summary:
+      "Ethiopia's unique raw organ and marrow tradition. Marrow consumed directly from split " +
+      "bones alongside raw liver and fresh beef. One of the world's most distinctive marrow " +
+      "traditions.",
+    culturalContext:
+      "Unlike France's roasted marrow or Korea's gomtang, Ethiopian marrow is often consumed " +
+      "fresh and direct from split bones in butcher houses (tere siga establishments) alongside " +
+      "raw beef. This immediacy and freshness is culturally central. One of the strongest " +
+      "direct-marrow consumption traditions in the dataset.",
+    preparationNotes:
+      "Bones split and marrow eaten directly or scooped onto injera. Often consumed alongside " +
+      "tere siga (raw beef) and raw liver in traditional butcher-house settings. Seasoned with " +
+      "mitmita or eaten plain.",
+    cuts: ["bone_marrow", "liver"],
   },
 
   // ── Saudi Arabia ─────────────────────────────────────────────────────────────
@@ -3084,6 +3183,206 @@ const traditions: readonly OffalTradition[] = [
       "Marrow bones and tendon-rich cuts simmered in shurpa with onion, carrot, " +
       "tomato, pepper, and herbs. Marrow bones served whole alongside the soup. " +
       "Marrow scooped with bread.",
+    cuts: ["bone_marrow", "tendon"],
+  },
+
+  // ── Kyrgyzstan ───────────────────────────────────────────────────────────────
+
+  {
+    id: "kuurdak-kg",
+    name: "Kuurdak",
+    region: "Asia — Kyrgyzstan",
+    summary:
+      "Kyrgyzstan's most important mixed-organ tradition. Liver, heart, kidney, " +
+      "and tripe fried together in fat with onion. Traditionally the first dish " +
+      "prepared after slaughter.",
+    culturalContext:
+      "Structurally identical to Kazakhstan's kuirdak and Uzbekistan's qovurdoq " +
+      "— part of the shared Turkic mixed-organ frying tradition. Fresh organ " +
+      "quality is considered essential. The Kyrgyz version is especially " +
+      "associated with pastoral slaughter events and mountain communities.",
+    preparationNotes:
+      "Organs diced and fried in fat or oil with onion, garlic, salt, and " +
+      "pepper. Liver added last to avoid overcooking. Served with bread and raw " +
+      "vegetables.",
+    cuts: ["liver", "heart", "kidney", "tripe"],
+  },
+  {
+    id: "bash-tartuu",
+    name: "Bash Tartuu",
+    region: "Asia — Kyrgyzstan",
+    summary:
+      "Kyrgyzstan's ceremonial head-serving tradition. A whole boiled head " +
+      "presented to the honored guest for ceremonial carving and distribution " +
+      "according to age, family hierarchy, and social standing.",
+    culturalContext:
+      "Directly parallel to Kazakhstan's bas tartu — shared Central Asian " +
+      "ceremonial tradition. The Kyrgyz version is especially associated with " +
+      "wedding feasts (toi) and major family celebrations. Specific portions " +
+      "carry symbolic meaning: cheeks to honored guests, eyes to attentive " +
+      "listeners, ears to youth.",
+    preparationNotes:
+      "Whole head cleaned and boiled until tender with onion, peppercorns, and " +
+      "salt. Presented intact to honored guest on a large platter. Ceremonially " +
+      "carved and distributed per tradition.",
+    cuts: ["head_cheek", "tongue", "brain", "bone_marrow"],
+  },
+  {
+    id: "olobo",
+    name: "Olobo",
+    region: "Asia — Kyrgyzstan",
+    summary:
+      "Kyrgyzstan's most distinctive offal preparation. The stomach stuffed " +
+      "with fat, organ meats, and seasonings then boiled as a complete dish. " +
+      "One of Central Asia's most important stuffed-organ traditions.",
+    culturalContext:
+      "Olobo belongs to the global family of stuffed-stomach traditions " +
+      "alongside Scottish haggis, Uzbek hasip, and North African stuffed tripe. " +
+      "The Kyrgyz version is especially associated with pastoral slaughter " +
+      "events. One of Kyrgyzstan's most culturally distinctive offal " +
+      "contributions.",
+    preparationNotes:
+      "Stomach cleaned thoroughly. Stuffed with diced meat, tail fat, onion, " +
+      "and spices. Sewn closed. Boiled until cooked through. Sliced and served " +
+      "warm with broth.",
+    cuts: ["tripe"],
+  },
+  {
+    id: "chuchuk-kg",
+    name: "Chuchuk — Kyrgyz Intestine Traditions",
+    region: "Asia — Kyrgyzstan",
+    summary:
+      "Kyrgyzstan's intestine tradition. Cleaned intestines stuffed, boiled, " +
+      "smoked, or dried — a recognized food category rather than merely a " +
+      "sausage casing.",
+    culturalContext:
+      "Like Kazakhstan's qarta and Uzbekistan's hasip, Kyrgyz intestine " +
+      "traditions treat intestines as a featured ingredient rather than a " +
+      "utilitarian casing. Chuchuk appears at feasts and celebrations and is " +
+      "considered a prestige food.",
+    preparationNotes:
+      "Intestines cleaned and stuffed with fat, seasoned meat, and spices. " +
+      "Boiled, smoked, or air-dried depending on region and season.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "beshbarmak-kg",
+    name: "Beshbarmak Feast System",
+    region: "Asia — Kyrgyzstan",
+    summary:
+      "Kyrgyzstan's national feast dish and the primary vehicle for marrow and " +
+      "prestige organ consumption. Boiled meat and flat pasta sheets served in " +
+      "broth, with marrow bones, tongue, and head meat among the most prized " +
+      "elements.",
+    culturalContext:
+      "Identical framework to Kazakhstan's beshbarmak feast system. Kyrgyz " +
+      "beshbarmak has a stronger association with mountain pastoral " +
+      "traditions. Marrow bones and tongue distributed to honored guests. One " +
+      "of Central Asia's most important communal food traditions.",
+    preparationNotes:
+      "Meat and marrow bones boiled in seasoned broth. Flat pasta sheets " +
+      "(zhaima or kesme) cooked in broth. Assembled in layers with meat and " +
+      "onion sauce. Marrow bones and tongue served as prestige elements.",
+    cuts: ["bone_marrow", "tongue", "head_cheek", "tendon"],
+  },
+
+  // ── Tajikistan ───────────────────────────────────────────────────────────────
+
+  {
+    id: "kallapocha-tj",
+    name: "Kallapocha",
+    region: "Asia — Tajikistan",
+    summary:
+      "Tajikistan's most important offal tradition. Head meat, tongue, brain, " +
+      "and tendons simmered overnight in spiced broth. Served at dawn at bazaar " +
+      "restaurants.",
+    culturalContext:
+      "Tajikistan sits at the intersection of Persian and Turkic head-soup " +
+      "traditions. Kallapocha connects directly to Iran's kaleh pacheh, " +
+      "Turkey's kelle-paça, Pakistan's siri-paya, and Uzbekistan's kalla-pocha " +
+      "— a corridor of head-and-feet soup stretching across Eurasia. The Tajik " +
+      "version reflects Persian culinary influence through spicing and broth " +
+      "style.",
+    preparationNotes:
+      "Head cleaned and split. Simmered overnight with trotters, tendons, " +
+      "onion, garlic, and spices. Meat picked from skull. Served in broth with " +
+      "brain, tongue, and head meat. Garnished with fresh herbs, vinegar, and " +
+      "onion.",
+    cuts: ["head_cheek", "tongue", "brain", "tendon"],
+  },
+  {
+    id: "jigar-kabob-tj",
+    name: "Jigar Kabob",
+    region: "Asia — Tajikistan",
+    summary:
+      "Tajikistan's most important liver preparation. Fresh liver cubed and " +
+      "skewered with tail fat, grilled over charcoal. One of Central Asia's " +
+      "strongest single-organ traditions.",
+    culturalContext:
+      "Shares the same name and technique as Uzbekistan's jigar kabob — part " +
+      "of the shared Central Asian liver-kebab tradition. Widely available in " +
+      "markets, roadside grills, and chaikhanas throughout Tajikistan. Fresh " +
+      "liver quality is essential.",
+    preparationNotes:
+      "Liver cubed and threaded onto skewers alternating with tail fat " +
+      "(dumba). Grilled over charcoal with salt, cumin, and black pepper. " +
+      "Served with non bread and raw onion.",
+    cuts: ["liver"],
+  },
+  {
+    id: "qovurma-tj",
+    name: "Qovurma — Tajik Mixed Organ Fry",
+    region: "Asia — Tajikistan",
+    summary:
+      "Tajikistan's primary mixed-organ tradition. Multiple organs fried " +
+      "together with onion and spices. Part of the shared Central Asian " +
+      "organ-frying tradition.",
+    culturalContext:
+      "The Tajik equivalent of Kazakhstan's kuirdak, Kyrgyzstan's kuurdak, and " +
+      "Uzbekistan's qovurdoq. Part of a unified Central Asian culinary " +
+      "tradition where multiple organs are fried together immediately after " +
+      "slaughter. Persian spice influence differentiates the Tajik version " +
+      "slightly.",
+    preparationNotes:
+      "Organs diced and fried in oil with onion, garlic, cumin, coriander, and " +
+      "pepper. Served with non bread and fresh herbs.",
+    cuts: ["liver", "heart", "kidney", "tripe"],
+  },
+  {
+    id: "stuffed-intestines-tj",
+    name: "Stuffed Intestine Traditions",
+    region: "Asia — Tajikistan",
+    summary:
+      "Tajikistan's intestine tradition. Cleaned intestines stuffed with meat, " +
+      "fat, rice, or organ meats, then boiled and sliced. Part of the broader " +
+      "Central Asian stuffed-intestine family.",
+    culturalContext:
+      "Shares structural DNA with Uzbekistan's hasip and Kyrgyzstan's chuchuk. " +
+      "The Tajik version reflects both Uzbek and Persian culinary influences. " +
+      "Consumed at family feasts and bazaar settings.",
+    preparationNotes:
+      "Intestines cleaned thoroughly. Stuffed with rice, chopped meat, fat, " +
+      "onion, cumin, and pepper. Boiled until cooked through. Sliced and " +
+      "served warm.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "shurbo-marrow-tj",
+    name: "Shurbo Marrow Tradition",
+    region: "Asia — Tajikistan",
+    summary:
+      "Tajikistan's marrow and collagen soup tradition. Marrow-rich bones and " +
+      "tendon-rich cuts simmered in shurbo broth. Marrow eaten directly from " +
+      "the bone at the table.",
+    culturalContext:
+      "Shurbo is one of Central Asia's most important soups. Marrow bones are " +
+      "among the most prized elements at communal meals. The Persian culinary " +
+      "heritage of Tajikistan gives the broth a distinct spice profile compared " +
+      "with Kazakh or Kyrgyz equivalents.",
+    preparationNotes:
+      "Marrow bones and tendon-rich cuts simmered with onion, carrot, tomato, " +
+      "potato, and herbs. Marrow bones served whole alongside soup. Marrow " +
+      "scooped with bread.",
     cuts: ["bone_marrow", "tendon"],
   },
 ];
