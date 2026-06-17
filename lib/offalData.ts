@@ -82,6 +82,8 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   UZ: "Uzbekistan",
   KG: "Kyrgyzstan",
   TJ: "Tajikistan",
+  AF: "Afghanistan",
+  AZ: "Azerbaijan",
 };
 
 /** All offal regional name entries across all countries. */
@@ -3384,6 +3386,205 @@ const traditions: readonly OffalTradition[] = [
       "potato, and herbs. Marrow bones served whole alongside soup. Marrow " +
       "scooped with bread.",
     cuts: ["bone_marrow", "tendon"],
+  },
+
+  // ── Afghanistan ──────────────────────────────────────────────────────────────
+
+  {
+    id: "kallapacha-af",
+    name: "Kallapacha",
+    region: "Asia — Afghanistan",
+    summary:
+      "Afghanistan's most important offal tradition. Head meat, brain, " +
+      "tongue, and tendons simmered overnight in spiced broth. Served at " +
+      "dawn at specialist eateries throughout Afghan cities.",
+    culturalContext:
+      "Afghanistan sits at the geographic center of the Eurasian " +
+      "head-and-feet soup corridor — between Iran's kaleh pacheh and " +
+      "Pakistan's siri-paya. The Afghan version reflects Persian culinary " +
+      "heritage through cardamom and aromatic spicing. Kabul's kallapacha " +
+      "restaurants are a defining feature of traditional breakfast culture.",
+    preparationNotes:
+      "Head cleaned and simmered overnight with trotters, tendons, onion, " +
+      "cardamom, black pepper, and salt. Meat picked from skull. Served in " +
+      "rich broth with brain, tongue, and head meat. Accompanied by naan " +
+      "and fresh herbs.",
+    cuts: ["head_cheek", "tongue", "brain", "tendon", "bone_marrow"],
+  },
+  {
+    id: "jigar-kabab-af",
+    name: "Jigar Kabab",
+    region: "Asia — Afghanistan",
+    summary:
+      "Afghanistan's most important liver tradition. Fresh liver cubed " +
+      "and skewered with tail fat, grilled over charcoal. Available " +
+      "throughout Afghan markets and roadside grills.",
+    culturalContext:
+      "Part of the Central Asian and Persian liver-kebab corridor shared " +
+      "with Uzbekistan, Tajikistan, and Iran. The Afghan version is " +
+      "especially prominent in Kabul, Herat, and Mazar-i-Sharif. Fresh " +
+      "liver quality is considered essential — the best jigar kabab is " +
+      "made immediately after slaughter.",
+    preparationNotes:
+      "Liver cubed and threaded onto skewers alternating with tail fat " +
+      "(dumba). Grilled over charcoal with salt and black pepper. Served " +
+      "with naan, raw onion, and fresh herbs.",
+    cuts: ["liver"],
+  },
+  {
+    id: "afghan-organ-grill",
+    name: "Afghan Organ Grill Tradition",
+    region: "Asia — Afghanistan",
+    summary:
+      "Afghanistan's mixed-organ grill tradition. Liver, heart, and " +
+      "kidney skewered and grilled over charcoal at bazaar stalls " +
+      "throughout the country.",
+    culturalContext:
+      "Bazaar organ grills are a fixture of Afghan urban food culture. " +
+      "Comparable to Iran's jigaraki, Turkey's offal grills, and " +
+      "Pakistan's organ kebab culture. The Afghan version combines " +
+      "Persian spicing with Central Asian charcoal techniques.",
+    preparationNotes:
+      "Organs cubed and skewered separately or mixed. Grilled over " +
+      "charcoal with minimal seasoning — salt, black pepper, sometimes " +
+      "cumin. Served with naan, raw onion, and chutney.",
+    cuts: ["liver", "heart", "kidney"],
+  },
+  {
+    id: "afghan-marrow-broth",
+    name: "Afghan Marrow and Broth Tradition",
+    region: "Asia — Afghanistan",
+    summary:
+      "Afghanistan's marrow and collagen soup tradition. Marrow-rich " +
+      "bones and tendon-rich cuts simmered in spiced broths. Marrow " +
+      "eaten directly from the bone or incorporated into kallapacha " +
+      "broth.",
+    culturalContext:
+      "Marrow is associated with hospitality and nourishment in Afghan " +
+      "culture. Particularly prominent in winter and at communal feasts. " +
+      "Part of the broader Central Asian marrow-broth tradition shared " +
+      "with Kazakhstan, Uzbekistan, and Tajikistan.",
+    preparationNotes:
+      "Marrow bones and tendon cuts simmered with onion, cardamom, and " +
+      "spices. Marrow consumed directly from bone or incorporated into " +
+      "broth. Served with naan.",
+    cuts: ["bone_marrow", "tendon"],
+  },
+
+  // ── Azerbaijan ───────────────────────────────────────────────────────────────
+
+  {
+    id: "kelle-paca-az",
+    name: "Kəllə-Paça",
+    region: "Asia — Azerbaijan",
+    summary:
+      "Azerbaijan's most important offal tradition. Head meat, brain, " +
+      "tongue, tripe, and tendons simmered overnight in spiced broth. " +
+      "Served at specialist early-morning restaurants throughout " +
+      "Azerbaijan.",
+    culturalContext:
+      "Azerbaijan sits near the western center of the Eurasian head-soup " +
+      "corridor — between Turkey's kelle-paça and Iran's kaleh pacheh. " +
+      "The Azerbaijani version reflects both Turkic and Persian " +
+      "influences. Baku's kəllə-paça restaurants are a defining feature " +
+      "of traditional morning food culture. Served with garlic, vinegar, " +
+      "and bread.",
+    preparationNotes:
+      "Head cleaned and simmered overnight with trotters, tendons, " +
+      "tripe, and spices. Meat picked from skull. Served in broth with " +
+      "brain, tongue, and head meat. Accompanied by lavash, garlic, " +
+      "vinegar, and fresh herbs.",
+    cuts: [
+      "head_cheek",
+      "tongue",
+      "brain",
+      "tendon",
+      "bone_marrow",
+      "tripe",
+    ],
+  },
+  {
+    id: "ciyər-kababi",
+    name: "Ciyər Kababı",
+    region: "Asia — Azerbaijan",
+    summary:
+      "Azerbaijan's flagship liver tradition. Fresh liver cubed and " +
+      "skewered with tail fat, grilled over charcoal. One of the most " +
+      "visible organ traditions in the Caucasus.",
+    culturalContext:
+      "Liver kebab stalls are common throughout Azerbaijan and " +
+      "especially prominent in Baku. Part of the broader Persianate and " +
+      "Turkic liver-kebab tradition shared with Iran, Afghanistan, " +
+      "Uzbekistan, and Turkey. The Azerbaijani version uses quyruq yağı " +
+      "(tail fat) as the traditional accompaniment.",
+    preparationNotes:
+      "Liver cubed and threaded onto skewers alternating with tail fat. " +
+      "Grilled over charcoal. Seasoned with salt and pepper. Served with " +
+      "raw onion, lavash, and fresh herbs.",
+    cuts: ["liver"],
+  },
+  {
+    id: "az-organ-grill",
+    name: "Azerbaijani Organ Grill Tradition",
+    region: "Asia — Azerbaijan",
+    summary:
+      "Azerbaijan's mixed-organ grill tradition. Liver, heart, and " +
+      "kidney grilled over charcoal at taverns, markets, and roadside " +
+      "restaurants.",
+    culturalContext:
+      "Comparable to Turkey's sakatat grill culture and Iran's jigaraki. " +
+      "The Azerbaijani version sits between Persian and Turkic " +
+      "traditions in spicing and technique. A standard offering at " +
+      "traditional restaurants and bazaar eateries.",
+    preparationNotes:
+      "Organs cubed and grilled over charcoal. Seasoned with salt, " +
+      "black pepper, and sometimes saffron or sumac. Served with " +
+      "lavash, raw onion, and herbs.",
+    cuts: ["liver", "heart", "kidney"],
+  },
+  {
+    id: "az-marrow-broth",
+    name: "Azerbaijani Marrow and Broth Tradition",
+    region: "Asia — Azerbaijan",
+    summary:
+      "Azerbaijan's marrow and collagen tradition. Marrow-rich bones and " +
+      "tendon-rich cuts simmered in broths. Part of the Caucasian and " +
+      "Persian marrow-soup tradition.",
+    culturalContext:
+      "Marrow consumption is embedded in Azerbaijan's feast and " +
+      "hospitality culture. The tradition connects Persian marrow broth " +
+      "practices with Central Asian bone-soup culture. Increasingly " +
+      "visible in modern Baku restaurants.",
+    preparationNotes:
+      "Marrow bones and tendon cuts simmered with onion, saffron, and " +
+      "aromatics. Marrow consumed directly from bone or incorporated " +
+      "into broth. Served with lavash.",
+    cuts: ["bone_marrow", "tendon"],
+  },
+
+  // ── Nigeria (Northern / Hausa-Fulani) ────────────────────────────────────────
+
+  {
+    id: "northern-nigerian-slaughter",
+    name: "Northern Nigerian Slaughter Tradition",
+    region: "Africa — Nigeria (North)",
+    summary:
+      "The Hausa-Fulani whole-animal slaughter tradition of northern " +
+      "Nigeria. Multiple organs consumed immediately after slaughter — " +
+      "brain, testicles, liver, kidney, heart, and intestines all " +
+      "utilized within the broader Orishirishi system.",
+    culturalContext:
+      "Hausa cattle culture and Fulani pastoral communities practice " +
+      "more comprehensive organ utilization than much urban Nigerian " +
+      "food writing acknowledges. Brain and testicles are especially " +
+      "more visible here than in southern markets. Eid al-Adha is the " +
+      "primary annual driver of whole-organ consumption in the north.",
+    preparationNotes:
+      "Each organ prepared according to traditional preference. Brain " +
+      "and testicles typically boiled or grilled first. Liver, kidney, " +
+      "and heart grilled or added to pepper soup. Intestines cleaned " +
+      "and stewed or added to mixed-organ preparations.",
+    cuts: ["brain", "testicles", "liver", "kidney", "heart", "intestines"],
   },
 ];
 

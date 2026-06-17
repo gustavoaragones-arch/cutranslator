@@ -659,6 +659,7 @@ const NG: readonly OffalRegionalName[] = [
     canonicalId: "testicles",
     country: "NG",
     localName: "testicles",
+    altNames: ["golayen saniya (Hausa)", "ẹyin màlúù (Yoruba)"],
     confidence: "medium",
   },
   {
@@ -3996,6 +3997,178 @@ const TJ: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Afghanistan (AF) ────────────────────────────────────────────────────────
+// skin, sweetbreads omitted — medium confidence, not independently marketed.
+
+const AF: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "AF",
+    localName: "zabān-e gāv",
+    nativeScript: "زبان گاو",
+    confidence: "high",
+    traditionIds: ["kallapacha-af"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "AF",
+    localName: "shekamba",
+    nativeScript: "شکمبه",
+    confidence: "high",
+  },
+  {
+    canonicalId: "liver",
+    country: "AF",
+    localName: "jigar",
+    nativeScript: "جگر",
+    confidence: "high",
+    traditionIds: ["jigar-kabab-af", "afghan-organ-grill"],
+  },
+  {
+    canonicalId: "heart",
+    country: "AF",
+    localName: "del",
+    nativeScript: "دل",
+    confidence: "high",
+    traditionIds: ["afghan-organ-grill"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "AF",
+    localName: "gurda",
+    nativeScript: "گرده",
+    confidence: "high",
+    traditionIds: ["afghan-organ-grill"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "AF",
+    localName: "ruda",
+    nativeScript: "روده",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tendon",
+    country: "AF",
+    localName: "pay",
+    nativeScript: "پی",
+    confidence: "high",
+    traditionIds: ["kallapacha-af", "afghan-marrow-broth"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "AF",
+    localName: "kalla",
+    nativeScript: "کله",
+    confidence: "high",
+    traditionIds: ["kallapacha-af"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "AF",
+    localName: "maghz-e ustukhān",
+    nativeScript: "مغز استخوان",
+    confidence: "high",
+    traditionIds: ["afghan-marrow-broth", "kallapacha-af"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "AF",
+    localName: "khāya",
+    nativeScript: "خایه",
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "AF",
+    localName: "maghz",
+    nativeScript: "مغز",
+    confidence: "high",
+    traditionIds: ["kallapacha-af"],
+  },
+];
+
+// ─── Azerbaijan (AZ) ─────────────────────────────────────────────────────────
+// skin, sweetbreads omitted — medium confidence, not independently marketed.
+
+const AZ: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "AZ",
+    localName: "dil",
+    confidence: "high",
+    traditionIds: ["kelle-paca-az"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "AZ",
+    localName: "işgənbə",
+    confidence: "high",
+    traditionIds: ["kelle-paca-az"],
+  },
+  {
+    canonicalId: "liver",
+    country: "AZ",
+    localName: "ciyər",
+    confidence: "high",
+    traditionIds: ["ciyər-kababi", "az-organ-grill"],
+  },
+  {
+    canonicalId: "heart",
+    country: "AZ",
+    localName: "ürək",
+    confidence: "high",
+    traditionIds: ["az-organ-grill"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "AZ",
+    localName: "böyrək",
+    confidence: "high",
+    traditionIds: ["az-organ-grill"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "AZ",
+    localName: "bağırsaq",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tendon",
+    country: "AZ",
+    localName: "vətər",
+    confidence: "high",
+    traditionIds: ["kelle-paca-az", "az-marrow-broth"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "AZ",
+    localName: "kəllə",
+    confidence: "high",
+    traditionIds: ["kelle-paca-az"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "AZ",
+    localName: "sümük iliyi",
+    confidence: "high",
+    traditionIds: ["az-marrow-broth", "kelle-paca-az"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "AZ",
+    localName: "xaya",
+    confidence: "high",
+  },
+  {
+    canonicalId: "brain",
+    country: "AZ",
+    localName: "beyin",
+    confidence: "high",
+    traditionIds: ["kelle-paca-az"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -4044,4 +4217,6 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...UZ,
   ...KG,
   ...TJ,
+  ...AF,
+  ...AZ,
 ];

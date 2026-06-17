@@ -16,9 +16,13 @@ export function generateStaticParams(): Array<{ id: string }> {
 
 type PageProps = { params: Promise<{ id: string }> };
 
+function resolveTradition(id: string) {
+  return getOffalTraditionById(id) ?? getOffalTraditionById(decodeURIComponent(id));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const tradition = getOffalTraditionById(id);
+  const tradition = resolveTradition(id);
   if (!tradition) return { title: "Tradition not found | Cutranslator" };
   return {
     title: `${tradition.name} — Offal Traditions — Cutranslator`,
@@ -28,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function OffalTraditionPage({ params }: PageProps) {
   const { id } = await params;
-  const tradition = getOffalTraditionById(id);
+  const tradition = resolveTradition(id);
   if (!tradition) notFound();
 
   return (
