@@ -78,6 +78,41 @@ const _coreRegionalNames: readonly RegionalName[] = [
     confidence: 0.98,
     synonyms: ["file mignon", "filet mignon", "filete mignon"],
   },
+  {
+    name: "bife ancho",
+    region: "brazil",
+    maps_to: "ribeye",
+    confidence: 0.90,
+    notes: "Distinct from Brazilian 'entrecot', which maps to t_bone — not used as a synonym here to avoid colliding with that existing lookup key (accent-stripped normalization makes 'entrecot'/'entrecôte'/'entrecote' equivalent for lookup purposes).",
+  },
+  {
+    name: "contrafilé",
+    region: "brazil",
+    maps_to: "striploin",
+    confidence: 0.93,
+    synonyms: ["contrafile", "contra-filé"],
+  },
+  {
+    name: "picanha",
+    region: "brazil",
+    maps_to: "sirloin_cap",
+    confidence: 0.97,
+    synonyms: ["picanha bovina"],
+  },
+  {
+    name: "maminha",
+    region: "brazil",
+    maps_to: "sirloin_flap",
+    confidence: 0.88,
+    synonyms: ["maminha de alcatra"],
+  },
+  {
+    name: "fraldinha",
+    region: "brazil",
+    maps_to: "flank",
+    confidence: 0.85,
+    synonyms: ["fralda", "fraldão"],
+  },
 
   // ----- France -----
   {
@@ -159,25 +194,152 @@ const _coreRegionalNames: readonly RegionalName[] = [
     confidence: 0.95,
   },
 
-  // ----- Spain -----
+  // ----- Spain (seam-butchery / despiece anatómico) -----
   {
-    name: "entrecot",
+    name: "solomillo",
     region: "spain",
-    maps_to: "ribeye",
-    confidence: 0.9,
+    maps_to: "tenderloin",
+    confidence: 0.97,
+    synonyms: ["medallón", "chateaubriand", "tournedos"],
   },
   {
     name: "lomo bajo",
     region: "spain",
     maps_to: "striploin",
-    confidence: 0.9,
+    confidence: 0.92,
+    synonyms: ["lomo bajo sin hueso", "chuleta de lomo bajo"],
   },
   {
-    name: "solomillo",
+    name: "lomo alto",
     region: "spain",
-    maps_to: "tenderloin",
-    confidence: 0.98,
+    maps_to: "ribeye",
+    confidence: 0.92,
+    synonyms: ["lomo alto sin hueso", "entrecot"],
   },
+  {
+    name: "chuletón",
+    region: "spain",
+    maps_to: "prime_rib",
+    confidence: 0.85,
+    synonyms: ["chuleton", "chuleta de buey", "chuleta de vaca"],
+  },
+  {
+    name: "cadera",
+    region: "spain",
+    maps_to: "top_sirloin",
+    confidence: 0.90,
+    synonyms: ["cadera de ternera", "filete de cadera"],
+  },
+  {
+    name: "redondo",
+    region: "spain",
+    maps_to: "eye_of_round",
+    confidence: 0.90,
+    synonyms: ["redondo de ternera"],
+  },
+  {
+    name: "babilla",
+    region: "spain",
+    maps_to: "sirloin_tip",
+    confidence: 0.82,
+    synonyms: ["rótula"],
+  },
+  {
+    name: "entraña",
+    region: "spain",
+    maps_to: "skirt",
+    confidence: 0.90,
+    synonyms: ["entraña fina", "entraña gruesa"],
+  },
+  {
+    name: "falda",
+    region: "spain",
+    maps_to: "flank",
+    confidence: 0.80,
+    synonyms: ["bavette", "falda de ternera"],
+  },
+  {
+    name: "aleta",
+    region: "spain",
+    maps_to: "brisket_flat",
+    confidence: 0.80,
+    synonyms: ["aleta de ternera", "pecho de ternera"],
+  },
+  {
+    name: "pecho",
+    region: "spain",
+    maps_to: "brisket",
+    confidence: 0.82,
+    synonyms: ["pecho de vacuno"],
+  },
+  {
+    name: "morcillo",
+    region: "spain",
+    maps_to: "hind_shank",
+    confidence: 0.92,
+    synonyms: ["jarrete", "morcillo de ternera", "jarrete trasero"],
+  },
+  {
+    name: "morcillo delantero",
+    region: "spain",
+    maps_to: "fore_shank",
+    confidence: 0.88,
+    synonyms: ["jarrete delantero"],
+  },
+  {
+    name: "rabo de toro",
+    region: "spain",
+    maps_to: "oxtail",
+    confidence: 0.95,
+    synonyms: ["rabo de vacuno", "cola de toro"],
+  },
+  {
+    name: "aguja",
+    region: "spain",
+    maps_to: "chuck_roll",
+    confidence: 0.82,
+    synonyms: ["aguja de ternera"],
+  },
+  {
+    name: "espalda",
+    region: "spain",
+    maps_to: "shoulder_clod",
+    confidence: 0.78,
+    synonyms: ["paletilla", "espaldilla"],
+  },
+  {
+    name: "pez",
+    region: "spain",
+    maps_to: "petite_tender",
+    confidence: 0.80,
+    synonyms: ["solomillo de pez"],
+  },
+  {
+    name: "pluma",
+    region: "spain",
+    maps_to: "flat_iron",
+    confidence: 0.75,
+    synonyms: ["pluma de ternera"],
+  },
+  {
+    name: "costillas de ternera",
+    region: "spain",
+    maps_to: "short_ribs",
+    confidence: 0.85,
+    synonyms: ["costillar", "palo de costilla"],
+  },
+  {
+    name: "carne para guisar",
+    region: "spain",
+    maps_to: "chuck_blade",
+    confidence: 0.70,
+    type: "ambiguous",
+    synonyms: ["carne de guiso", "vacuno para estofar"],
+  },
+  // NOTE: "tapa" (→ top_round) and "contra" (→ bottom_round) from the
+  // source spec were skipped — neither "top_round" nor "bottom_round" is a
+  // valid CanonicalId in this dataset (only "top_round_steak" and
+  // "bottom_round_roast" exist, which are not equivalent mappings).
 
   // ----- Mexico -----
   {
@@ -269,18 +431,18 @@ const _coreRegionalNames: readonly RegionalName[] = [
 
   // ----- Phase 1: short_ribs -----
   { name: "short ribs", region: "usa", maps_to: "short_ribs", confidence: 0.98, synonyms: ["beef short ribs", "plate ribs"] },
+  { name: "costela", region: "brazil", maps_to: "short_ribs", confidence: 0.85, synonyms: ["costela bovina", "costela do traseiro"] },
   { name: "costillar", region: "chile", maps_to: "short_ribs", confidence: 0.80, notes: "Costillar is the rib section; asado de tira is the flanken cut from it" },
   { name: "costilla", region: "colombia", maps_to: "short_ribs", confidence: 0.75 },
   { name: "costillar", region: "mexico", maps_to: "short_ribs", confidence: 0.80, synonyms: ["agujas cortas", "costilla cargada"], notes: "Per Mexican chart: Short Ribs = Agujas Cortas" },
-  { name: "costillar", region: "spain", maps_to: "short_ribs", confidence: 0.80 },
   { name: "plat de côtes", region: "france", maps_to: "short_ribs", confidence: 0.75, notes: "French plat de côtes overlaps with short rib area but butchering differs" },
 
   // ----- Phase 1: top_sirloin -----
   { name: "corazón de cuadril", region: "argentina", maps_to: "top_sirloin", confidence: 0.90, notes: "Heart of the cuadril (rump). Per LATAM-Spain table: Cuadril = Sirloin" },
+  { name: "alcatra", region: "brazil", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["alcatra comum"] },
   { name: "asiento", region: "chile", maps_to: "top_sirloin", confidence: 0.90, synonyms: ["asiento de picana"] },
   { name: "solomo extranjero", region: "colombia", maps_to: "top_sirloin", confidence: 0.85 },
   { name: "chuleta de aguayón", region: "mexico", maps_to: "top_sirloin", confidence: 0.85, notes: "Per Mexican chart: Sirloin = Aguayón. Sirloin steaks = chuleta de aguayón" },
-  { name: "rumsteak", region: "spain", maps_to: "top_sirloin", confidence: 0.80 },
   { name: "corazón de cuadril", region: "uruguay", maps_to: "top_sirloin", confidence: 0.90 },
 
   // ----- Phase 1: tri_tip -----
@@ -288,7 +450,6 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "punta de picana", region: "chile", maps_to: "tri_tip", confidence: 0.90 },
   { name: "cola solomo extranjero", region: "colombia", maps_to: "tri_tip", confidence: 0.85 },
   { name: "empuje", region: "mexico", maps_to: "tri_tip", confidence: 0.80 },
-  { name: "babilla", region: "spain", maps_to: "tri_tip", confidence: 0.75, notes: "Spanish babilla overlaps with tri-tip area but may extend into the round" },
   { name: "colita de cuadril", region: "uruguay", maps_to: "tri_tip", confidence: 0.90 },
   { name: "aiguillette baronne", region: "france", maps_to: "tri_tip", confidence: 0.75, notes: "Approximate French equivalent; butchering boundaries differ" },
 
@@ -342,7 +503,6 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "cola", region: "chile", maps_to: "oxtail", confidence: 0.95 },
   { name: "cola", region: "colombia", maps_to: "oxtail", confidence: 0.95 },
   { name: "cola", region: "mexico", maps_to: "oxtail", confidence: 0.95, synonyms: ["cola de res"] },
-  { name: "rabo", region: "spain", maps_to: "oxtail", confidence: 0.95, synonyms: ["rabo de toro"] },
   { name: "cola", region: "uruguay", maps_to: "oxtail", confidence: 0.95 },
   { name: "queue de boeuf", region: "france", maps_to: "oxtail", confidence: 0.95 },
   { name: "oxtail", region: "uk", maps_to: "oxtail", confidence: 0.98 },
@@ -351,6 +511,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "chuck roll", region: "usa", maps_to: "chuck_roll", confidence: 0.98, synonyms: ["chuck under blade"] },
   { name: "chuck roll", region: "canada", maps_to: "chuck_roll", confidence: 0.98 },
   { name: "cogote", region: "argentina", maps_to: "chuck_roll", confidence: 0.75, notes: "Argentine cogote can also refer to neck area — approximate match" },
+  { name: "acém", region: "brazil", maps_to: "chuck_roll", confidence: 0.88, synonyms: ["acem", "acém bovino"] },
   { name: "huachalomo", region: "chile", maps_to: "chuck_roll", confidence: 0.85 },
   { name: "cogote", region: "uruguay", maps_to: "chuck_roll", confidence: 0.75 },
   { name: "basses côtes", region: "france", maps_to: "chuck_roll", confidence: 0.75, notes: "French basses côtes overlaps with chuck roll area" },
@@ -359,6 +520,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "chuck roast", region: "usa", maps_to: "chuck_blade", confidence: 0.90, synonyms: ["blade roast", "cross rib roast", "7-bone roast"] },
   { name: "blade roast", region: "canada", maps_to: "chuck_blade", confidence: 0.90, synonyms: ["cross rib roast"] },
   { name: "bife de paleta", region: "argentina", maps_to: "chuck_blade", confidence: 0.85 },
+  { name: "cupim", region: "brazil", maps_to: "chuck_blade", confidence: 0.70, type: "ambiguous", synonyms: ["corcova"], notes: "Zebu hump — no direct USDA equivalent; chuck_blade is the closest anatomical approximation." },
   { name: "asado carnicero", region: "chile", maps_to: "chuck_blade", confidence: 0.75 },
   { name: "paletero", region: "colombia", maps_to: "chuck_blade", confidence: 0.80 },
   { name: "bife de paleta", region: "uruguay", maps_to: "chuck_blade", confidence: 0.85 },
@@ -388,6 +550,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   // ----- Phase 3: back_ribs -----
   { name: "back ribs", region: "usa", maps_to: "back_ribs", confidence: 0.98, synonyms: ["beef back ribs", "dinosaur ribs"] },
   { name: "back ribs", region: "canada", maps_to: "back_ribs", confidence: 0.98 },
+  { name: "costela janela", region: "brazil", maps_to: "back_ribs", confidence: 0.80, synonyms: ["janela", "costela minga"] },
   { name: "costillas arqueadas", region: "chile", maps_to: "back_ribs", confidence: 0.85 },
 
   // ----- Phase 3: t_bone -----
@@ -421,6 +584,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "short plate", region: "usa", maps_to: "short_plate", confidence: 0.98, synonyms: ["plate", "navel"] },
   { name: "short plate", region: "canada", maps_to: "short_plate", confidence: 0.90 },
   { name: "asado", region: "argentina", maps_to: "short_plate", confidence: 0.75, notes: "Argentine 'asado' as a cut refers to the plate/rib section used for whole rib asado — distinct from asado as a cooking method" },
+  { name: "ponta de agulha", region: "brazil", maps_to: "short_plate", confidence: 0.82, synonyms: ["agulha"] },
   { name: "asado", region: "uruguay", maps_to: "short_plate", confidence: 0.75 },
 
   // ----- Tier 2: denver_steak -----

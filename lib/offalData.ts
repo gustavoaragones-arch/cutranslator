@@ -84,6 +84,9 @@ export const OFFAL_COUNTRY_LABELS: Readonly<Record<string, string>> = {
   TJ: "Tajikistan",
   AF: "Afghanistan",
   AZ: "Azerbaijan",
+  AM: "Armenia",
+  GE: "Georgia",
+  MN: "Mongolia",
 };
 
 /** All offal regional name entries across all countries. */
@@ -320,7 +323,7 @@ const traditions: readonly OffalTradition[] = [
       "from eight to twelve hours. Parts are chopped to order on a wooden block and served " +
       "in soft corn tortillas with salsa verde or roja, raw white onion, fresh cilantro, " +
       "and lime. Broth collected from the cooking vessel is served alongside as consomé.",
-    cuts: ["head_cheek", "tongue", "tendon"],
+    cuts: ["head_cheek", "tongue", "tendon", "brain"],
   },
   {
     id: "tacos-de-tripa",
@@ -543,7 +546,7 @@ const traditions: readonly OffalTradition[] = [
       "coratella (mixed organ sauté of heart, lung, and liver with onion and white wine), " +
       "and rigatoni con pajata. The cuisine is unified by Roman working-class identity, " +
       "the tomato-herb-pecorino flavour profile, and the Testaccio neighborhood.",
-    cuts: ["tripe", "intestines", "sweetbreads", "liver", "head_cheek", "kidney"],
+    cuts: ["tripe", "intestines", "sweetbreads", "liver", "head_cheek", "kidney", "brain"],
   },
   {
     id: "lampredotto",
@@ -570,6 +573,27 @@ const traditions: readonly OffalTradition[] = [
       "is dipped in the cooking broth (bagnato). Topped with salsa verde (parsley, garlic, " +
       "capers, anchovy) and a spicy red sauce (salsa piccante). Eaten immediately.",
     cuts: ["tripe"],
+  },
+  {
+    id: "fritto-misto-piemontese",
+    name: "Fritto Misto alla Piemontese",
+    region: "Europe — Italy (Piedmont)",
+    summary:
+      "Piedmont's elaborate mixed-fry tradition. Multiple cuts including sweetbreads, " +
+      "brain, and liver breaded and fried together. One of Italy's most distinctive " +
+      "multi-organ preparations.",
+    culturalContext:
+      "Fritto misto alla piemontese is one of Italy's most elaborate regional dishes — " +
+      "a festive mixed fry that historically incorporated as many as 20 different " +
+      "components including organ meats, vegetables, and sweet items. Sweetbreads and " +
+      "brain are the most important offal components. The dish represents the apex of " +
+      "northern Italian whole-animal frying traditions.",
+    preparationNotes:
+      "Each component prepared separately. Sweetbreads soaked, blanched, and trimmed. " +
+      "Brain soaked and poached. Liver sliced. All coated in egg and breadcrumbs and " +
+      "fried in clarified butter or lard until golden. Served immediately on a large " +
+      "platter with lemon.",
+    cuts: ["sweetbreads", "brain", "liver"],
   },
 
   // ── Spain ───────────────────────────────────────────────────────────────────
@@ -3585,6 +3609,224 @@ const traditions: readonly OffalTradition[] = [
       "and heart grilled or added to pepper soup. Intestines cleaned " +
       "and stewed or added to mixed-organ preparations.",
     cuts: ["brain", "testicles", "liver", "kidney", "heart", "intestines"],
+  },
+
+  // ── Armenia ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "khash-am",
+    name: "Khash",
+    region: "Asia — Armenia",
+    summary:
+      "Armenia's most important offal tradition and one of the world's great " +
+      "collagen-extraction dishes. Tendons, skin, head tissues, and marrow bones " +
+      "simmered overnight into a rich, gelatinous broth. Consumed as a winter " +
+      "breakfast ritual.",
+    culturalContext:
+      "Khash is a winter morning ritual consumed before dawn, often with vodka " +
+      "and lavash. Restaurants specializing in khash open only in winter months. " +
+      "Part of the Eurasian head-and-collagen corridor but more focused on tendon " +
+      "and skin than on brain or organ content — distinguishing it from Iran's " +
+      "kaleh pacheh and Turkey's kelle-paça.",
+    preparationNotes:
+      "Feet, tendons, skin, and head tissues simmered 8–12 hours overnight. " +
+      "Broth becomes deeply gelatinous. Served with raw garlic, dried lavash " +
+      "crumbled into the broth, and radish. Traditionally eaten in the early " +
+      "morning.",
+    cuts: ["tendon", "skin", "head_cheek", "bone_marrow"],
+  },
+  {
+    id: "tzhvzhik",
+    name: "Tzhvzhik",
+    region: "Asia — Armenia",
+    summary:
+      "Armenia's flagship mixed-organ dish. Liver, heart, and kidney diced and " +
+      "fried together in a cast-iron pan with onion, tail fat, and herbs. One of " +
+      "the defining dishes of Armenian offal cookery.",
+    culturalContext:
+      "Tzhvzhik is Armenia's most distinctive contribution to the global offal " +
+      "atlas. Comparable to Georgia's kuchmachi, Ethiopia's dulet, and Pakistan's " +
+      "katakat as a named multi-organ tradition. The cast-iron pan preparation and " +
+      "tail-fat cooking medium are distinctively Armenian.",
+    preparationNotes:
+      "Liver, heart, and kidney cleaned and diced. Fried in tail fat with onion, " +
+      "garlic, and herbs until just cooked. Seasoned with salt and black pepper. " +
+      "Served in the cast-iron pan with lavash.",
+    cuts: ["liver", "heart", "kidney"],
+  },
+  {
+    id: "armenian-slaughter-feast",
+    name: "Armenian Slaughter Feast Tradition",
+    region: "Asia — Armenia",
+    summary:
+      "The primary framework for traditional Armenian offal consumption. All " +
+      "organs prepared and consumed during village slaughter events — brain, " +
+      "tongue, liver, kidneys, and head meat all utilized immediately after " +
+      "slaughter.",
+    culturalContext:
+      "Rural slaughter traditions preserve Armenia's most complete offal " +
+      "culture. The matagh (religious sacrifice) and seasonal livestock " +
+      "slaughter are the principal drivers of organ consumption. Brain and " +
+      "tongue are especially prized.",
+    preparationNotes:
+      "Each organ prepared according to tradition. Brain sautéed with eggs and " +
+      "herbs. Tongue boiled and sliced. Liver and kidneys fried in tzhvzhik. " +
+      "Head meat incorporated into soups.",
+    cuts: ["tongue", "head_cheek", "brain", "liver", "kidney", "intestines"],
+  },
+
+  // ── Georgia ───────────────────────────────────────────────────────────────────
+
+  {
+    id: "kuchmachi",
+    name: "Kuchmachi",
+    region: "Asia — Georgia",
+    summary:
+      "Georgia's most important offal dish. Liver, heart, and kidney sautéed " +
+      "with onion, garlic, coriander, blue fenugreek, and finished with " +
+      "pomegranate seeds. A defining dish of Georgian feast culture.",
+    culturalContext:
+      "Kuchmachi is one of the most culturally distinctive organ dishes in the " +
+      "Caucasus. The blue fenugreek and pomegranate combination is uniquely " +
+      "Georgian. Found at supras (feasts), traditional restaurants, and family " +
+      "celebrations throughout Georgia. Comparable to Armenia's tzhvzhik but " +
+      "with a distinctly Georgian spice profile.",
+    preparationNotes:
+      "Organs diced and sautéed in butter or fat with onion and garlic. Blue " +
+      "fenugreek, ground coriander, and chili added. Finished with pomegranate " +
+      "seeds and fresh herbs. Served warm as a starter or feast dish.",
+    cuts: ["liver", "heart", "kidney"],
+  },
+  {
+    id: "hashi-ge",
+    name: "Hashi",
+    region: "Asia — Georgia",
+    summary:
+      "Georgia's principal collagen and head-meat soup tradition. Head tissues, " +
+      "tendons, tripe, and marrow bones simmered overnight into a rich " +
+      "gelatinous broth. A winter breakfast tradition comparable to Armenia's " +
+      "khash.",
+    culturalContext:
+      "Part of the Eurasian head-soup corridor alongside Armenia's khash, " +
+      "Azerbaijan's kəllə-paça, and Iran's kaleh pacheh. Georgia's version is " +
+      "less formally ritualized than Armenian khash but occupies a similar " +
+      "cultural role as a winter restorative morning dish. Served with garlic, " +
+      "vinegar, and bread.",
+    preparationNotes:
+      "Head, feet, tendons, tripe, and marrow bones simmered overnight until " +
+      "broth becomes deeply gelatinous. Meat picked from skull. Served in " +
+      "broth with garlic, vinegar, and fresh herbs. Accompanied by bread.",
+    cuts: ["head_cheek", "tendon", "skin", "bone_marrow", "tripe"],
+  },
+  {
+    id: "georgian-slaughter-feast",
+    name: "Georgian Slaughter Feast Tradition",
+    region: "Asia — Georgia",
+    summary:
+      "The primary framework for traditional Georgian offal consumption. " +
+      "Multiple organs prepared and consumed during village slaughter and " +
+      "supra (feast) traditions.",
+    culturalContext:
+      "Georgian supra culture is one of the world's most formalized feast " +
+      "traditions. Organ meats feature prominently in traditional supra " +
+      "spreads. Village slaughter events in Kakheti, Svaneti, and other " +
+      "regions preserve comprehensive whole-animal traditions.",
+    preparationNotes:
+      "Each organ prepared according to tradition. Liver and organs as " +
+      "kuchmachi. Brain sautéed with eggs. Tongue boiled and sliced. Head meat " +
+      "incorporated into hashi or roasted.",
+    cuts: [
+      "tongue",
+      "brain",
+      "liver",
+      "heart",
+      "kidney",
+      "intestines",
+      "head_cheek",
+    ],
+  },
+
+  // ── Mongolia ──────────────────────────────────────────────────────────────────
+
+  {
+    id: "khiasam",
+    name: "Khiasam",
+    region: "Asia — Mongolia",
+    summary:
+      "Mongolia's most important intestine tradition. Cleaned intestines " +
+      "stuffed with blood, fat, and meat, then boiled — a traditional sausage " +
+      "system deeply embedded in nomadic pastoral culture.",
+    culturalContext:
+      "Unlike many countries where intestines are merely casings, Mongolian " +
+      "khiasam treats intestines as a featured food category. Made during " +
+      "seasonal livestock slaughter. Part of the broader Central Asian " +
+      "stuffed-intestine family alongside Uzbek hasip, Kyrgyz chuchuk, and " +
+      "Kazakh qarta.",
+    preparationNotes:
+      "Intestines cleaned thoroughly. Stuffed with blood, fat, meat scraps, " +
+      "and seasoning. Boiled until cooked through. Sliced and served warm.",
+    cuts: ["intestines"],
+  },
+  {
+    id: "mongolian-slaughter-day",
+    name: "Mongolian Slaughter-Day Organ Tradition",
+    region: "Asia — Mongolia",
+    summary:
+      "The primary framework for Mongolian offal consumption. Multiple organs " +
+      "consumed immediately or shortly after seasonal livestock slaughter. One " +
+      "of the world's most intact nomadic whole-animal food systems.",
+    culturalContext:
+      "Comparable to Ethiopian fresh-slaughter traditions, Kazakh feast " +
+      "slaughter, and Kyrgyz pastoral customs. The immediacy of consumption " +
+      "after slaughter is culturally central — freshness is the primary " +
+      "quality marker. Testicles and brain are especially associated with " +
+      "slaughter-day consumption.",
+    preparationNotes:
+      "Each organ cooked quickly after slaughter. Liver boiled or fried first. " +
+      "Heart and kidney boiled or grilled. Brain boiled and eaten directly. " +
+      "Testicles boiled or fried. Tongue boiled and sliced.",
+    cuts: ["liver", "heart", "kidney", "brain", "tongue", "testicles", "tripe"],
+  },
+  {
+    id: "mongolian-boiled-head",
+    name: "Mongolian Boiled Head Tradition",
+    region: "Asia — Mongolia",
+    summary:
+      "Mongolia's whole-head tradition. The cattle head boiled and carved for " +
+      "communal consumption. Cheeks, brain, tongue, and marrow are the most " +
+      "prized elements.",
+    culturalContext:
+      "Head meat is highly respected in Mongolian culture. The boiled head " +
+      "appears at family feasts and celebrations. Comparable to Kazakhstan's " +
+      "bas tartu and Kyrgyzstan's bash tartuu as a ceremonial head-serving " +
+      "tradition, though less formally ritualized.",
+    preparationNotes:
+      "Whole head cleaned and boiled with salt and onion until tender. Carved " +
+      "and shared communally. Cheeks eaten first as the most prized portion. " +
+      "Brain scooped and eaten directly. Tongue sliced and served. Marrow " +
+      "consumed from bones.",
+    cuts: ["head_cheek", "brain", "tongue", "bone_marrow"],
+  },
+  {
+    id: "mongolian-marrow",
+    name: "Mongolian Marrow Bone Tradition",
+    region: "Asia — Mongolia",
+    summary:
+      "One of the world's strongest direct marrow consumption traditions. " +
+      "Marrow bones boiled and split; marrow eaten directly from the bone. " +
+      "Especially associated with children's nutrition and hospitality.",
+    culturalContext:
+      "Mongolia ranks among the strongest marrow cultures globally. Marrow is " +
+      "explicitly valued for nourishment and strength — children are " +
+      "encouraged to consume it. Unlike France's roasted marrow or Vietnam's " +
+      "phở broth, Mongolian marrow is consumed directly and prominently rather " +
+      "than as a background ingredient. Comparable to Ethiopia's direct marrow " +
+      "consumption and Kazakhstan's marrow feast traditions.",
+    preparationNotes:
+      "Marrow-rich leg bones boiled in salted water. Split at the table. " +
+      "Marrow scooped directly with a spoon or tipped onto bread. Consumed " +
+      "fresh and hot.",
+    cuts: ["bone_marrow"],
   },
 ];
 

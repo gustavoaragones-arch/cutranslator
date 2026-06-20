@@ -300,7 +300,7 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ---
 
-## Offal Product — Baseline (as of June 15 2026)
+## Offal Product — Baseline (as of June 19 2026)
 
 ### Canonicals
 
@@ -310,7 +310,7 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ### Regional Name Entries
 
-**518 entries across 45 countries.**
+**576 entries across 50 countries.**
 
 Country entry counts (authoritative, from grep audit):
 
@@ -318,17 +318,18 @@ Country entry counts (authoritative, from grep audit):
 ZA: 13  TR: 13  PE: 13  NG: 13  MX: 13
 KR: 13  IT: 13  IN: 13  FR: 13  ES: 13
 EC: 13  CO: 13  CN: 13  BO: 13  VN: 12
-UA: 12  RU: 12  PK: 12  PH: 12  JP: 12
-ET: 12  BR: 12  UZ: 11  TJ: 11  PT: 11
-MA: 11  KZ: 11  KG: 11  IR: 11  HU: 11
-DE: 11  AR: 11  UY: 10  TH: 10  SN: 10
+UA: 12  RU: 12  PK: 12  PH: 12  MN: 12
+JP: 12  GE: 12  ET: 12  BR: 12  AM: 12
+UZ: 11  TJ: 11  PT: 11  MA: 11  KZ: 11
+KG: 11  IR: 11  HU: 11  DE: 11  AZ: 11
+AR: 11  AF: 11  UY: 10  TH: 10  SN: 10
 SA: 10  PL: 10  LB: 10  IL: 10  ID: 10
 GR: 10  GB: 10  EG: 10  CZ: 10  CL: 10
 ```
 
 ### Tradition Pages
 
-**167 tradition pages.**
+**186 tradition pages** (authoritative per file grep).
 
 ### Axis Nodes
 
@@ -344,6 +345,10 @@ Pending Illustrator delivery:
 
 All three: `viewBox="0 0 711.89 605.37"`
 
+### Bug Fixes
+
+Non-ASCII tradition IDs (e.g. `ciyər-kababi`, `velős-csont`) were silently 404ing due to Next.js percent-encoding inconsistency between `params.id` and `generateMetadata`. Fixed via `resolveTradition()` helper with `decodeURIComponent` fallback in `app/offal/traditions/[id]/page.tsx`.
+
 ### Deployment
 
 Vercel (migrated from Cloudflare Workers June 12 2026). See `docs/infrastructure.md`.
@@ -356,9 +361,10 @@ Vercel (migrated from Cloudflare Workers June 12 2026). See `docs/infrastructure
 
 ### Known Deferred Items
 
-- Brain tradition page updates (`tacos-de-cabeza`, `quinto-quarto`, `fritto-misto`) pending brain research batch
+- Brain tradition pages completed — tacos-de-cabeza, quinto-quarto updated; fritto-misto-piemontese created (this batch)
 - Tripe sub-canonical Option B (full split) deferred pending evidence from 3+ additional cultures
 - Zebu hump canonical promotion deferred until 5-6 country evidence accumulates
+- Fulani pastoral terminology layer for Nigeria (future enhancement)
 
 ### Count Reconciliation Note
 
@@ -374,4 +380,4 @@ Per-country breakdown:
 grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
 ```
 
-All entries are in standard multi-line format. Plain `grep -c` returns the correct total.
+Tradition page count: `grep -c "id:" lib/offalData.ts` then subtract non-tradition ids (type defs, helper functions). File grep is authoritative over prompt running totals which drift.

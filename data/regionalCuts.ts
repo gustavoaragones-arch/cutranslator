@@ -356,8 +356,8 @@ export const regionalCuts: readonly RegionalCut[] = [
       { canonical_id: "ribeye", match_type: "close", confidence: 0.70, note: "The boneless portion is essentially a ribeye" },
     ],
     synonyms: ["chuleta de buey", "chuletón de buey", "txuletón"],
-    description: "The iconic Basque Country steak — a massive bone-in rib chop, often from retired dairy cows (vaca vieja) aged for 30-60 days. Grilled over oak charcoal, served rare, and sliced tableside. Txuletón (Basque spelling) is a pilgrimage dish for steak lovers visiting northern Spain.",
-    notes: "The Basque tradition of using older, well-marbled dairy cattle produces a different flavor profile than grain-fed beef.",
+    description: "The iconic Basque Country steak — a massive bone-in rib chop, often from retired dairy cows (vaca vieja) aged for 30-60 days. Grilled over oak charcoal, served rare, and sliced tableside. Txuletón (Basque spelling) is a pilgrimage dish for steak lovers visiting northern Spain. Cut from the lomo alto, sliced 4-5cm thick and brought to room temperature before searing, the preparation method (oak charcoal, served rare with coarse sea salt on earthenware) is as important as the cut itself.",
+    notes: "The Basque tradition of using older, well-marbled dairy cattle produces a different flavor profile than grain-fed beef. At the butcher counter, ask for: \"un chuletón de lomo alto, grueso, con la grasa\" — specify thickness (grosor) in centimeters.",
   },
 
   // === CHILE ===

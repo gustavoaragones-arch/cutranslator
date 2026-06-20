@@ -474,6 +474,7 @@ const IT: readonly OffalRegionalName[] = [
     localName: "cervello",
     altNames: ["cervello fritto"],
     confidence: "high",
+    traditionIds: ["fritto-misto-piemontese"],
   },
 ];
 
@@ -4169,6 +4170,306 @@ const AZ: readonly OffalRegionalName[] = [
   },
 ];
 
+// ─── Armenia (AM) ────────────────────────────────────────────────────────────
+// sweetbreads omitted — medium confidence, not independently marketed.
+
+const AM: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "AM",
+    localName: "tavari lezu",
+    nativeScript: "տավարի լեզու",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "AM",
+    localName: "shkembe",
+    nativeScript: "շկեմբե",
+    confidence: "high",
+    traditionIds: ["khash-am"],
+  },
+  {
+    canonicalId: "liver",
+    country: "AM",
+    localName: "lyard",
+    nativeScript: "լյարդ",
+    confidence: "high",
+    traditionIds: ["tzhvzhik"],
+  },
+  {
+    canonicalId: "heart",
+    country: "AM",
+    localName: "sirt",
+    nativeScript: "սիրտ",
+    confidence: "high",
+    traditionIds: ["tzhvzhik"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "AM",
+    localName: "yerikam",
+    nativeScript: "երիկամ",
+    confidence: "high",
+    traditionIds: ["tzhvzhik"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "AM",
+    localName: "aghik",
+    nativeScript: "աղիք",
+    confidence: "high",
+  },
+  {
+    canonicalId: "skin",
+    country: "AM",
+    localName: "kashi",
+    nativeScript: "կաշի",
+    confidence: "medium",
+    traditionIds: ["khash-am"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "AM",
+    localName: "jil",
+    nativeScript: "ջիլ",
+    confidence: "high",
+    traditionIds: ["khash-am"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "AM",
+    localName: "glukh",
+    nativeScript: "գլուխ",
+    confidence: "high",
+    traditionIds: ["khash-am", "armenian-slaughter-feast"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "AM",
+    localName: "voskratsuts",
+    nativeScript: "ոսկրածուծ",
+    confidence: "high",
+    traditionIds: ["khash-am"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "AM",
+    localName: "amordzi",
+    nativeScript: "ամորձի",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "AM",
+    localName: "ughegh",
+    nativeScript: "ուղեղ",
+    confidence: "high",
+    traditionIds: ["armenian-slaughter-feast"],
+  },
+];
+
+// ─── Georgia (GE) ────────────────────────────────────────────────────────────
+// sweetbreads omitted — medium confidence, not independently marketed.
+
+const GE: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "GE",
+    localName: "dzrokhis ena",
+    nativeScript: "ძროხის ენა",
+    confidence: "high",
+  },
+  {
+    canonicalId: "tripe",
+    country: "GE",
+    localName: "pashvi",
+    nativeScript: "ფაშვი",
+    confidence: "high",
+    traditionIds: ["hashi-ge"],
+  },
+  {
+    canonicalId: "liver",
+    country: "GE",
+    localName: "ghvizli",
+    nativeScript: "ღვიძლი",
+    confidence: "high",
+    traditionIds: ["kuchmachi"],
+  },
+  {
+    canonicalId: "heart",
+    country: "GE",
+    localName: "guli",
+    nativeScript: "გული",
+    confidence: "high",
+    traditionIds: ["kuchmachi"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "GE",
+    localName: "tirkmeli",
+    nativeScript: "თირკმელი",
+    confidence: "high",
+    traditionIds: ["kuchmachi"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "GE",
+    localName: "natslavi",
+    nativeScript: "ნაწლავი",
+    confidence: "high",
+  },
+  {
+    canonicalId: "skin",
+    country: "GE",
+    localName: "tkavi",
+    nativeScript: "ტყავი",
+    confidence: "medium",
+    traditionIds: ["hashi-ge"],
+  },
+  {
+    canonicalId: "tendon",
+    country: "GE",
+    localName: "mqesi",
+    nativeScript: "მყესი",
+    confidence: "high",
+    traditionIds: ["hashi-ge"],
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "GE",
+    localName: "tavi",
+    nativeScript: "თავი",
+    confidence: "high",
+    traditionIds: ["hashi-ge", "georgian-slaughter-feast"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "GE",
+    localName: "dzvlis tvini",
+    nativeScript: "ძვლის ტვინი",
+    confidence: "high",
+    traditionIds: ["hashi-ge"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "GE",
+    localName: "satesle jirkvlebi",
+    nativeScript: "სათესლე ჯირკვლები",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "brain",
+    country: "GE",
+    localName: "tvini",
+    nativeScript: "ტვინი",
+    confidence: "high",
+    traditionIds: ["georgian-slaughter-feast"],
+  },
+];
+
+// ─── Mongolia (MN) ───────────────────────────────────────────────────────────
+// sweetbreads omitted — medium confidence, not independently marketed.
+// tripe and intestines share localName "gedes" — intentional per research.
+
+const MN: readonly OffalRegionalName[] = [
+  {
+    canonicalId: "tongue",
+    country: "MN",
+    localName: "ükhrin khel",
+    nativeScript: "үхрийн хэл",
+    confidence: "high",
+    traditionIds: ["mongolian-boiled-head"],
+  },
+  {
+    canonicalId: "tripe",
+    country: "MN",
+    localName: "gedes",
+    nativeScript: "гэдэс",
+    confidence: "high",
+    traditionIds: ["mongolian-slaughter-day"],
+  },
+  {
+    canonicalId: "liver",
+    country: "MN",
+    localName: "eleg",
+    nativeScript: "элэг",
+    confidence: "high",
+    traditionIds: ["mongolian-slaughter-day"],
+  },
+  {
+    canonicalId: "heart",
+    country: "MN",
+    localName: "zürkh",
+    nativeScript: "зүрх",
+    confidence: "high",
+    traditionIds: ["mongolian-slaughter-day"],
+  },
+  {
+    canonicalId: "kidney",
+    country: "MN",
+    localName: "böör",
+    nativeScript: "бөөр",
+    confidence: "high",
+    traditionIds: ["mongolian-slaughter-day"],
+  },
+  {
+    canonicalId: "intestines",
+    country: "MN",
+    localName: "gedes",
+    nativeScript: "гэдэс",
+    altNames: ["khiasam context"],
+    confidence: "high",
+    traditionIds: ["khiasam"],
+  },
+  {
+    canonicalId: "skin",
+    country: "MN",
+    localName: "aris",
+    nativeScript: "арьс",
+    confidence: "medium",
+  },
+  {
+    canonicalId: "tendon",
+    country: "MN",
+    localName: "shörmös",
+    nativeScript: "шөрмөс",
+    confidence: "high",
+  },
+  {
+    canonicalId: "head_cheek",
+    country: "MN",
+    localName: "tolgoi",
+    nativeScript: "толгой",
+    confidence: "high",
+    traditionIds: ["mongolian-boiled-head"],
+  },
+  {
+    canonicalId: "bone_marrow",
+    country: "MN",
+    localName: "chömög",
+    nativeScript: "чөмөг",
+    confidence: "high",
+    traditionIds: ["mongolian-marrow"],
+  },
+  {
+    canonicalId: "testicles",
+    country: "MN",
+    localName: "tömsög",
+    nativeScript: "төмсөг",
+    confidence: "high",
+    traditionIds: ["mongolian-slaughter-day"],
+  },
+  {
+    canonicalId: "brain",
+    country: "MN",
+    localName: "tarkhi",
+    nativeScript: "тархи",
+    confidence: "high",
+    traditionIds: ["mongolian-slaughter-day", "mongolian-boiled-head"],
+  },
+];
+
 // ─── Combined export ──────────────────────────────────────────────────────────
 
 export const offalRegionalNames: readonly OffalRegionalName[] = [
@@ -4219,4 +4520,7 @@ export const offalRegionalNames: readonly OffalRegionalName[] = [
   ...TJ,
   ...AF,
   ...AZ,
+  ...AM,
+  ...GE,
+  ...MN,
 ];
