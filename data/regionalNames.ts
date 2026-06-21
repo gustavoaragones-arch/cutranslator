@@ -1102,26 +1102,34 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "biftek", region: "bosnia", maps_to: "tenderloin", confidence: 0.90, notes: "Universal premium tender cut" },
   { name: "ramstek", region: "bosnia", maps_to: "striploin", confidence: 0.85, notes: "NY Strip equivalent" },
   { name: "pržol", region: "bosnia", maps_to: "ribeye", confidence: 0.80, notes: "Rib steak — often sold bone-in" },
+  { name: "rozbratna", region: "bosnia", maps_to: "ribeye", confidence: 0.82 },
   { name: "grudi", region: "bosnia", maps_to: "brisket", confidence: 0.85, synonyms: ["prsa"], notes: "Essential for Bosanski Lonac (Bosnian pot)" },
+  { name: "prsa", region: "bosnia", maps_to: "brisket", confidence: 0.85 },
   { name: "kolerica", region: "bosnia", maps_to: "hind_shank", confidence: 0.85, synonyms: ["mišić"], notes: "Mišić literally means 'muscle' — for gelatinous stews" },
+  { name: "koljenica", region: "bosnia", maps_to: "hind_shank", confidence: 0.90 },
   { name: "ruža", region: "bosnia", maps_to: "top_sirloin", confidence: 0.80, notes: "'The rose' — prime tender part of the leg" },
   { name: "frikando", region: "bosnia", maps_to: "inside_round", confidence: 0.80, notes: "For steaks or dried meat (suho meso)" },
+  { name: "but", region: "bosnia", maps_to: "inside_round", confidence: 0.80, synonyms: ["šol", "sol", "frikando", "šnicla"] },
   { name: "lažni biftek", region: "bosnia", maps_to: "eye_of_round", confidence: 0.75, notes: "Cheaper alternative to true tenderloin" },
   { name: "orah", region: "bosnia", maps_to: "sirloin_tip", confidence: 0.80, notes: "'The walnut' — for roasting or cutlets (snicle)" },
   { name: "vrat", region: "bosnia", maps_to: "chuck_roll", confidence: 0.80, notes: "The MOST important Bosnian cut — for authentic Ćevapi. Must be double-ground." },
+  { name: "plećka", region: "bosnia", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["plecka"] },
   { name: "lopatka", region: "bosnia", maps_to: "chuck_blade", confidence: 0.75, notes: "Shoulder — also used for Ćevapi blend" },
 
   // ----- MONTENEGRO (10 entries) -----
   { name: "biftek", region: "montenegro", maps_to: "tenderloin", confidence: 0.90, notes: "Universal — for Njegoški odrezak (stuffed with prosciutto and cheese)" },
   { name: "ramstek", region: "montenegro", maps_to: "striploin", confidence: 0.85, notes: "NY Strip — also used for Njegoški odrezak" },
   { name: "pržolica", region: "montenegro", maps_to: "ribeye", confidence: 0.80, notes: "From the rib area — often sold bone-in in traditional taverns" },
+  { name: "rozbratna", region: "montenegro", maps_to: "ribeye", confidence: 0.82, synonyms: ["brž ola", "bržola"] },
   { name: "grudi", region: "montenegro", maps_to: "brisket", confidence: 0.85, notes: "For Kuvanovina (Montenegrin boiled meat)" },
   { name: "koljenica", region: "montenegro", maps_to: "hind_shank", confidence: 0.85, notes: "Often sold smoked (dimljena) or used for Pasulj (bean stew)" },
   { name: "goveđi rep", region: "montenegro", maps_to: "oxtail", confidence: 0.95 },
   { name: "ruža", region: "montenegro", maps_to: "top_sirloin", confidence: 0.80, notes: "'The rose' — prime part of the leg" },
   { name: "frikando", region: "montenegro", maps_to: "inside_round", confidence: 0.80, notes: "Used for dried meat (pršut-style)" },
+  { name: "but", region: "montenegro", maps_to: "inside_round", confidence: 0.80, synonyms: ["šol", "sol", "frikando"] },
   { name: "lažni biftek", region: "montenegro", maps_to: "eye_of_round", confidence: 0.75, notes: "'Fake biftek' — whole roast" },
   { name: "vrat", region: "montenegro", maps_to: "chuck_roll", confidence: 0.75, notes: "Neck — for ground meat and stews, Sač cooking" },
+  { name: "plećka", region: "montenegro", maps_to: "chuck_roll", confidence: 0.82, synonyms: ["plecka", "vrat"] },
 
   // ----- ROMANIA (13 entries) -----
   { name: "mușchiuleț", region: "romania", maps_to: "tenderloin", confidence: 0.95, synonyms: ["mușchi de vită"], notes: "The most expensive Romanian cut — mușchi means 'muscle' but in butchery always means tenderloin" },
@@ -1156,11 +1164,15 @@ const _coreRegionalNames: readonly RegionalName[] = [
   // ----- ALBANIA (11 entries) -----
   { name: "fileto", region: "albania", maps_to: "tenderloin", confidence: 0.95, notes: "The most expensive and tender Albanian cut" },
   { name: "bërxollë pa kockë", region: "albania", maps_to: "striploin", confidence: 0.80, notes: "Literally 'boneless chop' — NY Strip equivalent" },
+  { name: "biftek", region: "albania", maps_to: "striploin", confidence: 0.80, type: "ambiguous", synonyms: ["kotolete", "kotoletë"] },
   { name: "antrikotë", region: "albania", maps_to: "ribeye", confidence: 0.85, notes: "Adopted from French/Italian name" },
+  { name: "antrikot", region: "albania", maps_to: "ribeye", confidence: 0.85, synonyms: ["entrekot"] },
   { name: "gjoks", region: "albania", maps_to: "brisket", confidence: 0.85, notes: "Literally 'chest' — for soups and slow-boiling" },
   { name: "kyç", region: "albania", maps_to: "hind_shank", confidence: 0.85, synonyms: ["mish me rruaza"], notes: "For traditional collagen-rich broths and stews" },
+  { name: "kërcik", region: "albania", maps_to: "hind_shank", confidence: 0.90, synonyms: ["kercik"] },
   { name: "rrethi i kofshës", region: "albania", maps_to: "top_sirloin", confidence: 0.80, notes: "'Circle of the leg' — lean and tender" },
   { name: "dhomat e kofshës", region: "albania", maps_to: "inside_round", confidence: 0.75, notes: "Large lean muscles for thin cutlets (shnicel)" },
+  { name: "kofshë", region: "albania", maps_to: "inside_round", confidence: 0.82, synonyms: ["kofshe", "tul"] },
   { name: "arra", region: "albania", maps_to: "sirloin_tip", confidence: 0.80, notes: "Literally 'the nut' — round lean roast" },
   { name: "brinjë", region: "albania", maps_to: "short_ribs", confidence: 0.75, notes: "Usually cut thin — for stews or charcoal grilling" },
   { name: "qafë", region: "albania", maps_to: "chuck_roll", confidence: 0.75, notes: "Neck — primary cut for Qofte (meatball) ground meat" },
@@ -1170,14 +1182,17 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "biftek", region: "north_macedonia", maps_to: "tenderloin", confidence: 0.90, synonyms: ["бифтек"], notes: "Universal premium cut" },
   { name: "ramstek", region: "north_macedonia", maps_to: "striploin", confidence: 0.85, synonyms: ["рамстек"], notes: "NY Strip equivalent" },
   { name: "antrikot", region: "north_macedonia", maps_to: "ribeye", confidence: 0.85, synonyms: ["антрикот", "ребро", "rebro"], notes: "Often sold bone-in as rib steak in traditional kafana" },
+  { name: "rozbratna", region: "north_macedonia", maps_to: "ribeye", confidence: 0.82, synonyms: ["розбратна"] },
   { name: "gradi", region: "north_macedonia", maps_to: "brisket", confidence: 0.85, synonyms: ["гради"], notes: "'Chest' — for slow-cooked stews and soups" },
   { name: "kolenica", region: "north_macedonia", maps_to: "hind_shank", confidence: 0.85, synonyms: ["коленица", "големе", "goleme"], notes: "For gelatinous stews or roasted whole" },
   { name: "opashka", region: "north_macedonia", maps_to: "oxtail", confidence: 0.95, synonyms: ["опашка"] },
   { name: "ruzha", region: "north_macedonia", maps_to: "top_sirloin", confidence: 0.80, synonyms: ["ружа"], notes: "'The rose' — prime tender part of the leg" },
   { name: "frikando", region: "north_macedonia", maps_to: "inside_round", confidence: 0.80, synonyms: ["фрикандо"], notes: "For steaks or traditional rolls (zrazy)" },
+  { name: "but", region: "north_macedonia", maps_to: "inside_round", confidence: 0.80, synonyms: ["бут"] },
   { name: "lazhen biftek", region: "north_macedonia", maps_to: "eye_of_round", confidence: 0.80, synonyms: ["лажен бифтек"], notes: "'False biftek' — lean, tough if grilled" },
   { name: "orev", region: "north_macedonia", maps_to: "sirloin_tip", confidence: 0.80, synonyms: ["орев"], notes: "'The walnut' — lean roast" },
   { name: "vrat", region: "north_macedonia", maps_to: "chuck_roll", confidence: 0.75, synonyms: ["врат"], notes: "Neck — primary for high-quality minced meat (ćevapi)" },
+  { name: "pleshka", region: "north_macedonia", maps_to: "chuck_roll", confidence: 0.83, synonyms: ["плешка"] },
 
   // ----- TURKEY (14 entries) -----
   { name: "bonfile", region: "turkey", maps_to: "tenderloin", confidence: 0.95, notes: "The most expensive and tender cut in Turkish butchery" },
@@ -2019,18 +2034,23 @@ const _africaRegionalNames: readonly RegionalName[] = [
   // ----- 🇹🇿 TANZANIA (Swahili + local English — cow default, Tanzania Shorthorn Zebu, Hot-Boned) — 10 entries -----
 
   { name: "nyama laini tanzania", region: "tanzania", maps_to: "tenderloin", confidence: 0.82, synonyms: ["fillet tanzania", "nyama laini", "soft meat tanzania", "mishkaki cut"] as const, notes: "'Nyama Laini' / Fillet — 'soft meat', the premier cut for quick stir-fries (Sekela/Karanga) and Mishkaki skewers. Cow default. Cross-references east_african_choma_parboil_af." },
+  { name: "nyama laini", region: "tanzania", maps_to: "tenderloin", confidence: 0.85, synonyms: ["fillet", "nyama ya fillet"] },
 
   { name: "nyama ya mgongo", region: "tanzania", maps_to: "striploin", confidence: 0.80, synonyms: ["loin tanzania", "mgongo", "back meat tanzania", "nyama choma loin"] as const, notes: "'Nyama ya Mgongo' / Loin — 'back meat', highest-status for premium Nyama Choma. For an actual steak, ask for the Mgongo cut ACROSS the bone (a plain bucha 'steak' just means boneless). Cow default. Cross-references east_african_choma_parboil_af." },
 
   { name: "kidari tanzania", region: "tanzania", maps_to: "brisket", confidence: 0.82, synonyms: ["brisket tanzania", "kidari tz", "chest tanzania", "stew fat tanzania"] as const, notes: "'Kidari' / Brisket — 'Chest', prized for thick external fat layers vital for flavoring stews. Cow default." },
+  { name: "kidari", region: "tanzania", maps_to: "brisket", confidence: 0.82, synonyms: ["brisket"] },
 
   { name: "nshonsho", region: "tanzania", maps_to: "hind_shank", confidence: 0.82, synonyms: ["mushkila", "shin tanzania", "shank tanzania", "supu shank"] as const, notes: "'Nshonsho'/'Mushkila' / Shin — lower leg, mandatory for gelatinous slow-cooked soups (Supu). Highly valued for therapeutic marrow. Cow default. Cross-references east_african_choma_parboil_af." },
+  { name: "musuli", region: "tanzania", maps_to: "hind_shank", confidence: 0.83, synonyms: ["nshonsho", "shin"] },
 
   { name: "bega tanzania", region: "tanzania", maps_to: "chuck_roll", confidence: 0.75, synonyms: ["shoulder tanzania", "bega", "utility stew tanzania", "mchuzi shoulder"] as const, notes: "'Bega' / Shoulder — the classic hardworking utility cut for everyday family stews (Mchuzi wa Nyama, bone-in). Cow default. Cross-references east_african_choma_parboil_af." },
+  { name: "bega", region: "tanzania", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["shoulder"] },
 
   { name: "nyama ya mapaja", region: "tanzania", maps_to: "bottom_round_roast", confidence: 0.74, synonyms: ["rapa", "round tanzania", "thigh meat tanzania", "steak tanzania", "curry cubes tz"] as const, notes: "'Rapa'/'Nyama ya Mapaja' / 'Steak' — 'thigh meat', very lean boneless muscle cut into uniform curry cubes. NOTE: 'Steak' in a bucha = boneless meat (often tough Round), NOT a searable Western steak. Cow default. Cross-references east_african_choma_parboil_af." },
 
   { name: "mkia tanzania", region: "tanzania", maps_to: "oxtail", confidence: 0.80, synonyms: ["oxtail tanzania", "mkia", "supu ya mkia", "tail tanzania"] as const, notes: "'Mkia' / Oxtail — heavily demanded for high-collagen night-time/early-morning broths (Supu ya Mkia). Cow default." },
+  { name: "mkia", region: "tanzania", maps_to: "oxtail", confidence: 0.88, synonyms: ["oxtail"] },
 
   { name: "nyama ya mchuzi tanzania", region: "tanzania", maps_to: "chuck_roll", confidence: 0.72, synonyms: ["curry cut tanzania", "nyama ya mchuzi", "bone-in curry mix tz", "coconut curry cut"] as const, notes: "The 'Curry Cut' — a rough jagged mix of bone, meat, connective tissue cleaver-hacked; bone is non-negotiable for sweetness/depth in coconut-based coastal/Zanzibari curries (Mchuzi). Cow default. Cross-references east_african_choma_parboil_af." },
 
@@ -2041,6 +2061,7 @@ const _africaRegionalNames: readonly RegionalName[] = [
   // ----- 🇺🇬 UGANDA (Luganda + local English — cow default, Ankole longhorn/Zebu, Hot-Boned) — 10 entries -----
 
   { name: "nyama engonvu", region: "uganda", maps_to: "tenderloin", confidence: 0.82, synonyms: ["fillet uganda", "nyama engonvu", "soft meat uganda", "luwombo cut"] as const, notes: "'Nyama Engonvu' / Fillet — 'soft meat', the premier muscle for quick pan-frying and the high-status Luwombo (leaf-steamed). Cow default. Cross-references uganda_katogo_luwombo_af." },
+  { name: "nyama egonda", region: "uganda", maps_to: "tenderloin", confidence: 0.83, synonyms: ["fillet"] },
 
   { name: "mugongo", region: "uganda", maps_to: "striploin", confidence: 0.80, synonyms: ["loin uganda", "mugongo", "back meat uganda", "muchomo loin"] as const, notes: "'Mugongo' / Loin — 'back meat', high-status lean muscle for high-end roasting/grilling and the Muchomo charcoal roast. Cow default. Cross-references east_african_choma_parboil_af." },
 
@@ -2051,8 +2072,10 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "kifuba kyokubega", region: "uganda", maps_to: "chuck_roll", confidence: 0.74, synonyms: ["shoulder uganda", "kifuba ky'okubega", "katogo shoulder", "utility stew uganda"] as const, notes: "Shoulder — the hardworking utility cut for everyday family stews and the bone-in Katogo breakfast stew. Cow default. Cross-references uganda_katogo_luwombo_af." },
 
   { name: "ekisambi", region: "uganda", maps_to: "bottom_round_roast", confidence: 0.74, synonyms: ["nyama yakabina", "round uganda", "thigh uganda", "steak uganda", "ekisambi"] as const, notes: "'Nyama y'akabina'/'Ekisambi' / 'Steak' — 'thigh/buttock meat', extremely lean clean boneless muscle diced for stews. NOTE: 'Steak' in a Ugandan butchery = boneless muscle (often tough Round), NOT a searable Western steak — ask for Fillet instead. Cow default. Cross-references east_african_choma_parboil_af." },
+  { name: "kisambi", region: "uganda", maps_to: "chuck_roll", confidence: 0.78, synonyms: ["shoulder"] },
 
   { name: "mukira", region: "uganda", maps_to: "oxtail", confidence: 0.80, synonyms: ["oxtail uganda", "mukira", "tail uganda", "collagen broth uganda"] as const, notes: "'Mukira' / Oxtail — heavily demanded for high-collagen medicinal broths. Cow default." },
+  { name: "omukira", region: "uganda", maps_to: "oxtail", confidence: 0.88, synonyms: ["tail"] },
 
   { name: "katogo cut", region: "uganda", maps_to: "chuck_roll", confidence: 0.74, synonyms: ["katogo", "matooke beef cut", "bone-in stew mix uganda", "neck shoulder katogo"] as const, notes: "MARQUEE format entry. The Katogo cut (for the matooke-banana breakfast stew) — a jagged cleaver-hacked mix of bone, muscle, heavy connective tissue (Shoulder/Neck), untrimmed; melting collagen creates the thick gravy that coats the bananas. Cow default. Cross-references uganda_katogo_luwombo_af." },
 

@@ -300,7 +300,7 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ---
 
-## Offal Product — Baseline (as of June 19 2026)
+## Offal Product — Baseline (as of June 21 2026)
 
 ### Canonicals
 
@@ -329,7 +329,7 @@ GR: 10  GB: 10  EG: 10  CZ: 10  CL: 10
 
 ### Tradition Pages
 
-**186 tradition pages** (authoritative per file grep).
+**176 tradition pages** (authoritative per file grep).
 
 ### Axis Nodes
 
@@ -356,15 +356,15 @@ Vercel (migrated from Cloudflare Workers June 12 2026). See `docs/infrastructure
 ### Active ADRs
 
 - **ADR-004:** Two-product split
-- **ADR-005:** Forward-reference discipline
+- **ADR-005:** Forward-reference discipline (resolved)
 - **ADR-006:** Tripe sub-canonical axis node approach
 
 ### Known Deferred Items
 
-- Brain tradition pages completed — tacos-de-cabeza, quinto-quarto updated; fritto-misto-piemontese created (this batch)
 - Tripe sub-canonical Option B (full split) deferred pending evidence from 3+ additional cultures
-- Zebu hump canonical promotion deferred until 5-6 country evidence accumulates
+- Zebu hump canonical promotion deferred until 5-6 country evidence accumulates (currently at 4: Mali, Burkina Faso, Niger, Chad)
 - Fulani pastoral terminology layer for Nigeria (future enhancement)
+- SVG overlays: brain, sweetbreads, testicles pending Illustrator delivery
 
 ### Count Reconciliation Note
 
@@ -380,4 +380,4 @@ Per-country breakdown:
 grep "country:" data/offal/regionalNames.ts | sort | uniq -c | sort -rn
 ```
 
-Tradition page count: `grep -c "id:" lib/offalData.ts` then subtract non-tradition ids (type defs, helper functions). File grep is authoritative over prompt running totals which drift.
+All entries are in standard multi-line format. Plain `grep -c` returns the correct total.
