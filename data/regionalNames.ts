@@ -383,12 +383,19 @@ const _coreRegionalNames: readonly RegionalName[] = [
     confidence: 0.98,
   },
 
-  // ----- Paraguay -----
+  // ----- Paraguay (Rioplatense despiece w/ Guaraní influence) -----
   {
     name: "bife ancho",
     region: "paraguay",
     maps_to: "ribeye",
     confidence: 0.9,
+  },
+  {
+    name: "ojo de bife",
+    region: "paraguay",
+    maps_to: "ribeye",
+    confidence: 0.93,
+    synonyms: ["bife ancho"],
   },
   {
     name: "bife angosto",
@@ -397,10 +404,54 @@ const _coreRegionalNames: readonly RegionalName[] = [
     confidence: 0.9,
   },
   {
+    name: "bife de chorizo",
+    region: "paraguay",
+    maps_to: "striploin",
+    confidence: 0.93,
+    synonyms: ["bife angosto"],
+  },
+  {
     name: "lomo",
     region: "paraguay",
     maps_to: "tenderloin",
     confidence: 0.95,
+  },
+  {
+    name: "lomito",
+    region: "paraguay",
+    maps_to: "tenderloin",
+    confidence: 0.97,
+    synonyms: ["lomito paraguayo"],
+  },
+  {
+    name: "tapa cuadril",
+    region: "paraguay",
+    maps_to: "sirloin_cap",
+    confidence: 0.95,
+    synonyms: ["picanha"],
+  },
+  {
+    name: "vacío",
+    region: "paraguay",
+    maps_to: "flank",
+    confidence: 0.85,
+    synonyms: ["vacio"],
+  },
+  {
+    name: "matambre",
+    region: "paraguay",
+    maps_to: "flank",
+    confidence: 0.78,
+    type: "ambiguous",
+    synonyms: ["matambre paraguayo"],
+    notes: "Matambre is technically the rose-meat layer between hide and ribs; flank is the closest canonical. Vacío (above) is the higher-confidence, more anatomically direct flank mapping — both are valid, distinct cuts.",
+  },
+  {
+    name: "entraña",
+    region: "paraguay",
+    maps_to: "skirt",
+    confidence: 0.92,
+    synonyms: ["entraña fina"],
   },
 
   // ----- Colombia -----
@@ -435,6 +486,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "costillar", region: "chile", maps_to: "short_ribs", confidence: 0.80, notes: "Costillar is the rib section; asado de tira is the flanken cut from it" },
   { name: "costilla", region: "colombia", maps_to: "short_ribs", confidence: 0.75 },
   { name: "costillar", region: "mexico", maps_to: "short_ribs", confidence: 0.80, synonyms: ["agujas cortas", "costilla cargada"], notes: "Per Mexican chart: Short Ribs = Agujas Cortas" },
+  { name: "costilla", region: "paraguay", maps_to: "short_ribs", confidence: 0.90, synonyms: ["asado de tira", "tira de asado"] },
   { name: "plat de côtes", region: "france", maps_to: "short_ribs", confidence: 0.75, notes: "French plat de côtes overlaps with short rib area but butchering differs" },
 
   // ----- Phase 1: top_sirloin -----
@@ -451,6 +503,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "cola solomo extranjero", region: "colombia", maps_to: "tri_tip", confidence: 0.85 },
   { name: "empuje", region: "mexico", maps_to: "tri_tip", confidence: 0.80 },
   { name: "colita de cuadril", region: "uruguay", maps_to: "tri_tip", confidence: 0.90 },
+  { name: "colita de cuadril", region: "paraguay", maps_to: "tri_tip", confidence: 0.90, synonyms: ["colita"] },
   { name: "aiguillette baronne", region: "france", maps_to: "tri_tip", confidence: 0.75, notes: "Approximate French equivalent; butchering boundaries differ" },
 
   // ----- Phase 3: inside_round -----
@@ -462,6 +515,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "tabla", region: "colombia", maps_to: "inside_round", confidence: 0.85 },
   { name: "tapa", region: "mexico", maps_to: "inside_round", confidence: 0.85, notes: "Mexican 'tapa' can also refer to round steak generically" },
   { name: "nalga de adentro", region: "uruguay", maps_to: "inside_round", confidence: 0.90 },
+  { name: "carnaza negra", region: "paraguay", maps_to: "inside_round", confidence: 0.88, synonyms: ["carnaza"] },
   { name: "tranche", region: "france", maps_to: "inside_round", confidence: 0.80, notes: "French tranche covers the top round area; butchering may differ slightly" },
 
   // ----- Phase 3: outside_round -----
@@ -473,6 +527,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "posta", region: "colombia", maps_to: "outside_round", confidence: 0.85 },
   { name: "cuete", region: "mexico", maps_to: ["outside_round", "eye_of_round"] as const, confidence: 0.75, type: "ambiguous", notes: "Mexican 'cuete' can refer to either outside round or eye of round depending on the butcher" },
   { name: "carnaza cuadrada", region: "uruguay", maps_to: "outside_round", confidence: 0.90 },
+  { name: "carnaza blanca", region: "paraguay", maps_to: "outside_round", confidence: 0.82 },
   { name: "gîte à la noix", region: "france", maps_to: "outside_round", confidence: 0.80 },
 
   // ----- Phase 3: eye_of_round -----
@@ -483,6 +538,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "pollo ganso", region: "chile", maps_to: "eye_of_round", confidence: 0.90 },
   { name: "muchacho", region: "colombia", maps_to: "eye_of_round", confidence: 0.90 },
   { name: "peceto", region: "uruguay", maps_to: "eye_of_round", confidence: 0.95 },
+  { name: "peceto", region: "paraguay", maps_to: "eye_of_round", confidence: 0.90, synonyms: ["peceto paraguayo"] },
   { name: "rond de gîte", region: "france", maps_to: "eye_of_round", confidence: 0.80 },
 
   // ----- Phase 3: sirloin_tip -----
@@ -514,6 +570,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "acém", region: "brazil", maps_to: "chuck_roll", confidence: 0.88, synonyms: ["acem", "acém bovino"] },
   { name: "huachalomo", region: "chile", maps_to: "chuck_roll", confidence: 0.85 },
   { name: "cogote", region: "uruguay", maps_to: "chuck_roll", confidence: 0.75 },
+  { name: "aguja", region: "paraguay", maps_to: "chuck_roll", confidence: 0.82, synonyms: ["aguja paraguaya"] },
   { name: "basses côtes", region: "france", maps_to: "chuck_roll", confidence: 0.75, notes: "French basses côtes overlaps with chuck roll area" },
 
   // ----- Phase 3: chuck_blade -----
@@ -535,6 +592,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "tablón", region: "colombia", maps_to: "shoulder_clod", confidence: 0.80 },
   { name: "paleta", region: "mexico", maps_to: "shoulder_clod", confidence: 0.80 },
   { name: "marucha", region: "uruguay", maps_to: "shoulder_clod", confidence: 0.80 },
+  { name: "paleta", region: "paraguay", maps_to: "shoulder_clod", confidence: 0.82, synonyms: ["espalda"] },
   { name: "paleron", region: "france", maps_to: "shoulder_clod", confidence: 0.75 },
 
   // ----- Phase 3: prime_rib -----
@@ -569,6 +627,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "músculo", region: "brazil", maps_to: "hind_shank", confidence: 0.85, synonyms: ["musculo", "músculo traseiro"], notes: "Brazilian músculo can refer to either shank; context determines" },
   { name: "lagarto", region: "colombia", maps_to: "hind_shank", confidence: 0.85, notes: "Colombian lagarto refers to shank meat" },
   { name: "garrón", region: "uruguay", maps_to: "hind_shank", confidence: 0.90 },
+  { name: "osobuco", region: "paraguay", maps_to: "hind_shank", confidence: 0.93, synonyms: ["garrón", "ossobuco", "garron"] },
   { name: "jarret arrière", region: "france", maps_to: "hind_shank", confidence: 0.85 },
   { name: "shin", region: "uk", maps_to: "hind_shank", confidence: 0.85, notes: "UK 'shin' typically refers to fore shank; 'leg' for hind — usage varies" },
 
@@ -667,7 +726,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "Lombata", region: "italy", maps_to: ["striploin", "tenderloin"] as const, confidence: 0.70, type: "ambiguous", notes: "Lombata covers the entire loin section — can include striploin + tenderloin area. Regional meaning varies across Italy." },
   { name: "Biancostato", region: "italy", maps_to: "short_ribs", confidence: 0.75, synonyms: ["Costine"] },
 
-  // ----- PORTUGAL (11 entries) -----
+  // ----- PORTUGAL (23 entries; PT-PT terminology, distinct from PT-BR) -----
   { name: "Lombinho", region: "portugal", maps_to: "tenderloin", confidence: 0.95 },
   { name: "Peito", region: "portugal", maps_to: "brisket", confidence: 0.90, synonyms: ["Peito de vaca"] },
   { name: "Chambão", region: "portugal", maps_to: "hind_shank", confidence: 0.90, notes: "Strong match; used for soups, stews, and long braises" },
@@ -677,8 +736,106 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "Pojadouro", region: "portugal", maps_to: "inside_round", confidence: 0.80 },
   { name: "Ganso", region: "portugal", maps_to: "outside_round", confidence: 0.75 },
   { name: "Ganso Redondo", region: "portugal", maps_to: "eye_of_round", confidence: 0.75 },
-  { name: "Rabadilha", region: "portugal", maps_to: "sirloin_tip", confidence: 0.75 },
+  {
+    name: "Rabadilha",
+    region: "portugal",
+    maps_to: "sirloin_cap",
+    confidence: 0.82,
+    synonyms: ["picanha", "cauda da alcatra"],
+    notes: "Corrected from an earlier sirloin_tip mapping — rabadilha and picanha are anatomically the same cut (sirloin cap); 'picanha' kept here as a synonym only, never as a standalone primary name for this region.",
+  },
   { name: "Cachaço", region: "portugal", maps_to: "chuck_blade", confidence: 0.75, notes: "Neck end / upper chuck area" },
+  {
+    name: "lombo",
+    region: "portugal",
+    maps_to: "tenderloin",
+    confidence: 0.97,
+    synonyms: ["lombo de vaca", "lombo bovino"],
+  },
+  {
+    name: "vazia",
+    region: "portugal",
+    maps_to: "striploin",
+    confidence: 0.93,
+    synonyms: ["bife da vazia", "vazia de vaca"],
+  },
+  {
+    name: "acém redondo",
+    region: "portugal",
+    maps_to: "ribeye",
+    confidence: 0.85,
+    synonyms: ["acem redondo", "rosbife"],
+  },
+  {
+    name: "alcatra",
+    region: "portugal",
+    maps_to: "top_sirloin",
+    confidence: 0.88,
+    synonyms: ["alcatra de vaca"],
+  },
+  {
+    name: "chã de fora",
+    region: "portugal",
+    maps_to: "outside_round",
+    confidence: 0.85,
+    synonyms: ["cha de fora", "silverside"],
+  },
+  {
+    name: "acém comprido",
+    region: "portugal",
+    maps_to: "chuck_roll",
+    confidence: 0.85,
+    synonyms: ["acem comprido", "acém"],
+  },
+  {
+    name: "chambão dianteiro",
+    region: "portugal",
+    maps_to: "fore_shank",
+    confidence: 0.85,
+    synonyms: ["chambao dianteiro"],
+  },
+  {
+    name: "maçã do peito",
+    region: "portugal",
+    maps_to: "brisket",
+    confidence: 0.88,
+    synonyms: ["maca do peito", "peito de vaca"],
+  },
+  {
+    name: "aba",
+    region: "portugal",
+    maps_to: "flank",
+    confidence: 0.82,
+    synonyms: ["aba grossa", "aba delgada"],
+  },
+  {
+    name: "costoleta",
+    region: "portugal",
+    maps_to: "short_ribs",
+    confidence: 0.83,
+    synonyms: ["costeleta de vaca", "costelas"],
+  },
+  {
+    name: "pojadouro redondo",
+    region: "portugal",
+    maps_to: "eye_of_round",
+    confidence: 0.85,
+    synonyms: ["redondo"],
+  },
+  {
+    name: "prego",
+    region: "portugal",
+    maps_to: "striploin",
+    confidence: 0.75,
+    type: "ambiguous",
+    synonyms: ["bife para prego"],
+    notes: "Prego is a preparation format (steak sandwich), not a cut — the underlying cut used is always vazia or alcatra.",
+  },
+  // NOTE: "chambão" (hind_shank) and "pojadouro" (inside_round) from the
+  // source spec were skipped — both already exist verbatim above. The
+  // "rabadilha" entry above was corrected in place rather than duplicated
+  // (see its notes field) since "Rabadilha" already existed under a
+  // different — anatomically incorrect — mapping.
 
   // ----- NETHERLANDS (13 entries) -----
   { name: "Ossenhaas", region: "netherlands", maps_to: "tenderloin", confidence: 0.95, notes: "Literally 'ox tenderloin'" },
@@ -1737,6 +1894,7 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "sen koto sogo", region: "mali", maps_to: "hind_shank", confidence: 0.83, synonyms: ["koyngal tew", "leg muscle mali"] as const, notes: "Bambara: leg muscle/shank. Heavy collagen; bedrock of Malian family stews. Mandatory parboil before any secondary cooking. See sahelian_parboiling_prerequisite_af." },
   { name: "bolo sogo", region: "mali", maps_to: "inside_round", confidence: 0.80, synonyms: ["gba", "kwalal", "thigh mali"] as const, notes: "Bambara: thigh/inside round. Ultra-lean blocks cut into uniform stew cubes; also sliced razor-thin for Malian Brochettes. See sahel_brochette_ribbon_format_af." },
   { name: "kala sogo", region: "mali", maps_to: "oxtail", confidence: 0.90, synonyms: ["laasol", "tail mali"] as const, notes: "Bambara: tail/oxtail. For warming bone broths; high marrow and collagen yield from Zebu tail." },
+  { name: "bega", region: "mali", maps_to: "chuck_roll", confidence: 0.75, synonyms: ["epaule", "épaule"] },
   { name: "tiguadege cut", region: "mali", maps_to: ["chuck_roll", "fore_shank"], confidence: 0.72, match_type: "cultural", synonyms: ["maafe cut", "peanut stew cut"] as const, notes: "Bambara: Maafe (Tiguadege na) cut — bone-in jagged 1-inch chunks with connective tissue and marrow intact. The melting collagen prevents peanut-fat separation in the multi-hour braise. See tiguadege_collagen_matrix_ml." },
   { name: "malian brochette strip", region: "mali", maps_to: "inside_round", confidence: 0.75, match_type: "cultural", synonyms: ["brochette mali", "bolo sogo strip"] as const, notes: "Hand-sliced razor-thin ribbons of inside round (Bolo sogo), threaded with alternating hump or brisket fat beads — the transhumance solution to lean Zebu on skewer. See sahel_brochette_ribbon_format_af." },
   { name: "zebu ngoun", region: "mali", maps_to: "brisket", confidence: 0.30, match_type: "cultural", synonyms: ["zebu n'goun", "hump mali", "hump fat mali"] as const, notes: "Bambara/Peul: Zebu hump — premium luxury fat; high-melt hard fat plus flavorful muscle. Mapped to brisket as nearest fat-bearing canonical; anatomically distinct. See zebu_hump_fat_axis_af." },
@@ -1759,6 +1917,7 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "kirji", region: "niger", maps_to: "brisket", confidence: 0.80, synonyms: ["poitrine", "chest"] as const, notes: "Hausa: chest/brisket zone. Identical term to Nigeria (kirji, Batch 26) — primary fat reserves; renders into stews. Second country of evidence for the Hausa trade-language axis. See sahel_hausa_trade_language_af." },
   { name: "kwauri", region: "niger", maps_to: "hind_shank", confidence: 0.82, synonyms: ["tsoka", "jarret", "leg muscle"] as const, notes: "Hausa: shin/shank. Identical to Nigeria (kwauri, Batch 26). Default stew cut; holds shape during long boiling. See sahelian_parboiling_prerequisite_af and sahel_hausa_trade_language_af." },
   { name: "kafa", region: "niger", maps_to: "inside_round", confidence: 0.80, synonyms: ["cinya", "tranche", "cuisse", "thigh"] as const, notes: "Hausa: topside/inside round. Identical to Nigeria (kafa, Batch 26). Lean solid blocks for uniform stew cubes and Kilishi sheets. See sahel_hausa_trade_language_af." },
+  { name: "cinya", region: "niger", maps_to: "inside_round", confidence: 0.75, synonyms: ["kafa", "cuisse", "tranche"] },
   { name: "wutsiya", region: "niger", maps_to: "oxtail", confidence: 0.88, synonyms: ["queue", "tail"] as const, notes: "Hausa: oxtail. Slow-boiled for gelatinous broths. Hausa vocabulary differs from Nigeria's 'gindi' — regional Hausa register variation within the trade-language axis." },
   { name: "niger kilishi cut", region: "niger", maps_to: ["inside_round", "tenderloin"], confidence: 0.80, match_type: "cultural", synonyms: ["madaoua kilishi cut", "kilishi niger"] as const, notes: "Madaoua Kilishi heartland: lean Inside Round or Tenderloin hand-sliced into wide continuous translucent sheets, sun-dried, peanut-paste-coated, fire-flashed. See niger_kilishi_heartland_ne — deepens kilishi_sheet_dry_af from B26." },
   { name: "taba-nany", region: "niger", maps_to: ["chuck_roll", "inside_round"], confidence: 0.65, match_type: "cultural", synonyms: ["taba nany", "tuareg dried beef", "pounded dried beef"] as const, notes: "Tuareg nomadic preservation: lean Shoulder or Round boiled heavily, sun-dried on desert mats, pounded in mortar to fibrous shelf-stable powder. Fifth distinct dried-beef mechanism. See taba_nany_pounded_dried_ne." },
@@ -1767,6 +1926,7 @@ const _africaRegionalNames: readonly RegionalName[] = [
 
   // ----- Chad (11 entries — Batch 28) -----
   { name: "file", region: "chad", maps_to: "tenderloin", confidence: 0.90, synonyms: ["filet", "al-lahm al-kamal", "perfect meat", "file"] as const, notes: "Chadian Arabic: 'the perfect meat' — premium soft tissue. Saved for street-side Brochettes and upscale N'Djamena restaurants. French loanword 'filet' also used at Boucheries." },
+  { name: "al-lahm al-kamal", region: "chad", maps_to: "tenderloin", confidence: 0.85, synonyms: ["filé", "filet"] },
   { name: "lahm al-dahar", region: "chad", maps_to: ["striploin", "ribeye"], confidence: 0.68, match_type: "composite", synonyms: ["faux-filet", "back meat"] as const, notes: "Chadian Arabic: 'back meat' — lean slabs from the loin/rib area. Spans striploin and ribeye; tightens to shoe-leather if grilled without external fat or acid marinade." },
   { name: "al-sidir", region: "chad", maps_to: "brisket", confidence: 0.75, synonyms: ["poitrine", "chest"] as const, notes: "Chadian Arabic: chest/brisket — primary fat reserves. Foundation for Daraba stew and everyday braised preparations." },
   { name: "lahm al-kura", region: "chad", maps_to: "hind_shank", confidence: 0.80, synonyms: ["jarret", "leg muscle"] as const, notes: "Chadian Arabic: leg muscle/shank — heavy collagen. Structural anchor of household stews and bone broths." },
