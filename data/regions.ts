@@ -105,12 +105,15 @@ export const regions = [
   // Africa — Southern Africa
   { id: "south_africa" as const, label: "South Africa", flag: "🇿🇦", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["rsa", "sa", "south african"] as readonly string[] },
   { id: "botswana" as const, label: "Botswana", flag: "🇧🇼", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["gaborone", "francistown", "setswana", "seswaa", "chotlho", "bmc", "botswana meat commission", "tswana cattle", "mogolo", "sera", "tlhako", "serobe", "mogodu", "bw"] as readonly string[] },
+  { id: "angola" as const, label: "Angola", flag: "🇦🇴", group: "africa" as RegionGroup, subregion: "Southern Africa" as const },
+  { id: "mozambique" as const, label: "Mozambique", flag: "🇲🇿", group: "africa" as RegionGroup, subregion: "Southern Africa" as const },
   { id: "namibia" as const, label: "Namibia", flag: "🇳🇦", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["windhoek", "katutura", "kapana", "biltong namibia", "droewors", "potjiekos", "bonsmara", "afrikaans beef", "slaghuis", "kruisskyf", "biltong-vleis", "na"] as readonly string[] },
   { id: "zimbabwe" as const, label: "Zimbabwe", flag: "🇿🇼", group: "africa" as RegionGroup, subregion: "Southern Africa" as const, aliases: ["harare", "bulawayo", "shona", "ndebele", "nyama yemombe", "braai pack", "mashona cattle", "biltong zimbabwe", "sadza nenyama", "musana", "chidya", "veld beef", "mopane braai", "super choice commercial", "zw"] as readonly string[] },
   // Africa — East Africa
   { id: "kenya" as const, label: "Kenya", flag: "🇰🇪", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["kenyan", "swahili"] as readonly string[] },
   { id: "tanzania" as const, label: "Tanzania", flag: "🇹🇿", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["dar es salaam", "arusha", "mwanza", "swahili beef", "nyama choma", "mishkaki", "mchuzi", "zebu", "bucha", "mgongo", "kidari", "nyama ya ngombe", "zanzibar beef", "tz"] as readonly string[] },
   { id: "uganda" as const, label: "Uganda", flag: "🇺🇬", group: "africa" as RegionGroup, subregion: "East Africa" as const, aliases: ["kampala", "kalerwe", "nakasero", "luganda beef", "katogo", "muchomo", "luwombo", "ankole", "mulokoni", "mugongo", "nyama ya ente", "matooke beef", "ug"] as readonly string[] },
+  { id: "sudan" as const, label: "Sudan", flag: "🇸🇩", group: "africa" as RegionGroup, subregion: "East Africa" as const },
   // Africa — West Africa (Batch 26)
   { id: "nigeria" as const, label: "Nigeria", flag: "🇳🇬", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["naija", "nigerian", "lagos", "kano", "ibadan", "abuja", "suya", "kilishi", "mile 12", "jalli market", "hausa", "yoruba", "igbo", "nama", "cow meat"] as readonly string[] },
   { id: "mali" as const, label: "Mali", flag: "🇲🇱", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["malian", "bamako", "mopti", "segou", "fulani", "peul", "bambara", "maafe", "tiguadege", "sogo", "brochette mali", "zebu mali"] as readonly string[] },
@@ -120,6 +123,8 @@ export const regions = [
   // Africa — West Africa (Batch 28)
   { id: "chad" as const, label: "Chad", flag: "🇹🇩", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["chadian", "ndjamena", "n'djamena", "sarh", "moundou", "kouri", "arab zebu", "charmout", "daraba", "marara"] as readonly string[] },
   { id: "burkina_faso" as const, label: "Burkina Faso", flag: "🇧🇫", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["burkinabe", "burkinabe", "ouagadougou", "ouaga", "mossi", "moore", "more", "fulani", "peul", "riz gras", "rood-woko", "grand marche"] as readonly string[] },
+  { id: "cote_divoire" as const, label: "Côte d'Ivoire", flag: "🇨🇮", group: "africa" as RegionGroup, subregion: "West Africa" as const },
+  { id: "cameroon" as const, label: "Cameroon", flag: "🇨🇲", group: "africa" as RegionGroup, subregion: "Central Africa" as const },
   // Africa — Horn of Africa
   { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, subregion: "Horn of Africa" as const, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
 

@@ -1965,6 +1965,33 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "burkinabe maffe cut", region: "burkina_faso", maps_to: ["chuck_roll", "fore_shank"], confidence: 0.70, match_type: "cultural", synonyms: ["sauce tiga cut"] as const, notes: "Peanut-stew bone-in chunks — extends the Maafe family; cross-ref Mali tiguadege_collagen_matrix_ml and Senegal senegalese maffe cut." },
   { name: "toggo", region: "burkina_faso", maps_to: "brisket", confidence: 0.30, match_type: "cultural", synonyms: ["zebu hump", "hump fat burkina", "kaba"] as const, notes: "Moore: Zebu hump — Off-Chart Premium Fat Modifier. Mapped to brisket as nearest fat-bearing canonical; anatomically distinct. Cross-ref zebu_hump_fat_axis_af — completing the 6-country West African Sahel hump-axis evidence." },
 
+  // ----- Sudan (7 entries) -----
+  { name: "filé", region: "sudan", maps_to: "tenderloin", confidence: 0.85, synonyms: ["laham naim", "soft meat"] as const },
+  { name: "dahar", region: "sudan", maps_to: "striploin", confidence: 0.76, synonyms: ["back meat"] as const },
+  { name: "sidir", region: "sudan", maps_to: "brisket", confidence: 0.82, synonyms: ["chest"] as const },
+  { name: "kitif", region: "sudan", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["shoulder"] as const },
+  { name: "fakhid", region: "sudan", maps_to: "inside_round", confidence: 0.78, synonyms: ["thigh"] as const },
+  { name: "kura", region: "sudan", maps_to: "hind_shank", confidence: 0.85, synonyms: ["kaware"] as const },
+  { name: "danab", region: "sudan", maps_to: "oxtail", confidence: 0.88, synonyms: ["tail"] as const },
+
+  // ----- Côte d'Ivoire (7 entries) -----
+  { name: "filet", region: "cote_divoire", maps_to: "tenderloin", confidence: 0.85, synonyms: ["soft meat"] as const },
+  { name: "faux-filet", region: "cote_divoire", maps_to: "striploin", confidence: 0.78, synonyms: ["entrecote", "roasting meat"] as const },
+  { name: "poitrine", region: "cote_divoire", maps_to: "brisket", confidence: 0.82, synonyms: ["viande grasse", "fat meat"] as const },
+  { name: "jarret", region: "cote_divoire", maps_to: "hind_shank", confidence: 0.85, synonyms: [] as const },
+  { name: "épaule", region: "cote_divoire", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["epaule", "viande a ragout"] as const },
+  { name: "cuisse", region: "cote_divoire", maps_to: "inside_round", confidence: 0.78, synonyms: ["tranche"] as const },
+  { name: "queue de boeuf", region: "cote_divoire", maps_to: "oxtail", confidence: 0.88, synonyms: ["queue de bœuf"] as const },
+
+  // ----- Cameroon (7 entries) -----
+  { name: "filet", region: "cameroon", maps_to: "tenderloin", confidence: 0.85, synonyms: ["soft meat"] as const },
+  { name: "faux-filet", region: "cameroon", maps_to: "striploin", confidence: 0.78, synonyms: ["roasting meat"] as const },
+  { name: "poitrine", region: "cameroon", maps_to: "brisket", confidence: 0.82, synonyms: ["fat meat"] as const },
+  { name: "jarret", region: "cameroon", maps_to: "hind_shank", confidence: 0.85, synonyms: ["cow leg"] as const },
+  { name: "épaule", region: "cameroon", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["epaule", "stew meat"] as const },
+  { name: "cuisse", region: "cameroon", maps_to: "inside_round", confidence: 0.78, synonyms: ["beef steak"] as const },
+  { name: "queue de boeuf", region: "cameroon", maps_to: "oxtail", confidence: 0.88, synonyms: ["queue de bœuf", "cow tail"] as const },
+
   // ----- Ethiopia (12 entries) -----
   { name: "fisilo", region: "ethiopia", maps_to: "tenderloin", confidence: 0.95, notes: "Literally 'the undercut' — the ULTIMATE choice for Tere Siga (raw beef). Premium Ethiopian cut. Strict freshness requirement (hot-boned only)." },
   { name: "yemigongo", region: "ethiopia", maps_to: "striploin", confidence: 0.75, synonyms: ["yemigongo siga", "back meat"] as const, notes: "'Back meat' — high-quality lean meat used for Tibs (sautéed beef cubes). Conflates striploin and ribeye like Kenyan Mgongo and Nigerian Back Meat." },
@@ -1978,6 +2005,31 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "wot cut", region: "ethiopia", maps_to: "chuck_roll", confidence: 0.55, synonyms: ["wot meat"] as const, notes: "NOT a specific muscle — meat for Wot (spicy stew). Bone-in shank or chuck for long simmering. Niter Kibbeh provides moisture (since Ethiopian beef is extremely lean)." },
   { name: "le tere siga", region: "ethiopia", maps_to: "tenderloin", confidence: 0.40, synonyms: ["raw grade", "tere siga grade"] as const, notes: "NOT a cut — 'For Raw Eating' GRADE classification. Must be hot-boned, never aged, never refrigerated. The Ethiopian quality axis where freshness defines premium grade." },
   { name: "le wot", region: "ethiopia", maps_to: "chuck_roll", confidence: 0.40, synonyms: ["stew grade", "wot grade"] as const, notes: "NOT a cut — 'For Stew' GRADE classification. Pair of Le Tere Siga. Cross-reference Kenyan Nyama Laini/Mifupa, Korean Gu-i-yong/Guk-gori, Nigerian Eran-Egun/Eran-Didi." },
+
+  // ----- 🇦🇴 ANGOLA (Portuguese butchery lexicon, Southern Africa) — 11 entries -----
+  { name: "lombo", region: "angola", maps_to: "tenderloin", confidence: 0.95, synonyms: ["filé", "file", "lombo de vaca"] as const },
+  { name: "vazia", region: "angola", maps_to: "striploin", confidence: 0.90, synonyms: ["vazia de vaca"] as const },
+  { name: "acém", region: "angola", maps_to: "ribeye", confidence: 0.78, type: "ambiguous", synonyms: ["acem"] as const },
+  { name: "alcatra", region: "angola", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["alcatra de vaca"] as const },
+  { name: "chã de dentro", region: "angola", maps_to: "inside_round", confidence: 0.88, synonyms: ["cha de dentro"] as const },
+  { name: "chã de fora", region: "angola", maps_to: "outside_round", confidence: 0.85, synonyms: ["cha de fora"] as const },
+  { name: "acém comprido", region: "angola", maps_to: "chuck_roll", confidence: 0.83, synonyms: ["acem comprido", "espadua", "espádua"] as const },
+  { name: "peito", region: "angola", maps_to: "brisket", confidence: 0.85, synonyms: ["peito de vaca"] as const },
+  { name: "chambão", region: "angola", maps_to: "hind_shank", confidence: 0.92, synonyms: ["chambao"] as const },
+  { name: "entrecosto de vaca", region: "angola", maps_to: "short_ribs", confidence: 0.85, synonyms: ["entrecosto", "costelas"] as const },
+  { name: "carne seca", region: "angola", maps_to: "outside_round", confidence: 0.72, type: "ambiguous", synonyms: ["charque angolano"] as const },
+
+  // ----- 🇲🇿 MOZAMBIQUE (Portuguese butchery lexicon, Southern Africa) — 10 entries -----
+  { name: "lombo", region: "mozambique", maps_to: "tenderloin", confidence: 0.95, synonyms: ["filete"] as const },
+  { name: "vazia", region: "mozambique", maps_to: "striploin", confidence: 0.90, synonyms: ["vazia de vaca"] as const },
+  { name: "acém", region: "mozambique", maps_to: "ribeye", confidence: 0.78, type: "ambiguous", synonyms: ["acem"] as const },
+  { name: "alcatra", region: "mozambique", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["alcatra de vaca"] as const },
+  { name: "chã de dentro", region: "mozambique", maps_to: "inside_round", confidence: 0.88, synonyms: ["cha de dentro"] as const },
+  { name: "chã de fora", region: "mozambique", maps_to: "outside_round", confidence: 0.85, synonyms: ["cha de fora"] as const },
+  { name: "acém comprido", region: "mozambique", maps_to: "chuck_roll", confidence: 0.83, synonyms: ["acem comprido", "espadua"] as const },
+  { name: "peito", region: "mozambique", maps_to: "brisket", confidence: 0.85, synonyms: ["peito de vaca"] as const },
+  { name: "chambão", region: "mozambique", maps_to: "hind_shank", confidence: 0.92, synonyms: ["chambao"] as const },
+  { name: "entrecosto de vaca", region: "mozambique", maps_to: "short_ribs", confidence: 0.85, synonyms: ["entrecosto"] as const },
 
   // ----- 🇧🇼 BOTSWANA (Setswana + local English — cow default, grass-fed Tswana/Brahman) — 12 entries -----
 

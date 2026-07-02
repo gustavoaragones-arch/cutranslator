@@ -141,12 +141,18 @@ export type RegionSlug =
   | "mongolia"
   | "myanmar"
   // Africa (Batch 23)
+  | "angola"
   | "botswana"
+  | "mozambique"
   | "namibia"
   | "tanzania"
   | "uganda"
   // Africa (Batch 24)
   | "zimbabwe"
+  // Africa (Batch 29)
+  | "sudan"
+  | "cote_divoire"
+  | "cameroon"
   // Africa — West Africa (Batch 26)
   | "mali"
   // Africa — West Africa (Batch 27)
