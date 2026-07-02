@@ -13,6 +13,8 @@ export const regions = [
   { id: "honduras" as const, label: "Honduras", flag: "🇭🇳", group: "americas_central" as RegionGroup },
   { id: "el_salvador" as const, label: "El Salvador", flag: "🇸🇻", group: "americas_central" as RegionGroup },
   { id: "guatemala" as const, label: "Guatemala", flag: "🇬🇹", group: "americas_central" as RegionGroup },
+  { id: "cuba" as const, label: "Cuba", flag: "🇨🇺", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "dominican_republic" as const, label: "Dominican Republic", flag: "🇩🇴", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
 
   // Americas — South
   { id: "brazil" as const, label: "Brazil", flag: "🇧🇷", group: "americas_south" as RegionGroup },
@@ -81,6 +83,7 @@ export const regions = [
   { id: "uae" as const, label: "UAE", flag: "🇦🇪", group: "mena" as RegionGroup, aliases: ["united arab emirates", "emirates", "dubai"] as readonly string[] },
 
   // Central Asia
+  { id: "afghanistan" as const, label: "Afghanistan", flag: "🇦🇫", group: "central_asia" as RegionGroup, subregion: "Central Asia" as const },
   { id: "kazakhstan" as const, label: "Kazakhstan", flag: "🇰🇿", group: "central_asia" as RegionGroup },
   { id: "uzbekistan" as const, label: "Uzbekistan", flag: "🇺🇿", group: "central_asia" as RegionGroup },
 
@@ -125,6 +128,7 @@ export const regions = [
   { id: "burkina_faso" as const, label: "Burkina Faso", flag: "🇧🇫", group: "africa" as RegionGroup, subregion: "West Africa" as const, aliases: ["burkinabe", "burkinabe", "ouagadougou", "ouaga", "mossi", "moore", "more", "fulani", "peul", "riz gras", "rood-woko", "grand marche"] as readonly string[] },
   { id: "cote_divoire" as const, label: "Côte d'Ivoire", flag: "🇨🇮", group: "africa" as RegionGroup, subregion: "West Africa" as const },
   { id: "cameroon" as const, label: "Cameroon", flag: "🇨🇲", group: "africa" as RegionGroup, subregion: "Central Africa" as const },
+  { id: "drc" as const, label: "DR Congo", flag: "🇨🇩", group: "africa" as RegionGroup, subregion: "Central Africa" as const },
   // Africa — Horn of Africa
   { id: "ethiopia" as const, label: "Ethiopia", flag: "🇪🇹", group: "africa" as RegionGroup, subregion: "Horn of Africa" as const, aliases: ["ethiopian", "habesha", "abyssinia"] as readonly string[] },
 

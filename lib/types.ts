@@ -78,6 +78,8 @@ export type RegionSlug =
   | "honduras"
   | "el_salvador"
   | "guatemala"
+  | "cuba"
+  | "dominican_republic"
   | "venezuela"
   | "lithuania"
   | "latvia"
@@ -140,6 +142,8 @@ export type RegionSlug =
   // Asia-Pacific + Southeast Asia (Batch 22)
   | "mongolia"
   | "myanmar"
+  // Central Asia (Batch 30)
+  | "afghanistan"
   // Africa (Batch 23)
   | "angola"
   | "botswana"
@@ -153,6 +157,7 @@ export type RegionSlug =
   | "sudan"
   | "cote_divoire"
   | "cameroon"
+  | "drc"
   // Africa — West Africa (Batch 26)
   | "mali"
   // Africa — West Africa (Batch 27)

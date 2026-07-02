@@ -454,6 +454,125 @@ const _coreRegionalNames: readonly RegionalName[] = [
     synonyms: ["entraña fina"],
   },
 
+  // ----- Cuba -----
+  {
+    name: "solomillo",
+    region: "cuba",
+    maps_to: "tenderloin",
+    confidence: 0.92,
+    synonyms: ["filet", "filete"],
+  },
+  {
+    name: "lomo",
+    region: "cuba",
+    maps_to: "striploin",
+    confidence: 0.75,
+    type: "ambiguous",
+    synonyms: ["lomo de res"],
+  },
+  {
+    name: "aguja",
+    region: "cuba",
+    maps_to: "chuck_roll",
+    confidence: 0.72,
+    type: "ambiguous",
+    synonyms: ["aguja de res"],
+  },
+  {
+    name: "falda",
+    region: "cuba",
+    maps_to: "flank",
+    confidence: 0.92,
+    synonyms: ["falda de res"],
+  },
+  {
+    name: "pecho",
+    region: "cuba",
+    maps_to: "brisket",
+    confidence: 0.85,
+    synonyms: ["pecho de res"],
+  },
+  {
+    name: "morcillo",
+    region: "cuba",
+    maps_to: "hind_shank",
+    confidence: 0.88,
+    synonyms: ["jarrete", "jarrete de res"],
+  },
+  {
+    name: "pierna",
+    region: "cuba",
+    maps_to: "inside_round",
+    confidence: 0.80,
+    synonyms: ["pierna de res"],
+  },
+
+  // ----- Dominican Republic -----
+  {
+    name: "filete",
+    region: "dominican_republic",
+    maps_to: "tenderloin",
+    confidence: 0.93,
+    synonyms: ["filet mignon"],
+  },
+  {
+    name: "lomo",
+    region: "dominican_republic",
+    maps_to: "striploin",
+    confidence: 0.78,
+    type: "ambiguous",
+    synonyms: ["lomo de res"],
+  },
+  {
+    name: "churrasco",
+    region: "dominican_republic",
+    maps_to: "skirt",
+    confidence: 0.90,
+    synonyms: [],
+  },
+  {
+    name: "falda",
+    region: "dominican_republic",
+    maps_to: "flank",
+    confidence: 0.88,
+    synonyms: [],
+  },
+  {
+    name: "masa limpia",
+    region: "dominican_republic",
+    maps_to: "inside_round",
+    confidence: 0.82,
+    synonyms: ["bola"],
+  },
+  {
+    name: "paleta",
+    region: "dominican_republic",
+    maps_to: "chuck_roll",
+    confidence: 0.82,
+    synonyms: ["carne para guisar"],
+  },
+  {
+    name: "pecho",
+    region: "dominican_republic",
+    maps_to: "brisket",
+    confidence: 0.85,
+    synonyms: [],
+  },
+  {
+    name: "lagarto",
+    region: "dominican_republic",
+    maps_to: "hind_shank",
+    confidence: 0.85,
+    synonyms: [],
+  },
+  {
+    name: "rabo",
+    region: "dominican_republic",
+    maps_to: "oxtail",
+    confidence: 0.93,
+    synonyms: ["rabo de res"],
+  },
+
   // ----- Colombia -----
   {
     name: "lomo fino",
@@ -1308,6 +1427,14 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "sar-dast", region: "iran", maps_to: "chuck_blade", confidence: 0.70, synonyms: ["سردست", "sardast"], notes: "Shoulder area — for stews and Khoresht" },
   { name: "dande", region: "iran", maps_to: "short_ribs", confidence: 0.70, synonyms: ["دنده"], notes: "Rib section — for traditional broths and occasional grilling" },
 
+  // ----- Afghanistan -----
+  { name: "fillet", region: "afghanistan", maps_to: "tenderloin", confidence: 0.83, synonyms: ["maghz-e-gosht"] },
+  { name: "ran", region: "afghanistan", maps_to: "inside_round", confidence: 0.82, synonyms: ["thigh"] },
+  { name: "shana", region: "afghanistan", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["shoulder"] },
+  { name: "danda", region: "afghanistan", maps_to: "short_ribs", confidence: 0.78, synonyms: ["ribs"] },
+  { name: "sineh", region: "afghanistan", maps_to: "brisket", confidence: 0.80, synonyms: ["tabaq", "chest"] },
+  { name: "pacha", region: "afghanistan", maps_to: "hind_shank", confidence: 0.85, synonyms: ["pacha-e-gao", "trotters"] },
+
   // ----- Morocco -----
   { name: "filet", region: "morocco", maps_to: "tenderloin", confidence: 0.95, synonyms: ["فيلي"], notes: "Tenderloin — often used for Brochettes (skewers). French-adopted term." },
   { name: "faux-filet", region: "morocco", maps_to: "striploin", confidence: 0.90, synonyms: ["فو فيلي"], notes: "'False fillet' — the standard for grilling or roasting. French-Moroccan convention." },
@@ -1991,6 +2118,15 @@ const _africaRegionalNames: readonly RegionalName[] = [
   { name: "épaule", region: "cameroon", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["epaule", "stew meat"] as const },
   { name: "cuisse", region: "cameroon", maps_to: "inside_round", confidence: 0.78, synonyms: ["beef steak"] as const },
   { name: "queue de boeuf", region: "cameroon", maps_to: "oxtail", confidence: 0.88, synonyms: ["queue de bœuf", "cow tail"] as const },
+
+  // ----- DR Congo (7 entries) -----
+  { name: "filet", region: "drc", maps_to: "tenderloin", confidence: 0.85, synonyms: ["mosuni ya malamu"] as const },
+  { name: "faux-filet", region: "drc", maps_to: "striploin", confidence: 0.78, synonyms: ["entrecote"] as const },
+  { name: "poitrine", region: "drc", maps_to: "brisket", confidence: 0.82, synonyms: [] as const },
+  { name: "jarret", region: "drc", maps_to: "hind_shank", confidence: 0.85, synonyms: ["makolo"] as const },
+  { name: "épaule", region: "drc", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["epaule", "mosuni na mikuwa"] as const },
+  { name: "cuisse", region: "drc", maps_to: "inside_round", confidence: 0.78, synonyms: ["mosuni"] as const },
+  { name: "queue de boeuf", region: "drc", maps_to: "oxtail", confidence: 0.88, synonyms: ["mokila"] as const },
 
   // ----- Ethiopia (12 entries) -----
   { name: "fisilo", region: "ethiopia", maps_to: "tenderloin", confidence: 0.95, notes: "Literally 'the undercut' — the ULTIMATE choice for Tere Siga (raw beef). Premium Ethiopian cut. Strict freshness requirement (hot-boned only)." },
