@@ -2191,8 +2191,6 @@ const _africaRegionalNames: readonly RegionalName[] = [
 
   { name: "biltong cut botswana", region: "botswana", maps_to: "bottom_round_roast", confidence: 0.78, synonyms: ["biltong botswana", "dried beef botswana", "silverside plank"] as const, notes: "Silverside (or Topside) sliced WITH the grain into long ~2-inch planks with a ~1/4-inch firm white outer fat layer attached, salt-air-cured into Biltong. Cow default. Cross-references southern_african_export_grade_af (the fat-attached salt-air dried-meat node)." },
 
-  { name: "mogodu botswana", region: "botswana", maps_to: "tripe", confidence: 0.80, match_type: "cultural", synonyms: ["tripe botswana", "offal mix botswana", "serobe"] as const, notes: "Mogodu — tripe/stomach-lining, treated with prime-cut reverence, slow-cooked tender. Serobe is the chopped tripe/lung/intestine Seswaa-style dish. Cow default. Cross-references botswana_seswaa_pounded_af." },
-
   // ----- 🇳🇦 NAMIBIA (local English + Afrikaans/German — cow default, grass-fed Bonsmara/Sanga/Brahman) — 12 entries -----
 
   { name: "fillet namibia", region: "namibia", maps_to: "tenderloin", confidence: 0.85, synonyms: ["beesfillet", "rinderfilet", "fillet na", "carpaccio cut"] as const, notes: "Fillet (Afrikaans 'Beesfillet' / German 'Rinderfilet') — premium soft muscle for carpaccio/high-end. Grass-fed lean: max-heat sear, rest 5-8 min, cooks ~20% faster than US grain-fed. Cow default. Cross-references southern_african_export_grade_af." },
