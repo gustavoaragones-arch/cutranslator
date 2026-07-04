@@ -300,163 +300,41 @@ See `docs/adr/ADR-004.md` for the full architectural decision record.
 
 ---
 
-## Main Tool — Baseline (as of July 2 2026)
+## Main Tool — Baseline (as of July 3 2026)
 
-### Dataset Scope
+### Regions
+135 regions (`data/regions.ts`)
+Verify: `grep -c 'id:' data/regions.ts`
 
-- Region source of truth: `data/regions.ts`
-- Regional-name source of truth: `data/regionalNames.ts`
+### Regional Name Entries
+1907 entries (`data/regionalNames.ts`)
+Verify: `grep -c "region:" data/regionalNames.ts`
 
-### Authoritative Counts
+### New regions added since last baseline:
+- quebec (19 entries)
+- angola (11 entries)
+- mozambique (10 entries)
+- sudan (7 entries)
+- cote_divoire (7 entries)
+- cameroon (7 entries)
+- cuba (7 entries)
+- dominican_republic (9 entries)
+- drc (7 entries)
+- afghanistan (6 entries)
+- puerto_rico (8 entries)
+- jamaica (9 entries)
+- haiti (7 entries)
+- trinidad_tobago (9 entries)
+- belize (7 entries)
+- guyana (9 entries)
+- suriname (7 entries)
 
-- **127 regions** in `data/regions.ts`
-- **1832 regional-name entries** in `data/regionalNames.ts`
-
-### Regional Name Entries by Region (authoritative grep audit)
-
-```text
-   6 afghanistan
-   7 cameroon
-   7 cote_divoire
-   7 cuba
-   7 drc
-   7 sudan
-   9 dominican_republic
-  10 andhra_pradesh
-  10 burkina_faso
-  10 mali
-  10 mozambique
-  10 senegal
-  11 angola
-  11 botswana
-  11 niger
-  12 chad
-  12 denmark
-  12 estonia
-  12 ethiopia
-  12 goa
-  12 honduras
-  12 karnataka
-  12 kazakhstan
-  12 kenya
-  12 latvia
-  12 lithuania
-  12 morocco
-  12 namibia
-  12 punjab
-  12 rajasthan
-  12 saudi_arabia
-  12 slovakia
-  12 tamil_nadu
-  12 uk
-  13 belarus
-  13 belgium
-  13 bolivia
-  13 bulgaria
-  13 colombia
-  13 costa_rica
-  13 croatia
-  13 egypt
-  13 el_salvador
-  13 guatemala
-  13 iran
-  13 maharashtra
-  13 malaysia
-  13 montenegro
-  13 netherlands
-  13 nicaragua
-  13 panama
-  13 peru
-  13 philippines
-  13 qatar
-  13 romania
-  13 sikkim
-  13 slovenia
-  13 taiwan
-  13 uganda
-  13 uzbekistan
-  13 zimbabwe
-  14 bangladesh
-  14 bhutan
-  14 czechia
-  14 ecuador
-  14 france
-  14 greece
-  14 hungary
-  14 indonesia
-  14 ireland
-  14 italy
-  14 japan
-  14 kerala
-  14 myanmar
-  14 north_macedonia
-  14 thailand
-  14 turkey
-  14 uae
-  14 venezuela
-  15 albania
-  15 china
-  15 jammu_kashmir
-  15 manipur
-  15 meghalaya
-  15 mexico
-  15 nepal
-  15 singapore
-  15 tanzania
-  15 uttar_pradesh
-  15 west_bengal
-  16 austria
-  16 bosnia
-  16 finland
-  16 india_central
-  16 israel
-  16 ladakh
-  16 mongolia
-  16 new_zealand
-  16 norway
-  16 south_africa
-  16 sri_lanka
-  16 switzerland
-  16 telangana
-  16 vietnam
-  17 germany
-  17 pakistan
-  17 south_korea
-  18 argentina
-  18 india_islands
-  18 nagaland
-  18 paraguay
-  18 poland
-  18 sweden
-  19 australia
-  19 chile
-  19 nigeria
-  20 india_coastal_colonial
-  20 spain
-  20 uruguay
-  21 ukraine
-  22 himachal_uttarakhand
-  22 russia
-  23 brazil
-  23 portugal
-  24 canada
-  30 northeast_other
-  38 usa
-```
-
-### Count Reconciliation Note
-
-Authoritative commands:
-
-```bash
-grep -c "id:" data/regions.ts
-grep -c "region:" data/regionalNames.ts
-grep "region:" data/regionalNames.ts | \
+### Count Reconciliation Commands
+`grep -c 'id:' data/regions.ts`
+`grep -c "region:" data/regionalNames.ts`
+`grep 'region:' data/regionalNames.ts | \
   sed 's/.*region: "\([^"]*\)".*/\1/' | \
-  sort | uniq -c | sort -n
-```
-
-All entries are in standard multi-line format; plain grep counts are authoritative.
+  sort | uniq -c | sort -n`
 
 ---
 

@@ -8,7 +8,7 @@ const SEP = "-to-";
 function parseRegionToken(token: string): RegionSlug | null {
   if (isRegionSlug(token)) return token;
   // Allow URL-friendly hyphen aliases for underscore slugs
-  // (e.g. cote-divoire, dominican-republic).
+  // (e.g. cote-divoire, dominican-republic, puerto-rico, trinidad-tobago).
   const underscored = token.replace(/-/g, "_");
   if (isRegionSlug(underscored)) return underscored;
   return null;

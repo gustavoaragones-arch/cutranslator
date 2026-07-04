@@ -573,6 +573,141 @@ const _coreRegionalNames: readonly RegionalName[] = [
     synonyms: ["rabo de res"],
   },
 
+  // ----- Quebec -----
+  {
+    name: "filet",
+    region: "quebec",
+    maps_to: "tenderloin",
+    confidence: 0.97,
+    synonyms: ["filet de bœuf", "filet mignon"],
+  },
+  {
+    name: "faux-filet",
+    region: "quebec",
+    maps_to: "striploin",
+    confidence: 0.90,
+    synonyms: ["contre-filet"],
+  },
+  {
+    name: "entrecôte",
+    region: "quebec",
+    maps_to: "ribeye",
+    confidence: 0.90,
+    synonyms: ["entrecote"],
+  },
+  {
+    name: "côte de bœuf",
+    region: "quebec",
+    maps_to: "prime_rib",
+    confidence: 0.88,
+    synonyms: ["cote de boeuf"],
+  },
+  {
+    name: "surlonge",
+    region: "quebec",
+    maps_to: "top_sirloin",
+    confidence: 0.88,
+    synonyms: ["haut de surlonge"],
+  },
+  {
+    name: "bavette",
+    region: "quebec",
+    maps_to: "flank",
+    confidence: 0.88,
+    synonyms: ["bavette de flanchet"],
+  },
+  {
+    name: "hampe",
+    region: "quebec",
+    maps_to: "skirt",
+    confidence: 0.85,
+    synonyms: [],
+  },
+  {
+    name: "onglet",
+    region: "quebec",
+    maps_to: "hanger",
+    confidence: 0.92,
+    synonyms: ["onglet de bœuf"],
+  },
+  {
+    name: "palette",
+    region: "quebec",
+    maps_to: "chuck_roll",
+    confidence: 0.82,
+    synonyms: ["rôti de palette", "palette de bœuf"],
+  },
+  {
+    name: "macreuse",
+    region: "quebec",
+    maps_to: "shoulder_clod",
+    confidence: 0.80,
+    synonyms: ["macreuse à braiser"],
+  },
+  {
+    name: "poitrine",
+    region: "quebec",
+    maps_to: "brisket",
+    confidence: 0.88,
+    synonyms: ["poitrine de bœuf"],
+  },
+  {
+    name: "jarret",
+    region: "quebec",
+    maps_to: "hind_shank",
+    confidence: 0.90,
+    synonyms: ["jarret de bœuf", "osso buco"],
+  },
+  {
+    name: "croupe",
+    region: "quebec",
+    maps_to: "sirloin_cap",
+    confidence: 0.82,
+    synonyms: ["picanha", "cap de croupe"],
+  },
+  {
+    name: "ronde",
+    region: "quebec",
+    maps_to: "inside_round",
+    confidence: 0.85,
+    synonyms: ["intérieur de ronde", "rond de gîte"],
+  },
+  {
+    name: "noix de ronde",
+    region: "quebec",
+    maps_to: "eye_of_round",
+    confidence: 0.88,
+    synonyms: ["œil de ronde", "oeil de ronde"],
+  },
+  {
+    name: "extérieur de ronde",
+    region: "quebec",
+    maps_to: "outside_round",
+    confidence: 0.85,
+    synonyms: ["exterieur de ronde"],
+  },
+  {
+    name: "côtes levées",
+    region: "quebec",
+    maps_to: "short_ribs",
+    confidence: 0.85,
+    synonyms: ["cotes levees", "short ribs"],
+  },
+  {
+    name: "t-bone",
+    region: "quebec",
+    maps_to: "t_bone",
+    confidence: 0.95,
+    synonyms: [],
+  },
+  {
+    name: "queue de bœuf",
+    region: "quebec",
+    maps_to: "oxtail",
+    confidence: 0.95,
+    synonyms: ["queue de boeuf"],
+  },
+
   // ----- Colombia -----
   {
     name: "lomo fino",
@@ -1732,6 +1867,78 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "paleta", region: "ecuador", maps_to: "chuck_blade", confidence: 0.80, notes: "Shoulder — the correct cut for Seco de Res (traditional 2-hour stew)" },
 ];
 
+const _caribbeanRegionalNames: readonly RegionalName[] = [
+  // ----- Puerto Rico -----
+  { name: "filete", region: "puerto_rico", maps_to: "tenderloin", confidence: 0.93, synonyms: ["tenderloin"] },
+  { name: "churrasco", region: "puerto_rico", maps_to: "skirt", confidence: 0.90, synonyms: [] },
+  { name: "falda", region: "puerto_rico", maps_to: "flank", confidence: 0.88, synonyms: [] },
+  { name: "pelota", region: "puerto_rico", maps_to: "inside_round", confidence: 0.82, synonyms: ["masa", "pulpa"] },
+  { name: "paleta", region: "puerto_rico", maps_to: "chuck_roll", confidence: 0.82, synonyms: ["carne para guisar"] },
+  { name: "pecho", region: "puerto_rico", maps_to: "brisket", confidence: 0.85, synonyms: [] },
+  { name: "jarrete", region: "puerto_rico", maps_to: "hind_shank", confidence: 0.88, synonyms: ["ossobuco"] },
+  { name: "rabo", region: "puerto_rico", maps_to: "oxtail", confidence: 0.93, synonyms: ["rabo de res"] },
+
+  // ----- Jamaica -----
+  { name: "fillet", region: "jamaica", maps_to: "tenderloin", confidence: 0.93, synonyms: [] },
+  { name: "sirloin", region: "jamaica", maps_to: "striploin", confidence: 0.85, synonyms: [] },
+  { name: "rump", region: "jamaica", maps_to: "top_sirloin", confidence: 0.82, synonyms: [] },
+  { name: "topside", region: "jamaica", maps_to: "inside_round", confidence: 0.88, synonyms: [] },
+  { name: "silverside", region: "jamaica", maps_to: "outside_round", confidence: 0.85, synonyms: [] },
+  { name: "stew beef", region: "jamaica", maps_to: "chuck_roll", confidence: 0.82, synonyms: ["chuck"] },
+  { name: "shin", region: "jamaica", maps_to: "hind_shank", confidence: 0.90, synonyms: ["soup meat"] },
+  { name: "oxtail", region: "jamaica", maps_to: "oxtail", confidence: 0.98, synonyms: [] },
+  { name: "mince", region: "jamaica", maps_to: "chuck_roll", confidence: 0.75, type: "ambiguous", synonyms: ["minced beef", "ground beef"] },
+
+  // ----- Trinidad & Tobago -----
+  { name: "fillet", region: "trinidad_tobago", maps_to: "tenderloin", confidence: 0.93, synonyms: [] },
+  { name: "sirloin", region: "trinidad_tobago", maps_to: "striploin", confidence: 0.85, synonyms: [] },
+  { name: "rump", region: "trinidad_tobago", maps_to: "top_sirloin", confidence: 0.82, synonyms: [] },
+  { name: "topside", region: "trinidad_tobago", maps_to: "inside_round", confidence: 0.88, synonyms: [] },
+  { name: "silverside", region: "trinidad_tobago", maps_to: "outside_round", confidence: 0.85, synonyms: [] },
+  { name: "stew beef", region: "trinidad_tobago", maps_to: "chuck_roll", confidence: 0.82, synonyms: ["chuck"] },
+  { name: "shin", region: "trinidad_tobago", maps_to: "hind_shank", confidence: 0.90, synonyms: ["soup meat"] },
+  { name: "oxtail", region: "trinidad_tobago", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
+  { name: "mince", region: "trinidad_tobago", maps_to: "chuck_roll", confidence: 0.75, type: "ambiguous", synonyms: ["minced beef", "ground beef"] },
+
+  // ----- Belize -----
+  { name: "tenderloin", region: "belize", maps_to: "tenderloin", confidence: 0.97, synonyms: ["fillet"] },
+  { name: "striploin", region: "belize", maps_to: "striploin", confidence: 0.90, synonyms: ["sirloin"] },
+  { name: "rump", region: "belize", maps_to: "top_sirloin", confidence: 0.82, synonyms: [] },
+  { name: "round steak", region: "belize", maps_to: "inside_round", confidence: 0.82, synonyms: ["roast"] },
+  { name: "stew beef", region: "belize", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["chuck"] },
+  { name: "soup meat", region: "belize", maps_to: "hind_shank", confidence: 0.82, synonyms: ["shin", "soup bone"] },
+  { name: "oxtail", region: "belize", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
+
+  // ----- Haiti -----
+  { name: "filè", region: "haiti", maps_to: "tenderloin", confidence: 0.88, synonyms: ["filet"] },
+  { name: "estèk", region: "haiti", maps_to: "striploin", confidence: 0.72, type: "ambiguous", synonyms: ["estek", "steak"] },
+  { name: "vyann san zo", region: "haiti", maps_to: "inside_round", confidence: 0.80, synonyms: ["tul"] },
+  { name: "zepòl", region: "haiti", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["zepol", "vyann ragou"] },
+  { name: "jaro", region: "haiti", maps_to: "hind_shank", confidence: 0.88, synonyms: ["jarret"] },
+  { name: "kòt", region: "haiti", maps_to: "short_ribs", confidence: 0.80, synonyms: ["kot", "vyann ak zo"] },
+  { name: "ke bèf", region: "haiti", maps_to: "oxtail", confidence: 0.92, synonyms: ["ke bef", "queue de boeuf"] },
+
+  // ----- Guyana -----
+  { name: "fillet", region: "guyana", maps_to: "tenderloin", confidence: 0.93, synonyms: [] },
+  { name: "sirloin", region: "guyana", maps_to: "striploin", confidence: 0.85, synonyms: [] },
+  { name: "rump", region: "guyana", maps_to: "top_sirloin", confidence: 0.82, synonyms: [] },
+  { name: "topside", region: "guyana", maps_to: "inside_round", confidence: 0.88, synonyms: [] },
+  { name: "silverside", region: "guyana", maps_to: "outside_round", confidence: 0.85, synonyms: [] },
+  { name: "stew beef", region: "guyana", maps_to: "chuck_roll", confidence: 0.82, synonyms: ["chuck"] },
+  { name: "shin", region: "guyana", maps_to: "hind_shank", confidence: 0.90, synonyms: ["soup meat"] },
+  { name: "oxtail", region: "guyana", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
+  { name: "mince", region: "guyana", maps_to: "chuck_roll", confidence: 0.75, type: "ambiguous", synonyms: ["minced beef"] },
+
+  // ----- Suriname -----
+  { name: "ossenhaas", region: "suriname", maps_to: "tenderloin", confidence: 0.97, synonyms: ["haasbiefstuk"] },
+  { name: "lende", region: "suriname", maps_to: "striploin", confidence: 0.90, synonyms: ["contrahaas"] },
+  { name: "kogelbiefstuk", region: "suriname", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["biefstuk"] },
+  { name: "stoofvlees", region: "suriname", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["runderlappen"] },
+  { name: "schenkel", region: "suriname", maps_to: "hind_shank", confidence: 0.90, synonyms: ["schenkel met been"] },
+  { name: "soepvlees", region: "suriname", maps_to: "brisket", confidence: 0.78, type: "ambiguous", synonyms: ["sopo-meti"] },
+  { name: "ossenstaart", region: "suriname", maps_to: "oxtail", confidence: 0.97, synonyms: ["kow-tiri"] },
+];
+
 const _asiaRegionalNames: readonly RegionalName[] = [
   // ----- Thailand (14 entries) -----
   { name: "san nai", region: "thailand", maps_to: "tenderloin", confidence: 0.95, synonyms: ["สันใน"], notes: "Literally 'inner loin' — the most tender and expensive local cut." },
@@ -2838,7 +3045,7 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "yak ribs bhutan", region: "bhutan", maps_to: "short_ribs", confidence: 0.68, synonyms: ["yak rasha", "yak short ribs", "bone-in yak"] as const, species: "yak", notes: "Yak rib sections — bone-in cleaver-chopped for hearty high-valley stews. Yak. Cross-references yak_dominance_himalayan_axis_sa." },
 ];
 
-export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames];
+export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._caribbeanRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames];
 
 /** Preferred consumer labels per canonical in each region (output layer). */
 export const canonicalLabels: Record<

@@ -75,6 +75,7 @@ export const REGION_ENTITY: Record<
 > = {
   usa: { id: "usa", formalName: "United States", shortName: "USA" },
   canada: { id: "canada", formalName: "Canada", shortName: "Canada" },
+  quebec: { id: "quebec", formalName: "Quebec", shortName: "Quebec" },
   brazil: { id: "brazil", formalName: "Brazil", shortName: "Brazil" },
   france: { id: "france", formalName: "France", shortName: "France" },
   argentina: {
@@ -143,7 +144,14 @@ export const REGION_ENTITY: Record<
   guatemala: { id: "guatemala", formalName: "Guatemala", shortName: "Guatemala" },
   cuba: { id: "cuba", formalName: "Republic of Cuba", shortName: "Cuba" },
   dominican_republic: { id: "dominican_republic", formalName: "Dominican Republic", shortName: "Dominican Rep." },
+  puerto_rico: { id: "puerto_rico", formalName: "Puerto Rico", shortName: "Puerto Rico" },
+  jamaica: { id: "jamaica", formalName: "Jamaica", shortName: "Jamaica" },
+  haiti: { id: "haiti", formalName: "Republic of Haiti", shortName: "Haiti" },
+  trinidad_tobago: { id: "trinidad_tobago", formalName: "Republic of Trinidad and Tobago", shortName: "Trinidad & Tobago" },
+  belize: { id: "belize", formalName: "Belize", shortName: "Belize" },
   venezuela: { id: "venezuela", formalName: "Venezuela", shortName: "Venezuela" },
+  guyana: { id: "guyana", formalName: "Co-operative Republic of Guyana", shortName: "Guyana" },
+  suriname: { id: "suriname", formalName: "Republic of Suriname", shortName: "Suriname" },
   lithuania: { id: "lithuania", formalName: "Lithuania", shortName: "Lithuania" },
   latvia: { id: "latvia", formalName: "Latvia", shortName: "Latvia" },
   estonia: { id: "estonia", formalName: "Estonia", shortName: "Estonia" },

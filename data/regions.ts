@@ -4,6 +4,7 @@ export const regions = [
   // Americas — North
   { id: "usa" as const, label: "United States", flag: "🇺🇸", group: "americas_north" as RegionGroup, aliases: ["us", "united states", "america"] as readonly string[] },
   { id: "canada" as const, label: "Canada", flag: "🇨🇦", group: "americas_north" as RegionGroup },
+  { id: "quebec" as const, label: "Quebec", flag: "🇨🇦", group: "americas_north" as RegionGroup },
   { id: "mexico" as const, label: "Mexico", flag: "🇲🇽", group: "americas_north" as RegionGroup },
 
   // Americas — Central
@@ -15,6 +16,11 @@ export const regions = [
   { id: "guatemala" as const, label: "Guatemala", flag: "🇬🇹", group: "americas_central" as RegionGroup },
   { id: "cuba" as const, label: "Cuba", flag: "🇨🇺", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
   { id: "dominican_republic" as const, label: "Dominican Republic", flag: "🇩🇴", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "puerto_rico" as const, label: "Puerto Rico", flag: "🇵🇷", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "jamaica" as const, label: "Jamaica", flag: "🇯🇲", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "haiti" as const, label: "Haiti", flag: "🇭🇹", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "trinidad_tobago" as const, label: "Trinidad & Tobago", flag: "🇹🇹", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "belize" as const, label: "Belize", flag: "🇧🇿", group: "americas_central" as RegionGroup, subregion: "Caribbean" as const },
 
   // Americas — South
   { id: "brazil" as const, label: "Brazil", flag: "🇧🇷", group: "americas_south" as RegionGroup },
@@ -24,6 +30,8 @@ export const regions = [
   { id: "paraguay" as const, label: "Paraguay", flag: "🇵🇾", group: "americas_south" as RegionGroup },
   { id: "colombia" as const, label: "Colombia", flag: "🇨🇴", group: "americas_south" as RegionGroup },
   { id: "venezuela" as const, label: "Venezuela", flag: "🇻🇪", group: "americas_south" as RegionGroup },
+  { id: "guyana" as const, label: "Guyana", flag: "🇬🇾", group: "americas_south" as RegionGroup, subregion: "Caribbean" as const },
+  { id: "suriname" as const, label: "Suriname", flag: "🇸🇷", group: "americas_south" as RegionGroup, subregion: "Caribbean" as const },
   { id: "peru" as const, label: "Peru", flag: "🇵🇪", group: "americas_south" as RegionGroup },
   { id: "bolivia" as const, label: "Bolivia", flag: "🇧🇴", group: "americas_south" as RegionGroup },
   { id: "ecuador" as const, label: "Ecuador", flag: "🇪🇨", group: "americas_south" as RegionGroup },
