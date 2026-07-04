@@ -506,6 +506,20 @@ const _coreRegionalNames: readonly RegionalName[] = [
     confidence: 0.80,
     synonyms: ["pierna de res"],
   },
+  {
+    name: "rabo",
+    region: "cuba",
+    maps_to: "oxtail",
+    confidence: 0.92,
+    synonyms: ["rabo de res", "rabo encendido"],
+  },
+  {
+    name: "entraña",
+    region: "cuba",
+    maps_to: "skirt",
+    confidence: 0.82,
+    synonyms: ["entraña de res"],
+  },
 
   // ----- Dominican Republic -----
   {
@@ -1905,6 +1919,8 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   { name: "striploin", region: "belize", maps_to: "striploin", confidence: 0.90, synonyms: ["sirloin"] },
   { name: "rump", region: "belize", maps_to: "top_sirloin", confidence: 0.82, synonyms: [] },
   { name: "round steak", region: "belize", maps_to: "inside_round", confidence: 0.82, synonyms: ["roast"] },
+  { name: "brisket", region: "belize", maps_to: "brisket", confidence: 0.90, synonyms: ["breast"] },
+  { name: "flank", region: "belize", maps_to: "flank", confidence: 0.82, synonyms: ["flank steak"] },
   { name: "stew beef", region: "belize", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["chuck"] },
   { name: "soup meat", region: "belize", maps_to: "hind_shank", confidence: 0.82, synonyms: ["shin", "soup bone"] },
   { name: "oxtail", region: "belize", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
@@ -1913,6 +1929,8 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   { name: "filè", region: "haiti", maps_to: "tenderloin", confidence: 0.88, synonyms: ["filet"] },
   { name: "estèk", region: "haiti", maps_to: "striploin", confidence: 0.72, type: "ambiguous", synonyms: ["estek", "steak"] },
   { name: "vyann san zo", region: "haiti", maps_to: "inside_round", confidence: 0.80, synonyms: ["tul"] },
+  { name: "pwatrin", region: "haiti", maps_to: "brisket", confidence: 0.82, synonyms: ["poitrin", "vyann grès"] },
+  { name: "bavette", region: "haiti", maps_to: "flank", confidence: 0.80, synonyms: ["flanc"] },
   { name: "zepòl", region: "haiti", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["zepol", "vyann ragou"] },
   { name: "jaro", region: "haiti", maps_to: "hind_shank", confidence: 0.88, synonyms: ["jarret"] },
   { name: "kòt", region: "haiti", maps_to: "short_ribs", confidence: 0.80, synonyms: ["kot", "vyann ak zo"] },
@@ -1932,7 +1950,9 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   // ----- Suriname -----
   { name: "ossenhaas", region: "suriname", maps_to: "tenderloin", confidence: 0.97, synonyms: ["haasbiefstuk"] },
   { name: "lende", region: "suriname", maps_to: "striploin", confidence: 0.90, synonyms: ["contrahaas"] },
+  { name: "entrecôte", region: "suriname", maps_to: "ribeye", confidence: 0.88, synonyms: ["entrecote", "ribstuk"] },
   { name: "kogelbiefstuk", region: "suriname", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["biefstuk"] },
+  { name: "fricandeau", region: "suriname", maps_to: "inside_round", confidence: 0.85, synonyms: ["ronde"] },
   { name: "stoofvlees", region: "suriname", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["runderlappen"] },
   { name: "schenkel", region: "suriname", maps_to: "hind_shank", confidence: 0.90, synonyms: ["schenkel met been"] },
   { name: "soepvlees", region: "suriname", maps_to: "brisket", confidence: 0.78, type: "ambiguous", synonyms: ["sopo-meti"] },
