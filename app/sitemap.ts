@@ -6,6 +6,7 @@ import {
 } from "@/lib/content";
 import { getAllTranslationSitemapPaths } from "@/lib/linking";
 import { getSiteUrl } from "@/lib/site";
+import { listOffalCuts, listOffalTraditions } from "@/lib/offalData";
 
 // Sitemap 0: core pages (homepage, cuts, what-is, legal) — always small
 // Sitemap 1..N: translation pages, chunked at 40,000 URLs per file
@@ -78,6 +79,13 @@ function buildCorePagesSitemap(base: string, now: Date): MetadataRoute.Sitemap {
     priority: 1.0,
   });
 
+  out.push({
+    url: `${base}/offal`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
+
   for (const path of [
     "/about",
     "/contact",
@@ -110,6 +118,24 @@ function buildCorePagesSitemap(base: string, now: Date): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
+    });
+  }
+
+  for (const cut of listOffalCuts()) {
+    out.push({
+      url: `${base}/offal/cuts/${cut.id}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    });
+  }
+
+  for (const tradition of listOffalTraditions()) {
+    out.push({
+      url: `${base}/offal/traditions/${tradition.id}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
     });
   }
 

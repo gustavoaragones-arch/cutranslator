@@ -14,6 +14,8 @@ import {
 } from "@/lib/offalData";
 import { getAxisNodesForCanonical } from "@/data/offal/axisNodes";
 import { loadSvgInner, sanitizeSvgInner } from "@/lib/svgLoader";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import { buildContentGraph } from "@/lib/structured-data";
 import type { CanonicalId } from "@/lib/types";
 
 export const dynamicParams = false;
@@ -108,8 +110,57 @@ export default async function OffalCutPage({ params }: PageProps) {
   const traditions = sortedTraditions.slice(0, TRADITIONS_CAP);
   const traditionsOverflow = allTraditions.length > TRADITIONS_CAP;
 
+  // ── Structured data ──────────────────────────────────────────────────────
+  const currentPath = `/offal/cuts/${canonicalId}`;
+  const topNames = [...sortedNames]
+    .filter((e) => e.confidence === "high")
+    .slice(0, 3);
+
+  const faq = [
+    ...topNames.map((entry) => ({
+      question: `What is ${name.toLowerCase()} called in ${OFFAL_COUNTRY_LABELS[entry.country] ?? entry.country}?`,
+      answer: `${name} is called "${entry.localName}" in ${OFFAL_COUNTRY_LABELS[entry.country] ?? entry.country}.`,
+    })),
+    {
+      question: `Where is ${name.toLowerCase()} located on the animal?`,
+      answer: `${name} comes from the ${cut.location}. ${cut.description}`,
+    },
+    ...(allTraditions.length > 0
+      ? [
+          {
+            question: `What traditions use ${name.toLowerCase()}?`,
+            answer: `${name} appears in ${allTraditions.length} documented culinary tradition${allTraditions.length === 1 ? "" : "s"}, including ${sortedTraditions
+              .slice(0, 3)
+              .map((t) => t.name)
+              .join(", ")}.`,
+          },
+        ]
+      : []),
+  ];
+
+  const graph = buildContentGraph({
+    pagePath: currentPath,
+    headline: `${name} — Offal`,
+    description: cut.description,
+    faq,
+  });
+
+  const crumbSchema = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Offal", path: "/offal" },
+    { name, path: currentPath },
+  ]);
+
   return (
     <div className="cut-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbSchema) }}
+      />
       <main className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <BreadcrumbBar
           items={[

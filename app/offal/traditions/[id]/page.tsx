@@ -7,6 +7,8 @@ import {
   getOffalTraditionById,
 } from "@/lib/offalData";
 import { titleCaseCanonicalId } from "@/lib/content";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import { buildContentGraph } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 
@@ -35,8 +37,51 @@ export default async function OffalTraditionPage({ params }: PageProps) {
   const tradition = resolveTradition(id);
   if (!tradition) notFound();
 
+  const currentPath = `/offal/traditions/${tradition.id}`;
+  const cutNames = tradition.cuts.map((c) => titleCaseCanonicalId(c));
+
+  const faq = [
+    {
+      question: `What is ${tradition.name}?`,
+      answer: tradition.summary,
+    },
+    ...(cutNames.length > 0
+      ? [
+          {
+            question: `What cuts are used in ${tradition.name}?`,
+            answer: `${tradition.name} uses ${cutNames.join(", ")}.`,
+          },
+        ]
+      : []),
+    {
+      question: `Where does ${tradition.name} come from?`,
+      answer: `${tradition.name} is a culinary tradition from ${tradition.region}.`,
+    },
+  ];
+
+  const graph = buildContentGraph({
+    pagePath: currentPath,
+    headline: `${tradition.name} — Offal Traditions`,
+    description: tradition.summary,
+    faq,
+  });
+
+  const crumbSchema = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Offal", path: "/offal" },
+    { name: tradition.name, path: currentPath },
+  ]);
+
   return (
     <div className="cut-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbSchema) }}
+      />
       <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
         <BreadcrumbBar
           items={[
