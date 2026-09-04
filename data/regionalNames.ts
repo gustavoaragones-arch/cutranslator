@@ -1120,7 +1120,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "Spierstuk", region: "netherlands", maps_to: "sirloin_tip", confidence: 0.80 },
   { name: "Bloemstuk", region: "netherlands", maps_to: "shoulder_clod", confidence: 0.75 },
 
-  // ----- DENMARK (12 entries) -----
+  // ----- DENMARK (12 entries; +2 more in _europeRegionalNames below, split out to avoid TS2590) -----
   { name: "Mørbrad", region: "denmark", maps_to: "tenderloin", confidence: 0.95 },
   { name: "Entrecôte", region: "denmark", maps_to: "ribeye", confidence: 0.90, notes: "From the Højreb (high rib) section" },
   { name: "Oksefilet", region: "denmark", maps_to: "striploin", confidence: 0.90, synonyms: ["Yderfilet"], notes: "Danish striploin — also called Filet" },
@@ -1818,6 +1818,7 @@ const _coreRegionalNames: readonly RegionalName[] = [
   { name: "kael", region: "estonia", maps_to: "chuck_roll", confidence: 0.80, synonyms: ["kaelatükk"], notes: "Neck — recommended for grinding into 100% beef burgers" },
   { name: "abatükk", region: "estonia", maps_to: "chuck_blade", confidence: 0.80, notes: "Shoulder blade — for stews and braising" },
   { name: "koot tagumine", region: "estonia", maps_to: "sirloin_tip", confidence: 0.75, notes: "The rear knuckle area — for roasting or braising" },
+  // +1 more Estonia entry in _europeRegionalNames below, split out to avoid TS2590
 
   // ----- Belarus -----
   { name: "vyrazka", region: "belarus", maps_to: "tenderloin", confidence: 0.95, synonyms: ["выразка", "vyrezka"], notes: "The premium 'clean' muscle — identical to US Filet Mignon. Same root as Russian вырезка." },
@@ -3078,7 +3079,16 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "yak ribs bhutan", region: "bhutan", maps_to: "short_ribs", confidence: 0.68, synonyms: ["yak rasha", "yak short ribs", "bone-in yak"] as const, species: "yak", notes: "Yak rib sections — bone-in cleaver-chopped for hearty high-valley stews. Yak. Cross-references yak_dominance_himalayan_axis_sa." },
 ];
 
-export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._caribbeanRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames];
+// Overflow for regions already covered above in _coreRegionalNames — kept as
+// a separate small array so additions here don't grow _coreRegionalNames
+// past TypeScript's union-complexity limit (TS2590) on its literal type.
+const _europeRegionalNames: readonly RegionalName[] = [
+  { name: "Flanke", region: "denmark", maps_to: "flank", confidence: 0.82, synonyms: ["bavette"], notes: "Danish flank — increasingly available in modern butcheries. French 'bavette' used in upscale Danish restaurant context." },
+  { name: "Okseribben", region: "denmark", maps_to: "short_ribs", confidence: 0.78, notes: "Beef ribs — thick cut from the rib section. Used for slow-roasting and braising. NOT the same as Tyksteg (top sirloin/rump roast, a separate existing entry)." },
+  { name: "küljetükk", region: "estonia", maps_to: "flank", confidence: 0.80, synonyms: ["külg"], notes: "Flank — increasingly available in modern Estonian butcheries. Used for marinating and quick grilling." },
+];
+
+export const regionalNames: readonly RegionalName[] = [..._coreRegionalNames, ..._caribbeanRegionalNames, ..._asiaRegionalNames, ..._oceaniaRegionalNames, ..._africaRegionalNames, ..._southAsiaRegionalNames, ..._europeRegionalNames];
 
 /** Preferred consumer labels per canonical in each region (output layer). */
 export const canonicalLabels: Record<
