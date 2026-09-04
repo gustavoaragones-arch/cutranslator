@@ -297,3 +297,140 @@ export function generateFrenchMeta(
 
   return { title, description };
 }
+
+/**
+ * Portuguese-language regions — when the source region is one
+ * of these, generate page content in Portuguese.
+ */
+export const PORTUGUESE_LANGUAGE_REGIONS = new Set([
+  "brazil", "portugal", "angola", "mozambique",
+]);
+
+export function isPortugueseRoute(fromRegion: string): boolean {
+  return PORTUGUESE_LANGUAGE_REGIONS.has(fromRegion);
+}
+
+/**
+ * Portuguese region display names for use in page content.
+ * Falls back to the English label if not defined.
+ */
+const PORTUGUESE_REGION_NAMES: Record<string, string> = {
+  brazil: "Brasil",
+  portugal: "Portugal",
+  angola: "Angola",
+  mozambique: "Moçambique",
+  usa: "Estados Unidos",
+  uk: "Reino Unido",
+  france: "França",
+  germany: "Alemanha",
+  italy: "Itália",
+  spain: "Espanha",
+  australia: "Austrália",
+  canada: "Canadá",
+  japan: "Japão",
+  argentina: "Argentina",
+  uruguay: "Uruguai",
+  chile: "Chile",
+};
+
+export function regionLabelPt(slug: string): string {
+  return PORTUGUESE_REGION_NAMES[slug] ?? slug;
+}
+
+/**
+ * Portuguese equivalent of generateAIAnswer.
+ * Returns primary answer string and FAQ pairs in Portuguese.
+ */
+export function generatePortugueseAnswer(
+  inputDisplay: string,
+  canonical: { primal: string },
+  targetRegion: string,
+  options: {
+    inputRegion: string;
+    targetLabels: string[];
+    entityTerm: string;
+  },
+): string {
+  const sourcePlace = regionLabelPt(options.inputRegion);
+  const targetPlace = regionLabelPt(targetRegion);
+  const labels = options.targetLabels.filter(Boolean).slice(0, 4);
+  const top = labels[0] ?? options.entityTerm;
+  const rest = labels.slice(1);
+  const listSuffix =
+    rest.length === 1
+      ? ` ou ${rest[0]}`
+      : rest.length > 1
+        ? `, ${rest.slice(0, -1).join(", ")} ou ${rest[rest.length - 1]}`
+        : "";
+
+  return `${inputDisplay} é o nome comercial em ${sourcePlace} para o corte conhecido como ${options.entityTerm}, localizado no corte primal ${canonical.primal}. Em ${targetPlace}, o mesmo corte é chamado principalmente de ${top}${listSuffix}.`;
+}
+
+/**
+ * Generate Portuguese FAQ pairs for structured data.
+ */
+export function generatePortugueseFaq(options: {
+  cutDisplay: string;
+  fromRegion: string;
+  toRegion: string;
+  targetLabels: string[];
+  entityTerm: string;
+  primal: string;
+  aiPrimary: string;
+  hasAlternatives: boolean;
+  alternativeNames: string[];
+}): Array<{ question: string; answer: string }> {
+  const targetPlace = regionLabelPt(options.toRegion);
+  const sourcePlace = regionLabelPt(options.fromRegion);
+  const top = options.targetLabels[0] ?? options.entityTerm;
+
+  const faq: Array<{ question: string; answer: string }> = [];
+
+  faq.push({
+    question: `Como se chama ${options.cutDisplay} em ${targetPlace}?`,
+    answer: options.aiPrimary,
+  });
+
+  faq.push({
+    question: `Qual é o equivalente de ${options.cutDisplay} em ${targetPlace}?`,
+    answer: `Em ${targetPlace}, procure por ${top} — é o corte equivalente ao ${options.cutDisplay} de ${sourcePlace}.`,
+  });
+
+  faq.push({
+    question: `De qual parte da vaca vem o ${options.cutDisplay}?`,
+    answer: `O ${options.cutDisplay} vem do corte primal ${options.primal} (${options.entityTerm}).`,
+  });
+
+  if (options.hasAlternatives) {
+    faq.push({
+      question: `O nome ${options.cutDisplay} pode se referir a mais de um corte?`,
+      answer: `Este nome pode coincidir com ${options.alternativeNames.join(", ")} neste sistema — veja as alternativas abaixo.`,
+    });
+  }
+
+  return faq;
+}
+
+/**
+ * Generate Portuguese page title and meta description.
+ */
+export function generatePortugueseMeta(
+  cutDisplay: string,
+  fromRegion: string,
+  toRegion: string,
+  targetLabels: string[],
+): { title: string; description: string } {
+  const targetPlace = regionLabelPt(toRegion);
+  const sourcePlace = regionLabelPt(fromRegion);
+  const top = targetLabels[0];
+
+  const title = top
+    ? `Como se chama ${cutDisplay} em ${targetPlace}? → ${top}`
+    : `${cutDisplay} em ${targetPlace}`;
+
+  const description = top
+    ? `${cutDisplay} em ${targetPlace} se chama ${top}. Tradução de cortes de carne de ${sourcePlace} para ${targetPlace}.`
+    : `Tradução do corte ${cutDisplay} de ${sourcePlace} para ${targetPlace}.`;
+
+  return { title, description };
+}

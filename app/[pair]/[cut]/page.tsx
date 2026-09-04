@@ -48,6 +48,11 @@ import {
   generateFrenchFaq,
   generateFrenchMeta,
   regionLabelFr,
+  isPortugueseRoute,
+  generatePortugueseAnswer,
+  generatePortugueseFaq,
+  generatePortugueseMeta,
+  regionLabelPt,
 } from "@/lib/spanish";
 import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
@@ -158,6 +163,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  if (isPortugueseRoute(parsed.from)) {
+    const portugueseMeta = generatePortugueseMeta(
+      cutDisplay,
+      parsed.from,
+      parsed.to,
+      metaResult.primary?.names ?? [],
+    );
+    return {
+      title: portugueseMeta.title,
+      description: portugueseMeta.description,
+      alternates: {
+        canonical: canonicalUrl,
+        languages: { pt: canonicalUrl },
+      },
+      openGraph: {
+        title: portugueseMeta.title,
+        description: `Tradução de cortes de carne: ${cutDisplay} → ${regionLabelPt(parsed.to)}.`,
+        url: canonicalUrl,
+        siteName: "Cutranslator",
+      },
+    };
+  }
+
   return {
     title: h1,
     description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} ${qualifier}.`,
@@ -199,8 +227,11 @@ export default async function PairCutPage({ params }: PageProps) {
         })
       : null;
 
+  // Priority order for language detection: Spanish, then French, then
+  // Portuguese — a region can only belong to one language group.
   const isSpanish = isSpanishRoute(parsed.from);
-  const isFrench = isFrenchRoute(parsed.from);
+  const isFrench = !isSpanish && isFrenchRoute(parsed.from);
+  const isPortuguese = !isSpanish && !isFrench && isPortugueseRoute(parsed.from);
   const entityTerm = p != null ? canonicalEntityTerm(p.canonicalId) : null;
 
   const aiPrimary =
@@ -216,7 +247,13 @@ export default async function PairCutPage({ params }: PageProps) {
             targetLabels: p.names,
             entityTerm,
           })
-        : (aiBundle?.primary ?? result.explanation.short);
+        : isPortuguese && p != null && result.canonical != null && entityTerm != null
+          ? generatePortugueseAnswer(cutDisplay, result.canonical, parsed.to, {
+              inputRegion: parsed.from,
+              targetLabels: p.names,
+              entityTerm,
+            })
+          : (aiBundle?.primary ?? result.explanation.short);
 
   let faq: FaqPair[] = [{ question: h1, answer: aiPrimary }];
   if (p != null && result.canonical != null) {
@@ -292,6 +329,18 @@ export default async function PairCutPage({ params }: PageProps) {
       hasAlternatives: result.alternatives.length > 0,
       alternativeNames: result.alternatives.map((a) => titleCaseCanonicalId(a.canonicalId)),
     });
+  } else if (isPortuguese && p != null && result.canonical != null && entityTerm != null) {
+    faq = generatePortugueseFaq({
+      cutDisplay,
+      fromRegion: parsed.from,
+      toRegion: parsed.to,
+      targetLabels: p.names,
+      entityTerm,
+      primal: result.canonical.primal,
+      aiPrimary,
+      hasAlternatives: result.alternatives.length > 0,
+      alternativeNames: result.alternatives.map((a) => titleCaseCanonicalId(a.canonicalId)),
+    });
   }
 
   const paaItems =
@@ -314,10 +363,11 @@ export default async function PairCutPage({ params }: PageProps) {
           explanation: result.explanation.detailed,
         });
 
-  // Spanish/French faq[] is already complete structured-data content; merging
-  // in the (English) PAA items here would reintroduce English questions into
-  // the JSON-LD FAQPage for Spanish- or French-origin routes.
-  const faqMerged = isSpanish || isFrench ? faq : mergeFaqWithPAA(faq, paaItems);
+  // Spanish/French/Portuguese faq[] is already complete structured-data
+  // content; merging in the (English) PAA items here would reintroduce
+  // English questions into the JSON-LD FAQPage for these routes.
+  const faqMerged =
+    isSpanish || isFrench || isPortuguese ? faq : mergeFaqWithPAA(faq, paaItems);
 
   const currentPath = `/${pairSegment(parsed.from, parsed.to)}/${cut}`.toLowerCase();
 
