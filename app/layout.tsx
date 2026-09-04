@@ -82,6 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      // lang="en" — Spanish pages use hreflang meta rather than route-level locale
       lang="en"
       className={`${fraunces.variable} ${jetbrainsMono.variable} ${protestStrike.variable} ${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >

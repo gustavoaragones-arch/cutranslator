@@ -37,6 +37,13 @@ import {
 } from "@/lib/questions";
 import { resolveCut } from "@/lib/resolver";
 import { buildContentGraph, type FaqPair } from "@/lib/structured-data";
+import {
+  isSpanishRoute,
+  generateSpanishAnswer,
+  generateSpanishFaq,
+  generateSpanishMeta,
+  regionLabelEs,
+} from "@/lib/spanish";
 import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
 import { isDefaultSpecies, SPECIES_LABEL } from "@/lib/types";
@@ -99,6 +106,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const qualifier = matchTypeMetaQualifier(effectiveMatchType);
   const base = getSiteUrl().replace(/\/$/, "");
   const canonicalUrl = `${base}/${pair}/${cut}`;
+
+  if (isSpanishRoute(parsed.from)) {
+    const spanishMeta = generateSpanishMeta(
+      cutDisplay,
+      parsed.from,
+      parsed.to,
+      metaResult.primary?.names ?? [],
+    );
+    return {
+      title: spanishMeta.title,
+      description: spanishMeta.description,
+      alternates: {
+        canonical: canonicalUrl,
+        languages: { es: canonicalUrl },
+      },
+      openGraph: {
+        title: spanishMeta.title,
+        description: `Traducción de cortes de carne: ${cutDisplay} → ${regionLabelEs(parsed.to)}.`,
+        url: canonicalUrl,
+        siteName: "Cutranslator",
+      },
+    };
+  }
+
   return {
     title: h1,
     description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} ${qualifier}.`,
@@ -140,9 +171,19 @@ export default async function PairCutPage({ params }: PageProps) {
         })
       : null;
 
-  const aiPrimary = aiBundle?.primary ?? result.explanation.short;
+  const isSpanish = isSpanishRoute(parsed.from);
+  const spanishEntityTerm = p != null ? canonicalEntityTerm(p.canonicalId) : null;
 
-  const faq: FaqPair[] = [{ question: h1, answer: aiPrimary }];
+  const aiPrimary =
+    isSpanish && p != null && result.canonical != null && spanishEntityTerm != null
+      ? generateSpanishAnswer(cutDisplay, result.canonical, parsed.to, {
+          inputRegion: parsed.from,
+          targetLabels: p.names,
+          entityTerm: spanishEntityTerm,
+        })
+      : (aiBundle?.primary ?? result.explanation.short);
+
+  let faq: FaqPair[] = [{ question: h1, answer: aiPrimary }];
   if (p != null && result.canonical != null) {
     const primarySpecies = p.species[0];
     const speciesNote =
@@ -192,6 +233,20 @@ export default async function PairCutPage({ params }: PageProps) {
     }
   }
 
+  if (isSpanish && p != null && result.canonical != null && spanishEntityTerm != null) {
+    faq = generateSpanishFaq({
+      cutDisplay,
+      fromRegion: parsed.from,
+      toRegion: parsed.to,
+      targetLabels: p.names,
+      entityTerm: spanishEntityTerm,
+      primal: result.canonical.primal,
+      aiPrimary,
+      hasAlternatives: result.alternatives.length > 0,
+      alternativeNames: result.alternatives.map((a) => titleCaseCanonicalId(a.canonicalId)),
+    });
+  }
+
   const paaItems =
     p != null && result.canonical != null
       ? buildTranslationPAAItems({
@@ -212,7 +267,10 @@ export default async function PairCutPage({ params }: PageProps) {
           explanation: result.explanation.detailed,
         });
 
-  const faqMerged = mergeFaqWithPAA(faq, paaItems);
+  // Spanish faq[] is already complete structured-data content; merging in the
+  // (English) PAA items here would reintroduce English questions into the
+  // JSON-LD FAQPage for Spanish-origin routes.
+  const faqMerged = isSpanish ? faq : mergeFaqWithPAA(faq, paaItems);
 
   const currentPath = `/${pairSegment(parsed.from, parsed.to)}/${cut}`.toLowerCase();
 
