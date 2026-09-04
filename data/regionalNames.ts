@@ -1902,6 +1902,10 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   { name: "shin", region: "jamaica", maps_to: "hind_shank", confidence: 0.90, synonyms: ["soup meat"] },
   { name: "oxtail", region: "jamaica", maps_to: "oxtail", confidence: 0.98, synonyms: [] },
   { name: "mince", region: "jamaica", maps_to: "chuck_roll", confidence: 0.75, type: "ambiguous", synonyms: ["minced beef", "ground beef"] },
+  { name: "brisket", region: "jamaica", maps_to: "brisket", confidence: 0.88, synonyms: ["breast"] },
+  { name: "ribeye", region: "jamaica", maps_to: "ribeye", confidence: 0.85, synonyms: ["rib eye"] },
+  { name: "short ribs", region: "jamaica", maps_to: "short_ribs", confidence: 0.85, synonyms: ["ribs"] },
+  { name: "flank", region: "jamaica", maps_to: "flank", confidence: 0.82, synonyms: ["flank steak"] },
 
   // ----- Trinidad & Tobago -----
   { name: "fillet", region: "trinidad_tobago", maps_to: "tenderloin", confidence: 0.93, synonyms: [] },
@@ -1913,6 +1917,10 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   { name: "shin", region: "trinidad_tobago", maps_to: "hind_shank", confidence: 0.90, synonyms: ["soup meat"] },
   { name: "oxtail", region: "trinidad_tobago", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
   { name: "mince", region: "trinidad_tobago", maps_to: "chuck_roll", confidence: 0.75, type: "ambiguous", synonyms: ["minced beef", "ground beef"] },
+  { name: "brisket", region: "trinidad_tobago", maps_to: "brisket", confidence: 0.88, synonyms: ["breast"] },
+  { name: "ribeye", region: "trinidad_tobago", maps_to: "ribeye", confidence: 0.85, synonyms: ["rib eye"] },
+  { name: "short ribs", region: "trinidad_tobago", maps_to: "short_ribs", confidence: 0.85, synonyms: ["ribs"] },
+  { name: "flank", region: "trinidad_tobago", maps_to: "flank", confidence: 0.82, synonyms: ["flank steak"] },
 
   // ----- Belize -----
   { name: "tenderloin", region: "belize", maps_to: "tenderloin", confidence: 0.97, synonyms: ["fillet"] },
@@ -1924,6 +1932,8 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   { name: "stew beef", region: "belize", maps_to: "chuck_roll", confidence: 0.85, synonyms: ["chuck"] },
   { name: "soup meat", region: "belize", maps_to: "hind_shank", confidence: 0.82, synonyms: ["shin", "soup bone"] },
   { name: "oxtail", region: "belize", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
+  { name: "ribeye", region: "belize", maps_to: "ribeye", confidence: 0.88, synonyms: ["rib eye"] },
+  { name: "short ribs", region: "belize", maps_to: "short_ribs", confidence: 0.85, synonyms: ["ribs"] },
 
   // ----- Haiti -----
   { name: "filè", region: "haiti", maps_to: "tenderloin", confidence: 0.88, synonyms: ["filet"] },
@@ -1946,6 +1956,10 @@ const _caribbeanRegionalNames: readonly RegionalName[] = [
   { name: "shin", region: "guyana", maps_to: "hind_shank", confidence: 0.90, synonyms: ["soup meat"] },
   { name: "oxtail", region: "guyana", maps_to: "oxtail", confidence: 0.97, synonyms: [] },
   { name: "mince", region: "guyana", maps_to: "chuck_roll", confidence: 0.75, type: "ambiguous", synonyms: ["minced beef"] },
+  { name: "brisket", region: "guyana", maps_to: "brisket", confidence: 0.88, synonyms: ["breast"] },
+  { name: "ribeye", region: "guyana", maps_to: "ribeye", confidence: 0.85, synonyms: ["rib eye"] },
+  { name: "short ribs", region: "guyana", maps_to: "short_ribs", confidence: 0.85, synonyms: ["ribs"] },
+  { name: "flank", region: "guyana", maps_to: "flank", confidence: 0.82, synonyms: ["flank steak"] },
 
   // ----- Suriname -----
   { name: "ossenhaas", region: "suriname", maps_to: "tenderloin", confidence: 0.97, synonyms: ["haasbiefstuk"] },
@@ -2600,7 +2614,6 @@ const _southAsiaRegionalNames: readonly RegionalName[] = [
   { name: "topside goa", region: "goa", maps_to: "inside_round", confidence: 0.80, synonyms: ["topside"] as const, notes: "Standard lean cut for Beef Stir-fry or Ambot Tik (sour-spicy curry)" },
   { name: "rump goa", region: "goa", maps_to: "top_sirloin", confidence: 0.85, synonyms: ["rump"] as const, notes: "Anglo-Commonwealth term used in Goan English retail. = US Top Sirloin." },
   { name: "kheema goa", region: "goa", maps_to: "chuck_roll", confidence: 0.65, synonyms: ["minced beef"] as const, notes: "For Goan Beef Croquettes and Beef Patties" },
-  { name: "lingua", region: "goa", maps_to: "tongue", confidence: 0.95, match_type: "exact", synonyms: ["lingua", "tongue", "beef tongue"] as const, notes: "(Goa) Tongue — Portuguese-legacy delicacy. Pickled in brine and slow-roasted; a Goan Catholic Christmas and festive tradition. Available at Panjim Municipal Market on request." },
 
   // ----- Karnataka (12 entries — BUFFALO ONLY) -----
   // Universal pan-Indian Hindi/Urdu vocabulary (Bengaluru is highly multilingual)
