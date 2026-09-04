@@ -93,6 +93,13 @@ function buildCorePagesSitemap(base: string, now: Date): MetadataRoute.Sitemap {
     priority: 0.7,
   });
 
+  out.push({
+    url: `${base}/fr`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  });
+
   for (const path of [
     "/about",
     "/contact",

@@ -43,6 +43,11 @@ import {
   generateSpanishFaq,
   generateSpanishMeta,
   regionLabelEs,
+  isFrenchRoute,
+  generateFrenchAnswer,
+  generateFrenchFaq,
+  generateFrenchMeta,
+  regionLabelFr,
 } from "@/lib/spanish";
 import { displayCutNameForSlug, seoH1 } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
@@ -130,6 +135,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  if (isFrenchRoute(parsed.from)) {
+    const frenchMeta = generateFrenchMeta(
+      cutDisplay,
+      parsed.from,
+      parsed.to,
+      metaResult.primary?.names ?? [],
+    );
+    return {
+      title: frenchMeta.title,
+      description: frenchMeta.description,
+      alternates: {
+        canonical: canonicalUrl,
+        languages: { fr: canonicalUrl },
+      },
+      openGraph: {
+        title: frenchMeta.title,
+        description: `Traduction de morceaux de bœuf : ${cutDisplay} → ${regionLabelFr(parsed.to)}.`,
+        url: canonicalUrl,
+        siteName: "Cutranslator",
+      },
+    };
+  }
+
   return {
     title: h1,
     description: `Map ${cutDisplay} from ${regionLabel(parsed.from)} to ${regionLabel(parsed.to)} ${qualifier}.`,
@@ -172,16 +200,23 @@ export default async function PairCutPage({ params }: PageProps) {
       : null;
 
   const isSpanish = isSpanishRoute(parsed.from);
-  const spanishEntityTerm = p != null ? canonicalEntityTerm(p.canonicalId) : null;
+  const isFrench = isFrenchRoute(parsed.from);
+  const entityTerm = p != null ? canonicalEntityTerm(p.canonicalId) : null;
 
   const aiPrimary =
-    isSpanish && p != null && result.canonical != null && spanishEntityTerm != null
+    isSpanish && p != null && result.canonical != null && entityTerm != null
       ? generateSpanishAnswer(cutDisplay, result.canonical, parsed.to, {
           inputRegion: parsed.from,
           targetLabels: p.names,
-          entityTerm: spanishEntityTerm,
+          entityTerm,
         })
-      : (aiBundle?.primary ?? result.explanation.short);
+      : isFrench && p != null && result.canonical != null && entityTerm != null
+        ? generateFrenchAnswer(cutDisplay, result.canonical, parsed.to, {
+            inputRegion: parsed.from,
+            targetLabels: p.names,
+            entityTerm,
+          })
+        : (aiBundle?.primary ?? result.explanation.short);
 
   let faq: FaqPair[] = [{ question: h1, answer: aiPrimary }];
   if (p != null && result.canonical != null) {
@@ -233,13 +268,25 @@ export default async function PairCutPage({ params }: PageProps) {
     }
   }
 
-  if (isSpanish && p != null && result.canonical != null && spanishEntityTerm != null) {
+  if (isSpanish && p != null && result.canonical != null && entityTerm != null) {
     faq = generateSpanishFaq({
       cutDisplay,
       fromRegion: parsed.from,
       toRegion: parsed.to,
       targetLabels: p.names,
-      entityTerm: spanishEntityTerm,
+      entityTerm,
+      primal: result.canonical.primal,
+      aiPrimary,
+      hasAlternatives: result.alternatives.length > 0,
+      alternativeNames: result.alternatives.map((a) => titleCaseCanonicalId(a.canonicalId)),
+    });
+  } else if (isFrench && p != null && result.canonical != null && entityTerm != null) {
+    faq = generateFrenchFaq({
+      cutDisplay,
+      fromRegion: parsed.from,
+      toRegion: parsed.to,
+      targetLabels: p.names,
+      entityTerm,
       primal: result.canonical.primal,
       aiPrimary,
       hasAlternatives: result.alternatives.length > 0,
@@ -267,10 +314,10 @@ export default async function PairCutPage({ params }: PageProps) {
           explanation: result.explanation.detailed,
         });
 
-  // Spanish faq[] is already complete structured-data content; merging in the
-  // (English) PAA items here would reintroduce English questions into the
-  // JSON-LD FAQPage for Spanish-origin routes.
-  const faqMerged = isSpanish ? faq : mergeFaqWithPAA(faq, paaItems);
+  // Spanish/French faq[] is already complete structured-data content; merging
+  // in the (English) PAA items here would reintroduce English questions into
+  // the JSON-LD FAQPage for Spanish- or French-origin routes.
+  const faqMerged = isSpanish || isFrench ? faq : mergeFaqWithPAA(faq, paaItems);
 
   const currentPath = `/${pairSegment(parsed.from, parsed.to)}/${cut}`.toLowerCase();
 
